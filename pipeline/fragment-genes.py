@@ -35,7 +35,7 @@ design_genes['Sequence'] = "a" + design_genes['Sequence'] + "a"
 # What size are our things?
 eprint("Gene Number")
 for i in np.arange(1,5)*1780:
-    eprint(i, (design_genes['Sequence'].str.len() >= i).sum
+    eprint(">", i, (design_genes['Sequence'].str.len() >= i).sum())
 eprint()
 
 # Break genes into fragments

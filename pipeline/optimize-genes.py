@@ -164,36 +164,38 @@ cut_sites = [
     ("BsaI", "GGTCTC")]
 
 def remove_cutsites(name, seq):
+    changes = 0
+
     for enzyme, cut in cut_sites + [(e, reverse_complement(c)) for e, c in cut_sites]:
         while cut in seq:
             eprint("{} cuts {} ({})".format(enzyme, name, cut))
+            changes += 1
             seq = recode_sequence(seq, cut)
 
-    return seq
+    return seq, changes
 
 for i, gene in design_genes.iterrows():
     eprint("Optimizing gene {}".format(gene['Gene']))
+
+    sequence = gene['Sequence']
     for j in range(1000): # try 1000 times to get a working sequence
-        changed = False
+        sequence, changed = remove_cutsites(gene['Gene'], sequence)
 
-        oldgene = gene['Sequence']
-        gene['Sequence'] = remove_cutsites(gene['Gene'], gene['Sequence'])
-        if gene['Sequence'] != oldgene:
-            changed = True
-
-        homopolymer_length, homopolymer_pos = max_homopolymer(gene['Sequence'])
+        homopolymer_length, homopolymer_pos = max_homopolymer(sequence)
         while homopolymer_length >= 6:
             changed = True
-            gene['Sequence'] = recode_sequence(gene['Sequence'], gene['Sequence'][homopolymer_pos:homopolymer_pos+homopolymer_length])
-            homopolymer_length, homopolymer_pos = max_homopolymer(gene['Sequence'])
+            sequence = recode_sequence(sequence, sequence[homopolymer_pos:homopolymer_pos+homopolymer_length])
+            homopolymer_length, homopolymer_pos = max_homopolymer(sequence)
 
-        if not gc_in_range(gene['Sequence']):
+        if not gc_in_range(sequence):
             eprint ("GC out of range")
 
         if not changed:
             break
     else:
         eprint("Warning: {} could not be optimized".format(gene['Gene']))
+
+    design_genes.ix[i, 'Sequence'] = sequence
 
     eprint("")
 
@@ -221,16 +223,23 @@ force_codons = {
     'G': 'GGC'
 }
 
-design_genes['Sequence'] = design_genes['Sequence'].str[:-6] + design_genes['Sequence'].str[-6:-3].apply(lambda x: force_codons[ec_codons.ix[x]]) + design_genes['Sequence'].str[-3:]
+# design_genes['Sequence'] = design_genes['Sequence'].str[:-6] + design_genes['Sequence'].str[-6:-3].apply(lambda x: force_codons[ec_codons.ix[x]]) + design_genes['Sequence'].str[-3:]
 
 # Make sure we didn't introduce an RE site
 # Make sure we didn't introduce any restriction sites
+error = False
 for enzyme, cut in cut_sites + [(e, reverse_complement(c)) for e, c in cut_sites]:
     if design_genes['Sequence'].str.contains(cut).any():
+        error = True
         eprint("Cannot normalize final codon without introducing restriction site {} ({})".format(enzyme, cut))
-        eprint(design_genes.ix[design_genes['Sequence'].str.contains(cut), ['Gene','Sequence']])
+
+        for i, (g, s) in design_genes.ix[design_genes['Sequence'].str.contains(cut), ['Gene','Sequence']].iterrows():
+            eprint(g, s[s.find(cut):])
         eprint()
-        sys.exit(1)
+
+if error:
+    sys.exit(1)
+
 
 #         seq = gene['Sequence']
 #         while gc_content(seq) < 0.35:
