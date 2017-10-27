@@ -223,7 +223,7 @@ force_codons = {
     'G': 'GGC'
 }
 
-# design_genes['Sequence'] = design_genes['Sequence'].str[:-6] + design_genes['Sequence'].str[-6:-3].apply(lambda x: force_codons[ec_codons.ix[x]]) + design_genes['Sequence'].str[-3:]
+design_genes['Sequence'] = design_genes['Sequence'].str[:-6] + design_genes['Sequence'].str[-6:-3].apply(lambda x: force_codons[ec_codons.ix[x]]) + design_genes['Sequence'].str[-3:]
 
 # Make sure we didn't introduce an RE site
 # Make sure we didn't introduce any restriction sites
