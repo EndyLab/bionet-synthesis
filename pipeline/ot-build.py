@@ -7,12 +7,11 @@ parser = argparse.ArgumentParser(description="Run a DNA build on an Opentrons OT
 parser.add_argument('-l', '--layout', required=True, help="A CSV file describing the layout of the sourcep plates.")
 parser.add_argument('-b', '--build-plan', required=True, help="A CSV file describing the build plan.")
 args = parser.parse_args()
-print(args)
 
 layout = pd.read_csv(args.layout)
-layout = layout.set_index('Name').to_dict()['Position'] # Turn into a name -> location dict
+layout = layout.set_index('Position').to_dict()['Name'] # Turn into a location->name dict
 
-plan = pd.read_csv(args.build_plan)
+plan = pd.read_csv(args.build_plan, usecols=['Gene','Wells'])
 
 # Configure the robot
 
@@ -55,7 +54,7 @@ p10 = instruments.Pipette(
     axis='a',
     max_volume=10,
     min_volume=0.5,
-    tip_racks=[p10_tiprack],
+    tip_racks=p10_tipracks,
     trash_container=trash,
     channels=8,
     name='p10-8'
@@ -65,7 +64,7 @@ p200 = instruments.Pipette(
     axis='b',
     max_volume=200,
     min_volume=20,
-    tip_racks=[p200_tiprack],
+    tip_racks=p200_tipracks,
     trash_container=trash,
     channels=1,
     name='p200-1'
@@ -96,13 +95,16 @@ for i in range(1,num_rows):
 # Add multiples of mastermix to plates with multiple fragments
 all_wells = dest_plates[0].wells() + dest_plates[1].wells()
 for i, construct in plan.iterrows():
-    vol = 8 * (construct['Wells'].str.split(',').str.len() - 1)
+    vol = 8 * (len(construct['Wells'].split(',')) - 1)
     if vol > 0:
-        p200.transfer(vol, master, all_wells[i], blow_out=True, touch_tip=True)
+        p200.transfer(vol, master, all_wells[int(i)], blow_out=True, touch_tip=True)
 
 # Move source DNA into dest mastermixes
 for i,construct in plan.iterrows():
     fragments = construct['Wells'].split(',')
     for fragment in fragments:
         plate, well = fragment.split('-')
-        p200.transfer(2, source_plates[plate].wells(well), all_wells[i], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
+        p200.transfer(2, source_plates[plate].wells(well), all_wells[int(i)], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
+
+import ipdb;ipdb.set_trace()
+print(robot.commands())
