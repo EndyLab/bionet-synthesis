@@ -22,6 +22,8 @@ plan = pd.read_csv(args.build_plan, usecols=['Gene','Wells'])
 #  1 p200  dest    source source p10
 #
 
+robot.connect() #robot.get_serial_ports_list()[0])
+
 p200_tipracks = [
     containers.load('tiprack-200ul', 'A1'),
     containers.load('tiprack-200ul', 'A2')
@@ -74,36 +76,26 @@ p200 = instruments.Pipette(
 
 # Load dest plates
 
-# We need a well full of master mix for each construct we're building
+# Distribute down the plates
 num_reactions = len(plan)
-mastermix_volume = num_reactions * 8
-
-# Preload the top row of wells with the right volume of mastermix
 num_rows = num_reactions // 8 + 1
-target_volumes = [8 * (num_rows - 1)] * 8
+all_wells = dest_plates[0].wells() + dest_plates[1].wells()
 
-for i in range(num_reactions % 8):
-    target_volumes[i] += 8
-
-for i, vol in enumerate(target_volumes):
-    p200.distribute(vol, master, dest_plates[0].wells(i), blow_out=True, touch_tip=True)
-
-# Distribute down the plate
-for i in range(1,num_rows):
-    p10.transfer(8, dest_plates[0].rows(0), dest_plates[i // 12].rows(i % 12), blow_out=True, touch_tip=True)
+# for i in range(1,num_rows):
+p10.transfer(8, master, all_wells[:num_reactions], blow_out=True, touch_tip=True)
 
 # Add multiples of mastermix to plates with multiple fragments
-all_wells = dest_plates[0].wells() + dest_plates[1].wells()
-for i, construct in plan.iterrows():
-    vol = 8 * (len(construct['Wells'].split(',')) - 1)
-    if vol > 0:
-        p200.transfer(vol, master, all_wells[int(i)], blow_out=True, touch_tip=True)
-
-# Move source DNA into dest mastermixes
-for i,construct in plan.iterrows():
-    fragments = construct['Wells'].split(',')
-    for fragment in fragments:
-        plate, well = fragment.split('-')
-        p200.transfer(2, source_plates[plate].wells(well), all_wells[int(i)], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
+# for i, construct in plan.iterrows():
+#     vol = 8 * (len(construct['Wells'].split(',')) - 1)
+#     if vol > 0:
+#         p200.transfer(vol, master, all_wells[int(i)], blow_out=True, touch_tip=True)
+#
+# # Move source DNA into dest mastermixes
+# for i,construct in plan.iterrows():
+#     fragments = construct['Wells'].split(',')
+#     for fragment in fragments:
+#         plate, well = fragment.split('-')
+#         p200.transfer(2, source_plates[plate].wells(well), all_wells[int(i)], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
 
 print(robot.commands())
+# robot.run()
