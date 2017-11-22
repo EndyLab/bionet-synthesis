@@ -34,7 +34,7 @@ p10_tipracks = [
 ]
 
 trash = containers.load('point', 'A3', 'trash')
-master = containers.load('point', 'B3', 'mastermix')
+master = containers.load('96-flat', 'B3', 'mastermix')
 
 dest_plates = [
     containers.load('96-flat', 'B1'),
@@ -79,7 +79,7 @@ num_reactions = len(plan)
 mastermix_volume = num_reactions * 8
 
 # Preload the top row of wells with the right volume of mastermix
-num_rows = num_reactions // 8
+num_rows = num_reactions // 8 + 1
 target_volumes = [8 * (num_rows - 1)] * 8
 
 for i in range(num_reactions % 8):
@@ -106,5 +106,4 @@ for i,construct in plan.iterrows():
         plate, well = fragment.split('-')
         p200.transfer(2, source_plates[plate].wells(well), all_wells[int(i)], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
 
-import ipdb;ipdb.set_trace()
 print(robot.commands())
