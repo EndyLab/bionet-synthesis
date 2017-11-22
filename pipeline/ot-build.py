@@ -17,39 +17,37 @@ plan = pd.read_csv(args.build_plan, usecols=['Gene','Wells'])
 
 #  Layout:
 #    A     B       C      D      E
-#  3 trash master  source source p10
-#  2 p200  dest    source source p10
-#  1 p200  dest    source source p10
+#  3 p200  master  master source p10
+#  2       dest    dest   source p10
+#  1       trash          source p10
 #
 
-robot.connect() #robot.get_serial_ports_list()[0])
+robot.connect(robot.get_serial_ports_list()[0])
+robot.home()
 
 p200_tipracks = [
-    containers.load('tiprack-200ul', 'A1'),
-    containers.load('tiprack-200ul', 'A2')
+    containers.load('tiprack-200ul', 'A3'),
 ]
 
 p10_tipracks = [
-    containers.load('tiprack-10ul', 'E1'),
-    containers.load('tiprack-200ul', 'E2'),
-    containers.load('tiprack-200ul', 'E3')
+    containers.load('tiprack-10ul', 'E2'),
 ]
 
-trash = containers.load('point', 'A3', 'trash')
-master = containers.load('96-flat', 'B3', 'mastermix')
+p10s_tipracks = [
+    containers.load('tiprack-10ul', 'E3')
+]
+
+trash = containers.load('point', 'B1', 'holywastedplasticbatman')
+master = containers.load('PCR-strip-tall', 'C3')
 
 dest_plates = [
-    containers.load('96-flat', 'B1'),
-    containers.load('96-flat', 'B2')
+    containers.load('96-PCR-tall', 'C2'),
+    containers.load('96-PCR-tall', 'B2')
 ]
 
 source_plates = {
-    layout['C1']: containers.load('96-flat', 'C1'),
-    layout['C2']: containers.load('96-flat', 'C2'),
-    layout['C3']: containers.load('96-flat', 'C3'),
     layout['D1']: containers.load('96-flat', 'D1'),
     layout['D2']: containers.load('96-flat', 'D2'),
-    layout['D3']: containers.load('96-flat', 'D3'),
 }
 
 p10 = instruments.Pipette(
@@ -60,6 +58,16 @@ p10 = instruments.Pipette(
     trash_container=trash,
     channels=8,
     name='p10-8'
+)
+
+p10s = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10s_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p10-8s'
 )
 
 p200 = instruments.Pipette(
@@ -81,21 +89,33 @@ num_reactions = len(plan)
 num_rows = num_reactions // 8 + 1
 all_wells = dest_plates[0].wells() + dest_plates[1].wells()
 
-# for i in range(1,num_rows):
-p10.transfer(8, master, all_wells[:num_reactions], blow_out=True, touch_tip=True)
+print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+
+p10.pick_up_tip()
+
+for i in range(num_rows):
+    p = i // 12
+    r = i % 12
+
+    print("Transferring master mix to plate {} row {}".format(p, r))
+    p10.transfer(8, master['A1'], dest_plates[p].rows(r).bottom(), blow_out=True, touch_tip=True, new_tip='never')
+
+p10.drop_tip()
 
 # Add multiples of mastermix to plates with multiple fragments
-# for i, construct in plan.iterrows():
-#     vol = 8 * (len(construct['Wells'].split(',')) - 1)
-#     if vol > 0:
-#         p200.transfer(vol, master, all_wells[int(i)], blow_out=True, touch_tip=True)
-#
-# # Move source DNA into dest mastermixes
-# for i,construct in plan.iterrows():
-#     fragments = construct['Wells'].split(',')
-#     for fragment in fragments:
-#         plate, well = fragment.split('-')
-#         p200.transfer(2, source_plates[plate].wells(well), all_wells[int(i)], blow_out=True, touch_tip=True, mix_before=(3,10), mix_after=(3,10))
+p10s.pick_up_tip()
+for i, construct in plan.iterrows():
+    vol = 8 * (len(construct['Wells'].split(',')) - 1)
+    if vol > 0:
+        print("Adding {} to well {} for multifragment assembly".format(vol, i))
+        p10s.transfer(vol, master['A1'], all_wells[int(i)].bottom(), blow_out=True, touch_tip=True, new_tip='never')
+p10s.drop_tip()
 
-print(robot.commands())
-# robot.run()
+# Move source DNA into dest mastermixes
+for i,construct in plan.iterrows():
+    print("Building gene {} {}".format(i, construct['Gene']))
+    fragments = construct['Wells'].split(',')
+    for fragment in fragments:
+        plate, well = fragment.split('-')
+        print("    Adding fragment from plate {} well {}".format(plate,well))
+        p10s.transfer(2, source_plates[plate].wells(well).bottom(), all_wells[int(i)].bottom(), blow_out=True, touch_tip=True, mix_before=(3,5))
