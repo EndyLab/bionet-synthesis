@@ -14,7 +14,8 @@
 			"part_type": "#PART_TYPE"
 		},
 		"safety": "#SAFETY",
-		"collection": "#COLLECTION"
+		"collection": "#COLLECTION",
+		"other_tags": "#OTHER_TAGS"
 	},
 
 
