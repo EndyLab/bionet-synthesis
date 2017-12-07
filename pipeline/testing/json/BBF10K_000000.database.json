@@ -1,0 +1,55 @@
+{
+	"_id": "#ID",
+	"gene_name": {
+		"human": "#HUMAN",
+		"gene_id": "#GENE_ID"
+	},
+	"dates": {
+		"date_submitted": "#DATE_SUBMITTED",
+		"date_ordered": "#DATE_ORDERED",
+		"order_number": "#ORDER_NUMBER"
+	},
+	"author": {
+		"author_name": "#AUTHOR_NAME",
+		"author_email": "#AUTHOR_EMAIL",
+		"author_affiliation": "#AUTHOR_AFFILIATION"
+	},
+	"documentation": {
+		"description": "#DESCRIPTION",
+		"references": ["#REFERENCES"],
+		"citations": ["#CITATION"],
+		"type": {
+			"cloning_method": "#CLONING_METHOD",
+			"method_compatibility": ["#METHOD_COMPATIBILITY1", "#METHOD_COMPATIBILITY2"],
+			"overhangs": {
+				"#ENZYME": ["#OVERHANG1", "#OVERHANG2"]
+			},
+			"part_type": "#PART_TYPE"
+		},
+		"safety": "#SAFETY"
+	},
+	"sequence": {
+		"submitted": "#SUBMITTED",
+		"optimized": "#OPTIMIZED",
+		"fragmented": ["#FRAGMENT1seq", "#FRAGMENT2seq"],
+		"fasta": "#FASTA",
+		"genbank": "#GENBANK",
+		"blast": "#BLAST",
+		"twist_scoring": "#TWIST_SCORING",
+		"intellectual_property": "#INTELLECTUAL_PROPERTY"
+	},
+	"metadata": {
+		"status": {
+		       "submitted": "#SUBMITTED",
+		       "ordered": "#ORDERED",
+		       "build_ready": "#BUILD_READY"
+		},
+		"location": {
+			"fragments": {
+				"BBF10K_000000_1": "#FRAGMENT1-location"
+			},
+			"cloned": [ "E.coli;Plate31;WellA1", "B.subtilis;Plate21;WellF5" ]
+		}
+	}
+}
+
