@@ -21,7 +21,9 @@
 
 	"status": {
 		"ordered": "#ORDERED",
+		"will_build": "#WILL_BUILD",
 		"build_ready": "#BUILD_READY",
+		"building": "#BUILDING",
 		"build_complete": "#BUILD_COMPLETE"
 	},
 	"location": {
