@@ -48,7 +48,7 @@ else:
 
     layout = dict(layout)
 
-    
+
 # Configure the robot
 
 #  Layout:
@@ -200,4 +200,3 @@ input("Press enter to continue")
 #        print(c)
 
 plan[:max_reactions].to_csv('../synth1/round1-assemblies.csv')
-
