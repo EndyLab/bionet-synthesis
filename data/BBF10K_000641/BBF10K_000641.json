@@ -1,0 +1,54 @@
+{
+  "id": "BBF10K_000641",
+  "gene_name": "TannenRFP",
+  "authors": [
+    {
+      "name": "",
+      "email": "",
+      "affiliation": "",
+      "project": ""
+    }
+  ],
+  "info": {
+    "database_links": [
+      ""
+    ],
+    "type": {
+      "cloning_method": "",
+      "part_type": ""
+    },
+    "build_type": "",
+    "safety": "",
+    "collection": "",
+    "other_tags": "",
+    "submission_number": ""
+  },
+  "status": {
+    "ordered": "TRUE",
+    "will_build": "",
+    "build_ready": "",
+    "build_attempts": [
+      ""
+    ],
+    "build_complete": ""
+  },
+  "location": {
+    "fragments": [
+      ""
+    ],
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": [
+          ""
+        ]
+      }
+    ]
+  },
+  "dates": {
+    "ordered": "",
+    "build_ready": "",
+    "complete": ""
+  }
+}
