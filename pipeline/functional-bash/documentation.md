@@ -10,6 +10,7 @@ find_recursive : Recursively gives another script each file in the directory. Se
 json_read.sh : Reads a section of a json file
 - $1 file name
 - $2 section to read
+- $3 If = "write", write number to a file called json_read.txt
 
 json_write.sh : Writes a section of a json file
 - $1 file name
@@ -25,5 +26,10 @@ sequence_length.sh : Prints length of FASTA file
 
 sequence_length-global.sh : Prints final number of base pairs from directory
 - $1 data directory
+
+parameter_number.sh : Prints the total number of occurances of a pattern 
+- $1 data directory
+- $2 section to read
+- $3 pattern to read
 
 
