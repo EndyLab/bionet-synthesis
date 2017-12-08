@@ -26,7 +26,7 @@
   "status": {
     "ordered": "TRUE",
     "will_build": "TRUE",
-    "build_ready": "",
+    "build_ready": "TRUE",
     "build_attempts": [
       ""
     ],
@@ -34,8 +34,8 @@
   },
   "location": {
     "fragments": {
-      "BBF10K_000009_1": "",
-      "BBF10K_000009_2": ""
+      "BBF10K_000009_1": "pSHPs0807B412038MU_D5",
+      "BBF10K_000009_2": "pSHPs0826B426849MU_B5"
     },
     "cloned": [
       {
