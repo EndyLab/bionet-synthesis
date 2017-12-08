@@ -1,0 +1,43 @@
+{
+	"gene_name": "#HUMAN",
+	"gene_id": "#GENE_ID",
+	"authors": [{
+		"name": "#AUTHOR_NAME",
+		"email": "#AUTHOR_EMAIL",
+		"affiliation": "#AUTHOR_AFFILIATION",
+		"project": "#AUTHOR_PROJECT"
+	}],
+	"info": {
+		"database_links": ["#DATABASE1", "#DATABASE2"],
+		"type": {
+			"cloning_method": "#CLONING_METHOD",
+			"part_type": "#PART_TYPE"
+		},
+		"safety": "#SAFETY",
+		"collection": "#COLLECTION",
+		"other_tags": "#OTHER_TAGS"
+	},
+
+
+	"status": {
+		"ordered": "#ORDERED",
+		"will_build": "#WILL_BUILD",
+		"build_ready": "#BUILD_READY",
+		"building": "#BUILDING",
+		"build_complete": "#BUILD_COMPLETE"
+	},
+	"location": {
+		"fragments": [{
+			"BBF10K_000000_1": "#FRAGMENT1-location"
+		}],
+		"cloned": [{
+		"vector": "#VECTOR",
+		"organism": "#ORGANISM",
+		"location": [ "#LOCATION"]}]
+	},
+	"dates": {
+		"ordered": "#DATE_ORDERED",
+		"build_ready": "#DATE_RECIEVED",
+		"complete": "#DATE_BUILT"
+	}
+}
