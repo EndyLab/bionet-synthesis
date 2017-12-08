@@ -25,7 +25,7 @@
   },
   "status": {
     "ordered": "TRUE",
-    "will_build": "",
+    "will_build": "TRUE",
     "build_ready": "",
     "build_attempts": [
       ""
@@ -33,9 +33,13 @@
     "build_complete": ""
   },
   "location": {
-    "fragments": [
-      ""
-    ],
+    "fragments": {
+      "BBF10K_000579_1": "",
+      "BBF10K_000579_2": "",
+      "BBF10K_000579_3": "",
+      "BBF10K_000579_4": "",
+      "BBF10K_000579_5": ""
+    },
     "cloned": [
       {
         "vector": "",

@@ -25,7 +25,7 @@
   },
   "status": {
     "ordered": "",
-    "will_build": "",
+    "will_build": "FALSE",
     "build_ready": "",
     "build_attempts": [
       ""
