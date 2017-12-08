@@ -33,9 +33,9 @@
     "build_complete": ""
   },
   "location": {
-    "fragments": [
-      ""
-    ],
+    "fragments": {
+      "BBF10K_000145_1": ""
+    },
     "cloned": [
       {
         "vector": "",
