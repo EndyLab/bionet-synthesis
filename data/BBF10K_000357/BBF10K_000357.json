@@ -30,7 +30,11 @@
     "build_attempts": [
       ""
     ],
-    "build_complete": "Original_Vector_Sequence"
+    "build_complete": "Original_Vector_Sequence",
+    "cloned": {
+      "vector": "pOpen1.0",
+      "organism": "Escherichia_coli"
+    }
   },
   "location": {
     "fragments": {
