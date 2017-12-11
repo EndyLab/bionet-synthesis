@@ -32,7 +32,7 @@ reverse_primer = "M13-Reverse"
 DICT_PATH = './gene_id_dict.json'
 
 # Paths for backbone and data files
-BACKBONE_PATH = '../Sequencing files/popen_v1-1_backbone.fasta'
+BACKBONE_PATH = '../sequencing_files/popen_v1-1_backbone.fasta'
 DATA_PATH = "../data/BBF10K_*/*{}*.ab1".format(forward_primer)
 DATA_FASTA_PATH = "../data/{}/{}.fasta"
 DATA_JSON_PATH = "../data/{}/{}.json"
