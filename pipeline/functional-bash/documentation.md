@@ -32,4 +32,9 @@ parameter_number.sh : Prints the total number of occurances of a pattern
 - $2 section to read
 - $3 pattern to read
 
+sequence_match.sh : Prints number of base pairs synthesized if a field is matched
+- $1 data directory 
+- $2 section to read
+- $3 what to match
+
 
