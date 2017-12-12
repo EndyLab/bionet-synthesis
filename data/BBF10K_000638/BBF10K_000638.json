@@ -31,10 +31,7 @@
       ""
     ],
     "build_complete": "",
-    "cloned": {
-      "vector": "pOpen1.0",
-      "organism": "Escherichia_coli"
-    }
+    "cloned": "NA"
   },
   "location": {
     "fragments": {

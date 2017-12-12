@@ -1,0 +1,1 @@
+[{"vector": "pOpen1.0", "organism": "Escherichia coli", "location": "39.A1"}]

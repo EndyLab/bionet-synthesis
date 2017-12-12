@@ -6,6 +6,8 @@ find_recursive : Recursively gives another script each file in the directory. Se
 - $3 = script to run
 - $4 = second parameter for above script
 - $5 = third parameter for above script
+- $6 = fourth parameter for above script
+- $7 = fifth parameter for above script
 
 json_read.sh : Reads a section of a json file
 - $1 file name
@@ -37,4 +39,6 @@ sequence_match.sh : Prints number of base pairs synthesized if a field is matche
 - $2 section to read
 - $3 what to match
 
+global.sh : Generalized commands to run on command line
+- global.sh edit findif : search for a string in a json section, if it exists, write something to a different section 
 
