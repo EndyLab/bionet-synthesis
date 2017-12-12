@@ -32,16 +32,16 @@ for plate in glob.glob("../plate_maps/*.csv"):
     plates = pd.read_csv(plate)
 
     plates['customer_line_item_id'] = plates['customer_line_item_id'].str.strip()
-
+    print(plates)
     ids = plates['customer_line_item_id'].str.rsplit('_', n=1)
     plates['Gene'] = ids.str[0]
     plates['Fragment'] = ids.str[1]
     plates['Location'] = plates['Plate'] + "_" + plates["Well"]
 
     for index, row in plates.iterrows():
-        print(index)
+        #print(index)
         name = row['Gene']
-        print(name)
+        print("name", name)
 
         if 'link' in name:
             print('link')
@@ -51,26 +51,25 @@ for plate in glob.glob("../plate_maps/*.csv"):
             continue
 
         gene = dictionary[name]
-        print(gene)
+        #print(gene)
 
-        fragment_num = row['Fragment']
-        print(fragment_num)
+        fragment_num = str(row['Fragment'])
+        #print(fragment_num)
 
         fragment = gene + "_" + fragment_num
-        print(fragment)
+        print("fragment", fragment)
 
         for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
             num_locations = 0
-            print(file)
+            print("file", file)
             with open(file,"r") as json_file:
                 data = json.load(json_file)
             for frag in data['location']['fragments']:
                 if frag == fragment:
-                    print(frag)
-                    print("match")
-                    print(data['location']['fragments'][frag])
+                    print("match", frag)
+                    print("old location", data['location']['fragments'][frag])
                     data['location']['fragments'][frag] = row['Location']
-                    print(data['location']['fragments'][frag])
+                    print("new location", data['location']['fragments'][frag])
                 else:
                     print("no match")
 
@@ -90,3 +89,7 @@ for plate in glob.glob("../plate_maps/*.csv"):
                 print("not buildable")
             with open(file,'w') as json_file:
                     json.dump(data,json_file,indent=2)
+            print("cycle done")
+            print("")
+    print("plate {} done".format(plate))
+    #input("next plate?")
