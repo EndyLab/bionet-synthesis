@@ -30,7 +30,9 @@ for file in glob.glob("./gene_id_dict.json"):
 forward_primer = "M13-Forward---20-"
 reverse_primer = "M13-Reverse"
 
-for seqfile in glob.glob("../Sequencing files/*/*.ab1"):
+not_in_dict = []
+
+for seqfile in glob.glob("../sequencing_files/*/*.ab1"):
     print(seqfile)
     print(seqfile[55])
 
@@ -54,6 +56,7 @@ for seqfile in glob.glob("../Sequencing files/*/*.ab1"):
         gene = gene[:11]
 
     if gene not in dictionary:
+        not_in_dict.append(gene)
         continue
 
     print(gene)
@@ -61,4 +64,5 @@ for seqfile in glob.glob("../Sequencing files/*/*.ab1"):
     name = dictionary[gene]
     print(name)
 
-    shutil.copy(seqfile, '../Data/{}'.format(name))
+    shutil.copy(seqfile, '../data/{}'.format(name))
+print(not_in_dict)
