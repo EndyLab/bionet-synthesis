@@ -108,3 +108,7 @@ for plate in glob.glob("../plate_maps/*.csv"):
             print("cycle done")
             print("")
     print("plate {} done".format(plate))
+print("Genes not in the dictionary: ")
+print(not_in_dict)
+print("Genes with 'link':")
+print(linked_genes)

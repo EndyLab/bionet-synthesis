@@ -7,6 +7,7 @@ import glob
 import re
 
 dictionary = {}
+duplicates = []
 
 for file in glob.glob("../data/*/*.json"):
     print(file)
@@ -14,9 +15,13 @@ for file in glob.glob("../data/*/*.json"):
         data = json.load(json_file)
     gene = data["gene_name"]
     idnum = data["id"]
+    if gene in dictionary:
+        duplicates.append(gene)
     row = {gene: idnum}
     print(row)
     dictionary.update(row)
 
 with open('./gene_id_dict.json','w') as json_file:
     json.dump(dictionary,json_file,indent=2)
+
+print(duplicates)

@@ -24,13 +24,14 @@ counter = 0
 plate_map_number = []
 for file in glob.glob("../plate_maps/*.csv"):
     counter = counter + 1
+
+    # Prints the file name without the preceeding path
     print("{}. {}".format(counter,file[14:]))
     plate_map_number.append(file)
 
 # Asks the user for a number corresponding to the plate they want to resuspend
 number = input("Which file: ")
 number = int(number) - 1
-#print("Choose a file: ",plate_map_number[number][14:])
 
 # Import the desired plate map
 plates = pd.read_csv(plate_map_number[number])
@@ -81,6 +82,7 @@ for row,col in locations:
     layout_table.loc[col[1], col[0]] = row
 
 # Displays the required plate map and waits to proceed
+print()
 print("Please arrange the plates in the following configuration:")
 print()
 print(layout_table)
