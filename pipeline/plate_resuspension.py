@@ -150,15 +150,25 @@ p200 = instruments.Pipette(
     name='p200-1'
 )
 
-# Run the protocol
+## Run the protocol
 
-p200.pick_up_tip()
-
+# Iterate through each well
 for i, construct in plan.iterrows():
-    print(construct)
     vol = construct['Volume']
     well = construct['Well']
-    print("well", well)
-    p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
-    p200.mix(3, (vol * 0.8), resuspend_plate.wells(well).bottom())
-    p200.drop_tip()
+
+    # Determine which pipette to use
+    if vol < 20:
+        print("Adding {}ul to well {} with the p10".format(vol, well))
+        p10s.pick_up_tip()
+        p10s.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        print("Mixing with {} 3 times".format(vol * 0.5))
+        p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
+        p10s.drop_tip()
+    else:
+        print("Adding {}ul to well {} with the p200".format(vol, well))
+        p200.pick_up_tip()
+        p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        print("Mixing with {} 3 times".format(vol * 0.5))
+        p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
+        p200.drop_tip()
