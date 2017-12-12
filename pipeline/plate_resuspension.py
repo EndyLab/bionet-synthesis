@@ -7,14 +7,10 @@ import sys
 
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt
-#import seaborn as sns
 
-#import json
 import os
 import glob
 import re
-#import math
 
 ## Take in required information
 
@@ -23,67 +19,78 @@ parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Ope
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
 args = parser.parse_args()
 
-## Get all of the plate maps and display them so you can choose one
+# Get all of the plate maps and display them so you can choose one
 counter = 0
 plate_map_number = []
-for file in glob.glob("../Plate Maps/platemaps/*.csv"):
+for file in glob.glob("../plate_maps/*.csv"):
     counter = counter + 1
-    print("{}. {}".format(counter,file[24:]))
+    print("{}. {}".format(counter,file[14:]))
     plate_map_number.append(file)
 
-## Asks the user for a number corresponding to the plate they want to resuspend
-number = input("Which plate do you want to resuspend: ")
+# Asks the user for a number corresponding to the plate they want to resuspend
+number = input("Which file: ")
 number = int(number) - 1
-print("Resuspending plate",plate_map_number[number][24:])
+#print("Choose a file: ",plate_map_number[number][14:])
 
-## Import the desired plate map
+# Import the desired plate map
 plates = pd.read_csv(plate_map_number[number])
 
-## Calculate the amount of water to resuspend each well with
+# Pulls out all of the unique plate names
+plate_names = pd.Series(plates['Plate'].unique())
+print(plate_names)
+
+# Selects the desired plate to be resuspended
+plate_num = input("Which plate to resuspend: ")
+plate_num = int(plate_num)
+plate = plate_names[plate_num]
+
+# Truncates the dataframe to only include the desired plate
+plates = plates.set_index('Plate')
+plates = plates.loc[plate]
+
+# Calculate the amount of water to resuspend each well with
 amount = plates['Yield (ng)']
 length = plates['synthesized sequence length']
 fmoles = 40
 volume = ((((amount * 1000)/(660*length))*1000) / fmoles) * 2
-plan = pd.DataFrame({'Plate': plates['Plate'],
-                     'Well': plates['Well'],
+plan = pd.DataFrame({'Well': plates['Well'],
                      'Volume': volume})
-plan = plan[['Plate','Well','Volume']]
-print(plan)
+plan = plan[['Well','Volume']]
 
 ## Setting up the OT-1 deck
 
-robot.home()
+# Specify locations, note that locations are indexed by the spot in the array
+locations = np.array([["tiprack-200", "A3"],
+                    ["tiprack-10", "E2"],
+                    ["tiprack-10s1", "E3"],
+                    ["tiprack-10s2", "E1"],
+                    ["trash", "B1"],
+                    ["PCR-strip-tall", "C3"],
+                    ["resuspension-plate", "C2"]])
 
-p200_tipracks = [
-    containers.load('tiprack-200ul', 'A3'),
-]
+# Make the dataframe to represent the OT-1 deck
+deck = ['A1','B2','C3','D2','E1']
+slots = pd.Series(deck)
+columns = sorted(slots.str[0].unique())
+rows = sorted(slots.str[1].unique(), reverse=True)
+layout_table = pd.DataFrame(index=rows, columns=columns)
+layout_table.fillna("", inplace=True)
 
-p10_tipracks = [
-    containers.load('tiprack-10ul', 'E2'),
-]
+# Fill in the data frame with the locations
+for row,col in locations:
+    layout_table.loc[col[1], col[0]] = row
 
-p10s_tipracks = [
-    containers.load('tiprack-10ul', 'E3'),
-    containers.load('tiprack-10ul', 'E1'),
-]
-
-trash = containers.load('point', 'B1', 'holywastedplasticbatman')
-master = containers.load('PCR-strip-tall', 'C3')
-
-dest_plates = [
-    containers.load('96-PCR-tall', 'C2'),
-    containers.load('96-PCR-tall', 'B2')
-]
-
-source_plates = {}
-for slot, plate in layout.items():
-    source_plates[plate] = containers.load('96-flat', slot)
-
-
-
+# Displays the required plate map and waits to proceed
+print("Please arrange the plates in the following configuration:")
+print()
+print(layout_table)
+print()
+input("Press enter to continue")
 
 
-## Setup the robot
+## Initialize the OT-1
+
+# Determine whether to simulate or run the protocol
 if args.run:
     port = robot.get_serial_ports_list()[0]
     print("Connecting robot to port {}".format(port))
@@ -92,8 +99,66 @@ else:
     print("Simulating protcol run")
     robot.connect()
 
+# Start up and declare components on the deck
+robot.home()
 
+p200_tipracks = [
+    containers.load('tiprack-200ul', locations[0,1]),
+]
 
+p10_tipracks = [
+    containers.load('tiprack-10ul', locations[1,1]),
+]
 
+p10s_tipracks = [
+    containers.load('tiprack-10ul', locations[2,1]),
+    containers.load('tiprack-10ul', locations[3,1])
+]
 
-print()
+trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
+master = containers.load('PCR-strip-tall', locations[5,1])
+
+resuspend_plate = containers.load('96-flat', locations[6,1])
+
+p10 = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10_tipracks,
+    trash_container=trash,
+    channels=8,
+    name='p10-8'
+)
+
+p10s = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10s_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p10-8s'
+)
+
+p200 = instruments.Pipette(
+    axis='b',
+    max_volume=200,
+    min_volume=20,
+    tip_racks=p200_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p200-1'
+)
+
+# Run the protocol
+
+p200.pick_up_tip()
+
+for i, construct in plan.iterrows():
+    print(construct)
+    vol = construct['Volume']
+    well = construct['Well']
+    print("well", well)
+    p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
+    p200.mix(3, (vol * 0.8), resuspend_plate.wells(well).bottom())
+    p200.drop_tip()
