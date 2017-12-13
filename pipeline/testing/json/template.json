@@ -25,7 +25,12 @@
 		"will_build": "#WILL_BUILD",
 		"build_ready": "#BUILD_READY",
 		"building": "#BUILDING",
-		"build_complete": "#BUILD_COMPLETE"
+		"build_complete": "#BUILD_COMPLETE",
+		"build_attempts": [{
+			"build_name": "#BUILD_ATTEMPT1",
+			"build_date": "#BUILD_DATE",
+			"build_number": "#BUILD_NUMBER"
+		}]
 	},
 	"location": {
 		"fragments": [{
