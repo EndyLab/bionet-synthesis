@@ -1,50 +1,53 @@
 {
-	"gene_name": "#HUMAN",
-	"gene_id": "#GENE_ID",
+	"gene_name": "",
+	"gene_id": "",
 	"authors": [{
-		"name": "#AUTHOR_NAME",
-		"email": "#AUTHOR_EMAIL",
-		"affiliation": "#AUTHOR_AFFILIATION",
-		"project": "#AUTHOR_PROJECT"
+		"name": "",
+		"email": "",
+		"affiliation": "",
+		"project": ""
 	}],
 	"info": {
-		"database_links": ["#DATABASE1", "#DATABASE2"],
+		"database_links": [""],
 		"type": {
-			"cloning_method": "#CLONING_METHOD",
-			"part_type": "#PART_TYPE",
-			"build_type": "#BUILD_TYPE"
+			"cloning_method": "",
+			"part_type": "",
+			"build_type": ""
 		},
-		"safety": "#SAFETY",
-		"collection": "#COLLECTION",
-		"other_tags": "#OTHER_TAGS"
+		"safety": "",
+		"collection": "",
+		"other_tags": ""
 	},
+	"sequence": {
+		"original_sequence": "",
+		"optimized_sequence": "",
+		"fragment_sequences": {
 
-
+		}
+	},
 	"status": {
-		"ordered": "#ORDERED",
-		"will_build": "#WILL_BUILD",
-		"build_ready": "#BUILD_READY",
-		"building": "#BUILDING",
-		"build_complete": "#BUILD_COMPLETE",
+		"ordered": "",
+		"will_build": "",
+		"build_ready": "",
+		"building": "",
+		"build_complete": "",
 		"build_attempts": [{
-			"build_well": "#BUILD_WELL",
-			"build_date": "#BUILD_DATE",
-			"build_number": "#BUILD_NUMBER",
-			"build_outcome": "#BUILD_OUTCOME"
+			"build_well": "",
+			"build_date": "",
+			"build_number": "",
+			"build_outcome": ""
 		}]
 	},
 	"location": {
-		"fragments": [{
-			"BBF10K_000000_1": "#FRAGMENT1-location"
-		}],
+		"fragments": {}
+		},
 		"cloned": [{
-		"vector": "#VECTOR",
-		"organism": "#ORGANISM",
-		"location": [ "#LOCATION"]}]
-	},
+			"vector": "",
+			"organism": "",
+			"location": [""]}],
 	"dates": {
-		"ordered": "#DATE_ORDERED",
-		"build_ready": "#DATE_RECIEVED",
-		"complete": "#DATE_BUILT"
+		"ordered": "",
+		"build_ready": "",
+		"complete": ""
 	}
 }
