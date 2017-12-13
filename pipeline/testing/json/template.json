@@ -51,6 +51,7 @@
 			"location": [""]
 			}],
 	"dates": {
+		"submitted": "",
 		"ordered": "",
 		"build_ready": "",
 		"complete": ""
