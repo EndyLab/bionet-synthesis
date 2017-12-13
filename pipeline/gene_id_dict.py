@@ -14,7 +14,7 @@ for file in glob.glob("../data/*/*.json"):
     with open(file,"r") as json_file:
         data = json.load(json_file)
     gene = data["gene_name"]
-    idnum = data["id"]
+    idnum = data["gene_id"]
     if gene in dictionary:
         duplicates.append(gene)
     row = {gene: idnum}
