@@ -16,6 +16,7 @@
 			"build_type": "#BUILD_TYPE"
 		},
 		"safety": "#SAFETY",
+		"IP": "",
 		"collection": "#COLLECTION",
 		"other_tags": "#OTHER_TAGS"
 	},
