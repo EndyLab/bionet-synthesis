@@ -18,7 +18,9 @@
 		"safety": "",
 		"IP": "",
 		"collection": "",
-		"other_tags": ""
+		"other_tags": "",
+		"order_number": "",
+		"order_week": ""
 	},
 	"sequence": {
 		"original_sequence": "",
