@@ -5,7 +5,8 @@
 		"name": "#AUTHOR_NAME",
 		"email": "#AUTHOR_EMAIL",
 		"affiliation": "#AUTHOR_AFFILIATION",
-		"project": "#AUTHOR_PROJECT"
+		"project": "#AUTHOR_PROJECT",
+		"orcid": ""
 	}],
 	"info": {
 		"database_links": ["#DATABASE1", "#DATABASE2"],
