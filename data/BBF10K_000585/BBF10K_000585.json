@@ -1,0 +1,65 @@
+{
+  "gene_name": "NanoOrga-luc",
+  "gene_id": "BBF10K_000585",
+  "author": {
+    "name": "Isaac Larkin",
+    "email": "eyesmo@gmail.com",
+    "affiliation": "ChiTown Bio",
+    "project": "null",
+    "orcid": ""
+  },
+  "info": {
+    "database_links": [
+      ""
+    ],
+    "type": {
+      "cloning_method": "10K_MoClo",
+      "part_type": "CDS",
+      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    },
+    "safety": "null",
+    "IP": "",
+    "collection": "null",
+    "other_tags": "null",
+    "order_number": 3,
+    "order_week": "2017.46"
+  },
+  "sequence": {
+    "original_sequence": "ATGGTGTTTACCTTGGAGGATTTTGTCGGCGACTGGCGCCAAACCGCCGGCTATAACTTGGATCAAGTGCTGGAGCAAGGCGGTGTCAGCAGTCTGTTTCAGAATTTGGGTGTCAGCGTTACACCAATTCAACGCATCGTCCTGAGCGGAGAAAATGGCCTGAAGATTGACATCCACGTGATCATCCCATACGAGGGACTGAGCGGTGACCAGATGGGACAAATTGAGAAAATCTTCAAGGTCGTGTATCCAGTGGATGACCACCATTTTAAGGTGATCCTGCATTATGGCACCTTGGTCATCGATGGCGTCACCCCAAACATGATTGACTACTTTGGCCGCCCATACGAAGGAATCGCTGTGTTCGATGGAAAAAAGATCACCGTTACAGGCACATTGTGGAACGGAAATAAAATTATCGATGAGCGCTTGATCAATCCAGATGGAAGCCTGTTGTTCCGCGTGACCATTAATGGCGTGACAGGCTGGCGCTTGTGCGAGCGCATCTTGGCTTGA",
+    "optimized_sequence": "ATGGTGTTTACCTTGGAGGATTTTGTCGGCGACTGGCGCCAAACCGCCGGCTATAACTTGGATCAAGTGCTGGAGCAAGGCGGTGTCAGCAGTCTGTTTCAGAATTTGGGTGTCAGCGTTACACCAATTCAACGCATCGTCCTGAGCGGAGAAAATGGCCTGAAGATTGACATCCACGTGATCATCCCATACGAGGGACTGAGCGGTGACCAGATGGGACAAATTGAGAAAATCTTCAAGGTCGTGTATCCAGTGGATGACCACCATTTTAAGGTGATCCTGCATTATGGCACCTTGGTCATCGATGGCGTCACCCCAAACATGATTGACTACTTTGGCCGCCCATACGAAGGAATCGCTGTGTTCGATGGAAAAAAGATCACCGTTACAGGCACATTGTGGAACGGAAATAAAATTATCGATGAGCGCTTGATCAATCCAGATGGAAGCCTGTTGTTCCGCGTGACCATTAATGGCGTGACAGGCTGGCGCTTGTGCGAGCGCATCTTGGCTTGA",
+    "fragment_sequences": {}
+  },
+  "status": {
+    "ordered": true,
+    "will_build": true,
+    "build_ready": "TRUE",
+    "building": "",
+    "build_complete": "",
+    "build_attempts": [
+      {
+        "build_well": "",
+        "build_date": "",
+        "build_number": "",
+        "build_outcome": ""
+      }
+    ]
+  },
+  "location": {
+    "fragments": {}
+  },
+  "cloned": [
+    {
+      "vector": "",
+      "organism": "",
+      "location": [
+        ""
+      ]
+    }
+  ],
+  "dates": {
+    "submitted": "2017.11.16",
+    "ordered": "2017.11.16",
+    "build_ready": "",
+    "complete": ""
+  }
+}
