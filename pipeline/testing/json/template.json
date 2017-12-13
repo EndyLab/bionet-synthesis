@@ -11,7 +11,8 @@
 		"database_links": ["#DATABASE1", "#DATABASE2"],
 		"type": {
 			"cloning_method": "#CLONING_METHOD",
-			"part_type": "#PART_TYPE"
+			"part_type": "#PART_TYPE",
+			"build_type": "#BUILD_TYPE"
 		},
 		"safety": "#SAFETY",
 		"collection": "#COLLECTION",
