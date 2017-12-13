@@ -1,0 +1,33 @@
+{
+	"Order_1": {
+		"Attempt_1": {
+			"name": "Plates 37-40 unmodified.csv",
+			"date": "UNKNOWN"
+		},
+		"Attempt_2": {
+			"name": "Plates 49-50 unmodified.csv",
+			"date": "2017.08.28"
+		}
+	},
+	"Order_2": {
+		"Attempt_1": {
+			"name": "Map 10-26-2017.csv",
+			"date": "2017.10.26"
+		},
+		"Attempt_2": {
+			"name": "Map 11-07-2017.csv",
+			"date": "2017.11.07"
+		}
+	},
+	"Order_3": {
+		"Attempt_1": {
+			"name": "Map 11-22-2017.csv",
+			"date": "2017.11.22"
+		},
+		"Attempt_2": {
+			"name": "Twist3_attempt2.csv",
+			"date": "2017.12.12"
+		}
+	}
+}
+
