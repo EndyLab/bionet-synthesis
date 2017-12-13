@@ -1,12 +1,12 @@
 # Gene : GFP
 
-# Author
+## Author
 1. Name
 2. Email
 3. Affiliation
 4. Project
 
-# Metadata
+## Metadata
 1. Part type
 2. Uniprot URL link
 3. Safety information

@@ -1,6 +1,6 @@
 # Project : "Project"
 
-# Lab
+## Lab
 1. Association name
 2. PI / Head contact
 3. PI / Head contact email
