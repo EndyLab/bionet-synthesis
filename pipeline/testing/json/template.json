@@ -27,9 +27,10 @@
 		"building": "#BUILDING",
 		"build_complete": "#BUILD_COMPLETE",
 		"build_attempts": [{
-			"build_name": "#BUILD_ATTEMPT1",
+			"build_well": "#BUILD_WELL",
 			"build_date": "#BUILD_DATE",
-			"build_number": "#BUILD_NUMBER"
+			"build_number": "#BUILD_NUMBER",
+			"build_outcome": "#BUILD_OUTCOME"
 		}]
 	},
 	"location": {
