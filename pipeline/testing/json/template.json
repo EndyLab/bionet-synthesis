@@ -2,10 +2,18 @@
 	"gene_name": "",
 	"gene_id": "",
 	"authors": [{
+<<<<<<< HEAD
 		"name": "",
 		"email": "",
 		"affiliation": "",
 		"project": ""
+=======
+		"name": "#AUTHOR_NAME",
+		"email": "#AUTHOR_EMAIL",
+		"affiliation": "#AUTHOR_AFFILIATION",
+		"project": "#AUTHOR_PROJECT",
+		"orcid": ""
+>>>>>>> 703482c0a2471e72f1bb4bed66705ba8d65b239e
 	}],
 	"info": {
 		"database_links": [""],
@@ -14,9 +22,16 @@
 			"part_type": "",
 			"build_type": ""
 		},
+<<<<<<< HEAD
 		"safety": "",
 		"collection": "",
 		"other_tags": ""
+=======
+		"safety": "#SAFETY",
+		"IP": "",
+		"collection": "#COLLECTION",
+		"other_tags": "#OTHER_TAGS"
+>>>>>>> 703482c0a2471e72f1bb4bed66705ba8d65b239e
 	},
 	"sequence": {
 		"original_sequence": "",
