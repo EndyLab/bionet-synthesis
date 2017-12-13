@@ -11,6 +11,8 @@ import math
 
 import shutil
 
+import datetime
+
 counter = 0
 
 # Imports the csv containing all of our data
@@ -72,9 +74,18 @@ for index, row in data.iterrows():
         template["info"]["other_tags"] = row["other_tags"]
         template["status"]["ordered"] = row["ordered"]
         template["status"]["will_build"] = row["will_build"]
+        date = row["date_ordered"]
+        year, month, day = date.split(".")
+        year = int(year)
+        month = int(month)
+        day = int(day)
+        week = datetime.date(year, month, day).isocalendar()[1]
+
+        order_week = str(year) + "." + str(week)
+        template["info"]["order_number"] = row["order_number"]
+        template["info"]["order_week"] = order_week
+        template["dates"]["submitted"] = row["date_ordered"]
         template["dates"]["ordered"] = row["date_ordered"]
 
         with open("./{}/{}.json".format(path,idnum),"w+") as json_file:
             json.dump(template,json_file,indent=2)
-
-    
