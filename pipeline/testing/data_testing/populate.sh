@@ -13,8 +13,7 @@ do
 	echo "$full_id"
 	mkdir nbdata/$full_id
         jq ".id = \"$full_id\"" template.json > nbdata/$full_id/$full_id.json
-	jq ".gene_name = \"$CDS\"" nbdata/$full_id/$full_id.json | sponge nbdata/$full_id/$full_id.json 
+	jq ".gene_name = \"$CDS\"" nbdata/$full_id/$full_id.json | sponge nbdata/$full_id/$full_id.json
 	echo ">$CDS" > nbdata/$full_id/$full_id.fasta
 	echo "$sequence" >> nbdata/$full_id/$full_id.fasta
 done
-
