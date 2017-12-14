@@ -38,7 +38,7 @@ for index, row in data.iterrows():
     #if counter == 10:
     #    break
 
-    # Takes in the name of the fragment and decides if it has a fragment or not
+    # Takes in the name and sequence of the fragment and decides if it has a fragment or not
     name = row["Fragment"]
     seq = row["Sequence"]
     if name[-2] != "_":
@@ -54,13 +54,18 @@ for index, row in data.iterrows():
     link_count = 0
     if 'link' in gene:
         print('link')
+
+        # Creates an array with all of the linked genes inside
         genes = gene.split("_link_")
+
+        # Iterates through the each gene to assign the fragment name and sequence
         for linked in genes:
             idnum = dictionary[linked]
             linked_genes.append(idnum)
             id_frag = idnum + "_" + fragment
             for file in glob.glob("../data/{}/{}.json".format(idnum,idnum)):
                 print(file)
+                
                 # Open the json file
                 with open(file,"r") as json_file:
                     data = json.load(json_file)
@@ -92,7 +97,6 @@ for index, row in data.iterrows():
             data = json.load(json_file)
         data["location"]["fragments"][id_frag] = ""
         data["sequence"]["fragment_sequences"][id_frag] = seq
-        #print(data["location"]["fragments"][name])
         with open(file,'w') as json_file:
                 json.dump(data,json_file,indent=2)
     print("cycle")

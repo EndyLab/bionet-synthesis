@@ -67,7 +67,7 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10s2", "E1"],
                     ["trash", "B1"],
                     ["PCR-strip-tall", "C3"],
-                    ["resuspension-plate", "C2"]])
+                    ["PLATE HERE", "C2"]])
 
 # Make the dataframe to represent the OT-1 deck
 deck = ['A1','B2','C3','D2','E1']
