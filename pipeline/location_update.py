@@ -23,6 +23,7 @@ from Bio.Alphabet import generic_dna
 
 linked_genes = []
 not_in_dict = []
+#abandoned = []
 
 # Import the Gene -> ID dictionary to allow the use of the gene name
 for file in glob.glob("./gene_id_dict.json"):
@@ -32,7 +33,7 @@ for file in glob.glob("./gene_id_dict.json"):
             dictionary = json.load(json_file_dict)
 
 # Iterate through all of the plate maps in the directory
-for plate in glob.glob("../plate_maps/*.csv"):
+for plate in glob.glob("../plate_maps/Order2_Attempt2_*.csv"):
     plates = pd.read_csv(plate)
 
     # Modify the customer line item ids to extract the gene name/ID from them
@@ -99,8 +100,18 @@ for plate in glob.glob("../plate_maps/*.csv"):
             if num_locations == len(data['location']['fragments']):
                 print("buildable")
                 data['status']["build_ready"] = "TRUE"
+            #elif plate[-16] == "2":
+            #    print("not buildable")
+            #    if plate[-16] == 2:
+            #    print(plate[-16])
+            #    print("second plate", plate)
+            #    abandoned.append(gene)
+            #    data['status']["abandoned"] = "TRUE"
             else:
                 print("not buildable")
+            #    print(plate[-16])
+            #    print("first plate", plate)
+            #    data['status']["abandoned"] = "unsure"
 
             # Writes a new json with the modified data
             with open(file,'w') as json_file:
@@ -112,3 +123,5 @@ print("Genes not in the dictionary: ")
 print(not_in_dict)
 print("Genes with 'link':")
 print(linked_genes)
+#print("Abandoned genes':")
+#print(abandoned)
