@@ -17,16 +17,46 @@ import math
 
 ## Take in required information
 
-targets = []
+# Load files
+parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+args = parser.parse_args()
 
+# User input
+#num_reactions = input("How many reactions: ")
+#max_plates = input("Number of plates to pull from: ")
+#max_frag = input("Max number of fragments to assemble: ")
+#manual = input("Would you like to specify the plates: ")
+#if manual != "":
+#    plates = raw_input("Specify the plates: ")
+#else:
+#    plates = []
+
+## Create a list of all well indexes to add in later
+letter = ["A","B","C","D","E","F","G","H"]
+number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+target_well = []
+temp_well = 0
+for n in number:
+    for l in letter:
+        temp_well = l + n
+        target_well.append(temp_well)
+
+## Define initial conditions
+targets = []
 counter = 0
-gene = 0
-plate = 0
-well = 0
-row = 0
-unique = 0
-plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-#plates = []
+frag_list = []
+master_well = []
+
+max_plates = 3
+#plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
+plates = []
+
+gene_list = []
+gene_num = 1
+
+num_reactions = 20
+max_frag = 2
 
 # Query the database and iterate through each json file
 for file in glob.glob("../data/BBF10K*/*.json"):
@@ -41,54 +71,221 @@ for file in glob.glob("../data/BBF10K*/*.json"):
         continue
     print("build ready")
 
+    #Set a limit for how many you want to run
+    if gene_num == num_reactions:
+        break
+
     # Pull general information about the gene
-    gene = data["id"]
+    gene = data["gene_id"]
     locations = data["location"]["fragments"]
     frag_num = len(locations)
+
+    # Set the limit on how many fragments you want to build in one reaction
+    if frag_num > max_frag:
+        continue
     print("number of fragments: ", frag_num)
 
-    number = 0
+    # Start a counter for the fragment number
+    frag_count = 0
 
     # Iterate through all of the fragments
     for fragment in locations:
         print(fragment)
 
+        # Sets a skip variable to allow you to skip in a nested for loop
+        skip = 0
+
+        # Starts the counter at 0 and then increments up
+        frag_count = frag_count + 1
+
         # Pulls out the location for a specific fragment
         frag_loc = data["location"]["fragments"][fragment]
 
-        # Separate the well from the plate and determine how many unique plates there are
+        # Separates the well from the plate and determines how many unique plates there are
         plate_loc, well = frag_loc.split("_")
         plates.append(plate_loc)
         plates_pd = pd.Series(plates)
-        unique = len(plates_pd.unique())
-        print("number on unique plates:", unique)
+        unique_plates = len(plates_pd.unique())
+        print("number on unique plates:", unique_plates)
 
-        # If there are too many unique plates it roles back the counter and series of plates and moves to the next file
-        if unique > 2:
+        # Determines if there are now too many unique plates
+        if unique_plates > max_plates:
 
-            counter = counter - 1 + number
-            plates = plates[:-1]
-            print("counter: ", counter)
+            # Removes the number of plates that were added based on the number of fragments that came before it
+            plates = plates[:-(frag_count)]
+
+            # If a later fragment is not within the plates specified it goes back and removes the earlier genes that were added
+            if frag_count != 1:
+                gene_list = gene_list[:-(frag_count - 1)]
             print("too many unique plates")
-            continue
-        else:
-            row = [gene, plate_loc, well]
-            targets.append(row)
-        number = number + 1
+            print()
 
-    counter = counter + 1
-    print("counter:", counter)
-    if counter == 9:
-        break
+            # Breaks out of the fragment for loop and sets it to skip to the next gene
+            skip = 1
+            break
+        else:
+            # If the gene passes all of the checks it is added to the list of genes to be made
+            gene_list.append(gene)
+
+            # Turn the list into a series and determine the number of unique genes
+            gene_list_pd = pd.Series(gene_list)
+            gene_num = len(gene_list_pd.unique())
+
+            # Attaches a destination well to the target gene
+            dest_well = target_well[gene_num - 1]
+
+            # Builds a row containing all of the required information for aliquoting the fragments
+            row = [gene, plate_loc, well, dest_well]
+            targets.append(row)
+            print("gene_num", gene_num)
+        print()
+    # Skips to the next gene if one of the fragments requires a plate that we are not including
+    if skip == 1:
+        continue
+    # If all of the fragments are cleared the number of reactions needed for the master mix is added along with the well it corresponds to
+    else:
+        frag_list.append(frag_num)
+        print("num frag list: ", len(frag_list))
+        master_well.append(target_well[gene_num - 1])
+        print("num wells: ", len(master_well))
+    print()
+    print()
+print("unique plates: ", plates_pd.unique())
+
+# Creates a dataframe with the well and
+master_plan = pd.DataFrame({
+    "Well" : master_well,
+    "Fragments" : frag_list
+})
+master_plan = master_plan[["Well","Fragments"]]
 
 targets = np.array(targets)
 plan = pd.DataFrame({
     "Plate" : targets[:,1],
-     "Gene" : targets[:,0],
-     "Well" : targets[:,2]
+    "Gene" : targets[:,0],
+    "Well" : targets[:,2],
+    "Destination" : targets[:,3]
     })
-#plan = plan.set_index('Plate')
-#print()
-#print("plates used: ", plan["Plate"].unique())
+plan = plan[["Gene","Plate","Well","Destination"]]
+print(plan)
+print(len(target_well))
+print(master_plan)
+print()
+input("Press enter to continue")
 
-plan
+## Setting up the OT-1 deck
+
+# Configuration
+SOURCE_SLOTS = ['D2','D3','D1','B2']
+
+
+# Specify locations, note that locations are indexed by the spot in the array
+locations = np.array([["tiprack-200", "A3"],
+                    ["tiprack-10", "E2"],
+                    ["tiprack-10s1", "E3"],
+                    ["tiprack-10s2", "E1"],
+                    ["trash", "B1"],
+                    ["PCR-strip-tall", "C3"],
+                    ["DEST_PLATE", "C2"]])
+
+# Attach a location to each of the source plates
+layout = list(zip(plates_pd.unique(),SOURCE_SLOTS[:len(plates)]))
+locations = np.append(locations,layout, axis=0)
+
+# Make the dataframe to represent the OT-1 deck
+deck = ['A1','B2','C3','D2','E1']
+slots = pd.Series(deck)
+columns = sorted(slots.str[0].unique())
+rows = sorted(slots.str[1].unique(), reverse=True)
+layout_table = pd.DataFrame(index=rows, columns=columns)
+layout_table.fillna("---", inplace=True)
+
+# Fill in the data frame with the locations
+for row,col in locations:
+    layout_table.loc[col[1], col[0]] = row
+
+# Displays the required plate map and waits to proceed
+print()
+print("Please arrange the plates in the following configuration:")
+print()
+print(layout_table)
+print()
+input("Press enter to continue")
+
+## Initialize the OT-1
+
+# Determine whether to simulate or run the protocol
+if args.run:
+    port = robot.get_serial_ports_list()[0]
+    print("Connecting robot to port {}".format(port))
+    robot.connect(port)
+else:
+    print("Simulating protcol run")
+    robot.connect()
+
+# Start up and declare components on the deck
+robot.home()
+
+p200_tipracks = [
+    containers.load('tiprack-200ul', locations[0,1]),
+]
+
+p10_tipracks = [
+    containers.load('tiprack-10ul', locations[1,1]),
+]
+
+p10s_tipracks = [
+    containers.load('tiprack-10ul', locations[2,1]),
+    containers.load('tiprack-10ul', locations[3,1])
+]
+
+trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
+master = containers.load('PCR-strip-tall', locations[5,1])
+
+dest_plate = containers.load('96-flat', locations[6,1])
+
+source_plates = {}
+for plate, slot in layout:
+    source_plates[plate] = containers.load('96-flat', slot)
+    print("source_plates", source_plates[plate])
+
+p10 = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10_tipracks,
+    trash_container=trash,
+    channels=8,
+    name='p10-8'
+)
+
+p10s = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10s_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p10-8s'
+)
+
+p200 = instruments.Pipette(
+    axis='b',
+    max_volume=200,
+    min_volume=20,
+    tip_racks=p200_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p200-1'
+)
+
+## Run the protocol
+
+# Determine the number of rows to aliquot
+num_rows = num_reactions // 8
+print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+
+
+for row in range(num_rows):
+    print("Transferring master mix to row {}".format(row))
+    p10.transfer(8, master['A1'], dest_plate.rows(row).bottom(), blow_out=True, touch_tip=True, new_tip='never')

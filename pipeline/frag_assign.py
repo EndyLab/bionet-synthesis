@@ -18,6 +18,7 @@ counter = 0
 no_frag = []
 linked_genes = []
 not_in_dict = []
+genes = []
 
 # Import the Gene -> ID dictionary to allow the use of the gene name
 for file in glob.glob("./gene_id_dict.json"):
@@ -37,7 +38,7 @@ for index, row in data.iterrows():
     #if counter == 10:
     #    break
 
-    # Takes in the name of the fragment and decides if it has a fragment or not
+    # Takes in the name and sequence of the fragment and decides if it has a fragment or not
     name = row["Fragment"]
     seq = row["Sequence"]
     if name[-2] != "_":
@@ -50,10 +51,31 @@ for index, row in data.iterrows():
     fragment = name[-1]
 
     # Checks if it is a linked gene, right now it only takes the first gene
+    link_count = 0
     if 'link' in gene:
         print('link')
-        linked_genes.append(gene)
-        gene =  gene[:11]
+
+        # Creates an array with all of the linked genes inside
+        genes = gene.split("_link_")
+
+        # Iterates through the each gene to assign the fragment name and sequence
+        for linked in genes:
+            idnum = dictionary[linked]
+            linked_genes.append(idnum)
+            id_frag = idnum + "_" + fragment
+            for file in glob.glob("../data/{}/{}.json".format(idnum,idnum)):
+                print(file)
+                
+                # Open the json file
+                with open(file,"r") as json_file:
+                    data = json.load(json_file)
+                data["location"]["fragments"][id_frag] = ""
+                data["sequence"]["fragment_sequences"][id_frag] = seq
+                with open(file,'w') as json_file:
+                    json.dump(data,json_file,indent=2)
+                link_count = 1
+    if link_count == 1:
+        continue
 
     # Checks if the gene is in the dictionary and if not record it and move on
     if gene not in dictionary:
@@ -75,7 +97,6 @@ for index, row in data.iterrows():
             data = json.load(json_file)
         data["location"]["fragments"][id_frag] = ""
         data["sequence"]["fragment_sequences"][id_frag] = seq
-        #print(data["location"]["fragments"][name])
         with open(file,'w') as json_file:
                 json.dump(data,json_file,indent=2)
     print("cycle")
@@ -84,3 +105,5 @@ for index, row in data.iterrows():
 
 print(no_frag)
 print(not_in_dict)
+print()
+print("linked genes: ", linked_genes)

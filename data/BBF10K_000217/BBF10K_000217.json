@@ -35,9 +35,10 @@
   "status": {
     "ordered": true,
     "will_build": true,
+    "abandoned": "",
     "build_ready": "TRUE",
     "building": "",
-    "build_complete": "",
+    "build_complete": "Good_Sequence",
     "build_attempts": [
       {
         "build_well": "",
