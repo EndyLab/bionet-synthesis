@@ -1,4 +1,6 @@
-# Gene : Exmpl
+# Gene
+1. Gene name
+2. Part type
 
 ## Author
 1. Name
@@ -7,16 +9,21 @@
 4. Project
 
 ## Metadata
-1. Part type
-2. Uniprot URL link
-3. Safety information
-4. Collection #hastags
-5. Other #hastags
+1. Uniprot URL link
+2. Safety information
+3. Collection #hastags
+4. Other #hastags
+
+# Sequence
+ATGAGATGTAGATGATGATGATGATAGTGATGAGAGAGGA
 
 # Gene Description
-This is a test of markdown format for incoming submissions. 
+This is a test of markdown format for incoming submissions.
+
+* Something here
+* Something there 
 
 # References
 1. https://www.reddit.com/r/bionet/comments/7jlprq/10k_genes_bot_testing_nothing_interesting/
 
-# Sequence
+

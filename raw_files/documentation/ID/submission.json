@@ -1,0 +1,17 @@
+{
+  "Gene": {
+    "Author": [
+      "Name",
+      "Email",
+      "Affiliation",
+      "Project"
+    ],
+    "Metadata": [
+      "Uniprot URL link",
+      "Safety information",
+      "Collection #hastags",
+      "Other #hastags"
+    ]
+  },
+  "Sequence": "ATGAGATGTAGATGATGATGATGATAGTGATGAGAGAGGA"
+}
