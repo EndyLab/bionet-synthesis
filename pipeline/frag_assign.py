@@ -54,7 +54,6 @@ for index, row in data.iterrows():
     link_count = 0
     if 'link' in gene:
         print('link')
-        #linked_genes.append(gene)
         genes = gene.split("_link_")
         for linked in genes:
             idnum = dictionary[linked]
