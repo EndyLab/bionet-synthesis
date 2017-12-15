@@ -53,7 +53,6 @@ max_plates = 3
 plates = []
 
 gene_list = []
-gene_num = 1
 
 num_reactions = 20
 max_frag = 2
@@ -72,7 +71,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     print("build ready")
 
     #Set a limit for how many you want to run
-    if gene_num == num_reactions:
+    if len(gene_list) == num_reactions:
         break
 
     # Pull general information about the gene
@@ -85,72 +84,37 @@ for file in glob.glob("../data/BBF10K*/*.json"):
         continue
     print("number of fragments: ", frag_num)
 
-    # Start a counter for the fragment number
-    frag_count = 0
+    # Check if we'll need too many source plates if we add these gene to the build.
+    new_plates = [loc.split("_")[0] for loc in locations.values()]
+    new_plate_count = len(pd.unique(plates + new_plates))
+    if new_plate_count > max_plates:
+        # We'll have too many source plates if we add this gene.
+        continue
+
+    gene_list.append(gene)
+    plates += new_plates
+    dest_well = target_well[len(gene_list) - 1]
+
+    print("number of unique plates:", len(pd.unique(plates)))
 
     # Iterate through all of the fragments
-    for fragment in locations:
+    for frag_count, (fragment, frag_loc) in enumerate(locations.items()):
         print(fragment)
 
-        # Sets a skip variable to allow you to skip in a nested for loop
-        skip = 0
-
-        # Starts the counter at 0 and then increments up
-        frag_count = frag_count + 1
-
-        # Pulls out the location for a specific fragment
-        frag_loc = data["location"]["fragments"][fragment]
-
-        # Separates the well from the plate and determines how many unique plates there are
         plate_loc, well = frag_loc.split("_")
-        plates.append(plate_loc)
-        plates_pd = pd.Series(plates)
-        unique_plates = len(plates_pd.unique())
-        print("number on unique plates:", unique_plates)
+        row = [gene, plate_loc, well, dest_well]
+        targets.append(row)
 
-        # Determines if there are now too many unique plates
-        if unique_plates > max_plates:
-
-            # Removes the number of plates that were added based on the number of fragments that came before it
-            plates = plates[:-(frag_count)]
-
-            # If a later fragment is not within the plates specified it goes back and removes the earlier genes that were added
-            if frag_count != 1:
-                gene_list = gene_list[:-(frag_count - 1)]
-            print("too many unique plates")
-            print()
-
-            # Breaks out of the fragment for loop and sets it to skip to the next gene
-            skip = 1
-            break
-        else:
-            # If the gene passes all of the checks it is added to the list of genes to be made
-            gene_list.append(gene)
-
-            # Turn the list into a series and determine the number of unique genes
-            gene_list_pd = pd.Series(gene_list)
-            gene_num = len(gene_list_pd.unique())
-
-            # Attaches a destination well to the target gene
-            dest_well = target_well[gene_num - 1]
-
-            # Builds a row containing all of the required information for aliquoting the fragments
-            row = [gene, plate_loc, well, dest_well]
-            targets.append(row)
-            print("gene_num", gene_num)
         print()
-    # Skips to the next gene if one of the fragments requires a plate that we are not including
-    if skip == 1:
-        continue
+
     # If all of the fragments are cleared the number of reactions needed for the master mix is added along with the well it corresponds to
-    else:
-        frag_list.append(frag_num)
-        print("num frag list: ", len(frag_list))
-        master_well.append(target_well[gene_num - 1])
-        print("num wells: ", len(master_well))
+    frag_list.append(frag_num)
+    print("num frag list: ", len(frag_list))
+    master_well.append(dest_well)
+    print("num wells: ", len(master_well))
     print()
     print()
-print("unique plates: ", plates_pd.unique())
+print("unique plates: ", pd.unique(plates))
 
 # Creates a dataframe with the well and
 master_plan = pd.DataFrame({
