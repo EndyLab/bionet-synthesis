@@ -48,12 +48,12 @@ frag_list = []
 master_well = []
 
 max_plates = 2
-plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-#plates = []
+#plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
+plates = []
 
 gene_list = []
 
-num_reactions = 4
+num_reactions = 8
 max_frag = 2
 
 # Query the database and iterate through each json file
@@ -68,6 +68,16 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     if data["status"]["build_ready"] != "TRUE":
         continue
     print("build ready")
+
+    # Determine if it has alreday been built
+    if data["status"]["build_complete"] != "":
+        continue
+    print("Aready attempted")
+
+    # Determine if it is currently in the cloning pipeling
+    if data["status"]["building"] == True:
+        continue
+    print("Not in process")
 
     #Set a limit for how many you want to run
     if len(gene_list) == num_reactions:
@@ -345,7 +355,7 @@ plate_map.set_index("Gene")
 print()
 print(plate_map)
 
-#plate_map.to_csv(file_name)
+plate_map.to_csv(file_name)
 
 ## Udate the json file of all of the attempted genes
 
@@ -357,10 +367,11 @@ for index, row in plate_map.iterrows():
         # Open and store the data within the json file
         with open(file,"r") as json_file:
             data = json.load(json_file)
-        #data["status"]["build_attempt"] = {}
 
-        if len(data["status"]["build_attempts"]) > 1:
+        # Adds a new set of build descriptions
+        if data["status"]["build_attempts"][0]["build_well"] != "":
             data["status"]["build_attempts"].append({})
+
         attempt_num = len(data["status"]["build_attempts"]) - 1
         print(attempt_num)
         data["status"]["build_attempts"][attempt_num] = {}
@@ -369,9 +380,9 @@ for index, row in plate_map.iterrows():
         data["status"]["build_attempts"][attempt_num]["build_number"] = build_name
         data["status"]["build_attempts"][attempt_num]["build_outcome"] = "In Process"
         data["status"]["building"] = True
-        #data["status"]["build_attempts"] = {}
         print(data["status"])
 
-
+        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+            json.dump(data,json_file,indent=2)
 
 print()
