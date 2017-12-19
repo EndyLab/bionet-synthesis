@@ -357,10 +357,13 @@ for index, row in plate_map.iterrows():
         # Open and store the data within the json file
         with open(file,"r") as json_file:
             data = json.load(json_file)
-        #data["status"]["build_attempt"] = {}
 
-        if len(data["status"]["build_attempts"]) > 1:
+        # Adds a new set of build descriptions only when there is one set
+
+        if data["status"]["build_attempts"][0]["build_well"] != "":
             data["status"]["build_attempts"].append({})
+
+        #if len(data["status"]["build_attempts"]) > 1:
         attempt_num = len(data["status"]["build_attempts"]) - 1
         print(attempt_num)
         data["status"]["build_attempts"][attempt_num] = {}
