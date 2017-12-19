@@ -53,7 +53,7 @@ plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
 
 gene_list = []
 
-num_reactions = 20
+num_reactions = 4
 max_frag = 2
 
 # Query the database and iterate through each json file
@@ -350,19 +350,27 @@ print(plate_map)
 ## Udate the json file of all of the attempted genes
 
 for index, row in plate_map.iterrows():
-    file = glob.glob("../data/{}/{}.json".format(row["Gene"],row["Gene"]))
-    print(file)
+    gene = row["Gene"]
+    for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
+        print(file)
 
-    # Open and store the data within the json file
-    with open(file,"r") as json_file:
-        data = json.load(json_file)
+        # Open and store the data within the json file
+        with open(file,"r") as json_file:
+            data = json.load(json_file)
+        #data["status"]["build_attempt"] = {}
 
-    data["status"]["build_attempts"][build_name] = {
-        "build_well" : row["Destination"],
-        "build_date" : now,
-        "build_outcome" : "In process"
-    }
-    data["status"]["building"] = True
+        if len(data["status"]["build_attempts"]) > 1:
+            data["status"]["build_attempts"].append({})
+        attempt_num = len(data["status"]["build_attempts"]) - 1
+        print(attempt_num)
+        data["status"]["build_attempts"][attempt_num] = {}
+        data["status"]["build_attempts"][attempt_num]["build_well"] = row["Destination"]
+        data["status"]["build_attempts"][attempt_num]["build_date"] = now
+        data["status"]["build_attempts"][attempt_num]["build_number"] = build_name
+        data["status"]["build_attempts"][attempt_num]["build_outcome"] = "In Process"
+        data["status"]["building"] = True
+        #data["status"]["build_attempts"] = {}
+        print(data["status"])
 
 
 
