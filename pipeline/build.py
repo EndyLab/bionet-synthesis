@@ -375,6 +375,7 @@ for index, row in plate_map.iterrows():
         #data["status"]["build_attempts"] = {}
         print(data["status"])
 
-
+        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+            json.dump(data,json_file,indent=2)
 
 print()
