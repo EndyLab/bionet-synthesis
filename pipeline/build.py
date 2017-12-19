@@ -157,10 +157,10 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10", "E2"],
                     ["tiprack-10s1", "E3"],
                     ["tiprack-10s2", "E1"],
-                    ["trash", "B1"],
+                    ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
                     ["DEST_PLATE", "C2"],
-                    ["Tube Rack","A1"]])
+                    ["Tube Rack","B1"]])
 
 # Attach a location to each of the source plates
 layout = list(zip(pd.unique(plates),SOURCE_SLOTS[:len(plates)]))
@@ -284,17 +284,13 @@ p200 = instruments.Pipette(
 ## Aliquot the master mix into the PCR tube strip
 
 vol_per_tube = num_rows * 8 * extra_master
-vol_A1 = (total_num - num_reactions) * 8 * extra_master
 
-print("{}ul into each PCR tube and {}ul extra into A1".format(vol_per_tube,vol_A1))
+print("{}ul into each PCR tube".format(vol_per_tube))
 
 p200.pick_up_tip()
 for well in range(8):
     print("Transferring {}ul to well {}".format(vol_per_tube,well))
     p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),touch_tip=True, mix_before=(3,50),new_tip='never')
-
-print("Transferring an extra {}ul to well A1".format(vol_A1))
-p200.transfer(vol_A1, centrifuge_tube['A1'].bottom(),master['A1'].bottom(), touch_tip=True, mix_before=(3,50),new_tip='never')
 p200.drop_tip()
 
 ## Aliquot the master mix into all of the desired wells
@@ -310,7 +306,7 @@ for index, row in master_plan.iterrows():
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume,master['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
@@ -386,3 +382,5 @@ for index, row in plate_map.iterrows():
             json.dump(data,json_file,indent=2)
 
 print()
+
+#little note

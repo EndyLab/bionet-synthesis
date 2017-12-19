@@ -12,7 +12,10 @@ import os
 import glob
 import re
 import math
+<<<<<<< HEAD
+=======
 import datetime
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 
 ## Take in required information
 
@@ -53,7 +56,11 @@ plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
 
 gene_list = []
 
+<<<<<<< HEAD
+num_reactions = 48
+=======
 num_reactions = 20
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 max_frag = 2
 
 # Query the database and iterate through each json file
@@ -176,6 +183,8 @@ print(layout_table)
 print()
 input("Press enter to continue")
 
+<<<<<<< HEAD
+=======
 # Determine the number of rows to aliquot
 num_rows = num_reactions // 8
 print("Building {} reactions in {} rows".format(num_reactions, num_rows))
@@ -203,6 +212,7 @@ print(master_mix)
 print()
 input("Press enter to continue")
 
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 ## Initialize the OT-1
 
 # Determine whether to simulate or run the protocol
@@ -271,6 +281,38 @@ p200 = instruments.Pipette(
     name='p200-1'
 )
 
+<<<<<<< HEAD
+## Run the protocol
+
+# Determine the number of rows to aliquot
+num_rows = num_reactions // 8
+print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+
+total_num = 0
+
+for index, row in master_plan.iterrows():
+    rxn_needed = int(row['Fragments'])
+    total_num += rxn_needed
+    
+extra_master = 1.25
+
+master_reactions = total_num * extra_master
+
+print("You need {} rxns of master mix".format(master_reactions))
+
+master_mix = pd.DataFrame({
+            'Component':['Cutsmart','ATP','Vector','T4 Ligase','BbsI','H2O','Total'],
+                    'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(6/96)),(5.166*master_reactions),(master_reactions*8)]
+                                })
+master_mix = master_mix[['Component','Amount']]
+print("Use the table below to create the master mix")
+print()
+print(master_mix)
+print()
+input("Press enter to continue")
+
+=======
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 ## Aliquot the master mix into the PCR tube strip
 
 vol_per_tube = num_rows * 8 * extra_master
@@ -285,6 +327,17 @@ for well in range(8):
 
 print("Transferring an extra {}ul to well A1".format(vol_A1))
 p200.transfer(vol_A1, centrifuge_tube['A1'].bottom(),master['A1'].bottom(), touch_tip=True, mix_before=(3,50),new_tip='never')
+<<<<<<< HEAD
+
+p200.drop_tip()
+
+## Aliquot the master mix into all of the desired wells
+
+p10.pick_up_tip()
+for row in range(num_rows):
+    print("Transferring master mix to row {}".format(row))
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, new_tip='never')
+=======
 p200.drop_tip()
 
 ## Aliquot the master mix into all of the desired wells
@@ -292,6 +345,7 @@ p10.pick_up_tip()
 for row in range(num_rows):
     print("Transferring master mix to row {}".format(row))
     p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 p10.drop_tip()
 
 p10s.pick_up_tip()
@@ -300,12 +354,20 @@ for index, row in master_plan.iterrows():
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+<<<<<<< HEAD
+        p10s.transfer(extra_volume,master['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, new_tip='never')
+
+=======
         p10s.transfer(extra_volume,master['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
 
+<<<<<<< HEAD
+=======
 # Sets the volume to pipet of each fragment to 2uL
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
 frag_vol = 2
 
 for index, row in plan.iterrows():
@@ -315,6 +377,18 @@ for index, row in plan.iterrows():
     gene = row['Gene']
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.pick_up_tip()
+<<<<<<< HEAD
+    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(), blow_out=True, touch_tip=True)
+
+
+
+
+
+
+
+
+
+=======
     p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(), mix_before=(3,8), touch_tip=True)
 
 # Record the current date and time
@@ -367,3 +441,4 @@ for index, row in plate_map.iterrows():
 
 
 print()
+>>>>>>> e9c16ccd11bbc55775098cf0b355b45a44ee6ac9
