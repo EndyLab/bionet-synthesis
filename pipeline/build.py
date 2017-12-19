@@ -356,6 +356,8 @@ plate_map.to_csv(file_name)
 ## Udate the json file of all of the attempted genes
 
 for index, row in plate_map.iterrows():
+    if outcome == 2:
+        break
     gene = row["Gene"]
     for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
         print(file)
