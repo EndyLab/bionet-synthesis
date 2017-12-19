@@ -6,14 +6,13 @@ import sys
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 import json
 import os
 import glob
 import re
 import math
+import datetime
 
 ## Take in required information
 
@@ -48,9 +47,9 @@ counter = 0
 frag_list = []
 master_well = []
 
-max_plates = 3
-#plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-plates = []
+max_plates = 2
+plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
+#plates = []
 
 gene_list = []
 
@@ -150,10 +149,11 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10s2", "E1"],
                     ["trash", "B1"],
                     ["PCR-strip-tall", "C3"],
-                    ["DEST_PLATE", "C2"]])
+                    ["DEST_PLATE", "C2"],
+                    ["Tube Rack","A1"]])
 
 # Attach a location to each of the source plates
-layout = list(zip(plates_pd.unique(),SOURCE_SLOTS[:len(plates)]))
+layout = list(zip(pd.unique(plates),SOURCE_SLOTS[:len(plates)]))
 locations = np.append(locations,layout, axis=0)
 
 # Make the dataframe to represent the OT-1 deck
@@ -173,6 +173,33 @@ print()
 print("Please arrange the plates in the following configuration:")
 print()
 print(layout_table)
+print()
+input("Press enter to continue")
+
+# Determine the number of rows to aliquot
+num_rows = num_reactions // 8
+print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+
+total_num = 0
+
+for index, row in master_plan.iterrows():
+    rxn_needed = int(row['Fragments'])
+    total_num += rxn_needed
+
+extra_master = 1.25
+
+master_reactions = total_num * extra_master
+
+print("You need {} rxns of master mix".format(master_reactions))
+
+master_mix = pd.DataFrame({
+            'Component':['Cutsmart','ATP','Vector','T4 Ligase','BbsI','H2O','Total'],
+            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(6/96)),(5.166*master_reactions),(master_reactions*8)]
+                        })
+master_mix = master_mix[['Component','Amount']]
+print("Use the table below to create the master mix")
+print()
+print(master_mix)
 print()
 input("Press enter to continue")
 
@@ -204,14 +231,15 @@ p10s_tipracks = [
 ]
 
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
+centrifuge_tube = containers.load('tube-rack-2ml',locations[7,1])
 master = containers.load('PCR-strip-tall', locations[5,1])
 
-dest_plate = containers.load('96-flat', locations[6,1])
+dest_plate = containers.load('96-PCR-tall', locations[6,1])
 
 source_plates = {}
 for plate, slot in layout:
     source_plates[plate] = containers.load('96-flat', slot)
-    print("source_plates", source_plates[plate])
+    #print("source_plates", source_plates[plate])
 
 p10 = instruments.Pipette(
     axis='a',
@@ -243,13 +271,99 @@ p200 = instruments.Pipette(
     name='p200-1'
 )
 
-## Run the protocol
+## Aliquot the master mix into the PCR tube strip
 
-# Determine the number of rows to aliquot
-num_rows = num_reactions // 8
-print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+vol_per_tube = num_rows * 8 * extra_master
+vol_A1 = (total_num - num_reactions) * 8 * extra_master
 
+print("{}ul into each PCR tube and {}ul extra into A1".format(vol_per_tube,vol_A1))
 
+p200.pick_up_tip()
+for well in range(8):
+    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),touch_tip=True, mix_before=(3,50),new_tip='never')
+
+print("Transferring an extra {}ul to well A1".format(vol_A1))
+p200.transfer(vol_A1, centrifuge_tube['A1'].bottom(),master['A1'].bottom(), touch_tip=True, mix_before=(3,50),new_tip='never')
+p200.drop_tip()
+
+## Aliquot the master mix into all of the desired wells
+p10.pick_up_tip()
 for row in range(num_rows):
     print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'], dest_plate.rows(row).bottom(), blow_out=True, touch_tip=True, new_tip='never')
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+p10.drop_tip()
+
+p10s.pick_up_tip()
+for index, row in master_plan.iterrows():
+    if int(row['Fragments']) > 1:
+        extra_volume = int(row['Fragments'] - 1) * 8
+        current_well = str(row['Well'])
+        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+        p10s.transfer(extra_volume,master['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+p10s.drop_tip()
+
+## Add the fragments from the source plates to the destination plate
+
+# Sets the volume to pipet of each fragment to 2uL
+frag_vol = 2
+
+for index, row in plan.iterrows():
+    plate = row['Plate']
+    start_well = row['Well']
+    dest_well = row['Destination']
+    gene = row['Gene']
+    print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
+    p10s.pick_up_tip()
+    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(), mix_before=(3,8), touch_tip=True)
+
+# Record the current date and time
+now, seconds = str(datetime.datetime.now()).split(".")
+
+build_num = 0
+if glob.glob("../builds/build*.csv"):
+    print("previous builds")
+    for file in glob.glob("../builds/build*.csv"):
+        if "bad" in file:
+            continue
+        build_num = int(file[15]) + 1
+else:
+    print("no previous builds")
+    build_num = '1'
+
+outcome = int(input("1 = Good run, 2 = Bad run: "))
+build_name = "build{}".format(build_num)
+
+if outcome != 2:
+    file_name = "../builds/{}_{}.csv".format(build_name,now)
+else:
+    file_name = "../builds/bad-{}_{}.csv".format(build_name, now)
+
+plate_map = plan[["Gene","Destination"]]
+plate_map = plate_map.drop_duplicates(subset=['Gene'])
+plate_map.set_index("Gene")
+print()
+print(plate_map)
+
+#plate_map.to_csv(file_name)
+
+## Udate the json file of all of the attempted genes
+
+for index, row in plate_map.iterrows():
+    file = glob.glob("../data/{}/{}.json".format(row["Gene"],row["Gene"]))
+    print(file)
+
+    # Open and store the data within the json file
+    with open(file,"r") as json_file:
+        data = json.load(json_file)
+
+    data["status"]["build_attempts"][build_name] = {
+        "build_well" : row["Destination"],
+        "build_date" : now,
+        "build_outcome" : "In process"
+    }
+    data["status"]["building"] = True
+
+
+
+print()
