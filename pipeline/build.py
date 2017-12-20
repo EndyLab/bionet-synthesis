@@ -47,13 +47,13 @@ counter = 0
 frag_list = []
 master_well = []
 
-max_plates = 2
+max_plates = 1
 #plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-plates = []
+plates = ["pSHPs0807B412037MU"]
 
 gene_list = []
 
-num_reactions = 8
+num_reactions = 16
 max_frag = 2
 
 # Query the database and iterate through each json file
@@ -70,7 +70,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     print("build ready")
 
     # Determine if it has alreday been built
-    if data["status"]["build_complete"] != "":
+    if data["status"]["build_complete"] != "Good_Sequence":
         continue
     print("Aready attempted")
 
@@ -196,7 +196,7 @@ for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
 
-extra_master = 1.25
+extra_master = 1.5
 
 master_reactions = total_num * extra_master
 
@@ -297,7 +297,7 @@ p200.drop_tip()
 p10.pick_up_tip()
 for row in range(num_rows):
     print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
 p10.drop_tip()
 
 p10s.pick_up_tip()
@@ -306,7 +306,7 @@ for index, row in master_plan.iterrows():
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(3,8), new_tip='never')
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
@@ -321,7 +321,8 @@ for index, row in plan.iterrows():
     gene = row['Gene']
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.pick_up_tip()
-    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(), mix_before=(3,8), touch_tip=True)
+    p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
+    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom())
 
 # Record the current date and time
 now, seconds = str(datetime.datetime.now()).split(".")
@@ -356,6 +357,8 @@ plate_map.to_csv(file_name)
 ## Udate the json file of all of the attempted genes
 
 for index, row in plate_map.iterrows():
+    if outcome == 2:
+        break
     gene = row["Gene"]
     for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
         print(file)
