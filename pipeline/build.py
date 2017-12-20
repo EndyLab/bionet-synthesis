@@ -249,7 +249,6 @@ dest_plate = containers.load('96-PCR-tall', locations[6,1])
 source_plates = {}
 for plate, slot in layout:
     source_plates[plate] = containers.load('96-flat', slot)
-    #print("source_plates", source_plates[plate])
 
 p10 = instruments.Pipette(
     axis='a',
@@ -333,10 +332,11 @@ if glob.glob("../builds/build*.csv"):
     for file in glob.glob("../builds/build*.csv"):
         if "bad" in file:
             continue
-        build_num = int(file[15]) + 1
+        build_num = str(int(file[15]) + 1).zfill(3)
+        print("build_num", build_num)
 else:
     print("no previous builds")
-    build_num = '1'
+    build_num = '001'
 
 outcome = int(input("1 = Good run, 2 = Bad run: "))
 build_name = "build{}".format(build_num)
@@ -381,7 +381,7 @@ for index, row in plate_map.iterrows():
         data["status"]["building"] = True
         print(data["status"])
 
-        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
-            json.dump(data,json_file,indent=2)
+        #with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+        #    json.dump(data,json_file,indent=2)
 
 print()

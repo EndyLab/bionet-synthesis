@@ -1,5 +1,4 @@
-## FOR GIT REPOSITORY -- Take in plate map and tells OT volumes to resuspend with
-## Read in a plate_map.csv, add locations, and assesses if it is buildable by iterating through the list
+## FOR GIT REPOSITORY -- Take in build map and tells OT how to plate the cells
 
 from opentrons import robot, containers, instruments
 import argparse
@@ -22,52 +21,56 @@ args = parser.parse_args()
 # Get all of the plate maps and display them so you can choose one
 counter = 0
 plate_map_number = []
-for file in glob.glob("../plate_maps/*.csv"):
-    counter = counter + 1
 
-    # Prints the file name without the preceeding path
-    print("{}. {}".format(counter,file[14:]))
+if glob.glob("../builds/build*.csv"):
+    print("previous builds")
+    for file in glob.glob("../builds/build*.csv"):
+        if "bad" in file:
+            continue
+    counter += 1
+    print("{}. {}".format(counter,file[10:]))
     plate_map_number.append(file)
+else:
+    print("No previous builds")
 
 # Asks the user for a number corresponding to the plate they want to resuspend
 number = input("Which file: ")
 number = int(number) - 1
 
 # Import the desired plate map
-plates = pd.read_csv(plate_map_number[number])
+build_map = pd.read_csv(plate_map_number[number])
+print(plate_map_number[number][10:18])
+print(build_map)
 
-# Pulls out all of the unique plate names
-plate_names = pd.Series(plates['Plate'].unique())
-print(plate_names)
+num_reactions = len(build_map)
 
-# Selects the desired plate to be resuspended
-plate_num = input("Which plate to resuspend: ")
-plate_num = int(plate_num)
-plate = plate_names[plate_num]
+num_rows = num_reactions // 8
 
-# Truncates the dataframe to only include the desired plate
-plates = plates.set_index('Plate')
-plates = plates.loc[plate]
+agar_plate_names = []
+for row in range(num_rows):
+    current_plate = plate_map_number[number][10:18] + "_p" + str(row + 1)
+    agar_plate_names.append(current_plate)
 
-# Calculate the amount of water to resuspend each well with
-amount = plates['Yield (ng)']
-length = plates['synthesized sequence length']
-fmoles = 20
-volume = ((((amount * 1000)/(660*length))*1000) / fmoles) * 2
-plan = pd.DataFrame({'Well': plates['Well'],
-                     'Volume': volume})
-plan = plan[['Well','Volume']]
+print("You will need {} agar plates".format(len(agar_plate_names)))
 
 ## Setting up the OT-1 deck
+
+AGAR_SLOTS = ['D2','D3','D1','B2']
+
+layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 
 # Specify locations, note that locations are indexed by the spot in the array
 locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10", "E2"],
                     ["tiprack-10s1", "E3"],
                     ["tiprack-10s2", "E1"],
-                    ["trash", "B1"],
+                    ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
-                    ["PLATE HERE", "C2"]])
+                    ["Tube Rack","B1"]
+                    ["Transformation", "C2"]
+                    ])
+
+locations = np.append(locations,layout, axis=0)
 
 # Make the dataframe to represent the OT-1 deck
 deck = ['A1','B2','C3','D2','E1']
@@ -117,10 +120,15 @@ p10s_tipracks = [
     containers.load('tiprack-10ul', locations[3,1])
 ]
 
+transformation_plate = containers.load('96-flat', locations[7,1])
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
+centrifuge_tube = containers.load('tube-rack-2ml',locations[6,1])
 master = containers.load('PCR-strip-tall', locations[5,1])
 
-resuspend_plate = containers.load('96-flat', locations[6,1])
+agar_plates = {}
+for plate, slot in layout:
+    agar_plates[plate] = containers.load('96-flat', slot)
+    #print("agar_plates", agar_plates[plate])
 
 p10 = instruments.Pipette(
     axis='a',
@@ -154,23 +162,13 @@ p200 = instruments.Pipette(
 
 ## Run the protocol
 
-# Iterate through each well
-for i, construct in plan.iterrows():
-    vol = construct['Volume']
-    well = construct['Well']
+num_dilutions = 12
+plate_vol = 5
+dilution_vol = 5
 
-    # Determine which pipette to use
-    if vol < 20:
-        print("Adding {}ul to well {} with the p10".format(vol, well))
-        p10s.pick_up_tip()
-        p10s.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        #print("Mixing with {} 3 times".format(vol * 0.5))
-        #p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
-        p10s.drop_tip()
-    else:
-        print("Adding {}ul to well {} with the p200".format(vol, well))
-        p200.pick_up_tip()
-        p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        #print("Mixing with {} 3 times".format(vol * 0.5))
-        #p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
-        p200.drop_tip()
+for plate in range(num_rows):
+    p10.pick_up_tip()
+    for row in range(num_dilutions):
+        p10.transfer(plate_vol, transformation_plate.rows(row), agar_plates[plate])
+        p10.pick_up_tip()
+        p10.transfer(dilution_vol, master['A1'],transformation_plate.rows(row), new_tip=never)
