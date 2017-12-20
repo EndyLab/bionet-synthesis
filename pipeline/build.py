@@ -321,7 +321,7 @@ for index, row in plan.iterrows():
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.pick_up_tip()
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
-    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom())
+    p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(),blow_out=True)
 
 # Record the current date and time
 now, seconds = str(datetime.datetime.now()).split(".")
