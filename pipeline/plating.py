@@ -63,8 +63,8 @@ layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 ## MAKE INTO A DICTIONARY
 locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10_1", "E2"],
-                    ["tiprack-10s", "E3"],
-                    ["tiprack-10_2", "E1"],
+                    ["tiprack-10s", "E1"],
+                    ["tiprack-10_2", "E3"],
                     ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
                     ["Tube Rack","B1"],
@@ -168,13 +168,20 @@ num_dilutions = 12
 plate_vol = 7.5
 dilution_vol = 7.5
 num_rows = 2
+i = 0
 
+p10.pick_up_tip()
 for plate in agar_plates:
-    p10.pick_up_tip()
     for row in range(num_dilutions):
+        if i == 0:
+            continue
         print("Plating {}ul onto {} in row {}".format(plate_vol,plate,row))
-        p10.transfer(plate_vol, transformation_plate.rows(row), agar_plates[plate],new_tip='never',mix_before=(2,9))
+        p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
         p10.drop_tip()
         p10.pick_up_tip()
         print("Diluting with {}ul".format(dilution_vol))
-        p10.transfer(dilution_vol, master['A1'],transformation_plate.rows(row), new_tip='never',mix_before=(2,9))
+        if row == 11:
+            continue
+        p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
+    i += 1
+
