@@ -55,7 +55,7 @@ print("You will need {} agar plates".format(len(agar_plate_names)))
 
 ## Setting up the OT-1 deck
 
-AGAR_SLOTS = ['D2','D3','D1','B2']
+AGAR_SLOTS = ['D2','B2','D1','D3']
 
 layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 
@@ -66,7 +66,7 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10s2", "E1"],
                     ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
-                    ["Tube Rack","B1"]
+                    ["Tube Rack","B1"],
                     ["Transformation", "C2"]
                     ])
 
@@ -120,7 +120,7 @@ p10s_tipracks = [
     containers.load('tiprack-10ul', locations[3,1])
 ]
 
-transformation_plate = containers.load('96-flat', locations[7,1])
+transformation_plate = containers.load('96-PCR-tall', locations[7,1])
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
 centrifuge_tube = containers.load('tube-rack-2ml',locations[6,1])
 master = containers.load('PCR-strip-tall', locations[5,1])
@@ -128,7 +128,7 @@ master = containers.load('PCR-strip-tall', locations[5,1])
 agar_plates = {}
 for plate, slot in layout:
     agar_plates[plate] = containers.load('96-flat', slot)
-    #print("agar_plates", agar_plates[plate])
+    print("agar_plates", agar_plates[plate])
 
 p10 = instruments.Pipette(
     axis='a',
@@ -163,12 +163,21 @@ p200 = instruments.Pipette(
 ## Run the protocol
 
 num_dilutions = 12
-plate_vol = 5
-dilution_vol = 5
+plate_vol = 7.5
+dilution_vol = 7.5
+num_rows = 2
 
-for plate in range(num_rows):
+for plate in agar_plates:
     p10.pick_up_tip()
     for row in range(num_dilutions):
-        p10.transfer(plate_vol, transformation_plate.rows(row), agar_plates[plate])
+        print("Plating {}ul onto {} in row {}".format(plate_vol,plate,row))
+        p10.transfer(plate_vol, transformation_plate.rows(row), agar_plates[plate],new_tip='never',mix_before=(2,9))
+        p10.drop_tip()
         p10.pick_up_tip()
-        p10.transfer(dilution_vol, master['A1'],transformation_plate.rows(row), new_tip=never)
+        print("Diluting with {}ul".format(dilution_vol))
+        p10.transfer(dilution_vol, master['A1'],transformation_plate.rows(row), new_tip='never',mix_before=(2,9))
+
+
+
+
+

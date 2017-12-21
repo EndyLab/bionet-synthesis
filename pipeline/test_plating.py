@@ -43,7 +43,6 @@ print(plate_map_number[number][10:18])
 print(build_map)
 
 num_reactions = len(build_map)
-
 num_rows = num_reactions // 8
 
 agar_plate_names = []
@@ -125,7 +124,7 @@ trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
 centrifuge_tube = containers.load('tube-rack-2ml',locations[6,1])
 master = containers.load('PCR-strip-tall', locations[5,1])
 
-agar_plate = containers.load('96-flat', 'D2')
+agar_plate = containers.load('96-deep-well', 'B2')
 
 #agar_plates = {}
 #for plate, slot in layout:
@@ -167,10 +166,12 @@ p200 = instruments.Pipette(
 num_dilutions = 12
 plate_vol = 5
 dilution_vol = 5
+vol = [1,3,5,11]
 
 p10.pick_up_tip()
-for row in range(12):
-    p10.transfer(row, master['A1'], agar_plate.bottom(), new_tip=never)
+for row in vol:
+    print("Plating {}ul into row {}".format(9,row))
+    p10.transfer(9, master['A1'], agar_plate.rows(row).bottom(),blow_out=True,mix_before=(2,9), new_tip='never')
 
 p10.drop_tip()
 
