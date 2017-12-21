@@ -60,10 +60,11 @@ AGAR_SLOTS = ['D2','B2','D1','D3']
 layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 
 # Specify locations, note that locations are indexed by the spot in the array
+## MAKE INTO A DICTIONARY
 locations = np.array([["tiprack-200", "A3"],
-                    ["tiprack-10", "E2"],
-                    ["tiprack-10s1", "E3"],
-                    ["tiprack-10s2", "E1"],
+                    ["tiprack-10_1", "E2"],
+                    ["tiprack-10s", "E3"],
+                    ["tiprack-10_2", "E1"],
                     ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
                     ["Tube Rack","B1"],
@@ -113,11 +114,12 @@ p200_tipracks = [
 
 p10_tipracks = [
     containers.load('tiprack-10ul', locations[1,1]),
+    containers.load('tiprack-10ul', locations[3,1])
+
 ]
 
 p10s_tipracks = [
-    containers.load('tiprack-10ul', locations[2,1]),
-    containers.load('tiprack-10ul', locations[3,1])
+    containers.load('tiprack-10ul', locations[2,1])
 ]
 
 transformation_plate = containers.load('96-PCR-tall', locations[7,1])
@@ -127,7 +129,7 @@ master = containers.load('PCR-strip-tall', locations[5,1])
 
 agar_plates = {}
 for plate, slot in layout:
-    agar_plates[plate] = containers.load('96-flat', slot)
+    agar_plates[plate] = containers.load('96-deep-well', slot)
     print("agar_plates", agar_plates[plate])
 
 p10 = instruments.Pipette(
@@ -176,8 +178,3 @@ for plate in agar_plates:
         p10.pick_up_tip()
         print("Diluting with {}ul".format(dilution_vol))
         p10.transfer(dilution_vol, master['A1'],transformation_plate.rows(row), new_tip='never',mix_before=(2,9))
-
-
-
-
-
