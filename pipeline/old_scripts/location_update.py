@@ -155,8 +155,8 @@ for plate in glob.glob("../plate_maps/*.csv"):
                 print("not buildable")
 
             # Writes a new json with the modified data
-            with open(file,'w') as json_file:
-                    json.dump(data,json_file,indent=2)
+            #with open(file,'w') as json_file:
+            #        json.dump(data,json_file,indent=2)
             print("cycle done")
             print("")
     print("plate {} done".format(plate))

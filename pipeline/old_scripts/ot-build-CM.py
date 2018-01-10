@@ -184,15 +184,15 @@ input("Press enter to continue")
 
 
 # Move source DNA into dest mastermixes
-#for i,construct in plan.iterrows():
-#    print("Building gene {} {}".format(i, construct['Gene']))
-#    fragments = construct['Wells'].split(',')
-#    for fragment in fragments:
-#        plate, well = fragment.split('-')
-#        print("    Adding fragment from plate {} well {}".format(plate,well))
-#        p10s.transfer(2, source_plates[plate].wells(well).bottom(), all_wells[int(i)].bottom(), blow_out=True, touch_tip=True, mix_before=(3,5))
-#    if i == num_reactions-1:
-#        break
+for i,construct in plan.iterrows():
+    print("Building gene {} {}".format(i, construct['Gene']))
+    fragments = construct['Wells'].split(',')
+    for fragment in fragments:
+        plate, well = fragment.split('-')
+        print("Adding fragment from plate {} well {}".format(plate,well))
+        p10s.transfer(2, source_plates[plate].wells(well).bottom(), all_wells[int(i)].bottom(), blow_out=True, touch_tip=True, mix_before=(3,5))
+    if i == num_reactions-1:
+        break
 #if args.simulate:
 #    print()
 #    print("Ran commands:")

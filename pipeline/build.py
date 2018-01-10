@@ -19,17 +19,34 @@ import datetime
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+parser.add_argument('-m', '--manual', required=False, action="store_true", help="Maunal entry of parameters.")
 args = parser.parse_args()
 
-# User input
-#num_reactions = input("How many reactions: ")
-#max_plates = input("Number of plates to pull from: ")
-#max_frag = input("Max number of fragments to assemble: ")
-#manual = input("Would you like to specify the plates: ")
-#if manual != "":
-#    plates = raw_input("Specify the plates: ")
-#else:
-#    plates = []
+plates = []
+
+if args.manual:
+    num_reactions = input("How many reactions: ")
+    max_plates = input("Number of plates to pull from: ")
+    max_frag = input("Max number of fragments to assemble: ")
+    manual = raw_input("Would you like to specify the plates: ")
+    if manual != "":
+        for num in range(max_plates):
+            single_plate = raw_input("Specify plate: ")
+            plates.append(single_plate)
+    else:
+        plates = []
+else:
+    max_plates = 1
+    print("Max plates: ", max_plates)
+    #plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
+    plates = ["pSHPs0807B412037MU"]
+    print("Pulling from plates: ", plates)
+    num_reactions = 24
+    print("Number of reactions: ", num_reactions)
+    max_frag = 2
+    print("Max number of fragments: ", max_frag)
+    input("Press enter to continue ")
+
 
 ## Create a list of all well indexes to add in later
 letter = ["A","B","C","D","E","F","G","H"]
@@ -46,15 +63,14 @@ targets = []
 counter = 0
 frag_list = []
 master_well = []
-
-max_plates = 1
-#plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-plates = ["pSHPs0807B412037MU"]
-
 gene_list = []
 
-num_reactions = 16
-max_frag = 2
+previous_genes = []
+for file in glob.glob("../builds/*.csv"):
+    print(file)
+    build = pd.read_csv(file)
+    previous_genes += list(build['Gene'])
+print(previous_genes)
 
 # Query the database and iterate through each json file
 for file in glob.glob("../data/BBF10K*/*.json"):
@@ -65,14 +81,19 @@ for file in glob.glob("../data/BBF10K*/*.json"):
         data = json.load(json_file)
 
     # Determine if it is build ready
-    if data["status"]["build_ready"] != "TRUE":
+    if data["status"]["build_ready"] != True:
         continue
     print("build ready")
 
-    # Determine if it has alreday been built
+    # Determine if it has already been built
     if data["status"]["build_complete"] != "Good_Sequence":
         continue
-    print("Aready attempted")
+    print("Not yet successfully built")
+
+    if data['gene_id'] in previous_genes:
+        print("Already attempted")
+        continue
+
 
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
@@ -142,6 +163,8 @@ plan = pd.DataFrame({
 plan = plan[["Gene","Plate","Well","Destination"]]
 print(plan)
 print(len(target_well))
+print()
+print(previous_genes)
 print(master_plan)
 print()
 input("Press enter to continue")
@@ -327,6 +350,8 @@ for index, row in plan.iterrows():
 now, seconds = str(datetime.datetime.now()).split(".")
 
 build_num = 0
+
+# Assigns this build a unique number following the most recent build
 if glob.glob("../builds/build*.csv"):
     print("previous builds")
     for file in glob.glob("../builds/build*.csv"):
@@ -338,6 +363,7 @@ else:
     print("no previous builds")
     build_num = '001'
 
+# Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
 build_name = "build{}".format(build_num)
 
@@ -354,7 +380,7 @@ print(plate_map)
 
 plate_map.to_csv(file_name)
 
-## Udate the json file of all of the attempted genes
+## Update the json file of all of the attempted genes
 
 for index, row in plate_map.iterrows():
     if outcome == 2:
@@ -381,7 +407,7 @@ for index, row in plate_map.iterrows():
         data["status"]["building"] = True
         print(data["status"])
 
-        #with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
-        #    json.dump(data,json_file,indent=2)
+        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+            json.dump(data,json_file,indent=2)
 
 print()

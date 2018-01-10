@@ -12,6 +12,9 @@ import os
 import glob
 import re
 
+# Initial Setup
+fmoles = 20
+
 ## Take in required information
 
 # Load files
@@ -52,7 +55,6 @@ plates = plates.loc[plate]
 # Calculate the amount of water to resuspend each well with
 amount = plates['Yield (ng)']
 length = plates['synthesized sequence length']
-fmoles = 20
 volume = ((((amount * 1000)/(660*length))*1000) / fmoles) * 2
 plan = pd.DataFrame({'Well': plates['Well'],
                      'Volume': volume})

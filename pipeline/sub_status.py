@@ -48,11 +48,11 @@ for sub in range(total_subs):
 
         author = data["author"]["name"]
         contributors.append(author)
-        if data["status"]["ordered"] == bool("true"):
+        if data["status"]["ordered"] == True:
             ordered = ordered + 1
-        if data["status"]["abandoned"] == "TRUE":
+        if data["status"]["abandoned"] == True:
             abandoned = abandoned + 1
-        if data["status"]["build_ready"] == "TRUE":
+        if data["status"]["build_ready"] == True:
             build_ready = build_ready + 1
         if data["status"]["build_complete"] != "":
             attempted = attempted + 1

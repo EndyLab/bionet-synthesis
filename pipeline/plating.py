@@ -16,6 +16,7 @@ import re
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+parser.add_argument('-m', '--manual', required=False, action="store_true", help="Maunal entry of parameters.")
 args = parser.parse_args()
 
 # Get all of the plate maps and display them so you can choose one
@@ -164,10 +165,14 @@ p200 = instruments.Pipette(
 
 ## Run the protocol
 
+#if args.manual:
+#    num_dilutions = input("Number of dilutions: ")
+#    plate_vol = input("Volume to plate: ")
+#    number  = input("Number of dilutions: ")
+
 num_dilutions = 12
 plate_vol = 7.5
 dilution_vol = 7.5
-num_rows = 2
 
 for plate in agar_plates:
     p10.pick_up_tip()

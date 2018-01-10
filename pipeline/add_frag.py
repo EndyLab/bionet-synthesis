@@ -20,23 +20,15 @@ linked_genes = []
 not_in_dict = []
 genes = []
 
-# Import the Gene -> ID dictionary to allow the use of the gene name
-for file in glob.glob("./gene_id_dict.json"):
-        print("Opening dictionary file: ", file)
-        with open(file,"r") as json_file_dict:
-            #print(json_file_dict)
-            dictionary = json.load(json_file_dict)
+# Create a dictionary to link the gene name to the corresponding id number
+ref = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+dictionary = dict(zip(ref['gene_name'], ref['idnum']))
 
-# Imports the csv containing all of our data
+# Imports the csv containing all of the fragment sequences
 data = pd.read_csv("./testing/data_testing/fragments1-5.csv")
 
 # Iterates through all of the items in the spreadsheet
 for index, row in data.iterrows():
-
-    # Stops it from going through every file in the database
-    #counter = counter + 1
-    #if counter == 10:
-    #    break
 
     # Takes in the name and sequence of the fragment and decides if it has a fragment or not
     name = row["Fragment"]
@@ -65,7 +57,7 @@ for index, row in data.iterrows():
             id_frag = idnum + "_" + fragment
             for file in glob.glob("../data/{}/{}.json".format(idnum,idnum)):
                 print(file)
-                
+
                 # Open the json file
                 with open(file,"r") as json_file:
                     data = json.load(json_file)
@@ -73,6 +65,8 @@ for index, row in data.iterrows():
                 data["sequence"]["fragment_sequences"][id_frag] = seq
                 with open(file,'w') as json_file:
                     json.dump(data,json_file,indent=2)
+
+                # Uses link count to break out of two loops
                 link_count = 1
     if link_count == 1:
         continue

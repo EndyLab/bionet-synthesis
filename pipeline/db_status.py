@@ -47,11 +47,11 @@ for file in glob.glob("../data/*/*.json"):
     elif data["info"]["order_number"] == 5:
         sub5 = sub5 + 1
 
-    if data["status"]["ordered"] == bool("true"):
+    if data["status"]["ordered"] == True:
         ordered = ordered + 1
-    if data["status"]["abandoned"] == "TRUE":
+    if data["status"]["abandoned"] == True:
         abandoned = abandoned + 1
-    if data["status"]["build_ready"] == "TRUE":
+    if data["status"]["build_ready"] == True:
         build_ready = build_ready + 1
     if data["status"]["build_complete"] != "":
         attempted = attempted + 1
