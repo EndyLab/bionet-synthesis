@@ -70,6 +70,8 @@ for file in glob.glob("../builds/*.csv"):
     print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
+
+previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
 print(previous_genes)
 
 # Query the database and iterate through each json file
@@ -227,7 +229,7 @@ print("You need {} rxns of master mix".format(master_reactions))
 
 master_mix = pd.DataFrame({
             'Component':['Cutsmart','ATP','Vector','T4 Ligase','BbsI','H2O','Total'],
-            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(6/96)),(5.166*master_reactions),(master_reactions*8)]
+            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(50/96)),(5.166*master_reactions),(master_reactions*8)]
                         })
 master_mix = master_mix[['Component','Amount']]
 print("Use the table below to create the master mix")
