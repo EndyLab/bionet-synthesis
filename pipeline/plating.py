@@ -124,7 +124,7 @@ p200_tipracks = [
 p10_tipracks = [
     containers.load('tiprack-10ul', locations[1,1]),
     containers.load('tiprack-10ul', locations[2,1]),
-    containers.load('tiprack-10ul', locations[3,1])
+    #containers.load('tiprack-10ul', locations[3,1])
 ]
 
 #p10s_tipracks = [
@@ -200,26 +200,30 @@ p200 = instruments.Pipette(
 
 num_dilutions = 4
 plate_vol = 7.5
-dilution_vol = 22.5
-ditch_vol = 15
-plating_row = 1
+dilution_vol = 18
+ditch_vol = 10.5
+plating_row = 0
 
 p10.pick_up_tip()
 for plate in agar_plates:
-    for trans_row in range(1,num_rows+1):
-        for plating_counter in range(1,num_dilutions+1):
+    for trans_row in range(num_rows):
+        for plating_counter in range(num_dilutions):
             print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
             p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
-            if plating_counter != 1 and plating_counter != num_dilutions:
-                p10.transfer(ditch_vol, transformation_plate.rows(trans_row).bottom(), master['H1'].bottom(),new_tip='never',mix_before=(2,9))
+            if plating_counter != 0 and plating_counter != num_dilutions-1:
+                p10.transfer(ditch_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
                 print("Ditching {}ul from transformation row {} into waste tube".format(ditch_vol,trans_row))
             p10.drop_tip()
             print("Drop tip")
-            if plating_counter == num_dilutions:
+            if plating_counter == num_dilutions-1:
                 plating_row += 1
+                print("skip")
+                if trans_row != num_rows-1:
+                    p10.pick_up_tip()
+                    print("Pick up tip")
                 continue
             p10.pick_up_tip()
             print("Pick up tip")
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
-            p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(2,9))
+            p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(2,9))
             plating_row += 1
