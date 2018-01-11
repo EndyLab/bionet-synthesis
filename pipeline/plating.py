@@ -52,9 +52,11 @@ print(build_map)
 num_reactions = len(build_map)
 
 num_rows = num_reactions // 8
+trans_per_plate = 3
+num_plates = num_rows // trans_per_plate
 
 agar_plate_names = []
-for row in range(num_rows):
+for row in range(num_plates):
     current_plate = plate_map_number[number][10:18] + "_p" + str(row + 1)
     agar_plate_names.append(current_plate)
 
@@ -176,41 +178,48 @@ p200 = instruments.Pipette(
 #    plate_vol = input("Volume to plate: ")
 #    number  = input("Number of dilutions: ")
 
-num_dilutions = 12
+#num_dilutions = 4
+#plate_vol = 7.5
+#dilution_vol = 7.5
+#num_rows = 2
+#plating_row = 1
+#i = 0
+
+#p10.pick_up_tip()
+#for plate in agar_plates:
+#    for row in range(1,13):
+#        print("Plating {}ul from row {} onto {} in row {}".format(plate_vol,i+1,plate,row))
+#        p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
+#        p10.drop_tip()
+#        if row == 12:
+#            continue
+#        p10.pick_up_tip()
+#        print("Diluting cells in row {} with {}ul".format(i+1, dilution_vol))
+#        p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
+#    i += 1
+
+num_dilutions = 4
 plate_vol = 7.5
-dilution_vol = 7.5
-num_rows = 2
-i = 0
+dilution_vol = 22.5
+ditch_vol = 15
+plating_row = 1
 
 p10.pick_up_tip()
 for plate in agar_plates:
-    for row in range(1,13):
-        print("Plating {}ul from row {} onto {} in row {}".format(plate_vol,i+1,plate,row))
-        p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
-        p10.drop_tip()
-        if row == 12:
-            continue
-        p10.pick_up_tip()
-        print("Diluting cells in row {} with {}ul".format(i+1, dilution_vol))
-        p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
-    i += 1
-
-
-num_dilutions = 12
-plate_vol = 7.5
-dilution_vol = 7.5
-num_rows = 2
-i = 0
-
-p10.pick_up_tip()
-for plate in agar_plates:
-    for row in range(1,13):
-        print("Plating {}ul from row {} onto {} in row {}".format(plate_vol,i+1,plate,row))
-        p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
-        p10.drop_tip()
-        if row == 12:
-            continue
-        p10.pick_up_tip()
-        print("Diluting cells in row {} with {}ul".format(i+1, dilution_vol))
-        p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
-    i += 1
+    for trans_row in range(1,num_rows+1):
+        for plating_counter in range(1,num_dilutions+1):
+            print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
+            p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
+            if plating_counter != 1 and plating_counter != num_dilutions:
+                p10.transfer(ditch_vol, transformation_plate.rows(trans_row).bottom(), master['H1'].bottom(),new_tip='never',mix_before=(2,9))
+                print("Ditching {}ul from transformation row {} into waste tube".format(ditch_vol,trans_row))
+            p10.drop_tip()
+            print("Drop tip")
+            if plating_counter == num_dilutions:
+                plating_row += 1
+                continue
+            p10.pick_up_tip()
+            print("Pick up tip")
+            print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
+            p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(2,9))
+            plating_row += 1
