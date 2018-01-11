@@ -356,11 +356,10 @@ build_num = 0
 # Assigns this build a unique number following the most recent build
 if glob.glob("../builds/build*.csv"):
     print("previous builds")
-    for file in glob.glob("../builds/build*.csv"):
-        if "bad" in file:
+    for build_map in glob.glob("../builds/build*.csv"):
+        if "bad" in build_map:
             continue
-        build_num = str(int(file[15]) + 1).zfill(3)
-        print("build_num", build_num)
+        build_num = str(int(build_map[16:16]) + 1).zfill(3)
 else:
     print("no previous builds")
     build_num = '001'
@@ -368,6 +367,8 @@ else:
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
 build_name = "build{}".format(build_num)
+
+print("build_name: ", build_name)
 
 if outcome != 2:
     file_name = "../builds/{}_{}.csv".format(build_name,now)
@@ -380,7 +381,7 @@ plate_map.set_index("Gene")
 print()
 print(plate_map)
 
-plate_map.to_csv(file_name)
+#plate_map.to_csv(file_name)
 
 ## Update the json file of all of the attempted genes
 

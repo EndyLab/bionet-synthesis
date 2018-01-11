@@ -23,16 +23,22 @@ args = parser.parse_args()
 counter = 0
 plate_map_number = []
 
-if glob.glob("../builds/build*.csv"):
-    print("previous builds")
-    for file in glob.glob("../builds/build*.csv"):
-        if "bad" in file:
-            continue
+for file in glob.glob("../builds/build*.csv"):
     counter += 1
     print("{}. {}".format(counter,file[10:]))
     plate_map_number.append(file)
-else:
-    print("No previous builds")
+
+#if glob.glob("../builds/build*.csv"):
+#    print("previous builds")
+#    for file in glob.glob("../builds/build*.csv"):
+#        print(file)
+#        if "bad" in file:
+#            continue
+#    counter += 1
+#    print("{}. {}".format(counter,file[10:]))
+#    plate_map_number.append(file)
+#else:
+#    print("No previous builds")
 
 # Asks the user for a number corresponding to the plate they want to resuspend
 number = input("Which file: ")
@@ -63,9 +69,9 @@ layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 # Specify locations, note that locations are indexed by the spot in the array
 ## MAKE INTO A DICTIONARY
 locations = np.array([["tiprack-200", "A3"],
-                    ["tiprack-10_1", "E2"],
-                    ["tiprack-10s", "E1"],
-                    ["tiprack-10_2", "E3"],
+                    ["tiprack-10_2", "E2"],
+                    ["tiprack-10_1", "E1"],
+                    ["tiprack-10_3", "E3"],
                     ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
                     ["Tube Rack","B1"],
@@ -115,13 +121,13 @@ p200_tipracks = [
 
 p10_tipracks = [
     containers.load('tiprack-10ul', locations[1,1]),
+    containers.load('tiprack-10ul', locations[2,1]),
     containers.load('tiprack-10ul', locations[3,1])
-
 ]
 
-p10s_tipracks = [
-    containers.load('tiprack-10ul', locations[2,1])
-]
+#p10s_tipracks = [
+#    containers.load('tiprack-10ul', locations[2,1])
+#]
 
 transformation_plate = containers.load('96-PCR-tall', locations[7,1])
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
@@ -143,15 +149,15 @@ p10 = instruments.Pipette(
     name='p10-8'
 )
 
-p10s = instruments.Pipette(
-    axis='a',
-    max_volume=10,
-    min_volume=0.5,
-    tip_racks=p10s_tipracks,
-    trash_container=trash,
-    channels=1,
-    name='p10-8s'
-)
+#p10s = instruments.Pipette(
+#    axis='a',
+#    max_volume=10,
+#    min_volume=0.5,
+#    tip_racks=p10s_tipracks,
+#    trash_container=trash,
+#    channels=1,
+#    name='p10-8s'
+#)
 
 p200 = instruments.Pipette(
     axis='b',
@@ -178,15 +184,33 @@ i = 0
 
 p10.pick_up_tip()
 for plate in agar_plates:
-    for row in range(num_dilutions):
-        if i == 0:
-            continue
-        print("Plating {}ul onto {} in row {}".format(plate_vol,plate,row))
+    for row in range(1,13):
+        print("Plating {}ul from row {} onto {} in row {}".format(plate_vol,i+1,plate,row))
         p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
         p10.drop_tip()
-        p10.pick_up_tip()
-        print("Diluting with {}ul".format(dilution_vol))
-        if row == 11:
+        if row == 12:
             continue
+        p10.pick_up_tip()
+        print("Diluting cells in row {} with {}ul".format(i+1, dilution_vol))
+        p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
+    i += 1
+
+
+num_dilutions = 12
+plate_vol = 7.5
+dilution_vol = 7.5
+num_rows = 2
+i = 0
+
+p10.pick_up_tip()
+for plate in agar_plates:
+    for row in range(1,13):
+        print("Plating {}ul from row {} onto {} in row {}".format(plate_vol,i+1,plate,row))
+        p10.transfer(plate_vol, transformation_plate.rows(i).bottom(), agar_plates[plate].rows(row).bottom(),new_tip='never',mix_before=(2,9))
+        p10.drop_tip()
+        if row == 12:
+            continue
+        p10.pick_up_tip()
+        print("Diluting cells in row {} with {}ul".format(i+1, dilution_vol))
         p10.transfer(plate_vol, master['A1'].bottom(), transformation_plate.rows(i).bottom(),new_tip='never',mix_before=(2,9))
     i += 1
