@@ -359,7 +359,7 @@ if glob.glob("../builds/build*.csv"):
     for build_map in glob.glob("../builds/build*.csv"):
         if "bad" in build_map:
             continue
-        build_num = str(int(build_map[16:16]) + 1).zfill(3)
+        build_num = str(int(build_map[14:16]) + 1).zfill(3)
 else:
     print("no previous builds")
     build_num = '001'
@@ -381,7 +381,7 @@ plate_map.set_index("Gene")
 print()
 print(plate_map)
 
-#plate_map.to_csv(file_name)
+plate_map.to_csv(file_name)
 
 ## Update the json file of all of the attempted genes
 
