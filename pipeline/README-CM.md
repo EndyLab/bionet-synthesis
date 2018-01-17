@@ -30,6 +30,8 @@
   Transfers all of the sequencing files to their corresponding directories.
 14. Database Sequence Alignment: `python seq_align_db.py`
   Generates a sequence alignment of all of the sequence file pairs and the corresponding FASTA file in each directory and scores the alignment to determine if it is a successful clone or not.
+15. Sagacious Submission: `python sagacious_input.py`
+  Pulls genes from the database and generates a new csv file to be sent off to Sagacious for review.
 
 
 
@@ -182,9 +184,13 @@ seq_sort does the following:
 ## Database Sequence Alignment
 
 
+## Sagacious Submission
+sagacious_input does the following:
+* Goes through the database and selects genes that have been successfully sequence verified and have not been previously submitted
+* Adds all of those genes to a dataframe and then returns a new csv file
+  * Files are titled: "sagacious_order_order_number_date"
+* Updates the json files of the submitted genes with the order number that it was submitted in
 
 
 
-
-
-* something
+* space

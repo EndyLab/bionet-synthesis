@@ -17,6 +17,8 @@ gene_names = []
 sequences = []
 max_num = 0
 
+num_entries = input("How many genes to be submitted: ")
+
 now = datetime.datetime.now()
 date = "{}".format(now)
 date = date[0:10]
@@ -29,7 +31,7 @@ if glob.glob("../sagacious/sag_submissions/*.csv"):
             max_num = current_num
             sub_num = str(max_num + 1).zfill(3)
 else:
-    print("no previous builds")
+    print("no previous submissions")
     sub_num = '001'
 counter = 0
 
@@ -52,7 +54,7 @@ for file in glob.glob("../data/*/*.json"):
         continue
 
     counter += 1
-    if counter == 51:
+    if counter == num_entries:
         break
 
     gene_ids.append(data["gene_id"])
