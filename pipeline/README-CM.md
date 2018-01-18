@@ -32,8 +32,8 @@
   Generates a sequence alignment of all of the sequence file pairs and the corresponding FASTA file in each directory and scores the alignment to determine if it is a successful clone or not.
 15. Sagacious Submission: `python sagacious_input.py`
   Pulls genes from the database and generates a new csv file to be sent off to Sagacious for review.
-
-
+16. Modify JSON: `python modify_json.py`
+  Short script for modification of the json file for each gene.
 
 
 ## Populate
@@ -148,6 +148,7 @@ plate_resuspension does the following:
 * Prints out the required deck map
 * Tells the OT-One what volume of water to add into each well
   * Currently it is not set to mix because that dramatically increases the run time and we can just seal it and then vortex to resuspend
+* Reports the runtime at the end of the protocol
 
 ## Build Golden Gate Reactions
 Build will do the following:
@@ -167,14 +168,18 @@ Build will do the following:
 * Asks the user if it was successful and should be recorded. If successful:
   * Generates a build map linking the wells with the constructs
   * Updates the database with the information from the run  
+* Reports the runtime at the end of the protocol
+
 
 ## Transformation Plating
 CHANGE THE DILUTION CALCULATION TO ALLOW FOR LARGER DILUTIONS AND HAVE IT GENERATE A PLATE MAP FOR THE AGAR PLATES
 Plating will do the following:
 * Takes in the argument `-r` to tell it to run the protocol on the OT-one
-* Asks the user which build they would like to plate
-* Displays the required layout for the OT-One and tells the user what to name the agar plates
+* Pulls the build maps available in the build directory and asks the user which build they would like to plate
+* Displays the required layout for the OT-One and tells the user how many agar plates will be required and what to name them
 * Repeatedly plates and dilutes the cells until it has completed the serial dilution
+* Reports the runtime at the end of the protocol
+
 
 ## Sequence Data Sorter
 seq_sort does the following:
@@ -191,6 +196,9 @@ sagacious_input does the following:
   * Files are titled: "sagacious_order_order_number_date"
 * Updates the json files of the submitted genes with the order number that it was submitted in
 
-
+## Modify JSON
+modify_json does the following:
+* Opens every gene directory and JSON file currently in the database
+* Modifies the JSON file however the user specifies and rewrites the file with the edits
 
 * space

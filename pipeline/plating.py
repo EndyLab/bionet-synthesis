@@ -11,6 +11,9 @@ import os
 import glob
 import re
 
+import datetime
+from datetime import datetime
+
 ## Take in required information
 
 # Load files
@@ -22,23 +25,18 @@ args = parser.parse_args()
 # Get all of the plate maps and display them so you can choose one
 counter = 0
 plate_map_number = []
+build_map = 0
 
-for file in glob.glob("../builds/build*.csv"):
+# Looks for the possible build maps to plate
+for build_map in glob.glob("../builds/build*.csv"):
     counter += 1
-    print("{}. {}".format(counter,file[10:]))
-    plate_map_number.append(file)
+    print("{}. {}".format(counter,build_map[10:]))
+    plate_map_number.append(build_map)
 
-#if glob.glob("../builds/build*.csv"):
-#    print("previous builds")
-#    for file in glob.glob("../builds/build*.csv"):
-#        print(file)
-#        if "bad" in file:
-#            continue
-#    counter += 1
-#    print("{}. {}".format(counter,file[10:]))
-#    plate_map_number.append(file)
-#else:
-#    print("No previous builds")
+# Quits the program if there are no build maps to plate
+if build_map == 0:
+    print("No plate maps")
+    sys.exit()
 
 # Asks the user for a number corresponding to the plate they want to resuspend
 number = input("Which file: ")
@@ -114,6 +112,9 @@ else:
     print("Simulating protcol run")
     robot.connect()
 
+start = datetime.now()
+print("Starting run at: ",start)
+
 # Start up and declare components on the deck
 robot.home()
 
@@ -173,56 +174,74 @@ p200 = instruments.Pipette(
 
 ## Run the protocol
 
-#if args.manual:
-#    num_dilutions = input("Number of dilutions: ")
-#    plate_vol = input("Volume to plate: ")
-#    number  = input("Number of dilutions: ")
-
-num_dilutions = 5
-plate_vol = 7.5
-dilution_vol = 10
-waste_vol = 2.5
-plating_row = 0
-#tube_vol = 15
-#dil_factor = []
+if args.manual:
+    num_dilutions = input("Number of dilutions: ")
+    plate_vol = input("Volume to plate: ")
+    number  = input("Number of dilutions: ")
+else:
+    num_dilutions = 5
+    plate_vol = 7.5
+    dilution_vol = 10
+    waste_vol = 2.5
+    plating_row = 0
+    #tube_vol = 15
+    #dil_factor = []
 
 p10.pick_up_tip()
+
+# Iterate through each agar plate
 for plate in agar_plates:
+    # Iterate through each row of cells in the transformation plate
     for trans_row in range(num_rows):
+        #Reset the dilution factor and starting volume in the tubes
         dil_factor = [1]
         tube_vol = 15
+
         for plating_counter in range(num_dilutions):
-            print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-            p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
-            print("Counter {} starts at {}uL".format(plating_counter,tube_vol))
-            tube_vol -= plate_vol
-            print("After plating", tube_vol)
+            if plating_counter == 0:
+                print("Discard {}ul from transformation row {} into waste tube".format(plate_vol,trans_row))
+                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
+                tube_vol -= plate_vol
+                print("Volume after initial discard: ",tube_vol)
+                plating_row -= 1
+            else:
+                print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
+                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
+                print("Counter {} starts with {}uL in the transformation tube".format(plating_counter,tube_vol))
+                tube_vol -= plate_vol
+                print("After plating the volume is", tube_vol)
             if plating_counter != 0 and plating_counter != num_dilutions-1:
+                print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
                 p10.transfer(waste_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
-                print("Ditching {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
                 tube_vol -= waste_vol
-                print(tube_vol)
+                print("Volume after discard: ", tube_vol)
             p10.drop_tip()
             print("Drop tip")
             if plating_counter == num_dilutions-1:
                 plating_row += 1
-                print("skip")
+                print("Last dilution in series, moving to next row")
                 if trans_row != num_rows-1:
                     p10.pick_up_tip()
                     print("Pick up tip")
                 continue
-            p10.pick_up_tip()
             print("Pick up tip")
+            p10.pick_up_tip()
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
             p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(2,9))
             previous_vol = tube_vol
-            print("previous_vol",previous_vol)
+            print("previous volume: ",previous_vol)
             tube_vol += dilution_vol
-            print("tube_vol", tube_vol)
-            dil_factor.append((previous_vol / tube_vol) * dil_factor[-1])
-            print("dil_factor",dil_factor)
+            print("current volume: ", tube_vol)
+            dil_factor.append((tube_vol / previous_vol) * dil_factor[-1])
+            print("dilution factors: ",dil_factor)
 
             print(tube_vol)
             plating_row += 1
 
-        print("trans_row:",trans_row," - ",dil_factor)
+        print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
+
+
+stop = datetime.now()
+print(stop)
+runtime = stop - start
+print("Total runtime is: ", runtime)

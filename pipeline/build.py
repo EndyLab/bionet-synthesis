@@ -13,6 +13,7 @@ import glob
 import re
 import math
 import datetime
+from datetime import datetime
 
 ## Take in required information
 
@@ -249,6 +250,9 @@ else:
     print("Simulating protcol run")
     robot.connect()
 
+start = datetime.now()
+print("Starting run at: ",start)
+
 # Start up and declare components on the deck
 robot.home()
 
@@ -314,7 +318,7 @@ print("{}ul into each PCR tube".format(vol_per_tube))
 p200.pick_up_tip()
 for well in range(8):
     print("Transferring {}ul to well {}".format(vol_per_tube,well))
-    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),touch_tip=True, mix_before=(3,50),new_tip='never')
+    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
 p200.drop_tip()
 
 ## Aliquot the master mix into all of the desired wells
@@ -359,7 +363,7 @@ if glob.glob("../builds/build*.csv"):
     for build_map in glob.glob("../builds/build*.csv"):
         if "bad" in build_map:
             continue
-        build_num = str(int(build_map[14:16]) + 1).zfill(3)
+        build_num = str(int(build_map[15:17]) + 1).zfill(3)
 else:
     print("no previous builds")
     build_num = '001'
@@ -413,4 +417,10 @@ for index, row in plate_map.iterrows():
         with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
             json.dump(data,json_file,indent=2)
 
+robot.home()
+
 print()
+stop = datetime.now()
+print(stop)
+runtime = stop - start
+print("Total runtime is: ", runtime)

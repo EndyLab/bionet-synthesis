@@ -12,6 +12,9 @@ import os
 import glob
 import re
 
+import datetime
+from datetime import datetime
+
 # Initial Setup
 fmoles = 20
 
@@ -103,6 +106,9 @@ else:
     print("Simulating protcol run")
     robot.connect()
 
+start = datetime.now()
+print("Starting run at: ",start)
+
 # Start up and declare components on the deck
 robot.home()
 
@@ -176,3 +182,8 @@ for i, construct in plan.iterrows():
         #print("Mixing with {} 3 times".format(vol * 0.5))
         #p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
         p200.drop_tip()
+
+stop = datetime.now()
+print(stop)
+runtime = stop - start
+print("Total runtime is: ", runtime)
