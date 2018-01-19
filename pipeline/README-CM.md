@@ -187,7 +187,13 @@ seq_sort does the following:
 * Iterates through all of the sequencing files that are present in the sequencing_files directory and copies all of the absorbance files to the corresponding data directory
 
 ## Database Sequence Alignment
-
+db_seq_align does the following:
+* This program assumes that the sequencing files have already been sorted into their respective directories and that
+* Takes in numerous initial strings:
+  * Assumes that the names of the primers are, M13-Forward---20- and M13-Reverse based on the names given by Elim
+  * Takes in paths for the the locations of the sequencing files, their corresponding json files and the path to the sequence of the original vector
+* Generates a dictionary relating the gene names to their corresponding gene ID#s
+* Searches for all sequencing files within the data directories and parses the name to link it to a specific gene and determine which primer was used to generate it
 
 ## Sagacious Submission
 sagacious_input does the following:
