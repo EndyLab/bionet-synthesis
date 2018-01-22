@@ -14,30 +14,36 @@ import shutil
 import datetime
 
 counter = 0
+last_id = 0
+idnum_list = []
 
 # Imports the csv containing all of our data
 data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
 
-# Takes in the
+# Takes in the template json file to initialize the json files
 for file in glob.glob("./testing/json/template.json"):
         print(file)
         with open(file,"r") as template_json:
             template = json.load(template_json)
-            #print(template)
 
 # Iterates through all of the items in the spreadsheet
 for index, row in data.iterrows():
 
-    # Forces it to only run a certain number of times
-    #counter = counter + 1
-    #if counter == 11:
-    #    break
+    # Checks if it has already been assigned a number
+    if row['idnum'] != "None":
+        print(row['idnum'][7:13])
+        last_id = int(row["idnum"][7:13])
+        idnum_list.append(row["idnum"])
+        print("BBF10K_{} has already been entered".format(str(last_id).zfill(6)))
+        continue
 
     # Generate the ID#
     gene = row['gene_name']
     seq = row['sequence']
-    number = str(index + 1).zfill(6)
+    last_id += 1
+    number = str(last_id).zfill(6)
     idnum = "BBF10K_" + number
+    idnum_list.append(idnum)
 
     #State the path to house the new set of directories
     path = "../data/{}".format(idnum)
@@ -58,7 +64,6 @@ for index, row in data.iterrows():
 
         # Fill in the template json file with the information from each row
         template["gene_id"] = idnum
-        print(idnum)
         template["gene_name"] = gene
         template["sequence"]["original_sequence"] = seq
         template["sequence"]["optimized_sequence"] = seq
@@ -92,3 +97,8 @@ for index, row in data.iterrows():
         # Writes the information to a json file in the desired directory
         with open("./{}/{}.json".format(path,idnum),"w+") as json_file:
             json.dump(template,json_file,indent=2)
+
+# Update the .csv file with the new id numbers
+data["idnum"] = idnum_list
+new_data = data[["gene_name","sequence","author","author_email","author_affiliation","author_project","cloning_method","part_type","build_type","safety","collection","other_tags","ordered","will_build","date_ordered","order_number","idnum"]]
+new_data.to_csv('./testing/data_testing/10K_CDS.csv')

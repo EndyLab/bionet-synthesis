@@ -18,7 +18,11 @@
       "build_type": "10K_MoClo-EntryCDS-BbsI"
     },
     "safety": "null",
-    "IP": "",
+    "IP": {
+      "submitted": false,
+      "submission_number": "",
+      "results": ""
+    },
     "collection": "JCVI syn3.0 genes codon optimized for E.coli",
     "other_tags": "null",
     "order_number": 1,
@@ -34,7 +38,7 @@
   "status": {
     "ordered": true,
     "will_build": true,
-    "abandoned": "TRUE",
+    "abandoned": true,
     "build_ready": "",
     "building": "",
     "build_complete": "",

@@ -18,7 +18,11 @@
       "build_type": "10K_MoClo-EntryCDS-BbsI"
     },
     "safety": "null",
-    "IP": "",
+    "IP": {
+      "submitted": false,
+      "submission_number": "",
+      "results": ""
+    },
     "collection": "Microbial Argonaute collection 78",
     "other_tags": "null",
     "order_number": 4,
@@ -34,7 +38,7 @@
   "status": {
     "ordered": true,
     "will_build": true,
-    "abandoned": "",
+    "abandoned": false,
     "build_ready": "",
     "building": "",
     "build_complete": "",

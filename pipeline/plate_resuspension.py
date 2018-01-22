@@ -12,6 +12,12 @@ import os
 import glob
 import re
 
+import datetime
+from datetime import datetime
+
+# Initial Setup
+fmoles = 20
+
 ## Take in required information
 
 # Load files
@@ -52,7 +58,6 @@ plates = plates.loc[plate]
 # Calculate the amount of water to resuspend each well with
 amount = plates['Yield (ng)']
 length = plates['synthesized sequence length']
-fmoles = 40
 volume = ((((amount * 1000)/(660*length))*1000) / fmoles) * 2
 plan = pd.DataFrame({'Well': plates['Well'],
                      'Volume': volume})
@@ -100,6 +105,9 @@ if args.run:
 else:
     print("Simulating protcol run")
     robot.connect()
+
+start = datetime.now()
+print("Starting run at: ",start)
 
 # Start up and declare components on the deck
 robot.home()
@@ -164,13 +172,18 @@ for i, construct in plan.iterrows():
         print("Adding {}ul to well {} with the p10".format(vol, well))
         p10s.pick_up_tip()
         p10s.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        print("Mixing with {} 3 times".format(vol * 0.5))
-        p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
+        #print("Mixing with {} 3 times".format(vol * 0.5))
+        #p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
         p10s.drop_tip()
     else:
         print("Adding {}ul to well {} with the p200".format(vol, well))
         p200.pick_up_tip()
         p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        print("Mixing with {} 3 times".format(vol * 0.5))
-        p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
+        #print("Mixing with {} 3 times".format(vol * 0.5))
+        #p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
         p200.drop_tip()
+
+stop = datetime.now()
+print(stop)
+runtime = stop - start
+print("Total runtime is: ", runtime)
