@@ -37,12 +37,12 @@ if args.manual:
     else:
         plates = []
 else:
-    max_plates = 1
+    max_plates = 2
     print("Max plates: ", max_plates)
-    #plates = ["pSHPs0807B412037MU", "pSHPs0807B412038MU"]
-    plates = ["pSHPs0807B412037MU"]
+    plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
+    #plates = ["pSHPs0807B412037MU"]
     print("Pulling from plates: ", plates)
-    num_reactions = 24
+    num_reactions = 96
     print("Number of reactions: ", num_reactions)
     max_frag = 2
     print("Max number of fragments: ", max_frag)
@@ -89,7 +89,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     print("build ready")
 
     # Determine if it has already been built
-    if data["status"]["build_complete"] != "Good_Sequence":
+    if data["status"]["build_complete"] == "Good_Sequence":
         continue
     print("Not yet successfully built")
 
@@ -315,18 +315,18 @@ vol_per_tube = num_rows * 8 * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
-p200.pick_up_tip()
-for well in range(8):
-    print("Transferring {}ul to well {}".format(vol_per_tube,well))
-    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-p200.drop_tip()
+#p200.pick_up_tip()
+#for well in range(8):
+#    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+#    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+#p200.drop_tip()
 
 ## Aliquot the master mix into all of the desired wells
-p10.pick_up_tip()
-for row in range(num_rows):
-    print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
-p10.drop_tip()
+#p10.pick_up_tip()
+#for row in range(num_rows):
+#    print("Transferring master mix to row {}".format(row))
+#    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+#p10.drop_tip()
 
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
@@ -341,19 +341,23 @@ p10s.drop_tip()
 
 # Sets the volume to pipet of each fragment to 2uL
 frag_vol = 2
+dil_vol = 5
 
 for index, row in plan.iterrows():
     plate = row['Plate']
     start_well = row['Well']
     dest_well = row['Destination']
     gene = row['Gene']
-    print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.pick_up_tip()
+    print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
+    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),mix_before=(1,8),new_tip='never')
+
+    print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
     p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(),blow_out=True)
 
 # Record the current date and time
-now, seconds = str(datetime.datetime.now()).split(".")
+now, seconds = str(datetime.now()).split(".")
 
 build_num = 0
 
