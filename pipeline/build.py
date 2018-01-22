@@ -153,7 +153,7 @@ locations = np.array([["tiprack-200", "A3"],
                     ["DEST_PLATE", "C2"]])
 
 # Attach a location to each of the source plates
-layout = list(zip(plates_pd.unique(),SOURCE_SLOTS[:len(plates)]))
+layout = list(zip(pd.unique(plates),SOURCE_SLOTS[:len(plates)]))
 locations = np.append(locations,layout, axis=0)
 
 # Make the dataframe to represent the OT-1 deck
