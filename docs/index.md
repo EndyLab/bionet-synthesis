@@ -1,3 +1,3 @@
-# Welcome to the Free Genes projects
+# Welcome to the Free Genes project
 
 Hello, world.
