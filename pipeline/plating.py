@@ -48,16 +48,19 @@ print(plate_map_number[number][10:18])
 print(build_map)
 
 num_reactions = len(build_map)
+print("num reactions",num_reactions)
 
 num_rows = num_reactions // 8
+print(num_rows)
 trans_per_plate = 3
 num_plates = num_rows // trans_per_plate
+print(num_plates)
 
 agar_plate_names = []
 for row in range(num_plates):
     current_plate = plate_map_number[number][10:18] + "_p" + str(row + 1)
     agar_plate_names.append(current_plate)
-
+print(agar_plate_names)
 print("You will need {} agar plates".format(len(agar_plate_names)))
 
 ## Setting up the OT-1 deck
@@ -125,7 +128,7 @@ p200_tipracks = [
 p10_tipracks = [
     containers.load('tiprack-10ul', locations[1,1]),
     containers.load('tiprack-10ul', locations[2,1]),
-    #containers.load('tiprack-10ul', locations[3,1])
+    containers.load('tiprack-10ul', locations[3,1])
 ]
 
 #p10s_tipracks = [
@@ -239,6 +242,9 @@ for plate in agar_plates:
             plating_row += 1
 
         print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
+    plating_row = 0
+    print("plating_row reset to 0")
+
 
 
 stop = datetime.now()
