@@ -1,3 +1,5 @@
 # Welcome to the Free Genes project
 
-Hello, world.
+## Current status
+
+![Status diagram](./sankey.png)
