@@ -1,3 +1,3 @@
 # Available Genes
 
-* [genes/BBF10K_000010] JCVISYN1_0407 rpoD
+* [BBF10K_000010](genes/BBF10K_000010) JCVISYN1_0407 rpoD
