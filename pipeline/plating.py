@@ -184,7 +184,7 @@ if args.manual:
 else:
     num_dilutions = 5
     plate_vol = 7.5
-    dilution_vol = 10
+    dilution_vol = 9
     waste_vol = 2.5
     plating_row = 0
     #tube_vol = 15
@@ -215,7 +215,8 @@ for plate in agar_plates:
                 print("After plating the volume is", tube_vol)
             if plating_counter != 0 and plating_counter != num_dilutions-1:
                 print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
-                p10.transfer(waste_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
+                p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
+                #p10.transfer(waste_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
                 tube_vol -= waste_vol
                 print("Volume after discard: ", tube_vol)
             p10.drop_tip()
