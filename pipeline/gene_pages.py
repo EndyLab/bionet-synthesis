@@ -50,6 +50,7 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
         complete = data["dates"]["build_ready"]
 
     now = datetime.datetime.now()
+    now = "{}".format(now)
 
     path = "../docs/{}".format(id_num)
 
@@ -84,6 +85,6 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("\n")
     index.write("Sequence Verified | {} ".format(complete))
     index.write("\n\n")
-    index.write("###### Last updated: {}".format(now))
+    index.write("##### Last updated: {}".format(now[:-16]))
     index.write("\n")
     index.close()
