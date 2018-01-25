@@ -81,8 +81,6 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("\n")
     index.write("Sequence Verified | {} ".format(complete))
     index.write("\n\n")
-    index.write("##### Last updated: {}".format(now[:-16]))
-    index.write("\n")
     index.write("### Sequences:\n")
     index.write("* Original: \n")
     index.write("   {} \n".format(original_sequence))
