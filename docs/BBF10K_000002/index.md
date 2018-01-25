@@ -8,9 +8,10 @@
 
 ## Current Status: Sequence Verified
 Status breakdown:
+
 Step | Date 
 --- | --- 
 Submitted | 2017.07.24 
 Ordered | 2017.07.24 
-Received |  
-Sequence Verified |  
+Received | Not yet 
+Sequence Verified | Not yet 

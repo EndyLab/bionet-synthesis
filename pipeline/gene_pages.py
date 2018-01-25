@@ -38,8 +38,16 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
 
     submitted = data["dates"]["submitted"]
     ordered = data["dates"]["ordered"]
-    build_ready = data["dates"]["build_ready"]
-    complete = data["dates"]["complete"]
+
+    if data["dates"]["build_ready"] == "":
+        build_ready = "Not yet"
+    else:
+        build_ready = data["dates"]["build_ready"]
+
+    if data["dates"]["build_ready"] == "":
+        complete = "Not yet"
+    else:
+        complete = data["dates"]["build_ready"]
 
     path = "../docs/{}".format(id_num)
 
@@ -61,7 +69,7 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("\n")
     index.write("## Current Status: {}\n".format(status))
     index.write("Status breakdown:")
-    index.write("\n")
+    index.write("\n\n")
     index.write("Step | Date ")
     index.write("\n")
     index.write("--- | --- ")
