@@ -62,11 +62,11 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("## Current Status: {}\n".format(status))
     index.write("Status breakdown:")
     index.write("\n")
-    index.write("Step | Date")
+    index.write(" Step | Date ")
     index.write("\n")
-    index.write("--- | ---")
+    index.write(" --- | --- ")
     index.write("\n")
-    index.write("Submitted | {}".format(submitted))
+    index.write(" Submitted | {} ".format(submitted))
 
 
 
