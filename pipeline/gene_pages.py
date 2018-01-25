@@ -49,6 +49,8 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     else:
         complete = data["dates"]["build_ready"]
 
+    now = datetime.datetime.now()
+
     path = "../docs/{}".format(id_num)
 
     if os.path.exists(path):
@@ -81,5 +83,7 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("Received | {} ".format(build_ready))
     index.write("\n")
     index.write("Sequence Verified | {} ".format(complete))
+    index.write("\n\n")
+    index.write("###### Last updated: {}".format(now))
     index.write("\n")
     index.close()
