@@ -89,4 +89,6 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("* Optimized: \n")
     index.write("   {} \n".format(optimized_sequence))
     index.write("\n")
+    index.write("##### Last updated: {}".format(now[:-16]))
+    index.write("\n")
     index.close()
