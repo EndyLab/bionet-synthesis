@@ -315,18 +315,18 @@ vol_per_tube = num_rows * 8 * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
-#p200.pick_up_tip()
-#for well in range(8):
-#    print("Transferring {}ul to well {}".format(vol_per_tube,well))
-#    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-#p200.drop_tip()
+p200.pick_up_tip()
+for well in range(8):
+    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+p200.drop_tip()
 
-## Aliquot the master mix into all of the desired wells
-#p10.pick_up_tip()
-#for row in range(num_rows):
-#    print("Transferring master mix to row {}".format(row))
-#    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
-#p10.drop_tip()
+# Aliquot the master mix into all of the desired wells
+p10.pick_up_tip()
+for row in range(num_rows):
+    print("Transferring master mix to row {}".format(row))
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+p10.drop_tip()
 
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
