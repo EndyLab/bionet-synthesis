@@ -8,6 +8,7 @@
 
 ## Current Status: Sequence Verified
 Status breakdown:
+
 Step | Date
 --- | ---  
 Submitted | 2017.07.24
