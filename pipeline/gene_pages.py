@@ -63,7 +63,8 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     # Generate the fasta file with the gene sequence
     index = open("{}/index.md".format(path),"w+")
     index.write("# {}\n".format(id_num))
-    index.write("### Author Name: {}\n".format(author_name))
+    index.write("### Gene Name: **{}**\n".format(gene_name))
+    index.write("### Author Name: **{}**\n".format(author_name))
     index.write("### Sequences:\n")
     index.write("* Original - \n")
     index.write("   {} \n".format(original_sequence))
