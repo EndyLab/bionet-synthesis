@@ -1,6 +1,6 @@
-Physical manifest detailing the history of the materials
-2017-10-06: Cloned and stocked manually
-2017-10-07: Sequence verified
-2018-01-17: Recultured in liquid media
-2018-01-18: Consolidated into a single plate and mini-prepped
+Physical manifest detailing the history of the materials:
+2017-10-06: Cloned into vector pOpen_v1-1 and glycerol stocked in Top10 cells
+2017-10-07: Sequence verified by Elim using Sanger Sequencing
+2018-01-17: Recultured in liquid media and grown overnight
+2018-01-18: Consolidated successful clones into a single plate and mini-prepped
 2018-01-23: Shipped to John Glass at JCVI
