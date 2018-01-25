@@ -67,8 +67,11 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("--- | --- ")
     index.write("\n")
     index.write("Submitted | {} ".format(submitted))
-
-
-
-
+    index.write("\n")
+    index.write("Ordered | {} ".format(ordered))
+    index.write("\n")
+    index.write("Received | {} ".format(build_ready))
+    index.write("\n")
+    index.write("Sequence Verified | {} ".format(complete))
+    index.write("\n")
     index.close()
