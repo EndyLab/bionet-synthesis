@@ -25,6 +25,15 @@ parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Ope
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
 args = parser.parse_args()
 
+# Verify that the correct robot is being used
+if args.run:
+    robot_name = str(os.environ["ROBOT_DEV"][-5:])
+    robot_number = str(input("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name)))
+    if robot_number == "1":
+        print("Proceeding with run")
+    else:
+        sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
+
 # Get all of the plate maps and display them so you can choose one
 counter = 0
 plate_map_number = []
@@ -99,7 +108,8 @@ input("Press enter to continue")
 
 # Determine whether to simulate or run the protocol
 if args.run:
-    port = robot.get_serial_ports_list()[0]
+    #port = robot.get_serial_ports_list()[0]
+    port = os.environ["ROBOT_DEV"]
     print("Connecting robot to port {}".format(port))
     robot.connect(port)
 else:
