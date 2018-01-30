@@ -46,10 +46,11 @@ if args.manual:
     else:
         plates = []
 else:
-    max_plates = 2
+    max_plates = 3
     print("Max plates: ", max_plates)
-    plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
-    #plates = ["pSHPs0807B412037MU"]
+    #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
+    #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
+    #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
     print("Pulling from plates: ", plates)
     num_reactions = 96
     print("Number of reactions: ", num_reactions)
@@ -84,6 +85,8 @@ for file in glob.glob("../builds/*.csv"):
 previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
 print(previous_genes)
 
+input("continue?")
+
 # Query the database and iterate through each json file
 for file in glob.glob("../data/BBF10K*/*.json"):
     print(file)
@@ -96,6 +99,10 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     if data["status"]["build_ready"] != True:
         continue
     print("build ready")
+
+
+    if data["info"]["type"]["build_type"] != "10K_MoClo-EntryCDS-BbsI":
+        continue
 
     # Determine if it has already been built
     if data["status"]["build_complete"] == "Good_Sequence":
@@ -184,7 +191,7 @@ input("Press enter to continue")
 ## Setting up the OT-1 deck
 
 # Configuration
-SOURCE_SLOTS = ['D2','D3','D1','B2']
+SOURCE_SLOTS = ['D2','D3','B3','B2']
 
 
 # Specify locations, note that locations are indexed by the spot in the array
