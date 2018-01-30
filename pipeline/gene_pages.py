@@ -90,3 +90,10 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("##### Last updated: {}".format(now[:-16]))
     index.write("\n")
     index.close()
+
+#    index.write("""
+#    # header
+#    This is some text {name}.
+#    ## h2
+#    
+#    """.format(*data))

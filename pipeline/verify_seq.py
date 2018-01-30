@@ -32,92 +32,85 @@ reverse_primer = "M13-Reverse"
 count = 0
 
 align_data = []
-
-perfect = []
-mutations = []
-for_bad = []
-rev_bad = []
-both_bad = []
-for_not = []
-rev_not = []
 nan = []
+small = []
 
 #State the vector sequence that the genes are getting built into
-backbone_seq = SeqIO.read(BACKBONE_PATH, 'fasta')
-backbone_seq = backbone_seq.seq
+#backbone_seq = SeqIO.read(BACKBONE_PATH, 'fasta')
+#backbone_seq = backbone_seq.seq
+backbone_seq = Seq.Seq("ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA")
+
+
 
 ## Function to read in the sequencing file and trim it based on the phred score
-def loadsequencing(file):
+def loadsequencing(file, threshold=0.9):
     seq = SeqIO.read(file, 'abi')
 
     maxq = np.max(seq.letter_annotations['phred_quality'])
     rolling = pd.Series(seq.letter_annotations['phred_quality']).rolling(window=20).mean()
-    start = (rolling > maxq * 0.9).idxmax()
-    end = (rolling > maxq * 0.9)[::-1].idxmax()
+    start = (rolling > maxq * threshold).idxmax()
+    end = (rolling > maxq * threshold)[::-1].idxmax()
 
     return seq.seq[start:end], seq, start, end, np.mean(seq.letter_annotations['phred_quality'][start:end])
 
 def align_reads(id_num, gene_name, target, forward, reverse, target_seq):
-    forward_align = pairwise2.align.globalxx(target_seq, forward, one_alignment_only=True)
-    reverse_align = pairwise2.align.globalxx(target_seq, reverse.reverse_complement(), one_alignment_only=True)
+    forward_align = pairwise2.align.globalms(target_seq, forward,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
+    reverse_align = pairwise2.align.globalms(target_seq, reverse,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
     forward_align = forward_align[0]
     reverse_align = reverse_align[0]
-    for_score = forward_align[2]
-    rev_score = reverse_align[2]
     for_raw = len(forward)
     rev_raw = len(reverse)
     target_length = len(target_seq)
-    return [id_num, gene_name, target, for_raw, for_score, rev_raw, rev_score, target_length]
 
-#    for_score = len(forward) - forward_align[2]
-#    rev_score = len(reverse) - reverse_align[2]
+    if for_raw <= target_length:
+        for_score = for_raw - forward_align[2]
+    else:
+        for_score = target_length - forward_align[2]
+    if rev_raw <= target_length:
+        rev_score = rev_raw - reverse_align[2]
+    else:
+        rev_score = target_length - reverse_align[2]
 
-#    if for_score == 0:
-#        print("forward perfect")
-#        if rev_score == 0:
-#            perfect.append(id_num)
-#        elif rev_score < 10:
-#            print("Only mut in rev")
-#            mut_name = id_num + "-" + for_score + "-" + rev_score
-#            mutation.append(mut_name)
-#        elif rev_score >= 10:
-#            print("bad rev read")
-#            rev_bad.append(id_num)
-#        else:
-#            print("rev not captured")
-#            rev_not.append(id_num)
-#    elif for_score < 10:
-#        print("Mut in for read")
-#        if rev_score == 0:
-#            print("Only mut in for")
-#            mut_name = id_num + "-" + for_score + "-" + rev_score
-#            mutation.append(mut_name)
-#        elif rev_score < 10:
-#            print("Mut in rev read")
-#            mut_name = id_num + "-" + for_score + "-" + rev_score
-#            mutation.append(mut_name)
-#        elif rev_score >= 10:
-#            print("bad rev read")
-#            rev_bad.append(id_num)
-#        else:
-#            print("rev not captured")
-#            rev_not.append(id_num)
-#    elif for_score >= 10:
-#        print("Bad for read")
-#        if rev_score == 0:
-#            print("Only bad for read")
-#            for_bad.append(id_num)
-#        elif rev_score < 10:
-#            print("Mut in rev read")
-#            for_bad.append(id_num)
-#        elif rev_score >= 10:
-#            print("bad rev read")
-#            both_bad.append(id_num)
-#        else:
-#            print("rev not captured")
-#            for_not.append(id_num)
-#    else:
-#        print("For not captured")
+    target_length = len(target_seq)
+
+    if for_score == 0:
+        print("forward perfect match")
+        if rev_score == 0:
+            print("reverse perfect match")
+            outcome = "Perfect"
+        elif rev_score < 10:
+            print("Only mut in rev")
+            outcome = "Mutation: {} {}".format(for_score,rev_score)
+        else:
+            print("bad rev read")
+            outcome = "Bad Reverse"
+    elif for_score < 10:
+        print("Mut in for read")
+        if rev_score == 0:
+            print("Only mut in for")
+            outcome = "Mutation: {} {}".format(for_score,rev_score)
+        elif rev_score < 10:
+            print("Mut in both reads")
+            outcome = "Mutation: {} {}".format(for_score,rev_score)
+        else:
+            print("bad rev read")
+            outcome = "Mutation: {} {}".format(for_score,rev_score)
+    else:
+        print("Bad for read")
+        if rev_score == 0:
+            print("Only bad for read")
+            outcome = "Bad Forward"
+        elif rev_score < 10:
+            print("Mut in rev read")
+            outcome = "Mutation: {} {}".format(for_score,rev_score)
+        else:
+            print("bad rev read")
+            outcome = "Bad clone"
+
+
+    return [id_num, gene_name, target, for_raw, forward_align[2], rev_raw, reverse_align[2], target_length, outcome]
+
+
 
 old_insert = "ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA"
 
@@ -155,36 +148,32 @@ for forfile in glob.glob("../sequencing_files/{}/*{}*.ab1".format(target, forwar
     gene_seq = data["sequence"]["optimized_sequence"]
     gene_seq = Seq.Seq(gene_seq)
     gene_name = data["gene_name"]
-    #plasmid_seq = str(backbone_seq).replace(old_insert,gene_seq)
-    #plasmid_seq = Seq.Seq(plasmid_seq)
 
     forward_untrim, _, _, _, forward_qual = loadsequencing(forfile)
     reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile)
     print("Quality", forward_qual, reverse_qual)
 
-    forward = forward_untrim[forward_untrim.find('ATG'):] # Start at start codon
-#    if len(forward) > len(str(gene_seq)):
-#        forward = forward[:forward.find('TGAAGAGCTTAGAGACCGGT')]
-    reverse = reverse_untrim[reverse_untrim.find('TCTTCA'):].reverse_complement() # Stop at stop
-#    if len(reverse) > len(str(gene_seq)):
-#        reverse = reverse[:reverse.find('CATTAGAGACCCGACGA')]
-
     if math.isnan(forward_qual) or math.isnan(reverse_qual):
-        if math.isnan(forward_qual):
-            print("forward is nan")
-            nan.append(id_num)
-        if math.isnan(reverse_qual):
-            print("reverse is nan")
-            nan.append(id_num)
-        continue
+        forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
+        reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile, threshold=0.8)
+        nan.append(id_num)
+        print(nan)
+        print("Quality", forward_qual, reverse_qual)
+    if len(forward_untrim) < 50 or len(reverse_untrim) < 50:
+        forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
+        reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile, threshold=0.8)
+        small.append(id_num)
+
+    forward = forward_untrim[forward_untrim.find('ATG'):] # Start at start codon
+    reverse = reverse_untrim[reverse_untrim.find('TCA'):].reverse_complement() # Stop at stop
 
     row = align_reads(id_num, gene_name, "gene",forward,reverse,gene_seq)
     align_data.append(row)
 
-    #if (row[4] != min(row[3], row[7])):
-    print("aligning to backbone")
-    row = align_reads(id_num, gene_name, "backbone",forward,reverse,backbone_seq)
-    align_data.append(row)
+    if (row[4] != min(row[3], row[7])) or (row[6] != min(row[5], row[7])):
+        print("aligning to backbone")
+        row = align_reads(id_num, gene_name, "backbone",forward,reverse,backbone_seq)
+        align_data.append(row)
 
 align_data = np.array(align_data)
 
@@ -196,14 +185,17 @@ array = pd.DataFrame({
     "For Score" : align_data[:,4],
     "Rev Length" : align_data[:,5],
     "Rev Score" : align_data[:,6],
-    "Gene Length" : align_data[:,7]
+    "Gene Length" : align_data[:,7],
+    "Outcome" : align_data[:,8]
 })
 
-array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length"]]
+array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome"]]
 
 array.to_csv("./sequence_analysis_all_back.csv")
 
 print(array)
+print(nan)
+print(small)
 
 print()
 stop = datetime.now()
