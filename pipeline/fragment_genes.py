@@ -30,7 +30,7 @@ suffix = "TCGTCTTC".lower()
 
 # Add an A to each end of each sequence to create the standard MoClo sticky ends
 # Note that we assume the stop codons on incoming genes are TGA
-design_genes['Sequence'] = "a" + design_genes['Sequence'] + "a"
+# design_genes['Sequence'] = "a" + design_genes['Sequence'] + "a"
 
 # What size are our things?
 eprint("Gene Number")
