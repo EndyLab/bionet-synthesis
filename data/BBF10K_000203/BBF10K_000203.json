@@ -40,14 +40,14 @@
     "will_build": true,
     "abandoned": false,
     "build_ready": true,
-    "building": "",
+    "building": true,
     "build_complete": "Unknown_Sequence",
     "build_attempts": [
       {
-        "build_well": "",
-        "build_date": "",
-        "build_number": "",
-        "build_outcome": ""
+        "build_well": "G3",
+        "build_date": "2018-01-30 13:59:16",
+        "build_number": "build001",
+        "build_outcome": "In Process"
       }
     ]
   },
