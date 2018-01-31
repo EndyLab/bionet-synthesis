@@ -342,7 +342,7 @@ p200.drop_tip()
 p10.pick_up_tip()
 for row in range(num_rows):
     print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), new_tip='never')
 p10.drop_tip()
 
 p10s.pick_up_tip()
@@ -351,7 +351,7 @@ for index, row in master_plan.iterrows():
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
@@ -367,7 +367,7 @@ for index, row in plan.iterrows():
     gene = row['Gene']
     p10s.pick_up_tip()
     print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),mix_before=(1,8),new_tip='never')
+    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
