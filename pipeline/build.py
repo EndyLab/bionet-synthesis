@@ -48,6 +48,7 @@ if args.manual:
 else:
     max_plates = 3
     print("Max plates: ", max_plates)
+    selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
     #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
@@ -111,8 +112,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
 
     if data['gene_id'] in previous_genes:
         print("Already attempted")
-        continue
-
+        continue 
 
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
@@ -138,6 +138,8 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     new_plate_count = len(pd.unique(plates + new_plates))
     if new_plate_count > max_plates:
         # We'll have too many source plates if we add this gene.
+        continue
+    if pd.unique(plates + new_plates).all() not in selection:
         continue
 
     gene_list.append(gene)
@@ -191,7 +193,7 @@ input("Press enter to continue")
 ## Setting up the OT-1 deck
 
 # Configuration
-SOURCE_SLOTS = ['D2','D3','B3','B2']
+SOURCE_SLOTS = ['D2','D3','B2']
 
 
 # Specify locations, note that locations are indexed by the spot in the array
@@ -238,7 +240,7 @@ for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
 
-extra_master = 1.5
+extra_master = 1.3
 
 master_reactions = total_num * extra_master
 
@@ -332,18 +334,18 @@ vol_per_tube = num_rows * 8 * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
-p200.pick_up_tip()
-for well in range(8):
-    print("Transferring {}ul to well {}".format(vol_per_tube,well))
-    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-p200.drop_tip()
+#p200.pick_up_tip()
+#for well in range(8):
+#    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+#    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+#p200.drop_tip()
 
 # Aliquot the master mix into all of the desired wells
-p10.pick_up_tip()
-for row in range(num_rows):
-    print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
-p10.drop_tip()
+#p10.pick_up_tip()
+#for row in range(num_rows):
+#    print("Transferring master mix to row {}".format(row))
+#    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+#p10.drop_tip()
 
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
