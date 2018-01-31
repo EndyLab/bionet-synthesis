@@ -40,14 +40,14 @@
     "will_build": true,
     "abandoned": false,
     "build_ready": true,
-    "building": "",
+    "building": true,
     "build_complete": "",
     "build_attempts": [
       {
-        "build_well": "",
-        "build_date": "",
-        "build_number": "",
-        "build_outcome": ""
+        "build_well": "C7",
+        "build_date": "2018-01-31 13:55:42",
+        "build_number": "build005",
+        "build_outcome": "In Process"
       }
     ]
   },
