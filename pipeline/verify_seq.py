@@ -78,37 +78,46 @@ def align_reads(id_num, gene_name, target, forward, reverse, target_seq):
         if rev_score == 0:
             print("reverse perfect match")
             outcome = "Perfect"
+            manaul = ""
         elif rev_score < 10:
             print("Only mut in rev")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
+            manaul = "CHECK"
         else:
             print("bad rev read")
             outcome = "Bad Reverse"
+            manaul = "CHECK"
     elif for_score < 10:
         print("Mut in for read")
         if rev_score == 0:
             print("Only mut in for")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
+            manaul = "CHECK"
         elif rev_score < 10:
             print("Mut in both reads")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
+            manaul = "CHECK"
         else:
             print("bad rev read")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
+            manaul = "CHECK"
     else:
         print("Bad for read")
         if rev_score == 0:
             print("Only bad for read")
             outcome = "Bad Forward"
+            manaul = "CHECK"
         elif rev_score < 10:
             print("Mut in rev read")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
+            manaul = "CHECK"
         else:
             print("bad rev read")
             outcome = "Bad clone"
+            manaul = ""
 
 
-    return [id_num, gene_name, target, for_raw, forward_align[2], rev_raw, reverse_align[2], target_length, outcome]
+    return [id_num, gene_name, target, for_raw, forward_align[2], rev_raw, reverse_align[2], target_length, outcome, manual]
 
 
 
@@ -186,12 +195,13 @@ array = pd.DataFrame({
     "Rev Length" : align_data[:,5],
     "Rev Score" : align_data[:,6],
     "Gene Length" : align_data[:,7],
-    "Outcome" : align_data[:,8]
+    "Outcome" : align_data[:,8],
+    "Manual" : align_data[:,9]
 })
 
-array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome"]]
+array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome","Manual"]]
 
-array.to_csv("./sequence_analysis_all_back.csv")
+array.to_csv("../sequencing_files/{}/alignment_results.csv".format(target))
 
 print(array)
 print(nan)

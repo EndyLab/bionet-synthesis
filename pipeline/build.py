@@ -46,13 +46,12 @@ if args.manual:
     else:
         plates = []
 else:
-    max_plates = 3
+    max_plates = 2
     print("Max plates: ", max_plates)
-    #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
-    #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
-    #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
+    plates = ["pSHPs0826B426849MU",'pSHPs0807B412039MU']
+    #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU','pSHPs0807B412040MU']
     print("Pulling from plates: ", plates)
-    num_reactions = 96
+    num_reactions = 54
     print("Number of reactions: ", num_reactions)
     max_frag = 2
     print("Max number of fragments: ", max_frag)
@@ -180,6 +179,7 @@ plan = pd.DataFrame({
     "Destination" : targets[:,3]
     })
 plan = plan[["Gene","Plate","Well","Destination"]]
+plan.to_csv("../builds/remaining_constructs3.csv")
 print(plan)
 print(len(target_well))
 print()
@@ -384,7 +384,10 @@ if glob.glob("../builds/build*.csv"):
     for build_map in glob.glob("../builds/build*.csv"):
         if "bad" in build_map:
             continue
-        build_num = str(int(build_map[15:17]) + 1).zfill(3)
+        current_build_num = str(int(build_map[15:18]) + 1).zfill(3)
+        print(build_num,build_map[15:18])
+        if int(current_build_num) > int(build_num):
+            build_num = current_build_num
 else:
     print("no previous builds")
     build_num = '001'
