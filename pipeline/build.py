@@ -35,7 +35,7 @@ if args.run:
         sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
 
 if args.manual:
-    num_reactions = input("How many reactions: ")
+    max_reactions = input("How many reactions: ")
     max_plates = input("Number of plates to pull from: ")
     max_frag = input("Max number of fragments to assemble: ")
     manual = raw_input("Would you like to specify the plates: ")
@@ -51,10 +51,10 @@ else:
     selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
     #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
-    #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
+    plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
     print("Pulling from plates: ", plates)
-    num_reactions = 96
-    print("Number of reactions: ", num_reactions)
+    max_reactions = 96
+    print("Number of reactions: ", max_reactions)
     max_frag = 2
     print("Max number of fragments: ", max_frag)
     input("Press enter to continue ")
@@ -112,7 +112,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
 
     if data['gene_id'] in previous_genes:
         print("Already attempted")
-        continue 
+        continue
 
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
@@ -120,7 +120,7 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     print("Not in process")
 
     #Set a limit for how many you want to run
-    if len(gene_list) == num_reactions:
+    if len(gene_list) == max_reactions:
         break
 
     # Pull general information about the gene
@@ -173,6 +173,7 @@ master_plan = pd.DataFrame({
     "Fragments" : frag_list
 })
 master_plan = master_plan[["Well","Fragments"]]
+num_reactions = len(master_plan)
 
 targets = np.array(targets)
 plan = pd.DataFrame({
@@ -182,6 +183,7 @@ plan = pd.DataFrame({
     "Destination" : targets[:,3]
     })
 plan = plan[["Gene","Plate","Well","Destination"]]
+#plan.to_csv("../builds/remaining_constructs.csv")
 print(plan)
 print(len(target_well))
 print()
@@ -240,7 +242,7 @@ for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
 
-extra_master = 1.3
+extra_master = 1.2
 
 master_reactions = total_num * extra_master
 
@@ -334,26 +336,27 @@ vol_per_tube = num_rows * 8 * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
-#p200.pick_up_tip()
-#for well in range(8):
-#    print("Transferring {}ul to well {}".format(vol_per_tube,well))
-#    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-#p200.drop_tip()
+p200.pick_up_tip()
+for well in range(8):
+    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+p200.drop_tip()
 
 # Aliquot the master mix into all of the desired wells
-#p10.pick_up_tip()
-#for row in range(num_rows):
-#    print("Transferring master mix to row {}".format(row))
-#    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
-#p10.drop_tip()
+p10.pick_up_tip()
+for row in range(num_rows):
+    print("Transferring master mix to row {}".format(row))
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
+p10.drop_tip()
 
+# Aliquot extra master mix into wells with multiple fragments
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
     if int(row['Fragments']) > 1:
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
@@ -369,7 +372,7 @@ for index, row in plan.iterrows():
     gene = row['Gene']
     p10s.pick_up_tip()
     print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),mix_before=(1,8),new_tip='never')
+    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
@@ -386,7 +389,9 @@ if glob.glob("../builds/build*.csv"):
     for build_map in glob.glob("../builds/build*.csv"):
         if "bad" in build_map:
             continue
-        build_num = str(int(build_map[15:17]) + 1).zfill(3)
+        current_build_num = str(int(build_map[15:18]) + 1).zfill(3)
+        if int(current_build_num) > int(build_num):
+            build_num = current_build_num
 else:
     print("no previous builds")
     build_num = '001'

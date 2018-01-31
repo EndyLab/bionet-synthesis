@@ -79,9 +79,10 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10", "E2"],
                     ["tiprack-10s1", "E3"],
                     ["tiprack-10s2", "E1"],
-                    ["trash", "B1"],
+                    ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
-                    ["PLATE HERE", "C2"]])
+                    ["PLATE HERE", "C2"],
+                    ["Tube Rack","B1"]])
 
 # Make the dataframe to represent the OT-1 deck
 deck = ['A1','B2','C3','D2','E1']
@@ -137,6 +138,7 @@ p10s_tipracks = [
 
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
 master = containers.load('PCR-strip-tall', locations[5,1])
+centrifuge_tube = containers.load('tube-rack-2ml',locations[7,1])
 
 resuspend_plate = containers.load('96-flat', locations[6,1])
 
@@ -181,14 +183,14 @@ for i, construct in plan.iterrows():
     if vol < 20:
         print("Adding {}ul to well {} with the p10".format(vol, well))
         p10s.pick_up_tip()
-        p10s.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        p10s.transfer(vol, centrifuge_tube['A1'].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
         #print("Mixing with {} 3 times".format(vol * 0.5))
         #p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
         p10s.drop_tip()
     else:
         print("Adding {}ul to well {} with the p200".format(vol, well))
         p200.pick_up_tip()
-        p200.transfer(vol, master['A1'], resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        p200.transfer(vol, centrifuge_tube['A1'].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
         #print("Mixing with {} 3 times".format(vol * 0.5))
         #p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
         p200.drop_tip()
