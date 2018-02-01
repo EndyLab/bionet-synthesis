@@ -14,6 +14,7 @@ import re
 
 info = []
 contributors = []
+misc = []
 
 ordered = 0
 abandoned = 0
@@ -22,6 +23,9 @@ attempted = 0
 unknown = 0
 vector = 0
 complete = 0
+mutation = 0
+incomplete = 0
+split = 0
 
 sub1 = 0
 sub2 = 0
@@ -55,17 +59,25 @@ for file in glob.glob("../data/*/*.json"):
         build_ready = build_ready + 1
     if data["status"]["build_complete"] != "":
         attempted = attempted + 1
-    if data["status"]["build_complete"] == "Good_Sequence":
+    if data["status"]["build_complete"] == "Good_Sequence" or data["status"]["build_complete"] == "Good_sequence":
         complete = complete + 1
-    elif data["status"]["build_complete"] == "Original_Vector_Sequence":
+    elif data["status"]["build_complete"] == "Original_Vector_Sequence" or data["status"]["build_complete"] == "Original Vector Sequence":
         vector = vector + 1
-    elif data["status"]["build_complete"] == "Unknown_Sequence":
+    elif data["status"]["build_complete"] == "Unknown_Sequence" or data["status"]["build_complete"] == "Unknown Sequence":
         unknown = unknown + 1
+    elif data["status"]["build_complete"] == "Point Mutation":
+        mutation += 1
+    elif data["status"]["build_complete"] == "Incomplete":
+        incomplete += 1
+    elif data["status"]["build_complete"] == "Split Reads":
+        split += 1
+    else:
+        misc.append(data["status"]["build_complete"])
 
 contributors = pd.Series(contributors)
 unique_cont = len(contributors.unique())
 production = ordered - (build_ready + abandoned)
-failures = (vector + unknown)
+failures = (vector + unknown + mutation + incomplete + split)
 not_attempted = (build_ready - attempted)
 
 print("Contributers :", unique_cont)
@@ -107,6 +119,8 @@ print(sankey)
 
 name = "../raw_files/sankey_diagrams/sankey_{}.txt".format(str(now))
 print(name)
+
+print(misc)
 
 f = open(name,'w')
 f.write(sankey)

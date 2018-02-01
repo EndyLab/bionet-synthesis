@@ -20,14 +20,20 @@ from Bio import SeqIO
 import_time = datetime.now()
 print("Time to import: ",import_time - start)
 
-PATH = "../sequencing_files/"
+build_num = "build000"
+
+PATH = "../builds/{}".format(build_num)
 BACKBONE_PATH = '../sequencing_files/popen_v1-1_backbone.fasta'
 
-target = "CM_530609_zipfile-1"
+target = "{}_seq_files".format(build_num)
 dictionary_file = "../sequencing_files/seq_to_build.json"
 
 forward_primer = "M13-Forward---20-"
 reverse_primer = "M13-Reverse"
+
+# Create a dictionary to link the gene name to the corresponding id number
+data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+dictionary = dict(zip(data['gene_name'], data['idnum']))
 
 count = 0
 
@@ -78,43 +84,43 @@ def align_reads(id_num, gene_name, target, forward, reverse, target_seq):
         if rev_score == 0:
             print("reverse perfect match")
             outcome = "Perfect"
-            manaul = ""
+            manual = ""
         elif rev_score < 10:
             print("Only mut in rev")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
-            manaul = "CHECK"
+            manual = "CHECK"
         else:
             print("bad rev read")
             outcome = "Bad Reverse"
-            manaul = "CHECK"
+            manual = "CHECK"
     elif for_score < 10:
         print("Mut in for read")
         if rev_score == 0:
             print("Only mut in for")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
-            manaul = "CHECK"
+            manual = "CHECK"
         elif rev_score < 10:
             print("Mut in both reads")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
-            manaul = "CHECK"
+            manual = "CHECK"
         else:
             print("bad rev read")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
-            manaul = "CHECK"
+            manual = "CHECK"
     else:
         print("Bad for read")
         if rev_score == 0:
             print("Only bad for read")
             outcome = "Bad Forward"
-            manaul = "CHECK"
+            manual = "CHECK"
         elif rev_score < 10:
             print("Mut in rev read")
             outcome = "Mutation: {} {}".format(for_score,rev_score)
-            manaul = "CHECK"
+            manual = "CHECK"
         else:
             print("bad rev read")
             outcome = "Bad clone"
-            manaul = ""
+            manual = ""
 
 
     return [id_num, gene_name, target, for_raw, forward_align[2], rev_raw, reverse_align[2], target_length, outcome, manual]
@@ -123,25 +129,28 @@ def align_reads(id_num, gene_name, target, forward, reverse, target_seq):
 
 old_insert = "ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA"
 
-with open(dictionary_file,"r") as json_file:
-    data = json.load(json_file)
-    build_num = data[target]
-
-for forfile in glob.glob("../sequencing_files/{}/*{}*.ab1".format(target, forward_primer)):
+for forfile in glob.glob("{}/{}_seq_files/*{}*.ab1".format(PATH, build_num, forward_primer)):
     print(forfile)
 
     count += 1
     if count == 100:
         break
 
-    initials, order_number, plate_number, well_number, sample_name, sample_number, well_address = re.match(
-        r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_([A-Za-z0-9]+)_([0-9]+)_M13-Forward---20-([A-H][0-9]{2}).ab1',
-        forfile).groups()
-
-    revfile = "{}/{}_{}-{}{}_{}_{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, sample_name, sample_number, reverse_primer, well_address)
-    print(revfile)
-
-    id_num = sample_name + "_" + sample_number
+    if "BBF10K" in forfile:
+        initials, order_number, plate_number, well_number, sample_name, sample_number, well_address = re.match(
+            r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_([A-Za-z0-9]+)_([0-9]+)_M13-Forward---20-([A-H][0-9]{2}).ab1',
+            forfile).groups()
+        revfile = "{}/{}_{}-{}{}_{}_{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, sample_name, sample_number, reverse_primer, well_address)
+        print(revfile)
+        id_num = sample_name + "_" + sample_number
+    elif "MMSYN" in forfile:
+        initials, order_number, plate_number, well_number, hyphen, sample_name, primer_name, well_address = re.match(
+            r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_(-?)([A-Za-z0-9_-]+)_([A-Za-z0-9-]+)_([A-H][0-9]{2}).ab1',
+            forfile).groups()
+        revfile = "{}/{}_{}-{}{}_{}{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, hyphen, sample_name, reverse_primer, well_address)
+        print("Sample_name", sample_name)
+        id_num = dictionary[sample_name[:-2]]
+        print(id_num)
 
     new_dir = "../data/{}/{}_seq_files".format(id_num,build_num)
 #    if os.path.exists(new_dir):
@@ -201,11 +210,11 @@ array = pd.DataFrame({
 
 array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome","Manual"]]
 
-array.to_csv("../sequencing_files/{}/alignment_results.csv".format(target))
+array.to_csv("{}/{}_alignment_results.csv".format(PATH,build_num))
 
 print(array)
-print(nan)
-print(small)
+print("nan sequences:", nan)
+print("small sequences:", small)
 
 print()
 stop = datetime.now()
