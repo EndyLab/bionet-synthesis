@@ -74,7 +74,7 @@ print("You will need {} agar plates".format(len(agar_plate_names)))
 
 ## Setting up the OT-1 deck
 
-AGAR_SLOTS = ['D2','B2','D1','D3']
+AGAR_SLOTS = ['D2','B2','D3']
 
 layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
 
