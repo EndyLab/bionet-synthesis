@@ -26,6 +26,7 @@ complete = 0
 mutation = 0
 incomplete = 0
 split = 0
+process = 0
 
 sub1 = 0
 sub2 = 0
@@ -71,6 +72,8 @@ for file in glob.glob("../data/*/*.json"):
         incomplete += 1
     elif data["status"]["build_complete"] == "Split Reads":
         split += 1
+    elif data["status"]["build_complete"] == "In_Process":
+        process += 1
     else:
         misc.append(data["status"]["build_complete"])
 
@@ -94,6 +97,7 @@ print("Received :", build_ready)
 print("In Production : ", production)
 print("Build Attempted :", attempted)
 print("Verified Success :", complete)
+print("In Process :", process)
 print("Failures :", failures)
 print("Not Yet Attempted :", not_attempted)
 print()
@@ -110,11 +114,12 @@ rec = "Total Ordered [{}] Received #418fba.9".format(build_ready)
 prod = "Total Ordered [{}] In Production #f7c862".format(production)
 att = "Received [{}] Build Attempted #6e9db7.7".format(attempted)
 ver = "Build Attempted [{}] Verified Success #43bc68.7".format(complete)
+pro = "Build Attempted [{}] In Process #e8c620.4".format(process)
 fail = "Build Attempted [{}] Failures #a8252b.7".format(failures)
 #pro = "Build Attempted [{}] In Process  #e8c620.4".format()
 not_att = "Received [{}] Not Yet Attempted #e2bec0".format(not_attempted)
 
-sankey = submission1+"\n"+submission2+"\n"+submission3+"\n"+submission4+"\n"+submission5+"\n"+aband+"\n"+rec+"\n"+prod+"\n"+att+"\n"+ver+"\n"+fail+"\n"+not_att
+sankey = submission1+"\n"+submission2+"\n"+submission3+"\n"+submission4+"\n"+submission5+"\n"+aband+"\n"+rec+"\n"+prod+"\n"+att+"\n"+ver+"\n"+pro+"\n"+fail+"\n"+not_att
 print(sankey)
 
 name = "../raw_files/sankey_diagrams/sankey_{}.txt".format(str(now))

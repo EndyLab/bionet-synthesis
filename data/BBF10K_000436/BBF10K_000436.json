@@ -41,7 +41,7 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "",
+    "build_complete": "In_Process",
     "build_attempts": [
       {
         "build_well": "B2",

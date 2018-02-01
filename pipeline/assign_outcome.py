@@ -16,7 +16,7 @@ import shutil
 import_time = datetime.now()
 print("Time to import: ",import_time - start)
 
-build_num = "build000"
+build_num = "build003"
 
 SEQ_FILE = "{}_seq_files".format(build_num)
 RESULTS_PATH = "../builds/{}/{}_alignment_results.csv".format(build_num,build_num)
@@ -28,7 +28,6 @@ for index, row in results.iterrows():
     if row["Target"] != "gene":
         continue
     if row["Manual"] == "0":
-    #if math.isnan(row["Manual"]):
         row["Manual"] = row["Outcome"]
         if row["Manual"] == "Perfect":
             row["Manual"] = "Good_sequence"
