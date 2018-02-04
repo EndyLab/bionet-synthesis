@@ -16,6 +16,14 @@ from datetime import datetime
 
 ## Take in required information
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
@@ -37,7 +45,7 @@ plate_map_number = []
 build_map = 0
 
 # Looks for the possible build maps to plate
-for build_map in glob.glob("../builds/build*.csv"):
+for build_map in glob.glob("{}/*/build*.csv".format(BUILDS_PATH)):
     counter += 1
     print("{}. {}".format(counter,build_map[10:]))
     plate_map_number.append(build_map)
@@ -141,10 +149,6 @@ p10_tipracks = [
     containers.load('tiprack-10ul', locations[3,1])
 ]
 
-#p10s_tipracks = [
-#    containers.load('tiprack-10ul', locations[2,1])
-#]
-
 transformation_plate = containers.load('96-PCR-tall', locations[7,1])
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
 centrifuge_tube = containers.load('tube-rack-2ml',locations[6,1])
@@ -164,16 +168,6 @@ p10 = instruments.Pipette(
     channels=8,
     name='p10-8'
 )
-
-#p10s = instruments.Pipette(
-#    axis='a',
-#    max_volume=10,
-#    min_volume=0.5,
-#    tip_racks=p10s_tipracks,
-#    trash_container=trash,
-#    channels=1,
-#    name='p10-8s'
-#)
 
 p200 = instruments.Pipette(
     axis='b',

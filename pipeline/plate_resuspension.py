@@ -15,6 +15,14 @@ import re
 import datetime
 from datetime import datetime
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 # Initial Setup
 fmoles = 20
 
@@ -37,7 +45,7 @@ if args.run:
 # Get all of the plate maps and display them so you can choose one
 counter = 0
 plate_map_number = []
-for file in glob.glob("../plate_maps/*.csv"):
+for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
     counter = counter + 1
 
     # Prints the file name without the preceeding path

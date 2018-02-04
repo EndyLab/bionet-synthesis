@@ -13,6 +13,14 @@ import math
 
 import shutil
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 counter = 0
 
 no_frag = []
@@ -21,7 +29,7 @@ not_in_dict = []
 genes = []
 
 # Create a dictionary to link the gene name to the corresponding id number
-ref = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+ref = pd.read_csv(DICTIONARY_PATH)
 dictionary = dict(zip(ref['gene_name'], ref['idnum']))
 
 # Imports the csv containing all of the fragment sequences

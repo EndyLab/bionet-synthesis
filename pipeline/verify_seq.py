@@ -17,22 +17,27 @@ from Bio import pairwise2
 from Bio import Seq
 from Bio import SeqIO
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 import_time = datetime.now()
 print("Time to import: ",import_time - start)
 
-build_num = "build000"
+build_num = "build"+str(input("Which build: ")).zfill(3)
+print("build_num",build_num)
 
-PATH = "../builds/{}".format(build_num)
-BACKBONE_PATH = '../sequencing_files/popen_v1-1_backbone.fasta'
-
-target = "{}_seq_files".format(build_num)
-dictionary_file = "../sequencing_files/seq_to_build.json"
+SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,build_num,build_num)
 
 forward_primer = "M13-Forward---20-"
 reverse_primer = "M13-Reverse"
 
 # Create a dictionary to link the gene name to the corresponding id number
-data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+data = pd.read_csv(DICTIONARY_PATH)
 dictionary = dict(zip(data['gene_name'], data['idnum']))
 
 count = 0
@@ -41,9 +46,6 @@ align_data = []
 nan = []
 small = []
 
-#State the vector sequence that the genes are getting built into
-#backbone_seq = SeqIO.read(BACKBONE_PATH, 'fasta')
-#backbone_seq = backbone_seq.seq
 backbone_seq = Seq.Seq("ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA")
 
 
@@ -129,12 +131,8 @@ def align_reads(id_num, gene_name, target, forward, reverse, target_seq):
 
 old_insert = "ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA"
 
-for forfile in glob.glob("{}/{}_seq_files/*{}*.ab1".format(PATH, build_num, forward_primer)):
+for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
     print(forfile)
-
-    count += 1
-    if count == 100:
-        break
 
     if "BBF10K" in forfile:
         initials, order_number, plate_number, well_number, sample_name, sample_number, well_address = re.match(
@@ -152,7 +150,7 @@ for forfile in glob.glob("{}/{}_seq_files/*{}*.ab1".format(PATH, build_num, forw
         id_num = dictionary[sample_name[:-2]]
         print(id_num)
 
-    new_dir = "../data/{}/{}_seq_files".format(id_num,build_num)
+    new_dir = "{}/{}/{}_seq_files".format(DATA_PATH,id_num,build_num)
 #    if os.path.exists(new_dir):
 #        print("{} already exists".format(new_dir))
 #    else:
@@ -160,7 +158,7 @@ for forfile in glob.glob("{}/{}_seq_files/*{}*.ab1".format(PATH, build_num, forw
 #        shutil.copy(forfile, new_dir)
 #        shutil.copy(revfile, new_dir)
 
-    with open("../data/{}/{}.json".format(id_num,id_num),"r") as json_file:
+    with open("{}/{}/{}.json".format(DATA_PATH,id_num,id_num),"r") as json_file:
         data = json.load(json_file)
 
     gene_seq = data["sequence"]["optimized_sequence"]
@@ -175,7 +173,6 @@ for forfile in glob.glob("{}/{}_seq_files/*{}*.ab1".format(PATH, build_num, forw
         forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
         reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile, threshold=0.8)
         nan.append(id_num)
-        print(nan)
         print("Quality", forward_qual, reverse_qual)
     if len(forward_untrim) < 50 or len(reverse_untrim) < 50:
         forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
@@ -210,7 +207,7 @@ array = pd.DataFrame({
 
 array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome","Manual"]]
 
-array.to_csv("{}/{}_alignment_results.csv".format(PATH,build_num))
+array.to_csv("{}/{}_alignment_results.csv".format(SEQFILE_PATH,build_num))
 
 print(array)
 print("nan sequences:", nan)

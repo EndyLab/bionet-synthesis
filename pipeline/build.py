@@ -17,6 +17,12 @@ from datetime import datetime
 
 ## Take in required information
 
+# Set starting paths
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = PIPELINE_PATH + "/builds"
+DATA_PATH = PIPELINE_PATH + "/data"
+
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
@@ -78,18 +84,18 @@ master_well = []
 gene_list = []
 
 previous_genes = []
-for file in glob.glob("../builds/*.csv"):
+for file in glob.glob(BUILDS+"/*/*.csv"):
     print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
 
-previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
+#previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
 print(previous_genes)
 
 input("continue?")
 
 # Query the database and iterate through each json file
-for file in glob.glob("../data/BBF10K*/*.json"):
+for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     print(file)
 
     # Open and store the data within the json file
@@ -336,28 +342,28 @@ vol_per_tube = num_rows * 8 * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
-#p200.pick_up_tip()
-#for well in range(8):
-#    print("Transferring {}ul to well {}".format(vol_per_tube,well))
-#    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-#p200.drop_tip()
+p200.pick_up_tip()
+for well in range(8):
+    print("Transferring {}ul to well {}".format(vol_per_tube,well))
+    p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+p200.drop_tip()
 
 # Aliquot the master mix into all of the desired wells
-#p10.pick_up_tip()
-#for row in range(num_rows):
-#    print("Transferring master mix to row {}".format(row))
-#    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
-#p10.drop_tip()
+p10.pick_up_tip()
+for row in range(num_rows):
+    print("Transferring master mix to row {}".format(row))
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
+p10.drop_tip()
 
 # Aliquot extra master mix into wells with multiple fragments
-#p10s.pick_up_tip()
-#for index, row in master_plan.iterrows():
-#    if int(row['Fragments']) > 1:
-#        extra_volume = int(row['Fragments'] - 1) * 8
-#        current_well = str(row['Well'])
-#        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-#        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-#p10s.drop_tip()
+p10s.pick_up_tip()
+for index, row in master_plan.iterrows():
+    if int(row['Fragments']) > 1:
+        extra_volume = int(row['Fragments'] - 1) * 8
+        current_well = str(row['Well'])
+        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
 
@@ -384,9 +390,9 @@ now, seconds = str(datetime.now()).split(".")
 build_num = 0
 
 # Assigns this build a unique number following the most recent build
-if glob.glob("../builds/build*.csv"):
+if glob.glob(BUILD_PATH + "/*/*.csv"):
     print("previous builds")
-    for build_map in glob.glob("../builds/build*.csv"):
+    for build_map in glob.glob(BUILD_PATH + "/*/*.csv"):
         if "bad" in build_map:
             continue
         current_build_num = str(int(build_map[15:18]) + 1).zfill(3)
@@ -403,9 +409,9 @@ build_name = "build{}".format(build_num)
 print("build_name: ", build_name)
 
 if outcome != 2:
-    file_name = "../builds/{}_{}.csv".format(build_name,now)
+    file_name = BUILD_PATH + "/{}/{}_{}.csv".format(build_name,build_name,now)
 else:
-    file_name = "../builds/bad-{}_{}.csv".format(build_name, now)
+    file_name = BUILD_PATH + "/{}/bad-{}_{}.csv".format(build_name,build_name, now)
 
 plate_map = plan[["Gene","Destination"]]
 plate_map = plate_map.drop_duplicates(subset=['Gene'])
@@ -421,7 +427,7 @@ for index, row in plate_map.iterrows():
     if outcome == 2:
         break
     gene = row["Gene"]
-    for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
+    for file in glob.glob(DATA_PATH + "/{}/{}.json".format(gene,gene)):
         print(file)
 
         # Open and store the data within the json file
@@ -442,7 +448,7 @@ for index, row in plate_map.iterrows():
         data["status"]["building"] = True
         print(data["status"])
 
-        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+        with open(DATA_PATH + "/{}/{}.json".format(gene,gene),"w+") as json_file:
             json.dump(data,json_file,indent=2)
 
 robot.home()
