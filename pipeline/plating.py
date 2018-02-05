@@ -13,6 +13,26 @@ import re
 
 import datetime
 from datetime import datetime
+import getch
+
+def change_height(container):
+    x = 0
+    print("h:+0.5,j:+0.1,k:-0.1,l:-0.5")
+    while x == 0:
+        c = getch.getch()
+        if c == "h":
+            p10.robot._driver.move(z=0.5,mode="relative")
+        elif c == "j":
+            p10.robot._driver.move(z=0.1,mode="relative")
+        elif c == "k":
+            p10.robot._driver.move(z=-0.1,mode="relative")
+        elif c == "l":
+            p10.robot._driver.move(z=-0.5,mode="relative")
+        elif c == "x":
+            x = 1
+    p10.calibrate_position((container))
+
+    return p10
 
 ## Take in required information
 
@@ -211,7 +231,13 @@ for plate in agar_plates:
                 plating_row -= 1
             else:
                 print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
+                if trans_row == 0 and plating_row == 0:
+                    p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
+                    p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
+                    change_height(plate)
+                else:
+                    print("not first time")
+                    p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
                 print("Counter {} starts with {}uL in the transformation tube".format(plating_counter,tube_vol))
                 tube_vol -= plate_vol
                 print("After plating the volume is", tube_vol)
