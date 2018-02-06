@@ -15,31 +15,40 @@ import datetime
 from datetime import datetime
 import getch
 
-def change_height(container):
+def change_height(container,target):
     x = 0
-    print("h:+0.5,j:+0.1,k:-0.1,l:-0.5")
+    print("s-g:up h-l:down x:exit")
     while x == 0:
         c = getch.getch()
-        if c == "h":
+        if c == "s":
+            p10.robot._driver.move(z=20,mode="relative")
+        elif c == "d":
+            p10.robot._driver.move(z=5,mode="relative")
+        elif c == "f":
             p10.robot._driver.move(z=0.5,mode="relative")
-        elif c == "j":
+        elif c == "g":
             p10.robot._driver.move(z=0.1,mode="relative")
-        elif c == "k":
+        elif c == "h":
             p10.robot._driver.move(z=-0.1,mode="relative")
-        elif c == "l":
+        elif c == "j":
             p10.robot._driver.move(z=-0.5,mode="relative")
+        elif c == "k":
+            p10.robot._driver.move(z=-5,mode="relative")
+        elif c == "l":
+            p10.robot._driver.move(z=-20,mode="relative")
         elif c == "x":
             x = 1
-    p10.calibrate_position((container))
-
-    return p10
+    p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
 
 ## Take in required information
 
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+BASE_PATH = os.path.abspath("../")
+print("base_path",BASE_PATH)
+#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"
+
 
 BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
 DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
@@ -104,7 +113,10 @@ print("You will need {} agar plates".format(len(agar_plate_names)))
 
 AGAR_SLOTS = ['D2','B2','D3']
 
+#agar_plate_names = ["plate1"]
+
 layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
+
 
 # Specify locations, note that locations are indexed by the spot in the array
 ## MAKE INTO A DICTIONARY
@@ -186,7 +198,9 @@ p10 = instruments.Pipette(
     tip_racks=p10_tipracks,
     trash_container=trash,
     channels=8,
-    name='p10-8'
+    name='p10-8',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 p200 = instruments.Pipette(
@@ -212,7 +226,7 @@ else:
     waste_vol = 2.5
     plating_row = 0
 
-p10.pick_up_tip()
+#p10.pick_up_tip()
 
 # Iterate through each agar plate
 for plate in agar_plates:
@@ -231,10 +245,11 @@ for plate in agar_plates:
                 plating_row -= 1
             else:
                 print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-                if trans_row == 0 and plating_row == 0:
+                if (trans_row == 0 and plating_row == 0) or (trans_row == 0 and plating_row == 1):
                     p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
                     p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
-                    change_height(plate)
+                    print(plate)
+                    change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
                 else:
                     print("not first time")
                     p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
