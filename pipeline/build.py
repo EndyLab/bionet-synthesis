@@ -20,8 +20,8 @@ from datetime import datetime
 # Set starting paths
 BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
-BUILDS_PATH = PIPELINE_PATH + "/builds"
-DATA_PATH = PIPELINE_PATH + "/data"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
 
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
@@ -55,9 +55,11 @@ else:
     max_plates = 3
     print("Max plates: ", max_plates)
     selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
-    #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
+    plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
-    plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
+    #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
+    #plates = "pSHPs1212B325157MU","pSHPs0826B426850MU",""
+    #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
     print("Pulling from plates: ", plates)
     max_reactions = 96
     print("Number of reactions: ", max_reactions)
@@ -84,7 +86,7 @@ master_well = []
 gene_list = []
 
 previous_genes = []
-for file in glob.glob(BUILDS+"/*/*.csv"):
+for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
     print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
@@ -181,7 +183,12 @@ master_plan = pd.DataFrame({
 master_plan = master_plan[["Well","Fragments"]]
 num_reactions = len(master_plan)
 
+print(targets)
+
 targets = np.array(targets)
+
+print(targets)
+
 plan = pd.DataFrame({
     "Plate" : targets[:,1],
     "Gene" : targets[:,0],

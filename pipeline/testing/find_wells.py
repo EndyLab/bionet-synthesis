@@ -21,7 +21,7 @@ for file in glob.glob("../../data/*/*.json"):
     with open(file,"r") as json_file:
         data = json.load(json_file)
 
-    if data["status"]["build_complete"] == "Good_Sequence" or data["status"]["build_complete"] == "Good_sequence":
+    if data["status"]["build_complete"] == "" and data["status"]["build_ready"] == True: # or data["status"]["build_complete"] == "Good_sequence":
         gene_name = data["gene_name"]
         names.append(gene_name)
 
@@ -63,7 +63,22 @@ candidates = candidates[["Candidate","Plate","Well","Fragments"]]
 
 print(candidates)
 
-candidates.to_csv("./test_candidates.csv")
+unique_plates = pd.unique(candidates["Plate"])
+print(unique_plates)
+
+remaining_per_plate = []
+
+for plate in unique_plates:
+    remaining = len(candidates[candidates.Plate == plate])
+    remaining_per_plate.append(remaining)
+    print("{} has {} genes left".format(plate, remaining))
+
+plate_breakdown = pd.DataFrame({
+    "Plate" : unique_plates,
+    "Remaining_constructs" : remaining_per_plate
+})
+print(plate_breakdown)
+#candidates.to_csv("./remaining_constructs.csv")
 
 
 

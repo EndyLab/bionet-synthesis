@@ -11,6 +11,7 @@ import pandas as pd
 import os
 import glob
 import re
+import math
 
 import datetime
 from datetime import datetime
@@ -24,7 +25,7 @@ BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
 DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
 
 # Initial Setup
-fmoles = 20
+fmoles = 40
 
 ## Take in required information
 
@@ -47,9 +48,11 @@ counter = 0
 plate_map_number = []
 for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
     counter = counter + 1
-
+    plate_map_name = re.match(
+        r'.+(Order[0-9]+_Attempt[0-9]+)_.+',
+        file).groups()
     # Prints the file name without the preceeding path
-    print("{}. {}".format(counter,file[14:]))
+    print("{}. {}".format(counter,plate_map_name[0]))
     plate_map_number.append(file)
 
 # Asks the user for a number corresponding to the plate they want to resuspend
@@ -79,6 +82,14 @@ volume = ((((amount * 1000)/(660*length))*1000) / fmoles) * 2
 plan = pd.DataFrame({'Well': plates['Well'],
                      'Volume': volume})
 plan = plan[['Well','Volume']]
+print("plan", plan)
+
+total_vol = plan['Volume'].sum()
+print("total volume of water needed: {}uL".format(total_vol))
+num_tubes = math.ceil(total_vol / 1200)
+print("Prep {} tubes with 1.2mL".format(num_tubes))
+
+input("Add tubes of water")
 
 ## Setting up the OT-1 deck
 
@@ -89,7 +100,7 @@ locations = np.array([["tiprack-200", "A3"],
                     ["tiprack-10s2", "E1"],
                     ["trash", "D1"],
                     ["PCR-strip-tall", "C3"],
-                    ["PLATE HERE", "C2"],
+                    ["PLATE HERE", "B2"],
                     ["Tube Rack","B1"]])
 
 # Make the dataframe to represent the OT-1 deck
@@ -167,7 +178,9 @@ p10s = instruments.Pipette(
     tip_racks=p10s_tipracks,
     trash_container=trash,
     channels=1,
-    name='p10-8s'
+    name='p10-8s',
+    aspirate_speed=800,
+    dispense_speed=800
 )
 
 p200 = instruments.Pipette(
@@ -177,9 +190,16 @@ p200 = instruments.Pipette(
     tip_racks=p200_tipracks,
     trash_container=trash,
     channels=1,
-    name='p200-1'
+    name='p200-1',
+    aspirate_speed=800,
+    dispense_speed=800
 )
 
+tubes = dict({1:"A1",2:"B1",3:"C1",4:"D1",5:"A2",6:"B2",7:"C2",8:"D2",9:"A3",10:"B3",11:"C3",12:"D3",13:"A4",14:"B4",15:"C4"})
+tube_count = 1
+print(tubes[tube_count])
+current_vol = 1200
+last_pipette = "neither"
 ## Run the protocol
 
 # Iterate through each well
@@ -190,18 +210,51 @@ for i, construct in plan.iterrows():
     # Determine which pipette to use
     if vol < 20:
         print("Adding {}ul to well {} with the p10".format(vol, well))
-        p10s.pick_up_tip()
-        p10s.transfer(vol, centrifuge_tube['A1'].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        #print("Mixing with {} 3 times".format(vol * 0.5))
-        #p10s.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
-        p10s.drop_tip()
+
+        if last_pipette == "p200":
+            p200.drop_tip()
+            print("p200 drop")
+            p10s.pick_up_tip()
+            print("p10s pick")
+        elif last_pipette == "neither":
+            p10s.pick_up_tip()
+            print("p10s pick")
+
+        if current_vol - vol < 200:
+            tube_count += 1
+            current_vol = 1200
+        current_vol -= vol
+        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
+
+        p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        last_pipette = "p10s"
     else:
+        if last_pipette == "p10s":
+            p10s.drop_tip()
+            print("p10s drop")
+            p200.pick_up_tip()
+            print("p200 pick")
+        elif last_pipette == "neither":
+            p200.pick_up_tip()
+            print("p200 pick")
+
         print("Adding {}ul to well {} with the p200".format(vol, well))
-        p200.pick_up_tip()
+
+        if current_vol - vol < 100:
+            tube_count += 1
+            current_vol = 1200
+        current_vol -= vol
+        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
+
         p200.transfer(vol, centrifuge_tube['A1'].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
-        #print("Mixing with {} 3 times".format(vol * 0.5))
-        #p200.mix(3, (vol * 0.5), resuspend_plate.wells(well).bottom())
-        p200.drop_tip()
+        last_pipette = "p200"
+
+if last_pipette == "p10s":
+    p10s.drop_tip()
+    print("p10s drop")
+elif last_pipette == "p200":
+    p200.drop_tip()
+    print("p200 drop")
 
 stop = datetime.now()
 print(stop)

@@ -1,0 +1,116 @@
+Sequencing Order Form,,,,96-Well Plate,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+"Account Info (If you have an online account with Elim, or please create one before submitting this order):",,,,,,,,,,,,
+Item,Input,,,,,,,,,,,
+Customer Name,Conary Meyer,<-- Your Name Here,,,,,,,,,,
+Customer ID,37288,"<-- If you already have one, or please create an online account at www.elimbio.com.",,,,,,,,,,
+Order #,532159,<-- Same as the pickup order #,,,,,,,,,,
+P.O. #,61699574,* Please use secure online ordering service at our website or call us to give credit card info for security concern.,,,,,  or call us to give credit card info for security concern.,,,,,
+Phone #,8479513826,,,,,,,,,,,
+Date,01/25/2018,,,,,,,,,,,
+Remarks,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate Name:,532159,"Please use letter, number, dash [ - ] and underscore [ _ ] only!",,,,,,,,,,
+Order Info:,,Max. Length: 50 letters,PCR        Plasmid     PCR Product BAC DNA   Genomic DNA       Cosmid      Other,Number only,Number only,Max. Length: 50 letters,Number only,Premix  or Non-Premix,Number only,Yes/No GC Rich?,,
+Reaction #,Well,Template Name,Template Type,Template Conc (ng/ul),Template Size (bp),Primer Name,Primer Conc (uM),Premix?          ,Preferred Annealling Temp. (oC),GC Rich?,Notes,Well
+1,A1,BBF10K_000259,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A1
+2,B1,BBF10K_000222,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B1
+3,C1,BBF10K_000135,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C1
+4,D1,BBF10K_000206,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D1
+5,E1,BBF10K_000144,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E1
+6,F1,BBF10K_000091,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F1
+7,G1,BBF10K_000158,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G1
+8,H1,BBF10K_000352,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H1
+9,A2,BBF10K_000270,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A2
+10,B2,BBF10K_000102,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B2
+11,C2,BBF10K_000090,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C2
+12,D2,BBF10K_000123,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D2
+13,E2,BBF10K_000157,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E2
+14,F2,BBF10K_000155,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F2
+15,G2,BBF10K_000011,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G2
+16,H2,BBF10K_000031,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H2
+17,A3,BBF10K_000250,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A3
+18,B3,BBF10K_000046,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B3
+19,C3,BBF10K_000377,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C3
+20,D3,BBF10K_000342,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D3
+21,E3,BBF10K_000320,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E3
+22,F3,BBF10K_000298,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F3
+23,G3,BBF10K_000203,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G3
+24,H3,BBF10K_000066,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H3
+25,A4,BBF10K_000210,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A4
+26,B4,BBF10K_000333,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B4
+27,C4,BBF10K_000338,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C4
+28,D4,BBF10K_000032,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D4
+29,E4,BBF10K_000148,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E4
+30,F4,BBF10K_000110,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F4
+31,G4,BBF10K_000167,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G4
+32,H4,BBF10K_000049,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H4
+33,A5,BBF10K_000053,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A5
+34,B5,BBF10K_000303,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B5
+35,C5,BBF10K_000287,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C5
+36,D5,BBF10K_000300,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D5
+37,E5,BBF10K_000039,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E5
+38,F5,BBF10K_000348,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F5
+39,G5,BBF10K_000346,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G5
+40,H5,BBF10K_000230,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H5
+41,A6,BBF10K_000045,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A6
+42,B6,BBF10K_000243,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B6
+43,C6,BBF10K_000191,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C6
+44,D6,BBF10K_000001,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D6
+45,E6,BBF10K_000029,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E6
+46,F6,BBF10K_000013,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F6
+47,G6,BBF10K_000020,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G6
+48,H6,BBF10K_000062,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H6
+49,A7,BBF10K_000286,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A7
+50,B7,BBF10K_000050,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B7
+51,C7,BBF10K_000364,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C7
+52,D7,BBF10K_000269,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D7
+53,E7,BBF10K_000358,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E7
+54,F7,BBF10K_000246,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F7
+55,G7,BBF10K_000285,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G7
+56,H7,BBF10K_000119,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H7
+57,A8,BBF10K_000312,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A8
+58,B8,BBF10K_000127,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B8
+59,C8,BBF10K_000069,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C8
+60,D8,BBF10K_000392,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D8
+61,E8,BBF10K_000014,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E8
+62,F8,BBF10K_000227,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F8
+63,G8,BBF10K_000372,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G8
+64,H8,BBF10K_000247,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H8
+65,A9,BBF10K_000183,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A9
+66,B9,BBF10K_000083,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B9
+67,C9,BBF10K_000004,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C9
+68,D9,BBF10K_000330,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D9
+69,E9,BBF10K_000235,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E9
+70,F9,BBF10K_000373,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F9
+71,G9,BBF10K_000295,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G9
+72,H9,BBF10K_000390,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H9
+73,A10,BBF10K_000176,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A10
+74,B10,BBF10K_000225,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B10
+75,C10,BBF10K_000314,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C10
+76,D10,BBF10K_000375,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D10
+77,E10,BBF10K_000097,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E10
+78,F10,BBF10K_000326,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F10
+79,G10,BBF10K_000353,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G10
+80,H10,BBF10K_000282,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H10
+81,A11,BBF10K_000052,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A11
+82,B11,BBF10K_000124,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B11
+83,C11,BBF10K_000315,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C11
+84,D11,BBF10K_000192,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D11
+85,E11,BBF10K_000242,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E11
+86,F11,BBF10K_000350,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F11
+87,G11,BBF10K_000370,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G11
+88,H11,BBF10K_000360,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H11
+89,A12,BBF10K_000288,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,A12
+90,B12,BBF10K_000380,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,B12
+91,C12,BBF10K_000036,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,C12
+92,D12,BBF10K_000136,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,D12
+93,E12,BBF10K_000327,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,E12
+94,F12,BBF10K_000212,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,F12
+95,G12,BBF10K_000068,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,G12
+96,H12,BBF10K_000387,Bacterial Culture,,3000,M13 Forward (-20),,Non-Premix,,No,,H12
+Reaction #,Well,Template Name,Template Type,Template Conc (ng/ul),Template Size (bp),Primer Name,Primer Conc (uM),Premix?          ,Preferred Annealling Temp. (oC),GC Rich?,,Well
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,, 
