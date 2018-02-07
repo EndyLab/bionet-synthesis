@@ -17,7 +17,7 @@ import getch
 
 def change_height(container,target):
     x = 0
-    print("s-g:up h-l:down x:exit")
+    print("Change height - s-g:up h-l:down x:exit")
     while x == 0:
         c = getch.getch()
         if c == "s":
@@ -282,7 +282,7 @@ for plate in agar_plates:
                 plating_row -= 1
             else:
                 print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-                if (trans_row == trans_rows[0] and plating_row == 0) or (trans_row == trans_rows[0] and plating_row == 1):
+                if (trans_row == trans_rows[0] and plating_row == 0) or (trans_row == trans_rows[0] and plating_row == 1) or (trans_row == trans_rows[0] and plating_row == 2):
                     p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
                     p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
                     #print(plate)
@@ -298,15 +298,15 @@ for plate in agar_plates:
                 tube_vol -= waste_vol
                 #print("Volume after discard: ", tube_vol)
             p10.drop_tip()
-            #print("Drop tip")
+            print("Drop tip")
             if plating_counter == num_dilutions-1:
                 plating_row += 1
                 print("Last dilution in series, moving to next row")
                 if trans_row != num_rows-1:
                     p10.pick_up_tip()
-                    #print("Pick up tip")
+                    print("Pick up tip")
                 continue
-            #print("Pick up tip")
+            print("Pick up tip")
             p10.pick_up_tip()
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
             p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
@@ -322,8 +322,8 @@ for plate in agar_plates:
         print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
     plating_row = 0
     print("plating_row reset to 0")
-    #print("drop_tip")
-    p10.drop_tip
+    print("drop_tip")
+    p10.drop_tip()
 
 
 
@@ -331,3 +331,4 @@ stop = datetime.now()
 print(stop)
 runtime = stop - start
 print("Total runtime is: ", runtime)
+robot.home()
