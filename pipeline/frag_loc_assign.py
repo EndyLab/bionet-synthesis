@@ -13,6 +13,14 @@ import math
 
 import shutil
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 counter = 0
 
 no_frag = []
@@ -21,7 +29,7 @@ not_in_dict = []
 genes = []
 
 # Create a dictionary to link the gene name to the corresponding id number
-data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+data = pd.read_csv(DICTIONARY_PATH)
 dictionary = dict(zip(data['gene_name'], data['idnum']))
 
 counter = 0
@@ -33,7 +41,7 @@ seq = []
 not_in_dict = []
 seq_disc = []
 
-for file in glob.glob("../plate_maps/*.csv"):
+for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
     counter = counter + 1
 
     # Prints the file name without the preceeding path
@@ -70,7 +78,7 @@ def add_plate_maps(plate_map):
 number = input("Which file: ")
 
 if int(number) > int(counter):
-    for plate_map_file in glob.glob("../plate_maps/*.csv"):
+    for plate_map_file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
         print(plate_map_file)
         plate_map = pd.read_csv(plate_map_file)
         add_plate_maps(plate_map)
@@ -96,7 +104,7 @@ for index,row in new_plate_map.iterrows():
         frag_num = row['Name'][-1]
 
     # Uses the ID# to open the correct .json file and then adds the location
-    for file in glob.glob("../data/{}/{}.json".format(idnum,idnum)):
+    for file in glob.glob("{}/{}/{}.json".format(DATA_PATH,idnum,idnum)):
         print(file)
         # Open the json file
         with open(file,"r") as json_file:

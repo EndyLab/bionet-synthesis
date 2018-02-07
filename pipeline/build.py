@@ -17,6 +17,12 @@ from datetime import datetime
 
 ## Take in required information
 
+# Set starting paths
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
@@ -35,7 +41,7 @@ if args.run:
         sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
 
 if args.manual:
-    num_reactions = input("How many reactions: ")
+    max_reactions = input("How many reactions: ")
     max_plates = input("Number of plates to pull from: ")
     max_frag = input("Max number of fragments to assemble: ")
     manual = raw_input("Would you like to specify the plates: ")
@@ -46,13 +52,17 @@ if args.manual:
     else:
         plates = []
 else:
-    max_plates = 2
+    max_plates = 3
     print("Max plates: ", max_plates)
+    selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
     plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
-    #plates = ["pSHPs0807B412037MU"]
+    #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
+    #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
+    #plates = "pSHPs1212B325157MU","pSHPs0826B426850MU",""
+    #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
     print("Pulling from plates: ", plates)
-    num_reactions = 96
-    print("Number of reactions: ", num_reactions)
+    max_reactions = 96
+    print("Number of reactions: ", max_reactions)
     max_frag = 2
     print("Max number of fragments: ", max_frag)
     input("Press enter to continue ")
@@ -76,16 +86,18 @@ master_well = []
 gene_list = []
 
 previous_genes = []
-for file in glob.glob("../builds/*.csv"):
+for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
     print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
 
-previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
+#previous_genes += ["BBF10K_000334","BBF10K_000345","BBF10K_000276","BBF10K_000332","BBF10K_000240","BBF10K_000351","BBF10K_000006"]
 print(previous_genes)
 
+input("continue?")
+
 # Query the database and iterate through each json file
-for file in glob.glob("../data/BBF10K*/*.json"):
+for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     print(file)
 
     # Open and store the data within the json file
@@ -97,6 +109,10 @@ for file in glob.glob("../data/BBF10K*/*.json"):
         continue
     print("build ready")
 
+
+    if data["info"]["type"]["build_type"] != "10K_MoClo-EntryCDS-BbsI":
+        continue
+
     # Determine if it has already been built
     if data["status"]["build_complete"] == "Good_Sequence":
         continue
@@ -106,14 +122,13 @@ for file in glob.glob("../data/BBF10K*/*.json"):
         print("Already attempted")
         continue
 
-
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
         continue
     print("Not in process")
 
     #Set a limit for how many you want to run
-    if len(gene_list) == num_reactions:
+    if len(gene_list) == max_reactions:
         break
 
     # Pull general information about the gene
@@ -131,6 +146,8 @@ for file in glob.glob("../data/BBF10K*/*.json"):
     new_plate_count = len(pd.unique(plates + new_plates))
     if new_plate_count > max_plates:
         # We'll have too many source plates if we add this gene.
+        continue
+    if pd.unique(plates + new_plates).all() not in selection:
         continue
 
     gene_list.append(gene)
@@ -164,8 +181,14 @@ master_plan = pd.DataFrame({
     "Fragments" : frag_list
 })
 master_plan = master_plan[["Well","Fragments"]]
+num_reactions = len(master_plan)
+
+print(targets)
 
 targets = np.array(targets)
+
+print(targets)
+
 plan = pd.DataFrame({
     "Plate" : targets[:,1],
     "Gene" : targets[:,0],
@@ -173,6 +196,7 @@ plan = pd.DataFrame({
     "Destination" : targets[:,3]
     })
 plan = plan[["Gene","Plate","Well","Destination"]]
+#plan.to_csv("../builds/remaining_constructs.csv")
 print(plan)
 print(len(target_well))
 print()
@@ -184,7 +208,7 @@ input("Press enter to continue")
 ## Setting up the OT-1 deck
 
 # Configuration
-SOURCE_SLOTS = ['D2','D3','D1','B2']
+SOURCE_SLOTS = ['D2','D3','B2']
 
 
 # Specify locations, note that locations are indexed by the spot in the array
@@ -231,7 +255,7 @@ for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
 
-extra_master = 1.5
+extra_master = 1.2
 
 master_reactions = total_num * extra_master
 
@@ -335,16 +359,17 @@ p200.drop_tip()
 p10.pick_up_tip()
 for row in range(num_rows):
     print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
 p10.drop_tip()
 
+# Aliquot extra master mix into wells with multiple fragments
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
     if int(row['Fragments']) > 1:
         extra_volume = int(row['Fragments'] - 1) * 8
         current_well = str(row['Well'])
         print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(), touch_tip=True, mix_before=(1,8), new_tip='never')
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
 p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
@@ -360,7 +385,7 @@ for index, row in plan.iterrows():
     gene = row['Gene']
     p10s.pick_up_tip()
     print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),mix_before=(1,8),new_tip='never')
+    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
@@ -372,12 +397,14 @@ now, seconds = str(datetime.now()).split(".")
 build_num = 0
 
 # Assigns this build a unique number following the most recent build
-if glob.glob("../builds/build*.csv"):
+if glob.glob(BUILD_PATH + "/*/*.csv"):
     print("previous builds")
-    for build_map in glob.glob("../builds/build*.csv"):
+    for build_map in glob.glob(BUILD_PATH + "/*/*.csv"):
         if "bad" in build_map:
             continue
-        build_num = str(int(build_map[15:17]) + 1).zfill(3)
+        current_build_num = str(int(build_map[15:18]) + 1).zfill(3)
+        if int(current_build_num) > int(build_num):
+            build_num = current_build_num
 else:
     print("no previous builds")
     build_num = '001'
@@ -389,9 +416,9 @@ build_name = "build{}".format(build_num)
 print("build_name: ", build_name)
 
 if outcome != 2:
-    file_name = "../builds/{}_{}.csv".format(build_name,now)
+    file_name = BUILD_PATH + "/{}/{}_{}.csv".format(build_name,build_name,now)
 else:
-    file_name = "../builds/bad-{}_{}.csv".format(build_name, now)
+    file_name = BUILD_PATH + "/{}/bad-{}_{}.csv".format(build_name,build_name, now)
 
 plate_map = plan[["Gene","Destination"]]
 plate_map = plate_map.drop_duplicates(subset=['Gene'])
@@ -407,7 +434,7 @@ for index, row in plate_map.iterrows():
     if outcome == 2:
         break
     gene = row["Gene"]
-    for file in glob.glob("../data/{}/{}.json".format(gene,gene)):
+    for file in glob.glob(DATA_PATH + "/{}/{}.json".format(gene,gene)):
         print(file)
 
         # Open and store the data within the json file
@@ -428,7 +455,7 @@ for index, row in plate_map.iterrows():
         data["status"]["building"] = True
         print(data["status"])
 
-        with open("../data/{}/{}.json".format(gene,gene),"w+") as json_file:
+        with open(DATA_PATH + "/{}/{}.json".format(gene,gene),"w+") as json_file:
             json.dump(data,json_file,indent=2)
 
 robot.home()

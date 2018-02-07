@@ -13,8 +13,45 @@ import re
 
 import datetime
 from datetime import datetime
+import getch
+
+def change_height(container,target):
+    x = 0
+    print("Change height - s-g:up h-l:down x:exit")
+    while x == 0:
+        c = getch.getch()
+        if c == "s":
+            p10.robot._driver.move(z=20,mode="relative")
+        elif c == "d":
+            p10.robot._driver.move(z=5,mode="relative")
+        elif c == "f":
+            p10.robot._driver.move(z=0.5,mode="relative")
+        elif c == "g":
+            p10.robot._driver.move(z=0.1,mode="relative")
+        elif c == "h":
+            p10.robot._driver.move(z=-0.1,mode="relative")
+        elif c == "j":
+            p10.robot._driver.move(z=-0.5,mode="relative")
+        elif c == "k":
+            p10.robot._driver.move(z=-5,mode="relative")
+        elif c == "l":
+            p10.robot._driver.move(z=-20,mode="relative")
+        elif c == "x":
+            x = 1
+    p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
 
 ## Take in required information
+
+BASE_PATH = os.path.abspath("../")
+print("base_path",BASE_PATH)
+#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
 
 # Load files
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
@@ -37,9 +74,12 @@ plate_map_number = []
 build_map = 0
 
 # Looks for the possible build maps to plate
-for build_map in glob.glob("../builds/build*.csv"):
+for build_map in glob.glob("{}/*/build*_20*.csv".format(BUILDS_PATH)):
     counter += 1
-    print("{}. {}".format(counter,build_map[10:]))
+    build_map_name = re.match(
+        r'.+(build[0-9]+)_.+',
+        build_map).groups()
+    print("{}. {}".format(counter,build_map_name[0]))
     plate_map_number.append(build_map)
 
 # Quits the program if there are no build maps to plate
@@ -53,11 +93,27 @@ number = int(number) - 1
 
 # Import the desired plate map
 build_map = pd.read_csv(plate_map_number[number])
-print(plate_map_number[number][10:18])
+
+build_map_name = re.match(
+    r'.+(build[0-9]+)_.+',
+    plate_map_number[number]).groups()
+
+print(build_map_name[0])
 print(build_map)
 
-num_reactions = len(build_map)
-print("num reactions",num_reactions)
+total_reactions = len(build_map)
+print("num reactions",total_reactions)
+
+if total_reactions > 48:
+    print("Too many samples to plate at once")
+    portion = int(input("Choose which half to plate, 1 or 2: "))
+    if portion == 1:
+        build_map = build_map[:48]
+        print(build_map)
+    else:
+        build_map = build_map[48:]
+        print(build_map)
+    num_reactions = len(build_map)
 
 num_rows = num_reactions // 8
 print(num_rows)
@@ -67,16 +123,18 @@ print(num_plates)
 
 agar_plate_names = []
 for row in range(num_plates):
-    current_plate = plate_map_number[number][10:18] + "_p" + str(row + 1)
+    if portion == 2:
+        row += 2
+    current_plate = build_map_name[0] + "_p" + str(row + 1)
     agar_plate_names.append(current_plate)
 print(agar_plate_names)
 print("You will need {} agar plates".format(len(agar_plate_names)))
 
 ## Setting up the OT-1 deck
 
-AGAR_SLOTS = ['D2','B2','D1','D3']
-
+AGAR_SLOTS = ['D2','D3']
 layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
+
 
 # Specify locations, note that locations are indexed by the spot in the array
 ## MAKE INTO A DICTIONARY
@@ -141,10 +199,6 @@ p10_tipracks = [
     containers.load('tiprack-10ul', locations[3,1])
 ]
 
-#p10s_tipracks = [
-#    containers.load('tiprack-10ul', locations[2,1])
-#]
-
 transformation_plate = containers.load('96-PCR-tall', locations[7,1])
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
 centrifuge_tube = containers.load('tube-rack-2ml',locations[6,1])
@@ -162,18 +216,10 @@ p10 = instruments.Pipette(
     tip_racks=p10_tipracks,
     trash_container=trash,
     channels=8,
-    name='p10-8'
+    name='p10-8',
+    aspirate_speed=400,
+    dispense_speed=800
 )
-
-#p10s = instruments.Pipette(
-#    axis='a',
-#    max_volume=10,
-#    min_volume=0.5,
-#    tip_racks=p10s_tipracks,
-#    trash_container=trash,
-#    channels=1,
-#    name='p10-8s'
-#)
 
 p200 = instruments.Pipette(
     axis='b',
@@ -198,12 +244,31 @@ else:
     waste_vol = 2.5
     plating_row = 0
 
-p10.pick_up_tip()
+media_per_tube = 150
 
+plate_counter = 0
 # Iterate through each agar plate
 for plate in agar_plates:
     # Iterate through each row of cells in the transformation plate
-    for trans_row in range(num_rows):
+    plate_counter += 1
+    if plate_counter == 1:
+        trans_rows = range(3)
+        media = "A1"
+    elif plate_counter == 2:
+        trans_rows = [4,5,6]
+        media = "B1"
+
+    p200.pick_up_tip()
+    for well in range(8):
+        print("Transferring {}ul to tube {}".format(media_per_tube,well))
+        p200.transfer(media_per_tube, centrifuge_tube[media].bottom(),master.wells(well).bottom(),new_tip='never')
+    p200.drop_tip()
+
+    print("pick_up_tip")
+    p10.pick_up_tip()
+
+    # Iterate through each row of cells in the transformation plate
+    for trans_row in trans_rows:
         #Reset the dilution factor and starting volume in the tubes
         dil_factor = [1]
         tube_vol = 15
@@ -211,22 +276,27 @@ for plate in agar_plates:
         for plating_counter in range(num_dilutions):
             if plating_counter == 0:
                 print("Discard {}ul from transformation row {} into waste tube".format(plate_vol,trans_row))
-                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
+                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(1,9))
                 tube_vol -= plate_vol
-                print("Volume after initial discard: ",tube_vol)
+                #print("Volume after initial discard: ",tube_vol)
                 plating_row -= 1
             else:
                 print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
-                print("Counter {} starts with {}uL in the transformation tube".format(plating_counter,tube_vol))
+                if (trans_row == trans_rows[0] and plating_row == 0) or (trans_row == trans_rows[0] and plating_row == 1) or (trans_row == trans_rows[0] and plating_row == 2):
+                    p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
+                    p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
+                    #print(plate)
+                    change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+                else:
+                    p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
+                #print("Counter {} starts with {}uL in the transformation tube".format(plating_counter,tube_vol))
                 tube_vol -= plate_vol
-                print("After plating the volume is", tube_vol)
+                #print("After plating the volume is", tube_vol)
             if plating_counter != 0 and plating_counter != num_dilutions-1:
                 print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
                 p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
-                #p10.transfer(waste_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(2,9))
                 tube_vol -= waste_vol
-                print("Volume after discard: ", tube_vol)
+                #print("Volume after discard: ", tube_vol)
             p10.drop_tip()
             print("Drop tip")
             if plating_counter == num_dilutions-1:
@@ -239,20 +309,21 @@ for plate in agar_plates:
             print("Pick up tip")
             p10.pick_up_tip()
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
-            p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(2,9))
+            p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
             previous_vol = tube_vol
-            print("previous volume: ",previous_vol)
+            #print("previous volume: ",previous_vol)
             tube_vol += dilution_vol
-            print("current volume: ", tube_vol)
+            #print("current volume: ", tube_vol)
             dil_factor.append((tube_vol / previous_vol) * dil_factor[-1])
-            print("dilution factors: ",dil_factor)
-
-            print(tube_vol)
+            #print("dilution factors: ",dil_factor)
+            #print(tube_vol)
             plating_row += 1
 
         print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
     plating_row = 0
     print("plating_row reset to 0")
+    print("drop_tip")
+    p10.drop_tip()
 
 
 
@@ -260,3 +331,4 @@ stop = datetime.now()
 print(stop)
 runtime = stop - start
 print("Total runtime is: ", runtime)
+robot.home()

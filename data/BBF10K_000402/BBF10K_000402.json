@@ -41,13 +41,13 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "",
+    "build_complete": "Point Mutation",
     "build_attempts": [
       {
         "build_well": "G4",
         "build_date": "2018-01-22 12:58:16",
-        "build_number": "build001",
-        "build_outcome": "In Process"
+        "build_number": "build003",
+        "build_outcome": "Point Mutation"
       }
     ]
   },

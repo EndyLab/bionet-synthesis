@@ -12,12 +12,20 @@ import math
 import shutil
 import datetime
 
+BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
+
+BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
+DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
+
 number = input("BBF10K_ ...? ")
 id_num = "BBF10K_{}".format(number.zfill(6))
 print(id_num)
 
 # Query the database and iterate through each json file
-for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
+for file in glob.glob("{}/{}/{}.json".format(DATA_PATH,id_num,id_num)):
     print(file)
 
     # Open and store the data within the json file
@@ -90,3 +98,10 @@ for file in glob.glob("../data/{}/{}.json".format(id_num,id_num)):
     index.write("##### Last updated: {}".format(now[:-16]))
     index.write("\n")
     index.close()
+
+#    index.write("""
+#    # header
+#    This is some text {name}.
+#    ## h2
+#
+#    """.format(*data))

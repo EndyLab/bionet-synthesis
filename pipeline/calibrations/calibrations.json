@@ -1,1 +1,32 @@
-{"version": 1, "data": {}}
+{
+    "version": 1,
+    "data": {
+        "a:p10-8": {
+            "calibration_data": {
+                "D2": {
+                    "children": {
+                        "96-deep-well": {
+                            "delta": "{\"x\": 0.0, \"y\": 0.0, \"z\": 0.0}",
+                            "type": "96-deep-well"
+                        }
+                    }
+                },
+                "D3": {
+                    "children": {
+                        "96-deep-well": {
+                            "delta": "{\"x\": 0.0, \"y\": 0.0, \"z\": 0.0}",
+                            "type": "96-deep-well"
+                        }
+                    }
+                }
+            },
+            "positions": {
+                "top": 0.0101,
+                "bottom": 10.0101,
+                "blow_out": 12.0101,
+                "drop_tip": 14.0101
+            },
+            "max_volume": 10
+        }
+    }
+}

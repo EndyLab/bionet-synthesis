@@ -43,7 +43,7 @@
     "abandoned": false,
     "build_ready": true,
     "building": "",
-    "build_complete": "Good_Sequence",
+    "build_complete": "",
     "build_attempts": [
       {
         "build_well": "",
