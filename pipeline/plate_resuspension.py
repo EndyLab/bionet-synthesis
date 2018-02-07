@@ -16,7 +16,8 @@ import math
 import datetime
 from datetime import datetime
 
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+BASE_PATH = "../"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"
@@ -151,8 +152,8 @@ p10_tipracks = [
 ]
 
 p10s_tipracks = [
-    containers.load('tiprack-10ul', locations[2,1]),
-    containers.load('tiprack-10ul', locations[3,1])
+    containers.load('tiprack-10ul', locations[3,1]),
+    containers.load('tiprack-10ul', locations[2,1])
 ]
 
 trash = containers.load('point', locations[4,1], 'holywastedplasticbatman')
@@ -197,16 +198,19 @@ p200 = instruments.Pipette(
 
 tubes = dict({1:"A1",2:"B1",3:"C1",4:"D1",5:"A2",6:"B2",7:"C2",8:"D2",9:"A3",10:"B3",11:"C3",12:"D3",13:"A4",14:"B4",15:"C4"})
 tube_count = 1
-print(tubes[tube_count])
 current_vol = 1200
 last_pipette = "neither"
+
+exclude_wells = ["A2","B2","C2","D2","E2"]
+
 ## Run the protocol
 
 # Iterate through each well
 for i, construct in plan.iterrows():
     vol = construct['Volume']
     well = construct['Well']
-
+    if well in exclude_wells:
+        continue
     # Determine which pipette to use
     if vol < 20:
         print("Adding {}ul to well {} with the p10".format(vol, well))
@@ -226,7 +230,7 @@ for i, construct in plan.iterrows():
         current_vol -= vol
         print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
 
-        p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
         last_pipette = "p10s"
     else:
         if last_pipette == "p10s":
@@ -246,7 +250,7 @@ for i, construct in plan.iterrows():
         current_vol -= vol
         print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
 
-        p200.transfer(vol, centrifuge_tube['A1'].bottom(), resuspend_plate.wells(well), blow_out=True, new_tip='never')
+        p200.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
         last_pipette = "p200"
 
 if last_pipette == "p10s":
