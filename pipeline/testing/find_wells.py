@@ -16,17 +16,26 @@ frag_nums = []
 data = pd.read_csv("./data_testing/10K_CDS.csv")
 dictionary = dict(zip(data['gene_name'], data['idnum']))
 
+previous_genes = []
+for file in glob.glob("../../builds/*/build*_20*.csv"):
+    print(file)
+    build = pd.read_csv(file)
+    previous_genes += list(build['Gene'])
+
 for file in glob.glob("../../data/*/*.json"):
     print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)
 
-    if data["status"]["build_complete"] == "" and data["status"]["build_ready"] == True: # or data["status"]["build_complete"] == "Good_sequence":
+    if data["status"]["build_ready"] == True and data["gene_id"] not in previous_genes:
+    #if data["status"]["build_complete"] == "" and data["status"]["build_ready"] == True: # or data["status"]["build_complete"] == "Good_sequence":
         gene_name = data["gene_name"]
         names.append(gene_name)
 
 print("Names: ", names)
 print(len(names))
+
+total_plates = []
 
 for plate_map in glob.glob("../../plate_maps/*.csv"):
     details = pd.read_csv(plate_map)
@@ -34,6 +43,7 @@ for plate_map in glob.glob("../../plate_maps/*.csv"):
     for index,row in details.iterrows():
         gene_name = row["customer_line_item_id"][:-2].strip()
         print(gene_name)
+        total_plates.append(row["Plate"])
         if gene_name in names:
             print("match")
             cand.append(gene_name)
@@ -79,7 +89,6 @@ plate_breakdown = pd.DataFrame({
 })
 print(plate_breakdown)
 #candidates.to_csv("./remaining_constructs.csv")
-
 
 
 #

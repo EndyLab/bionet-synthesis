@@ -54,14 +54,15 @@ if args.manual:
 else:
     max_plates = 3
     print("Max plates: ", max_plates)
-    selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426850MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
-    plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
+    selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426849MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
+    #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
+    plates = ['pSHPs0826B426849MU', 'pSHPs0807B412038MU','pSHPs0807B412039MU']
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
     #plates = "pSHPs1212B325157MU","pSHPs0826B426850MU",""
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
     print("Pulling from plates: ", plates)
-    max_reactions = 96
+    max_reactions = 45
     print("Number of reactions: ", max_reactions)
     max_frag = 2
     print("Max number of fragments: ", max_frag)
@@ -261,9 +262,11 @@ master_reactions = total_num * extra_master
 
 print("You need {} rxns of master mix".format(master_reactions))
 
+## FIX THE MASTER MIX CALCULATION
+
 master_mix = pd.DataFrame({
             'Component':['Cutsmart','ATP','Vector','T4 Ligase','BbsI','H2O','Total'],
-            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(50/96)),(5.166*master_reactions),(master_reactions*8)]
+            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(25/96)),(5.426*master_reactions),(master_reactions*8.457)]
                         })
 master_mix = master_mix[['Component','Amount']]
 print("Use the table below to create the master mix")
@@ -362,6 +365,15 @@ for row in range(num_rows):
     p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
 p10.drop_tip()
 
+if num_reactions % 8 > 0:
+    print("need single channel for {}".format(num_reactions % 8))
+    for missing in range(num_reactions % 8):
+        extra_volume = 8
+        current_well = (8 * num_rows) + (missing)
+        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+p10s.drop_tip()
+
 # Aliquot extra master mix into wells with multiple fragments
 p10s.pick_up_tip()
 for index, row in master_plan.iterrows():
@@ -397,17 +409,24 @@ now, seconds = str(datetime.now()).split(".")
 build_num = 0
 
 # Assigns this build a unique number following the most recent build
-if glob.glob(BUILD_PATH + "/*/*.csv"):
+if glob.glob(BUILDS_PATH + "/*/*.csv"):
     print("previous builds")
-    for build_map in glob.glob(BUILD_PATH + "/*/*.csv"):
+    for build_map in glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
+        print(build_map)
         if "bad" in build_map:
             continue
-        current_build_num = str(int(build_map[15:18]) + 1).zfill(3)
-        if int(current_build_num) > int(build_num):
+        build_num = re.match(
+            r'.+build([0-9]+)_20.+',
+            build_map).groups()
+        current_build_num = str(int(build_num[0]) + 1).zfill(3)
+        if int(current_build_num) > int(build_num[0]):
             build_num = current_build_num
+            print(build_num)
 else:
     print("no previous builds")
     build_num = '001'
+
+print(build_num)
 
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
@@ -416,9 +435,9 @@ build_name = "build{}".format(build_num)
 print("build_name: ", build_name)
 
 if outcome != 2:
-    file_name = BUILD_PATH + "/{}/{}_{}.csv".format(build_name,build_name,now)
+    file_name = BUILDS_PATH + "/{}/{}_{}.csv".format(build_name,build_name,now)
 else:
-    file_name = BUILD_PATH + "/{}/bad-{}_{}.csv".format(build_name,build_name, now)
+    file_name = BUILDS_PATH + "/{}/bad-{}_{}.csv".format(build_name,build_name, now)
 
 plate_map = plan[["Gene","Destination"]]
 plate_map = plate_map.drop_duplicates(subset=['Gene'])
