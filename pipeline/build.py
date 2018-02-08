@@ -141,6 +141,38 @@ complete = False
 
 input("continue?")
 
+# Get the specified set first:
+for required_gene in required_genes:
+    for file in glob.glob(DATA_PATH + "/{}/{}.json".format(required_gene,required_gene)):
+        print(file)
+        with open(file,"r") as json_file:
+            data = json.load(json_file)
+        gene = data["gene_id"]
+        locations = data["location"]["fragments"]
+        frag_num = len(locations)
+
+        new_plates = [loc.split("_")[0] for loc in locations.values()]
+        new_plate_count = len(pd.unique(plates + new_plates))
+
+        gene_list.append(gene)
+        plates += new_plates
+        dest_well = target_well[len(gene_list) - 1]
+
+        for frag_count, (fragment, frag_loc) in enumerate(locations.items()):
+            print(fragment)
+
+            plate_loc, well = frag_loc.split("_")
+            row = [gene, plate_loc, well, dest_well]
+            targets.append(row)
+
+        frag_list.append(frag_num)
+        master_well.append(dest_well)
+
+#remaining_reactions = max_reactions - len(gene_list)
+
+#print("remaining_reactions",remaining_reactions)
+#print("\n\n")
+
 # Query the database and iterate through each json file
 for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     print(file)
@@ -167,13 +199,8 @@ for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
         print("Already attempted")
         continue
 
-    if complete == False:
-        if data['gene_id'] not in required_genes:
-            continue
-        else:
-            completed_genes.append(data['gene_id'])
-            if len(completed_genes) == len(required_genes):
-                complete = True
+    if data['gene_id'] in required_genes:
+        continue
 
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
@@ -256,7 +283,6 @@ print()
 #print(previous_genes)
 print(master_plan)
 print()
-print(completed_genes)
 input("Press enter to continue")
 
 ## Setting up the OT-1 deck
@@ -457,8 +483,8 @@ for index, row in plan.iterrows():
     dest_well = row['Destination']
     gene = row['Gene']
     p10s.pick_up_tip()
-    print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
+    #print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
+    #p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
