@@ -14,6 +14,7 @@ import re
 import math
 import datetime
 from datetime import datetime
+import getch
 
 ## Take in required information
 
@@ -30,6 +31,34 @@ parser.add_argument('-m', '--manual', required=False, action="store_true", help=
 args = parser.parse_args()
 
 plates = []
+
+# Establish initial functions
+def change_height(container,target):
+    x = 0
+    print("Change height - s-g:up h-l:down x:exit")
+    while x == 0:
+        c = getch.getch()
+        if c == "s":
+            p10.robot._driver.move(z=20,mode="relative")
+        elif c == "d":
+            p10.robot._driver.move(z=5,mode="relative")
+        elif c == "f":
+            p10.robot._driver.move(z=0.5,mode="relative")
+        elif c == "g":
+            p10.robot._driver.move(z=0.1,mode="relative")
+        elif c == "h":
+            p10.robot._driver.move(z=-0.1,mode="relative")
+        elif c == "j":
+            p10.robot._driver.move(z=-0.5,mode="relative")
+        elif c == "k":
+            p10.robot._driver.move(z=-5,mode="relative")
+        elif c == "l":
+            p10.robot._driver.move(z=-20,mode="relative")
+        elif c == "x":
+            x = 1
+    p10s.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
+
+
 
 # Verify that the correct robot is being used
 if args.run:
@@ -52,19 +81,24 @@ if args.manual:
     else:
         plates = []
 else:
-    max_plates = 3
+    max_plates = 2
     print("Max plates: ", max_plates)
-    selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426849MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
+    #selection = ['pSHPs0807B412037MU', 'pSHPs0807B412038MU','pSHPs0826B426849MU','pSHPs0807B412039MU', 'pSHPs0807B412040MU','pSHPs0826B426850MU']
     #plates = ["pSHPs0807B412039MU", "pSHPs0807B412040MU"]
-    plates = ['pSHPs0826B426849MU', 'pSHPs0807B412038MU','pSHPs0807B412039MU']
+
+
+    #plates = ['pSHPs0826B426849MU', 'pSHPs0807B412038MU','pSHPs0807B412039MU']
+    plates = ["pSHPs1121B618499MU","pSHPs1121B618500MU"]
+
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
     #plates = "pSHPs1212B325157MU","pSHPs0826B426850MU",""
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
+
     print("Pulling from plates: ", plates)
     max_reactions = 45
     print("Number of reactions: ", max_reactions)
-    max_frag = 2
+    max_frag = 3
     print("Max number of fragments: ", max_frag)
     input("Press enter to continue ")
 
@@ -148,8 +182,8 @@ for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     if new_plate_count > max_plates:
         # We'll have too many source plates if we add this gene.
         continue
-    if pd.unique(plates + new_plates).all() not in selection:
-        continue
+    #if pd.unique(plates + new_plates).all() not in selection:
+    #    continue
 
     gene_list.append(gene)
     plates += new_plates
@@ -256,7 +290,7 @@ for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
 
-extra_master = 1.2
+extra_master = 1.25
 
 master_reactions = total_num * extra_master
 
@@ -323,7 +357,9 @@ p10 = instruments.Pipette(
     tip_racks=p10_tipracks,
     trash_container=trash,
     channels=8,
-    name='p10-8'
+    name='p10-8',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 p10s = instruments.Pipette(
@@ -333,7 +369,9 @@ p10s = instruments.Pipette(
     tip_racks=p10s_tipracks,
     trash_container=trash,
     channels=1,
-    name='p10-8s'
+    name='p10-8s',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 p200 = instruments.Pipette(
@@ -343,7 +381,9 @@ p200 = instruments.Pipette(
     tip_racks=p200_tipracks,
     trash_container=trash,
     channels=1,
-    name='p200-1'
+    name='p200-1',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 ## Aliquot the master mix into the PCR tube strip
@@ -390,6 +430,8 @@ p10s.drop_tip()
 frag_vol = 2
 dil_vol = 5
 
+used_plates = []
+
 for index, row in plan.iterrows():
     plate = row['Plate']
     start_well = row['Well']
@@ -401,7 +443,11 @@ for index, row in plan.iterrows():
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(2, 8, source_plates[plate].wells(start_well).bottom())
+    if plate not in used_plates:
+        change_height(source_plates[plate],source_plates[plate].wells(start_well))
     p10s.transfer(frag_vol,source_plates[plate].wells(start_well).bottom(),dest_plate.wells(dest_well).bottom(),blow_out=True)
+
+    used_plates.append(plate)
 
 # Record the current date and time
 now, seconds = str(datetime.now()).split(".")
@@ -412,7 +458,6 @@ build_num = 0
 if glob.glob(BUILDS_PATH + "/*/*.csv"):
     print("previous builds")
     for build_map in glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
-        print(build_map)
         if "bad" in build_map:
             continue
         build_num = re.match(
@@ -421,12 +466,9 @@ if glob.glob(BUILDS_PATH + "/*/*.csv"):
         current_build_num = str(int(build_num[0]) + 1).zfill(3)
         if int(current_build_num) > int(build_num[0]):
             build_num = current_build_num
-            print(build_num)
 else:
     print("no previous builds")
     build_num = '001'
-
-print(build_num)
 
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
@@ -477,10 +519,9 @@ for index, row in plate_map.iterrows():
         with open(DATA_PATH + "/{}/{}.json".format(gene,gene),"w+") as json_file:
             json.dump(data,json_file,indent=2)
 
-robot.home()
-
 print()
 stop = datetime.now()
 print(stop)
 runtime = stop - start
 print("Total runtime is: ", runtime)
+robot.home()

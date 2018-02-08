@@ -17,7 +17,7 @@ import datetime
 from datetime import datetime
 
 #BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
-BASE_PATH = "../"
+BASE_PATH = ".."
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"
@@ -213,54 +213,51 @@ for i, construct in plan.iterrows():
         continue
     # Determine which pipette to use
     if vol < 20:
-        print("Adding {}ul to well {} with the p10".format(vol, well))
-
+        # Makes sure that the robot doesn't pick up multiple sets of tips
         if last_pipette == "p200":
+            print("Changing to p10s")
             p200.drop_tip()
-            print("p200 drop")
             p10s.pick_up_tip()
-            print("p10s pick")
         elif last_pipette == "neither":
             p10s.pick_up_tip()
-            print("p10s pick")
 
+        # Changes tubes of water when one gets low
         if current_vol - vol < 200:
             tube_count += 1
             current_vol = 1200
         current_vol -= vol
-        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
-
+        print("Adding {}ul to well {} with the p10".format(vol, well))
         p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
         last_pipette = "p10s"
     else:
         if last_pipette == "p10s":
+            print("Changing to p200")
             p10s.drop_tip()
-            print("p10s drop")
             p200.pick_up_tip()
-            print("p200 pick")
         elif last_pipette == "neither":
             p200.pick_up_tip()
-            print("p200 pick")
 
         print("Adding {}ul to well {} with the p200".format(vol, well))
 
+        # Changes tubes of water when one gets low
         if current_vol - vol < 100:
             tube_count += 1
             current_vol = 1200
         current_vol -= vol
-        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
-
+        print("Adding {}ul to well {} with the p200".format(vol, well))
         p200.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+        print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
         last_pipette = "p200"
 
+# Last drop tip
 if last_pipette == "p10s":
     p10s.drop_tip()
-    print("p10s drop")
 elif last_pipette == "p200":
     p200.drop_tip()
-    print("p200 drop")
 
 stop = datetime.now()
 print(stop)
 runtime = stop - start
 print("Total runtime is: ", runtime)
+robot.home()

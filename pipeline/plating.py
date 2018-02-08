@@ -263,8 +263,6 @@ for plate in agar_plates:
         print("Transferring {}ul to tube {}".format(media_per_tube,well))
         p200.transfer(media_per_tube, centrifuge_tube[media].bottom(),master.wells(well).bottom(),new_tip='never')
     p200.drop_tip()
-
-    print("pick_up_tip")
     p10.pick_up_tip()
 
     # Iterate through each row of cells in the transformation plate
@@ -298,15 +296,12 @@ for plate in agar_plates:
                 tube_vol -= waste_vol
                 #print("Volume after discard: ", tube_vol)
             p10.drop_tip()
-            print("Drop tip")
             if plating_counter == num_dilutions-1:
                 plating_row += 1
                 print("Last dilution in series, moving to next row")
                 if trans_row != num_rows-1:
                     p10.pick_up_tip()
-                    print("Pick up tip")
                 continue
-            print("Pick up tip")
             p10.pick_up_tip()
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
             p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
@@ -322,7 +317,6 @@ for plate in agar_plates:
         print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
     plating_row = 0
     print("plating_row reset to 0")
-    print("drop_tip")
     p10.drop_tip()
 
 
