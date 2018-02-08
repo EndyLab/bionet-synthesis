@@ -132,6 +132,15 @@ print(previous_genes)
 
 input("continue?")
 
+required_genes = pd.read_csv("./testing/addgene_samples.csv")
+required_genes = list(required_genes["Gene ID"])
+print(required_genes)
+
+completed_genes = []
+complete = False
+
+input("continue?")
+
 # Query the database and iterate through each json file
 for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     print(file)
@@ -157,6 +166,14 @@ for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
     if data['gene_id'] in previous_genes:
         print("Already attempted")
         continue
+
+    if complete == False:
+        if data['gene_id'] not in required_genes:
+            continue
+        else:
+            completed_genes.append(data['gene_id'])
+            if len(completed_genes) == len(required_genes):
+                complete = True
 
     # Determine if it is currently in the cloning pipeling
     if data["status"]["building"] == True:
@@ -236,9 +253,10 @@ plan = plan[["Gene","Plate","Well","Destination"]]
 print(plan)
 print(len(target_well))
 print()
-print(previous_genes)
+#print(previous_genes)
 print(master_plan)
 print()
+print(completed_genes)
 input("Press enter to continue")
 
 ## Setting up the OT-1 deck

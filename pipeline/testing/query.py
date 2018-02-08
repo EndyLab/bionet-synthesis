@@ -28,7 +28,7 @@ results = pd.DataFrame({
     "Name" : names,
     "Plate" : plates
 })
-
+results.to_csv("./addgene_samples.csv")
 print(results)
 
 
