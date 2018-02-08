@@ -18,7 +18,8 @@ from datetime import datetime
 ## Take in required information
 
 # Set starting paths
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
+BASE_PATH = ".."
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"
@@ -333,7 +334,9 @@ p10s = instruments.Pipette(
     tip_racks=p10s_tipracks,
     trash_container=trash,
     channels=1,
-    name='p10-8s'
+    name='p10-8s',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 p200 = instruments.Pipette(
@@ -343,7 +346,9 @@ p200 = instruments.Pipette(
     tip_racks=p200_tipracks,
     trash_container=trash,
     channels=1,
-    name='p200-1'
+    name='p200-1',
+    aspirate_speed=400,
+    dispense_speed=800
 )
 
 ## Aliquot the master mix into the PCR tube strip
