@@ -466,6 +466,7 @@ build_num = 0
 ## GENERATE THE BUILD MAP
 ## ============================================
 # Assigns this build a unique number following the most recent build
+max_num = 0
 if glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
     for build_map in glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
         if "bad" in build_map:
@@ -473,22 +474,24 @@ if glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
         build_num = re.match(
             r'.+build([0-9]+)_20.+',
             build_map).groups()
-        current_build_num = str(int(build_num[0]) + 1).zfill(3)
+        #current_build_num = str(int(build_num[0]) + 1).zfill(3)
+        current_build_num = int(build_num[0]) + 1
         print("current_build_num", current_build_num)
-        if int(current_build_num) > int(build_num[0]):
-            build_num = current_build_num
-            print("New", build_num)
+        if int(current_build_num) > max_num:
+            max_num = current_build_num
+            build_str = str(max_num).zfill(3)
+            print("New", build_str)
 else:
     print("no previous builds")
     build_num = '001'
 
-print("final number: ", build_num)
+print("final number: ", build_str)
 
 input("something")
 
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
-build_name = "build{}".format(build_num)
+build_name = "build{}".format(build_str)
 
 print("build_name: ", build_name)
 
@@ -496,6 +499,15 @@ if outcome != 2:
     file_name = BUILDS_PATH + "/{}/{}_{}.csv".format(build_name,build_name,now)
 else:
     file_name = BUILDS_PATH + "/{}/bad-{}_{}.csv".format(build_name,build_name, now)
+
+path = BUILDS_PATH + "/" + build_name
+
+if os.path.exists(path):
+    print("Directory {} already exists".format(idnum))
+else:
+    # Generates a new directory with the ID# as its name
+    os.makedirs(path)
+
 
 plate_map = plan[["Gene","Destination"]]
 plate_map = plate_map.drop_duplicates(subset=['Gene'])
