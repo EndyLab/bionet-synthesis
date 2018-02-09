@@ -97,7 +97,7 @@ else:
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
 
     print("Pulling from plates: ", plates)
-    max_reactions = 96
+    max_reactions = 48
     print("Number of reactions: ", max_reactions)
     max_frag = 3
     print("Max number of fragments: ", max_frag)
@@ -130,7 +130,7 @@ for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
 ## IF THERE ARE SPECIFIC GENES REQUIRED
 ## ============================================
 
-#required_genes = pd.read_csv("./testing/addgene_samples.csv")
+#required_genes = pd.read_csv("./testing/select_plates.csv")
 #required_genes = list(required_genes["Gene ID"])
 #print(required_genes)
 
@@ -155,10 +155,10 @@ for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
 #        gene_list.append(gene)
 #        plates += new_plates
 #        dest_well = target_well[len(gene_list) - 1]
-#
+
 #        for frag_count, (fragment, frag_loc) in enumerate(locations.items()):
 #            print(fragment)
-#
+
 #            plate_loc, well = frag_loc.split("_")
 #            row = [gene, plate_loc, well, dest_well]
 #            targets.append(row)
@@ -166,7 +166,6 @@ for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
 #        frag_list.append(frag_num)
 #        master_well.append(dest_well)
 
-#remaining_reactions = max_reactions - len(gene_list)
 
 #print("remaining_reactions",remaining_reactions)
 #print("\n\n")
