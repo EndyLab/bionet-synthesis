@@ -122,13 +122,15 @@ while x == 0:
         for comb in result:
             if len(comb) <= max_plates:
                 combinations.append(comb)
+                print(combinations)
                 reactions.append(target)
                 result_counter += 1
         else:
             target -= 1
     else:
         target -= 1
-
+    #if len(combinations) > 15:
+    #    break
     if target == 50:
         break
 
@@ -147,7 +149,7 @@ for index, row in solution.iterrows():
     if len(plates) > max_plates:
         print("Unique Total reactions = ", plates['Remaining_constructs'].unique().sum())
     else:
-        if plates['Remaining_constructs'].sum() > 96:
+        if plates['Remaining_constructs'].sum() > target:
             print("Unique Total reactions = ", plates['Remaining_constructs'].unique().sum())
         else:
             print("Total reactions = ", plates['Remaining_constructs'].sum())
