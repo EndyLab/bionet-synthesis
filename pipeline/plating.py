@@ -7,6 +7,7 @@ import sys
 import numpy as np
 import pandas as pd
 
+import math
 import os
 import glob
 import re
@@ -104,6 +105,8 @@ print(build_map)
 total_reactions = len(build_map)
 print("num reactions",total_reactions)
 
+portion = 0
+
 if total_reactions > 48:
     print("Too many samples to plate at once")
     portion = int(input("Choose which half to plate, 1 or 2: "))
@@ -114,8 +117,9 @@ if total_reactions > 48:
         build_map = build_map[48:]
         print(build_map)
     num_reactions = len(build_map)
-
-num_rows = num_reactions // 8
+else:
+    num_reactions = len(build_map)
+num_rows = math.ceil(num_reactions / 8)
 print(num_rows)
 trans_per_plate = 3
 num_plates = num_rows // trans_per_plate
