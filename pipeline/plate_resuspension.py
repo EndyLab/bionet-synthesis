@@ -201,7 +201,7 @@ tube_count = 1
 current_vol = 1200
 last_pipette = "neither"
 
-exclude_wells = ["A2","B2","C2","D2","E2"]
+exclude_wells = [] #["A2","B2","C2","D2","E2"]
 
 ## Run the protocol
 
@@ -237,8 +237,6 @@ for i, construct in plan.iterrows():
             p200.pick_up_tip()
         elif last_pipette == "neither":
             p200.pick_up_tip()
-
-        print("Adding {}ul to well {} with the p200".format(vol, well))
 
         # Changes tubes of water when one gets low
         if current_vol - vol < 100:
