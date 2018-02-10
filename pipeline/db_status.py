@@ -58,7 +58,7 @@ for file in glob.glob("../data/*/*.json"):
         abandoned += 1
     if data["status"]["build_ready"] == True:
         build_ready += 1
-    if data["status"]["build_complete"] != "":
+    if data["status"]["build_complete"] != "" or data["status"]["building"] == True:
         attempted += 1
     if data["status"]["build_complete"] == "Good_Sequence" or data["status"]["build_complete"] == "Good_sequence":
         complete += 1
@@ -72,7 +72,7 @@ for file in glob.glob("../data/*/*.json"):
         incomplete += 1
     elif data["status"]["build_complete"] == "Split Reads":
         split += 1
-    elif data["status"]["build_complete"] == "In_Process":
+    elif data["status"]["build_complete"] == "In_Process" or data["status"]["building"] == True:
         process += 1
     else:
         misc.append(data["status"]["build_complete"])
