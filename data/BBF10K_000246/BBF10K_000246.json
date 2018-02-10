@@ -42,7 +42,7 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "In_Process",
+    "build_complete": "Good_sequence",
     "build_attempts": [
       {
         "build_well": "F7",

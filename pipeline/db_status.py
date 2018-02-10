@@ -116,7 +116,7 @@ prod = "Total Ordered [{}] In Production #f7c862".format(production)
 att = "Received [{}] Build Attempted #6e9db7.7".format(attempted)
 ver = "Build Attempted [{}] Verified Success #43bc68.7".format(complete)
 pro = "Build Attempted [{}] In Process #e8c620.4".format(process)
-mut = "Build Attempted [{}] Mutation #e8c620.4".format(mutation)
+mut = "Build Attempted [{}] Mutation #e25706".format(mutation)
 fail = "Build Attempted [{}] Failures #a8252b.7".format(failures)
 not_att = "Received [{}] Not Yet Attempted #e2bec0".format(not_attempted)
 
