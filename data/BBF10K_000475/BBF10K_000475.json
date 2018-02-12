@@ -19,9 +19,9 @@
     },
     "safety": "null",
     "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+      "submitted": true,
+      "submission_number": "003",
+      "results": "Awaiting results"
     },
     "collection": "Microbial Argonaute collection 8",
     "other_tags": "null",

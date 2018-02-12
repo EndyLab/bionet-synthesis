@@ -22,7 +22,7 @@ sequences = []
 max_num = 0
 
 #num_entries = input("How many genes to be submitted: ")
-num_entries = 49
+num_entries = 1000
 
 now = datetime.datetime.now()
 date = "{}".format(now)
@@ -42,7 +42,8 @@ counter = 0
 
 order_path = "../sagacious/sag_submissions/sagacious_order_{}_{}.csv".format(sub_num,date)
 
-targets = ["BBF10K_000625","BBF10K_000562","BBF10K_000563","BBF10K_000564","BBF10K_000565","BBF10K_000566","BBF10K_000567","BBF10K_000568","BBF10K_000569","BBF10K_000570","BBF10K_000571","BBF10K_000572","BBF10K_000573","BBF10K_000574","BBF10K_000575","BBF10K_000576","BBF10K_000577","BBF10K_000578","BBF10K_000579","BBF10K_000580","BBF10K_000581","BBF10K_000582","BBF10K_000635","*"]
+#targets = ["BBF10K_000625","BBF10K_000562","BBF10K_000563","BBF10K_000564","BBF10K_000565","BBF10K_000566","BBF10K_000567","BBF10K_000568","BBF10K_000569","BBF10K_000570","BBF10K_000571","BBF10K_000572","BBF10K_000573","BBF10K_000574","BBF10K_000575","BBF10K_000576","BBF10K_000577","BBF10K_000578","BBF10K_000579","BBF10K_000580","BBF10K_000581","BBF10K_000582","BBF10K_000635","*"]
+target = "*"
 
 # Reads into each of the files in the database to find candidates to send out
 for entry in targets:

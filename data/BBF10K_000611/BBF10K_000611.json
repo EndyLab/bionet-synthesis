@@ -19,9 +19,9 @@
     },
     "safety": "null",
     "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+      "submitted": true,
+      "submission_number": "003",
+      "results": "Awaiting results"
     },
     "collection": "KG positive selection markers",
     "other_tags": "null",
