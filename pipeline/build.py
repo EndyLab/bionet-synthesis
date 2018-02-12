@@ -89,7 +89,9 @@ else:
 
 
     #plates = ['pSHPs1212B325156MU', 'pSHPs1121B618499MU']
-    plates = ["pSHPs1025B525648MU","pSHPs1121B618499MU", "pSHPs0807B412038MU"]
+    #plates = ["pSHPs1025B525648MU","pSHPs1121B618499MU", "pSHPs0807B412038MU"]
+    plates = ["pSHPs0807B412038MU","pSHPs1025B525648MU","pSHPs1121B618499MU"]
+
 
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
@@ -97,7 +99,7 @@ else:
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
 
     print("Pulling from plates: ", plates)
-    max_reactions = 48
+    max_reactions = 24
     print("Number of reactions: ", max_reactions)
     max_frag = 3
     print("Max number of fragments: ", max_frag)
@@ -173,58 +175,62 @@ for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
 
 # FIND GENES TO BUILD AND THEIR CORRESPONDING FRAGMENTS
 ## ============================================
+for specific_plate in plates:
+    for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
+        with open(file,"r") as json_file:
+            data = json.load(json_file)
 
-for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
-    with open(file,"r") as json_file:
-        data = json.load(json_file)
+        # Go through numerous checks to pull the desired fragments
+        if data["status"]["build_ready"] != True:
+            continue
+        if data["info"]["type"]["build_type"] != "10K_MoClo-EntryCDS-BbsI":
+            continue
+        if data["status"]["build_complete"] == "Good_Sequence":
+            continue
+        if data['gene_id'] in previous_genes:
+            continue
+        if data["status"]["building"] == True:
+            continue
 
-    # Go through numerous checks to pull the desired fragments
-    if data["status"]["build_ready"] != True:
-        continue
-    if data["info"]["type"]["build_type"] != "10K_MoClo-EntryCDS-BbsI":
-        continue
-    if data["status"]["build_complete"] == "Good_Sequence":
-        continue
-    if data['gene_id'] in previous_genes:
-        continue
-    if data["status"]["building"] == True:
-        continue
+    ## ADD IN FOR REQUIRED GENES
+    #    if data['gene_id'] in required_genes:
+    #        continue
 
-## ADD IN FOR REQUIRED GENES
-#    if data['gene_id'] in required_genes:
-#        continue
+        #Set a limit for how many you want to run
+        if len(gene_list) == max_reactions:
+            break
 
-    #Set a limit for how many you want to run
-    if len(gene_list) == max_reactions:
-        break
+        # Pull general information about the gene
+        gene = data["gene_id"]
+        locations = data["location"]["fragments"]
+        frag_num = len(locations)
 
-    # Pull general information about the gene
-    gene = data["gene_id"]
-    locations = data["location"]["fragments"]
-    frag_num = len(locations)
+        # Set the limit on how many fragments you want to build in one reaction
+        if frag_num > max_frag:
+            continue
 
-    # Set the limit on how many fragments you want to build in one reaction
-    if frag_num > max_frag:
-        continue
+        # Check if we'll need too many source plates if we add these gene to the build.
+        new_plates = [loc.split("_")[0] for loc in locations.values()]
+        new_plate_count = len(pd.unique(plates + new_plates))
 
-    # Check if we'll need too many source plates if we add these gene to the build.
-    new_plates = [loc.split("_")[0] for loc in locations.values()]
-    new_plate_count = len(pd.unique(plates + new_plates))
-    if new_plate_count > max_plates:
-        continue
-    gene_list.append(gene)
-    plates += new_plates
-    dest_well = target_well[len(gene_list) - 1]
+        # Forces the fragments to come from a specific plate first
+        if specific_plate not in new_plates:
+            continue
+        if new_plate_count > max_plates:
+            continue
+        gene_list.append(gene)
+        plates += new_plates
+        dest_well = target_well[len(gene_list) - 1]
 
-    # Iterate through all of the fragments
-    for frag_count, (fragment, frag_loc) in enumerate(locations.items()):
-        plate_loc, well = frag_loc.split("_")
-        row = [gene, plate_loc, well, dest_well]
-        targets.append(row)
+        # Iterate through all of the fragments
+        for frag_count, (fragment, frag_loc) in enumerate(locations.items()):
+            plate_loc, well = frag_loc.split("_")
+            row = [gene, plate_loc, well, dest_well]
+            targets.append(row)
 
-    # If all of the fragments are cleared the number of reactions needed for the master mix is added along with the well it corresponds to
-    frag_list.append(frag_num)
-    master_well.append(dest_well)
+        # If all of the fragments are cleared the number of reactions needed for the master mix is added along with the well it corresponds to
+        frag_list.append(frag_num)
+        master_well.append(dest_well)
 
 # Creates a dataframe with the well and
 master_plan = pd.DataFrame({
@@ -486,8 +492,6 @@ else:
     build_num = '001'
 
 print("final number: ", build_str)
-
-input("something")
 
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))

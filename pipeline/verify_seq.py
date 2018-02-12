@@ -207,7 +207,7 @@ array = pd.DataFrame({
 
 array = array[["Gene","Gene Name","Target","For Length","For Score","Rev Length","Rev Score","Gene Length","Outcome","Manual"]]
 
-array.to_csv("{}/{}_alignment_results.csv".format(SEQFILE_PATH,build_num))
+array.to_csv("{}/{}/{}_alignment_results.csv".format(BUILDS_PATH,build_num,build_num))
 
 print(array)
 print("nan sequences:", nan)
