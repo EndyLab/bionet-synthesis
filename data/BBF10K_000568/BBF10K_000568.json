@@ -19,9 +19,9 @@
     },
     "safety": "null",
     "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+      "submitted": true,
+      "submission_number": "002",
+      "results": "Awaiting results"
     },
     "collection": "null",
     "other_tags": "null",
