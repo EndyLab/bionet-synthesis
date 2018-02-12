@@ -99,7 +99,7 @@ else:
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
 
     print("Pulling from plates: ", plates)
-    max_reactions = 24
+    max_reactions = 48
     print("Number of reactions: ", max_reactions)
     max_frag = 3
     print("Max number of fragments: ", max_frag)
