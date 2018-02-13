@@ -453,8 +453,9 @@ for index, row in plan.iterrows():
     p10s.pick_up_tip()
 
     ## ADD BACK IN IF VOLUME IN PLATES ARE LOW
-    print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-    p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
+    if plate == "pSHPs0807B412038MU":
+        print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
+        p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
     print("Transferring {} from plate {} well {} to well {} of the dest plate".format(gene,plate,start_well,dest_well))
     p10s.mix(3, 8, source_plates[plate].wells(start_well).bottom())
@@ -486,12 +487,13 @@ if glob.glob(BUILDS_PATH + "/*/build*_20*.csv"):
         if int(current_build_num) > max_num:
             max_num = current_build_num
             build_str = str(max_num).zfill(3)
-            print("New", build_str)
 else:
     print("no previous builds")
     build_num = '001'
 
-print("final number: ", build_str)
+build_str = "006"
+
+print("build number: ", build_str)
 
 # Asks if it should record the results
 outcome = int(input("1 = Good run, 2 = Bad run: "))
@@ -507,7 +509,7 @@ else:
 path = BUILDS_PATH + "/" + build_name
 
 if os.path.exists(path):
-    print("Directory {} already exists".format(idnum))
+    print("Directory {} already exists".format(build_name))
 else:
     # Generates a new directory with the ID# as its name
     os.makedirs(path)
