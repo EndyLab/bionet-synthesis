@@ -209,6 +209,10 @@ for specific_plate in plates:
         if frag_num > max_frag:
             continue
 
+        ## ONLY INCLUDE IF YOU ONLY WANT DOUBLE FRAGMENTS
+        if frag_num != 2:
+            continue
+
         # Check if we'll need too many source plates if we add these gene to the build.
         new_plates = [loc.split("_")[0] for loc in locations.values()]
         new_plate_count = len(pd.unique(plates + new_plates))
@@ -304,14 +308,27 @@ total_num = 0
 for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
+
+## ONLY IF YOU ARE ONLY RUNNING TWO FRAGMENT REACTIONS
+total_num = total_num / 2
+
 extra_master = 1.3
 master_reactions = total_num * extra_master
 print("You need {} rxns of master mix".format(master_reactions))
 
 # REVIEW: FIX THE MASTER MIX CALCULATION
+master_volume = 6
+
+cutsmart = 1
+atp = 1
+vector = 0.25
+ligase = 0.5
+enzyme = 0.25
+water = master_volume - (cutsmart + atp + vector + ligase + enzyme)
+
 master_mix = pd.DataFrame({
             'Component':['Cutsmart','ATP','Vector','T4 Ligase','BbsI','H2O','Total'],
-            'Amount':[master_reactions,master_reactions,(0.25*master_reactions),(master_reactions*(50/96)),(master_reactions*(25/96)),(5.426*master_reactions),(master_reactions*8.457)]
+            'Amount':[cutsmart*master_reactions,atp*master_reactions,(vector*master_reactions),(ligase*master_reactions),(enzyme*master_reactions),(water*master_reactions),(master_volume*master_reactions)]
                         })
 master_mix = master_mix[['Component','Amount']]
 print("Use the table below to create the master mix")
@@ -400,7 +417,9 @@ p200 = instruments.Pipette(
 ## OT-ONE PROTOCOL
 ## ============================================
 # Aliquot the master mix into the PCR tube strip
-vol_per_tube = num_rows * 8 * extra_master
+
+master_volume = 6
+vol_per_tube = num_rows * master_volume * extra_master
 
 print("{}ul into each PCR tube".format(vol_per_tube))
 
@@ -413,8 +432,8 @@ p200.drop_tip()
 # Aliquot the master mix into all of the desired wells
 p10.pick_up_tip()
 for row in range(num_rows):
-    print("Transferring master mix to row {}".format(row))
-    p10.transfer(8, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
+    print("Transferring {}ul of master mix to row {}".format(master_volume,row))
+    p10.transfer(master_volume, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
 p10.drop_tip()
 
 # Aliquot master mix into the last row if not a complete row
@@ -429,14 +448,14 @@ if num_reactions % 8 > 0:
     p10s.drop_tip()
 
 # Aliquot extra master mix into wells with multiple fragments
-p10s.pick_up_tip()
-for index, row in master_plan.iterrows():
-    if int(row['Fragments']) > 1:
-        extra_volume = int(row['Fragments'] - 1) * 8
-        current_well = str(row['Well'])
-        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-p10s.drop_tip()
+#p10s.pick_up_tip()
+#for index, row in master_plan.iterrows():
+#    if int(row['Fragments']) > 1:
+#        extra_volume = int(row['Fragments'] - 1) * 8
+#        current_well = str(row['Well'])
+#        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+#        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+#p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
 ## ============================================
