@@ -90,8 +90,8 @@ else:
 
     #plates = ['pSHPs1212B325156MU', 'pSHPs1121B618499MU']
     #plates = ["pSHPs1025B525648MU","pSHPs1121B618499MU", "pSHPs0807B412038MU"]
-    plates = ["pSHPs0807B412038MU","pSHPs1025B525648MU","pSHPs1121B618499MU"]
-
+    #plates = ["pSHPs0807B412038MU","pSHPs1025B525648MU","pSHPs1121B618499MU"]
+    plates = ["pSHPs1212B325156MU","pSHPs1212B325157MU","pSHPs1212B325158MU"]
 
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
@@ -99,7 +99,7 @@ else:
     #plates = ["pSHPs0807B412039MU", "pSHPs0826B426850MU", "pSHPs1212B325156MU"]
 
     print("Pulling from plates: ", plates)
-    max_reactions = 48
+    max_reactions = 96
     print("Number of reactions: ", max_reactions)
     max_frag = 3
     print("Max number of fragments: ", max_frag)

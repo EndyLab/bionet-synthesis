@@ -122,7 +122,6 @@ while x == 0:
         for comb in result:
             if len(comb) <= max_plates:
                 combinations.append(comb)
-                print(combinations)
                 reactions.append(target)
                 result_counter += 1
         else:
