@@ -212,7 +212,7 @@ agar_plates = {}
 for plate, slot in layout:
     agar_plates[plate] = containers.load('96-deep-well', slot)
     print("agar_plates", agar_plates[plate])
-
+print("agar_plates",agar_plates,"\n")
 p10 = instruments.Pipette(
     axis='a',
     max_volume=10,
@@ -244,95 +244,59 @@ if args.manual:
     plate_vol = input("Volume to plate: ")
     number  = input("Number of dilutions: ")
 else:
-    num_dilutions = 5
+    num_dilutions = 4
     plate_vol = 7.5
     dilution_vol = 9
     waste_vol = 2.5
     plating_row = 0
 
 media_per_tube = 150
-
+plate = agar_plate_names[0]
+print("Starting with:",plate)
 plate_counter = 0
+
+p200.pick_up_tip()
+print("p200 pick")
+for well in range(8):
+    print("Transferring {}ul to tube {}".format(media_per_tube,well))
+    p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
+p200.drop_tip()
+print("p200 drop")
+
 # Iterate through each agar plate
-for plate in agar_plates:
-    # Iterate through each row of cells in the transformation plate
-    plate_counter += 1
-    if plate_counter == 1:
-        trans_rows = range(3)
-        media = "A1"
-    elif plate_counter == 2:
-        trans_rows = [4,5,6]
-        media = "B1"
+for trans_row in range(num_rows):
+    for dilution in range(num_dilutions):
+        if plating_row == 12:
+            print("p200 pick")
+            p200.pick_up_tip()
+            for well in range(8):
+                print("Transferring {}ul to tube {}".format(media_per_tube,well))
+                p200.transfer(media_per_tube, centrifuge_tube['B1'].bottom(),master.wells(well).bottom(),new_tip='never')
+            print("p200 drop")
+            p200.drop_tip()
 
-    p200.pick_up_tip()
-    for well in range(8):
-        print("Transferring {}ul to tube {}".format(media_per_tube,well))
-        p200.transfer(media_per_tube, centrifuge_tube[media].bottom(),master.wells(well).bottom(),new_tip='never')
-    p200.drop_tip()
-    p10.pick_up_tip()
-    print("p10 pick")
+            plate = agar_plate_names[1]
+            print("changing to :", plate)
+            plating_row = 0
 
-    # Iterate through each row of cells in the transformation plate
-    for trans_row in trans_rows:
-        #Reset the dilution factor and starting volume in the tubes
-        dil_factor = [1]
-        tube_vol = 15
-
-        for plating_counter in range(num_dilutions):
-            if plating_counter == 0:
-                print("Discard {}ul from transformation row {} into waste tube".format(plate_vol,trans_row))
-                p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), master['A12'].bottom(),new_tip='never',mix_before=(1,9))
-                tube_vol -= plate_vol
-                #print("Volume after initial discard: ",tube_vol)
-                plating_row -= 1
-            else:
-                print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
-                if (trans_row == trans_rows[0] and plating_row == 0) or (trans_row == trans_rows[0] and plating_row == 1) or (trans_row == trans_rows[0] and plating_row == 2):
-                    p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
-                    p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
-                    #print(plate)
-                    change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
-                else:
-                    p10.transfer(plate_vol, transformation_plate.rows(trans_row).bottom(), agar_plates[plate].rows(plating_row).bottom(),new_tip='never',mix_before=(2,9))
-                #print("Counter {} starts with {}uL in the transformation tube".format(plating_counter,tube_vol))
-                tube_vol -= plate_vol
-                #print("After plating the volume is", tube_vol)
-            if plating_counter != 0 and plating_counter != num_dilutions-1:
-                print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
-                p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
-                tube_vol -= waste_vol
-                #print("Volume after discard: ", tube_vol)
-            p10.drop_tip()
-            print("p10 drop")
-            if plating_counter == num_dilutions-1:
-                plating_row += 1
-                print("Last dilution in series, moving to next row")
-                if trans_row != num_rows-1:
-                    p10.pick_up_tip()
-                    print("p10 pick")
-                continue
-            p10.pick_up_tip()
-            print("p10 pick")
-
-            print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
-            p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
-            previous_vol = tube_vol
-            #print("previous volume: ",previous_vol)
-            tube_vol += dilution_vol
-            #print("current volume: ", tube_vol)
-            dil_factor.append((tube_vol / previous_vol) * dil_factor[-1])
-            #print("dilution factors: ",dil_factor)
-            #print(tube_vol)
-            plating_row += 1
-
-        print("transformation row:",trans_row," --- dilution factors: ",dil_factor)
-    plating_row = 0
-    print("plating_row reset to 0")
-    p10.drop_tip()
-    print("p10 drop")
-
-
-
+        print("\n")
+        print("trans_row",trans_row, "dilution",dilution,"plate",plate,"plate row",plating_row)
+        print("p10 pick")
+        p10.pick_up_tip()
+        print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
+        p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
+        print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
+        p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
+        p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
+        if plating_row % 2 != 0:
+            change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+            p10.blow_out()
+        if num_dilutions != 3:
+            print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
+            p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
+        print("p10 drop")
+        p10.drop_tip()
+        plating_row += 1
 stop = datetime.now()
 print(stop)
 runtime = stop - start

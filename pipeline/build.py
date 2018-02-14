@@ -304,7 +304,7 @@ total_num = 0
 for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
-extra_master = 1.25
+extra_master = 1.3
 master_reactions = total_num * extra_master
 print("You need {} rxns of master mix".format(master_reactions))
 
