@@ -510,8 +510,6 @@ else:
     print("no previous builds")
     build_num = '001'
 
-build_str = "006"
-
 print("build number: ", build_str)
 
 # Asks if it should record the results
