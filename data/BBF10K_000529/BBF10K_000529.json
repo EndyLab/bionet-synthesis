@@ -41,14 +41,14 @@
     "will_build": true,
     "abandoned": false,
     "build_ready": true,
-    "building": "",
+    "building": true,
     "build_complete": "",
     "build_attempts": [
       {
-        "build_well": "",
-        "build_date": "",
-        "build_number": "",
-        "build_outcome": ""
+        "build_well": "G9",
+        "build_date": "2018-02-14 17:30:11",
+        "build_number": "build007",
+        "build_outcome": "In Process"
       }
     ]
   },
