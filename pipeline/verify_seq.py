@@ -45,6 +45,7 @@ count = 0
 align_data = []
 nan = []
 small = []
+check = []
 
 backbone_seq = Seq.Seq("ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA")
 
@@ -136,7 +137,7 @@ for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
 
     if "BBF10K" in forfile:
         initials, order_number, plate_number, well_number, sample_name, sample_number, well_address = re.match(
-            r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_([A-Za-z0-9]+)_([0-9]+)_M13-Forward---20-([A-H][0-9]{2}).ab1',
+            r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_([A-Za-z0-9]+)_([0-9]+)_M13-Forward---20-_?([A-H][0-9]{2}).ab1',
             forfile).groups()
         revfile = "{}/{}_{}-{}{}_{}_{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, sample_name, sample_number, reverse_primer, well_address)
         print(revfile)
@@ -144,7 +145,7 @@ for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
     elif "MMSYN" in forfile:
         initials, order_number, plate_number, well_number, hyphen, sample_name, primer_name, well_address = re.match(
             r'.*/([A-Z]+)_([0-9]+)-([0-9])([0-9]+)_(-?)([A-Za-z0-9_-]+)_([A-Za-z0-9-]+)_([A-H][0-9]{2}).ab1',
-            forfile).groups()
+            fo`rfile).groups()
         revfile = "{}/{}_{}-{}{}_{}{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, hyphen, sample_name, reverse_primer, well_address)
         print("Sample_name", sample_name)
         id_num = dictionary[sample_name[:-2]]
@@ -212,6 +213,20 @@ array.to_csv("{}/{}/{}_alignment_results.csv".format(BUILDS_PATH,build_num,build
 print(array)
 print("nan sequences:", nan)
 print("small sequences:", small)
+
+new_dir = "{}/{}/{}_fasta_files".format(BUILDS_PATH,build_num,build_num)
+print("new_dir", new_dir)
+if os.path.exists(new_dir):
+    print("{} already exists".format(new_dir))
+else:
+    os.makedirs(new_dir)
+    print("made directory")
+
+for index,row in array.iterrows():
+    if row["Outcome"] == "Perfect":
+        continue
+    for fasta in glob.glob("../data/{}/{}.fasta".format(row["Gene"],row["Gene"])):
+        shutil.copy(fasta, new_dir)
 
 print()
 stop = datetime.now()
