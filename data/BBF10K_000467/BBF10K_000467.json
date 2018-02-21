@@ -70,5 +70,6 @@
     "ordered": "2017.11.28",
     "build_ready": "",
     "complete": ""
-  }
+  },
+  "description": "Mcherry codon optimized for zebrafish."
 }

@@ -30,20 +30,21 @@ for file in glob.glob("./testing/json/template.json"):
 for index, row in data.iterrows():
 
     # Checks if it has already been assigned a number
-    if row['idnum'] != "None":
-        print(row['idnum'][7:13])
-        last_id = int(row["idnum"][7:13])
-        idnum_list.append(row["idnum"])
-        print("BBF10K_{} has already been entered".format(str(last_id).zfill(6)))
-        continue
+    #if row['idnum'] != "None":
+    #    print(row['idnum'][7:13])
+    #    last_id = int(row["idnum"][7:13])
+    #    idnum_list.append(row["idnum"])
+    #    print("BBF10K_{} has already been entered".format(str(last_id).zfill(6)))
+    #    continue
 
     # Generate the ID#
     gene = row['gene_name']
     seq = row['sequence']
-    last_id += 1
-    number = str(last_id).zfill(6)
-    idnum = "BBF10K_" + number
-    idnum_list.append(idnum)
+    idnum = row['idnum']
+    #last_id += 1
+    #number = str(last_id).zfill(6)
+    #idnum = "BBF10K_" + number
+    #idnum_list.append(idnum)
 
     #State the path to house the new set of directories
     path = "../data/{}".format(idnum)
@@ -54,6 +55,7 @@ for index, row in data.iterrows():
     else:
         # Generates a new directory with the ID# as its name
         os.makedirs(path)
+        print("Making directory for {}".format(idnum))
 
         # Generate the fasta file with the gene sequence
         fasta = open("./{}/{}.fasta".format(path,idnum),"w+")
@@ -99,6 +101,6 @@ for index, row in data.iterrows():
             json.dump(template,json_file,indent=2)
 
 # Update the .csv file with the new id numbers
-data["idnum"] = idnum_list
-new_data = data[["gene_name","sequence","author","author_email","author_affiliation","author_project","cloning_method","part_type","build_type","safety","collection","other_tags","ordered","will_build","date_ordered","order_number","idnum"]]
-new_data.to_csv('./testing/data_testing/10K_CDS.csv')
+#data["idnum"] = idnum_list
+#new_data = data[["gene_name","sequence","author","author_email","author_affiliation","author_project","cloning_method","part_type","build_type","safety","collection","other_tags","ordered","will_build","date_ordered","order_number","idnum"]]
+#new_data.to_csv('./testing/data_testing/10K_CDS.csv')

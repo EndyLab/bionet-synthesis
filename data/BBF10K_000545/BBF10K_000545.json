@@ -70,5 +70,6 @@
     "ordered": "2017.11.28",
     "build_ready": "",
     "complete": ""
-  }
+  },
+  "description": "Series of prokaryotic Argonaute proteins found with a bioinformatic search. Codon optimized for human cells."
 }
