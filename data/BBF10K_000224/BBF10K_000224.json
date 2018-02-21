@@ -19,9 +19,9 @@
     },
     "safety": "null",
     "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+      "submitted": true,
+      "submission_number": "003",
+      "results": "Awaiting results"
     },
     "collection": "JCVI syn3.0 genes codon optimized for E.coli",
     "other_tags": "null",
@@ -40,14 +40,14 @@
     "will_build": true,
     "abandoned": false,
     "build_ready": true,
-    "building": "",
+    "building": true,
     "build_complete": "",
     "build_attempts": [
       {
-        "build_well": "",
-        "build_date": "",
-        "build_number": "",
-        "build_outcome": ""
+        "build_well": "C1",
+        "build_date": "2018-02-12 17:31:46",
+        "build_number": "build006",
+        "build_outcome": "In Process"
       }
     ]
   },

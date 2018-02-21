@@ -16,33 +16,39 @@ frag_nums = []
 data = pd.read_csv("./data_testing/10K_CDS.csv")
 dictionary = dict(zip(data['gene_name'], data['idnum']))
 
-for file in glob.glob("../../data/*/*.json"):
-    print(file)
-    with open(file,"r") as json_file:
-        data = json.load(json_file)
-
-    #if data["status"]["build_complete"] == "" and data["status"]["build_ready"] == True: # or data["status"]["build_complete"] == "Good_sequence":
-    if data["status"]["build_ready"] == True: # or data["status"]["build_complete"] == "Good_sequence":
-        gene_name = data["gene_name"]
-        names.append(gene_name)
-
+# Pulls in all of the previously attempted genes
 previous_genes = []
 for file in glob.glob("../../builds/*/build*_20*.csv"):
     print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
 
+# Extracts all of the gene names that are currently buildable and have not been attempted
+for file in glob.glob("../../data/*/*.json"):
+    print(file)
+    with open(file,"r") as json_file:
+        data = json.load(json_file)
+    if data["status"]["build_ready"] == True and data["gene_id"] not in previous_genes:
+        gene_name = data["gene_name"]
+        names.append(gene_name)
+
 print(previous_genes)
-#print("Names: ", names)
-#print(len(names))
+print("Names: ", names)
+print(len(names))
 
 input("continue?")
 
+unknown_names = []
+
+# Pulls all of the plate_maps and stores the locations of all of the flagged fragments
 for plate_map in glob.glob("../../plate_maps/*.csv"):
     details = pd.read_csv(plate_map)
     print("plate_map", plate_map)
     for index,row in details.iterrows():
-        gene_name = row["customer_line_item_id"][:-2].strip()
+        if re.match(r'.+_[0-9]',row["customer_line_item_id"]):
+            gene_name = row["customer_line_item_id"][:-2].strip()
+        else:
+            unknown_names.append(row["customer_line_item_id"])
         print(gene_name)
         if gene_name in names and gene_name not in previous_genes:
             print("match")
@@ -88,8 +94,6 @@ plate_breakdown = pd.DataFrame({
 })
 print(plate_breakdown)
 
-#dictionary = dict(zip(unique_plates, remaining_per_plate))
-#print(dictionary)
 #candidates.to_csv("./remaining_constructs.csv")
 
 def find_combinations(list, sum):
@@ -107,7 +111,6 @@ target = 96
 max_plates = 3
 #numbers = [5, 53, 19, 2, 17, 2, 23, 90, 75, 94, 15]
 #numbers = list(plate_breakdown["Remaining_constructs"])
-#numbers = dictionary.values()
 numbers = remaining_per_plate
 
 combinations = []
@@ -125,7 +128,8 @@ while x == 0:
             target -= 1
     else:
         target -= 1
-
+    #if len(combinations) > 15:
+    #    break
     if target == 50:
         break
 
@@ -144,12 +148,11 @@ for index, row in solution.iterrows():
     if len(plates) > max_plates:
         print("Unique Total reactions = ", plates['Remaining_constructs'].unique().sum())
     else:
-        if plates['Remaining_constructs'].sum() > 96:
+        if plates['Remaining_constructs'].sum() > target:
             print("Unique Total reactions = ", plates['Remaining_constructs'].unique().sum())
         else:
             print("Total reactions = ", plates['Remaining_constructs'].sum())
     print(plates,"\n")
-
 
 
 

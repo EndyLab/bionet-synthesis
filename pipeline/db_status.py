@@ -58,21 +58,21 @@ for file in glob.glob("../data/*/*.json"):
         abandoned += 1
     if data["status"]["build_ready"] == True:
         build_ready += 1
-    if data["status"]["build_complete"] != "":
+    if data["status"]["build_complete"] != "" or data["status"]["building"] == True:
         attempted += 1
     if data["status"]["build_complete"] == "Good_Sequence" or data["status"]["build_complete"] == "Good_sequence":
         complete += 1
     elif data["status"]["build_complete"] == "Original_Vector_Sequence" or data["status"]["build_complete"] == "Original Vector Sequence":
         vector += 1
-    elif data["status"]["build_complete"] == "Unknown_Sequence" or data["status"]["build_complete"] == "Unknown Sequence":
+    elif data["status"]["build_complete"] == "Unknown_Sequence" or data["status"]["build_complete"] == "Unknown Sequence" or data["status"]["build_complete"] == "Unknown_sequence":
         unknown += 1
-    elif data["status"]["build_complete"] == "Point Mutation":
+    elif data["status"]["build_complete"] == "Point Mutation" or data["status"]["build_complete"] == "Point_mutation":
         mutation += 1
-    elif data["status"]["build_complete"] == "Incomplete":
+    elif data["status"]["build_complete"] == "Incomplete" or data["status"]["build_complete"] == "Partial" or data["status"]["build_complete"] == "Bad_reads":
         incomplete += 1
     elif data["status"]["build_complete"] == "Split Reads":
         split += 1
-    elif data["status"]["build_complete"] == "In_Process":
+    elif data["status"]["build_complete"] == "In_Process" or data["status"]["building"] == True:
         process += 1
     else:
         misc.append(data["status"]["build_complete"])
@@ -80,7 +80,7 @@ for file in glob.glob("../data/*/*.json"):
 contributors = pd.Series(contributors)
 unique_cont = len(contributors.unique())
 production = ordered - (build_ready + abandoned)
-failures = (vector + unknown + mutation + incomplete + split)
+failures = (vector + unknown + incomplete + split)
 not_attempted = (build_ready - attempted)
 
 print("Contributers :", unique_cont)
@@ -98,6 +98,7 @@ print("In Production : ", production)
 print("Build Attempted :", attempted)
 print("Verified Success :", complete)
 print("In Process :", process)
+print("Mutation :", mutation)
 print("Failures :", failures)
 print("Not Yet Attempted :", not_attempted)
 print()
@@ -115,10 +116,11 @@ prod = "Total Ordered [{}] In Production #f7c862".format(production)
 att = "Received [{}] Build Attempted #6e9db7.7".format(attempted)
 ver = "Build Attempted [{}] Verified Success #43bc68.7".format(complete)
 pro = "Build Attempted [{}] In Process #e8c620.4".format(process)
+mut = "Build Attempted [{}] Mutation #e25706".format(mutation)
 fail = "Build Attempted [{}] Failures #a8252b.7".format(failures)
 not_att = "Received [{}] Not Yet Attempted #e2bec0".format(not_attempted)
 
-sankey = submission1+"\n"+submission2+"\n"+submission3+"\n"+submission4+"\n"+submission5+"\n"+aband+"\n"+rec+"\n"+prod+"\n"+att+"\n"+ver+"\n"+pro+"\n"+fail+"\n"+not_att
+sankey = submission1+"\n"+submission2+"\n"+submission3+"\n"+submission4+"\n"+submission5+"\n"+aband+"\n"+rec+"\n"+prod+"\n"+att+"\n"+ver+"\n"+pro+"\n"+mut+"\n"+fail+"\n"+not_att
 print(sankey)
 
 name = "../raw_files/sankey_diagrams/sankey_{}.txt".format(str(now))
