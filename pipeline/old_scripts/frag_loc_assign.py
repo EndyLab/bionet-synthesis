@@ -38,39 +38,51 @@ name = []
 seq = []
 not_in_dict = []
 seq_disc = []
-all_maps = []
-no_frag_seq = []
 
-
-## Take in all current plate maps
-## ============================================
 for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
-    plate_map = pd.read_csv(file)
-    all_maps.append(plate_map)
-all_maps = pd.concat(all_maps)
+    counter = counter + 1
 
-## Generates the necessary dataframe
-## ============================================
-for index, row in all_maps.iterrows():
-    # Searches for linked genes and separates them into separate entries
-    if "_link_" in row['customer_line_item_id']:
-        linked_string = row['customer_line_item_id'].strip()
-        linked_genes = re.match(
-            r'([A-Za-z0-9_-]+)_link_([A-Za-z0-9_-]+)',
-            linked_string).groups()
-        for gene in linked_genes:
-            if gene[-2:] != "_1":
-                gene += "_1"
-            name.append(gene)
+    # Prints the file name without the preceeding path
+    print("{}. {}".format(counter,file[14:]))
+    plate_map_number.append(file)
+print("{}. Add all plates".format(counter + 1))
+
+def add_plate_maps(plate_map):
+
+    # Iterates through all of the items in the plate_map
+    for index, row in plate_map.iterrows():
+
+        # Searches for linked genes and separates them into separate entries
+        if "_link_" in row['customer_line_item_id']:
+            linked_string = row['customer_line_item_id'].strip()
+            linked_genes = re.match(
+                r'([A-Za-z0-9_-]+)_link_([A-Za-z0-9_-]+)',
+                linked_string).groups()
+            for gene in linked_genes:
+                if gene[-2:] != "_1":
+                    gene += "_1"
+                name.append(gene)
+                plate.append(row['Plate'])
+                well.append(row['Well'])
+                seq.append(row['Insert Sequence'])
+        else:
+            name.append(row['customer_line_item_id'].strip())
             plate.append(row['Plate'])
             well.append(row['Well'])
             seq.append(row['Insert Sequence'])
-    else:
-        name.append(row['customer_line_item_id'].strip())
-        plate.append(row['Plate'])
-        well.append(row['Well'])
-        seq.append(row['Insert Sequence'])
-    print("name:", name)
+        print("name:", name)
+
+# Asks the user for a number corresponding to the plate they want to resuspend
+number = input("Which file: ")
+
+if int(number) > int(counter):
+    for plate_map_file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
+        print(plate_map_file)
+        plate_map = pd.read_csv(plate_map_file)
+        add_plate_maps(plate_map)
+else:
+    plate_map = pd.read_csv(plate_map_number[number])
+    add_plate_maps(plate_map)
 
 # Rebuilds the plate map with all of the linked genes split up
 new_plate_map = pd.DataFrame({ "Name" : name, "Plate" : plate, "Well" : well, "Sequence" : seq })
@@ -84,7 +96,6 @@ for index,row in new_plate_map.iterrows():
         else:
             print("{} not in dictionary".format(row['Name'][:-2]))
             not_in_dict.append(row['Name'])
-            continue
     else:
         print("{} already in proper format".format(row['Name'][:-2]))
         idnum = row['Name'][:-2]
@@ -98,10 +109,6 @@ for index,row in new_plate_map.iterrows():
             data = json.load(json_file)
         data["location"]["fragments"][idnum + "_" + frag_num] = row['Plate'] + "_" + row['Well']
 
-        if idnum + "_" + frag_num not in data["sequence"]["fragment_sequences"]:
-            no_frag_seq.append(idnum)
-            continue
-
         # Checks if the synthesized sequence matches the requested sequence
         if data["sequence"]["fragment_sequences"][idnum + "_" + frag_num] != row['Sequence']:
             print('Fragment sequence did not match the synthesized sequence')
@@ -113,7 +120,7 @@ for index,row in new_plate_map.iterrows():
         for frag in data['location']['fragments']:
             # Adds to the counter as it iterates through the fragments
             if data['location']['fragments'][frag] != "":
-                print("{} has location".format(frag))
+                print("has location")
                 num_locations += 1
             else:
                 print("has no location")
@@ -130,8 +137,6 @@ for index,row in new_plate_map.iterrows():
 
 print("Not in dictionary")
 print(not_in_dict)
-print("no fragment sequence")
-print(no_frag_seq)
 
 
 
