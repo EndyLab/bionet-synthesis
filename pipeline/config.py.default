@@ -1,6 +1,6 @@
 # Copy this file to config.py and make changes
 
-BASE = "./"
+BASE_PATH = "./"
 
 LOGGING_CONFIG = {
     'version': 1,
@@ -20,7 +20,7 @@ LOGGING_CONFIG = {
         'class': 'logging.FileHandler',
         'level': 'DEBUG',
         'formatter': 'simple',
-        'filename': BASE + '/log/pipeline.log'
+        'filename': BASE_PATH + '/log/pipeline.log'
       }
     },
     'loggers': {

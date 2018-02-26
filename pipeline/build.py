@@ -15,13 +15,13 @@ import math
 import datetime
 from datetime import datetime
 import getch
+from config import *
 
 ## Take in required information
 ## ============================================
 
 # Set starting paths
-#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
-BASE_PATH = ".."
+# BASE_PATH is defined in the config file
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"
@@ -89,9 +89,9 @@ else:
 
 
     #plates = ['pSHPs1212B325156MU', 'pSHPs1121B618499MU']
-    #plates = ["pSHPs1025B525648MU","pSHPs1121B618499MU", "pSHPs0807B412038MU"]
+    plates = ["pSHPs1025B525648MU","pSHPs1121B618499MU", "pSHPs0807B412038MU"]
     #plates = ["pSHPs0807B412038MU","pSHPs1025B525648MU","pSHPs1121B618499MU"]
-    plates = ["pSHPs1212B325156MU","pSHPs1212B325157MU","pSHPs1212B325158MU"]
+    #plates = ["pSHPs1212B325156MU","pSHPs1212B325157MU","pSHPs1212B325158MU"]
 
     #plates = ['pSHPs0826B426849MU','pSHPs0807B412037MU', 'pSHPs0807B412038MU']
     #plates = ["pSHPs0826B426850MU","pSHPs0807B412039MU","pSHPs0807B412040MU"]
@@ -101,7 +101,7 @@ else:
     print("Pulling from plates: ", plates)
     max_reactions = 96
     print("Number of reactions: ", max_reactions)
-    max_frag = 3
+    max_frag = 4
     print("Max number of fragments: ", max_frag)
     input("Press enter to continue ")
 
@@ -125,7 +125,7 @@ gene_list = []
 
 ## Takes in all of the previously attempted genes
 previous_genes = []
-for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
+for file in glob.glob(BUILDS_PATH+"/*/*20*.csv"):
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
 
@@ -177,6 +177,7 @@ for file in glob.glob(BUILDS_PATH+"/*/*.csv"):
 ## ============================================
 for specific_plate in plates:
     for file in glob.glob(DATA_PATH + "/BBF10K*/*.json"):
+        print(file)
         with open(file,"r") as json_file:
             data = json.load(json_file)
 

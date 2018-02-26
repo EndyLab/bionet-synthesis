@@ -10,13 +10,16 @@ import os
 import glob
 import re
 
+from config import *
+
+
 complete_order = input("What is the last complete order: ")
 abandoned = []
 no_frag = []
 not_abandoned = []
 
 # Query every file in the database
-for file in glob.glob("../data/*/*.json"):
+for file in glob.glob(BASE_PATH + "/data/*/*.json"):
     print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)

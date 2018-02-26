@@ -15,9 +15,8 @@ import math
 
 import datetime
 from datetime import datetime
+from config import *
 
-#BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
-BASE_PATH = ".."
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"

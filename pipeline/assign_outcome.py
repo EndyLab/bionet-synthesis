@@ -14,11 +14,12 @@ import math
 import collections
 
 import shutil
+from config import *
+
 
 import_time = datetime.now()
 print("Time to import: ",import_time - start)
 
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"

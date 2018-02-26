@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 import json
 import os
@@ -10,18 +8,18 @@ import re
 import math
 
 import shutil
-
 import datetime
+from config import *
 
 counter = 0
 last_id = 0
 idnum_list = []
 
 # Imports the csv containing all of our data
-data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+data = pd.read_csv(BASE_PATH + "/pipeline/testing/data_testing/10K_CDS.csv")
 
 # Takes in the template json file to initialize the json files
-for file in glob.glob("./testing/json/template.json"):
+for file in glob.glob(BASE_PATH + "/pipeline/testing/json/template.json"):
         print(file)
         with open(file,"r") as template_json:
             template = json.load(template_json)
@@ -47,7 +45,7 @@ for index, row in data.iterrows():
     #idnum_list.append(idnum)
 
     #State the path to house the new set of directories
-    path = "../data/{}".format(idnum)
+    path = "{}/data/{}".format(BASE_PATH,idnum)
 
     # Only create a new directory if there are no existing directories
     if os.path.exists(path):
@@ -58,7 +56,7 @@ for index, row in data.iterrows():
         print("Making directory for {}".format(idnum))
 
         # Generate the fasta file with the gene sequence
-        fasta = open("./{}/{}.fasta".format(path,idnum),"w+")
+        fasta = open("/{}/{}.fasta".format(path,idnum),"w+")
         fasta.write(">{}".format(gene))
         fasta.write("\n")
         fasta.write(seq)
@@ -97,7 +95,7 @@ for index, row in data.iterrows():
         template["dates"]["ordered"] = row["date_ordered"]
 
         # Writes the information to a json file in the desired directory
-        with open("./{}/{}.json".format(path,idnum),"w+") as json_file:
+        with open("/{}/{}.json".format(path,idnum),"w+") as json_file:
             json.dump(template,json_file,indent=2)
 
 # Update the .csv file with the new id numbers

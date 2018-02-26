@@ -12,12 +12,12 @@ import re
 import math
 
 import shutil
+from config import *
 
 from Bio import pairwise2
 from Bio import Seq
 from Bio import SeqIO
 
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"

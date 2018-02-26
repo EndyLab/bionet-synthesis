@@ -4,13 +4,17 @@ import datetime
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 import json
 import os
 import glob
 import re
+
+from config import *
+
+PIPELINE_PATH = BASE_PATH + "/pipeline"
+BUILDS_PATH = BASE_PATH + "/builds"
+DATA_PATH = BASE_PATH + "/data"
 
 info = []
 contributors = []
@@ -34,7 +38,7 @@ sub3 = 0
 sub4 = 0
 sub5 = 0
 
-for file in glob.glob("../data/*/*.json"):
+for file in glob.glob(DATA_PATH + "/*/*.json"):
     print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)
@@ -123,7 +127,7 @@ not_att = "Received [{}] Not Yet Attempted #e2bec0".format(not_attempted)
 sankey = submission1+"\n"+submission2+"\n"+submission3+"\n"+submission4+"\n"+submission5+"\n"+aband+"\n"+rec+"\n"+prod+"\n"+att+"\n"+ver+"\n"+pro+"\n"+mut+"\n"+fail+"\n"+not_att
 print(sankey)
 
-name = "../raw_files/sankey_diagrams/sankey_{}.txt".format(str(now))
+name = BASE_PATH + "/raw_files/sankey_diagrams/sankey_{}.txt".format(str(now))
 print(name)
 
 print(misc)

@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 import json
 import os
@@ -11,8 +9,8 @@ import math
 
 import shutil
 import datetime
+from config import *
 
-BASE_PATH = "/Users/conarymeyer/Desktop/GitHub/bionet-synthesis"
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
 DATA_PATH = BASE_PATH + "/data"

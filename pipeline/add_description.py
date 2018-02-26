@@ -13,15 +13,16 @@ import math
 import shutil
 
 import datetime
+from config import *
 
-data = pd.read_csv("./testing/data_testing/10K_CDS.csv")
+data = pd.read_csv(BASE_PATH + "pipeline/testing/data_testing/10K_CDS.csv")
 
 for index,row in data.iterrows():
     idnum = row["idnum"]
     print(idnum)
     description = row["description"]
 
-    for file in glob.glob("../data/{}/{}.json".format(idnum,idnum)):
+    for file in glob.glob(BASE_PATH + "/data/{}/{}.json".format(idnum,idnum)):
         print(file)
         with open(file,"r") as json_file:
             data = json.load(json_file)
