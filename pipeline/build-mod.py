@@ -34,6 +34,7 @@ args = parser.parse_args()
 
 plates = []
 names = []
+gene_ids = []
 cand = []
 plate = []
 well = []
@@ -186,13 +187,13 @@ for file in glob.glob(BASE_PATH + "/data/*/*.json"):
     #print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)
-    if data["status"]["build_ready"] == True and data["gene_id"] not in previous_genes:
+    if data["status"]["build_ready"] == True and data["gene_id"] not in previous_genes and data["info"]["type"]["build_type"] == "10K_MoClo-EntryCDS-BbsI":
         gene_name = data["gene_name"]
         names.append(gene_name)
 
 print(previous_genes)
 print("Names: ", names)
-print(len(names))
+print("number of genes",len(names))
 
 input("continue?")
 
@@ -212,10 +213,12 @@ for plate_map in glob.glob(BASE_PATH + "/plate_maps/*.csv"):
         if gene_name in names and gene_name not in previous_genes:
             print("match")
             cand.append(gene_name)
+            gene_ids.append(dictionary[gene_name])
             plate.append(row["Plate"])
             well.append(row["Well"])
 
 plan = pd.DataFrame({
+        "Gene ID" : gene_ids,
         "Gene" : cand,
         "Plate" : plate,
         "Well" : well
@@ -247,7 +250,7 @@ for index,row in plan.iterrows():
 
 plan["Destination"] = dest_wells
 
-plan = plan[["Gene","Plate","Well","Fragments","Destination"]]
+plan = plan[["Gene ID","Gene","Plate","Well","Fragments","Destination"]]
 
 # Creates a dataframe with the well and
 master_plan = pd.DataFrame({
@@ -453,7 +456,7 @@ p10.drop_tip()
 
 # Aliquot master mix into the last row if not a complete row
 if num_reactions % 8 > 0:
-    p10.pick_up_tip()
+    p10s.pick_up_tip()
     print("need single channel for {}".format(num_reactions % 8))
     for missing in range(num_reactions % 8):
         extra_volume = 8
@@ -505,7 +508,7 @@ for index, row in plan.iterrows():
     p10s.pick_up_tip()
 
     ## ADD BACK IN IF VOLUME IN PLATES ARE LOW
-    if plate == "pSHPs0807B412037MU" or plate == "pSHPs0807B412038MU" or plate == "pSHPs0807B412039MU":
+    if plate == "pSHPs0807B412037MU" or plate == "pSHPs0807B412038MU" or plate == "pSHPs0807B412039MU" or  plate == "pSHPs0807B412040MU" or  plate == "pSHPs0826B426849MU" or plate == "pSHPs0826B426850MU" :
         print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
         p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
@@ -565,9 +568,9 @@ else:
     os.makedirs(path)
 
 
-plate_map = plan[["Gene","Destination"]]
-plate_map = plate_map.drop_duplicates(subset=['Gene'])
-plate_map.set_index("Gene")
+plate_map = plan[["Gene ID","Destination"]]
+plate_map = plate_map.drop_duplicates(subset=['Gene ID'])
+plate_map.set_index("Gene ID")
 print("\n",plate_map)
 
 # Export the build map
@@ -578,7 +581,7 @@ plate_map.to_csv(file_name)
 for index, row in plate_map.iterrows():
     if outcome == 2:
         break
-    gene = row["Gene"]
+    gene = row["Gene ID"]
     for file in glob.glob(DATA_PATH + "/{}/{}.json".format(gene,gene)):
         print(file)
 
