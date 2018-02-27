@@ -5,6 +5,7 @@ import json
 import os
 import glob
 import re
+from config import *
 
 names = []
 cand = []
@@ -13,19 +14,19 @@ well = []
 frag_nums = []
 
 # Create a dictionary to link the gene name to the corresponding id number
-data = pd.read_csv("./data_testing/10K_CDS.csv")
+data = pd.read_csv(BASE_PATH + "/pipeline/testing/data_testing/10K_CDS.csv")
 dictionary = dict(zip(data['gene_name'], data['idnum']))
 
 # Pulls in all of the previously attempted genes
 previous_genes = []
-for file in glob.glob("../../builds/*/build*_20*.csv"):
-    print(file)
+for file in glob.glob(BASE_PATH + "/builds/*/build*_20*.csv"):
+    #print(file)
     build = pd.read_csv(file)
     previous_genes += list(build['Gene'])
 
 # Extracts all of the gene names that are currently buildable and have not been attempted
-for file in glob.glob("../../data/*/*.json"):
-    print(file)
+for file in glob.glob(BASE_PATH + "/data/*/*.json"):
+    #print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)
     if data["status"]["build_ready"] == True and data["gene_id"] not in previous_genes:
@@ -41,7 +42,7 @@ input("continue?")
 unknown_names = []
 
 # Pulls all of the plate_maps and stores the locations of all of the flagged fragments
-for plate_map in glob.glob("../../plate_maps/*.csv"):
+for plate_map in glob.glob(BASE_PATH + "/plate_maps/*.csv"):
     details = pd.read_csv(plate_map)
     print("plate_map", plate_map)
     for index,row in details.iterrows():
@@ -49,6 +50,7 @@ for plate_map in glob.glob("../../plate_maps/*.csv"):
             gene_name = row["customer_line_item_id"][:-2].strip()
         else:
             unknown_names.append(row["customer_line_item_id"])
+            continue
         print(gene_name)
         if gene_name in names and gene_name not in previous_genes:
             print("match")
@@ -63,9 +65,9 @@ candidates = pd.DataFrame({
     })
 
 for index, row in candidates.iterrows():
-    for file in glob.glob("../../data/{}/{}.json".format(dictionary[row["Candidate"]],dictionary[row["Candidate"]])):
+    for file in glob.glob(BASE_PATH + "/data/{}/{}.json".format(dictionary[row["Candidate"]],dictionary[row["Candidate"]])):
         frag_num = 0
-        print(file)
+        #print(file)
         with open(file,"r") as json_file:
             data = json.load(json_file)
         #print(data["location"]["fragments"])

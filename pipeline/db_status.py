@@ -39,7 +39,6 @@ sub4 = 0
 sub5 = 0
 
 for file in glob.glob(DATA_PATH + "/*/*.json"):
-    print(file)
     with open(file,"r") as json_file:
         data = json.load(json_file)
     author = data["author"]["name"]
