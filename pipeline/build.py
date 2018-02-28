@@ -303,22 +303,23 @@ input("Press enter to continue")
 ## SETUP THE MASTER MIX
 ## ============================================
 # Determine the number of rows to aliquot
-num_rows = num_reactions // 8
-print("Building {} reactions in {} rows".format(num_reactions, num_rows))
 total_num = 0
 for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
+num_wells = len(master_plan)
+num_rows = num_wells // 8
+print("Building {} reactions in {} rows".format(num_wells, num_rows))
 
 ## ONLY IF YOU ARE ONLY RUNNING TWO FRAGMENT REACTIONS
-total_num = total_num / 2
+# total_num = total_num / 2
 
 extra_master = 1.3
 master_reactions = total_num * extra_master
 print("You need {} rxns of master mix".format(master_reactions))
 
 # REVIEW: FIX THE MASTER MIX CALCULATION
-master_volume = 6
+master_volume = 8
 
 cutsmart = 1
 atp = 1
@@ -449,14 +450,14 @@ if num_reactions % 8 > 0:
     p10s.drop_tip()
 
 # Aliquot extra master mix into wells with multiple fragments
-#p10s.pick_up_tip()
-#for index, row in master_plan.iterrows():
-#    if int(row['Fragments']) > 1:
-#        extra_volume = int(row['Fragments'] - 1) * 8
-#        current_well = str(row['Well'])
-#        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-#        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-#p10s.drop_tip()
+p10s.pick_up_tip()
+for index, row in master_plan.iterrows():
+   if int(row['Fragments']) > 1:
+       extra_volume = int(row['Fragments'] - 1) * 8
+       current_well = str(row['Well'])
+       print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+       p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+p10s.drop_tip()
 
 ## Add the fragments from the source plates to the destination plate
 ## ============================================

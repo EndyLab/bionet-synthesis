@@ -321,12 +321,16 @@ input("Press enter to continue")
 ## SETUP THE MASTER MIX
 ## ============================================
 # Determine the number of rows to aliquot
-num_rows = num_reactions // 8
-print("Building {} reactions in {} rows".format(num_reactions, num_rows))
+# num_rows = num_reactions // 8
+# print("Building {} reactions in {} rows".format(num_reactions, num_rows))
 total_num = 0
 for index, row in master_plan.iterrows():
     rxn_needed = int(row['Fragments'])
     total_num += rxn_needed
+num_wells = len(master_plan)
+num_rows = num_wells // 8
+print("Building {} reactions in {} rows".format(num_wells, num_rows))
+
 
 ## ONLY IF YOU ARE ONLY RUNNING TWO FRAGMENT REACTIONS
 #total_num = total_num / 2
