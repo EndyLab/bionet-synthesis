@@ -181,7 +181,7 @@ for specific_plate in plates:
         with open(file,"r") as json_file:
             data = json.load(json_file)
 
-        # Go through numerous checks to pull the desired fragments
+       # Go through numerous checks to pull the desired fragments
         if data["status"]["build_ready"] != True:
             continue
         if data["info"]["type"]["build_type"] != "10K_MoClo-EntryCDS-BbsI":

@@ -60,9 +60,9 @@ def change_height(container,target):
     else:
         print("Calibrated")
         redo = False
-    return redo
-
     p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
+    
+    return redo
 
 ## Take in required information
 ## ============================================
