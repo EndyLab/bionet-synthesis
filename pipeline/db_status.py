@@ -20,6 +20,8 @@ info = []
 contributors = []
 misc = []
 
+not_attempted = []
+
 ordered = 0
 abandoned = 0
 build_ready = 0
@@ -43,6 +45,7 @@ for file in glob.glob(DATA_PATH + "/*/*.json"):
         data = json.load(json_file)
     author = data["author"]["name"]
     contributors.append(author)
+    id_num = data["gene_id"]
 
     if data["info"]["order_number"] == 1:
         sub1 += 1

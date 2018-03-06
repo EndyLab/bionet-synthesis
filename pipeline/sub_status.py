@@ -24,7 +24,7 @@ complete = 0
 total_subs = 6
 
 for sub in range(total_subs):
-    sub = sub + 1
+    sub += 1
     print("sub", sub)
 
     info = []
@@ -49,19 +49,19 @@ for sub in range(total_subs):
         author = data["author"]["name"]
         contributors.append(author)
         if data["status"]["ordered"] == True:
-            ordered = ordered + 1
+            ordered += 1
         if data["status"]["abandoned"] == True:
-            abandoned = abandoned + 1
+            abandoned += 1
         if data["status"]["build_ready"] == True:
-            build_ready = build_ready + 1
+            build_ready += 1
         if data["status"]["build_complete"] != "":
-            attempted = attempted + 1
+            attempted += 1
         if data["status"]["build_complete"] == "Good_Sequence":
-            complete = complete + 1
+            complete += 1
         elif data["status"]["build_complete"] == "Original_Vector_Sequence":
-            vector = vector + 1
+            vector += 1
         elif data["status"]["build_complete"] == "Unknown_Sequence":
-            unknown = unknown + 1
+            unknown += 1
 
     contributors = pd.Series(contributors)
     unique_cont = len(contributors.unique())
