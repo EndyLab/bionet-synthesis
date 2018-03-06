@@ -28,36 +28,44 @@ def fragment_gene(sequence,entry_type):
     }
     enzyme_configuration = {
         "AarI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "CACCTGCCCTA",
+            "suffix" : "ACTCGCAGGTG"
             },
         "BbsI" : {
-             "prefix" : "N",
-             "suffix" : "N"
+             "prefix" : "GAAGACTA",
+             "suffix" : "ACGTCTTC"
              },
         "BfuAI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "ACCTGCCCTA",
+            "suffix" : "ACTCGCAGGT"
             },
         "BsaI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "GGTCTCA",
+            "suffix" : "CGAGACC"
             },
         "BsmBI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "CGTCTCA",
+            "suffix" : "CGAGACG"
             },
         "BtgZI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "GCGATGCATGCTTGCA",
+            "suffix" : "CCTCTGAATACATCGC"
             },
         "SapI" : {
-            "prefix" : "N",
-            "suffix" : "N"
+            "prefix" : "GCTCTTCA",
+            "suffix" : "GCTCTTCA"
             },
     }
     # Establish part types
     part_type = dict(
+        cds = {
+            # FreeGenes MoClo CDS definition
+            "cloning enzyme": "BbsI",
+            "small_cloning_enzyme" : "BtgZI",
+            "retrieval_enzyme": "BsaI",
+            "prefix": "A",
+            "suffix": "AGAGCTT"
+        },
         eukaryotic_promoter = {
             # FreeGenes MoClo Eukaryotic Promoter definition
             "cloning_enzyme" : "BbsI",
@@ -91,10 +99,6 @@ def fragment_gene(sequence,entry_type):
             "suffix" : "CGCT"
         }
     )
-    # Config fragments
-    BsaI_prefix = "GGAGGTCTCA".lower()
-    BsaI_suffix = "CGAGACCGCT".lower()
-
     ## ==========================================================
     ## Add Prefix and Suffix
     ## ==========================================================
@@ -102,7 +106,7 @@ def fragment_gene(sequence,entry_type):
         print("not a valid type")
         return
     part = part_type[entry_type]
-    full_sequence = BsaI_prefix + part["prefix"] + sequence + part["suffix"] + BsaI_suffix
+    full_sequence = standard_flanks["prefix"] + enzyme_configuration["BsaI"]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration["BsaI"]["suffix"] + standard_flanks["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
     print(full_sequence)
     print("length",len(full_sequence))
 
