@@ -1,0 +1,60 @@
+{
+        "Eukaryotic_Promoter": {
+                "_comment": "FreeGenes MoClo Eukaryotic Promoter fragmentation.",
+                "type": {
+			"special_case":"true",
+                        "cloning_enzyme": "BbsI, BtgZI",
+                        "retrieval_enzyme": "BsaI"
+                },
+                "prefix": "GGAG",
+                "suffix": "AATG",
+                "prefix_full": "GAAGACGAGGAGGTCTCATACT",
+                "suffix_full": "AATGCGAGACCGCTGTGTCTTC",
+                "link-prefix_full": "TCGTCTTCGCGATGcatgcttgcaGAGGAGGTCTCAGGAG",
+                "link-suffix_full": "AATGCGAGACCGCTcctctgaataCATCGC"
+	},
+
+
+
+        "CDS": {
+                "_comment": "FreeGenes MoClo CDS fragmentation. Uses updated vector.",
+                "type": {
+                        "special_case":"true",
+                        "cloning_enzyme": "BbsI, BtgZI",
+                        "retrieval_enzyme": "BsaI"
+                },
+                "prefix": "A",
+                "suffix": "AGAGCTT"
+        },
+
+	"Prokaryotic_Promoter": {
+		"_comment": "FreeGenes MoClo Prokaryotic Promoter fragmentation.",
+		"type": {
+			"special_case":false,
+			"cloning_enzyme": "BbsI, BtgZI",
+			"retrieval_enzyme": "BsaI"
+		},
+		"prefix": "GGAG",
+		"suffix": "TACT"
+	},
+	"RBS": {
+                "_comment": "FreeGenes MoClo RBS fragmentation.",
+                "type": {
+			"special_case":false,
+                        "cloning_enzyme": "BbsI, BtgZI",
+                        "retrieval_enzyme": "BsaI"
+                },
+                "prefix": "GGAG",
+                "suffix": "TACT"
+	},
+	"Terminator": {
+		"_comment": "FreeGenes MoClo Terminator fragmentation.",
+		"type": {
+			"special_case":false,
+			"cloning_enzyme": "BbsI, BtgZI",
+			"retrieval_enzyme": "BsaI"
+		},
+		"prefix": "GCTT",
+		"suffix": "CGCT"
+	}
+}
