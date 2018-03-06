@@ -118,27 +118,27 @@ def fragment_gene(sequence,entry_type):
     retrieval_enzyme = part["retrieval_enzyme"]
     full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
     print(full_sequence)
-    #print("length",len(full_sequence))
 
     ## =======================================
     ## Add Cloning prefix and suffix
     ## =======================================
-    num_frags = len(full_sequence) // synthesis_configuration["max_length"] + 1
-    frag_len = len(full_sequence) // num_frags
+    seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
+    num_frags = len(seq) // synthesis_configuration["max_length"] + 1
+    frag_len = len(seq) // num_frags
+
     frags = []
-    if len(full_sequence) < 300:
+    if len(seq) < 300:
         small_cloning_enzyme = part["small_cloning_enzyme"]
-        frag = enzyme_configuration[small_cloning_enzyme]["prefix"] + standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"] + enzyme_configuration[small_cloning_enzyme]["suffix"]
+        frag = enzyme_configuration[small_cloning_enzyme]["prefix"] + standard_flanks["prefix"] + seq + standard_flanks["suffix"] + enzyme_configuration[small_cloning_enzyme]["suffix"]
         frags.append(frag)
     else:
-        seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
         for i in range(num_frags):
             cloning_enzyme = part["cloning_enzyme"]
             frag = seq[max(0, i * frag_len - 2):min((i+1) * frag_len + 2,len(seq))]
             frag = enzyme_configuration[cloning_enzyme]["prefix"] + frag + enzyme_configuration[cloning_enzyme]["suffix"]
             frags.append(frag)
     print(frags)
-    
+
 
 
 
