@@ -117,7 +117,6 @@ def fragment_gene(sequence,entry_type):
     part = part_type[entry_type]
     retrieval_enzyme = part["retrieval_enzyme"]
     full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
-    print(full_sequence)
 
     ## =======================================
     ## Add Cloning prefix and suffix
@@ -129,7 +128,7 @@ def fragment_gene(sequence,entry_type):
     frags = []
     if len(seq) < 300:
         small_cloning_enzyme = part["small_cloning_enzyme"]
-        frag = enzyme_configuration[small_cloning_enzyme]["prefix"] + standard_flanks["prefix"] + seq + standard_flanks["suffix"] + enzyme_configuration[small_cloning_enzyme]["suffix"]
+        frag = enzyme_configuration[small_cloning_enzyme]["prefix"] + seq  + enzyme_configuration[small_cloning_enzyme]["suffix"]
         frags.append(frag)
     else:
         for i in range(num_frags):
@@ -137,7 +136,7 @@ def fragment_gene(sequence,entry_type):
             frag = seq[max(0, i * frag_len - 2):min((i+1) * frag_len + 2,len(seq))]
             frag = enzyme_configuration[cloning_enzyme]["prefix"] + frag + enzyme_configuration[cloning_enzyme]["suffix"]
             frags.append(frag)
-    print(frags)
+    return frags
 
 
 
@@ -147,7 +146,7 @@ import pandas as pd
 
 data = pd.read_csv("./gene.csv")
 for index,row in data.iterrows():
-    fragment_gene(row["Sequence"],row["Part_Type"])
+    print (fragment_gene(row["Sequence"],row["Part_Type"]))
 
 
 
