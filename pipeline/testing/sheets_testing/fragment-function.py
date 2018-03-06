@@ -15,11 +15,11 @@ def fragment_gene(sequence,entry_type):
     ## ==========================================================
     ## Configurations
     ## ==========================================================
-    synthsis_config = {
+    synthesis_configuration = {
         "max_length" : 1500,
         "min_length" : 300
     }
-    pcr_config = {
+    pcr_configuration = {
         "max_length" : 5000
     }
     standard_flanks = {
@@ -55,6 +55,15 @@ def fragment_gene(sequence,entry_type):
             "prefix" : "GCTCTTCA",
             "suffix" : "GCTCTTCA"
             },
+        "BsaI-methylated-prefix" : {
+            "prefix" : "CCGGTCTCA",
+            "suffix" : "CGAGACC"
+            },
+        "BsaI-methylated-suffix" : {
+            "prefix" : "GGTCTCA",
+            "suffix" : "CGAGACCGG"
+            },
+
     }
     # Establish part types
     part_type = dict(
@@ -62,7 +71,7 @@ def fragment_gene(sequence,entry_type):
             # FreeGenes MoClo CDS definition
             "cloning enzyme": "BbsI",
             "small_cloning_enzyme" : "BtgZI",
-            "retrieval_enzyme": "BsaI",
+            "retrieval_enzyme": "BsaI-methylated_suffix",
             "prefix": "A",
             "suffix": "AGAGCTT"
         },
@@ -100,15 +109,37 @@ def fragment_gene(sequence,entry_type):
         }
     )
     ## ==========================================================
-    ## Add Prefix and Suffix
+    ## Add Retrieval prefix and suffix
     ## ==========================================================
     if entry_type not in part_type.keys():
         print("not a valid type")
         return
     part = part_type[entry_type]
-    full_sequence = standard_flanks["prefix"] + enzyme_configuration["BsaI"]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration["BsaI"]["suffix"] + standard_flanks["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
+    retrieval_enzyme = part["retrieval_enzyme"]
+    full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
     print(full_sequence)
-    print("length",len(full_sequence))
+    #print("length",len(full_sequence))
+
+    ## =======================================
+    ## Add Cloning prefix and suffix
+    ## =======================================
+    num_frags = len(full_sequence) // synthesis_configuration["max_length"] + 1
+    frag_len = len(full_sequence) // num_frags
+    frags = []
+    if len(full_sequence) < 300:
+        small_cloning_enzyme = part["small_cloning_enzyme"]
+        frag = enzyme_configuration[small_cloning_enzyme]["prefix"] + standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"] + enzyme_configuration[small_cloning_enzyme]["suffix"]
+        frags.append(frag)
+    else:
+        seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
+        for i in range(num_frags):
+            cloning_enzyme = part["cloning_enzyme"]
+            frag = seq[max(0, i * frag_len - 2):min((i+1) * frag_len + 2,len(seq))]
+            frag = enzyme_configuration[cloning_enzyme]["prefix"] + frag + enzyme_configuration[cloning_enzyme]["suffix"]
+            frags.append(frag)
+    print(frags)
+    
+
 
 
 ## Test the function
