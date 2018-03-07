@@ -55,6 +55,10 @@ def fragment_gene(sequence,entry_type):
             "prefix" : "GCTCTTCA",
             "suffix" : "GCTCTTCA"
             },
+        "None" : {
+            "prefix" : "",
+            "suffix" : ""
+            },
         "BsaI-methylated-prefix" : {
             "prefix" : "CCGGTCTCA",
             "suffix" : "CGAGACC"
@@ -121,7 +125,10 @@ def fragment_gene(sequence,entry_type):
     ## =======================================
     ## Add Cloning prefix and suffix
     ## =======================================
-    seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
+    if "vector" in "entry_type":
+        seq = full_sequence
+    else:
+        seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
     num_frags = len(seq) // synthesis_configuration["max_length"] + 1
     frag_len = len(seq) // num_frags
 
