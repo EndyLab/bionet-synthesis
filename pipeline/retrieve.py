@@ -257,7 +257,7 @@ previous_submissions = (sorted(glob.glob(BASE_PATH + "/submissions/*.csv")))
 string = (previous_submissions[-1])
 sub_num = int(string[-3:])
 print("Last ID number: ",sub_num)
-twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,subnum),index=False)
+twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(subnum)),index=False)
 
 
 
