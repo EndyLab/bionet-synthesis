@@ -1,0 +1,56 @@
+LOCUS       Exported                1329 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  pctV_Sni^opt.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  unspecified
+            .
+REFERENCE   1  (bases 1 to 1329)
+  AUTHORS   Nils Averesch
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..1329
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..1329
+                     /codon_start=1
+                     /product="PctV_[Streptomyces_niveiscabiei] (3-aminobenzoate
+                     synthase) WP_055719384.1 . Different alleles of genes
+                     encoding enzymes for formation of aminobenzoates. all genes
+                     are codon optimized for B. subtilis."
+                     /label="pctV_Sni^opt"
+                     /translation="MNDRQTEQITNEETYRRISAVVAGGVSSTMRAVAIPRPLVVRRAE
+                     GCQLWDVEGNMLIDLNMGYGPHLFGYADHEVLDDVAEQFRNGHMTGFPHELDYRAGELI
+                     TELMPSIEQVRFANSGTEAITSAIRLARATTERPLLLTFEGHYHGWSETVLRAGKLGSE
+                     PARQGDGPPAPGALGMIPEALNSTLQIPWNDPDALEEVFASHGDRIAAVIAEPVMGNSG
+                     VVLPLPGYLGQLREITRRHGSILIFDEVITGFRVALGGAQQRYEVTPDLTILSKVLGGG
+                     IPVAAFGGSREVMALLAENKALHAGVYAGNHASVRAVVSTLEKIRRRPQVYADLEALGE
+                     YAQGQIHEAFAAEDRHVLVQRAGSLMSVALLTRPVDPSAPLREVRAAIDFDGHRQLQMA
+                     AQTLGLYFHPNPLEPWFLSTAHTHDDLAKVVATLRLALSGLRR"
+ORIGIN
+        1 atgaatgatc gccagacaga acaaatcaca aacgaagaaa catatcgcag aattagcgca
+       61 gttgttgcag gcggagtttc atcaacaatg agagcagttg caattccgcg tccgctggtt
+      121 gttcgcagag cggaaggctg ccaactgtgg gatgttgaag gcaatatgct gattgatctg
+      181 aatatgggct atggaccgca tctttttggc tatgcagatc atgaagttct ggatgatgtt
+      241 gcggaacaat ttagaaatgg ccatatgaca ggctttccgc atgaactgga ttatagagca
+      301 ggcgaactga ttacagaact gatgccgtca attgaacaag ttagatttgc gaattcaggc
+      361 acagaagcaa ttacatcagc aattagactg gcaagagcaa caacagaaag accgctgctg
+      421 ctgacatttg aaggccatta tcatggctgg tcagaaacag ttctgagagc tggcaaactg
+      481 ggctcagaac cggcaagaca aggtgatggc cctccggcac ctggcgcact gggcatgatt
+      541 ccggaagcac tgaattcaac actgcaaatt ccgtggaatg atccggatgc acttgaagag
+      601 gtttttgcat cacatggcga tagaattgca gcagttattg cggaaccggt tatgggcaat
+      661 tcaggcgttg ttctgccgct tccgggatat ctgggccaac tgagagaaat tacaagacgc
+      721 catggcagca ttctgatttt tgatgaagtt atcacaggct tcagagttgc acttggcgga
+      781 gcacaacaaa gatatgaagt tacaccggat ctgacaattc tgagcaaagt tcttggaggc
+      841 ggaatcccgg ttgcagcatt tggcggatca agagaagtta tggcactgct ggcagaaaat
+      901 aaagcacttc atgcaggcgt ttatgcaggc aatcatgcat cagttagagc agtcgtttca
+      961 acgctggaaa aaattcgcag acgtccgcaa gtttatgcgg atctggaagc acttggagaa
+     1021 tatgcacaag gccaaattca tgaagcattt gcagcggaag atagacatgt tctggttcaa
+     1081 cgcgcaggct cactgatgtc agttgcactg ctgacaagac cggttgatcc gtcagcaccg
+     1141 ctgagagaag tcagagcagc aattgatttt gatggacata gacaactgca aatggcagca
+     1201 caaacactgg gcctgtattt tcatccgaat ccgctggaac cgtggtttct gtcaacagca
+     1261 catacacatg atgatctggc aaaagttgtt gcgacactga gactggcact gtcaggcctt
+     1321 agaagataa
+//

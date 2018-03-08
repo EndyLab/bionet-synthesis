@@ -1,0 +1,46 @@
+LOCUS       Exported                 792 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  Raphanus sativus pheophorbidase.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  Nicotiana benthamiana
+            .
+REFERENCE   1  (bases 1 to 792)
+  AUTHORS   Corey Howe
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..792
+                     /organism="Raphanus sativus"
+                     /mol_type="genomic DNA"
+     CDS             1..792
+                     /codon_start=1
+                     /product="Raphanus sativus, pheophorbidase that
+                     demethylates pheophorbide a at C-13 Enzyme that removes a
+                     methyl group from the C-13 position of chlorophyll. This
+                     enzyme would help open up the site of oxidation utilized by
+                     the dinoflagellate luciferase. It is codon optimized for N.
+                     benthamiama expression."
+                     /label="R.sativus pheophorbidase"
+                     /translation="MGGEGGADDSVVHFVFVHGASHGAWCWYKLTTLLVAAGFKATSVD
+                     LTGAGINLTDSNTVFDFDHYNRPLFSLLSDLPSHHKIVLVGHSIGGGSVTEALCKFTDK
+                     ISMVVYLAADMVQPGSTSSTHDSIMTVGEEDIWEYIYGEGADKPPTGVLMKEEFRRHYY
+                     YSQSPLEDVSLASKLLRPAPVRALGGADKLSPNPEAEKVPRVYIKTAKDNLFDPLRQDR
+                     LVEKWPPSQLYILEESDHSAFFSVPTTLFAYLLRAVSFLQL"
+ORIGIN
+        1 atgggtgggg aaggaggcgc tgatgatagt gtcgtccatt tcgtattcgt tcatggtgct
+       61 agccacggag cttggtgttg gtacaagctg acaactttat tagtcgctgc agggttcaag
+      121 gctacgtctg tggatttaac gggtgcggga atcaatttaa ctgactcgaa taccgtgttc
+      181 gactttgacc attataatcg ccccctgttc tctttattat cagatctgcc atcacaccac
+      241 aaaatcgttc tggtcggtca ttccatagga ggaggttcag tgaccgaggc cctgtgtaaa
+      301 tttacggaca agatttcgat ggtagtgtat ctggctgcgg acatggttca gccaggcagc
+      361 acgagttcga ctcatgattc gattatgact gtaggagaag aagatatctg ggaatacata
+      421 tatggtgaag gagccgacaa gcccccgacg ggcgtcttga tgaaagagga atttcgccgc
+      481 cactactact acagtcaaag tcctttagag gacgtatccc ttgcgtccaa attactgcgg
+      541 cctgcacccg tgcgtgcatt gggcggagcg gataaactga gtccaaaccc agaagcagag
+      601 aaagtgcctc gcgtgtacat taaaacagct aaagacaatc ttttcgaccc actgcggcag
+      661 gaccgccttg tcgagaaatg gccgccctcc cagctttata tccttgaaga gagtgaccat
+      721 agcgcgttct tctctgtgcc tacaactttg tttgcctacc ttcttagagc ggtatccttt
+      781 ttgcaactgt aa
+//
