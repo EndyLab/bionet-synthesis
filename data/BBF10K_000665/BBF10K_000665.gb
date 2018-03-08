@@ -1,0 +1,92 @@
+LOCUS       Exported                2892 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  Homo sapiens LRP8.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  unspecified
+            .
+REFERENCE   1  (bases 1 to 2892)
+  AUTHORS   Alvin Huang
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..2892
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+     CDS             1..2892
+                     /codon_start=1
+                     /product="Homo sapiens LDL receptor related protein 8
+                     (LRP8), transcript variant 1, mRNA NCBI Reference Sequence:
+                     NM_004631.4
+                     https://www.ncbi.nlm.nih.gov/nuccore/NM_004631.4 Associated
+                     with neural development and degeneration."
+                     /label="LRP8"
+                     /translation="MGLPEPGPLRLLALLLLLLLLLLLQLQHLAAAAADPLLGGQGPAK
+                     DCEKDQFQCRNERCIPSVWRCDEDDDCLDHSDEDDCPKKTCADSDFTCDNGHCIHERWK
+                     CDGEEECPDGSDESEATCTKQVCPAEKLSCGPTSHKCVPASWRCDGEKDCEGGADEAGC
+                     ATLCAPHEFQCGNRSCLAAVFVCDGDDDCGDGSDERGCADPACGPREFRCGGDGGGACI
+                     PERWVCDRQFDCEDRSDEAAELCGRPGPGATSAPAACATASQFACRSGECVHLGWRCDG
+                     DRDCKDKSDEADCPLGTCRGDEFQCGDGTCVLAIKHCNQEQDCPDGSDEAGCLQGLNEC
+                     LHNNGGCSHICTDLKIGFECTCPAGFQLLDQKTCGDIDECKDPDACSQICVNYKGYFKC
+                     ECYPGYEMDLLTKNCKAAAGKSPSLIFTNRHEVRRIDLVKRNYSRLIPMLKNVVALDVE
+                     VATNRIYWCDLSYRKIYSAYMDKASDPKEQEVLIDEQLHSPEGLAVDWVHKHIYWTDSG
+                     NKTISVATVDGGRRRTLFSRNLSEPRAIAVDPLRGFMYWSDWGDQAKIEKSGLNGVDRQ
+                     TLVSDNIEWPNGITLDLLSQRLYWVDSKLHQLSSIDFSGGNRKTLISSTDFLSHPFGIA
+                     VFEDKVFWTDLENEAIFSANRLNGLEISILAENLNNPHDIVIFHELKQPRAPDACELSV
+                     QPNGGCEYLCLPAPQISSHSPKYTCACPDTMWLGPDMKRCYRAPQSTSTTTLASTMTRT
+                     VPATTRAPGTTVHRSTYQNHSTETPSLTAAVPSSVSVPRAPSISPSTLSPATSNHSQHY
+                     ANEDSKMGSTVTAAVIGIIVPIVVIALLCMSGYLIWRNWKRKNTKSMNFDNPVYRKTTE
+                     EEDEDELHIGRTAQIGHVYPAAISSFDRPLWAEPCLGETREPEDPAPALKELFVLPGEP
+                     RSQLHQLPKNPLSELPVVKSKRVALSLEDDGLP"
+ORIGIN
+        1 atgggcctcc ccgagccggg ccctctccgg cttctggcgc tgctgctgct gctgctgctg
+       61 ctgctgctgc tgcagctcca gcatcttgcg gcggcagcgg ctgatccgct gctcggcggc
+      121 caagggccgg ccaaggattg cgaaaaggac caattccagt gccggaacga gcgctgcatc
+      181 ccctctgtgt ggagatgcga cgaggacgat gactgcttag accacagcga cgaggacgac
+      241 tgccccaaga agacctgtgc agacagtgac ttcacctgtg acaacggcca ctgcatccac
+      301 gaacggtgga agtgtgacgg cgaggaggag tgtcctgatg gctccgatga gtccgaggcc
+      361 acttgcacca agcaggtgtg tcctgcagag aagctgagct gtggacccac cagccacaag
+      421 tgtgtacctg cctcgtggcg ctgcgacggg gagaaggact gcgagggtgg agcggatgag
+      481 gccggctgtg ctaccttgtg cgccccgcac gagttccagt gcggcaaccg ctcgtgcctg
+      541 gccgccgtgt tcgtgtgcga cggcgacgac gactgtggtg acggcagcga tgagcgcggc
+      601 tgtgcagacc cggcctgcgg gccccgcgag ttccgctgcg gcggcgatgg cggcggcgcc
+      661 tgcatcccgg agcgctgggt ctgcgaccgc cagtttgact gcgaggaccg ctcggacgag
+      721 gcagccgagc tctgcggccg tccgggcccc ggggccacgt ccgcgcccgc cgcctgcgcc
+      781 accgcctccc agttcgcctg ccgcagcggc gagtgcgtgc acctgggctg gcgctgcgac
+      841 ggcgaccgcg actgcaaaga caaatcggac gaggccgact gcccactggg cacctgccgt
+      901 ggggacgagt tccagtgtgg ggatgggaca tgtgtccttg caatcaagca ctgcaaccag
+      961 gagcaggact gtccagatgg gagtgatgaa gctggctgcc tacaggggct gaacgagtgt
+     1021 ctgcacaaca atggcggctg ctcacacatc tgcactgacc tcaagattgg ctttgaatgc
+     1081 acgtgcccag caggcttcca gctcctggac cagaagacct gtggcgacat tgatgagtgc
+     1141 aaggacccag atgcctgcag ccagatctgt gtcaattaca agggctattt taagtgtgag
+     1201 tgctaccctg gctacgagat ggacctactg accaagaact gcaaggctgc tgctggcaag
+     1261 agcccatccc taatcttcac caaccggcac gaggtgcgga ggatcgacct ggtgaagcgg
+     1321 aactattcac gcctcatccc catgctcaag aatgtcgtgg cactagatgt ggaagttgcc
+     1381 accaatcgca tctactggtg tgacctctcc taccgtaaga tctatagcgc ctacatggac
+     1441 aaggccagtg acccgaaaga gcaggaggtc ctcattgacg agcagttgca ctctccagag
+     1501 ggcctggcag tggactgggt ccacaagcac atctactgga ctgactcggg caataagacc
+     1561 atctcagtgg ccacagttga tggtggccgc cgacgcactc tcttcagccg taacctcagt
+     1621 gaaccccggg ccatcgctgt tgaccccctg cgagggttca tgtattggtc tgactggggg
+     1681 gaccaggcca agattgagaa atctgggctc aacggtgtgg accggcaaac actggtgtca
+     1741 gacaatattg aatggcccaa cggaatcacc ctggatctgc tgagccagcg cttgtactgg
+     1801 gtagactcca agctacacca actgtccagc attgacttca gtggaggcaa cagaaagacg
+     1861 ctgatctcct ccactgactt cctgagccac ccttttggga tagctgtgtt tgaggacaag
+     1921 gtgttctgga cagacctgga gaacgaggcc attttcagtg caaatcggct caatggcctg
+     1981 gaaatctcca tcctggctga gaacctcaac aacccacatg acattgtcat cttccatgag
+     2041 ctgaagcagc caagagctcc agatgcctgt gagctgagtg tccagcctaa tggaggctgt
+     2101 gaatacctgt gccttcctgc tcctcagatc tccagccact ctcccaagta cacatgtgcc
+     2161 tgtcctgaca caatgtggct gggtccagac atgaagaggt gctaccgagc acctcaatct
+     2221 acctcaacta cgacgttagc ttctaccatg acgaggacag tacctgccac cacaagagcc
+     2281 cccgggacca ccgtccacag atccacctac cagaaccaca gcacagagac accaagcctg
+     2341 acagctgcag tcccaagctc agttagtgtc cccagggctc ccagcatcag cccgtctacc
+     2401 ctaagccctg caaccagcaa ccactcccag cactatgcaa atgaagacag taagatgggc
+     2461 tcaacagtca ctgccgctgt tatcgggatc atcgtgccca tagtggtgat agccctcctg
+     2521 tgcatgagtg gatacctgat ctggagaaac tggaagcgga agaacaccaa aagcatgaat
+     2581 tttgacaacc cagtctacag gaaaacaaca gaagaagaag acgaagatga gctccatata
+     2641 gggagaactg ctcagattgg ccatgtctat cctgcagcaa tcagcagctt tgatcgccca
+     2701 ctgtgggcag agccctgtct tggggagacc agagaaccgg aagacccagc ccctgccctc
+     2761 aaggagcttt ttgtcttgcc gggggaacca aggtcacagc tgcaccaact cccgaagaac
+     2821 cctctttccg agctgcctgt cgtcaaatcc aagcgagtgg cattaagcct tgaagatgat
+     2881 ggactaccct ga
+//

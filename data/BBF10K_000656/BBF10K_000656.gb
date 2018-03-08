@@ -1,0 +1,48 @@
+LOCUS       Exported                 894 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  Pyrocystis lunula luciferase catalytic domain.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  Nicotiana benthamiana
+            .
+REFERENCE   1  (bases 1 to 894)
+  AUTHORS   Corey Howe
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..894
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..894
+                     /codon_start=1
+                     /product="Pyrocystis lunula, luciferase catalytic domain,
+                     monooxygenase that produces light in the presence of
+                     dinoflagellate luciferin and oxygen. Catalytic domain of
+                     dinoflagellate luciferase codon optimized for N.
+                     benthamiama expression. This enzyme could be used as a
+                     reporter in plants"
+                     /label="P.lunula luciferase"
+                     /translation="MPLCEDPYGAEVSKLVDQVLKDSDNDRTLCYNNFHDPCPELTKGQ
+                     VAMCKGFDYGDKTLKLPCGPLPWPAGCPEPGYVPKTNPLHGRWITVSGGQAAFIKEAIK
+                     SGMLGAAEANKIAADTDHEQTGGMFLRINQFGDQCTVDASVAKYARAKRTWRSGHYFYE
+                     PLVSGGNLLGVWVLPEEYRKIGFFWEMESGRCFRIERRAFPVGPYTFLRQATEVNGTIS
+                     FVLYVKVSNDPESKPIPVQSRDYTALAGCDNVCTNLGKPYPCTAKDLDYPNKRDTWLDQ
+                     NEKEMIHQRGLVATSF"
+ORIGIN
+        1 atgccattgt gtgaagatcc ctatggagcg gaggtatcaa aactggtgga tcaggtactg
+       61 aaggattcgg ataacgatcg cactttatgt tataacaact tccacgaccc ctgtcctgaa
+      121 cttacaaaag gtcaggttgc gatgtgtaaa gggtttgact atggagacaa gacgcttaaa
+      181 ttgccttgcg gcccattgcc ctggcctgcc ggatgccccg agcctggtta tgtacccaag
+      241 actaaccctc tgcatggacg ttggataacc gttagcggag gccaggccgc cttcatcaaa
+      301 gaagcgatta aatccggtat gctgggagcc gccgaagcaa ataaaatagc tgctgatacg
+      361 gaccacgagc agacaggagg tatgtttctg agaataaatc agtttgggga ccagtgtacc
+      421 gtagatgcca gtgtcgcaaa gtacgctcgc gccaaacgca cttggcgctc gggacactat
+      481 ttttatgagc cacttgtctc cggggggaac ctgcttggag tgtgggtctt acctgaggaa
+      541 taccggaaga ttggattttt ttgggagatg gagtctggac gttgcttccg catagaaaga
+      601 cgtgcattcc cggttgggcc atatactttt ttgcggcagg caactgaagt gaatgggacc
+      661 atctcttttg ttttgtacgt aaaggtgtct aatgaccctg agtctaaacc gatccccgta
+      721 caatctcgtg actacacagc cttagccgga tgtgacaacg tatgtaccaa tttaggcaaa
+      781 ccctatccct gtactgccaa agatctggat tatcccaaca aacgcgatac ctggttagat
+      841 cagaacgaaa aggagatgat acatcagcgt ggccttgtgg ccacgagttt ctag
+//

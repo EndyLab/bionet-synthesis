@@ -1,0 +1,88 @@
+LOCUS       Exported                2628 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  K1-5 RNA polymerase.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  unspecified
+            .
+REFERENCE   1  (bases 1 to 2628)
+  AUTHORS   Drew Endy
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..2628
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..2628
+                     /codon_start=1
+                     /product="Phage RNA polymerase and cognate promoter for
+                     orthogonal transcription. Useful for heterologous
+                     expression and autogenes and other stuff. Made from god's
+                     imperfect natural DNA. Uses already contributed to the
+                     public domain. https://biobricks.org/bpa/contributions/2/
+                     http://parts.igem.org/Part:BBa_I20530
+                     http://parts.igem.org/Part:BBa_I20531"
+                     /label="K1-5 RNA polymerase"
+                     /translation="MQGLHAIQLQLEEEMFNGGIRRFEADQQRQIASGNESDTAWNRRL
+                     LSELIAPMAEGIQAYKEEYEGKRGRAPRALAFINCVENEVAAYITMKIVMDMLNTDVTL
+                     QAIAMNVADRIEDQVRFSKLEGHAAKYFEKVKKSLKASKTKSYRHAHNVAVVAEKSVAD
+                     RDADFSRWEAWPKDTLLQIGMTLLEILENSVFFNGQPVFLRTLRTNGGKHGVYYLQTSE
+                     HVGEWITAFKEHVAQLSPAYAPCVIPPRPWVSPFNGGFHTEKVASRIRLVKGNREHVRK
+                     LTKKQMPEVYKAVNALQATKWQVNKEVLQVVEDVIRLDLGYGVPSFKPLIDRENKPANP
+                     VPLEFQHLRGRELKEMLTPEQWQAFINWKGECTKLYTAETKRGSKSAATVRMVGQARKY
+                     SQFDAIYFVYALDSRSRVYAQSSTLSPQSNDLGKALLRFTEGQRLDSAEALKWFLVNGA
+                     NNWGWDKKTFDVRTANVLDSEFQDMCRDIAADPLTFTQWVNADSPYGFLAWCFEYARYL
+                     DALDEGTQDQFMTHLPVHQDGSCSGIQHYSAMLRDAVGAKAVNLKPSDSPQDIYGAVAQ
+                     VVIQKNYAYMNAEDAETFTSGSVTLTGAELRSMASAWDMIGITRGLTKKPVMTLPYGST
+                     RLTCRESVIDYIVDLEEKEAQRAIAEGRTANPVHPFDNDRKDSLTPSAAYNYMTALIWP
+                     SISEVVKAPIVAMKMIRQLARFAAKRNEGLEYTLPTGFILQQKIMATDMLRVSTCLMGE
+                     IKMSLQIETDVVDETAMMGAAAPNFVHGHDASHLILTVCDLVDKGITSIAVIHDSFGTH
+                     AGRTADLRDSLRAEMVKMYQGRNALQSLLDEHEERWLVDTGIQVPEQGEFDLNEILVSD
+                     YCFA"
+ORIGIN
+        1 atgcaaggcc tacacgctat tcaacttcaa cttgaagaag aaatgtttaa cggcggtatc
+       61 cgtcgctttg aagcggacca acaacgccag attgcatccg gtaatgaatc agacacggca
+      121 tggaatcgcc gcttattgtc cgagttaatc gcgccaatgg ctgaaggtat tcaggcatac
+      181 aaggaagagt atgaaggtaa aagaggccgt gcaccgcgtg cattagcttt cattaactgc
+      241 gtagaaaacg aagtggcagc atatatcacg atgaaaatcg ttatggatat gctgaacacg
+      301 gatgtaacct tgcaggctat agccatgaat gtagctgacc gcattgagga ccaagtacgt
+      361 tttagcaagc tggaaggtca cgccgccaaa tactttgaaa aagttaagaa gtcacttaag
+      421 gcaagtaaga ctaaatcata tcgccatgcg cacaacgtag cggtagtggc tgagaagtca
+      481 gtagctgacc gtgacgctga tttctcccgc tgggaggcat ggcctaaaga caccttgctg
+      541 caaattggga tgaccttgct tgaaatctta gagaatagcg tattcttcaa cgggcaacct
+      601 gtcttcctcc gcaccttgcg cactaatggc ggcaaacatg gtgtttacta cctacagact
+      661 agtgaacacg taggtgagtg gataactgca ttcaaagagc acgtagcgca actgagtcct
+      721 gcctatgctc cttgcgtcat ccctccgcgt ccgtgggtat caccttttaa cggcggtttc
+      781 cacactgaga aagtagcaag ccgtattcgt ctggtaaaag gaaaccgcga acacgtccgc
+      841 aagctgacca aaaagcaaat gccagaggtt tacaaggctg ttaacgcgtt gcaggcgact
+      901 aaatggcagg ttaacaagga agttttacag gttgtggaag acgtcatccg tctagaccta
+      961 ggttatggtg taccttcctt taaaccactc attgaccgcg agaacaagcc agctaatcca
+     1021 gtgccgctag aatttcagca cctacggggc cgtgaactga aagaaatgct tacgccggaa
+     1081 caatggcaag cctttatcaa ctggaaaggt gaatgtacta agctgtacac cgctgaaact
+     1141 aagcgcggaa gcaaatcggc ggcaaccgtt cgcatggttg gtcaggcccg taaatatagc
+     1201 cagttcgacg caatctactt cgtgtatgca ctggacagcc gcagccgcgt ctacgcgcaa
+     1261 tctagcacac tctcaccgca atcaaatgac ttgggcaagg ccttgctccg ttttaccgaa
+     1321 gggcagcgtc ttgatagcgc tgaggcgctt aagtggtttt tggtgaacgg ggctaataac
+     1381 tggggttggg ataagaaaac ttttgacgtg cgcaccgcta acgtgctgga tagtgaattt
+     1441 caagacatgt gccgcgacat tgcagcggat ccgctgacct tcactcaatg ggtaaatgcc
+     1501 gactcccctt acggcttcct tgcatggtgc tttgaatatg cgcgttatct ggatgcactg
+     1561 gatgaaggca cgcaagacca attcatgacg cacctcccag tccatcaaga tggtagttgt
+     1621 tctggtatcc agcactacag tgctatgcta cgcgatgcag taggtgcgaa agcagtaaac
+     1681 cttaagccct ctgactctcc tcaagatatt tatggtgccg ttgcgcaggt agtaattcag
+     1741 aagaattatg catacatgaa tgcagaggat gcggaaacct tcacttctgg cagcgtgact
+     1801 ttaacaggtg cggagctgcg tagtatggct agtgcgtggg atatgatagg aatcactcgc
+     1861 ggcctgacca aaaagcccgt aatgacacta ccttatggca gcacacgtct aacctgccgt
+     1921 gagtcagtga ttgattatat cgttgattta gaagaaaaag aggcccaacg ggctattgcg
+     1981 gaagggcgta ccgccaatcc tgtacaccct tttgataatg accgtaaaga cagcctgaca
+     2041 cctagcgcag cttataacta tatgacagct ttaatctggc cttctatttc ggaagtggtt
+     2101 aaagccccta tagtggcaat gaaaatgatt cgtcagcttg cccgtttcgc agctaaaagg
+     2161 aatgaaggct tagagtatac cctgcctact ggcttcatct tgcaacaaaa gattatggct
+     2221 actgatatgc tccgcgtatc tacttgcttg atgggagaaa tcaagatgag tctacagatt
+     2281 gaaacagacg tagtggatga aacggcaatg atgggcgctg ctgctcctaa ctttgtgcat
+     2341 ggtcatgatg ccagccacct tatcttaaca gtctgcgacc ttgttgataa agggattaca
+     2401 tctatcgcag ttattcatga ctcttttggc actcatgcag gccgtacagc cgaccttcgt
+     2461 gatagcttaa gggcagaaat ggtgaagatg tatcaaggcc gtaatgcact gcaaagcctg
+     2521 ctagatgagc acgaagaacg ctggttagtt gataccggaa tacaagtacc agagcaaggg
+     2581 gagtttgacc ttaacgaaat cttagtttca gactattgct tcgcataa
+//

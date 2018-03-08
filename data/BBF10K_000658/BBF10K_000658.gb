@@ -1,0 +1,56 @@
+LOCUS       Exported                1470 bp    ds-DNA  linear   UNA 07-MAR-2018
+DEFINITION  Sapovirus RdRp.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS.
+SOURCE      synthetic DNA sequence
+  ORGANISM  unspecified
+            .
+REFERENCE   1  (bases 1 to 1470)
+  AUTHORS   Joshua Yang
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 7, 2018 from SnapGene 4.0.4 http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..1470
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..1470
+                     /codon_start=1
+                     /product="RdRp E. coli optimized from Sapovirus"
+                     /label="Sapovirus RdRp"
+                     /translation="MKDEFQWKGLPVVKSGLDVGGMPTGTRYHRSPAWPEEQPGETHAP
+                     APFGAGDKRYTFSQTEMLVNGLKPYTEPTAGVPPQLLSRAVTHVRSYIETIIGTHRSPV
+                     LTYHQACELLERTTSCGPFVQGLKGDYWDEEQQQYTGVLANHLEQAWDKANKGIAPRNA
+                     YKLALKDELRPIEKNKAGKRRLLWGCDAATTLIATAAFKAVATRLQVVTPMTPVAVGIN
+                     MDSVQMQVMNDSLKGGVLYCLDYSKWDSTQNPAVTAASLAILERFAEPHPIVSCAIEAL
+                     SSPAEGYVNDIKFVTRGGLPSGMPFTSVVNSINHMIYVAAAILQAYESHNVPYTHNVGQ
+                     VETVHTYGDDCMYSVCPATASIFHAVLANLTSYGLKPTAADKSDAIKPTNTPVFLKRTF
+                     TQTPHGVRADDDITSITRQFYWLKANRTSDPSHPPAFDRQARSAQLENALAYASQHGPV
+                     VFDTVRQIAIKTAQGHGLVLVNTNYDQALATY"
+ORIGIN
+        1 atgaaagatg aattccaatg gaaaggtttg ccagtcgtga agtctggact ggatgtcgga
+       61 gggatgccaa ctggcactcg ttatcaccgt tcacctgcat ggccagagga acagccggga
+      121 gagacgcacg cgccggcccc gttcggtgca ggagacaaac gctacacatt ctcccagacc
+      181 gagatgttag taaacggcct taagccgtat acggagccca ccgctggtgt tcctcctcaa
+      241 ttgctttccc gcgctgtaac gcatgtacgt tcctatattg agactatcat tggcacccat
+      301 cgttcaccag ttctgacata ccatcaggcc tgtgagttat tggagcgcac gacctcctgc
+      361 ggacctttcg ttcagggctt gaagggtgat tattgggatg aagaacagca gcagtatacc
+      421 ggcgttcttg caaatcatct ggaacaggcc tgggacaaag ctaacaaagg aattgccccc
+      481 cgcaatgcat ataagttagc ccttaaggac gaacttcgtc ccatcgaaaa aaacaaagct
+      541 ggcaaacgtc gcctgttatg gggctgcgac gccgctacca cgcttattgc tacagcagca
+      601 ttcaaagctg tcgccacgcg cttacaggta gtcacgccca tgacaccggt ggcagtgggt
+      661 attaacatgg actcggtgca aatgcaggtc atgaatgact cccttaaggg cggcgtcctt
+      721 tattgtctgg attatagcaa gtgggattct acgcagaatc ctgccgtaac ggccgcctcg
+      781 ttggcaattt tagaacgctt cgctgagccg caccccatcg tgtcgtgtgc tattgaagcg
+      841 ctgtcgtcgc ctgccgaagg atatgtcaac gacatcaagt ttgtgactcg tgggggcctg
+      901 ccttccggga tgccctttac gagtgtggtc aattccatca accatatgat ttacgtggca
+      961 gcagccattt tgcaagcgta tgagtcccac aacgtgccgt atacacataa cgtgggacaa
+     1021 gtggagacgg tacatactta cggagatgac tgcatgtaca gtgtttgtcc agcgactgca
+     1081 tcgatcttcc atgcagtcct tgcaaacctt acatcatatg gtttaaagcc gactgccgct
+     1141 gataagtcgg atgcaattaa gccaacaaat actccggttt tcttgaagcg cacatttact
+     1201 caaacgccgc atggcgtccg cgccgatgac gacattacat ctatcactcg ccaattctat
+     1261 tggctgaagg caaaccgtac ctcagacccc tcgcatcctc cagcgttcga ccgtcaggct
+     1321 cgttcggcac agctggagaa cgcattagcg tatgcatccc aacacggacc agtcgtgttt
+     1381 gacacagtac gccaaatcgc tattaagact gcgcagggac atggtttggt tttggtcaat
+     1441 acgaactatg atcaagcatt agccacatac
+//
