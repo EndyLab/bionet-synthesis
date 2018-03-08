@@ -3,12 +3,12 @@ import numpy as np
 import os
 import logging
 
-CODON_USAGE_DB = os.path.dirname(__file__) + "/data/codon_usage.spsum"
+CODON_USAGE_DB = os.path.dirname(__file__) + "/codon_table_data/codon_usage.spsum"
 COMMON_SPECIES = {
-    'ecoli': "83333",
-    'yeast':  "4932",
-    'human': "9606",
-    'bsub': "1432"
+    'E.coli': "83333",
+    'S.cerevisiae':  "4932",
+    'H.sapiens': "9606",
+    'B.subtilis': "1432"
 }
 
 logger = logging.getLogger(__name__)
@@ -20,9 +20,15 @@ tables = dict()
 
 def load_codon_table(species=None, taxonomy_id=None):
     """Load a codon table based on the organism's species ID."""
+    print("in codon_table")
+    if taxonomy_id in COMMON_SPECIES:
+        print("found in COMMON_SPECIES")
+        taxonomy_id = COMMON_SPECIES[taxonomy_id]
+        print("New id: ",taxonomy_id)
+    print("in codon_table")
 
-    if species in COMMON_SPECIES:
-        taxonomy_id = COMMON_SPECIES[species]
+    # if species in COMMON_SPECIES:
+    #     taxonomy_id = COMMON_SPECIES[species]
 
     taxonomy_id = str(taxonomy_id)
 
@@ -42,7 +48,9 @@ def load_codon_table(species=None, taxonomy_id=None):
 
             logger.debug("Loaded {} {}".format(taxid, species))
 
+            print("before first table")
             table = list(zip(codons, standard_genetic_code, [int(x) for x in codon_counts.split()]))
+            print("after first table")
             table = pd.DataFrame(table, columns=['Triplet', 'AA', 'Number'])
             table.set_index(['AA', 'Triplet'], inplace=True)
             table.sort_index(inplace=True)
@@ -57,7 +65,7 @@ def load_codon_table(species=None, taxonomy_id=None):
 
 def codon_table_10plus(table):
     """Return a codon table only representing codons with > 10% occurrence frequency."""
-
+    print("in 10plus")
     table = table.ix[table.Fraction >= 0.1]
     table = table.groupby(level=0).transform(lambda x: x / x.sum())
 
