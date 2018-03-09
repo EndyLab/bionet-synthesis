@@ -93,6 +93,14 @@ def fragment_gene(sequence,entry_type):
             "retrieval_enzyme" : "BsaI",
             "prefix" : "GCTT",
             "suffix" : "CGCT"
+        },
+        composite = {
+            # Free Genes MoClo Composite
+            "cloning_enzyme" : "BbsI",
+            "small_cloning_enzyme" : "BtgZI",
+            "retrieval_enzyme" : "BsaI",
+            "prefix" : "GGAG",
+            "suffix" : "CGCT"
         }
     )
     ## ==========================================================
