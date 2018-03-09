@@ -19,7 +19,10 @@ from config import *
 
 def strip_df(df):
     for column in df:
-        df[column] = df[column].str.strip()
+        new_col = []
+        for item in df[column]:
+            new_col.append(str(item).strip())
+        df[column] = new_col
     return df
 
 # Takes in the template json file to initialize the json files
@@ -255,9 +258,9 @@ current_data.to_csv(BASE_PATH + '/raw_files/previous_submissions/previous_submis
 
 previous_submissions = (sorted(glob.glob(BASE_PATH + "/submissions/*.csv")))
 string = (previous_submissions[-1])
-sub_num = int(string[-3:])
+sub_num = int(string[-6:-4])
 print("Last ID number: ",sub_num)
-twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(subnum)),index=False)
+twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(sub_num)),index=False)
 
 
 
