@@ -42,12 +42,21 @@ all_maps = []
 no_frag_seq = []
 
 
+
+
 ## Take in all current plate maps
 ## ============================================
 for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
     plate_map = pd.read_csv(file)
     all_maps.append(plate_map)
+
+    
+    order_num,attempt_num,date = re.match(
+        r'.+\/O-([0-9]{3})_A-([0-9]{3})_([0-9.]+)\.csv',
+        file).groups()
+    print(file,order_num,attempt_num)
 all_maps = pd.concat(all_maps)
+input("stop")
 
 ## Generates the necessary dataframe
 ## ============================================

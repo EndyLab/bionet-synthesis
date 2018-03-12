@@ -25,7 +25,6 @@ def load_codon_table(species=None, taxonomy_id=None):
         print("found in COMMON_SPECIES")
         taxonomy_id = COMMON_SPECIES[taxonomy_id]
         print("New id: ",taxonomy_id)
-    print("in codon_table")
 
     # if species in COMMON_SPECIES:
     #     taxonomy_id = COMMON_SPECIES[species]
@@ -65,7 +64,6 @@ def load_codon_table(species=None, taxonomy_id=None):
 
 def codon_table_10plus(table):
     """Return a codon table only representing codons with > 10% occurrence frequency."""
-    print("in 10plus")
     table = table.ix[table.Fraction >= 0.1]
     table = table.groupby(level=0).transform(lambda x: x / x.sum())
 

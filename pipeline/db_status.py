@@ -66,7 +66,7 @@ for file in glob.glob(DATA_PATH + "/*/*.json"):
         build_ready += 1
     if data["status"]["build_complete"] != "" or data["status"]["building"] == True:
         attempted += 1
-    if data["status"]["build_complete"] == "Good_Sequence" or data["status"]["build_complete"] == "Good_sequence":
+    if data["status"]["build_complete"] == "Good_sequence" or data["status"]["build_complete"] == "Good_sequence":
         complete += 1
     elif data["status"]["build_complete"] == "Original_Vector_Sequence" or data["status"]["build_complete"] == "Original Vector Sequence":
         vector += 1
@@ -134,8 +134,8 @@ print(name)
 
 print(misc)
 
-f = open(name,'w')
-f.write(sankey)
-f.close()
+# f = open(name,'w')
+# f.write(sankey)
+# f.close()
 
 #other note
