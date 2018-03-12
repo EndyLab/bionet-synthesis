@@ -33,6 +33,12 @@ string = (previous_genes[-1])
 id_num = int(string[-6:])
 print("Last ID number: ",id_num)
 
+# Find the next submission number
+previous_submissions = (sorted(glob.glob(BASE_PATH + "/submissions/*.csv")))
+string = (previous_submissions[-1])
+next_sub_num = int(string[-3:]) + 1
+print("Last submission number: ",sub_num)
+
 # Use creds to create a client to interact with the Google Drive API
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('Free Genes-153172d39301.json', scope)
@@ -105,7 +111,7 @@ for index, row in uniq_data.iterrows():
         template["info"]["database_links"] = row["Database links"]
 
         # Hard code certain parameters
-        template["status"]["will_build"] = True
+        # template["status"]["will_build"] = True
         template["info"]["type"]["cloning_method"] = "10K_MoClo"
         template["status"]["ordered"] = False
 
@@ -131,9 +137,20 @@ for index, row in uniq_data.iterrows():
         ## ====================================================
         ## Fragment sequence
         ## ====================================================
+        unknown_enzyme = []
         template["sequence"]["fragment_sequences"] = {}
         fragments,enzyme = fragment.fragment_gene(str(gb_record.seq),row["Part type"])
         template["info"]["type"]["build_type"] = enzyme
+
+        # Makes sure that the small fragment won't get ordered until paired
+        if enzyme == "BtgZI":
+            template["status"]["will_build"] = False
+        elif enzyme == "BbsI":
+            template["status"]["will_build"] = True
+        else:
+            unknown_enzyme.append(id_num_str)
+
+        # Fragments are named based on the gene id and the fragment number
         for index,frag in enumerate(fragments):
             fragment_name = id_num_str + "_" + str(index + 1)
             template["sequence"]["fragment_sequences"][fragment_name] = frag
@@ -149,11 +166,12 @@ for index, row in uniq_data.iterrows():
         with open("{}/{}.gb".format(path,id_num_str),"w+") as genbank_single:
             SeqIO.write(gb_record, genbank_single, "genbank")
 
-    # Remove the temporary file
+    # Remove the temporary genbank file
     os.remove(gb_name)
 
 ## ====================================================
-## Query the database for all of the small sequences and sequences to attach them to
+## Query the database for all of the small sequences
+## and sequences to attach them to
 ## ====================================================
 small_seq_ids = []
 small_seqs = []
@@ -175,13 +193,14 @@ for file in glob.glob(BASE_PATH + "/data/*/*.json"):
         large_seq_ids.append(data["gene_id"])
         large_seqs.append(data["sequence"]["fragment_sequences"]["{}_1".format(data["gene_id"])])
 
+# Generate dataframes that are sorted in opposite directions based on length
+# which pairs the smallest large fragment with the largest small fragment
 small_df = pd.DataFrame({
     "Gene ID" : small_seq_ids,
     "Sequence" : small_seqs,
     "Length" : [len(seq) for seq in small_seqs]
 })
 small_df = small_df.sort_values("Length",ascending=False)
-
 large_df = pd.DataFrame({
     "Gene ID" : large_seq_ids,
     "Sequence" : large_seqs,
@@ -192,10 +211,14 @@ large_df = large_df.sort_values("Length")
 small_counter = 0
 print("Total small sequences: ",len(small_df))
 
+## ====================================================
+## Join Fragments
+## ====================================================
 joined_seqs = []
 joined_ids = []
 fragment_names = []
 
+# Pair sequences together until it runs out of either type of sequence
 for index,row in large_df.iterrows():
     print("small counter: ",small_counter)
     if len(small_df) == small_counter:
@@ -209,37 +232,42 @@ for index,row in large_df.iterrows():
     joined_ids.append(small_row["Gene ID"])
     joined_seqs.append(joined_seq)
     fragment_names.append(row["Gene ID"] + "_link_" + small_row["Gene ID"])
-
     small_counter += 1
-
 joined_df = pd.DataFrame({
     "Gene ID" : joined_ids,
     "Sequence" : joined_seqs,
     "Fragment Name" : fragment_names
 })
 
+# Change the files in the database to reflect the joined sequences
 for index,row in joined_df.iterrows():
     with open("{}/data/{}/{}.json".format(BASE_PATH,row["Gene ID"],row["Gene ID"]),"r") as json_file:
         data = json.load(json_file)
+    template["status"]["will_build"] = True
     data["sequence"]["fragment_sequences"] = {}
     data["sequence"]["fragment_sequences"][row["Fragment Name"]] = row["Sequence"]
     with open("{}/data/{}/{}.json".format(BASE_PATH,row["Gene ID"],row["Gene ID"]),"w+") as json_file:
         json.dump(data,json_file,indent=2)
 
+## Find all of the sequences that have yet to be ordered
 will_order = []
 will_order_seqs = []
-
 for file in glob.glob("{}/data/*/*.json".format(BASE_PATH)):
     with open(file,"r") as json_file:
         data = json.load(json_file)
-    if data["status"]["ordered"]:
+
+    # Excludes sequences that have already been ordered and small sequences
+    # that haven't been paired yet
+    if data["status"]["ordered"] or not template["status"]["will_build"]:
         continue
+    # Only pulls the sequence to order from the large fragment
     if data["info"]["type"]["build_type"] == "BbsI":
         for fragment in data["sequence"]["fragment_sequences"]:
             print("fragment",fragment)
             will_order.append(fragment)
             will_order_seqs.append(data["sequence"]["fragment_sequences"][fragment])
     data["status"]["ordered"] = True
+    data["info"]["order_number"] = next_sub_num
     with open(file,"w+") as json_file:
         json.dump(data,json_file,indent=2)
 
@@ -249,15 +277,11 @@ twist_dna = pd.DataFrame({
         'FASTA_seq': will_order_seqs,
         }, columns=['gene name','FASTA_seq'])
 
-print(twist_dna)
-
+# Update the previous submissions file so that the submissions don't get logged again
 current_data.to_csv(BASE_PATH + '/raw_files/previous_submissions/previous_submissions.csv',index=False)
 
-previous_submissions = (sorted(glob.glob(BASE_PATH + "/submissions/*.csv")))
-string = (previous_submissions[-1])
-sub_num = int(string[-3:])
-print("Last ID number: ",sub_num)
-twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(subnum)),index=False)
+# Generate the csv file to send to Twist
+twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(subnum).zfill(3)),index=False)
 
 
 
