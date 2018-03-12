@@ -11,7 +11,7 @@ def fragment_gene(sequence,entry_type):
     import io
     import sys
     import math
-
+    import re
     ## ==========================================================
     ## Configurations
     ## ==========================================================
@@ -115,7 +115,7 @@ def fragment_gene(sequence,entry_type):
     ## ==========================================================
     ## Add Retrieval prefix and suffix
     ## ==========================================================
-    if entry_type not in part_type.keys():
+    if entry_type not in part_type.keys() and "vector" not in "entry_type":
         print("not a valid type")
         return
     part = part_type[entry_type]
@@ -127,8 +127,10 @@ def fragment_gene(sequence,entry_type):
     ## =======================================
     if "vector" in "entry_type":
         seq = full_sequence
+        cloning_enzyme = entry_type[7:]
     else:
         seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
+        cloning_enzyme = part["cloning_enzyme"]
     num_frags = len(seq) // synthesis_configuration["max_length"] + 1
     frag_len = len(seq) // num_frags
 
@@ -139,7 +141,6 @@ def fragment_gene(sequence,entry_type):
         frags.append(frag)
     else:
         for i in range(num_frags):
-            cloning_enzyme = part["cloning_enzyme"]
             frag = seq[max(0, i * frag_len - 2):min((i+1) * frag_len + 2,len(seq))]
             frag = enzyme_configuration[cloning_enzyme]["prefix"] + frag + enzyme_configuration[cloning_enzyme]["suffix"]
             frags.append(frag)
