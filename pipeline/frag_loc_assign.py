@@ -46,17 +46,21 @@ no_frag_seq = []
 
 ## Take in all current plate maps
 ## ============================================
-for file in glob.glob("{}/plate_maps/*.csv".format(BASE_PATH)):
+complete_orders = {}
+for file in sorted(glob.glob("{}/plate_maps/*.csv".format(BASE_PATH))):
     plate_map = pd.read_csv(file)
     all_maps.append(plate_map)
-
-    
     order_num,attempt_num,date = re.match(
         r'.+\/O-([0-9]{3})_A-([0-9]{3})_([0-9.]+)\.csv',
         file).groups()
     print(file,order_num,attempt_num)
+    if int(attempt_num) > 1:
+        current_order = {int(order_num) : True}
+    else:
+        current_order = {int(order_num) : False}
+    complete_orders.update(current_order)
+print(complete_orders)
 all_maps = pd.concat(all_maps)
-input("stop")
 
 ## Generates the necessary dataframe
 ## ============================================
@@ -133,14 +137,32 @@ for index,row in new_plate_map.iterrows():
             data['status']["build_ready"] = True
         else:
             print("not buildable")
-
         with open(file,'w') as json_file:
                 json.dump(data,json_file,indent=2)
 
-print("Not in dictionary")
-print(not_in_dict)
-print("no fragment sequence")
-print(no_frag_seq)
+## Check for abandoned sequences
+## ============================================
+abandoned = []
+no_order_number = []
+for file in glob.glob(DATA_PATH + "/*/*.json"):
+    with open(file,"r") as json_file:
+        data = json.load(json_file)
+    if data["status"]["build_ready"]:
+        continue
+    if data["info"]["order_number"] == "":
+        no_order_number.append(data["gene_id"])
+    elif data["info"]["order_number"] in complete_orders:
+        data["status"]["abandoned"] = complete_orders[data["info"]["order_number"]]
+        if data["status"]["abandoned"] == True:
+            abandoned.append(data["gene_id"])
+    else:
+        data["status"]["abandoned"] = False
+    with open(file,'w') as json_file:
+            json.dump(data,json_file,indent=2)
+
+print("Number abandoned: ",len(abandoned))
+print("Not in dictionary\n",not_in_dict)
+print("No fragment sequence: ",len(no_frag_seq),"\n",no_frag_seq)
 
 
 

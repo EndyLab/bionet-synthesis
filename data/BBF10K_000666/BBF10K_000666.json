@@ -19,7 +19,7 @@
     "IP": "",
     "collection": "",
     "other_tags": "",
-    "order_number": "",
+    "order_number": 8,
     "order_week": "2018.10"
   },
   "sequence": {
@@ -36,7 +36,7 @@
   "status": {
     "ordered": true,
     "will_build": true,
-    "abandoned": "",
+    "abandoned": false,
     "build_ready": "",
     "building": "",
     "build_complete": "",
