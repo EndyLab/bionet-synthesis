@@ -1,0 +1,18 @@
+{
+
+	"terminator": {
+		"prefix": "GAAGACATGAGGTCTCTGCTT",
+		"suffix": "CGCTTGAGACCGCTATGTCTTC"
+	},
+	"RBS": {
+		"prefix": "GAAGACATGAGGTCTCTTACT",
+		"suffix": "AATGTGAGACCGCTATGTCTTC"
+	},
+	"prokaryotic_promoter": {
+		"prefix": "GAAGACATGAGGTCTCTGGAG",
+		"suffix": "TACTTGAGACCGCTATGTCTTC"
+	},
+	"eukaryotic_promoter": {
+		"prefix": "GAAGACATGAGGTCTCTGGAG",
+		"suffix": "AATGTGAGACCGCTATGTCTTC"
+	},

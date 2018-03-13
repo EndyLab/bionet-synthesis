@@ -22,7 +22,7 @@ def fill_document(doc):
 
         if data["info"]["order_number"] == order_number:
             with doc.create(Section(data["gene_name"])):
-                doc.append(data["description"])
+                doc.append(data["project_description"])
                 with doc.create(Subsection('Author')):
                     doc.append(data["author"]["name"])
                     doc.append(',')

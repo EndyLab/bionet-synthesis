@@ -115,18 +115,20 @@ def fragment_gene(sequence,entry_type):
     ## ==========================================================
     ## Add Retrieval prefix and suffix
     ## ==========================================================
-    if entry_type not in part_type.keys() and "vector" not in "entry_type":
+    if entry_type not in part_type.keys() and "vector" not in entry_type: 
         print("not a valid type")
         return
-    part = part_type[entry_type]
-    retrieval_enzyme = part["retrieval_enzyme"]
-    full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
-
+    if "vector" not in entry_type:
+        part = part_type[entry_type]
+        retrieval_enzyme = part["retrieval_enzyme"]
+        full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
+    else:
+        full_sequence = sequence
     ## =======================================
     ## Add Cloning prefix and suffix
     ## =======================================
-    if "vector" in "entry_type":
-        seq = full_sequence
+    if "vector" in entry_type:
+        seq = full_sequence + full_sequence[:4]
         cloning_enzyme = entry_type[7:]
     else:
         seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
