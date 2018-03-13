@@ -36,7 +36,7 @@
   "status": {
     "ordered": true,
     "will_build": true,
-    "abandoned": "",
+    "abandoned": false,
     "build_ready": "",
     "building": "",
     "build_complete": "",

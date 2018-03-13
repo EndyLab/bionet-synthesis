@@ -283,16 +283,11 @@ twist_dna = pd.DataFrame({
 # Update the previous submissions file so that the submissions don't get logged again
 current_data.to_csv(BASE_PATH + '/raw_files/previous_submissions/previous_submissions.csv',index=False)
 
-<<<<<<< HEAD
 previous_submissions = (sorted(glob.glob(BASE_PATH + "/submissions/*.csv")))
 string = (previous_submissions[-1])
 sub_num = int(string[-6:-4])
 print("Last ID number: ",sub_num)
 twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(sub_num)),index=False)
-=======
-# Generate the csv file to send to Twist
-twist_dna.to_csv('{}/submissions/submission{}.csv'.format(BASE_PATH,str(subnum).zfill(3)),index=False)
->>>>>>> make_functions
 
 
 
