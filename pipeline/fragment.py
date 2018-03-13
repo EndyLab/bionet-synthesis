@@ -112,6 +112,30 @@ def fragment_gene(sequence,entry_type):
             "suffix" : "CGCT"
         }
     )
+    ## ================================
+    ## Defined find_enzyme for vectors
+    ## ================================
+    def find_enzyme(seq):
+        seq = str(seq)
+        def reverse_complement(seq):
+            return seq.translate(str.maketrans("ATGC","TACG"))[::-1]
+    
+        cut_sites = [
+            ("BbsI", "GAAGAC"),
+            ("BtgZI", "GCGATG"),
+            ("BsaI", "GGTCTC"),
+            ("BsmBI", "CGTCTC"),
+            ("AarI", "CACCTGC"),
+            ("BfuAI", "ACCTGC")]
+        def single_finder(enzyme_cut,sequence):
+            if enzyme_cut in sequence:
+                return True
+            else:
+                return False
+        for enzyme in cut_sites:
+            if not single_finder(enzyme[1],seq) and not single_finder(reverse_complement(enzyme[1]),seq):
+                return enzyme[0]
+
     ## ==========================================================
     ## Add Retrieval prefix and suffix
     ## ==========================================================
@@ -123,13 +147,13 @@ def fragment_gene(sequence,entry_type):
         retrieval_enzyme = part["retrieval_enzyme"]
         full_sequence = enzyme_configuration[retrieval_enzyme]["prefix"] + part["prefix"] + sequence + part["suffix"] + enzyme_configuration[retrieval_enzyme]["suffix"] # Have a programmatic way to condense prefix / suffix rather than just defining them
     else:
-        full_sequence = sequence
+        full_sequence = sequence.upper() 
     ## =======================================
     ## Add Cloning prefix and suffix
     ## =======================================
     if "vector" in entry_type:
         seq = full_sequence + full_sequence[:4]
-        cloning_enzyme = entry_type[7:]
+        cloning_enzyme = find_enzyme(seq)
     else:
         seq = standard_flanks["prefix"] + full_sequence + standard_flanks["suffix"]
         cloning_enzyme = part["cloning_enzyme"]
@@ -148,25 +172,3 @@ def fragment_gene(sequence,entry_type):
             frags.append(frag)
     return frags
 
-
-
-
-## Test the function
-import pandas as pd
-
-data = pd.read_csv("./gene.csv")
-for index,row in data.iterrows():
-    print (fragment_gene(row["Sequence"],row["Part_Type"]))
-
-
-
-
-
-
-
-
-
-
-
-
-#
