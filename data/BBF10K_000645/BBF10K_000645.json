@@ -18,7 +18,11 @@
       "build_type": NaN
     },
     "safety": "null",
-    "IP": "",
+    "IP": {
+      "submitted": false,
+      "submission_number": "",
+      "results": ""
+    },
     "collection": "null",
     "other_tags": "null",
     "order_number": 5,

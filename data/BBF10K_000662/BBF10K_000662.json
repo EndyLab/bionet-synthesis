@@ -16,7 +16,11 @@
       "build_type": "BbsI"
     },
     "safety": "",
-    "IP": "",
+    "IP": {
+      "submitted": false,
+      "submission_number": "",
+      "results": ""
+    },
     "collection": "",
     "other_tags": "#space",
     "order_number": 8,
