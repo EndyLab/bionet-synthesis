@@ -41,13 +41,13 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "",
+    "build_complete": "In_process",
     "build_attempts": [
       {
         "build_well": "C2",
         "build_date": "2018-02-27 11:10:36",
         "build_number": "build008",
-        "build_outcome": "In Process"
+        "build_outcome": "In_process"
       }
     ]
   },
