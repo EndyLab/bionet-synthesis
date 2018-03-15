@@ -1,0 +1,31 @@
+{
+  "name": "bionet-freegenes-integration",
+  "version": "0.0.1",
+  "description": "Integration between the BioBricks freegenes and bionet projects",
+  "homepage": "http://github.com/biobricks/bionet-freegenes-integration",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/biobricks/bionet-freegenes-integration.git"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bionet-client": "0.0.2",
+    "glob": "^7.1.2",
+    "xtend": "^4.0.1"
+  },
+  "author": {
+    "name": "Marc Juul",
+    "email": "npm@juul.io"
+  },
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/biobricks/bionet-freegenes-integration/issues"
+  },
+  "scripts": {
+    "start": "bin/sync.js",
+    "test": "node_modules/.bin/tape tests/*.js"
+  },
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
