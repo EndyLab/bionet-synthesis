@@ -45,11 +45,11 @@ function saveVirtual(remote, data, cb) {
     o.sequence = data.optimized_sequence;
   }
 
-  remote.saveVirtual(o, function(err, virtual) {
+  remote.saveVirtual(o, function(err, id) {
     if(err) return cb(err);
 
     if(!data.virtual_id) {
-      data.virtual_id = virtual.id;
+      data.virtual_id = id;
       cb(null, data);
     } else {
       cb();
@@ -67,6 +67,7 @@ function syncFile(remote, filepath, data, cb) {
     if(!newData) {
       return cb();
     }
+
 
     fs.writeFile(filepath, JSON.stringify(data, null, 2), {encoding: 'utf8'}, function(err) {
       if(err) return cb(err);
