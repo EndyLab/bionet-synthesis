@@ -15,7 +15,7 @@
     "type": {
       "cloning_method": "10K_MoClo",
       "part_type": "Other",
-      "build_type": NaN
+      "build_type": ""
     },
     "safety": "null",
     "IP": {

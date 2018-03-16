@@ -95,7 +95,8 @@ function syncFiles(remote, cb) {
       fs.readFile(file, {encoding: 'utf8'}, function(err, data) {
         if(err) return cb(err);
 
-        console.log("Synchronizing file");
+        console.log("Synchronizing file:", file);
+
         syncFile(remote, file, JSON.parse(data), function(err, didCreate) {
           if(err) return cb(err);
 
