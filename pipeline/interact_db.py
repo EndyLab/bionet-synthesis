@@ -26,8 +26,16 @@ def query_db(query="*"):
                 new_row += crawl_dict(dictionary[key],str(name+"."+key))
             elif type(dictionary[key]) == type(str()):
                 new_row = new_row + [(name+"."+key,dictionary[key])]
+                # print(name+"."+key,"=",dictionary[key])
             elif type(dictionary[key]) == type(list()) and dictionary[key] != [""]:
                 new_row += crawl_dict(dictionary[key][-1],str(name+"."+key))
+            elif type(dictionary[key]) == type(bool()):
+                if dictionary[key]:
+                    new_row = new_row + [(name+"."+key,True)]
+                    # print(name+"."+key,"=","True")
+                else:
+                    new_row = new_row + [(name+"."+key,False)]
+                    # print(name+"."+key,"=","False")
         return new_row
 
     # Iterates through all of the json files in the database and concatenates
@@ -73,6 +81,6 @@ def write_db(df):
             json.dump(data,json_file,indent=2)
 
 
-full_db = query_db()
-full_db.to_csv("./test_dict.csv")
-write_db(full_db)
+# full_db = query_db()
+# full_db.to_csv("./test_dict.csv")
+# write_db(full_db)
