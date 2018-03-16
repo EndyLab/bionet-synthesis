@@ -1,59 +1,47 @@
 {
-	"version" : "2.0.0",
+	"version" : "1.0.0",
+	"gene_name": "",
 	"gene_id": "",
 	"author": {
 		"name": "",
 		"email": "",
 		"affiliation": "",
+		"project": "",
 		"orcid": ""
 	},
-
 	"info": {
-		"documentation" : {
-			"gene_name": "",
-			"who" : "",
-			"what" : "",
-			"where" : "",
-			"why" : "",
-			"future_app" : "",
-			"database_links" : []
+		"database_links": [""],
+		"type": {
+			"cloning_method": "",
+			"part_type": "",
+			"build_type": ""
 		},
-
-		"gene_metadata" : {
-			"cloning" : {
-				"part_type" : "",
-				"cloning_enzyme" : "",
-				"retrieval_enzyme" : "",
-				"optimize" : "",
-				"target_organism" : {
-					"organism_name" : "",
-					"taxid" : ""
-				},
-			},
-			"collection_id" : "",
-			"IP" : {
-				"submitted": false,
-	      "submission_number": "",
-	      "results": ""
-			},
-			"safety" : "",
-		},
+		"safety": "",
+		"IP": {
+      "submitted": false,
+      "submission_number": "",
+      "results": ""
+    },
+		"collection": "",
+		"other_tags": "",
 		"order_number": "",
+		"order_week": ""
 	},
-
 	"sequence": {
 		"original_sequence": "",
 		"optimized_sequence": "",
 		"fragment_sequences": {
+
 		}
 	},
 	"status": {
 		"ordered": "",
+		"will_build": "",
 		"abandoned": "",
 		"build_ready": "",
+		"building": "",
 		"build_complete": "",
 		"build_attempts": [{
-			"building": "",
 			"build_well": "",
 			"build_date": "",
 			"build_number": "",
@@ -66,7 +54,7 @@
 		"cloned": [{
 			"vector": "",
 			"organism": "",
-			"location": []
+			"location": [""]
 			}],
 	"dates": {
 		"submitted": "",
