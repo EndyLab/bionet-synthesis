@@ -1,22 +1,17 @@
 from Bio import SeqIO
-
+from io import StringIO
 import requests
-
 import json
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 import re
 import os
 import glob
 import datetime
-import shutil
+import shutil 
 import sys
-
 import fragment
 import optimize
-
-from config import *
+#from config import *
 
 def strip_df(df):
     for column in df:
@@ -26,10 +21,10 @@ def strip_df(df):
         df[column] = new_col
     return df
 
-# Takes in the template json file to initialize the json files
-for file in glob.glob(BASE_PATH + "/pipeline/testing/json/template.json"):
-        with open(file,"r") as template_json:
-            template = json.load(template_json)
+## Takes in the template json file to initialize the json files
+#for file in glob.glob(BASE_PATH + "/pipeline/testing/json/template.json"):
+#        with open(file,"r") as template_json:
+#            template = json.load(template_json)
 
 ## Find the next id number
 #previous_genes = (sorted(glob.glob("/data/*")))#BASE_PATH + "/data/*")))
@@ -49,21 +44,23 @@ for file in glob.glob(BASE_PATH + "/pipeline/testing/json/template.json"):
 # Extract spreadsheet
 response = requests.get('https://docs.google.com/spreadsheet/ccc?key=1rR4RQ1GLN3eMkOHVRc3jXZ6ZR2FfbUGU9JUXkm8OFHk&output=csv')
 assert response.status_code == 200, 'Wrong status code'
-print (response.content)
+byte_string=(response.content)
+csv_file= StringIO(str(byte_string, 'utf-8'))
+current_data = pd.read_csv(csv_file)
+
+############################################################# CONCAT WITH BULK UPLOADS
+response = requests.get('https://docs.google.com/spreadsheet/ccc?key=1UtZkWkogPifDyD9sw46YM0PrSGXCh_2KJyfCdYqkIJs&output=csv')
+csv_file= StringIO(str(response.content, 'utf-8'))
+bulk_date = pd.read_csv(csv_file)
 
 sys.exit()
 
-
-
-# Find a workbook by name and open the first sheet
-sheet = client.open("Free Genes Project Rolling Submissions (Responses)").sheet1
-
 # Extract and print all of the values
-current_data = pd.DataFrame(sheet.get_all_records())
+
 current_data = current_data.fillna('')
 current_data = strip_df(current_data)
 # print("======================================\ndata\n=================================\n",current_data)
-previous = pd.read_csv(BASE_PATH + '/raw_files/previous_submissions/previous_submissions.csv')
+previous = pd.read_csv('previous_submissions.csv')
 previous = previous.fillna('')
 previous = strip_df(previous)
 # print("======================================\nprevious\n=================================\n",previous)
@@ -76,6 +73,9 @@ united_data.fillna('')
 united_data_grouped = united_data.groupby(list(united_data.columns))
 uniq_data_idx = [x[0] for x in united_data_grouped.indices.values() if len(x) == 1]
 uniq_data = united_data.iloc[uniq_data_idx]
+
+print (uniq_data)
+sys.exit()
 print("===============\nunique\n===============\n",uniq_data)
 uniq_data.to_csv("./test_unique.csv")
 input("pause")
