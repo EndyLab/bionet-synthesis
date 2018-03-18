@@ -51,7 +51,18 @@ current_data = pd.read_csv(csv_file)
 ############################################################# CONCAT WITH BULK UPLOADS
 response = requests.get('https://docs.google.com/spreadsheet/ccc?key=1UtZkWkogPifDyD9sw46YM0PrSGXCh_2KJyfCdYqkIJs&output=csv')
 csv_file= StringIO(str(response.content, 'utf-8'))
-bulk_date = pd.read_csv(csv_file)
+bulk_data = pd.read_csv(csv_file)
+print(bulk_data)
+
+
+
+
+
+
+
+
+
+
 
 sys.exit()
 
