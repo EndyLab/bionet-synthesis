@@ -42,13 +42,22 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "In_process",
+    "build_complete": true,
     "build_attempts": [
       {
-        "build_well": "H9",
+        "build_well": "H09",
         "build_date": "2018-02-14 17:30:11",
         "build_number": "build007",
-        "build_outcome": "In_process"
+        "build_outcome": "Failed",
+        "forward_read": "CM_534180-1072_BBF10K_000523_M13-Forward---20-_H09.ab1",
+        "reverse_read": "CM_534180-2072_BBF10K_000523_M13-Reverse_H09.ab1"
+      },
+      {
+        "build_well": "G09",
+        "build_number": "build007",
+        "build_outcome": "Perfect",
+        "forward_read": "CM_534180-1071_BBF10K_000529_M13-Forward---20-_G09.ab1",
+        "reverse_read": "CM_534180-2071_BBF10K_000529_M13-Reverse_G09.ab1"
       }
     ]
   },

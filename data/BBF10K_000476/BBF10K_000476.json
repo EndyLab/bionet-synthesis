@@ -42,13 +42,15 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "In_process",
+    "build_complete": false,
     "build_attempts": [
       {
-        "build_well": "B2",
+        "build_well": "B02",
         "build_date": "2018-02-14 17:30:11",
         "build_number": "build007",
-        "build_outcome": "In_process"
+        "build_outcome": "Failed",
+        "forward_read": "CM_534180-1010_BBF10K_000476_M13-Forward---20-_B02.ab1",
+        "reverse_read": "CM_534180-2010_BBF10K_000476_M13-Reverse_B02.ab1"
       }
     ]
   },

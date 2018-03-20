@@ -42,13 +42,22 @@
     "abandoned": false,
     "build_ready": true,
     "building": true,
-    "build_complete": "In_process",
+    "build_complete": false,
     "build_attempts": [
       {
-        "build_well": "D7",
+        "build_well": "D07",
         "build_date": "2018-02-14 17:30:11",
         "build_number": "build007",
-        "build_outcome": "In_process"
+        "build_outcome": "Original_vector_sequence",
+        "forward_read": "CM_534180-1052_BBF10K_000546_M13-Forward---20-_D07.ab1",
+        "reverse_read": "CM_534180-2052_BBF10K_000546_M13-Reverse_D07.ab1"
+      },
+      {
+        "build_well": "G10",
+        "build_number": "build007",
+        "build_outcome": "Mutation: 1.0 143.0",
+        "forward_read": "CM_534180-1079_BBF10K_000507_M13-Forward---20-_G10.ab1",
+        "reverse_read": "CM_534180-2079_BBF10K_000507_M13-Reverse_G10.ab1"
       }
     ]
   },

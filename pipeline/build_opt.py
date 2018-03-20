@@ -28,7 +28,7 @@ parser.add_argument('-r', '--run', required=False, action="store_true", help="Se
 args = parser.parse_args()
 
 ## ============================================
-## Establish initial functions
+## ESTABLISH INITIAL FUNCTIONS
 ## ============================================
 def change_height(container,target):
     '''Allows for real-time calibration of the p10 single height'''
@@ -79,9 +79,7 @@ def change_plates(current_plates):
     return source_plates
 
 def make_gg_rxns(num_rxns,rxn_vol):
-    '''
-    Calculates the amount of each reagent to add to reach the desired master mix
-    '''
+    '''Calculates the amount of each reagent to add to reach the desired master mix'''
     cutsmart = 1 * num_rxns
     atp = 1 * num_rxns
     vector = 0.25 * num_rxns
