@@ -59,11 +59,11 @@ def fragment_gene(sequence,entry_type):
             "prefix" : "",
             "suffix" : ""
             },
-        "BsaI-methylated-prefix" : {
+        "BsaI-methylated_prefix" : {
             "prefix" : "CCGGTCTCA",
             "suffix" : "CGAGACC"
             },
-        "BsaI-methylated-suffix" : {
+        "BsaI-methylated_suffix" : {
             "prefix" : "GGTCTCA",
             "suffix" : "CGAGACCGG"
             },
@@ -73,7 +73,7 @@ def fragment_gene(sequence,entry_type):
     part_type = dict(
         cds = {
             # FreeGenes MoClo CDS definition
-            "cloning enzyme": "BbsI",
+            "cloning_enzyme": "BbsI",
             "small_cloning_enzyme" : "BtgZI",
             "retrieval_enzyme": "BsaI-methylated_suffix",
             "prefix": "A",

@@ -5,11 +5,12 @@ import logging
 
 CODON_USAGE_DB = os.path.dirname(__file__) + "/codon_table_data/codon_usage.spsum"
 COMMON_SPECIES = {
-    'E.coli': "83333",
+    'Escherichia coli': "83333",
     'S.cerevisiae':  "4932",
     'H.sapiens': "9606",
     'B.subtilis': "1432"
 }
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -59,7 +60,6 @@ def load_codon_table(species=None, taxonomy_id=None):
             tables[taxid] = table
             tables[species] = table
             break
-
     return table
 
 def codon_table_10plus(table):
