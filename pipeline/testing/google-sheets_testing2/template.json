@@ -1,0 +1,77 @@
+{
+	"version" : "2.0.0",
+	"gene_id": "",
+	"author": {
+		"name": "",
+		"email": "",
+		"affiliation": "",
+		"orcid": ""
+	},
+
+	"info": {
+		"documentation" : {
+			"gene_name": "",
+			"who" : "",
+			"what" : "",
+			"where" : "",
+			"why" : "",
+			"future_app" : "",
+			"database_links" : []
+		},
+
+		"gene_metadata" : {
+			"cloning" : {
+				"part_type" : "",
+				"cloning_enzyme" : "",
+				"retrieval_enzyme" : "",
+				"optimize" : "",
+				"target_organism" : {
+					"organism_name" : "",
+					"taxid" : ""
+				}
+			},
+			"collection_id" : "",
+			"IP" : {
+				"submitted": false,
+	      "submission_number": "",
+	      "results": ""
+			},
+			"safety" : ""
+		},
+		"order_number": ""
+	},
+
+	"sequence": {
+		"original_sequence": "",
+		"optimized_sequence": "",
+		"fragment_sequences": {
+		}
+	},
+	"status": {
+		"ordered": "",
+		"abandoned": "",
+		"build_ready": "",
+		"build_complete": "",
+		"build_attempts": [{
+			"building": "",
+			"build_well": "",
+			"build_date": "",
+			"build_number": "",
+			"build_outcome": ""
+		}]
+	},
+	"location": {
+		"fragments": {}
+		},
+		"cloned": [{
+			"vector": "",
+			"organism": "",
+			"location": []
+			}],
+	"dates": {
+		"submitted": "",
+		"ordered": "",
+		"build_ready": "",
+		"complete": ""
+	}
+}

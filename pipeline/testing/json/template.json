@@ -28,7 +28,7 @@
 				"target_organism" : {
 					"organism_name" : "",
 					"taxid" : ""
-				},
+				}
 			},
 			"collection_id" : "",
 			"IP" : {
@@ -36,9 +36,9 @@
 	      "submission_number": "",
 	      "results": ""
 			},
-			"safety" : "",
+			"safety" : ""
 		},
-		"order_number": "",
+		"order_number": ""
 	},
 
 	"sequence": {
