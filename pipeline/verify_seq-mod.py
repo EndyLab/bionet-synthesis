@@ -179,13 +179,14 @@ def blast_seq(name,build_num,sequence,direction, E_VALUE_THRESH=0.04):
         seq_file.write(">{}\n{}".format(name,sequence))
 
     # Run the BLAST search
-    output = "{}/{}/forward_results.xml".format(BUILDS_PATH,build_num)
+    output = "{}/{}/{}_results.xml".format(BUILDS_PATH,build_num,direction)
     os.system("blastn -query {} -db {}  -out {} -evalue 0.001 -outfmt 5".format(query,DATABASE_PATH,output))
 
     # Take in the blast results
     result_handle = open(output)
     blast_record = NCBIXML.read(result_handle)
     os.remove(output)
+    os.remove(query)
 
     # Return the top BLAST hit
     for alignment in blast_record.alignments:
