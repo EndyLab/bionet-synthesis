@@ -1,4 +1,5 @@
 from datetime import datetime
+start = datetime.now()
 
 import numpy as np
 import pandas as pd
@@ -44,17 +45,11 @@ def choose_build(build_num,path):
         path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,build_num,build_num)
         return choose_build(build_num,path)
 
-#build_num = "build"+str(input("Which build: ")).zfill(3)
 build_num = input("Enter build number: ")
 build_num = "build{}".format(str(build_num).zfill(3))
 path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,build_num,build_num)
-# build_num = choose_build(path)
-
-build_num = "build007"
-print("build_num",build_num)
-
+build_num = choose_build(build_num,path)
 SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,build_num,build_num)
-
 
 # Create a dictionary to link the gene name to the corresponding id number
 data = pd.read_csv(DICTIONARY_PATH)
@@ -78,10 +73,6 @@ with open(DATABASE_PATH,"w+") as fsa:
     # fsa.close()
 # Convert the FSA file into a BLAST database
 os.system("makeblastdb -in {} -parse_seqids -dbtype nucl".format(DATABASE_PATH))
-
-database_time = datetime.now()
-print("Time to build db: ",database_time - import_time)
-
 
 count = 0
 align_data = []
@@ -226,10 +217,7 @@ def align_unknown(name,build_num,forward_sequence,reverse_sequence):
 ## ============================================
 ## TAKE IN ALL OF THE SEQUENCING FILES
 ## ============================================
-
 for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
-    #print(forfile)
-
     # There has been inconsistency in the naming of samples so this is made to account for them
     if "BBF10K" in forfile:
         initials, order_number, plate_number, well_number, sample_name, sample_number, well_address = re.match(
@@ -252,6 +240,12 @@ for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
         revfile = "{}/{}_{}-{}{}_{}_{}_{}_{}.ab1".format(os.path.dirname(forfile), initials, order_number, (int(plate_number)+1), well_number, sample_name, sample_number, reverse_primer, well_address)
         id_num = sample_name + "_" + sample_number
         unknown = True
+
+    # Record the sequencing file names so that they can be used to realign at a later time
+    for_seq_file = forfile.split("/")[-1]
+    print("Forward: ",for_seq_file)
+    rev_seq_file = revfile.split("/")[-1]
+    print("Reverse: ",rev_seq_file)
 
     # Generates a new directory for each gene with their reads for a specific build
     #    new_dir = "{}/{}/{}_seq_files".format(DATA_PATH,id_num,build_num)
@@ -287,7 +281,7 @@ for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
 
     if unknown:
         print("_____________UNKNOWN__________________")
-        row = align_unknown(id_num,build_num,forward,reverse) + [well_address]
+        row = align_unknown(id_num,build_num,forward,reverse) + [well_address,for_seq_file,rev_seq_file]
         unknown_data.append(row)
 
     else:
@@ -300,16 +294,15 @@ for forfile in glob.glob("{}/*{}*.ab1".format(SEQFILE_PATH,forward_primer)):
 
         row = verify_sequence(id_num,forward,reverse,gene_seq,backbone_seq)
         if row[0] == "Unknown_sequence":
-            row = align_unknown(id_num,build_num,forward,reverse) + [well_address]
+            row = align_unknown(id_num,build_num,forward,reverse) + [well_address,for_seq_file,rev_seq_file]
             unknown_data.append(row)
 
         else:
-            row = [id_num] + [gene_name] + row + [well_address]
+            row = [id_num] + [gene_name] + row + [well_address,for_seq_file,rev_seq_file]
             align_data.append(row)
 
-align_data = np.array(align_data)
+# Build a dataframe containing all of the results from the unknown sequences
 unknown_data = np.array(unknown_data)
-
 unknown_df = pd.DataFrame({
     "Gene ID" : unknown_data[:,0],
     "Hit ID" : unknown_data[:,1],
@@ -319,13 +312,34 @@ unknown_df = pd.DataFrame({
     "Hit Rev Length" : unknown_data[:,5],
     "Hit Rev Score" : unknown_data[:,6],
     "Hit Length" : unknown_data[:,7],
-    "Well" : unknown_data[:,8]
+    "Well" : unknown_data[:,8],
+    "For Read" : unknown_data[:,9],
+    "Rev Read" : unknown_data[:,10]
 })
-unknown_df = unknown_df[["Gene ID","Hit ID","Hit Result","Well","Hit Result","Hit For Length","Hit For Score","Hit Rev Length","Hit Rev Score","Hit Length"]]
+unknown_df = unknown_df[["Gene ID","Hit ID","Hit Result","Well","Hit Result","Hit For Length","Hit For Score","Hit Rev Length","Hit Rev Score","Hit Length","For Read","Rev Read"]]
 unknown_df.to_csv("{}/{}/{}_alignment_results-unknown.csv".format(BUILDS_PATH,build_num,build_num))
 
-print(unknown_df)
+# Split apart the results of the unknown sequences into the intended targets and the actual hits
+intended_unknown = pd.DataFrame({
+    "Gene ID" : unknown_data[:,0],
+    "Well" : unknown_data[:,8],
+    "Outcome" : "Failed",
+    "For Read" : unknown_data[:,9],
+    "Rev Read" : unknown_data[:,10],
+    "Unintended" : True
+})
+actual_unknown = pd.DataFrame({
+    "Gene ID" : unknown_data[:,1],
+    "Well" : unknown_data[:,8],
+    "Outcome" : unknown_data[:,2],
+    "For Read" : unknown_data[:,9],
+    "Rev Read" : unknown_data[:,10],
+    "Unintended" : True
+})
+complete_unknown = pd.concat([intended_unknown,actual_unknown])
 
+# Build a dataframe containing all of the results from the normal sequences
+align_data = np.array(align_data)
 array = pd.DataFrame({
     "Gene ID" : align_data[:,0],
     "Gene Name" : align_data[:,1],
@@ -342,56 +356,90 @@ array = pd.DataFrame({
     "Template Rev Length" : align_data[:,12],
     "Template Rev Score" : align_data[:,13],
     "Template Length" : align_data[:,14],
-    "Well" : align_data[:,15]
+    "Well" : align_data[:,15],
+    "For Read" : align_data[:,16],
+    "Rev Read" : align_data[:,17]
 })
-array = array[["Gene ID","Gene Name","Outcome","Well","Gene Result","Gene For Length","Gene For Score","Gene Rev Length","Gene Rev Score","Gene Length","Template Result","Template For Length","Template For Score" ,"Template Rev Length","Template Rev Score" ,"Template Length"]]
+array = array[["Gene ID","Gene Name","Outcome","Well","Gene Result","For Read","Rev Read","Gene For Length","Gene For Score","Gene Rev Length","Gene Rev Score","Gene Length","Template Result","Template For Length","Template For Score" ,"Template Rev Length","Template Rev Score" ,"Template Length"]]
 array.to_csv("{}/{}/{}_alignment_results-array.csv".format(BUILDS_PATH,build_num,build_num))
-
 outcomes = pd.DataFrame({
     "Well" : array["Well"],
     "Gene ID" : array["Gene ID"],
     "Outcome" : array["Outcome"],
-    # "Actual" : array["Gene ID"]
-})
-outcomes.set_index("Well")
-print(outcomes)
-
-unknown_outcomes = pd.DataFrame({
-    "Well" : unknown_df["Well"],
-    "Gene ID" : unknown_df["Gene ID"],
-    "Outcome" : unknown_df["Hit Result"],
-    # "Actual" : unknown_data[:,1]
+    "Unintended" : False,
+    "For Read" : align_data[:,16],
+    "Rev Read" : align_data[:,17]
 })
 
-unknown_outcomes.set_index("Well")
+# Combine all of the dataframes to create a comprehensive dataframe to update the database
+complete = pd.concat([outcomes,complete_unknown])
+other = []
+## ============================================
+## UPDATE THE DATABASE
+## ============================================
+for index, row in complete.iterrows():
+    if "BBF10K_" not in row["Gene ID"]:
+        print("Skipped: ", row["Gene ID"])
+        continue
+    with open("{}/{}/{}.json".format(DATA_PATH,row["Gene ID"],row["Gene ID"]),"r") as json_file:
+        data = json.load(json_file)
+    for build in reversed(data["status"]["build_attempts"]):
 
-outcomes = outcomes.append(unknown_outcomes)
+        # Converts 'A2' -> 'A02'
+        if len(build["build_well"]) == 2:
+            build["build_well"] = str(build["build_well"][0]+"0"+build["build_well"][1])
 
-print(result)
-result.to_csv("{}/{}/{}_alignment_results-comb.csv".format(BUILDS_PATH,build_num,build_num))
+        # Updates the build attempt with the outcomes and seq files
+        if build["build_number"] == build_num:
+            if build["build_well"] == row["Well"]:
+                build["build_outcome"] = row["Outcome"]
+                build["forward_read"] = row["For Read"]
+                build["reverse_read"] = row["Rev Read"]
+
+            # Creates a new dict for the unintended build
+            elif row["Unintended"]:
+                data["status"]["build_attempts"].append({
+                    "build_well" : row["Well"],
+                    "build_number" : build_num,
+                    "build_outcome" : row["Outcome"],
+                    "forward_read" : row["For Read"],
+                    "reverse_read" : row["Rev Read"]
+                })
+            else:
+                other.append(row["Gene ID"])
+    if row["Outcome"] == "Good_sequence" or row["Outcome"] == "Perfect":
+        data["status"]["build_complete"] = True
+    else:
+        data["status"]["build_complete"] = False
+    with open("{}/{}/{}.json".format(DATA_PATH,row["Gene ID"],row["Gene ID"]),"w") as json_file:
+        json.dump(data,json_file,indent=2)
+
+complete.to_csv("{}/{}/{}_alignment_results-complete.csv".format(BUILDS_PATH,build_num,build_num))
+
 
 print(array)
 print("nan sequences:", nan)
 print("small sequences:", small)
+print("other",other)
 
 input("continue?")
 
-new_dir = "{}/{}/{}_fasta_files".format(BUILDS_PATH,build_num,build_num)
-if os.path.exists(new_dir):
-    print("{} already exists".format(new_dir))
-else:
-    os.makedirs(new_dir)
-    print("made directory")
+# REVIEW: Currently not pulling all of the FASTA files because soon there will only be Genbank files
 
-for index,row in array.iterrows():
-    for fasta in glob.glob("{}/{}/{}.fasta".format(DATA_PATH,row["Gene ID"],row["Gene ID"])):
-        shutil.copy(fasta, new_dir)
+# new_dir = "{}/{}/{}_fasta_files".format(BUILDS_PATH,build_num,build_num)
+# if os.path.exists(new_dir):
+#     print("{} already exists".format(new_dir))
+# else:
+#     os.makedirs(new_dir)
+#     print("made directory")
+#
+# for index,row in array.iterrows():
+#     for fasta in glob.glob("{}/{}/{}.fasta".format(DATA_PATH,row["Gene ID"],row["Gene ID"])):
+#         shutil.copy(fasta, new_dir)
 
-print()
-print(array['Outcome'].value_counts())
-print()
-
-
+# print()
+# print(array['Outcome'].value_counts())
+# print()
 
 
 stop = datetime.now()
