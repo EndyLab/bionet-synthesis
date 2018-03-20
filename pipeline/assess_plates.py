@@ -7,12 +7,16 @@ import math
 from config import *
 import interact_db
 
-##
-### Type 'e' in the results column of the build map to specify that it is
-### empty or has no pickable colonies.
-##
+## =============================================
+## SETUP:
+## Type 'e' in the results column of the build map to specify that it is
+## empty or has no pickable colonies.
+## =============================================
 
-def find_map(path):
+## =============================================
+## IMPORT BUILD MAP
+## =============================================
+def choose_build(path):
     '''Checks to make sure that the build exists and if not asks for a different one'''
     if glob.glob(path):
         return glob.glob(path)
@@ -20,13 +24,13 @@ def find_map(path):
         build_num = input("Not a valid build number. Please try again: ")
         build_name = "build{}".format(str(build_num).zfill(3))
         path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,build_name,build_name)
-        return find_map(path)
+        return choose_build(path)
 
 # Determine which build to assess
 build_num = input("Enter build number: ")
 build_name = "build{}".format(str(build_num).zfill(3))
 path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,build_name,build_name)
-csv_path = find_map(path)
+csv_path = choose_build(path)
 
 # Load the build map
 build_map = pd.read_csv(csv_path)
@@ -34,6 +38,9 @@ build_map["Result"] = build_map["Result"].str.replace("e","Replace")
 build_map["Result"] = build_map["Result"].str.replace("Pick","Replace")
 build_map["Result"] = build_map["Result"].fillna("Good")
 
+## =============================================
+## QUERY DATABASE AND REFINE RESULTS
+## =============================================
 # Query the database for all current entries in a dataframe
 db = interact_db.query_db()
 
@@ -47,6 +54,9 @@ for result in exclude:
 mut_db = mut_db.reset_index()
 mut_list = mut_db["data.gene_id"].tolist()
 
+## =============================================
+## REPLACE BAD CLONES WITH MUTANTS
+## =============================================
 # Maintain good constructs while replacing bad/empty ones with mutated
 # constructs. If it runs out of mutated constructs, it will pick duplicates
 picked = []
