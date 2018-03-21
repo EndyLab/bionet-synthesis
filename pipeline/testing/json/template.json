@@ -32,7 +32,6 @@
 			},
 			"collection_id" : "",
 			"IP" : {
-				"submitted": false,
 	      "submission_number": "",
 	      "results": ""
 			},
@@ -48,16 +47,15 @@
 		}
 	},
 	"status": {
-		"ordered": "",
-		"abandoned": "",
-		"build_ready": "",
-		"build_complete": "",
+		"current_status" : "",
 		"build_attempts": [{
 			"building": "",
 			"build_well": "",
 			"build_date": "",
 			"build_number": "",
-			"build_outcome": ""
+			"build_outcome": "",
+			"forward_read": "",
+			"reverse_read": ""
 		}]
 	},
 	"location": {
@@ -71,7 +69,7 @@
 	"dates": {
 		"submitted": "",
 		"ordered": "",
-		"build_ready": "",
+		"received": "",
 		"complete": ""
 	}
 }
