@@ -1,32 +1,42 @@
 {
-  "gene_name": "Bovine Kappa Casein",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000647",
   "author": {
     "name": "Ekam Dhaliwal, Scott Pownall",
     "email": "scott@opensciencenet.org",
     "affiliation": "Open Science Network",
-    "project": "Milk Proteins project",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Bovine Kappa Casein",
+      "who": "",
+      "what": "Bovine Kappa Casein  \nLocation: Specific to mammary gland, secreted outside cell membrane to milk\nFunction: stabilizes micelle formation and prevents casein precipitation in milk \nhttp://www.uniprot.org/uniprot/P02668\n- Sequence Translated from amino acids to nucleotides through IDT using Yeast optimization \nWhy Milk Proteins? With a growing population, the demand for consumption of animal products will also continue to rise. There are sustainability issues for the land requirements needed for cows. The purpose of these genes is to produce them through Yeast (Saccharomyces cerevisiae) and test whether there is any potential in producing these animal proteins (complete in essential amino acids) efficiently and sustainably through bioengineering organisms like Yeast.) ",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 6,
-    "order_week": "2018.5"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGATGAAGTCATTCTTTTTGGTCGTAACGATTTTGGCATTGACATTACCTTTCTTGGGTGCCCAGGAACAAAATCAAGAACAGCCCATCAGGTGCGAGAAAGACGAACGCTTTTTTAGTGACAAAATAGCCAAATACATTCCGATCCAGTACGTCCTATCCAGATACCCGTCCTACGGCTTGAATTACTACCAACAAAAACCAGTAGCTTTAATCAACAATCAATTCTTACCTTATCCTTATTATGCCAAGCCGGCTGCCGTCAGAAGCCCTGCACAGATACTACAATGGCAAGTTCTTAGTAACACAGTGCCTGCTAAATCTTGTCAGGCACAGCCGACAACAATGGCGCGTCATCCTCACCCCCATCTTAGTTTCATGGCAATCCCACCTAAGAAAAACCAGGATAAGACGGAAATCCCCACAATTAATACAATCGCATCTGGTGAGCCCACCAGCACGCCAACGACGGAGGCTGTAGAGTCAACAGTTGCAACGTTAGAGGACTCTCCAGAGGTCATTGAGTCACCCCCCGAAATTAATACTGTTCAAGTAACCAGTACAGCCGTATGA",
@@ -34,38 +44,33 @@
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2018.01.29",
     "ordered": "2018.01.29",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "Bovine Kappa Casein  \nLocation: Specific to mammary gland, secreted outside cell membrane to milk\nFunction: stabilizes micelle formation and prevents casein precipitation in milk \nhttp://www.uniprot.org/uniprot/P02668\n- Sequence Translated from amino acids to nucleotides through IDT using Yeast optimization \nWhy Milk Proteins? With a growing population, the demand for consumption of animal products will also continue to rise. There are sustainability issues for the land requirements needed for cows. The purpose of these genes is to produce them through Yeast (Saccharomyces cerevisiae) and test whether there is any potential in producing these animal proteins (complete in essential amino acids) efficiently and sustainably through bioengineering organisms like Yeast.) "
+  }
 }

@@ -1,32 +1,42 @@
 {
-  "gene_name": "Bovine Casein Kinase FAM20C",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000648",
   "author": {
     "name": "Ekam Dhaliwal, Scott Pownall",
     "email": "scott@opensciencenet.org",
     "affiliation": "Open Science Network",
-    "project": "Milk Proteins project",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Bovine Casein Kinase FAM20C",
+      "who": "",
+      "what": "Bovine Casein Kinase FAM20C\nFor phosphorylating casein proteins FAM20C \nBovine form, Predicted protein and not experimentally confirmed.\nhttp://2014.igem.org/Team:SF_Bay_Area_DIYbio/Parts#Casein_Kinase\nhttp://www.uniprot.org/uniprot/F1MXQ3\nSequence Translated from amino acids to nucleotides through IDT using Yeast optimization.",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 6,
-    "order_week": "2018.5"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGAGGGCGGGCGCAAGGCCATCTGGCGAACCGGGGTGCTCTTGCGCTCAGCCAGCTGCCGAGGCAGCGGCTCCTGGGTGGGCACAAGCGAGAGGGCACCCGGGGGGCGAACTGGAAGCAGCCGCTAGTGCCGCCGGTGACGCCGGCTGGCCCAATAAACACACTTTGCGTATCTTACAGGACTTCAGTAGTGATCCGTCTAGTAATCTGACCAGTCACAGTTTGGAAAAGTTGCCTCCTGCTGCTGAGGCTGCTGAGGGGGCGCCCCCGGGGCAGGACCCTGGCGTTAGGCGTCCTCCCGACCCAGCCCACAGGCCGTTACCTCGTGACCCTGGCCCTCGTGGCCCTGTGCTACCCCCTGGTTTAAGCGGTGACGGCTCTCTATTGACGCGTCTGTTCCAGCATCCGCTTTATCAGGTCCCCATTCCACCGCTAACAGAAGGCGACGTTTTATTCAATGTGAACTCCGATATTCGTTTCAACCCGAAAGCGGCGACCGCCGAGAATCCCGACTGGCCGCATGAGGGGCCTGAGGACGAGTTTCTACCCACGGGCGAAGCCGCGGTTGACTCCTATCCTAATTGGCTTAAGTTTCACATCGGCATCAATAGATATGAGCTGTATTCTCGTCATAATCCCGCAGTCGGTGCACTATTGCAGGACCTGGGAACCCAAAAAATAACGTCAGTTGCAATGAAAAGCGGGGGAACACAACTAAAATTGATAATGACTTTCCAAAACTATGGGCAGGCACTATTTAAACCGATGAAACAGACTCGTGAACAAGAAACGCCGCCAGACTTCTTTTACTTCAGCGACTACGAAAGGCATAATGCGGAGATCGCAGCGTTCCACCTAGATCGTATCCTGGACTTCAGACGTGTGCCGCCCGTGGCTGGGAGGTTGGTAAACATGACAAAAGAAATCAGGGACGTTACGAGGGATAAGAAATTATGGAGGACTTTCTTCATAAGCCCGGCCAATAATGTCTGCTTTTATGGTGAATGCAGTTATTATTGTAGCACGGAACATGCTCTGTGTGGGAAGCCGGACCAAATCGAGGGCAGTCTAGCTGCTTTTCTTCCAGATTTAGCCCTAGCTAAGAGAAAGACATGGAGAAACCCTTGGAGGAGGTCATATCACAAGCGTAAAAAGGCCGAATGGGAGGTCGATCCTGATTACTGCGAGGAGGTGCGTCAGACCCCTCCCTACGACAGTTCTCATAGATTATTGGATGTGATGGACATGACCATTTTCGATTTTCTGATGGGTAATATGGATAGACACCACTACGAAACCTTCGAAAAATTTGGCAACGAAACATTTATCATTCATTTGGATAATGGACGTGGTTTCGGAAAGCACAGTCACGACGAGCTATCCATTCTAGTACCGCTACAACAATGTTGTCGTATCAGGAGGTCCACGTACCTTCGTTTACAGTTGCTTGCGCAGGAGGAACACCGTCTTAGTTTATTGATGGCCGAAGCGCTAAGGGCCGACCGTGTAGCGCCGGTCTTGTTTCAACCGCACCTTGAGGCATTGGATAGGAGGTTGCGTATAGTCCTACGTGCCGTAGGCGACTGCGTTGAGAAAGATGGACTTCACTCAGTGGTTGAGGACGATCTTGGGCCGGAGCACCGTGCGGCTGCGGGAAGGTGA",
@@ -34,38 +44,33 @@
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2018.01.29",
     "ordered": "2018.01.29",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "Bovine Casein Kinase FAM20C\nFor phosphorylating casein proteins FAM20C \nBovine form, Predicted protein and not experimentally confirmed.\nhttp://2014.igem.org/Team:SF_Bay_Area_DIYbio/Parts#Casein_Kinase\nhttp://www.uniprot.org/uniprot/F1MXQ3\nSequence Translated from amino acids to nucleotides through IDT using Yeast optimization."
+  }
 }

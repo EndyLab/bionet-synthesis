@@ -1,32 +1,42 @@
 {
-  "gene_name": "Bba_K198900",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000561",
   "author": {
     "name": "Isaac Larkin",
     "email": "eyesmo@gmail.com",
     "affiliation": "ChiTown Bio",
-    "project": "null",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Bba_K198900",
+      "who": "",
+      "what": "None",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": true,
-      "submission_number": "003",
-      "results": "Awaiting results"
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "003",
+        "results": "Awaiting results"
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 3,
-    "order_week": "2017.46"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGGTGGATGCACACATTGTGATGGTTGATGCTTATAAACCTACCAAATTAGACGGGCATGGAGTTGGGGTCCCCGGCGTGGGGGTGCCCGGAGTTGGGGTCCCTGGGGTCGGGGAATTGGCACATATCGTAATGGTGGACGCTTACAAGCCTACCAAAACCAGCGTGCCTGGAGTAGGTGTTCCTGGTGTCGGTGTCCCAGGGGAGGGCGGTTTACTTGATGCTCACATCGTAATGGTCGATGCGTACAAACCTACTAAAACTTCAGTTCCTGGCGTGGGAGTTCCGGGAGAAGGAGTACCAGGGGTGGGAGTTCCCGGTGTAGGTGTCCCTGGTGGTGAACTGCTGGACTGCCGCGAGCGCATCGAAAAAGACTTAGAAGATCTTGAGAAAGAATTAATGGAGATGAAAAGCATCAAACTGTCAGATGACGAAGAGGCTGTAGTCGAACGCGCCCTGAATTATCGTGACGACAGCGTGTACTATCTTGAGAAAGGCGATCACATTACTAGCTTCGGTTGTATCACATACGCCGAAGGATTAACGGATTCTTTACGTATGTTGCACCGCATCATCGAAGGGTGA",
@@ -34,38 +44,33 @@
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": true,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "synthesis_abandoned",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2017.11.16",
     "ordered": "2017.11.16",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "None"
+  }
 }

@@ -1,71 +1,76 @@
 {
-  "gene_name": "Apoaequorin optimized for plants",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000653",
   "author": {
     "name": "Connor Tansley",
     "email": "c.tansley@uea.ac.uk",
     "affiliation": "University of East Anglia",
-    "project": "null",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "11K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Apoaequorin optimized for plants",
+      "who": "",
+      "what": "Apoaequorin CDS codon optimised for plants without the first 7 amino acids. patents in other jurisdictions but not Europe.",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 6,
-    "order_week": "2018.5"
+    "safety": ""
   },
   "sequence": {
-    "original_sequence": "ATGtctgtcaaacttacatcagacttcgacaacccaagatggattggacgacacaagcatatgttcaatttccttgatgtcaaccacaatggaaaaatctctcttgacgagatggtctacaaggcatctgatattgtcatcaataaccttggagcaacacctgagcaagccaaacgacacaaagatgctgtggaagccttcttcggaggagctggaatgaaatatggtgtggaaactgattggcctgcatatattgaaggatggaaaaaattggctactgatgaattggagaaatacgccaaaaacgaaccaaccctcatccgcatatggggtgatgctttgtttgatatcgttgacaaagatcaaaatggagctattacactggatgaatggaaagcatacaccaaagctgctggtatcatccaatcatcagaagattgcgaggaaacattcagagtgtgcgatattgatgaaagtggacaactcgatgttgatgagatgacaagacagcatctgggattttggtacaccatggatcctgcttgcgaaaagctctacggtggagctgtccccTGA",
-    "optimized_sequence": "ATGtctgtcaaacttacatcagacttcgacaacccaagatggattggacgacacaagcatatgttcaatttccttgatgtcaaccacaatggaaaaatctctcttgacgagatggtctacaaggcatctgatattgtcatcaataaccttggagcaacacctgagcaagccaaacgacacaaagatgctgtggaagccttcttcggaggagctggaatgaaatatggtgtggaaactgattggcctgcatatattgaaggatggaaaaaattggctactgatgaattggagaaatacgccaaaaacgaaccaaccctcatccgcatatggggtgatgctttgtttgatatcgttgacaaagatcaaaatggagctattacactggatgaatggaaagcatacaccaaagctgctggtatcatccaatcatcagaagattgcgaggaaacattcagagtgtgcgatattgatgaaagtggacaactcgatgttgatgagatgacaagacagcatctgggattttggtacaccatggatcctgcttgcgaaaagctctacggtggagctgtccccTGA",
+    "original_sequence": "ATGTCTGTCAAACTTACATCAGACTTCGACAACCCAAGATGGATTGGACGACACAAGCATATGTTCAATTTCCTTGATGTCAACCACAATGGAAAAATCTCTCTTGACGAGATGGTCTACAAGGCATCTGATATTGTCATCAATAACCTTGGAGCAACACCTGAGCAAGCCAAACGACACAAAGATGCTGTGGAAGCCTTCTTCGGAGGAGCTGGAATGAAATATGGTGTGGAAACTGATTGGCCTGCATATATTGAAGGATGGAAAAAATTGGCTACTGATGAATTGGAGAAATACGCCAAAAACGAACCAACCCTCATCCGCATATGGGGTGATGCTTTGTTTGATATCGTTGACAAAGATCAAAATGGAGCTATTACACTGGATGAATGGAAAGCATACACCAAAGCTGCTGGTATCATCCAATCATCAGAAGATTGCGAGGAAACATTCAGAGTGTGCGATATTGATGAAAGTGGACAACTCGATGTTGATGAGATGACAAGACAGCATCTGGGATTTTGGTACACCATGGATCCTGCTTGCGAAAAGCTCTACGGTGGAGCTGTCCCCTGA",
+    "optimized_sequence": "ATGTCTGTCAAACTTACATCAGACTTCGACAACCCAAGATGGATTGGACGACACAAGCATATGTTCAATTTCCTTGATGTCAACCACAATGGAAAAATCTCTCTTGACGAGATGGTCTACAAGGCATCTGATATTGTCATCAATAACCTTGGAGCAACACCTGAGCAAGCCAAACGACACAAAGATGCTGTGGAAGCCTTCTTCGGAGGAGCTGGAATGAAATATGGTGTGGAAACTGATTGGCCTGCATATATTGAAGGATGGAAAAAATTGGCTACTGATGAATTGGAGAAATACGCCAAAAACGAACCAACCCTCATCCGCATATGGGGTGATGCTTTGTTTGATATCGTTGACAAAGATCAAAATGGAGCTATTACACTGGATGAATGGAAAGCATACACCAAAGCTGCTGGTATCATCCAATCATCAGAAGATTGCGAGGAAACATTCAGAGTGTGCGATATTGATGAAAGTGGACAACTCGATGTTGATGAGATGACAAGACAGCATCTGGGATTTTGGTACACCATGGATCCTGCTTGCGAAAAGCTCTACGGTGGAGCTGTCCCCTGA",
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2018.01.29",
     "ordered": "2018.01.29",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "Apoaequorin CDS codon optimised for plants without the first 7 amino acids. patents in other jurisdictions but not Europe."
+  }
 }

@@ -1,32 +1,42 @@
 {
-  "gene_name": "MMSYN1_0076",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000034",
   "author": {
     "name": "Stanford BIOE80 class 2017",
     "email": "endy@stanford.edu",
     "affiliation": "Stanford",
-    "project": "Build-A-Cell",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "MMSYN1_0076",
+      "who": "",
+      "what": "None",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": true,
-      "submission_number": "002",
-      "results": "Awaiting results"
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "002",
+        "results": "Awaiting results"
+      },
+      "safety": ""
     },
-    "collection": "JCVI syn3.0 genes codon optimized for E.coli",
-    "other_tags": "null",
     "order_number": 1,
-    "order_week": "2017.30"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGGAGATCCGTCAGATTTTCGAGCAACATTCAGAGTTATTGGACAAAGAGGTGGAAATCTTGGGTCGCGTCCGCAGTAACCGTCAAGGTAAGTTTGTTTCTTTTATGATCCTGAATGATGGGACAACCTTCACCGATCTTCAAGTTGTATATAAAACAAAGACTAAAGGTTACGAGCAGGCACTTCAAGCGCGCGTATCAAGCATTGTCAAGGTCATCGGGAGAGTCGTTCTTACACCTGAAAAGCAACAGAAATTCGAATTACAAGCCGATGAGATCGAGTTGATTGATCAGGCCATTGAGGATTACCCTTTGCAGAAGAAAGAGCACACCACAGAGTATTTACGTGAGATAGCGCATCTTCGTGCCAAGACTAAAACATTCAACGCGATTTTCAAAATTCGGAGTGCCGCCGCCTACGCAATCCATCGGTTTTTCAATGAACGCAACTTCGTCTACATTCACTCACCCATAATAACATCTAACGATGCCGAGGGCGCAGGCGAGGCTTTCCTGGTGACCACACGTGAGGACGCGGACTATGAAAAGGATTTCTTCGGGAAAAAGGCCAGTCTTACTGTATCAGGTCAGTTGCACGCAGAGGCTTTTGCCCAGGCGTTTAAGAAGGTCTACACCTTTGGGCCGACGTTTAGAGCGGAAAATTCGAACACAGCAAAACATGCCGCGGAATTCTGGATGATCGAACCTGAGGTTGCATTTGCCGATTTAAAAGACAATATCCAACTTATCCAAGACATGGTAAAGTACATTATTAATTATATTTTCAAACACAACAGACGCGAGCTTGAGTTTTGTAACGAACACCTGGAAAACGGACTTATCGACAAGCTGAATAATGTGAGAAACTCCGAATTCAAGATTACGACTTATACGCAGGCTATTGAGATTTTGAAACAGGCGGTTAAAGACGGTCATAAATTCGAAGTCTCGGACATTGAGTTTGGCTTGGACTTAGGCACTGAGCATGAGAGATACATCTGCGAGCAAGTCAACAAGGCACCAACATTTGTTACTAACTATCCGAAGGAAATAAAAGCTTTTTACATGAAACAGAACGACGACAACAAGACTGTAGCGGCTGTCGATTTGCTGGTTCCGGGGATTGGGGAGTTGGTTGGCGGTAGTCAGCGTGAGGACAACTATGAAAAGCTTATTAAAAGATGCAAGGAGGTAAATATTGATATAGATCAACTGGAGTGGTACAATAACTTGCGTCTGTATGGATATTACAAAAGTGCCGGATTCGGCCTGGGTTTCGAGCGTTTAGTCATGTATATAACCGGCGCCTCAAATATTCGTGATGTAATTCCTTTTCCTAGAACCCCGAAAAATTTACTGTTTTGA",
@@ -36,40 +46,35 @@
     }
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": true,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "synthesis_abandoned",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
     "fragments": {
       "BBF10K_000034_1": ""
-    }
+    },
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2017.07.24",
     "ordered": "2017.07.24",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "None"
+  }
 }

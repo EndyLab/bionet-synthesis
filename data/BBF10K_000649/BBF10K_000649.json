@@ -1,32 +1,42 @@
 {
-  "gene_name": "Clarkia breweri S-Linalool Synthase",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000649",
   "author": {
     "name": "Ekam Dhaliwal, Scott Pownall",
     "email": "scott@opensciencenet.org",
     "affiliation": "Open Science Network",
-    "project": "Lavender Scent Protein",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Clarkia breweri S-Linalool Synthase",
+      "who": "",
+      "what": "Clarkia breweri S-Linalool Synthase\nFunction: Fragrant terpene part of the sweet scent of flowers \nReaction: Geranyl diphosphate + H2O = (3S)-linalool + diphosphate.\nhttp://www.uniprot.org/uniprot/Q96376\nSequence Translated from amino acids to nucleotides through IDT using Yeast optimization \nWhy? A fragrance is easy to detect which is good for biolabs lacking expensive measuring instruments. The gene can be used as a practicing tool for beginners in synthetic biology. Yeast has an inherent terpene synthesis (MVA) pathway. ",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 6,
-    "order_week": "2018.5"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGCAATTGATTACTAATTTTTCTTCTTCTTCTTCTGAATTGCAATTTTTGGTTGATAAAGTTAAAAGAGAATCTTTATCTTCTTCTTCTTCTAATACTCAAAATTTGTTTTTGTCTACTTCTCCATATGATACTGCTTGGTTGGCTTTGATTCCACATCCACATCATCATCATCATCATGGTAGACCAATGTTTGAAAAATGTTTGCAATGGATTTTGCATAATCAAACTCCACAAGGTTTTTGGGCTGCTGCTGGTGATAATATTTCTGATACTGATGATGATGTTACTTTGGATTGTTTGTTGTCTACTTTGGCTTGTTTGGTTGCTTTGAAAAGATGGCAATTGGCTCCAGATATGATTCATAAAGGTTTGGAATTTGTTAATAGAAATACTGAAAGATTGGTTATGAAACAAAAACCATCTGATGTTCCAAGATGGTTTACTATTATGTTTCCAGCTATGTTGGAATTGGCTGGTGCTTCTTCTTTGAGAGTTGATTTTTCTGAAAATTTGAATAGAATTTTGGTTGAATTGTCTCAAAATAGAGATGATATTTTGACTAGAGAAGAAGTTGATGAGAAAAAACAATATTCTCCATTGTTGTTGTTTTTGGAAGCTTTGCCAGCTCAATCTTATGATAATGATGTTTTGAAACAAATTATTGATAAAAATTTGTCTAATGATGGTTCTTTGTTGCAATCTCCATCTGCTACTGCTAGAGCTTATATGATTACTGGTAATACTAGATGTTTGTCTTATTTGCATTCTTTGACTAATTCTTGTTCTAATGGTGGTGTTCCATCTTTTTATCCAGTTGATGATGATTTGCATGATTTGGTTATGGTTAATCAATTGACTAGATCTGGTTTGACTGAACATTTGATTCCAGAAATTGATCATTTGTTGTTGAAAGTTCAGAAAAATTATAAATATAAAAAAGCTTCTCCAAAATCTTTGTATTCTATTGCTGCTGAATTGTATAGAGATTCTTTGGCTTTTTGGTTGTTGAGAGTTAATAATCATTGGGTTTCTCCATCTATCTTTTGTTGGTTTTTGGATGATGATGAAATTAGAGATCATATTGAAACTAATTATGAAGAATTTGCTGCTGTTTTGTTGAATGTTTATAGAGCTACTGATTTGATGTTTTCTGGTGAAGTTCAATTGGTTGAAGCTAGATCTTTTGCTACTAAAAATTTGGAAAAAATTTTGGCTACTGGTAATATTCATAAAACTAATGCTGATATTTCTTCTTCTTTGCATAAAATGATTGAACATGAATTGAGAGTTCCATGGACTGCTAGAATGGATCATGTTGAAAATAGAATTTGGATTGAAGAAATTGCTTCTTCTGCTTTGTGGTTTGGTAAATCTTCTTATTTGAGATTGTCTTGTTTTCATAAAATGTCTTTGCAACAATTGGCTGTTAAAAATTATACTTTGAGACAATTGGTTTATAGAGATGAATTGGCTGAAGTTGAAAGATGGTCTAAAGAAAGAGGTTTGTGTGATATGGGTTTTTGTAGAGAAAAAACTGGTTATTGTTATTATGCTTTTGCTGCTTCTACTTGTTTGCCATGGTCATCTGATGTTAGATTGGTTTTGACTAAAGCTGCTGTTGTTATTACTGTTGCTGATGACTTTTTTGATGTTGAAGGTTCTATGGTTGATTTGGAAAAATTGACTGATGCTGTTAGAAGATGGGATGCTGAAGGTTTGGGTTCTCATTCTAAAACTATTTTTGAAGCTTTGGATGATTTGGTTAATGAAGTTAGATTGAAATGTTTTCAACAAAATGGTCAAGATATTAAAAATAATTTGCAACAATTGTGGTATGAAACTTTTCATTCTTGGTTGATGGAAGCTAAATGGGGTAAAGGTTTGACTTCTAAACCATCTGTTGATGTTTATTTGGGTAATGCTATGACTTCTATTGCTGCTCATACTATGGTTTTGACTGCTTCTTGTTTGTTGGGTCCAGGTTTTCCAGTTCATCAATTGTGGTCACAACGCAGACATCAAGATATTACTTCTTTGTTGATGGTTTTGACTAGATTGTTGAATGATATTCAATCTTATTTGAAAGAAGAAGATGAAGGTAAAATTAATTATGTTTGGATGTATATGATTGAAAATAATCAAGCTTCTATTGATGATTCTGTTAGACATGTTCAAACTATTATTAATGTTAAAAAACAAGAATTTATTCAAAGAGTTTTGTCTGATCAACATTGTAATTTGCCAAAATCTTTTAAACAATTGCATTTTTCTTGTTTGAAAGTTTTTAATATGTTTTTTAATTCTTCTAATATTTTTGATACTGATACTGATTTGTTGTTGGATATTCATGAAGCTTTTGTTTCTCCACCACAAGTTCCAAAATTTAAACCACATATTAAACCACCACATCAATTGCCAGCTACTTTGCAACCACCACATCAACCACAACAAATTATGGTTAATAAGAAAAAAGTTGAAATGGTTTATAAATCTTATCATCATCCATTTAAAGTTTTTACTTTGCAGAAAAAACAATCTTCTGGTCATGGTACTATGAATCCAAGAGCTTCTATTTTGGCTGGTCCAAATATTAAATTGTGTTTTTGA",
@@ -34,38 +44,33 @@
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2018.01.29",
     "ordered": "2018.01.29",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "Clarkia breweri S-Linalool Synthase\nFunction: Fragrant terpene part of the sweet scent of flowers \nReaction: Geranyl diphosphate + H2O = (3S)-linalool + diphosphate.\nhttp://www.uniprot.org/uniprot/Q96376\nSequence Translated from amino acids to nucleotides through IDT using Yeast optimization \nWhy? A fragrance is easy to detect which is good for biolabs lacking expensive measuring instruments. The gene can be used as a practicing tool for beginners in synthetic biology. Yeast has an inherent terpene synthesis (MVA) pathway. "
+  }
 }

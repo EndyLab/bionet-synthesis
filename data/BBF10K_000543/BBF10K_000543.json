@@ -1,32 +1,42 @@
 {
-  "gene_name": "gene_18014",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000543",
   "author": {
     "name": "Stanley Qi",
     "email": "slqi@stanford.edu",
     "affiliation": "Stanford",
-    "project": "Microbial Argonaute discovery",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "gene_18014",
+      "who": "",
+      "what": "Series of prokaryotic Argonaute proteins found with a bioinformatic search. Codon optimized for human cells.",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": true,
-      "submission_number": "003",
-      "results": "Awaiting results"
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "003",
+        "results": "Awaiting results"
+      },
+      "safety": ""
     },
-    "collection": "Microbial Argonaute collection 76",
-    "other_tags": "null",
     "order_number": 4,
-    "order_week": "2017.48"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGCCTAAGAAAAAGCGGAAAGTTGAGGACCCCAAAAAGAAACGAAAAGTCGGAAGCGGCTCACTGGGGCTGAATAATGAGTCCAAAGAGTTCTTTAAGGGCATTAGCCGCATTTGGAGAAATTACAAGGACTACACCTACCTTGACGGGATTAAGCTGAGCCAGGCGCAGATCGATATCATCGAGAAGGAGGAGGACCAATTGCTTATAGAGGGCTACGCCGGCACCGGTAAGTCCCTGACCCTTATATACAAGTTCATTAACGTGCTGGTTCGGGAAGATGGGAAGAGGGTGCTGTATGTGACTTTTAACGATACGCTGATCGAGGATACGAAGAAACGCCTTAGTTATTGCAACGAGTACAACGAGAATAAAGAGAGGCACCACGTAGAGATTTGCACATTCCATGAGATCGCCAGTAATATCCTGAAGAAAAAGAAGATCATAGACAGGGGTATTGAGAAACTGACGGCTAAAAAGATAGAAGATTACAAAGGTGCCGCTCTCCGCAGAATTGCGGGAATCCTGGCTAGGTACATCGAGGGGGGAAAGTATTATAGCGAGTTGCCTAAAGAGGAACGCCTCTACAAGACACATGACGAGAACTTTATCAGGGAGGAGGTGGCCTGGATCAAGGCCATGGGCTTTATAGAAAAGGAGAAGTATTTCGAGAAAGATCGCATTGGGAGGTCCAAGAGTATCAGGCTGACGCGCTCACAACGCAAAACTATATTCAAGATATTTGAAAAGTACTGCGAGGAGCAAGAAAACAAATTCTTCAAAAGCCTCGACTTGGAGGATTACGCCCTGAAGCTCATCCAGAACATAGATAATTTCGATGACCTTAAGTTCGACTACATTTTTGTGGACGAGGTACAGGATCTCGATCCCATGCAAATTAAGGCGCTGTGTCTGCTGACCAATACGAGCATCGTGCTGTCAGGCGACGCGAATCAGCGGATTTACAAGAAATCTCCCGTGAAGTACGAGGAGCTCGGCCTCAGAATCAAAGAGAAGGGGAAACGGAAAATTCTGAACAAGAACTATCGGTCCACGGGTGAGATTGTCAAGCTCGCGAACTCAATCAAGTTCTTCGACGAGTCCATCAATAAGTATAATGAAAAGCAGTTCGTAAAATCCGGTGATCGCCCGATCATCCGGAAGGTGAACGACAAAAAGGGTGCGGTGAAGTTCCTGATCGGCGAGATCAAGAAAATCCACGAAGAGGACCCCTACAAAACAATCGCCATCATCCACCGAGAGAAAAACGAGCTTATCGGCTTCCAAAAGTCCGAGTTCCGAAAGTACCTGGAAGGCCAGCTGTACATGGAAAAATTCAGTGACATCAAGTCCTTTGAGTCAAAGTTTGATTTGAGGGAAAAGAACCAGGTGTTCTACACCAACGGCTACGATGTAAAGGGGCTGGAATTTGATGTGGTGTTCATCATAAACTTCAACACGGCCAACTACCCACTGAGTAAAGAGCTGAAGAAAATCAAGGACGAAAACGACGGCAAGGAAATGACGCTCATTAAAGACGATGTGCTCGAGTTTATCAATCGCGAGAAGAGGCTGCTGTACGTAGCTATGACCAGGGCCAAAGAAAAGCTGTATCTCGTGGCCGACTGCAAAAACAGCAACATCAGCAGCTTCATCTACGACTTTAACACCAAGTACTATGAGGCACAAAATTTCAAGAAGAAAGAGATAGAGGAGAACTACAACCGGTACAAGATTAACATGGAGCGCGAATACGGCATCATCATTGAGGACGACGACTCCAACAACGTTAAGAACAATGACACGAAACAAGAGAACAAGTTTAATACCGAATCTAAGGAAAAGGGCAAAGATGACATCGACAAGATAAAGGTGTTTTTCATCAACAAGGGAATCGAGGTGGTGGACAACCGAGATAAGAGCGGGTGCTTGTGGATCGTCGCCGGGAAGGAAGCGATCCCTCTTATGAAGAAGTTCGGTGTCCTGGGCTATAACTTCATATTTATCGCAAACGGCGGTCGGGCATCTAAGAACCGGCCAGCCTGGTACCTCAAGAATAGCTAGTGA",
@@ -37,27 +47,24 @@
     }
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": true,
-    "building": true,
-    "build_complete": true,
+    "current_status": "sequence_confirmed",
     "build_attempts": [
       {
-        "build_well": "G07",
+        "building": "",
+        "build_well": "E06",
         "build_date": "2018-02-14 17:30:11",
         "build_number": "build007",
-        "build_outcome": "Failed",
-        "forward_read": "CM_534180-1055_BBF10K_000543_M13-Forward---20-_G07.ab1",
-        "reverse_read": "CM_534180-2055_BBF10K_000543_M13-Reverse_G07.ab1"
+        "build_outcome": "sequence_confirmed",
+        "forward_read": "",
+        "reverse_read": ""
       },
       {
-        "build_well": "E06",
         "build_number": "build007",
-        "build_outcome": "Perfect",
-        "forward_read": "CM_534180-1045_BBF10K_000509_M13-Forward---20-_E06.ab1",
-        "reverse_read": "CM_534180-2045_BBF10K_000509_M13-Reverse_E06.ab1"
+        "build_well": "G07",
+        "build_date": "2018-02-14 17:30:11",
+        "build_outcome": "robot_failure",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
@@ -65,22 +72,19 @@
     "fragments": {
       "BBF10K_000543_1": "pSHPs1212B325157MU_H10",
       "BBF10K_000543_2": "pSHPs1212B325157MU_A11"
-    }
+    },
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2017.11.28",
     "ordered": "2017.11.28",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "Series of prokaryotic Argonaute proteins found with a bioinformatic search. Codon optimized for human cells."
+  }
 }

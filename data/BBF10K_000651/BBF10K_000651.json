@@ -1,32 +1,42 @@
 {
-  "gene_name": "Oscimum basilicum Gernaiol synthase",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000651",
   "author": {
     "name": "Wajid Waheed",
     "email": "bhatwaji@msu.edu",
     "affiliation": "Michigan State University",
-    "project": "null",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Oscimum basilicum Gernaiol synthase",
+      "who": "",
+      "what": "These two genes belong to the iridoid pathway in Picrorhiza kurrooa- a highly endangered medicinal plant. In order to engineer heterologous hosts to produce a synthetic biology platform for producing picrosides, I have selected two genes to test the functionality fo a novel P. kurrooa P450 and engineer N. benthamiana to produce picrosides.",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 6,
-    "order_week": "2018.5"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGTCTTGTGCACGGATCACCGTAACATTGCCGTATCGCTCCGCAAAAACATCAATTCAACGGGGAATTACGCATTACCCCGCCCTTATACGCCCACGCTTCTCTGCTTGCACGCCTTTGGCATCGGCAATGCCTCTAAGTTCAACTCCTCTCATCAACGGGGATAACTCTCAGCGTAAAAACACACGTCAACACATGGAGGAGAGCAGCAGCAAGAGGAGAGAATATCTGCTGGAGGAAACGACGCGAAAACTGCAGAGAAACGACACCGAATCGGTGGAGAAACTCAAGCTTATCGACAACATCCAACAGTTGGGAATCGGCTACTATTTTGAGGACGCCATCAACGCCGTACTCCGCTCGCCTTTCTCCACCGGAGAAGAGGACCTCTTCACCGCTGCTCTGCGCTTCCGCTTGCTCCGCCACAACGGCATCGAAATCAGCCCTGAAATATTCCTAAAATTCAAGGACGAGAGGGGAAAATTCGACGAATCGGACACGCTAGGGTTACTGAGCTTGTACGAAGCGTCAAATTTGGGGGTTGCAGGAGAAGAAATATTGGAGGAGGCTATGGAGTTTGCGGAGGCTCGCCTCAGACGGTCGCTGTCAGAGCCGGCGGCGCCGCTTCATGGTGAGGTGGCGCAAGCGCTAGATGTGCCGAGGCATCTGAGAATGGCGAGGTTGGAAGCCAGACGATTCATCGAGCAGTATGGTAAACAGAGCGATCATGATGGAGATCTTTTGGAGCTGGCAATTTTGGATTATAATCAAGTTCAGGCTCAACACCAATCCGAACTCACTGAAATAATCAGGTGGTGGAAGGAGCTCGGTTTGGTGGATAAGTTGAGTTTTGGGCGAGACAGACCATTGGAGTGCTTTTTGTGGACCGTGGGGCTCCTCCCAGAGCCCAAGTATTCGAGCGTTAGAATAGAGTTGGCGAAAGCCATCTCTATTCTCTTAGTGATCGATGATATTTTCGATACCTATGGAGAGATGGATGACCTCATCCTCTTCACCGATGCAATTCGAAGATGGGATCTTGAAGCAATGGAGGGGCTCCCTGAGTACATGAAAATATGCTACATGGCGTTGTACAATACCACCAATGAAGTATGCTACAAAGTGCTCAGGGATACTGGACGGATTGTCCTCCTTAACCTCAAATCTACGTGGATAGACATGATTGAAGGTTTCATGGAGGAAGCAAAATGGTTCAATGGTGGAAGTGCACCAAAATTGGAAGAGTATATAGAGAATGGAGTGTCCACGGCAGGAGCATACATGGCTTTTGCACACATCTTCTTTCTCATAGGAGAAGGTGTTACACACCAAAATTCCCAACTCTTCACCCAAAAACCCTACCCCAAGGTTTTCTCCGCCGCCGGCCGCATTCTTCGCCTCTGGGATGATCTCGGAACCGCCAAGGAGGAGCAAGAGCGAGGAGATCTGGCTTCGTGCGTGCAGTTATTTATGAAAGAGAAGTCGTTGACGGAAGAGGAGGCAAGAAGTCGCATTTTGGAAGAGATAAAAGGATTATGGAGGGATCTGAATGGGGAACTGGTCTACAACAAGAATTTGCCGTTATCCATAATCAAAGTCGCACTTAACATGGCGAGAGCTTCTCAAGTTGTGTACAAGCACGATCAAGACACTTATTTTTCAAGCGTAGACAATTATGTGGATGCCCTCTTCTTCACTCAATGA",
@@ -34,38 +44,33 @@
     "fragment_sequences": {}
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2018.01.29",
     "ordered": "2018.01.29",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "These two genes belong to the iridoid pathway in Picrorhiza kurrooa- a highly endangered medicinal plant. In order to engineer heterologous hosts to produce a synthetic biology platform for producing picrosides, I have selected two genes to test the functionality fo a novel P. kurrooa P450 and engineer N. benthamiana to produce picrosides."
+  }
 }

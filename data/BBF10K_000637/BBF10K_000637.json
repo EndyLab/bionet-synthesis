@@ -1,32 +1,42 @@
 {
-  "gene_name": "EiraCFP",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000637",
   "author": {
     "name": "Keoni Gandall",
     "email": "koeng101@gmail.com",
     "affiliation": "BioBricks Foundation",
-    "project": "KG basic tools",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "EiraCFP",
+      "who": "",
+      "what": "None",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": true,
-      "submission_number": "003",
-      "results": "Awaiting results"
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "003",
+        "results": "Awaiting results"
+      },
+      "safety": ""
     },
-    "collection": "KG fluorescent markers",
-    "other_tags": "null",
     "order_number": 2,
-    "order_week": "2017.41"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGTCCTCAGGTACAAAGCTTTTTGAGAAAGAGATCCCATACATCACAGAATTAGAGGGTGATGTAAATGGAATGAAATTCACAATTCACGGTAAGGGCACCGGTGATGCTTCGACCGGAACAATCAAAGCAAAATTCATTTGCACCACAGGTGATGTACCTGTTCCGTGGGCTACCTTAGTCAGCACCCTTTCTTATGGAGTCCAGTGCTTCGCGAAATACCCACCCCACATTAAAGATTTTTTCAAGAGTGCCATGCCCGAGGGGTATGTTCAGGAACGTACAATCACTTTTGAGGGTGATGGAGTATTCAAGACCCGCGCTGAGGTTACTTTCGAGAATGGTTCCGTGTATAACCGTGTGACACTTAACGGGCAAGGCTTTAAAAAGGATGGTCATATCCTGCGTAAGAACGTCGCGTTTCAGTGTCCTCCTGACATTGTTTATATTTTACCGGACACGGTTAACAATGGTATCCGTGTGGAGTTCAATCAGGCCTATGACATCGAGGGCGTGACTGAAAAACTTGTGACTAAGTGCAGTCAAATGAATCGCCCGTTAGCTGGAAGTGCTGCCGTTCACATTCCTCGCTACCATCATTTAAGTAAACACACCAAATTATCTAAAGATCGTGATGAGCGTCGCGATCACATGTGCCTTGTAGAGGTGGTGAAGGCAGTCGACCTGGACACTTATCAGTGA",
@@ -36,40 +46,35 @@
     }
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": true,
-    "building": true,
-    "build_complete": "Good_sequence",
+    "current_status": "sequence_confirmed",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "B2",
         "build_date": "2018-02-12 17:31:46",
         "build_number": "build006",
-        "build_outcome": "Good_sequence"
+        "build_outcome": "sequence_confirmed",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
     "fragments": {
       "BBF10K_000637_1": "pSHPs1025B525648MU_D3"
-    }
+    },
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2017.10.09",
     "ordered": "2017.10.09",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "None"
+  }
 }

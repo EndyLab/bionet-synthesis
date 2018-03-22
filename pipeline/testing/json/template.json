@@ -49,23 +49,21 @@
 	"status": {
 		"current_status" : "",
 		"build_attempts": [{
-			"building": "",
+			"build_number": "",
 			"build_well": "",
 			"build_date": "",
-			"build_number": "",
 			"build_outcome": "",
 			"forward_read": "",
 			"reverse_read": ""
 		}]
 	},
 	"location": {
-		"fragments": {}
-		},
+		"fragments": {},
 		"cloned": [{
 			"vector": "",
 			"organism": "",
 			"location": []
-			}],
+			}]},
 	"dates": {
 		"submitted": "",
 		"ordered": "",

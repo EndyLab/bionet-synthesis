@@ -34,7 +34,10 @@
   * 'terminator'
   * 'vector'
 * **Cloning Enzyme** - Enzyme used to cut the synthesized fragments and clone into the standard pOpen vector
+  * 'BbsI'
+  * 'BtgZI'
 * **Retrieval Enzyme** - Enzyme used to cut the part out of the standard vector and yield MoClo compatible sticky ends
+  * 'BsaI'
 * **Optimize** - Boolean value stating whether or not to optimize. True means to optimize.
 * **Target Organism** - Specifies which organism's codon table to look up with codon optimizing
   * **Organism name** - Human readable name specifying the organism the part was optimized for
@@ -79,22 +82,25 @@
 7. **'sequencing'** - The cloning run has finished and the part is out for sequencing
 8. **'sequence_confirmed'** - *ENDPOINT* - The part has been cloned and successfully sequence verified
 9. **'cloning_mutation'** - The sequence revealed a small flaw in the sequence. Another colony will be sequenced
-10. **'bad_reads'** - The read quality was too low to deduce a sequence
-11. **'cloning_failed'** - The sequence yielded the original vector sequence, a partial sequence, or some other unintended sequence
+10. **'sequence_failure'** - The read quality was too low to deduce a sequence
+11. **'cloning_failure'** - The sequence yielded the original vector sequence, a partial sequence, or some other unintended sequence
 12. **'cloning_abandoned'** - *ENDPOINT* - The part has failed to clone after two rounds of cloning and so it has been abandoned
 
 ### Build Attempts
 > A list of dictionaries, each entry representing a different build attempt
 
-* **Building** - Boolean indicating if it is currently being built
 * **Build well** - The well containing the part in the 96-well plate
 * **Build date** - Specifies the day that the build was run
 * **Build number** - Takes the form "build000" and increments sequentially with three significant figures (i.e. build010)
 * **Build outcome** - The results from the sequence verification, will be used to update current_status. This result will provide more detail to failures than current_status. Outcomes include:
-  * 'squence_confirmed' - Same as current status
-  * 'cloning_mutation' - Same as current status
-  * 'bad_reads' - Same as current status
+  * 'building' - Part is currently in production
+  * 'sequence_confirmed' - Same as current status
   * 'original_vector' - The sequence matches the destination vector used in the cloning reaction
+  * 'cloning_mutation' - Same as current status
+  * 'cloning_recombination' - Fragment of the sequence is correct but not all. Includes partial and split sequences
+  * 'cloning_failure' - The reaction didn't yield any colonies
+  * 'robot_failure' - Incorrect part in well
+  * 'sequence_failure' - Same as current status
 * **Forward read** - The name of the forward sequencing file used in the alignment
 * **Reverse read** - The name of the reverse sequencing file used in the alignment
 

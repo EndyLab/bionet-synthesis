@@ -1,32 +1,42 @@
 {
-  "gene_name": "Flp recombinase",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000458",
   "author": {
     "name": "Scott Pownall",
     "email": "scott@opensciencenet.org",
     "affiliation": "DIYBio Vancouver",
-    "project": "null",
     "orcid": ""
   },
   "info": {
-    "database_links": [
-      ""
-    ],
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "CDS",
-      "build_type": "10K_MoClo-EntryCDS-BbsI"
+    "documentation": {
+      "gene_name": "Flp recombinase",
+      "who": "",
+      "what": "None",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": []
     },
-    "safety": "null",
-    "IP": {
-      "submitted": true,
-      "submission_number": "003",
-      "results": "Awaiting results"
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "003",
+        "results": "Awaiting results"
+      },
+      "safety": ""
     },
-    "collection": "null",
-    "other_tags": "null",
     "order_number": 5,
-    "order_week": "2017.50"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGCCTCAGTTCGGCATACTCTGCAAGACTCCTCCCAAGGTTCTCGTCCGCCAATTTGTCGAGAGGTTTGAAAGACCCAGTGGGGAGAAAATAGCCCTTTGTGCAGCCGAGCTCACATATCTTTGCTGGATGATCACACATAACGGAACAGCTATAAAAAGGGCCACTTTCATGTCCTATAACACTATTATTTCAAACTCACTCAGTTTCGACATTGTCAACAAAAGCCTCCAATTTAAGTATAAAACCCAGAAGGCCACCATTCTTGAAGCATCTCTGAAGAAACTGATACCCGCCTGGGAATTTACAATCATTCCATACTATGGGCAAAAGCATCAGAGTGACATTACTGACATCGTATCATCCTTGCAATTGCAATTCGAAAGTTCTGAGGAAGCTGATAAAGGCAACTCACATTCTAAGAAAATGCTTAAAGCCCTCCTCTCTGAAGGAGAGTCTATTTGGGAGATCACAGAAAAAATTTTGAACAGCTTTGAGTACACATCAAGATTCACTAAAACAAAGACCTTGTATCAGTTTCTGTTTCTCGCAACCTTCATTAACTGCGGGAGATTTTCCGATATAAAAAACGTTGACCCTAAAAGCTTCAAGCTCGTCCAAAATAAGTACCTTGGAGTGATAATTCAATGCCTCGTAACAGAAACTAAGACAAGCGTATCTCGGCATATCTATTTTTTCTCCGCTAGAGGGCGAATCGATCCTTTGGTGTACTTGGATGAGTTCCTCAGAAATAGCGAACCAGTGCTGAAGAGAGTGAATCGAACCGGCAATTCCAGCAGCAATAAGCAAGAGTACCAGCTTCTGAAGGATAATTTGGTTAGGTCCTACAATAAAGCACTTAAGAAGAACGCCCCCTATTCTATATTCGCTATCAAAAATGGGCCCAAAAGTCATATCGGTCGACATCTTATGACCTCTTTTCTCAGTATGAAGGGATTGACCGAACTTACTAATGTAGTTGGTAACTGGAGTGATAAACGAGCATCAGCCGTCGCACGGACTACCTATACACACCAAATCACCGCCATCCCTGACCATTACTTTGCATTGGTGTCCAGATACTACGCATATGACCCAATTTCTAAAGAAATGATTGCCCTTAAAGACGAAACAAATCCAATAGAAGAATGGCAACACATAGAGCAGCTGAAGGGCTCCGCAGAGGGTAGCATCAGATACCCTGCTTGGAACGGTATAATCTCACAAGAAGTACTCGACTACCTCAGTTCCTACATAAACCGCAGAATCTGA",
@@ -36,40 +46,35 @@
     }
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
     "fragments": {
       "BBF10K_000458_1": ""
-    }
+    },
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "2017.12.11",
     "ordered": "2017.12.11",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "description": "None"
+  }
 }
