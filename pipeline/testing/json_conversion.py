@@ -19,6 +19,13 @@ with open("./json/template.json","r") as temp_file:
 for file in glob.glob('../../data/*/*.json'):
     with open(file,'r') as json_file:
         data = json.load(json_file)
+
+    try:
+        data['version'] == '2.0.0'
+        continue
+    except:
+        print(data['gene_id'])
+
     temp['gene_id'] = data['gene_id']
     temp['author']['name'] = data['author']['name']
     temp['author']['email'] = data['author']['email']
@@ -26,7 +33,7 @@ for file in glob.glob('../../data/*/*.json'):
     temp['author']['orcid'] = data['author']['orcid']
 
     temp['info']['documentation']['gene_name'] = data['gene_name']
-    temp['info']['documentation']['what'] = data['description']
+    temp['info']['documentation']['what'] = data['project_description']
 
     if data["info"]["database_links"] == [""]:
         temp['info']['documentation']['database_links'] = []

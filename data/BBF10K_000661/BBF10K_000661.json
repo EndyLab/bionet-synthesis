@@ -1,30 +1,42 @@
 {
-  "gene_name": "pctV_Sni^opt",
+  "version": "2.0.0",
   "gene_id": "BBF10K_000661",
   "author": {
     "name": "Nils Averesch",
     "email": "nils.j.averesch@nasa.gov",
     "affiliation": "NASA Ames",
-    "project": "Bacillus subtilis aminobenzoates biosynthesis",
     "orcid": " https://orcid.org/0000-0002-6389-2646"
   },
   "info": {
-    "database_links": "",
-    "type": {
-      "cloning_method": "10K_MoClo",
-      "part_type": "cds",
-      "build_type": "BbsI"
+    "documentation": {
+      "gene_name": "pctV_Sni^opt",
+      "who": "",
+      "what": "Variety of aminobenzote alleles. ",
+      "where": "",
+      "why": "",
+      "future_app": "",
+      "database_links": ""
     },
-    "safety": "",
-    "IP": {
-      "submitted": false,
-      "submission_number": "",
-      "results": ""
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "",
+          "taxid": ""
+        }
+      },
+      "collection_id": "",
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": ""
     },
-    "collection": "",
-    "other_tags": "#space",
     "order_number": 8,
-    "order_week": "2018.10"
+    "safety": ""
   },
   "sequence": {
     "original_sequence": "ATGAATGATCGCCAGACAGAACAAATCACAAACGAAGAAACATATCGCAGAATTAGCGCAGTTGTTGCAGGCGGAGTTTCATCAACAATGAGAGCAGTTGCAATTCCGCGTCCGCTGGTTGTTCGCAGAGCGGAAGGCTGCCAACTGTGGGATGTTGAAGGCAATATGCTGATTGATCTGAATATGGGCTATGGACCGCATCTTTTTGGCTATGCAGATCATGAAGTTCTGGATGATGTTGCGGAACAATTTAGAAATGGCCATATGACAGGCTTTCCGCATGAACTGGATTATAGAGCAGGCGAACTGATTACAGAACTGATGCCGTCAATTGAACAAGTTAGATTTGCGAATTCAGGCACAGAAGCAATTACATCAGCAATTAGACTGGCAAGAGCAACAACAGAAAGACCGCTGCTGCTGACATTTGAAGGCCATTATCATGGCTGGTCAGAAACAGTTCTGAGAGCTGGCAAACTGGGCTCAGAACCGGCAAGACAAGGTGATGGCCCTCCGGCACCTGGCGCACTGGGCATGATTCCGGAAGCACTGAATTCAACACTGCAAATTCCGTGGAATGATCCGGATGCACTTGAAGAGGTTTTTGCATCACATGGCGATAGAATTGCAGCAGTTATTGCGGAACCGGTTATGGGCAATTCAGGCGTTGTTCTGCCGCTTCCGGGATATCTGGGCCAACTGAGAGAAATTACAAGACGCCATGGCAGCATTCTGATTTTTGATGAAGTTATCACAGGCTTCAGAGTTGCACTTGGCGGAGCACAACAAAGATATGAAGTTACACCGGATCTGACAATTCTGAGCAAAGTTCTTGGAGGCGGAATCCCGGTTGCAGCATTTGGCGGATCAAGAGAAGTTATGGCACTGCTGGCAGAAAATAAAGCACTTCATGCAGGCGTTTATGCAGGCAATCATGCATCAGTTAGAGCAGTCGTTTCAACGCTGGAAAAAATTCGCAGACGTCCGCAAGTTTATGCGGATCTGGAAGCACTTGGAGAATATGCACAAGGCCAAATTCATGAAGCATTTGCAGCGGAAGATAGACATGTTCTGGTTCAACGCGCAGGCTCACTGATGTCAGTTGCACTGCTGACAAGACCGGTTGATCCGTCAGCACCGCTGAGAGAAGTCAGAGCAGCAATTGATTTTGATGGACATAGACAACTGCAAATGGCAGCACAAACACTGGGCCTGTATTTTCATCCGAATCCGCTGGAACCGTGGTTTCTGTCAACAGCACATACACATGATGATCTGGCAAAAGTTGTTGCGACACTGAGACTGGCACTGTCAGGCCTTAGAAGATAA",
@@ -34,38 +46,33 @@
     }
   },
   "status": {
-    "ordered": true,
-    "will_build": true,
-    "abandoned": false,
-    "build_ready": "",
-    "building": "",
-    "build_complete": "",
+    "current_status": "ordered",
     "build_attempts": [
       {
+        "building": "",
         "build_well": "",
         "build_date": "",
         "build_number": "",
-        "build_outcome": ""
+        "build_outcome": "empty",
+        "forward_read": "",
+        "reverse_read": ""
       }
     ]
   },
   "location": {
-    "fragments": {}
+    "fragments": {},
+    "cloned": [
+      {
+        "vector": "",
+        "organism": "",
+        "location": []
+      }
+    ]
   },
-  "cloned": [
-    {
-      "vector": "",
-      "organism": "",
-      "location": [
-        ""
-      ]
-    }
-  ],
   "dates": {
     "submitted": "",
     "ordered": "",
-    "build_ready": "",
+    "received": "",
     "complete": ""
-  },
-  "project_description": "Variety of aminobenzote alleles. "
+  }
 }
