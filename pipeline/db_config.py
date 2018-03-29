@@ -187,7 +187,9 @@ class Plate(Base):
     id = Column(Integer, primary_key=True)
     plate_type = Column(String) # Takes in syn_plate, assembly_plate, or seq_plate
     plate_name = Column(String)
-    resuspended = Column(String) # 'Resuspended' if resuspened, if not ''
+    resuspended = Column(String) # 'resuspended' or 'not resuspended'
+    plated = Column(String) # 'plated' or 'not_plated'
+    assessed = Column(String) # 'assessed' or 'not_assessed'
 
     # One build can have many plates, but one plate can only belong to a single build
     build_id = Column(Integer,ForeignKey('builds.id'))
@@ -202,7 +204,9 @@ class Plate(Base):
         self.plate_name = plate_name
         self.plate_type = plate_type
         if self.plate_type == 'syn_plate':
-            self.resuspended = ''
+            self.resuspended = 'not_resuspended'
+        if self.plate_type == 'assembly_plate':
+            self.plated = 'not_plated'
         self.counter = 0
         self.next_well = well_list[self.counter]
 
@@ -221,6 +225,14 @@ class Plate(Base):
         associate with each part'''
         self.wells.append(Well(self.plate_type,item,address,syn_yield=syn_yield,vector=vector,trans_outcome=trans_outcome,\
                               for_read=for_read,rev_read=rev_read,seq_outcome=seq_outcome))
+    def resuspend(self):
+        self.resuspended = 'resuspended'
+
+    def plate(self):
+        self.plated = 'plated'
+
+    def assess(self):
+        self.assessed = 'assessed'
 
 class Build(Base):
     '''Describes a complete build'''
@@ -257,98 +269,6 @@ Session = sessionmaker(bind=engine)
 Session.configure(bind=engine)
 session = Session()
 
-def build_db():
-    no_frag = []
-    no_frag_loc = []
-    linked = []
-    linked_seq = []
-    names = []
-    id_nums = []
 
-    for file in sorted(glob.glob("{}/data/*/*.json".format(BASE_PATH))):
-        with open(file,"r") as json_file:
-            data = json.load(json_file)
-        names.append(data['info']['documentation']['gene_name'])
-        id_nums.append(data['gene_id'])
-    dictionary = dict(zip(names,id_nums))
-
-    ## Generate part and fragment objects from JSON database
-    j_counter = 0
-    for file in sorted(glob.glob("{}/data/*/*.json".format(BASE_PATH))):
-        with open(file,"r") as json_file:
-            data = json.load(json_file)
-        new = Part(part_id=data['gene_id'],
-            part_name=data['info']['documentation']['gene_name'],
-            part_type=data['info']['gene_metadata']['cloning']['part_type'],
-            seq=data['sequence']['optimized_sequence'],
-            status='ordered')
-        frags = []
-        if data['sequence']['fragment_sequences'] == {}:
-            no_frag.append(data['gene_id'])
-        elif data['info']['gene_metadata']['cloning']['cloning_enzyme'] == 'BtgZI':
-            linked.append(new)
-            linked_seq.append(data['sequence']['fragment_sequences'][data['gene_id']+"_1"])
-        else:
-            for fragment in data['sequence']['fragment_sequences']:
-                if data['location']['fragments'] == {}:
-                    no_frag_loc.append(data['gene_id'])
-                    session.add(Fragment(
-                        fragment_name=fragment,
-                        seq=data['sequence']['fragment_sequences'][fragment],
-                        parts=[new]))
-                else:
-                    session.add(Fragment(
-                        fragment_name=fragment,
-                        location=data['location']['fragments'][fragment],
-                        seq=data['sequence']['fragment_sequences'][fragment],
-                        parts=[new]))
-        session.add(new)
-
-    for part,seq in zip(linked,linked_seq):
-        frag = session.query(Fragment).filter(Fragment.seq == seq).first()
-        part.fragments.append(frag)
-        session.add(part)
-    # print("no frags: \n",no_frag)
-    # print("no frag locations: \n",no_frag_loc)
-    # print("linked: \n",linked)
-
-    session.commit()
-
-    not_found = []
-    ## Take in plate maps from twist and generate fragment objects
-    for file in glob.glob('{}/plate_maps/*.csv'.format(BASE_PATH)):
-        plate_map = pd.read_csv(file)
-        plate_map['customer_line_item_id'] = plate_map['customer_line_item_id'].str.strip()
-        plates_made = []
-        for index,row in plate_map.iterrows():
-            if row['customer_line_item_id'][:-2] not in names and row['customer_line_item_id'][:-2] not in id_nums:
-                not_found.append(row['customer_line_item_id'])
-                continue
-            if row['Plate'] not in plates_made:
-                current_plate = Plate('','syn_plate',plate_name=row['Plate'])
-                plates_made.append(row['Plate'])
-            current_frag = ''
-            current_frag = session.query(Fragment).filter(Fragment.seq == row['Insert Sequence']).first()
-            if current_frag:
-                current_plate.add_item(current_frag,row['Well'],syn_yield=row['Yield (ng)'])
-                session.add(current_plate)
-
-
-    # TEMP: BUILDING THE FRAG LOCATION SCRIPT IN
-    ## Determie which samples are build ready
-    for part in session.query(Part):
-        no_build = False
-        for frag in part.fragments:
-            if not frag.wells:
-                no_build = True
-        if not no_build:
-            part.change_status('received')
-        session.add(part)
-
-
-    session.commit()
-    # print("Not foung:\n",not_found)
-    print("Created database")
-    return session
 
 #

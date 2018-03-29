@@ -302,7 +302,7 @@ p10s_tipracks = [
     containers.load('tiprack-10ul', locations["tiprack-10s2"])
 ]
 trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
-centrifuge_tube = containers.load('tube-rack-2ml',locations["Tube Rack"])
+centrifuge_tube = containers.load('tube-rack-2ml',locations["Tube_rack"])
 master = containers.load('PCR-strip-tall', locations["PCR-strip-tall"])
 dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
 
