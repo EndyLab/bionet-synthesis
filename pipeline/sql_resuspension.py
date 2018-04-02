@@ -21,8 +21,7 @@ from db_config import *
 
 # ## Generate the SQL Database
 # session = build_db()
-def resuspension(session):
-
+def resuspension():
     print("\n============ Beginning resuspension ============\n")
 
     ## Set up initial paths
@@ -102,7 +101,7 @@ def resuspension(session):
         well.volume = volume
         well.concentration = conc
         total += volume
-        # session.add(well)
+        session.add(well)
 
     print("total volume of water needed: {}uL".format(total))
     num_tubes = math.ceil(total / 1200)
@@ -253,8 +252,12 @@ def resuspension(session):
     target.resuspend()
     session.add(target)
 
-    return session
+    commit = int(input("Commit changes (1-yes, 2-no): "))
+    if commit == 1:
+        session.commit()
+    return
 
-
+if __name__ == "__main__":
+    resuspension()
 
 #

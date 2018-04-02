@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker,relationship
 
 import glob
 import json
+import re
 import pandas as pd
 from config import *
 from db_config import *
@@ -56,10 +57,46 @@ def build_db():
                         seq=data['sequence']['fragment_sequences'][fragment],
                         parts=[new]))
         session.add(new)
-
+    ## Add the extra connections in for the small linked genes
     for part,seq in zip(linked,linked_seq):
         frag = session.query(Fragment).filter(Fragment.seq == seq).first()
         part.fragments.append(frag)
         session.add(part)
+
+    ## Convert build maps into build objects
+    for file in glob.glob('{}/builds/build*/build*_20*.csv'.format(BASE_PATH)):
+        if 'build007' in file:
+            continue
+        build_name = re.match(r'.+\/builds\/(build[0-9]{3})\/.+',file).groups()[0]
+        plate_map = pd.read_csv(file)
+        parts = plate_map['Gene'].tolist()
+        part_objs = [session.query(Part).filter(Part.part_id == part).one() for part in parts if part != 'Empty']
+        current_build = Build(part_objs,build_name=build_name)
+        current_build.status = 'building'
+        session.add(current_build)
+        for plate in current_build.plates:
+            for well in plate.wells:
+                well.parts.change_status('building')
+                session.add(well)
+
+    for target_build in session.query(Build):
+        seq_plate = Plate([],'seq_plate',target_build.build_name)
+        target_build.plates.append(seq_plate)
+        target_build.status = 'sequencing'
+        session.add(seq_plate)
+        for well in target_build.plates[0].wells:
+            seq_plate.add_item(well.parts,well.address)
+            well.parts.change_status('sequencing')
+            session.add(seq_plate)
+    session.commit()
     print('\nCreated database\n')
-    return session
+    return
+
+
+if __name__ == "__main__":
+    build_db()
+
+
+
+
+    #

@@ -10,9 +10,10 @@ from config import *
 
 ## Begin using sqlite as a local database
 
-engine = create_engine('sqlite:///:memory:', echo=False)
+# engine = create_engine('sqlite:///:memory:', echo=False)
+engine = create_engine('sqlite:///free_genes.db')
 
-inspector = inspect(engine)
+# inspector = inspect(engine)
 
 Base = declarative_base()
 
@@ -239,6 +240,8 @@ class Build(Base):
     __tablename__ = 'builds'
 
     id = Column(Integer, primary_key=True)
+    build_name = Column(String)
+    status = Column(String)
     date = Column(String) # Date that the build was conducted
     master_mix = Column(String) # The master mix that was used
 
@@ -249,9 +252,11 @@ class Build(Base):
     seq_orders_id = Column(Integer,ForeignKey('seq_orders.id'))
     seq_orders = relationship("Seq_order", back_populates="builds")
 
-    def __init__(self,items,rxn_per_plate=96):
+    def __init__(self,items,build_name='',rxn_per_plate=96):
         # Generate an assembly plate
         group_parts = [items[n:n+rxn_per_plate] for n in range(0, len(items), rxn_per_plate)]
+        self.build_name = build_name
+        self.status = 'building'
         for num,group in enumerate(group_parts):
             plate_name = 'Assembly_' + str(num)
             self.plates.append(Plate(group,'assembly_plate',plate_name))

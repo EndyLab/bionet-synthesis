@@ -20,10 +20,7 @@ import getch
 from config import *
 from db_config import *
 
-# ## Generate the SQL Database from json files and plate maps
-# session = build_db()
-
-def run_build(session):
+def run_build():
 
     print("\n============ Beginning build ============\n")
 
@@ -378,9 +375,13 @@ def run_build(session):
                     change_height(source_plates[plate],source_plates[plate].wells(start_well))
                 p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
                 used_plates.append(plate)
-    return session
+    commit = int(input("Commit changes (1-yes, 2-no): "))
+    if commit == 1:
+        session.commit()
+    return
 
-
+if __name__ == "__main__":
+    run_build()
 
 
 

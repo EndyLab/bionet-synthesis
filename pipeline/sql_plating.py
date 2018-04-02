@@ -24,15 +24,7 @@ from sql_frag_loc import *
 from sql_resuspension import *
 from sql_build import *
 
-# session = build_db()
-# session = frag_assign(session)
-# session = resuspension(session)
-# session = resuspension(session)
-# session = run_build(session)
-
-# ## Generate the SQL Database from json files and plate maps
-# session = build_db()
-def plate(session):
+def plate():
     print("\n============ Beginning plating ============\n")
 
     ## Establish initial functions
@@ -299,9 +291,13 @@ def plate(session):
     print("Rehoming")
     robot.home()
 
-    return session
+    commit = int(input("Commit changes (1-yes, 2-no): "))
+    if commit == 1:
+        session.commit()
+    return
 
-
+if __name__ == "__main__":
+    plate()
 
 
 
