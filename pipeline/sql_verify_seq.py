@@ -23,7 +23,7 @@ from Bio.Blast import NCBIXML
 from config import *
 from db_config import *
 
-# TODO: Turn into a function 
+# TODO: Turn into a function
 
 
 ## ============================================
@@ -65,12 +65,19 @@ dictionary = dict(zip(data['idnum'],data['gene_name']))
 ## ============================================
 ## GENERATE BLAST DATABASE
 ## ============================================
+# REVIEW: Change this to take in the fasta file for the backbone
+# REVIEW: When using the full backbone it would throw off the alignment so this is just the insert
+backbone_seq = Seq.Seq("ATGCGGTCTTCCGCATCGCCTGGCACGACAGGTTTCCCGACTGGAAAGCGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCTCACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGTTGTGTGGAATTGTGAGCGGATAACAATTTCACACATACTAGAGAAAGAGGAGAAATACTAGATGGCTTCCTCCGAAGATGTTATCAAAGAGTTCATGCGTTTCAAAGTTCGTATGGAAGGTTCCGTTAACGGTCACGAGTTCGAAATCGAAGGTGAAGGTGAAGGTCGTCCGTACGAAGGTACCCAGACCGCTAAACTGAAAGTTACCAAAGGTGGTCCGCTGCCGTTCGCTTGGGACATCCTGTCCCCGCAGTTCCAGTACGGTTCCAAAGCTTACGTTAAACACCCGGCTGACATCCCGGACTACCTGAAACTGTCCTTCCCGGAAGGTTTCAAATGGGAACGTGTTATGAACTTCGAGGACGGTGGTGTTGTTACCGTTACCCAGGACTCCTCCCTGCAAGACGGTGAGTTCATCTACAAAGTTAAACTGCGTGGTACCAACTTCCCGTCCGACGGTCCGGTTATGCAGAAAAAAACCATGGGTTGGGAAGCTTCCACCGAACGTATGTACCCGGAGGACGGTGCTCTGAAAGGTGAAATCAAAATGCGTCTGAAACTGAAAGACGGTGGTCACTACGACGCTGAAGTTAAAACCACCTACATGGCTAAAAAACCGGTTCAGTTACCGGGTGCTTACAAAACCGACATCAAACTGGACATCACCTCCCACAACGAGGACTACACCATCGTTGAACAGTACGAACGTGCTGAAGGTCGTCACTCCACCGGTGCTTAAGCGATGTTGAAGACCATGA")
+
 # Create a multientry FASTA file with all seqs from database
 db_counter = 1
 with open(DATABASE_PATH,"w+") as fsa:
     for part in session.query(Part):
         fsa.write(">{}|BLAST_db|{}\n{}\n".format(part.part_id,db_counter,part.seq))
         db_counter += 1
+    fsa.write(">{}|BLAST_db|{}\n{}\n".format('backbone',db_counter,backbone_seq.seq))
+
+
 
 # Convert the FSA file into a BLAST database
 os.system("makeblastdb -in {} -parse_seqids -dbtype nucl".format(DATABASE_PATH))
@@ -232,7 +239,7 @@ def blast_seq(name,sequence,direction, E_VALUE_THRESH=0.04):
                 hit_id = alignment.title.split("|")
                 return hit_id[0]
 
-def align_unknown(name,forward_sequence,reverse_sequence):
+def align_unknown(name,forward_sequence,reverse_sequence,well):
     '''
     Runs a BLAST search on both reads and determines if they share a common hit,
     if they do it preforms an alignment of the reads on the target.
@@ -248,8 +255,10 @@ def align_unknown(name,forward_sequence,reverse_sequence):
             g_res = align_reads(forward,reverse,target)
             if g_res == "Perfect":
                 final = "sequence_confirmed"
+                target_part.wells.append(Well('seq_plate',target_part,well.address,seq_outcome=final))
             elif "Mutation" in g_res:
                 final = "cloning_mutation"
+                target_part.wells.append(Well('seq_plate',target_part,well.address,seq_outcome=final))
             elif g_res == "Bad clone":
                 final = "cloning_failure"
             elif "Bad" in g_res:
@@ -321,7 +330,7 @@ for target in session.query(Build).filter(Build.status == 'sequencing').order_by
         outcome = verify_sequence(id_num,forward,reverse,gene_seq,backbone_seq)
 
         if outcome == 'Unknown_sequence':
-            outcome = align_unknown(id_num,forward,reverse)
+            outcome = align_unknown(id_num,forward,reverse,well)
         elif " - " in outcome:
             check.append(id_num)
             check.append(outcome)

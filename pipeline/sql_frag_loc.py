@@ -31,24 +31,40 @@ def frag_assign():
     making = []
     for file in glob.glob('{}/plate_maps/*.csv'.format(BASE_PATH)):
         plate_map = pd.read_csv(file)
-        plate_map['customer_line_item_id'] = plate_map['customer_line_item_id'].str.strip()
-        plate_map['Plate'] = plate_map['Plate'].str.strip()
         for index,row in plate_map.iterrows():
-            if row['Plate'] in plates_made:
-                continue
-            elif row['Plate'] not in making:
-                current_plate = Plate('','syn_plate',plate_name=row['Plate'])
-                session.add(current_plate)
-                print('Adding plate: ',row['Plate'])
-                making.append(row['Plate'])
+            ## Have to account for two different csv formats
+            try:
+                row['Plate']
+                plate_id = row['Plate'].strip()
+                fragment_name = row['customer_line_item_id'].strip()
+                insert = row['Insert Sequence']
+                well_address = row['Well']
+            except:
+                try:
+                    row['Plate ID']
+                    plate_id = row['Plate ID'].strip()
+                    fragment_name = row['Name'].strip()
+                    insert = row['Insert sequence']
+                    well_address = row['Well Location']
+                except:
+                    print("Doesn't fit either acceptable formats")
+                    continue
 
-            if row['customer_line_item_id'][:-2] not in names and row['customer_line_item_id'][:-2] not in id_nums:
-                not_found.append(row['customer_line_item_id'])
+            if plate_id in plates_made:
+                continue
+            elif plate_id not in making:
+                current_plate = Plate('','syn_plate',plate_name=plate_id)
+                session.add(current_plate)
+                print('Adding plate: ',plate_id)
+                making.append(plate_id)
+
+            if fragment_name[:-2] not in names and fragment_name[:-2] not in id_nums:
+                not_found.append(fragment_name)
                 continue
             current_frag = ''
-            current_frag = session.query(Fragment).filter(Fragment.seq == row['Insert Sequence']).first()
+            current_frag = session.query(Fragment).filter(Fragment.seq == insert).first()
             if current_frag:
-                current_plate.add_item(current_frag,row['Well'],syn_yield=row['Yield (ng)'])
+                current_plate.add_item(current_frag,well_address,syn_yield=row['Yield (ng)'])
 
     ## Determie which samples are build ready
     for part in session.query(Part):

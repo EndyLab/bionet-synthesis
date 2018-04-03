@@ -126,7 +126,7 @@ def run_build():
     ## sorts them by their plate numbers and returns the earliest set of parts
     to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
                 join(Well,Fragment.wells).join(Plate,Well.plates)\
-                .filter(Part.status.in_(acceptable_status)).order_by(Plate.id)]
+                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
     target_build = Build(to_build)

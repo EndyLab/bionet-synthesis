@@ -28,13 +28,17 @@ def build_db():
 
     ## Generate part and fragment objects from JSON database
     j_counter = 0
+    old_parts = [part.part_id for part in session.query(Part)]
     for file in sorted(glob.glob("{}/data/*/*.json".format(BASE_PATH))):
         with open(file,"r") as json_file:
             data = json.load(json_file)
+        if data['gene_id'] in old_parts:
+            print('Found old part')
+            continue
         new = Part(part_id=data['gene_id'],
             part_name=data['info']['documentation']['gene_name'],
             part_type=data['info']['gene_metadata']['cloning']['part_type'],
-            seq=data['sequence']['optimized_sequence'],
+            seq=data['sequence']['optimized_sequence'].upper(),
             status='ordered')
         frags = []
         if data['sequence']['fragment_sequences'] == {}:
@@ -46,16 +50,19 @@ def build_db():
             for fragment in data['sequence']['fragment_sequences']:
                 if data['location']['fragments'] == {}:
                     no_frag_loc.append(data['gene_id'])
-                    session.add(Fragment(
+                    new_frag = Fragment(
                         fragment_name=fragment,
-                        seq=data['sequence']['fragment_sequences'][fragment],
-                        parts=[new]))
+                        seq=data['sequence']['fragment_sequences'][fragment].upper(),
+                        parts=[new])
+                    session.add(new_frag)
                 else:
-                    session.add(Fragment(
+                    new_frag = Fragment(
                         fragment_name=fragment,
                         location=data['location']['fragments'][fragment],
-                        seq=data['sequence']['fragment_sequences'][fragment],
-                        parts=[new]))
+                        seq=data['sequence']['fragment_sequences'][fragment].upper(),
+                        parts=[new])
+                    session.add(new_frag)
+                print(new_frag.fragment_name,new_frag.parts[0].part_id)
         session.add(new)
     ## Add the extra connections in for the small linked genes
     for part,seq in zip(linked,linked_seq):
@@ -64,13 +71,18 @@ def build_db():
         session.add(part)
 
     ## Convert build maps into build objects
+    old_builds = [build.build_name for build in session.query(Build)]
     for file in glob.glob('{}/builds/build*/build*_20*.csv'.format(BASE_PATH)):
-        if 'build007' in file:
-            continue
+        # if 'build007' in file:
+        #     continue
         build_name = re.match(r'.+\/builds\/(build[0-9]{3})\/.+',file).groups()[0]
+        if build_name in old_builds:
+            print('Found old build')
+            continue
+        print("Adding build: ",build_name)
         plate_map = pd.read_csv(file)
         parts = plate_map['Gene'].tolist()
-        part_objs = [session.query(Part).filter(Part.part_id == part).one() for part in parts if part != 'Empty']
+        part_objs = [session.query(Part).filter(Part.part_id == part).one() for part in parts if part != 'Empty' and 'Unk' not in part]
         current_build = Build(part_objs,build_name=build_name)
         current_build.status = 'building'
         session.add(current_build)
@@ -80,6 +92,9 @@ def build_db():
                 session.add(well)
 
     for target_build in session.query(Build):
+        if target_build in old_builds:
+            print('Found old target build')
+            continue
         seq_plate = Plate([],'seq_plate',target_build.build_name)
         target_build.plates.append(seq_plate)
         target_build.status = 'sequencing'
