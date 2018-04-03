@@ -1,51 +1,40 @@
-LOCUS       Exported                1290 bp ds-DNA     linear   UNA 05-MAR-2018
-DEFINITION  AgeI methyltransferase. Codon optimized for E.coli
+LOCUS       Exported                 720 bp ds-DNA     linear   SYN 16-MAR-2018
+DEFINITION  synthetic linear DNA
 ACCESSION   .
 VERSION     .
-KEYWORDS    CDS
-SOURCE      natural DNA sequence
-  ORGANISM  unspecified
-REFERENCE   1  (bases 1 to 1290)
+KEYWORDS    .
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
+REFERENCE   1  (bases 1 to 720)
   AUTHORS   Keoni Gandall
   TITLE     Direct Submission
-  JOURNAL   Exported Mar 5, 2018 from SnapGene 4.0.4
+  JOURNAL   Exported Mar 16, 2018 from SnapGene 4.0.4
             http://www.snapgene.com
 FEATURES             Location/Qualifiers
-     source          1..1290
-                     /organism="unspecified"
-                     /mol_type="genomic DNA"
-     CDS             1..1290
+     source          1..720
+                     /organism="synthetic DNA construct"
+                     /lab_host="Escherichia coli"
+                     /mol_type="other DNA"
+     CDS             1..720
                      /codon_start=1
-                     /label=AgeIM
-                     /translation="MKTIDLFCGAGGLGEGFRQAGFSALYANDHETPALATYKENHPDA
-                     VCSTDSIETVDPKKIREDLGVAPGQVDVVMGGPPCQGFSTYGQRRDDDARNQLYVPYFG
-                     FVEEFRPKAFLIENVVGLLSMSGGAVLADMVARAEALGYAADVVTLDACEYGVPQHRRR
-                     VFIFGAADGQRIDPPQPSHVNGKRSGVVLNDQPSLFFDGPSIQPALTVRDAISDLPDEV
-                     LVPRDTQKPMEYPEPPKTEYQRLMRGNSTELTHHSAKRMLGIRRLRLAMLHPGDYGTKI
-                     EERLADGGLNDELIDLMMGGAGMRDAAECRTQDREKEAALREVLKGGHTTPAKVMEFLD
-                     SQGFANKYRRLRWDAPSHTVVAHMARDCSDFVHPGIDRFVSVREAARFQSFPDTYRFPG
-                     SQFRQFRQIGNAVPPLLGRAMAETIKVAIS"
+                     /product="Aequoria victoria green fluorescent protein"
+                     /label=GFP
+                     /translation="MASKGEELFTGVVPILVELDGDVNGHKFSVSGEGEGDATYGKLTL
+                     KFICTTGKLPVPWPTLVTTFSYGVQCFSRYPDHMKRHDFFKSAMPEGYVQERTISFKDD
+                     GNYKTRAEVKFEGDTLVNRIELKGIDFKEDGNILGHKLEYNYNSHNVYITADKQKNGIK
+                     ANFKIRHNIEDGSVQLADHYQQNTPIGDGPVLLPDNHYLSTQSALSKDPNEKRDHMVLL
+                     EFVTAAGITHGMDELYK"
 ORIGIN
-        1 atgaaaacta ttgacttatt ctgcggtgct ggtgggttag gcgaaggatt tcgtcaggct
-       61 ggtttttctg cgctttacgc aaatgaccac gaaaccccag ccttagcgac gtataaggaa
-      121 aatcatccag atgctgtctg ttccacagat agtattgaaa cggtagatcc aaagaaaatc
-      181 cgtgaggact tgggcgttgc cccggggcaa gttgatgtag taatgggcgg gccaccttgc
-      241 cagggattct cgacctatgg ccagcgtcgt gatgacgacg ctcgtaatca actttacgtt
-      301 ccttactttg ggtttgtgga agaatttcgt ccaaaggcct ttttgatcga gaacgttgta
-      361 ggtctgttgt ccatgagtgg tggggcggtc ctggctgaca tggtagcacg tgctgaagct
-      421 ctggggtatg ctgccgatgt tgtaaccttg gacgcatgcg aatacggcgt accgcagcac
-      481 cgtcgccgcg tgttcatctt tggtgcggcg gatgggcagc gcatcgaccc gccccagccg
-      541 tcgcacgtaa acggaaagcg cagtggcgta gtcttgaatg accagccatc tttgtttttc
-      601 gatgggccaa gcatccaacc agctttaacg gtgcgcgacg ccattagcga ccttcccgat
-      661 gaagtcttag tgcctcgtga tactcagaaa cccatggagt accccgaacc gccaaagaca
-      721 gaataccagc gtcttatgcg tggtaacagc accgagctta cccaccattc agccaagcgt
-      781 atgcttggca ttcgccgttt gcgcttagca atgcttcacc ccggcgacta tggaacgaaa
-      841 atcgaagaac gccttgcgga tggtggctta aacgacgaac tgattgatct tatgatgggc
-      901 ggggcaggga tgcgcgacgc tgcggaatgt cgcactcagg accgtgaaaa ggaggcggcc
-      961 ctgcgcgagg tgttgaaagg agggcatacc acaccggcca aagtgatgga gttcctggac
-     1021 tcgcagggtt ttgccaacaa gtaccgccgc ttacgctggg atgctccctc tcacacagtc
-     1081 gtcgctcaca tggcgcgtga ttgttcagac ttcgtgcacc caggcatcga ccgtttcgtg
-     1141 tccgtgcgtg aagctgcacg ctttcagtcg tttccagaca cgtaccgctt ccctggctca
-     1201 cagttccgcc agtttcgcca aatcggcaac gcggtgcccc cattgttggg ccgcgccatg
-     1261 gctgaaacga ttaaagttgc cattagttaa
+        1 atggctagca aaggagaaga acttttcact ggagttgtcc caattcttgt tgaattagat
+       61 ggtgatgtta atgggcacaa attttctgtc agtggagagg gtgaaggtga tgctacatac
+      121 ggaaagctta cccttaaatt tatttgcact actggaaaac tacctgttcc atggccaaca
+      181 cttgtcacta ctttctctta tggtgttcaa tgcttttccc gttatccgga tcatatgaaa
+      241 cggcatgact ttttcaagag tgccatgccc gaaggttatg tacaggaacg cactatatct
+      301 ttcaaagatg acgggaacta caagacgcgt gctgaagtca agtttgaagg tgataccctt
+      361 gttaatcgta tcgagttaaa aggtattgat tttaaagaag atggaaacat tctcggacac
+      421 aaactcgagt acaactataa ctcacacaat gtatacatca cggcagacaa acaaaagaat
+      481 ggaatcaaag ctaacttcaa aattcgccac aacattgaag atggatccgt tcaactagca
+      541 gaccattatc aacaaaatac tccaattggc gatggccctg tccttttacc agacaaccat
+      601 tacctgtcga cacaatctgc cctttcgaaa gatcccaacg aaaagcgtga ccacatggtc
+      661 cttcttgagt ttgtaactgc tgctgggatt acacatggca tggatgagct ctacaaataa
 //

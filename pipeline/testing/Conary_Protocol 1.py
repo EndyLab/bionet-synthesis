@@ -15,7 +15,7 @@ deep_plate = labware.load('96-deep-well', '2')
 plate1 = labware.load('96-flat', '3')
 plate2 = labware.load('96-flat', '6')
 
-glycerol = labware.load('point', '7')
+glycerol = labware.load('96-flat', '7')
 
 liquid_trash = labware.load('trash-box', '10')
 # Instrument Set-up

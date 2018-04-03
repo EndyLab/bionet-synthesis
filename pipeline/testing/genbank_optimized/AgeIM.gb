@@ -1,0 +1,51 @@
+LOCUS       Exported                1290 bp ds-DNA     linear   UNA 05-MAR-2018
+DEFINITION  AgeI methyltransferase. Codon optimized for E.coli.
+ACCESSION   .
+VERSION     .
+KEYWORDS    CDS
+SOURCE      natural DNA sequence
+  ORGANISM  unspecified
+REFERENCE   1  (bases 1 to 1290)
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+  JOURNAL   Exported Mar 21, 2018 from SnapGene 4.0.4
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..1290
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..1290
+                     /codon_start=1
+                     /label=AgeIM
+                     /translation="MKTIDLFCGAGGLGEGFRQAGFSALYANDHETPALATYKENHPDA
+                     VCSTDSIETVDPKKIREDLGVAPGQVDVVMGGPPCQGFSTYGQRRDDDARNQLYVPYFG
+                     FVEEFRPKAFLIENVVGLLSMSGGAVLADMVARAEALGYAADVVTLDACEYGVPQHRRR
+                     VFIFGAADGQRIDPPQPSHVNGKRSGVVLNDQPSLFFDGPSIQPALTVRDAISDLPDEV
+                     LVPRDTQKPMEYPEPPKTEYQRLMRGNSTELTHHSAKRMLGIRRLRLAMLHPGDYGTKI
+                     EERLADGGLNDELIDLMMGGAGMRDAAECRTQDREKEAALREVLKGGHTTPAKVMEFLD
+                     SQGFANKYRRLRWDAPSHTVVAHMARDCSDFVHPGIDRFVSVREAARFQSFPDTYRFPG
+                     SQFRQFRQIGNAVPPLLGRAMAETIKVAIS"
+ORIGIN
+        1 atgaaaacta ttgacttatt ctgcggtgct ggtgggttag gcgaaggatt tcgtcaggct
+       61 ggtttttctg cgctttacgc aaatgaccac gaaaccccag ccttagcgac gtataaggaa
+      121 aatcatccag atgctgtctg ttccacagat agtattgaaa cggtagatcc aaagaaaatc
+      181 cgtgaggact tgggcgttgc cccggggcaa gttgatgtag taatgggcgg gccaccttgc
+      241 cagggattct cgacctatgg ccagcgtcgt gatgacgacg ctcgtaatca actttacgtt
+      301 ccttactttg ggtttgtgga agaatttcgt ccaaaggcct ttttgatcga gaacgttgta
+      361 ggtctgttgt ccatgagtgg tggggcggtc ctggctgaca tggtagcacg tgctgaagct
+      421 ctggggtatg ctgccgatgt tgtaaccttg gacgcatgcg aatacggcgt accgcagcac
+      481 cgtcgccgcg tgttcatctt tggtgcggcg gatgggcagc gcatcgaccc gccccagccg
+      541 tcgcacgtaa acggaaagcg cagtggcgta gtcttgaatg accagccatc tttgtttttc
+      601 gatgggccaa gcatccaacc agctttaacg gtgcgcgacg ccattagcga ccttcccgat
+      661 gaagtcttag tgcctcgtga tactcagaaa cccatggagt accccgaacc gccaaagaca
+      721 gaataccagc gtcttatgcg tggtaacagc accgagctta cccaccattc agccaagcgt
+      781 atgcttggca ttcgccgttt gcgcttagca atgcttcacc ccggcgacta tggaacgaaa
+      841 atcgaagaac gccttgcgga tggtggctta aacgacgaac tgattgatct tatgatgggc
+      901 ggggcaggga tgcgcgacgc tgcggaatgt cgcactcagg accgtgaaaa ggaggcggcc
+      961 ctgcgcgagg tgttgaaagg agggcatacc acaccggcca aagtgatgga gttcctggac
+     1021 tcgcagggtt ttgccaacaa gtaccgccgc ttacgctggg atgctccctc tcacacagtc
+     1081 gtcgctcaca tggcgcgtga ttgttcagac ttcgtgcacc caggcatcga ccgtttcgtg
+     1141 tccgtgcgtg aagctgcacg ctttcagtcg tttccagaca cgtaccgctt ccctggctca
+     1201 cagttccgcc agtttcgcca aatcggcaac gcggtgcccc cattgttggg ccgcgccatg
+     1261 gctgaaacga ttaaagttgc cattagttaa
+//
