@@ -25,11 +25,6 @@ frag_order = Table('frag_order', Base.metadata,
     Column('frag_id', ForeignKey('fragments.id'), primary_key=True),
     Column('twist_order_id', ForeignKey('twist_orders.id'), primary_key=True)
 )
-## Builds a many to many relationship between builds and parts
-build_part = Table('build_part', Base.metadata,
-    Column('build_id', ForeignKey('builds.id'), primary_key=True),
-    Column('part_id', ForeignKey('parts.id'), primary_key=True)
-)
 
 class Part(Base):
     '''Descibes complete sequences to be synthesized and cloned'''
@@ -45,11 +40,6 @@ class Part(Base):
     # A part can have many fragments and one fragment can have many parts
     fragments = relationship('Fragment',
                             secondary=part_frag,
-                            back_populates='parts')
-
-    # A build can include many different parts and parts can be attempted many times
-    builds = relationship('Build',
-                            secondary=build_part,
                             back_populates='parts')
 
     # Allows the wells within different plates to link to the part inside
@@ -214,11 +204,6 @@ class Build(Base):
     id = Column(Integer, primary_key=True)
     date = Column(String) # Date that the build was conducted
     master_mix = Column(String) # The master mix that was used
-
-    # A build can include many different parts and parts can be attempted many times
-    parts = relationship('Part',
-                            secondary=build_part,
-                            back_populates='builds')
 
     # One build can have many plates, but one plate can only belong to a single build
     plates = relationship("Plate", back_populates="builds")
