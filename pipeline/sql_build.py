@@ -121,16 +121,35 @@ def run_build():
     ## =============================================
     max_rxns = 96 # Sets the maximal number of clones you want to run
     to_build = []
+    priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
     acceptable_status = ['received'] # List with all of the status that you want to pull from
     ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
     ## sorts them by their plate numbers and returns the earliest set of parts
     to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                join(Well,Fragment.wells).join(Plate,Well.plates)\
+                join(Well,Fragment.wells).join(Plate,Well.plates).filter(Plate.plate_name.in_(priority))\
                 .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
+    if len(to_build) < 96:
+        extra = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+                    join(Well,Fragment.wells).join(Plate,Well.plates)\
+                    .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id.desc())]
+        to_build += extra
+
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
     target_build = Build(to_build)
     session.add(target_build)
+    building = []
+    addresses = []
+    for well in target_build.plates[0].wells:
+        building.append(well.parts.part_id)
+        addresses.append(well.address)
+    export_map = pd.DataFrame({
+        'Gene' : building,
+        'Destination' : addresses
+    })
+    export_map = export_map[['Gene','Destination']]
+    export_map.to_csv('{}/builds/new_map.csv'.format(BASE_PATH),index=False)
+    input("check map")
 
     ## =============================================
     ## CREATE PLATE GROUPS

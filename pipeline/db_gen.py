@@ -52,13 +52,14 @@ def build_db():
                     no_frag_loc.append(data['gene_id'])
                     new_frag = Fragment(
                         fragment_name=fragment,
+                        cloning_enzyme=data['info']['gene_metadata']['cloning']['cloning_enzyme'],
                         seq=data['sequence']['fragment_sequences'][fragment].upper(),
                         parts=[new])
                     session.add(new_frag)
                 else:
                     new_frag = Fragment(
                         fragment_name=fragment,
-                        location=data['location']['fragments'][fragment],
+                        cloning_enzyme=data['info']['gene_metadata']['cloning']['cloning_enzyme'],
                         seq=data['sequence']['fragment_sequences'][fragment].upper(),
                         parts=[new])
                     session.add(new_frag)

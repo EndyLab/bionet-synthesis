@@ -10,6 +10,20 @@ from config import *
 from db_config import *
 
 def frag_assign():
+    def well_addresses():
+        '''Generates a list of well address A1-H12'''
+        letter = ["A","B","C","D","E","F","G","H"]
+        number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+        target_well = []
+        temp_well = 0
+        for n in number:
+            for l in letter:
+                temp_well = l + n
+                target_well.append(temp_well)
+        return target_well
+
+    wells = well_addresses()
+
     print("\n======= Beginning fragment location assignment =======\n")
     ## Create a dictionary to including all of the gene names and their ID numbers
     ## To check for whether the fragments can link to a buildable part
@@ -29,6 +43,7 @@ def frag_assign():
     ## Take in plate maps from twist and generate fragment objects
     not_found = []
     making = []
+    current_plate = Plate([],'','')
     for file in glob.glob('{}/plate_maps/*.csv'.format(BASE_PATH)):
         plate_map = pd.read_csv(file)
         for index,row in plate_map.iterrows():
@@ -39,6 +54,7 @@ def frag_assign():
                 fragment_name = row['customer_line_item_id'].strip()
                 insert = row['Insert Sequence']
                 well_address = row['Well']
+                format = 1
             except:
                 try:
                     row['Plate ID']
@@ -46,6 +62,7 @@ def frag_assign():
                     fragment_name = row['Name'].strip()
                     insert = row['Insert sequence']
                     well_address = row['Well Location']
+                    format = 2
                 except:
                     print("Doesn't fit either acceptable formats")
                     continue
@@ -53,6 +70,19 @@ def frag_assign():
             if plate_id in plates_made:
                 continue
             elif plate_id not in making:
+                # if format == 1:
+                #     subset = plate_map[plate_map["Plate"] == plate_id]
+                #     ori_wells = subset['Well'].tolist()
+                # elif format == 2:
+                #     subset = plate_map[plate_map["Plate ID"] == plate_id]
+                #     ori_wells = subset['Well Locations'].tolist()
+                # print("original\n",ori_wells)
+                # used_wells = [well.address for well in current_plate.wells]
+                # used_wells = [well.address for well in session.query(Well).join(Plate,Well.plates).filter(Plate.plate_name == plate_id)]
+                # print("Used\n",used_wells)
+                # missing = [well for well in ori_wells if well not in used_wells]
+                # print("Missing\n",missing)
+                # input('inspect missing')
                 current_plate = Plate('','syn_plate',plate_name=plate_id)
                 session.add(current_plate)
                 print('Adding plate: ',plate_id)
