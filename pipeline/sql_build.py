@@ -121,16 +121,36 @@ def run_build():
     ## =============================================
     max_rxns = 96 # Sets the maximal number of clones you want to run
     to_build = []
+    priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
     acceptable_status = ['received'] # List with all of the status that you want to pull from
     ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
     ## sorts them by their plate numbers and returns the earliest set of parts
     to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                join(Well,Fragment.wells).join(Plate,Well.plates)\
-                .filter(Part.status.in_(acceptable_status)).order_by(Plate.id)]
+                join(Well,Fragment.wells).join(Plate,Well.plates).filter(Plate.plate_name.in_(priority))\
+                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
+    to_build_names = [part.part_id for part in to_build]
+    if len(to_build) < 96:
+        extra = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+                    join(Well,Fragment.wells).join(Plate,Well.plates)\
+                    .filter(Part.status.in_(acceptable_status)).filter(Part.part_id.notin_(to_build_names)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id.desc())]
+        to_build += extra
+
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
     target_build = Build(to_build)
     session.add(target_build)
+    building = []
+    addresses = []
+    for well in target_build.plates[0].wells:
+        building.append(well.parts.part_id)
+        addresses.append(well.address)
+    export_map = pd.DataFrame({
+        'Gene' : building,
+        'Destination' : addresses
+    })
+    export_map = export_map[['Gene','Destination']]
+    export_map.to_csv('{}/builds/new_map.csv'.format(BASE_PATH),index=False)
+    input("check map")
 
     ## =============================================
     ## CREATE PLATE GROUPS
@@ -294,41 +314,41 @@ def run_build():
     robot.home()
 
     # Aliquot the master mix into the PCR tube strip
-    vol_per_tube = math.ceil(num_rows * master_volume * extra_master)
-    print("Aliquoting MM into PCR tubes")
-    print("{}ul into each tube".format(vol_per_tube))
-    p200.pick_up_tip()
-    for well in range(8):
-        print("Transferring {}ul to well {}".format(vol_per_tube,well))
-        p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-    p200.drop_tip()
+#    vol_per_tube = math.ceil(num_rows * master_volume * extra_master)
+#    print("Aliquoting MM into PCR tubes")
+#    print("{}ul into each tube".format(vol_per_tube))
+#    p200.pick_up_tip()
+#    for well in range(8):
+#        print("Transferring {}ul to well {}".format(vol_per_tube,well))
+#        p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+#    p200.drop_tip()
 
     # Aliquot the master mix into all of the desired wells
-    p10.pick_up_tip()
-    for row in range(num_rows):
-        print("Transferring {}ul of master mix to row {}".format(master_volume,int(row)+1))
-        p10.transfer(master_volume, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
-    p10.drop_tip()
+#    p10.pick_up_tip()
+#    for row in range(num_rows):
+#        print("Transferring {}ul of master mix to row {}".format(master_volume,int(row)+1))
+#        p10.transfer(master_volume, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
+#    p10.drop_tip()
 
     # Aliquot master mix into the last row if not a complete row
-    if num_reactions % 8 > 0:
-        p10s.pick_up_tip()
-        print("need single channel for {}".format(num_reactions % 8))
-        for missing in range(num_reactions % 8):
-            current_well = (8 * num_rows) + (missing)
-            print("Transferring {}ul of extra MM to {}".format(master_volume,current_well))
-            p10s.transfer(master_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-        p10s.drop_tip()
+#    if num_reactions % 8 > 0:
+#        p10s.pick_up_tip()
+#        print("need single channel for {}".format(num_reactions % 8))
+#        for missing in range(num_reactions % 8):
+#            current_well = (8 * num_rows) + (missing)
+#            print("Transferring {}ul of extra MM to {}".format(master_volume,current_well))
+#            p10s.transfer(master_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+#        p10s.drop_tip()
 
     # Aliquot extra master mix into wells with multiple fragments
     # TEMP: Only allows for a single destination plate
-    p10s.pick_up_tip()
-    for transfer in need_extra[0]:
-        extra_volume = (int(transfer['frags']) - 1) * master_volume
-        current_well = transfer['well']
-        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-    p10s.drop_tip()
+ #   p10s.pick_up_tip()
+ #   for transfer in need_extra[0]:
+ #       extra_volume = (int(transfer['frags']) - 1) * master_volume
+ #       current_well = transfer['well']
+ #       print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+#        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+#    p10s.drop_tip()
 
     ## Add the fragments from the source plates to the destination plate
     ## ============================================
@@ -375,6 +395,9 @@ def run_build():
                     change_height(source_plates[plate],source_plates[plate].wells(start_well))
                 p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
                 used_plates.append(plate)
+                
+                p10s.drop_tip()
+
     commit = int(input("Commit changes (1-yes, 2-no): "))
     if commit == 1:
         session.commit()

@@ -149,7 +149,8 @@ class Well(Base):
     fragments = relationship("Fragment",back_populates='wells')
 
 
-    def __init__(self,plate_type,item,address,syn_yield='',vector='',trans_outcome='',for_read='',rev_read='',seq_outcome=''):
+    def __init__(self,plate_type,item,address,syn_yield='',vector='',\
+                trans_outcome='',for_read='',rev_read='',seq_outcome=''):
         self.plate_type = plate_type
         self.address = address
         if self.plate_type == 'syn_plate':
@@ -224,8 +225,9 @@ class Plate(Base):
     def add_item(self,item,address,syn_yield='',vector='',trans_outcome='',for_read='',rev_read='',seq_outcome=''):
         '''Allows the user to set the specific wells to
         associate with each part'''
-        self.wells.append(Well(self.plate_type,item,address,syn_yield=syn_yield,vector=vector,trans_outcome=trans_outcome,\
-                              for_read=for_read,rev_read=rev_read,seq_outcome=seq_outcome))
+        self.wells.append(Well(self.plate_type,item,address,syn_yield=syn_yield,\
+                            vector=vector,trans_outcome=trans_outcome,\
+                            for_read=for_read,rev_read=rev_read,seq_outcome=seq_outcome))
     def resuspend(self):
         self.resuspended = 'resuspended'
 
@@ -264,7 +266,8 @@ class Build(Base):
     def add_item(self,item,address,vector='',trans_outcome=''):
         '''Allows the user to set the specific wells to
         associate with each part'''
-        self.plates[0].wells.append(Well(self.plates[0].plate_type,item,address,vector=vector,trans_outcome=trans_outcome))
+        self.plates[0].wells.append(Well(self.plates[0].plate_type,item,address,\
+                    vector=vector,trans_outcome=trans_outcome))
 
 
 ## Create and commit all of the tables
