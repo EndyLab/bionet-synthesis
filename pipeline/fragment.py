@@ -21,7 +21,7 @@ def fragment_gene(sequence,entry_type):
     }
     pcr_configuration = {
         "max_length" : 5000
-    }
+        }
     standard_flanks = {
         "prefix" : "GGAG",
         "suffix" : "CGCT"
