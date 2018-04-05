@@ -252,6 +252,7 @@ def plate():
         p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
     p200.drop_tip()
 
+    input("Start the other run")
     # Iterate through each row of the transformation plate
     for trans_row in range(num_rows):
         # Iterates through each dilution

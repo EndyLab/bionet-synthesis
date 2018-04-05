@@ -63,7 +63,7 @@ def build_db():
                         seq=data['sequence']['fragment_sequences'][fragment].upper(),
                         parts=[new])
                     session.add(new_frag)
-                print(new_frag.fragment_name,new_frag.parts[0].part_id)
+                # print(new_frag.fragment_name,new_frag.parts[0].part_id)
         session.add(new)
     ## Add the extra connections in for the small linked genes
     for part,seq in zip(linked,linked_seq):
@@ -93,8 +93,12 @@ def build_db():
                 session.add(well)
 
     for target_build in session.query(Build):
+        not_sequenced = ['build008','build009']
         if target_build in old_builds:
             print('Found old target build')
+            continue
+        if target_build.build_name in not_sequenced:
+            print("not sequenced")
             continue
         seq_plate = Plate([],'seq_plate',target_build.build_name)
         target_build.plates.append(seq_plate)
@@ -106,6 +110,7 @@ def build_db():
             session.add(seq_plate)
     session.commit()
     print('\nCreated database\n')
+    print(no_frag)
     return
 
 
