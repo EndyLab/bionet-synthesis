@@ -364,9 +364,10 @@ def verify_seq():
     outcomes = pd.Series(outcomes)
     print(outcomes.value_counts())
 
+    # session.commit()
     commit = int(input("Commit changes (1-yes, 2-no): "))
     if commit == 1:
-        session.commit()
+       session.commit()
     return
 
 if __name__ == "__main__":

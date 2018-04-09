@@ -2,22 +2,19 @@ import sqlalchemy
 from sqlalchemy import create_engine,Column,Integer,String,ForeignKey,Table,Text,inspect
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker,relationship
-import pymysql
-# pymysql.install_as_MySQLdb()
-import pymssql
 
 import glob
 import json
 import pandas as pd
 from config import *
 
-## Begin using sqlite as a local database
-# 'mssql+pymssql://scott:tiger@hostname:port/dbname'
-# conn_str = 'mssql+pymssql://openfoundry:freegenestomakegenesfree@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'
-# engine = sqlalchemy.create_engine(conn_str, echo=True)
+## Connect to the AWS server running the openfoundry database
+conn_str = 'postgresql+psycopg2://openfoundry:freegenestomakegenesfree@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'
+engine = sqlalchemy.create_engine(conn_str, echo=True)
 
+## Begin using sqlite as a local database
 # engine = create_engine('sqlite:///:memory:', echo=False)
-engine = create_engine('sqlite:///free_genes.db')
+# engine = create_engine('sqlite:///free_genes.db')
 
 # inspector = inspect(engine)
 
