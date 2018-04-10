@@ -46,7 +46,25 @@ def find_corners(image):
 	cv2.drawContours(maskc, cnts, -1, (255,0,0), 1)
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
 	equ = []
-	lines = cv2.HoughLines(maskc,1,np.pi/180,300)
+	# lines = cv2.HoughLines(maskc,1,np.pi/180,300)
+	def find_lines(min):
+		lines = cv2.HoughLines(maskc,1,np.pi/180,min)
+		# print("Number of lines:",len(lines))
+		if min < 0:
+			print("reached the minimum threshold")
+			return lines
+		if len(lines) < 4:
+			return find_lines(min-5)
+		elif len(lines) > 4:
+			return find_lines(min+5)
+		elif len(lines) == 4:
+			return lines
+
+
+	lines = find_lines(300)
+	if len(lines) < 4:
+		input("Still lacking enough lines")
+
 	for line in lines:
 		for rho,theta in line:
 			a = np.cos(theta)
@@ -210,7 +228,7 @@ def make_grid(image,p):
 	return image
 
 
-img = cv2.imread('plate1.jpg')
+img = cv2.imread('plate3.jpg')
 resized = imutils.resize(img,width=1000)
 
 edges, intersections = find_corners(resized)

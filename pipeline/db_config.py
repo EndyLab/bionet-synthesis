@@ -10,7 +10,7 @@ from config import *
 
 ## Connect to the AWS server running the openfoundry database
 conn_str = 'postgresql+psycopg2://openfoundry:freegenestomakegenesfree@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'
-engine = sqlalchemy.create_engine(conn_str, echo=True)
+engine = sqlalchemy.create_engine(conn_str, echo=False)
 
 ## Begin using sqlite as a local database
 # engine = create_engine('sqlite:///:memory:', echo=False)
@@ -52,7 +52,7 @@ class Part(Base):
     wells = relationship("Well",back_populates='parts')
 
     def change_status(self,status):
-        possible = ['submitted','optimized','ordered','synthesis_abandoned','received',
+        possible = ['submitted','optimized','ordered','synthesis_abandoned','received','trans_failure',
                    'cloning_failure','cloning_error','sequence_failure','cloning_mutation','building',
                    'sequencing','cloning_abandoned','sequence_confirmed']
         rank = dict(zip(possible,range(len(possible))))
@@ -216,29 +216,31 @@ class Plate(Base):
 
     def __init__(self,items,plate_type,plate_name):
         # Increment through all of the possible well addresses
-        well_list = well_addresses()
         self.plate_name = plate_name
         self.plate_type = plate_type
         if self.plate_type == 'syn_plate':
             self.resuspended = 'not_resuspended'
         if self.plate_type == 'assembly_plate':
             self.plated = 'not_plated'
-        self.counter = 0
-        self.next_well = well_list[self.counter]
-
         # Generate a well for every part provided
         for item in items:
-            # print("made well: ",self.next_well)
-            self.wells.append(Well(self.plate_type,item,self.next_well))
-            if self.counter < 95:
-                self.counter += 1
-                self.next_well = well_list[self.counter]
-            else:
-                self.next_well = 'Full'
+            self.add_item(item)
 
-    def add_item(self,item,address,syn_yield='',vector='',trans_outcome='',for_read='',rev_read='',seq_outcome=''):
+    def add_item(self,item,address='',syn_yield='',vector='',trans_outcome='',for_read='',rev_read='',seq_outcome=''):
         '''Allows the user to set the specific wells to
         associate with each part'''
+        used_wells = [well.address for well in self.wells]
+        all_wells = well_addresses()
+        empty_wells = [well for well in all_wells if well not in used_wells]
+        if len(used_wells) == len(all_wells):
+            print("Plate is full")
+            return
+        elif address == '':
+            address = empty_wells[0]
+        elif address not in empty_wells:
+            print("Address is already taken")
+            return
+
         self.wells.append(Well(self.plate_type,item,address,syn_yield=syn_yield,\
                             vector=vector,trans_outcome=trans_outcome,\
                             for_read=for_read,rev_read=rev_read,seq_outcome=seq_outcome))
@@ -250,6 +252,7 @@ class Plate(Base):
 
     def assess(self):
         self.assessed = 'assessed'
+
 
 class Build(Base):
     '''Describes a complete build'''
@@ -280,7 +283,7 @@ class Build(Base):
     def add_item(self,item,address,vector='',trans_outcome=''):
         '''Allows the user to set the specific wells to
         associate with each part'''
-        self.plates[0].wells.append(Well(self.plates[0].plate_type,item,address,\
+        self.plates[0].wells.append(Well(self.plates[0].plate_type,item,address=address,\
                     vector=vector,trans_outcome=trans_outcome))
 
 

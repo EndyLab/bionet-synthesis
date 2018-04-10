@@ -120,20 +120,37 @@ def run_build():
     ## CREATE A BUILD OF DESIRED GENES
     ## =============================================
     max_rxns = 96 # Sets the maximal number of clones you want to run
+    enzyme = 'BbsI'
     to_build = []
-    priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
+    # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
     acceptable_status = ['received'] # List with all of the status that you want to pull from
+    rework = ['cloning_error','cloning_failure','trans_failure']
     ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
     ## sorts them by their plate numbers and returns the earliest set of parts
-    to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                join(Well,Fragment.wells).join(Plate,Well.plates).filter(Plate.plate_name.in_(priority))\
-                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
-    to_build_names = [part.part_id for part in to_build]
+    to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
+                join(Well,Fragment.wells).join(Plate,Well.plates)\
+                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
     if len(to_build) < 96:
-        extra = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+        to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
                     join(Well,Fragment.wells).join(Plate,Well.plates)\
-                    .filter(Part.status.in_(acceptable_status)).filter(Part.part_id.notin_(to_build_names)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id.desc())]
-        to_build += extra
+                    .filter(Part.status.in_(rework)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
+
+    # for status in acceptable_status:
+    #     if len(to_build) > 96:
+    #         break
+    #     to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
+    #                 join(Well,Fragment.wells).join(Plate,Well.plates)\
+    #                 .filter(Part.status == status).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
+
+    # to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+    #             join(Well,Fragment.wells).join(Plate,Well.plates).filter(Plate.plate_name.in_(priority))\
+    #             .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
+    # to_build_names = [part.part_id for part in to_build]
+    # if len(to_build) < 96:
+    #     extra = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+    #                 join(Well,Fragment.wells).join(Plate,Well.plates)\
+    #                 .filter(Part.status.in_(acceptable_status)).filter(Part.part_id.notin_(to_build_names)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id.desc())]
+    #     to_build += extra
 
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
@@ -148,8 +165,18 @@ def run_build():
         'Gene' : building,
         'Destination' : addresses
     })
+    prev_builds = [build.build_name for build in session.query(Build)]
+    build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
+    last_build = max(build_numbers)
     export_map = export_map[['Gene','Destination']]
-    export_map.to_csv('{}/builds/new_map.csv'.format(BASE_PATH),index=False)
+    path = '{}/builds/build{}'.format(BASE_PATH,str(last_build+1).zfill(3),str(last_build+1).zfill(3))
+    if os.path.exists(path):
+        print("Directory build{} already exists".format(str(last_build+1).zfill(3)))
+    else:
+        # Generates a new directory with the ID# as its name
+        os.makedirs(path)
+        print("Making directory for build{}".format(str(last_build+1).zfill(3)))
+    export_map.to_csv('{}/build{}_trans_map.csv'.format(path,str(last_build+1).zfill(3)),index=False)
     input("check map")
 
     ## =============================================

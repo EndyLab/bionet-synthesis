@@ -54,7 +54,7 @@ def frag_assign():
                 current_frag = session.query(Fragment).filter(Fragment.seq == row[sequence_key]).first()
                 # Checks if a corresponding fragment is found and then adds it to the plate
                 if current_frag:
-                    current_plate.add_item(current_frag,row[well_key].strip(),syn_yield=row['Yield (ng)'])
+                    current_plate.add_item(current_frag,address=row[well_key].strip(),syn_yield=row['Yield (ng)'])
                 else:
                     current_missing.append(row[name_key].strip())
                     print(row[name_key].strip())
