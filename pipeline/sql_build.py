@@ -383,7 +383,7 @@ def run_build():
         for well in plate.wells:
             for frag in well.parts.fragments:
                 indexes.append(plate_index[frag.wells[0].plates.plate_name])
-                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_name]]
+                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_name,frag.wells[0].volume]]
 
     build_plan = [row for i,row in sorted(zip(indexes,rows))]
     for row in build_plan:
@@ -391,8 +391,9 @@ def run_build():
         dest_well = row[1]
         gene = row[2]
         plate = row[3]
+        volume = row[4]
         # TEMP: INCLUDE VOLUME ONCE I ACTUALLY RUN THE RESUSPENSION
-        # volume = int(frag.wells[0].volume)
+        #volume = int(frag.wells[0].volume)
         if plate not in current_group:
             plate_counter += 1
             current_group = group_plates[plate_counter]
@@ -401,9 +402,9 @@ def run_build():
         p10s.pick_up_tip()
 
         # Only dilutes wells that have low starting volume
-        # if volume < 15:
-        #     print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-        #     p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
+        if volume < 20:
+            print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
+            p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
         print("Transferring {} from plate {} well {} to well {}".format(gene,plate,start_well,dest_well))
         p10s.mix(3, 8, source_plates[plate].wells(start_well).bottom())
