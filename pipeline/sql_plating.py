@@ -102,7 +102,7 @@ def plate():
     assemblies = []
     print("Choose which plate you would like to transform/plate:")
     for index,assembly in enumerate(session.query(Plate).filter(Plate.plated == 'not_plated').order_by(Plate.id)):
-        print("{}. {}-{}".format(index,assembly.builds.id,assembly.plate_name))
+        print("{}. {}-{}".format(index,assembly.builds.build_name,assembly.plate_name))
         assemblies.append(assembly)
 
     plate_num = int(input("Enter plate here: "))
@@ -145,8 +145,8 @@ def plate():
     # Specify the locations of each object on the deck
     locations = {
                 "tiprack-200" : "A3",
-                "tiprack-10_2" : "E2",
-                "tiprack-10_3" : "E3",
+                "tiprack-10_2" : "E3",
+                "tiprack-10_3" : "E2",
                 "tiprack-10_1" : "E1",
                 "trash" : "D1",
                 "PCR-strip-tall" : "C3",
@@ -246,15 +246,17 @@ def plate():
     plate_counter = 0
 
     # Aliquot the LB into the PCR tube strip for the dilutions
-    p200.pick_up_tip()
-    for well in range(8):
-        print("Transferring {}ul to tube {}".format(media_per_tube,well))
-        p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
-    p200.drop_tip()
+    #p200.pick_up_tip()
+    #for well in range(8):
+    #    print("Transferring {}ul to tube {}".format(media_per_tube,well))
+    #    p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
+    #p200.drop_tip()
 
-    input("Start the other run")
+    #input("Start the other run")
     # Iterate through each row of the transformation plate
     for trans_row in range(num_rows):
+        if trans_row == 0:
+            continue
         # Iterates through each dilution
         for dilution in range(num_dilutions):
             # Resets to switch to the next plate

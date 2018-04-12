@@ -44,7 +44,7 @@ def transform():
                 "tiprack-10_1" : "E1",
                 "trash" : "D1",
                 "Transformation" : "C2",
-                "Build_plate" : "C2",
+                "Build_plate" : "C3",
                 "Tube_rack" : "B1"
             }
 
@@ -122,13 +122,14 @@ def transform():
         dispense_speed=800
     )
 
-    for row in range(12):
+    for row in range(2,9):
         p10.pick_up_tip()
-        p10.transfer(2, build_plate.rows(row).bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
+        p10.transfer(row, build_plate.rows(0).bottom(), transformation_plate.rows(0).bottom(),new_tip='never',mix_before=(2,9),blow_out=True)
         p10.drop_tip()
 
 
-
+if __name__ == '__main__':
+    transform()
 
 
 
