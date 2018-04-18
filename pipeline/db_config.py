@@ -260,7 +260,7 @@ class Build(Base):
 
     id = Column(Integer, primary_key=True)
     build_name = Column(String)
-    status = Column(String)
+    status = Column(String) # Possible states: 'building','sequencing','complete'
     date = Column(String) # Date that the build was conducted
     master_mix = Column(String) # The master mix that was used
 
@@ -285,7 +285,6 @@ class Build(Base):
         associate with each part'''
         self.plates[0].wells.append(Well(self.plates[0].plate_type,item,address=address,\
                     vector=vector,trans_outcome=trans_outcome))
-
 
 ## Create and commit all of the tables
 Base.metadata.create_all(engine)

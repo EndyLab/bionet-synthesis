@@ -151,9 +151,9 @@ def find_corners(image):
 
 def find_colonies(image):
 	# create a CLAHE object (Arguments are optional).
-	resized = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+	# resized = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-	cl1 = clahe.apply(resized)
+	cl1 = clahe.apply(image)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
 
 	# perform a connected component analysis on the thresholded
@@ -202,118 +202,138 @@ def find_colonies(image):
 		# Rough approx if the colony is circular
 		(x, y, w, h) = cv2.boundingRect(c)
 		if w/h > 1.2 or h/w > 1.2:
-			print("not circular")
+			# print("not circular")
 			continue
 		((cX, cY), radius) = cv2.minEnclosingCircle(c)
 		if int(radius) > 7:
-			print('too big')
+			# print('too big')
 			continue
 		cv2.circle(cl1, (int(cX), int(cY)), int(radius+3),
 			(255, 0, 0), 1)
 	return cl1,centers
 
 def find_grid(img):
-	sums = []
-	# gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+	sums_y = []
+	sums_x = []
+
 	# create a CLAHE object (Arguments are optional).
 	resized = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(resized)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
 
-	# perform a connected component analysis on the thresholded
-	# image, then initialize a mask to store only the "large"
-	# components
-	# labels = measure.label(thresh, neighbors=8, background=0)
-	# mask = np.zeros(thresh.shape, dtype="uint8")
-	marks = range(0,thresh.shape[0],50)
+	# Set bounds on all of the edges to crop out the edge of the plate
 	left_bound = int(thresh.shape[1]/10)
 	right_bound = int((9*thresh.shape[1])/10)
-	top_bound = int(thresh.shape[0]/15)
-	bot_bound = int((14*thresh.shape[0])/15)
-	print(left_bound,right_bound)
-	for row in range(top_bound,bot_bound):
-		sum = np.sum(img[row,left_bound:right_bound,0])
-		print(row,sum,sum/255)
-		sums.append(sum)
-		# if row in marks:
-		# 	cv2.line(thresh,(left_bound,row),(right_bound,row),(255,0,0),2)
-		# 	cv2.putText(thresh, str(row), (left_bound, int(row)+10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (255, 0, 0), 2)
+	top_bound = int(thresh.shape[0]/10)
+	bot_bound = int((9*thresh.shape[0])/10)
 
+	# Sum all of the rows in he thresholded image
+	for row in range(int(top_bound/2),int(bot_bound+top_bound/2)):
+		sum = np.sum(thresh[row,left_bound:right_bound])
+		sums_y.append(sum)
+
+	# Sum all of the columns in he thresholded image
+	for col in range(int(left_bound/2),int(right_bound+left_bound/2)):
+		sum = np.sum(thresh[top_bound:bot_bound,col])
+		sums_x.append(sum)
+
+	# cl1 = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+
+	# Generate a plot to visualize the sumations
 	plt.subplot(2, 1, 1)
-	plt.plot(sums)
+	plt.plot(sums_y)
 	plt.ylabel('Row sum')
 
-	plt.subplot(2, 1, 2)
-	print(thresh.shape[0])
-	print(thresh.shape[1])
-	print(top_bound)
-	print(thresh.shape[0] - (top_bound*2))
-	print(len(sums))
-	rolling = pd.Series(sums).rolling(window=20).mean()
-	print(len(rolling))
-	input("wait")
-	np_plot = np.array(rolling)
-	minima = argrelextrema(np_plot, np.less)
-	plt.plot(rolling)
-	# plt.plot(200,105000, 'r.')
-	plt.ylabel('Rolling average')
-	diffs = []
-	for i,min in enumerate(minima[0]):
-		if i == (len(minima[0])-2):
+	# Store only the points that have less than 20 pixels in the line
+	bottoms = []
+	for i,sum in enumerate(sums_y):
+		if sum/255 < 20:
+			plt.plot(i,sum, 'r.')
+			bottoms.append(i)
+
+	# Finds the start and end points of streaks of low points
+	edges = [bottoms[0]]
+	for i,bot in enumerate(bottoms):
+		if i == (len(bottoms) - 1):
 			break
-		diffs.append(minima[0][i+1] - min)
-	diff_avg = np.mean(diffs)
-	diffs = [diff_avg] + diffs
-	diffs.append(diff_avg)
-	print(minima)
-	print(diffs)
-	print(diff_avg)
-	rows = []
-	for min,diff in zip(minima[0],diffs):
-		print(min,diff,diff_avg/4)
-		if rolling[int(min)] > rolling[int(min)+10] and rolling[int(min)] > rolling[int(min)-10]:
-			print("not a minimum")
-			continue
-		if diff < diff_avg/4:
-			print("too close")
-			continue
-		plt.plot(min,rolling[min], 'r.')
-		rows.append(min)
-		y = int(rolling[int(min)])
-		# print(y)
-		cv2.line(thresh,(0,min+top_bound),(int(thresh.shape[1]),min+top_bound),(255,0,0),1)
+		if bot != (bottoms[i+1] - 1) or bot != (bottoms[i-1] + 1):
+			if bottoms[i+1] - bot > 20 or bot - bottoms[i-1] > 20:
+				edges.append(bot)
+	edges.append(bottoms[-1])
+	# Groups the endpoints together
+	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
+
+	# Calculates and plots the midpoints of the low regions
+	mid_y = []
+	for l,r in bounds:
+		mid_point = int(((r-l) / 2)+l)
+		mid_y.append(int(mid_point+top_bound/2))
+		plt.plot(mid_point,sums_y[mid_point], 'bo')
+		cv2.line(cl1,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
+	print("Number of rows: ",len(mid_y)-1)
+
+	# Generate a plot to visualize the sumations
+	plt.subplot(2, 1, 2)
+	plt.plot(sums_x)
+	plt.ylabel('Row sum')
+
+	# Store only the points that have less than 60 pixels in the line
+	bottoms = []
+	for i,sum in enumerate(sums_x):
+		if sum/255 < 60:
+			plt.plot(i,sum, 'r.')
+			bottoms.append(i)
+
+	# Finds the start and end points of streaks of low points
+	edges = [bottoms[0]]
+	for i,bot in enumerate(bottoms):
+		if i == (len(bottoms) - 1):
+			break
+		if bot != (bottoms[i+1] - 1) or bot != (bottoms[i-1] + 1):
+			if bottoms[i+1] - bot > 20 or bot - bottoms[i-1] > 20:
+				edges.append(bot)
+	edges.append(bottoms[-1])
+
+	# Groups the endpoints together
+	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
+
+	# Calculates and plots the midpoints of the low regions
+	mid_x = []
+	for t,b in bounds:
+		mid_point = int(((b-t) / 2)+t)
+		mid_x.append(mid_point+top_bound)
+		plt.plot(mid_point,sums_x[mid_point], 'bo')
+		cv2.line(cl1,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+	print("Number of columns: ",len(mid_x)-1)
+
+	# # Test rectangle
+	cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
 	plt.show()
-	return thresh
+	return cl1, mid_x, mid_y
 
-# plt.plot(range(10))
-# plt.ylabel('Row sum')
-# plt.xlabel('Row')
-# plt.show()
-# input("done")
+def show_image(image):
+	cv2.imshow("Image", image)
+	cv2.waitKey(0)
+	return
+
 grids = []
 shapes = []
-for file in glob.glob('./image_set/*.jpg'):
+for file in sorted(glob.glob('./image_set/*.jpg')):
 	print(file)
 	img = cv2.imread(file)
 	resized = imutils.resize(img,width=1000)
-	# cv2.imshow("Image", resized)
-	# cv2.waitKey(0)
+	show_image(resized)
 	edges, intersections = find_corners(resized)
-	# cv2.imshow("Image", edges)
-	# cv2.waitKey(0)
+	show_image(edges)
 	warped = four_point_transform(edges,intersections)
-	# cv2.imshow("Image", warped)
-	# cv2.waitKey(0)
-	grid = find_grid(warped)
-	# cv2.imshow("Image", grid)
-	# cv2.waitKey(0)
-	# colonies, centers = find_colonies(resized)
-	# grid = make_grid(edges,intersections)
-	# grids.append(grid)
-	# shapes.append(grid.shape)
-	# input("stop")
+	show_image(warped)
+	grid, mid_x, mid_y = find_grid(warped)
+	show_image(grid)
+	colonies, centers = find_colonies(grid)
+	show_image(colonies)
+	print()
 
 # print(shapes)
 # input("stop")
@@ -322,6 +342,83 @@ for file in glob.glob('./image_set/*.jpg'):
 # cv2.imshow("Image", warped)
 # cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+## Finding rolling averages
+	# plt.subplot(2, 1, 2)
+	# print("Y dim",thresh.shape[0])
+	# print("X dim",thresh.shape[1])
+	# print("shape-bounds",thresh.shape[0] - (top_bound*2))
+	# print("Len of sums",len(sums))
+	# rolling = pd.Series(sums).rolling(window=10).mean()
+	# print("Len of rolling",len(rolling))
+	# # input("wait")
+	# np_plot = np.array(rolling)
+	# minima = argrelextrema(np_plot, np.less)
+	# print("minima: ",*minima)
+	# plt.plot(rolling)
+	# plt.ylabel('Rolling average')
+	# diffs = []
+	# for i,min in enumerate(minima[0]):
+	# 	if i == (len(minima[0])-2):
+	# 		break
+	# 	diffs.append(minima[0][i+1] - min)
+	#
+	# diff_avg = np.mean(diffs)
+	# new_mins = [minima[0][0]]
+	# for i,diff in enumerate(diffs):
+	# 	if i == (len(diffs)-1):
+	# 		break
+	# 	print(i,diff)
+	# 	print(diff, diffs[i+1],(diff_avg * 0.7))
+	# 	# print(diffs[i+1] + diff,(2*diff_avg * 0.7))
+	# 	if diff < diff_avg * 0.7 and diffs[i+1] < (diff_avg * 0.7):
+	#
+	#
+	# 	# if (diffs[i+1] + diff) < (2*diff_avg * 0.7):
+	# 		print("will exclude: ",diff, diffs[i+1],(diff_avg * 0.7))
+	# 	else:
+	# 		new_mins.append(minima[0][i+1])
+	# 	# summs.append(diff[i+1] + diff)
+	# new_mins.append(minima[0][-2])
+	# new_mins.append(minima[0][-1])
+	#
+	# if new_mins[1] - new_mins[0] < diff_avg * 0.7:
+	# 	print("Far left is too close")
+	# 	new_mins = new_mins[1:]
+	# rows = []
+	# for row in marks:
+	# 	cv2.line(thresh,(left_bound,row),(right_bound,row),(255,0,0),2)
+	# 	cv2.putText(thresh, str(row), (left_bound, int(row)+10), cv2.FONT_HERSHEY_SIMPLEX,0.5, (255, 0, 0), 2)
+	# for min in new_mins:
+	# 	plt.plot(min,rolling[min], 'r.')
+	# 	rows.append(min)
+	# 	y = int(rolling[int(min)])
+	# 	# print(y)
+	# 	print("min+top",min+top_bound)
+		# cv2.line(thresh,(0,min+top_bound),(int(thresh.shape[1]),min+top_bound),(255,0,0),1)
+
+
+	# diffs = [diff_avg] + diffs
+	# diffs.append(diff_avg)
+	# print(minima)
+	# print(diffs)
+	# print(diff_avg)
+	# rows = []
+	# for min,diff in zip(new_mins,diffs):
+	# 	print(min,diff,diff_avg/1.5)
+	# 	if rolling[int(min)] > rolling[int(min)+10] and rolling[int(min)] > rolling[int(min)-10]:
+	# 		print("not a minimum")
+	# 		continue
+	# 	# if diff < diff_avg/1.5:
+	# 	# 	print("too close")
+	# 	# 	continue
+	# 	plt.plot(min,rolling[min], 'r.')
+	# 	rows.append(min)
+	# 	y = int(rolling[int(min)])
+	# 	# print(y)
+	# 	cv2.line(thresh,(0,min+top_bound),(int(thresh.shape[1]),min+top_bound),(255,0,0),1)
+
+
 
 ## Ordering of the intersection points
 	# pts = pts[pts[:,0].argsort()]

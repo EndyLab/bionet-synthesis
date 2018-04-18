@@ -61,7 +61,9 @@ def assess_plate():
 
     # Pull parts that need to the retried
     acceptable_status = ['sequence_failure','cloning_mutation'] # List with all of the status that you want to pull from
-    replacement_parts = [part for part in session.query(Part).filter(Part.status.in_(acceptable_status))]
+    replacement_parts = [part for part in session.query(Part).join(Well,Part.wells)\
+                .join(Plate,Well.plates).join(Build,Plate.builds).filter(Part.status\
+                .in_(acceptable_status)).order_by(Build.id.desc(),Well.id)]
 
     # Find the wells that house the parts with the desired status
     rep_wells = []

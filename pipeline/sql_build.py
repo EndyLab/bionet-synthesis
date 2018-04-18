@@ -402,7 +402,7 @@ def run_build():
         p10s.pick_up_tip()
 
         # Only dilutes wells that have low starting volume
-        if volume < 20:
+        if volume < 30:
             print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
             p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
