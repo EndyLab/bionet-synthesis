@@ -2,11 +2,6 @@ from opentrons import robot, containers, instruments
 import argparse
 import sys
 
-import sqlalchemy
-from sqlalchemy import create_engine,Column,Integer,String,ForeignKey,Table,Text,inspect
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker,relationship
-
 import os
 import re
 import math
@@ -17,8 +12,6 @@ import pandas as pd
 from datetime import datetime
 import getch
 
-from config import *
-from db_config import *
 
 port = os.environ["ROBOT_DEV"]
 print("Connecting robot to port {}".format(port))
@@ -27,11 +20,13 @@ robot.connect(port)
 robot.home()
 
 p10s_tipracks = [
-    containers.load('tiprack-10ul', locations["tiprack-10s1"]),
-    containers.load('tiprack-10ul', locations["tiprack-10s2"])
+    containers.load('tiprack-10ul', 'E1'),
+    containers.load('tiprack-10ul', 'E2')
 ]
-trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
+trash = containers.load('point', 'D1', 'holywastedplasticbatman')
 agar_plate = containers.load('96-deep-well', 'D2')
+trans_plate = containers.load('point','B2')
+
 
 p10s = instruments.Pipette(
     axis='a',
@@ -44,15 +39,14 @@ p10s = instruments.Pipette(
     aspirate_speed=400,
     dispense_speed=800
 )
-for num in range(3):
-    p10s.move_to(agar_plate)
-    p10s.move_to((agar_plate,[0,5,0])
 
+y_max = 118
+x_max = 78
+for num in range(2):
+    print(num)
+    p10s.move_to(trans_plate)
+    p10s.move_to((trans_plate,[0,y_max,0]))
+    p10s.move_to((trans_plate,[x_max,y_max,0]))
+    p10s.move_to((trans_plate,[x_max,0,0]))
 
-
-
-
-
-
-
-#
+print('end')
