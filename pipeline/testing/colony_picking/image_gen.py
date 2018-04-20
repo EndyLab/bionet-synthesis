@@ -11,6 +11,7 @@ import imutils
 import cv2
 import glob
 import os
+import getch
 
 from opentrons import robot, containers, instruments
 import sys
@@ -159,7 +160,7 @@ def find_colonies(image):
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(image)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-	show_image(thresh)
+	# show_image(thresh)
 	# perform a connected component analysis on the thresholded
 	# image, then initialize a mask to store only the "large"
 	# components
@@ -201,7 +202,7 @@ def find_colonies(image):
 			continue
 		cX = int(M["m10"] / M["m00"])
 		cY = int(M["m01"] / M["m00"])
-		centers += [[cX,cY]]
+		# centers += [[cX,cY]]
 		cv2.circle(cl1, (cX, cY), 1, (0, 0, 255), -1)
 		# Rough approx if the colony is circular
 		(x, y, w, h) = cv2.boundingRect(c)
@@ -212,6 +213,7 @@ def find_colonies(image):
 		if int(radius) > 7:
 			# print('too big')
 			continue
+		centers += [[cX,cY]]
 		cv2.circle(cl1, (int(cX), int(cY)), int(radius+3),
 			(255, 0, 0), 1)
 	return cl1,centers
@@ -225,7 +227,7 @@ def find_grid(img):
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(resized)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-	show_image(thresh)
+	# show_image(thresh)
 	# Set bounds on all of the edges to crop out the edge of the plate
 	left_bound = int(thresh.shape[1]/10)
 	right_bound = int((9*thresh.shape[1])/10)
@@ -268,13 +270,15 @@ def find_grid(img):
 	# Groups the endpoints together
 	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
 
+	temp = np.copy(cl1)
+
 	# Calculates and plots the midpoints of the low regions
 	mid_y = []
 	for l,r in bounds:
 		mid_point = int(((r-l) / 2)+l)
 		mid_y.append(int(mid_point+top_bound/2))
 		plt.plot(mid_point,sums_y[mid_point], 'bo')
-		# cv2.line(cl1,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
+		cv2.line(temp,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
 	print("Number of rows: ",len(mid_y)-1)
 
 	# Generate a plot to visualize the sumations
@@ -304,25 +308,66 @@ def find_grid(img):
 
 	# Calculates and plots the midpoints of the low regions
 	mid_x = []
+
 	for t,b in bounds:
 		mid_point = int(((b-t) / 2)+t)
 		mid_x.append(mid_point+top_bound)
 		plt.plot(mid_point,sums_x[mid_point], 'bo')
-		# cv2.line(cl1,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+		cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
 	print("Number of columns: ",len(mid_x)-1)
-
+	show_image(temp)
 	# # Test rectangle
 	# cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
 	# plt.show()
 	return cl1, mid_x, mid_y
 
+def change_loc(image,start):
+	x = 0
+	temp = np.copy(image)
+	cv2.circle(temp, (int(start[0]),int(start[1])), int(1),
+		(0,0,255), 3)
+	cv2.circle(temp, (int(start[0]),int(start[1])), int(10),
+		(255,0,0), 3)
+	cv2.imshow("Image", temp)
+	cv2.waitKey(5)
+	print("please fix the location")
+	while x == 0:
+		# temp = image
+		c = getch.getch()
+		if c == "w":
+			start[1] -= 1
+			print("up")
+		elif c == "s":
+			start[1] += 1
+			print("down")
+		elif c == "a":
+			start[0] -= 1
+			print("left")
+		elif c == "d":
+			start[0] += 1
+			print("right")
+		elif c == "x":
+			x = 1
+			print("exit")
+		temp = np.copy(image)
+		cv2.circle(temp, (int(start[0]),int(start[1])), int(1),
+			(0,0,255), 3)
+		cv2.circle(temp, (int(start[0]),int(start[1])), int(10),
+			(255,0,0), 3)
+		cv2.imshow("Image", temp)
+		cv2.waitKey(5)
+
+		# input("move?")
+	return start
+
+
 def find_reference(image):
 	blurred = cv2.GaussianBlur(image, (15, 15), 0)
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(blurred)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-	show_image(thresh)
+	# show_image(thresh)
 	labels = measure.label(thresh, neighbors=8, background=0)
 	mask = np.zeros(thresh.shape, dtype="uint8")
 
@@ -358,18 +403,16 @@ def find_reference(image):
 
 	all_points = np.array(all_points)
 	rect = order_points(all_points)
+	new_points = []
 	for point in rect:
-		cv2.circle(image, (point[0], point[1]), int(3),
-			(255, 0, 0), 1)
-		cv2.circle(mask, (point[0], point[1]), int(3),
-			(255, 0, 0), 1)
-	show_image(mask)
-	show_image(image)
-	ref_point = rect[3]
-	x_dim = rect[2,0] - rect[0,0]
-	y_dim = rect[2,1] - rect[0,1]
-	# reference = four_point_transform(image,rect)
-	# show_image(reference)
+		print("starting at: ",point)
+		new_points.append(change_loc(image,point))
+		print("ending at: ",new_points[-1])
+
+	ref_point = new_points[3]
+	x_dim = new_points[2][0] - new_points[0][0]
+	y_dim = new_points[2][1] - new_points[0][1]
+
 	return ref_point,x_dim,y_dim
 
 def ot_coords(centers,ref, x_dim, y_dim):
@@ -381,35 +424,42 @@ def ot_coords(centers,ref, x_dim, y_dim):
 		y = int(((ref[1] - cen[1])/y_dim) * y_max)
 		if x < 0 or y < 0:
 			continue
-		print(cen[0],ref[0],x_dim,x_max,"=",x)
-		print(cen[1],ref[1],y_dim,y_max,"=",y)
+		# print(cen[0],ref[0],x_dim,x_max,"=",x)
+		# print(cen[1],ref[1],y_dim,y_max,"=",y)
 		# input()
 		coords.append([x,y])
 	return coords
 
-def run_ot(image,coords):
-	for i,coord in enumerate(coords):
-		# temp = image
-		print(i)
-		print(coord[0],coord[1])
-		p10s.move_to(trans_plate,[coord[0],coord[1],0])
-		# cv2.circle(temp, (coord[0],coord[1]), int(5),
-		# 	(255, 0, 0), 1)
-		# show_image(temp)
-		input()
+def run_ot(image,coords,centers):
+	for i,(coord,cen) in enumerate(zip(coords,centers)):
+		temp = image
+		print(i,":",coord[0],coord[1])
+		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
+		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(10),
+			(0,0,255), 1)
+		show_image(temp)
 
 
 def show_image(image):
 	cv2.imshow("Image", image)
-	cv2.waitKey(0)
+	# cv2.waitKey(1)
+	input()
 	return
 
 grids = []
 shapes = []
 
-port = os.environ["ROBOT_DEV"]
-print("Connecting robot to port {}".format(port))
-robot.connect(port)
+parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+args = parser.parse_args()
+
+if args.run:
+	port = os.environ["ROBOT_DEV"]
+	print("Connecting robot to port {}".format(port))
+	robot.connect(port)
+else:
+	print("Simulating protcol run")
+	robot.connect()
 
 robot.home()
 
@@ -418,7 +468,7 @@ p10s_tipracks = [
     containers.load('tiprack-10ul', 'E2')
 ]
 trash = containers.load('point', 'D1', 'holywastedplasticbatman')
-agar_plate = containers.load('96-deep-well', 'D2')
+well_plate = containers.load('96-deep-well', 'D2')
 trans_plate = containers.load('point','B2')
 
 
@@ -438,17 +488,17 @@ for file in sorted(glob.glob('./image_set/*.jpg')):
 	print(file)
 	img = cv2.imread(file)
 	resized = imutils.resize(img,width=1000)
-	# show_image(resized)
+	show_image(resized)
 	edges, intersections = find_corners(resized)
-	# show_image(edges)
+	show_image(edges)
 	warped = four_point_transform(edges,intersections)
-	# show_image(warped)
+	show_image(warped)
 	grid, mid_x, mid_y = find_grid(warped)
-	show_image(grid)
+	# show_image(grid)
 	ref, x_dim, y_dim = find_reference(grid)
 	colonies, centers = find_colonies(grid)
 	coords = ot_coords(centers,ref, x_dim, y_dim)
-	run_ot(colonies,coords)
+	run_ot(colonies,coords,centers)
 	# show_image(colonies)
 	print()
 
