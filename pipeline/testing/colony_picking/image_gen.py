@@ -11,6 +11,9 @@ import imutils
 import cv2
 import glob
 
+from opentrons import robot, containers, instruments
+import sys
+
 def order_points(pts):
 	# Allocate memory for points
 	rect = np.zeros((4, 2), dtype = "float32")
@@ -155,7 +158,7 @@ def find_colonies(image):
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(image)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-
+	show_image(thresh)
 	# perform a connected component analysis on the thresholded
 	# image, then initialize a mask to store only the "large"
 	# components
@@ -221,7 +224,7 @@ def find_grid(img):
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(resized)
 	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-
+	show_image(thresh)
 	# Set bounds on all of the edges to crop out the edge of the plate
 	left_bound = int(thresh.shape[1]/10)
 	right_bound = int((9*thresh.shape[1])/10)
@@ -270,7 +273,7 @@ def find_grid(img):
 		mid_point = int(((r-l) / 2)+l)
 		mid_y.append(int(mid_point+top_bound/2))
 		plt.plot(mid_point,sums_y[mid_point], 'bo')
-		cv2.line(cl1,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
+		# cv2.line(cl1,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
 	print("Number of rows: ",len(mid_y)-1)
 
 	# Generate a plot to visualize the sumations
@@ -304,14 +307,94 @@ def find_grid(img):
 		mid_point = int(((b-t) / 2)+t)
 		mid_x.append(mid_point+top_bound)
 		plt.plot(mid_point,sums_x[mid_point], 'bo')
-		cv2.line(cl1,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+		# cv2.line(cl1,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
 	print("Number of columns: ",len(mid_x)-1)
 
 	# # Test rectangle
-	cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
+	# cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
-	plt.show()
+	# plt.show()
 	return cl1, mid_x, mid_y
+
+def find_reference(image):
+	blurred = cv2.GaussianBlur(image, (15, 15), 0)
+	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+	cl1 = clahe.apply(blurred)
+	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
+	show_image(thresh)
+	labels = measure.label(thresh, neighbors=8, background=0)
+	mask = np.zeros(thresh.shape, dtype="uint8")
+
+	# loop over the unique components
+	for label in np.unique(labels):
+		# if this is the background label, ignore it
+		if label == 0:
+			continue
+
+		# otherwise, construct the label mask and count the
+		# number of pixels
+		labelMask = np.zeros(thresh.shape, dtype="uint8")
+		labelMask[labels == label] = 255
+		numPixels = cv2.countNonZero(labelMask)
+
+		# if the number of pixels in the component is sufficiently
+		# large, then add it to our mask of "large blobs"
+		if numPixels > 5000:
+			mask = cv2.add(mask, labelMask)
+	cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
+		cv2.CHAIN_APPROX_SIMPLE)
+	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
+	cl1 = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
+	mask = cv2.cvtColor(mask,cv2.COLOR_GRAY2RGB)
+
+	all_points = []
+	for c in cnts:
+		for point in c:
+			all_points.append([point[0][0],point[0][1]])
+
+	all_points = np.array(all_points)
+	rect = order_points(all_points)
+	for point in rect:
+		cv2.circle(image, (point[0], point[1]), int(3),
+			(255, 0, 0), 1)
+		cv2.circle(mask, (point[0], point[1]), int(3),
+			(255, 0, 0), 1)
+	show_image(mask)
+	show_image(image)
+	ref_point = rect[3]
+	x_dim = rect[2,0] - rect[0,0]
+	y_dim = rect[2,1] - rect[0,1]
+	# reference = four_point_transform(image,rect)
+	# show_image(reference)
+	return ref_point,x_dim,y_dim
+
+def ot_coords(centers,ref, x_dim, y_dim):
+	y_max = 118
+	x_max = 78
+	coords = []
+	for cen in centers:
+		x = int(((cen[0] - ref[0])/x_dim) * x_max)
+		y = int(((ref[1] - cen[1])/y_dim) * y_max)
+		print(cen[0],ref[0],x_dim,x_max,"=",x)
+		print(cen[1],ref[1],y_dim,y_max,"=",y)
+		# input()
+		coords.append([x,y])
+	return coords
+
+def run_ot(image,coords):
+	for i,coord in enumerate(coords):
+		# temp = image
+		print(i)
+		print(coord[0],coord[1])
+		p10s.move_to(trans_plate,[coord[0],coord[1],0])
+		# cv2.circle(temp, (coord[0],coord[1]), int(5),
+		# 	(255, 0, 0), 1)
+		# show_image(temp)
+		input()
+
 
 def show_image(image):
 	cv2.imshow("Image", image)
@@ -320,19 +403,50 @@ def show_image(image):
 
 grids = []
 shapes = []
+
+port = os.environ["ROBOT_DEV"]
+print("Connecting robot to port {}".format(port))
+robot.connect(port)
+
+robot.home()
+
+p10s_tipracks = [
+    containers.load('tiprack-10ul', 'E1'),
+    containers.load('tiprack-10ul', 'E2')
+]
+trash = containers.load('point', 'D1', 'holywastedplasticbatman')
+agar_plate = containers.load('96-deep-well', 'D2')
+trans_plate = containers.load('point','B2')
+
+
+p10s = instruments.Pipette(
+    axis='a',
+    max_volume=10,
+    min_volume=0.5,
+    tip_racks=p10s_tipracks,
+    trash_container=trash,
+    channels=1,
+    name='p10-8s',
+    aspirate_speed=400,
+    dispense_speed=800
+)
+
 for file in sorted(glob.glob('./image_set/*.jpg')):
 	print(file)
 	img = cv2.imread(file)
 	resized = imutils.resize(img,width=1000)
-	show_image(resized)
+	# show_image(resized)
 	edges, intersections = find_corners(resized)
-	show_image(edges)
+	# show_image(edges)
 	warped = four_point_transform(edges,intersections)
-	show_image(warped)
+	# show_image(warped)
 	grid, mid_x, mid_y = find_grid(warped)
 	show_image(grid)
+	ref, x_dim, y_dim = find_reference(grid)
 	colonies, centers = find_colonies(grid)
-	show_image(colonies)
+	coords = ot_coords(centers,ref, x_dim, y_dim)
+	run_ot(colonies,coords)
+	# show_image(colonies)
 	print()
 
 # print(shapes)
