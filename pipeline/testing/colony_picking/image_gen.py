@@ -10,6 +10,7 @@ import argparse
 import imutils
 import cv2
 import glob
+import os
 
 from opentrons import robot, containers, instruments
 import sys
@@ -378,6 +379,8 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	for cen in centers:
 		x = int(((cen[0] - ref[0])/x_dim) * x_max)
 		y = int(((ref[1] - cen[1])/y_dim) * y_max)
+		if x < 0 or y < 0:
+			continue
 		print(cen[0],ref[0],x_dim,x_max,"=",x)
 		print(cen[1],ref[1],y_dim,y_max,"=",y)
 		# input()
