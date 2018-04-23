@@ -12,11 +12,18 @@ import cv2
 import glob
 import os
 import getch
+import math
 
 from opentrons import robot, containers, instruments
 import sys
 
+from cam_calibrate import *
+
 def order_points(pts):
+	'''
+	Takes in a list of (x,y) coordinates and returns them in clockwise order
+	starting at top left
+	'''
 	# Allocate memory for points
 	rect = np.zeros((4, 2), dtype = "float32")
 
@@ -36,6 +43,9 @@ def order_points(pts):
 	return rect
 
 def four_point_transform(image, pts):
+	'''
+	Uses four points in order to remap an object in the image to be a perfect rectangle
+	'''
 	# obtain a consistent order of the points and unpack them
 	# individually
 	rect = order_points(pts)
@@ -70,12 +80,18 @@ def four_point_transform(image, pts):
 	return warped
 
 def find_corners(image):
+	'''
+	Searches the image to find the edges of the plate and calculates
+	the intersection points
+	'''
 	image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	blurred = cv2.GaussianBlur(image, (11, 11), 0)
 
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(blurred)
-	thresh = cv2.threshold(cl1, 100, 255, cv2.THRESH_BINARY)[1]
+	# show_image(cl1)
+	thresh = cv2.threshold(cl1, 50, 255, cv2.THRESH_BINARY)[1]
+	# show_image(thresh)
 
 	labels = measure.label(thresh, neighbors=8, background=0)
 	mask = np.zeros(thresh.shape, dtype="uint8")
@@ -94,10 +110,9 @@ def find_corners(image):
 
 		# if the number of pixels in the component is sufficiently
 		# large, then add it to our mask of "large blobs"
-		# if numPixels > 50:
 		if numPixels > 100000:
-		# if numPixels < 50 and numPixels > 5:
 			mask = cv2.add(mask, labelMask)
+	# show_image(mask)
 
 	cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_NONE)
@@ -105,120 +120,23 @@ def find_corners(image):
 
 	maskc = np.zeros(thresh.shape, dtype="uint8")
 	cv2.drawContours(maskc, cnts, -1, (255,0,0), 1)
+
+	epsilon = 0.1*cv2.arcLength(cnts[0],True)
+	pts = cv2.approxPolyDP(cnts[0],epsilon,True)
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
-	equ = []
-	def find_lines(min):
-		lines = cv2.HoughLines(maskc,1,np.pi/180,min)
-		if min < 0:
-			print("reached the minimum threshold")
-			return lines
-		if len(lines) < 4:
-			return find_lines(min-5)
-		elif len(lines) > 4:
-			return find_lines(min+5)
-		elif len(lines) == 4:
-			return lines
+	cv2.polylines(image,[pts],True,(0,255,255),1)
 
-	lines = find_lines(300)
-	if len(lines) < 4:
-		input("Still lacking enough lines")
+	corners = [[x,y] for [[x,y]] in pts]
+	corners = np.array(corners)
+	print("Corners:",corners)
 
-	for line in lines:
-		for rho,theta in line:
-			a = np.cos(theta)
-			b = np.sin(theta)
-			x0 = a*rho
-			y0 = b*rho
-			equ += [[a,b,rho]]
-			print((a/b),(rho/b))
-			x1 = int(x0 + 5000*(-b))
-			y1 = int(y0 + 5000*(a))
-			x2 = int(x0 - 5000*(-b))
-			y2 = int(y0 - 5000*(a))
-			cv2.line(image,(x1,y1),(x2,y2),(255,0,0),2)
-
-	pts = []
-	for pair in itertools.combinations(equ,2):
-		print(pair)
-		pair = np.array(pair)
-		a = pair[0:2,0:2]
-		b = pair[0:2,2]
-		if round(pair[0,0],2)*round(pair[1,1],2) == round(pair[1,0],2)*round(pair[0,1],2):
-			print("lines are parallel")
-			continue
-		x = np.linalg.solve(a, b)
-		pts += [x]
-		cv2.circle(image, (int(x[0]), int(x[1])), int(10),
-				(255, 0, 0), 2)
-	pts = np.array(pts)
-	print("These are the intersection points:\n",pts)
-	return image, pts
-
-def find_colonies(image):
-	# create a CLAHE object (Arguments are optional).
-	# resized = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-	cl1 = clahe.apply(image)
-	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-	# show_image(thresh)
-	# perform a connected component analysis on the thresholded
-	# image, then initialize a mask to store only the "large"
-	# components
-	labels = measure.label(thresh, neighbors=8, background=0)
-	mask = np.zeros(thresh.shape, dtype="uint8")
-
-	# loop over the unique components
-	for label in np.unique(labels):
-		# if this is the background label, ignore it
-		if label == 0:
-			continue
-
-		# otherwise, construct the label mask and count the
-		# number of pixels
-		labelMask = np.zeros(thresh.shape, dtype="uint8")
-		labelMask[labels == label] = 255
-		numPixels = cv2.countNonZero(labelMask)
-
-		# if the number of pixels in the component is sufficiently
-		# large, then add it to our mask of "large blobs"
-		# if numPixels > 50:
-		if numPixels > 30 and numPixels < 150:
-		# if numPixels < 50 and numPixels > 5:
-			mask = cv2.add(mask, labelMask)
-
-	cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
-		cv2.CHAIN_APPROX_NONE)
-	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
-
-	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
-	cl1 = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
-
-	# cv2.drawContours(cl1, cnts, -1, (255,0,0), 1)
-	centers = []
-	for c in cnts:
-		# compute the center of the contour
-		M = cv2.moments(c)
-		if M["m00"] == 0:
-			continue
-		cX = int(M["m10"] / M["m00"])
-		cY = int(M["m01"] / M["m00"])
-		# centers += [[cX,cY]]
-		cv2.circle(cl1, (cX, cY), 1, (0, 0, 255), -1)
-		# Rough approx if the colony is circular
-		(x, y, w, h) = cv2.boundingRect(c)
-		if w/h > 1.2 or h/w > 1.2:
-			# print("not circular")
-			continue
-		((cX, cY), radius) = cv2.minEnclosingCircle(c)
-		if int(radius) > 7:
-			# print('too big')
-			continue
-		centers += [[cX,cY]]
-		cv2.circle(cl1, (int(cX), int(cY)), int(radius+3),
-			(255, 0, 0), 1)
-	return cl1,centers
+	return image, corners
 
 def find_grid(img):
+	'''
+	Searches the image for rows and columns with no colonies to define a grid
+	segmenting the plate based on part
+	'''
 	sums_y = []
 	sums_x = []
 
@@ -226,7 +144,8 @@ def find_grid(img):
 	resized = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(resized)
-	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
+	thresh = cv2.threshold(cl1, 170, 255, cv2.THRESH_BINARY)[1]
+	show_image(thresh)
 	# show_image(thresh)
 	# Set bounds on all of the edges to crop out the edge of the plate
 	left_bound = int(thresh.shape[1]/10)
@@ -254,7 +173,7 @@ def find_grid(img):
 	# Store only the points that have less than 20 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_y):
-		if sum/255 < 20:
+		if sum/255 < 60:
 			plt.plot(i,sum, 'r.')
 			bottoms.append(i)
 
@@ -289,7 +208,7 @@ def find_grid(img):
 	# Store only the points that have less than 60 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_x):
-		if sum/255 < 60:
+		if sum/255 < 25:
 			plt.plot(i,sum, 'r.')
 			bottoms.append(i)
 
@@ -305,15 +224,24 @@ def find_grid(img):
 
 	# Groups the endpoints together
 	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
-
+	print("Bounds: ",bounds)
 	# Calculates and plots the midpoints of the low regions
 	mid_x = []
 
-	for t,b in bounds:
-		mid_point = int(((b-t) / 2)+t)
-		mid_x.append(mid_point+top_bound)
-		plt.plot(mid_point,sums_x[mid_point], 'bo')
-		cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+	try:
+		for t,b in bounds:
+			mid_point = int(((b-t) / 2)+t)
+			mid_x.append(mid_point+top_bound)
+			plt.plot(mid_point,sums_x[mid_point], 'bo')
+			cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+	except:
+		print("odd number")
+		for t,b in bounds[:-1]:
+			mid_point = int(((b-t) / 2)+t)
+			mid_x.append(mid_point+top_bound)
+			plt.plot(mid_point,sums_x[mid_point], 'bo')
+			cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+
 	print("Number of columns: ",len(mid_x)-1)
 	show_image(temp)
 	# # Test rectangle
@@ -322,92 +250,119 @@ def find_grid(img):
 	# plt.show()
 	return cl1, mid_x, mid_y
 
+def find_colonies(image):
+	'''
+	Searches the image for pickable colonies and returns the
+	location of their centers
+	'''
+	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+	cl1 = clahe.apply(image)
+	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
+
+
+	cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+		cv2.CHAIN_APPROX_NONE)
+	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
+	color = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+	cv2.drawContours(color, cnts, -1, (255,0,0), 1)
+
+	# cv2.drawContours(cl1, cnts, -1, (255,0,0), 1)
+	centers = []
+	for counter,cnt in enumerate(cnts):
+		# compute the center of the contour
+		# print("counter: ",counter)
+		M = cv2.moments(cnt)
+		if M["m00"] == 0:
+			continue
+		cX = int(M["m10"] / M["m00"])
+		cY = int(M["m01"] / M["m00"])
+
+		perimeter = cv2.arcLength(cnt,True)
+		approx = cv2.approxPolyDP(cnt,0.01*perimeter,True)
+		area = cv2.contourArea(cnt)
+
+		(rX,rY),(w,h),ang = cv2.minAreaRect(cnt)
+
+		if area > 50 and area < 350 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
+			cv2.circle(color, (cX, cY), 1, (0, 0, 255), -3)
+			# cv2.putText(color, "{}".format(counter), (cX - 5, cY - 5),
+			# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 3)
+			((cX, cY), radius) = cv2.minEnclosingCircle(cnt)
+			cv2.circle(color, (int(cX), int(cY)), int(radius+9),
+				(0, 255, 255), 3)
+
+			rect = cv2.minAreaRect(cnt)
+
+			print(counter,".","Area",area,"Peri",perimeter,"comp",(perimeter**2)/(4*math.pi),"Approx",len(approx))
+			print(w,h,w/h)
+			show_image(color)
+			centers += [[cX,cY]]
+
+	return color,centers
+
 def change_loc(image,start):
+	'''
+	Allows for manually modification of points presented on images
+	'''
 	x = 0
 	temp = np.copy(image)
-	cv2.circle(temp, (int(start[0]),int(start[1])), int(1),
-		(0,0,255), 3)
-	cv2.circle(temp, (int(start[0]),int(start[1])), int(10),
-		(255,0,0), 3)
-	cv2.imshow("Image", temp)
+	cv2.circle(temp, (int(start[0]),int(start[1])), int(3),
+		(0,0,255), 9)
+	cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
+		(255,0,0), 9)
+	temp_resized = imutils.resize(temp,width=500)
+	cv2.imshow("Image", temp_resized)
 	cv2.waitKey(5)
 	print("please fix the location")
 	while x == 0:
 		# temp = image
 		c = getch.getch()
 		if c == "w":
-			start[1] -= 1
+			start[1] -= 3
 			print("up")
 		elif c == "s":
-			start[1] += 1
+			start[1] += 3
 			print("down")
 		elif c == "a":
-			start[0] -= 1
+			start[0] -= 3
 			print("left")
 		elif c == "d":
-			start[0] += 1
+			start[0] += 3
 			print("right")
 		elif c == "x":
 			x = 1
 			print("exit")
 		temp = np.copy(image)
-		cv2.circle(temp, (int(start[0]),int(start[1])), int(1),
-			(0,0,255), 3)
-		cv2.circle(temp, (int(start[0]),int(start[1])), int(10),
-			(255,0,0), 3)
-		cv2.imshow("Image", temp)
+		cv2.circle(temp, (int(start[0]),int(start[1])), int(3),
+			(0,0,255), 9)
+		cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
+			(255,0,0), 9)
+		temp_resized = imutils.resize(temp,width=500)
+		cv2.imshow("Image", temp_resized)
 		cv2.waitKey(5)
 
-		# input("move?")
 	return start
 
 
 def find_reference(image):
-	blurred = cv2.GaussianBlur(image, (15, 15), 0)
-	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-	cl1 = clahe.apply(blurred)
-	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
-	# show_image(thresh)
-	labels = measure.label(thresh, neighbors=8, background=0)
-	mask = np.zeros(thresh.shape, dtype="uint8")
-
-	# loop over the unique components
-	for label in np.unique(labels):
-		# if this is the background label, ignore it
-		if label == 0:
-			continue
-
-		# otherwise, construct the label mask and count the
-		# number of pixels
-		labelMask = np.zeros(thresh.shape, dtype="uint8")
-		labelMask[labels == label] = 255
-		numPixels = cv2.countNonZero(labelMask)
-
-		# if the number of pixels in the component is sufficiently
-		# large, then add it to our mask of "large blobs"
-		if numPixels > 5000:
-			mask = cv2.add(mask, labelMask)
-	cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
-		cv2.CHAIN_APPROX_SIMPLE)
-	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
-
-	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
-	cl1 = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+	'''
+	Locate the corners of the agar to link the reference point on the robot
+	to the image
+	'''
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
-	mask = cv2.cvtColor(mask,cv2.COLOR_GRAY2RGB)
 
-	all_points = []
-	for c in cnts:
-		for point in c:
-			all_points.append([point[0][0],point[0][1]])
-
+	all_points = [[22,19],[475,19],[475,305],[22, 305]]
 	all_points = np.array(all_points)
+	ratio = image.shape[1]/500
+	all_points = np.multiply(all_points,ratio)
 	rect = order_points(all_points)
 	new_points = []
 	for point in rect:
-		print("starting at: ",point)
 		new_points.append(change_loc(image,point))
-		print("ending at: ",new_points[-1])
+		print("Started at: ",point)
+		print("Ended at: ",new_points[-1],"\n")
 
 	ref_point = new_points[3]
 	x_dim = new_points[2][0] - new_points[0][0]
@@ -416,6 +371,9 @@ def find_reference(image):
 	return ref_point,x_dim,y_dim
 
 def ot_coords(centers,ref, x_dim, y_dim):
+	'''
+	Establish a relationship between pixels in the image to xy coords on the robot
+	'''
 	y_max = 118
 	x_max = 78
 	coords = []
@@ -431,17 +389,22 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	return coords
 
 def run_ot(image,coords,centers):
+	'''
+	Pass the coordinates to the robot to pick the colony
+	'''
 	for i,(coord,cen) in enumerate(zip(coords,centers)):
 		temp = image
 		print(i,":",coord[0],coord[1])
 		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
-		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(10),
-			(0,0,255), 1)
+		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(20),
+			(0,0,255), 3)
 		show_image(temp)
 
 
 def show_image(image):
-	cv2.imshow("Image", image)
+	'''Scales and then presents the image'''
+	resized = imutils.resize(image,width=500)
+	cv2.imshow("Image", resized)
 	# cv2.waitKey(1)
 	input()
 	return
@@ -484,17 +447,22 @@ p10s = instruments.Pipette(
     dispense_speed=800
 )
 
-for file in sorted(glob.glob('./image_set/*.jpg')):
+# for file in sorted(glob.glob('./image_set/*.jpg')):
+for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	print(file)
 	img = cv2.imread(file)
-	resized = imutils.resize(img,width=1000)
-	show_image(resized)
-	edges, intersections = find_corners(resized)
+	cali_file = './webcam_calibrations.npz'
+	show_image(img)
+	# dst = undistort_img(img,cali_file)
+	# show_image(dst)
+	# resized = imutils.resize(img,width=1000)
+	# show_image(resized)
+	edges, intersections = find_corners(img)
 	show_image(edges)
 	warped = four_point_transform(edges,intersections)
 	show_image(warped)
 	grid, mid_x, mid_y = find_grid(warped)
-	# show_image(grid)
+	show_image(grid)
 	ref, x_dim, y_dim = find_reference(grid)
 	colonies, centers = find_colonies(grid)
 	coords = ot_coords(centers,ref, x_dim, y_dim)
@@ -509,6 +477,97 @@ for file in sorted(glob.glob('./image_set/*.jpg')):
 # cv2.imshow("Image", warped)
 # cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+## Finding the reference point
+	# blurred = cv2.GaussianBlur(image, (15, 15), 0)
+	# clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+	# cl1 = clahe.apply(blurred)
+	# show_image(cl1)
+	# thresh = cv2.threshold(cl1, 140, 255, cv2.THRESH_BINARY)[1]
+	# show_image(thresh)
+	# labels = measure.label(thresh, neighbors=8, background=0)
+	# mask = np.zeros(thresh.shape, dtype="uint8")
+	#
+	# # loop over the unique components
+	# for label in np.unique(labels):
+	# 	# if this is the background label, ignore it
+	# 	if label == 0:
+	# 		continue
+	#
+	# 	# otherwise, construct the label mask and count the
+	# 	# number of pixels
+	# 	labelMask = np.zeros(thresh.shape, dtype="uint8")
+	# 	labelMask[labels == label] = 255
+	# 	numPixels = cv2.countNonZero(labelMask)
+	#
+	# 	# if the number of pixels in the component is sufficiently
+	# 	# large, then add it to our mask of "large blobs"
+	# 	if numPixels > 5000:
+	# 		mask = cv2.add(mask, labelMask)
+	# cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,
+	# 	cv2.CHAIN_APPROX_SIMPLE)
+	# cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+
+	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
+
+
+## Finding hough lines and intersection points:
+	# image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
+	# equ = []
+	# def find_lines(min):
+	# 	'''Finds the edges of the plate'''
+	# 	lines = cv2.HoughLines(maskc,1,np.pi/180,min)
+	# 	if min < 0:
+	# 		print("reached the minimum threshold")
+	# 		return lines
+	# 	if type(lines) == type(None):
+	# 		print("no lines were found")
+	# 		return find_lines(min-5)
+	# 	# Requires 4 edges and will continue to check until it finds them
+	# 	if len(lines) < 4:
+	# 		return find_lines(min-5)
+	# 	elif len(lines) > 4:
+	# 		return find_lines(min+5)
+	# 	elif len(lines) == 4:
+	# 		return lines
+	#
+	# lines = find_lines(300)
+	# if len(lines) < 4:
+	# 	input("Still lacking enough lines")
+	#
+	# for line in lines:
+	# 	for rho,theta in line:
+	# 		a = np.cos(theta)
+	# 		b = np.sin(theta)
+	# 		x0 = a*rho
+	# 		y0 = b*rho
+	# 		equ += [[a,b,rho]]
+	# 		print((a/b),(rho/b))
+	# 		x1 = int(x0 + 5000*(-b))
+	# 		y1 = int(y0 + 5000*(a))
+	# 		x2 = int(x0 - 5000*(-b))
+	# 		y2 = int(y0 - 5000*(a))
+	# 		cv2.line(image,(x1,y1),(x2,y2),(255,0,0),2)
+	#
+	# pts = []
+	# for pair in itertools.combinations(equ,2):
+	# 	print(pair)
+	# 	pair = np.array(pair)
+	# 	a = pair[0:2,0:2]
+	# 	b = pair[0:2,2]
+	# 	if round(pair[0,0],2)*round(pair[1,1],2) == round(pair[1,0],2)*round(pair[0,1],2):
+	# 		print("lines are parallel")
+	# 		continue
+	# 	x = np.linalg.solve(a, b)
+	# 	pts += [x]
+	# 	cv2.circle(image, (int(x[0]), int(x[1])), int(10),
+	# 			(255, 0, 0), 2)
+	# print("number of intersections: ",len(pts))
+	# pts = np.array(pts)
+	# print("These are the intersection points:\n",pts)
+
+
+
 
 ## Finding rolling averages
 	# plt.subplot(2, 1, 2)
