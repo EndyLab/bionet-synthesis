@@ -345,7 +345,7 @@ def find_reference(image):
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
 
 	# all_points = [[22,19],[475,19],[475,305],[22, 305]]
-	all_points = [[19,27],[377,27],[377,587],[20, 589]]
+	all_points = [[19,27],[377,27],[380,612],[19, 614]]
 	all_points = np.array(all_points)
 	ratio = image.shape[1]/400
 	all_points = np.multiply(all_points,ratio)
@@ -368,7 +368,7 @@ def ot_coords(centers,image):
 	'''
 	Establish a relationship between pixels in the image to xy coords on the robot
 	'''
-	y_max = 118
+	y_max = 121
 	x_max = 78
 	coords = []
 	for cen in centers:
@@ -450,8 +450,10 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	img = cv2.imread(file)
 	show_image(img)
 	cali_file = './webcam_calibrations.npz'
+	dst = undistort_img(img,cali_file)
+	show_image(dst)
 	height,width = img.shape[:2]
-	rotated = imutils.rotate_bound(img, 90)
+	rotated = imutils.rotate_bound(dst, 90)
 	show_image(rotated)
 	# dst = undistort_img(img,cali_file)
 	# show_image(dst)
