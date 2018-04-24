@@ -362,9 +362,9 @@ def find_reference(image):
 	x_dim = new_points[2][0] - new_points[0][0]
 	y_dim = new_points[2][1] - new_points[0][1]
 
-	return ref_point,x_dim,y_dim
+	return ref_point,x_dim,y_dim,rect
 
-def ot_coords(centers,ref, x_dim, y_dim):
+def ot_coords(centers,image):
 	'''
 	Establish a relationship between pixels in the image to xy coords on the robot
 	'''
@@ -372,8 +372,8 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	x_max = 78
 	coords = []
 	for cen in centers:
-		x = int(((cen[0]-ref[0])/x_dim) * x_max)
-		y = int(((ref[1] - cen[1])/y_dim) * y_max)
+		x = int(((cen[0]/x_dim) * x_max))
+		y = int(((image.shape[0]-cen[1])/y_dim) * y_max)
 		if x < 0 or y < 0:
 			print("invalid coordinate")
 			continue
@@ -463,9 +463,13 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	show_image(warped)
 	grid, mid_x, mid_y = find_grid(warped)
 	show_image(grid)
-	ref, x_dim, y_dim = find_reference(grid)
-	colonies, centers = find_colonies(grid)
-	coords = ot_coords(centers,ref, x_dim, y_dim)
+	ref, x_dim, y_dim,rect = find_reference(grid)
+	agar = four_point_transform(grid,rect)
+	show_image(agar)
+
+	colonies, centers = find_colonies(agar)
+	# coords = ot_coords(centers,ref, x_dim, y_dim)
+	coords = ot_coords(centers,agar)
 	run_ot(colonies,coords,centers)
 	# show_image(colonies)
 	print()
