@@ -64,10 +64,16 @@ def run_ot(coords):
 		p10s.move_to((trans_plate,[x,y,0]))
 		input("click to move to next colony")
 
-y_max = 118
+y_max = 120
 x_max = 78
 
-coords = [[0,0],[0,y_max],[x_max,y_max],[x_max,0],[10,10],[20,20],[30,30],[40,40]]
+coords = [[0,0],[0,y_max],[x_max,y_max],[x_max,0]]
+cols = [10,20,30,40,50,60,70]
+y = range(10,120,10)
+for col in cols:
+    x = [col for num in range(12)]
+    coords += zip(x,y)
+
 run_ot(coords)
 
 

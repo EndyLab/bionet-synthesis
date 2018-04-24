@@ -419,13 +419,13 @@ def run_ot(image,coords,centers):
 		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(20),
 			(0,0,255), 3)
 		show_image(temp)
-		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
+		p10s.move_to((trans_plate,[coord[0]-0.5,coord[1]-2,0]))
 		move_motor()
 
 
 		# input("click to move to next colony")
 
-
+#
 def show_image(image,width=400):
 	'''Scales and then presents the image'''
 	resized = imutils.resize(image,width=width)
