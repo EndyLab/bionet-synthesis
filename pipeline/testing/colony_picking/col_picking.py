@@ -380,8 +380,8 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	x_max = 78
 	coords = []
 	for cen in centers:
-		y = int(((ref[0] - cen[0])/x_dim) * x_max)
-		x = int(((ref[1] - cen[1])/y_dim) * y_max)
+		y = int(((ref[0] - cen[0])/y_dim) * x_max)
+		x = int(((ref[1] - cen[1])/x_dim) * y_max)
 		if x < 0 or y < 0:
 			continue
 		# print(cen[0],ref[0],x_dim,x_max,"=",x)
@@ -401,6 +401,7 @@ def run_ot(image,coords,centers):
 			(0,0,255), 3)
 		show_image(temp)
 		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
+		input("click to move to next colony")
 
 
 def show_image(image):
@@ -455,11 +456,11 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	img = cv2.imread(file)
 	cali_file = './webcam_calibrations.npz'
 	show_image(img)
-	# dst = undistort_img(img,cali_file)
-	# show_image(dst)
+	dst = undistort_img(img,cali_file)
+	show_image(dst)
 	# resized = imutils.resize(img,width=1000)
 	# show_image(resized)
-	edges, intersections = find_corners(img)
+	edges, intersections = find_corners(dst)
 	show_image(edges)
 	warped = four_point_transform(edges,intersections)
 	show_image(warped)

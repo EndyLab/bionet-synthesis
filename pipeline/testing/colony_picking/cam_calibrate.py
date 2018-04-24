@@ -19,8 +19,8 @@ def calibrate_cam(images,output):
         print(fname)
 
         img = cv2.imread(fname)
-        # resized = imutils.resize(img, width=500)
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        resized = imutils.resize(img, width=1920)
+        gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
 
         # Find the chess board corners
         ret, corners = cv2.findChessboardCorners(gray, (7,6), None)
@@ -33,8 +33,8 @@ def calibrate_cam(images,output):
             imgpoints.append(corners)
 
             # Draw and display the corners
-            cv2.drawChessboardCorners(img, (7,6), corners2, ret)
-            cv2.imshow('img', img)
+            cv2.drawChessboardCorners(resized, (7,6), corners2, ret)
+            cv2.imshow('img', resized)
             cv2.waitKey(500)
         else:
             print("not found")
@@ -70,7 +70,8 @@ if __name__ == "__main__":
     images = sorted(glob.glob('./cam_photos/*.jpg'))
     for fname in images:
         img = cv2.imread(fname)
-        img = imutils.resize(img, width=500)
+        print(img.shape[0],img.shape[1])
+        # img = imutils.resize(img, width=500)
         dst = undistort_img(img,cali_file)
         cv2.imshow('original',img)
         cv2.waitKey(0)
