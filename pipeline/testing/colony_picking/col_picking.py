@@ -173,7 +173,7 @@ def find_grid(img):
 	# Store only the points that have less than 20 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_y):
-		if sum/255 < 60:
+		if sum/255 < 30:
 			plt.plot(i,sum, 'r.')
 			bottoms.append(i)
 
@@ -208,7 +208,7 @@ def find_grid(img):
 	# Store only the points that have less than 60 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_x):
-		if sum/255 < 25:
+		if sum/255 < 60:
 			plt.plot(i,sum, 'r.')
 			bottoms.append(i)
 
@@ -228,26 +228,18 @@ def find_grid(img):
 	# Calculates and plots the midpoints of the low regions
 	mid_x = []
 
-	try:
-		for t,b in bounds:
-			mid_point = int(((b-t) / 2)+t)
-			mid_x.append(mid_point+top_bound)
-			plt.plot(mid_point,sums_x[mid_point], 'bo')
-			cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
-	except:
-		print("odd number")
-		for t,b in bounds[:-1]:
-			mid_point = int(((b-t) / 2)+t)
-			mid_x.append(mid_point+top_bound)
-			plt.plot(mid_point,sums_x[mid_point], 'bo')
-			cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+	for t,b in bounds:
+		mid_point = int(((b-t) / 2)+t)
+		mid_x.append(mid_point+top_bound)
+		plt.plot(mid_point,sums_x[mid_point], 'bo')
+		cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
 
 	print("Number of columns: ",len(mid_x)-1)
 	show_image(temp)
 	# # Test rectangle
 	# cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
-	# plt.show()
+	plt.show()
 	return cl1, mid_x, mid_y
 
 def find_colonies(image):
@@ -299,7 +291,6 @@ def find_colonies(image):
 			print(w,h,w/h)
 			show_image(color)
 			centers += [[cX,cY]]
-
 	return color,centers
 
 def change_loc(image,start):
@@ -312,7 +303,7 @@ def change_loc(image,start):
 		(0,0,255), 9)
 	cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
 		(255,0,0), 9)
-	temp_resized = imutils.resize(temp,width=500)
+	temp_resized = imutils.resize(temp,width=400)
 	cv2.imshow("Image", temp_resized)
 	cv2.waitKey(5)
 	print("please fix the location")
@@ -339,7 +330,7 @@ def change_loc(image,start):
 			(0,0,255), 9)
 		cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
 			(255,0,0), 9)
-		temp_resized = imutils.resize(temp,width=500)
+		temp_resized = imutils.resize(temp,width=400)
 		cv2.imshow("Image", temp_resized)
 		cv2.waitKey(5)
 
@@ -353,9 +344,10 @@ def find_reference(image):
 	'''
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
 
-	all_points = [[22,19],[475,19],[475,305],[22, 305]]
+	# all_points = [[22,19],[475,19],[475,305],[22, 305]]
+	all_points = [[19,27],[377,27],[377,587],[20, 589]]
 	all_points = np.array(all_points)
-	ratio = image.shape[1]/500
+	ratio = image.shape[1]/400
 	all_points = np.multiply(all_points,ratio)
 	rect = order_points(all_points)
 	new_points = []
@@ -364,7 +356,7 @@ def find_reference(image):
 		print("Started at: ",point)
 		print("Ended at: ",new_points[-1],"\n")
 
-	ref_point = new_points[2]
+	ref_point = new_points[3]
 	print(new_points)
 	print(ref_point)
 	x_dim = new_points[2][0] - new_points[0][0]
@@ -380,9 +372,10 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	x_max = 78
 	coords = []
 	for cen in centers:
-		y = int(((ref[0] - cen[0])/y_dim) * x_max)
-		x = int(((ref[1] - cen[1])/x_dim) * y_max)
+		x = int(((cen[0]-ref[0])/x_dim) * x_max)
+		y = int(((ref[1] - cen[1])/y_dim) * y_max)
 		if x < 0 or y < 0:
+			print("invalid coordinate")
 			continue
 		# print(cen[0],ref[0],x_dim,x_max,"=",x)
 		# print(cen[1],ref[1],y_dim,y_max,"=",y)
@@ -401,16 +394,17 @@ def run_ot(image,coords,centers):
 			(0,0,255), 3)
 		show_image(temp)
 		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
-		input("click to move to next colony")
+		# input("click to move to next colony")
 
 
-def show_image(image):
+def show_image(image,width=400):
 	'''Scales and then presents the image'''
-	resized = imutils.resize(image,width=500)
+	resized = imutils.resize(image,width=width)
 	cv2.imshow("Image", resized)
 	cv2.waitKey(1)
 	input()
 	return
+
 
 grids = []
 shapes = []
@@ -454,13 +448,16 @@ p10s = instruments.Pipette(
 for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	print(file)
 	img = cv2.imread(file)
-	cali_file = './webcam_calibrations.npz'
 	show_image(img)
-	dst = undistort_img(img,cali_file)
-	show_image(dst)
-	# resized = imutils.resize(img,width=1000)
+	cali_file = './webcam_calibrations.npz'
+	height,width = img.shape[:2]
+	rotated = imutils.rotate_bound(img, 90)
+	show_image(rotated)
+	# dst = undistort_img(img,cali_file)
+	# show_image(dst)
+	# resized = imutils.resize(new,width=10000)
 	# show_image(resized)
-	edges, intersections = find_corners(dst)
+	edges, intersections = find_corners(rotated)
 	show_image(edges)
 	warped = four_point_transform(edges,intersections)
 	show_image(warped)
