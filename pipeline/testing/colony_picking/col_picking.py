@@ -397,17 +397,17 @@ def run_ot(image,coords,centers):
 	for i,(coord,cen) in enumerate(zip(coords,centers)):
 		temp = image
 		print(i,":",coord[0],coord[1])
-		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
 		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(20),
 			(0,0,255), 3)
 		show_image(temp)
+		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
 
 
 def show_image(image):
 	'''Scales and then presents the image'''
 	resized = imutils.resize(image,width=500)
 	cv2.imshow("Image", resized)
-	# cv2.waitKey(1)
+	cv2.waitKey(1)
 	input()
 	return
 
