@@ -364,7 +364,9 @@ def find_reference(image):
 		print("Started at: ",point)
 		print("Ended at: ",new_points[-1],"\n")
 
-	ref_point = new_points[3]
+	ref_point = new_points[2]
+	print(new_points)
+	print(ref_point)
 	x_dim = new_points[2][0] - new_points[0][0]
 	y_dim = new_points[2][1] - new_points[0][1]
 
@@ -378,8 +380,8 @@ def ot_coords(centers,ref, x_dim, y_dim):
 	x_max = 78
 	coords = []
 	for cen in centers:
-		x = int(((cen[0] - ref[0])/x_dim) * x_max)
-		y = int(((ref[1] - cen[1])/y_dim) * y_max)
+		y = int(((ref[0] - cen[0])/x_dim) * x_max)
+		x = int(((ref[1] - cen[1])/y_dim) * y_max)
 		if x < 0 or y < 0:
 			continue
 		# print(cen[0],ref[0],x_dim,x_max,"=",x)
