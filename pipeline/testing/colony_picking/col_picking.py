@@ -372,8 +372,8 @@ def ot_coords(centers,image):
 	x_max = 78
 	coords = []
 	for cen in centers:
-		x = int(((cen[0]/x_dim) * x_max))
-		y = int(((image.shape[0]-cen[1])/y_dim) * y_max)
+		x = float(((cen[0]/x_dim) * x_max))
+		y = float(((image.shape[0]-cen[1])/y_dim) * y_max)
 		if x < 0 or y < 0:
 			print("invalid coordinate")
 			continue
@@ -382,6 +382,32 @@ def ot_coords(centers,image):
 		# input()
 		coords.append([x,y])
 	return coords
+
+def move_motor():
+	'''Allows for real-time calibration of the p10single channel xy location'''
+	z = 0
+	print("Change xy - w:back, d:forward, a:left, d:right, x:exit")
+	x = 0
+	y = 0
+	while z == 0:
+		c = getch.getch()
+		if c == "w":
+			p10s.robot._driver.move(y=0.5,mode="relative")
+			y += 0.5
+		elif c == "s":
+			p10s.robot._driver.move(y=-0.5,mode="relative")
+			y -= 0.5
+		elif c == "a":
+			p10s.robot._driver.move(x=-0.5,mode="relative")
+			x -= 0.5
+		elif c == "d":
+			p10s.robot._driver.move(x=0.5,mode="relative")
+			x += 0.5
+		elif c == "x":
+			z = 1
+	print(x,y)
+	# p10s.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
+
 
 def run_ot(image,coords,centers):
 	'''
@@ -394,6 +420,9 @@ def run_ot(image,coords,centers):
 			(0,0,255), 3)
 		show_image(temp)
 		p10s.move_to((trans_plate,[coord[0],coord[1],0]))
+		move_motor()
+
+
 		# input("click to move to next colony")
 
 
