@@ -239,7 +239,7 @@ def find_grid(img):
 	# # Test rectangle
 	# cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
-	plt.show()
+	# plt.show()
 	return cl1, mid_x, mid_y
 
 def find_colonies(image):
@@ -283,13 +283,14 @@ def find_colonies(image):
 			# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 3)
 			((cX, cY), radius) = cv2.minEnclosingCircle(cnt)
 			cv2.circle(color, (int(cX), int(cY)), int(radius+9),
-				(0, 255, 255), 3)
+				(0, 255, 255), 2)
 
 			rect = cv2.minAreaRect(cnt)
 
 			print(counter,".","Area",area,"Peri",perimeter,"comp",(perimeter**2)/(4*math.pi),"Approx",len(approx))
 			print(w,h,w/h)
 			show_image(color)
+			print(cX,cY)
 			centers += [[cX,cY]]
 	return color,centers
 
@@ -299,10 +300,10 @@ def change_loc(image,start):
 	'''
 	x = 0
 	temp = np.copy(image)
-	cv2.circle(temp, (int(start[0]),int(start[1])), int(3),
-		(0,0,255), 9)
-	cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
-		(255,0,0), 9)
+	# cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
+	# 	(255,0,0), 9)
+	cv2.line(temp,(int(start[0]),int(start[1])-40),(int(start[0]),int(start[1])+40),(0,0,255),2)
+	cv2.line(temp,(int(start[0])-40,int(start[1])),(int(start[0])+40,int(start[1])),(0,0,255),2)
 	temp_resized = imutils.resize(temp,width=400)
 	cv2.imshow("Image", temp_resized)
 	cv2.waitKey(5)
@@ -311,25 +312,25 @@ def change_loc(image,start):
 		# temp = image
 		c = getch.getch()
 		if c == "w":
-			start[1] -= 3
+			start[1] -= 1
 			print("up")
 		elif c == "s":
-			start[1] += 3
+			start[1] += 1
 			print("down")
 		elif c == "a":
-			start[0] -= 3
+			start[0] -= 1
 			print("left")
 		elif c == "d":
-			start[0] += 3
+			start[0] += 1
 			print("right")
 		elif c == "x":
 			x = 1
 			print("exit")
 		temp = np.copy(image)
-		cv2.circle(temp, (int(start[0]),int(start[1])), int(3),
-			(0,0,255), 9)
-		cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
-			(255,0,0), 9)
+		# cv2.circle(temp, (int(start[0]),int(start[1])), int(30),
+		# 	(255,0,0), 9)
+		cv2.line(temp,(int(start[0]),int(start[1])-40),(int(start[0]),int(start[1])+40),(0,0,255),2)
+		cv2.line(temp,(int(start[0])-40,int(start[1])),(int(start[0])+40,int(start[1])),(0,0,255),2)
 		temp_resized = imutils.resize(temp,width=400)
 		cv2.imshow("Image", temp_resized)
 		cv2.waitKey(5)
@@ -359,8 +360,8 @@ def find_reference(image):
 	ref_point = new_points[3]
 	print(new_points)
 	print(ref_point)
-	x_dim = new_points[2][0] - new_points[0][0]
-	y_dim = new_points[2][1] - new_points[0][1]
+	x_dim = new_points[1][0] - new_points[3][0]
+	y_dim = new_points[3][1] - new_points[1][1]
 
 	return ref_point,x_dim,y_dim,rect
 
@@ -374,12 +375,9 @@ def ot_coords(centers,image):
 	for cen in centers:
 		x = float(((cen[0]/x_dim) * x_max))
 		y = float(((image.shape[0]-cen[1])/y_dim) * y_max)
-		if x < 0 or y < 0:
-			print("invalid coordinate")
+		if x < float(0) or y < float(0):
+			print("invalid coordinate: ",x,y)
 			continue
-		# print(cen[0],ref[0],x_dim,x_max,"=",x)
-		# print(cen[1],ref[1],y_dim,y_max,"=",y)
-		# input()
 		coords.append([x,y])
 	return coords
 
@@ -393,37 +391,72 @@ def move_motor():
 		c = getch.getch()
 		if c == "w":
 			p10s.robot._driver.move(y=0.5,mode="relative")
+			print("up")
 			y += 0.5
 		elif c == "s":
 			p10s.robot._driver.move(y=-0.5,mode="relative")
+			print("down")
 			y -= 0.5
 		elif c == "a":
 			p10s.robot._driver.move(x=-0.5,mode="relative")
+			print("left")
 			x -= 0.5
 		elif c == "d":
 			p10s.robot._driver.move(x=0.5,mode="relative")
+			print("right")
 			x += 0.5
 		elif c == "x":
 			z = 1
 	print(x,y)
-	# p10s.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
+	return x,y
 
+def calibrate_ot(image,coords,centers):
+	_,last,_,first = order_points(coords)
+	_,last_cen,_,first_cen = order_points(centers)
+
+	temp = np.copy(image)
+
+	cv2.line(temp,(int(first_cen[0]),int(first_cen[1])-30),(int(first_cen[0]),int(first_cen[1])+30),(0,0,255),2)
+	cv2.line(temp,(int(first_cen[0])-30,int(first_cen[1])),(int(first_cen[0])+30,int(first_cen[1])),(0,0,255),2)
+	show_image(temp)
+	p10s.move_to((trans_plate,[first[0],first[1],0]))
+	print("Calibrate the first colony")
+	off_x1,off_y1 = move_motor()
+
+	cv2.line(temp,(int(last_cen[0]),int(last_cen[1])-30),(int(last_cen[0]),int(last_cen[1])+30),(0,0,255),2)
+	cv2.line(temp,(int(last_cen[0])-30,int(last_cen[1])),(int(last_cen[0])+30,int(last_cen[1])),(0,0,255),2)
+	show_image(temp)
+	p10s.move_to((trans_plate,[last[0],last[1],0]))
+	print("Calibrate the last colony")
+	off_x2,off_y2 = move_motor()
+
+	mX = (off_x2-off_x1)/(last[0]-first[0])
+	bX = off_x1 - mX*first[0]
+	mY = (off_y2-off_y1)/(last[1]-first[1])
+	bY = off_y1 - mY*first[1]
+
+	return mX,bX,mY,bY
 
 def run_ot(image,coords,centers):
 	'''
 	Pass the coordinates to the robot to pick the colony
 	'''
-	for i,(coord,cen) in enumerate(zip(coords,centers)):
+	mX,bX,mY,bY = calibrate_ot(image,coords,centers)
+	print(mX,bX,mY,bY)
+
+	for i,((x,y),cen) in enumerate(zip(coords,centers)):
 		temp = image
-		print(i,":",coord[0],coord[1])
+		print(i,":",x,y)
+		x_off = (mX * x) + bX
+		y_off = (mY * y) + bY
+		new_x = x + x_off
+		new_y = y + y_off
+		print(i,":",new_x,new_y)
 		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(20),
-			(0,0,255), 3)
+			(0,0,255), 2)
 		show_image(temp)
-		p10s.move_to((trans_plate,[coord[0]-0.5,coord[1]-2,0]))
-		move_motor()
-
-
-		# input("click to move to next colony")
+		p10s.move_to((trans_plate,[new_x,new_y,0]))
+		input("click to move to next colony")
 
 #
 def show_image(image,width=400):
