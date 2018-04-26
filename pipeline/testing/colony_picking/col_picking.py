@@ -411,7 +411,9 @@ def move_motor():
 	return x,y
 
 def calibrate_ot(image,coords,centers):
-	_,last,_,first = order_points(coords)
+	first,_,last,_ = order_points(coords)
+	print(last,first)
+	input("check")
 	_,last_cen,_,first_cen = order_points(centers)
 
 	temp = np.copy(image)
