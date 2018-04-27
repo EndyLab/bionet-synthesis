@@ -15,7 +15,7 @@
     {"name":"In Process"},
     {"name":"Mutation"},
     {"name":"Failures"},
-    {"name":"Not Yet Attempted"},
+    {"name":"Not Yet Attempted"}
   ],
   "links":[
     {"source":0,"target":8,"value":438},
