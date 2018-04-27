@@ -30,7 +30,7 @@ var node = svg.append("g")
     .attr("font-size", 10)
   .selectAll("g");
 
-d3.json("test.json", function(error, energy) {
+d3.json("sankey.json", function(error, energy) {
   if (error) throw error;
 
   sankey(energy);
