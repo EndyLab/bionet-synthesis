@@ -17,7 +17,7 @@ var sankey = d3.sankey()
     .nodePadding(10)
     .extent([[1, 1], [width - 1, height - 6]]);
 
-sankey.nodeId(function id(d) {return d.id})
+sankey.nodeId = function id(d) {return d.id}
 
 var link = svg.append("g")
     .attr("class", "links")
