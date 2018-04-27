@@ -249,7 +249,7 @@ def find_colonies(image):
 	'''
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(image)
-	thresh = cv2.threshold(cl1, 180, 255, cv2.THRESH_BINARY)[1]
+	thresh = cv2.threshold(cl1, 150, 255, cv2.THRESH_BINARY)[1]
 
 
 	cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -276,20 +276,24 @@ def find_colonies(image):
 		area = cv2.contourArea(cnt)
 
 		(rX,rY),(w,h),ang = cv2.minAreaRect(cnt)
-
-		if area > 50 and area < 350 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
-			cv2.circle(color, (cX, cY), 1, (0, 0, 255), -3)
+		# if area > 50 and area < 350 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
+		if area > 40 and area < 200 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
+			temp_c = np.copy(color)
+			temp_i = np.copy(image)
+			cv2.circle(temp_c, (cX, cY), 1, (0, 0, 255), -3)
+			cv2.circle(temp_i, (cX, cY), 1, (0, 0, 255), -3)
 			# cv2.putText(color, "{}".format(counter), (cX - 5, cY - 5),
 			# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 3)
 			((cX, cY), radius) = cv2.minEnclosingCircle(cnt)
-			cv2.circle(color, (int(cX), int(cY)), int(radius+9),
+			cv2.circle(temp_c, (int(cX), int(cY)), int(radius+9),
 				(0, 255, 255), 2)
-
-			rect = cv2.minAreaRect(cnt)
+			cv2.circle(temp_i, (int(cX), int(cY)), int(radius+9),
+				(0, 255, 255), 2)
 
 			print(counter,".","Area",area,"Peri",perimeter,"comp",(perimeter**2)/(4*math.pi),"Approx",len(approx))
 			print(w,h,w/h)
-			show_image(color)
+			show_image(temp_c)
+			show_image(temp_i)
 			print(cX,cY)
 			centers += [[cX,cY]]
 	return color,centers
