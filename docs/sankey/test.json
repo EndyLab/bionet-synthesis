@@ -1,1 +1,11 @@
-{"nodes":[{"name":"Node1"},{"name":"Node2"},{"name":"Node3"}],"links":[{"source":0,"target":1,"value":100},{"source":0,"target":2,"value":50}]}
+{
+  "nodes":[
+    {"name":"Node1"},
+    {"name":"Node2"},
+    {"name":"Node3"}
+  ],
+  "links":[
+    {"source":0,"target":1,"value":100},
+    {"source":0,"target":2,"value":50}
+  ]
+}
