@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001183            237 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpmB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 237)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..237
+                     /locus_tag="b3637"
+                     /gene="rpmB"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L28"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418094.1"
+                     /EC_number=""
+                     /translation="MSRVCQVTGKRPVTGNNRSHALNATKRRFLPNLHSHRFWVESEK
+                     RFVTLRVSAKGMRVIDKKGIDTVLAELRARGEKY"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0011885"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7M2"
+                     db_xref="EcoGene:EG10886"
+                     db_xref="GeneID:946941"
+ORIGIN
+        1 ATGTCACGCG TCTGCCAAGT TACGGGCAAA CGTCCGGTTA CCGGTAATAA CCGCAGCCAC
+       61 GCGCTGAATG CAACGAAGCG TCGTTTCCTG CCGAATCTGC ACAGCCACCG TTTTTGGGTG
+      121 GAAAGCGAGA AGCGTTTTGT TACCCTGCGT GTCAGCGCGA AGGGTATGCG TGTGATCGAC
+      181 AAAAAGGGTA TCGATACGGT GCTGGCGGAG CTGCGCGCCC GTGGCGAGAA GTACTGA
+//

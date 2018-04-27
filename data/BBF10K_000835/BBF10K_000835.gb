@@ -1,0 +1,40 @@
+LOCUS       BBF10K_000835            600 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  plsC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 600)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..600
+                     /locus_tag="BSU09540"
+                     /gene="plsC"
+                     /gene_synonyms=""
+                     /product="1-acyl-sn-glycerol-3-phosphate acyltransferase"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388835.1"
+                     /EC_number="2.3.1.51"
+                     /translation="MYKFCANALKVILSLRGGVKVYNKENLPADSGFVIACTHSGWVD
+                     VITLGVGILPYQIHYMAKKELFQNKWIGSFLKKIHAFPVDRENPGPSSIKTPIKLLKE
+                     GEIVGIFPSGTRTSEDVPLKRGAVTIAQMGKAPLVPAAYQGPSSGKELFKKGKMKLII
+                     GEPLHQADFAHLPSKERLAAMTEALNQRIKELENKLDQL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936269"
+ORIGIN
+        1 ATGTATAAAT TCTGCGCGAA TGCGCTGAAG GTGATTCTGA GCCTGCGCGG TGGTGTCAAA
+       61 GTTTACAACA AGGAGAATCT GCCGGCCGAT AGCGGCTTCG TGATTGCGTG CACGCATAGC
+      121 GGCTGGGTGG ATGTGATTAC GCTGGGTGTC GGCATCCTGC CGTACCAAAT TCATTATATG
+      181 GCTAAAAAGG AGTTATTCCA GAACAAGTGG ATTGGTAGCT TCCTGAAGAA AATCCACGCG
+      241 TTCCCGGTTG ATCGTGAAAA TCCAGGCCCA TCTAGCATCA AGACCCCGAT TAAGCTGCTG
+      301 AAGGAAGGTG AAATTGTCGG TATCTTCCCA TCTGGTACGC GCACGAGCGA AGATGTGCCG
+      361 CTGAAGCGCG GTGCCGTTAC CATTGCACAG ATGGGCAAAG CGCCGCTGGT ACCGGCGGCG
+      421 TATCAGGGCC CGTCCAGCGG TAAGGAGCTG TTCAAGAAGG GCAAAATGAA ACTGATTATT
+      481 GGCGAGCCGC TGCACCAGGC CGACTTCGCG CATCTGCCGA GCAAAGAGCG TCTGGCGGCC
+      541 ATGACCGAGG CGTTGAATCA ACGTATTAAG GAGCTGGAAA ATAAACTGGA TCAGCTGTGA
+//

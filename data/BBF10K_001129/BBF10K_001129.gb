@@ -1,0 +1,45 @@
+LOCUS       BBF10K_001129            558 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  lptA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 558)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..558
+                     /locus_tag="b3200"
+                     /gene="lptA"
+                     /gene_synonyms=""
+                     /product="lipopolysaccharide export ABC
+                     transporterperiplasmic binding protein; Lipid A binding
+                     protein; LPSexport and assembly protein"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417667.1"
+                     /EC_number=""
+                     /translation="MKFKTNKLSLNLVLASSLLAASIPAFAVTGDTDQPIHIESDQQS
+                     LDMQGNVVTFTGNVIVTQGTIKINADKVVVTRPGGEQGKEVIDGYGKPATFYQMQDNG
+                     KPVEGHASQMHYELAKDFVVLTGNAYLQQVDSNIKGDKITYLVKEQKMQAFSDKGKRV
+                     TTVLVPSQLQDKNNKGQTPAQKKGN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010510"
+                     db_xref="UniProtKB/Swiss-Prot:P0ADV1"
+                     db_xref="EcoGene:EG12618"
+                     db_xref="GeneID:947920"
+ORIGIN
+        1 ATGAAATTCA AGACGAATAA ACTGTCCTTG AACCTGGTGC TGGCGAGCTC CCTGCTGGCG
+       61 GCGAGCATCC CGGCATTTGC GGTCACCGGC GACACCGACC AGCCGATCCA TATTGAAAGC
+      121 GATCAACAAA GCTTGGACAT GCAAGGTAAC GTGGTGACCT TTACGGGCAA TGTGATTGTC
+      181 ACCCAAGGTA CCATCAAAAT TAACGCCGAC AAAGTTGTAG TTACGCGTCC GGGCGGCGAA
+      241 CAGGGTAAAG AGGTTATCGA TGGTTATGGT AAACCGGCGA CCTTCTATCA GATGCAAGAT
+      301 AACGGCAAGC CAGTGGAAGG CCATGCGAGC CAAATGCACT ATGAACTGGC AAAAGACTTT
+      361 GTCGTTCTGA CCGGCAACGC TTATCTGCAG CAAGTCGACA GCAATATTAA AGGCGATAAA
+      421 ATCACGTACT TGGTTAAGGA GCAGAAGATG CAGGCCTTTA GCGACAAAGG TAAGCGCGTG
+      481 ACGACCGTTT TGGTGCCTAG CCAGTTGCAA GATAAGAACA ATAAGGGCCA GACGCCGGCG
+      541 CAGAAGAAGG GTAACTGA
+//

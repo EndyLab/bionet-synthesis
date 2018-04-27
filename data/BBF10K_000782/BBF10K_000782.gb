@@ -1,0 +1,35 @@
+LOCUS       BBF10K_000782            309 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsJ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 309)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..309
+                     /locus_tag="BSU01150"
+                     /gene="rpsJ"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S10"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387996.1"
+                     /EC_number=""
+                     /translation="MAKQKIRIRLKAYDHRILDQSAEKIVETAKRSGASVSGPIPLPT
+                     EKSVYTILRAVHKYKDSREQFEMRTHKRLIDIVNPTPQTVDALMRLDLPSGVDIEIKL
+                     "
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936825"
+ORIGIN
+        1 ATGGCCAAAC AAAAAATTCG TATTCGTCTG AAGGCCTATG ACCACCGCAT TCTGGACCAA
+       61 AGCGCGGAAA AAATCGTGGA AACCGCGAAA CGCAGCGGTG CGTCGGTTAG CGGTCCGATC
+      121 CCGTTACCAA CCGAAAAGAG CGTGTACACC ATTCTGCGTG CAGTTCACAA GTATAAAGAT
+      181 TCTCGCGAAC AGTTTGAGAT GCGTACCCAC AAGCGCCTGA TCGATATTGT TAATCCGACC
+      241 CCACAAACTG TAGACGCACT GATGCGTCTG GATCTGCCGA GCGGTGTGGA CATTGAGATC
+      301 AAGCTGTGA
+//

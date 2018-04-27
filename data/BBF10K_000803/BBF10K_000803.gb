@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000803            366 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsM
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 366)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..366
+                     /locus_tag="BSU01410"
+                     /gene="rpsM"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S13"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388022.2"
+                     /EC_number=""
+                     /translation="MARIAGVDIPRDKRVVISLTYIFGIGRTTAQQVLKEAGVSEDTR
+                     VRDLTEEELGKIRDIIDKLKVEGDLRREVSLNIKRLIEIGSYRGIRHRRGLPVRGQNS
+                     KNNARTRKGPRRTVANKKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938928"
+ORIGIN
+        1 ATGGCGCGTA TCGCCGGTGT CGATATTCCG CGCGATAAGC GCGTTGTGAT TAGCCTGACG
+       61 TATATTTTTG GTATCGGTCG TACCACGGCG CAACAAGTGC TGAAAGAGGC AGGCGTTAGC
+      121 GAGGACACTC GTGTCCGTGA CTTGACTGAA GAAGAACTGG GTAAAATTCG CGATATTATT
+      181 GACAAGCTGA AGGTGGAGGG TGATCTGCGT CGTGAAGTCT CTCTGAATAT TAAGCGTCTG
+      241 ATTGAGATTG GTAGCTATCG CGGCATTCGC CACCGTCGCG GTTTACCGGT GCGTGGCCAA
+      301 AACAGCAAGA ACAATGCGCG TACGCGTAAA GGTCCGCGTC GTACTGTCGC TAATAAGAAG
+      361 AAGTGA
+//

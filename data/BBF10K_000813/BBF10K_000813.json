@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_000813",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "aroK",
+      "description": "All essential genes from Bacillus subtilis as defined by https://doi.org/10.1016/j.cell.2016.05.003",
+      "database_links": [],
+      "source": "Bacillus subtilis 168"
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 3,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": "9"
+  },
+  "sequence": {
+    "original_sequence": "ATGAACGCTAAACGAGCCATCCCAGTAAGAGAAAGAAATATCGTCCTGATCGGATTCATGGGTGTAGGAAAAACAACAATCGGCCAATTGGTCGCTAAAAAATTATATAGAGATTTTATTGATATTGACCAGCAGATCGAAAAGGATTTCAATATGTCAATTCCTGAGATATTTGAGAAAAAGGGAGAAGACTTTTTCCGGAAAACGGAGAAGGAATATATTTTAGACATCTGCCATCATAAACGATTCAAAATCGTATCTCTGGGCGGGGGATCTTTTAAACAAGAAGAAATCAGAAATTGCTGTCTGGAAAACTGTCTCGTGCTTCATCTGGACCTGTCATGGGAGAACTGGAAGCAGCGCGCGGATTTATTGATCGAAAGCCGCCCTGTACTGCATAACCGTTCAATGGATGAAATGGAACAGCTGTTTAACGAAAGAAAAGTCATTTATGACAAGCACAATTCAAAAGTGGCAACAGACAACCTTTCCCCGGAAGAGGTTGCCGATTACATTGTTGAGACATTAAAAATTGGCTGGGATCTTTATCAGCCGATGTAA",
+    "optimized_sequence": "ATGAACGCCAAGAGAGCCATTCCGGTGCGCGAGCGTAACATTGTGCTGATTGGTTTTATGGGCGTGGGTAAGACTACGATTGGTCAACTGGTCGCCAAAAAGCTGTACCGTGATTTCATTGACATCGATCAGCAGATTGAGAAAGACTTTAACATGAGCATTCCGGAAATTTTCGAGAAGAAAGGTGAGGACTTTTTTCGTAAGACCGAGAAAGAGTACATCCTGGACATCTGTCATCACAAGCGTTTTAAGATTGTGAGCCTGGGCGGTGGTAGCTTCAAGCAGGAAGAAATCCGTAACTGCTGCCTGGAAAATTGTCTGGTGCTGCACTTGGACCTGAGCTGGGAGAATTGGAAACAACGTGCCGATCTGCTGATCGAATCTCGTCCGGTCCTGCATAACCGTTCCATGGACGAGATGGAACAGCTGTTTAACGAAAGAAAGGTCATCTATGATAAGCACAACAGCAAAGTTGCAACGGACAATCTGTCCCCGGAGGAGGTTGCGGACTACATTGTTGAAACGCTGAAGATTGGTTGGGATTTGTACCAACCTATGTGA",
+    "fragment_sequences": {
+      "BBF10K_000813_1": "GAAGACCAGGAGGTCTCAAATGAACGCCAAGAGAGCCATTCCGGTGCGCGAGCGTAACATTGTGCTGATTGGTTTTATGGGCGTGGGTAAGACTACGATTGGTCAACTGGTCGCCAAAAAGCTGTACCGTGATTTCATTGACATCGATCAGCAGATTGAGAAAGACTTTAACATGAGCATTCCGGAAATTTTCGAGAAGAAAGGTGAGGACTTTTTTCGTAAGACCGAGAAAGAGTACATCCTGGACATCTGTCATCACAAGCGTTTTAAGATTGTGAGCCTGGGCGGTGGTAGCTTCAAGCAGGAAGAAATCCGTAACTGCTGCCTGGAAAATTGTCTGGTGCTGCACTTGGACCTGAGCTGGGAGAATTGGAAACAACGTGCCGATCTGCTGATCGAATCTCGTCCGGTCCTGCATAACCGTTCCATGGACGAGATGGAACAGCTGTTTAACGAAAGAAAGGTCATCTATGATAAGCACAACAGCAAAGTTGCAACGGACAATCTGTCCCCGGAGGAGGTTGCGGACTACATTGTTGAAACGCTGAAGATTGGTTGGGATTTGTACCAACCTATGTGAAGAGCTTAGAGACCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "24-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "BSU03150",
+    "gene": "aroK",
+    "gene_synonyms": "",
+    "product": "shikimate kinase",
+    "note": "catalyzes the formation of shikimate 3-phosphatefrom shikimate in aromatic amino acid biosynthesis",
+    "Source": "Bacillus subtilis subsp. subtilis str. 168",
+    "GenBank_acc": "NC_000964",
+    "protein_id": "NP_388197.2",
+    "EC_number": "2.7.1.71",
+    "translation": "MNAKRAIPVRERNIVLIGFMGVGKTTIGQLVAKKLYRDFIDIDQQIEKDFNMSIPEIFEKKGEDFFRKTEKEYILDICHHKRFKIVSLGGGSFKQEEIRNCCLENCLVLHLDLSWENWKQRADLLIESRPVLHNRSMDEMEQLFNERKVIYDKHNSKVATDNLSPEEVADYIVETLKIGWDLYQPM",
+    "references": [
+      "db_xref=\"GeneID:938343\""
+    ]
+  },
+  "tags": [
+    "Bacillus subtilis",
+    "Essential"
+  ]
+}

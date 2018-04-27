@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001156            192 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpmC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 192)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..192
+                     /locus_tag="b3312"
+                     /gene="rpmC"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L29"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417771.1"
+                     /EC_number=""
+                     /translation="MKAKELREKSVEELNTELLNLLREQFNLRMQAASGQLQQSHLLK
+                     QVRRDVARVKTLLNEKAGA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010842"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7M6"
+                     db_xref="EcoGene:EG10887"
+                     db_xref="GeneID:947807"
+ORIGIN
+        1 ATGAAGGCGA AAGAGCTGCG TGAGAAAAGC GTTGAAGAGT TGAATACTGA ATTGCTTAAT
+       61 CTGCTGCGTG AACAGTTTAA TTTGCGTATG CAGGCTGCGA GCGGTCAACT GCAACAATCT
+      121 CACCTGTTGA AACAGGTCCG CCGTGACGTG GCACGTGTTA AAACGCTGCT GAACGAAAAG
+      181 GCCGGCGCCT GA
+//

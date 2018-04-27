@@ -1,0 +1,49 @@
+LOCUS       BBF10K_000769            699 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ispD
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 699)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..699
+                     /locus_tag="BSU00900"
+                     /gene="ispD"
+                     /gene_synonyms=""
+                     /product="2-D-methyl-D-erythritol
+                     4-phosphatecytidylyltransferase"
+                     /note="4-diphosphocytidyl-2C-methyl-D-erythritol
+                     synthase;MEP cytidylyltransferase; MCT; catalyzes the
+                     formation of4-diphosphocytidyl-2-C-methyl-D-erythritol
+                     from CTP and2-C-methyl-D-erythritol 4-phosphate; involved
+                     inisoprenoid and isopentenyl-PP biosynthesis;
+                     formshomodimers"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387971.1"
+                     /EC_number="2.7.7.60"
+                     /translation="MSYDVVIPAAGQGKRMKAGRNKLFIELKGDPVIIHTLRVFDSHR
+                     QCDKIILVINEQEREHFQQLLSDYPFQTSIELVAGGDERQHSVYKGLKAVKQEKIVLV
+                     HDGARPFIKHEQIDELIAEAEQTGAAILAVPVKDTIKRVQDLQVSETIERSSLWAVQT
+                     PQAFRLSLLMKAHAEAERKGFLGTDDASLVEQMEGGSVRVVEGSYTNIKLTTPDDLTS
+                     AEAIMESESGNKHV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936855"
+ORIGIN
+        1 ATGTCTTACG ATGTCGTCAT CCCAGCAGCG GGTCAGGGTA AGCGCATGAA AGCGGGCCGT
+       61 AATAAATTGT TCATCGAGTT GAAAGGCGAC CCGGTGATCA TTCATACGCT GCGTGTTTTC
+      121 GATTCCCATC GTCAGTGCGA TAAGATCATC CTGGTGATCA ATGAACAGGA ACGTGAGCAT
+      181 TTCCAACAGC TGCTGAGCGA TTACCCGTTT CAAACCAGCA TTGAGCTGGT TGCGGGTGGT
+      241 GACGAACGTC AGCACTCAGT GTATAAGGGC CTGAAGGCGG TTAAGCAGGA AAAAATTGTC
+      301 CTCGTGCATG ATGGTGCCCG TCCGTTCATT AAACACGAAC AGATCGACGA GCTGATCGCG
+      361 GAAGCTGAGC AAACCGGCGC AGCGATTCTG GCTGTTCCGG TTAAAGACAC CATTAAAAGA
+      421 GTCCAAGATC TCCAGGTTAG CGAAACCATT GAACGTAGCT CACTGTGGGC CGTGCAAACC
+      481 CCGCAAGCTT TCCGTTTGAG CCTGCTGATG AAGGCGCATG CCGAGGCAGA GCGCAAAGGT
+      541 TTTCTGGGCA CCGATGACGC GAGCCTGGTG GAACAGATGG AGGGCGGTAG CGTGCGTGTC
+      601 GTTGAGGGTA GCTACACCAA TATTAAGCTG ACCACGCCGG ACGACCTGAC CAGCGCAGAA
+      661 GCGATTATGG AGAGCGAGAG CGGCAATAAG CACGTGTGA
+//

@@ -1,0 +1,48 @@
+LOCUS       BBF10K_001130            726 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  lptB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 726)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..726
+                     /locus_tag="b3201"
+                     /gene="lptB"
+                     /gene_synonyms=""
+                     /product="lipopolysaccharide export ABC transporterATPase"
+                     /note="putative ATP-binding component of a
+                     transportsystem"
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417668.1"
+                     /EC_number=""
+                     /translation="MATLTAKNLAKAYKGRRVVEDVSLTVNSGEIVGLLGPNGAGKTT
+                     TFYMVVGIVPRDAGNIIIDDDDISLLPLHARARRGIGYLPQEASIFRRLSVYDNLMAV
+                     LQIRDDLSAEQREDRANELMEEFHIEHLRDSMGQSLSGGERRRVEIARALAANPKFIL
+                     LDEPFAGVDPISVIDIKRIIEHLRDSGLGVLITDHNVRETLAVCERAYIVSQGHLIAH
+                     GTPTEILQDEHVKRVYLGEDFRL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010512"
+                     db_xref="UniProtKB/Swiss-Prot:P0A9V1"
+                     db_xref="EcoGene:EG11680"
+                     db_xref="GeneID:947725"
+ORIGIN
+        1 ATGGCGACCC TGACGGCTAA AAACCTGGCT AAGGCGTATA AAGGCCGTCG TGTGGTGGAG
+       61 GATGTGAGCC TGACGGTCAA CTCCGGTGAA ATTGTTGGTT TGCTGGGCCC AAATGGCGCG
+      121 GGCAAGACTA CCACCTTCTA CATGGTTGTG GGTATCGTGC CGCGTGATGC CGGTAATATC
+      181 ATCATTGACG ACGACGACAT CAGCCTGTTG CCGCTGCACG CGCGTGCACG TCGTGGTATC
+      241 GGTTATCTGC CGCAAGAAGC GAGCATTTTT CGTCGCTTGA GCGTGTACGA TAATCTGATG
+      301 GCAGTTCTGC AAATTCGCGA CGACCTGAGC GCTGAACAGC GCGAGGACCG TGCAAACGAG
+      361 CTGATGGAAG AATTCCATAT CGAGCACTTG CGCGACAGCA TGGGTCAGAG CTTGAGCGGC
+      421 GGCGAGCGTC GTAGAGTCGA GATCGCGCGT GCACTGGCGG CGAATCCGAA ATTTATTCTG
+      481 TTGGATGAGC CATTTGCTGG TGTCGACCCG ATTAGCGTTA TCGACATCAA ACGCATCATT
+      541 GAGCATTTGC GCGACAGCGG CCTGGGTGTG CTGATCACGG ACCACAATGT CCGCGAAACC
+      601 CTGGCTGTCT GTGAACGTGC CTATATCGTG AGCCAGGGTC ACCTGATTGC GCACGGTACC
+      661 CCGACCGAGA TTCTCCAAGA TGAACACGTT AAGCGTGTGT ACTTGGGTGA GGACTTTCGT
+      721 CTGTGA
+//

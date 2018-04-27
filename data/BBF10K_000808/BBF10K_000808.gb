@@ -1,0 +1,37 @@
+LOCUS       BBF10K_000808            393 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 393)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..393
+                     /locus_tag="BSU01500"
+                     /gene="rpsI"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S9"
+                     /note="forms a direct contact with the tRNA
+                     duringtranslation"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388031.1"
+                     /EC_number=""
+                     /translation="MAQVQYYGTGRRKSSVARVRLVPGEGRIVVNNREISEHIPSAAL
+                     IEDIKQPLTLTETAGTYDVLVNVHGGGLSGQAGAIRHGIARALLEADPEYRTTLKRAG
+                     LLTRDARMKERKKYGLKGARRAPQFSKR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938912"
+ORIGIN
+        1 ATGGCGCAAG TGCAATACTA TGGTACCGGT CGTCGCAAAA GCAGCGTTGC GCGTGTGCGC
+       61 CTGGTTCCGG GCGAAGGTCG CATTGTTGTT AACAACCGTG AGATCAGCGA GCACATTCCG
+      121 AGCGCTGCAC TGATCGAGGA TATCAAACAA CCGCTGACGC TGACGGAAAC GGCGGGTACG
+      181 TACGACGTCC TGGTCAACGT TCACGGTGGC GGTCTGAGCG GCCAGGCAGG CGCGATTCGT
+      241 CATGGAATCG CACGTGCACT GCTGGAGGCA GATCCGGAGT ACCGTACGAC GCTGAAACGC
+      301 GCGGGTCTGC TGACCCGTGA CGCACGTATG AAAGAGCGTA AAAAGTACGG TCTGAAGGGT
+      361 GCACGCCGCG CGCCGCAATT CTCTAAGCGC TGA
+//

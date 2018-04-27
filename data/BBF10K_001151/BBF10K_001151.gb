@@ -1,0 +1,39 @@
+LOCUS       BBF10K_001151            393 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 393)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..393
+                     /locus_tag="b3306"
+                     /gene="rpsH"
+                     /gene_synonyms=""
+                     /product="30S ribosomal subunit protein S8"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417765.1"
+                     /EC_number=""
+                     /translation="MSMQDPIADMLTRIRNGQAANKAAVTMPSSKLKVAIANVLKEEG
+                     FIEDFKVEGDTKPELELTLKYFQGKAVVESIQRVSRPGLRIYKRKDELPKVMAGLGIA
+                     VVSTSKGVMTDRAARQAGLGGEIICYVA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010829"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7W7"
+                     db_xref="EcoGene:EG10907"
+                     db_xref="GeneID:947802"
+ORIGIN
+        1 ATGTCTATGC AGGATCCGAT CGCGGATATG TTGACGCGCA TTCGCAACGG CCAAGCGGCG
+       61 AACAAGGCGG CGGTGACGAT GCCGAGCTCT AAGTTGAAGG TGGCGATTGC AAATGTCCTG
+      121 AAGGAAGAAG GTTTCATCGA GGACTTCAAA GTAGAGGGCG ACACCAAACC GGAACTGGAG
+      181 CTGACCCTGA AATATTTCCA AGGCAAAGCC GTCGTTGAGA GCATTCAGCG TGTGAGCCGT
+      241 CCGGGCCTGC GTATTTACAA ACGTAAGGAC GAGTTGCCGA AAGTGATGGC GGGCTTGGGT
+      301 ATTGCGGTGG TAAGCACGAG CAAGGGTGTG ATGACCGACC GTGCTGCACG TCAAGCGGGC
+      361 CTGGGTGGTG AGATCATCTG TTATGTGGCC TGA
+//

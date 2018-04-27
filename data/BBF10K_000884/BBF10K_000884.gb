@@ -1,0 +1,46 @@
+LOCUS       BBF10K_000884            741 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 741)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..741
+                     /locus_tag="BSU16490"
+                     /gene="rpsB"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S2"
+                     /note="one of the last subunits in the assembly of the
+                     30Ssubunit; absence of S2 does not inhibit assembly
+                     butresults in an inactive subunit"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_389531.1"
+                     /EC_number=""
+                     /translation="MSVISMKQLLEAGVHFGHQTRRWNPKMKRYIFTERNGIYIIDLQ
+                     KTVKKVEEAYNFTKNLAAEGGKILFVGTKKQAQDSVKEEAQRSGMYYVNQRWLGGTLT
+                     NFETIQKRIKRLKDIEKMQENGTFDVLPKKEVVQLKKELERLEKFLGGIKDMKDLPDA
+                     LFIIDPRKERIAVAEARKLNIPIIGIVDTNCDPDEIDVVIPANDDAIRAVKLLTSKMA
+                     DAILEAKQGEEEAEVAEETAPETETTTA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:939599"
+ORIGIN
+        1 ATGTCCGTGA TTAGCATGAA ACAGCTGCTG GAAGCCGGTG TGCACTTTGG TCACCAAACG
+       61 CGCCGTTGGA ACCCAAAGAT GAAACGTTAC ATTTTCACCG AGCGTAATGG TATCTACATT
+      121 ATCGATCTGC AAAAGACGGT TAAGAAGGTC GAAGAGGCTT ACAATTTCAC GAAAAACCTC
+      181 GCAGCAGAAG GTGGTAAAAT CCTGTTCGTG GGTACCAAAA AACAAGCGCA AGATAGCGTC
+      241 AAGGAGGAGG CCCAACGTAG CGGTATGTAC TACGTGAATC AACGTTGGCT GGGTGGTACG
+      301 CTGACCAACT TTGAAACCAT CCAGAAACGT ATTAAACGTC TGAAGGATAT TGAGAAAATG
+      361 CAGGAAAACG GCACCTTCGA CGTTCTGCCG AAAAAAGAGG TAGTTCAACT GAAGAAGGAG
+      421 CTGGAGCGCT TGGAAAAATT TTTGGGTGGT ATTAAGGACA TGAAGGATCT GCCTGACGCG
+      481 CTGTTCATCA TTGACCCGCG CAAAGAGCGT ATCGCAGTTG CAGAGGCCCG TAAACTGAAC
+      541 ATCCCGATCA TCGGTATTGT CGATACTAAC TGCGACCCGG ATGAGATCGA TGTTGTGATT
+      601 CCTGCCAATG ATGACGCCAT CCGTGCGGTG AAATTACTGA CTAGCAAGAT GGCTGACGCC
+      661 ATTCTGGAGG CAAAACAAGG CGAGGAAGAA GCAGAGGTTG CGGAGGAAAC GGCGCCGGAA
+      721 ACGGAAACCA CCACCGCCTG A
+//

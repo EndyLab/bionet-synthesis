@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001124            258 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpmA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 258)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..258
+                     /locus_tag="b3185"
+                     /gene="rpmA"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L27"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417652.1"
+                     /EC_number=""
+                     /translation="MAHKKAGGSTRNGRDSEAKRLGVKRFGGESVLAGSIIVRQRGTK
+                     FHAGANVGCGRDHTLFAKADGKVKFEVKGPKNRKFISIEAE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010468"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7L8"
+                     db_xref="EcoGene:EG50002"
+                     db_xref="GeneID:945190"
+ORIGIN
+        1 ATGGCACACA AGAAGGCGGG TGGTAGCACC CGTAACGGCC GCGACTCAGA AGCCAAGCGC
+       61 CTGGGCGTGA AGCGTTTCGG TGGTGAGAGC GTGCTGGCGG GTAGCATCAT TGTTCGTCAA
+      121 CGTGGTACCA AGTTCCACGC CGGCGCCAAT GTGGGTTGCG GTAGAGATCA TACCTTGTTT
+      181 GCAAAAGCAG ATGGTAAGGT CAAGTTCGAG GTGAAAGGTC CGAAAAACCG TAAATTTATT
+      241 AGCATCGAGG CGGAGTGA
+//

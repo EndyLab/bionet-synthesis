@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000775            372 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 372)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..372
+                     /locus_tag="BSU01050"
+                     /gene="rplL"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L7/L12"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387986.1"
+                     /EC_number=""
+                     /translation="MALNIEEIIASVKEATVLELNDLVKAIEEEFGVTAAAPVAVAGG
+                     AAAGGAAEEQSEFDLILAGAGSQKIKVIKVVREITGLGLKEAKELVDNTPKPLKEGIA
+                     KEEAEELKAKLEEVGASVEVK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:935952"
+ORIGIN
+        1 ATGGCGCTGA ACATTGAAGA GATTATCGCC AGCGTTAAAG AAGCAACGGT GCTGGAACTG
+       61 AATGACCTGG TTAAGGCGAT TGAAGAGGAA TTCGGTGTTA CTGCAGCGGC ACCGGTGGCG
+      121 GTCGCAGGCG GTGCAGCAGC TGGTGGTGCG GCCGAGGAGC AGAGCGAGTT TGATCTGATT
+      181 CTGGCCGGCG CGGGCAGCCA AAAAATCAAA GTTATCAAAG TCGTTCGTGA GATTACGGGC
+      241 TTAGGCCTGA AAGAGGCGAA GGAGCTGGTC GACAATACCC CGAAACCGTT GAAAGAAGGT
+      301 ATCGCAAAAG AGGAAGCAGA GGAACTGAAG GCGAAACTGG AAGAGGTCGG TGCGAGCGTT
+      361 GAGGTGAAGT GA
+//

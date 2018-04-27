@@ -1,0 +1,41 @@
+LOCUS       BBF10K_000792            540 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 540)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..540
+                     /locus_tag="BSU01280"
+                     /gene="rplE"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L5"
+                     /note="part of 50S and 5S/L5/L18/L25 subcomplex;
+                     contacts5S rRNA and P site tRNA; forms a bridge to the 30S
+                     subunitin the ribosome by binding to S13"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388009.1"
+                     /EC_number=""
+                     /translation="MNRLKEKYNKEIAPALMTKFNYDSVMQVPKIEKIVINMGVGDAV
+                     QNAKAIDSAVEELTFIAGQKPVVTRAKKSIAGFRLREGMPIGAKVTLRGERMYDFLDK
+                     LISVSLPRVRDFRGVSKKSFDGRGNYTLGIKEQLIFPEIDYDKVTKVRGMDIVIVTTA
+                     NTDEEARELLTQVGMPFQK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936981"
+ORIGIN
+        1 ATGAATCGTT TAAAGGAAAA GTATAACAAA GAGATCGCCC CGGCTCTGAT GACTAAATTT
+       61 AATTACGACA GCGTTATGCA AGTCCCTAAA ATTGAGAAGA TTGTCATTAA CATGGGCGTT
+      121 GGCGACGCAG TGCAAAACGC CAAGGCGATC GACAGCGCCG TTGAGGAGCT GACCTTCATT
+      181 GCGGGTCAGA AACCGGTCGT CACCCGTGCC AAGAAAAGTA TCGCGGGCTT TCGTCTGCGT
+      241 GAGGGTATGC CGATTGGCGC GAAGGTCACT CTGCGCGGTG AACGTATGTA CGATTTCCTG
+      301 GACAAGCTGA TTAGCGTGTC GCTGCCGCGT GTTCGCGACT TTCGCGGTGT TAGCAAAAAG
+      361 AGCTTCGATG GCCGTGGCAA CTACACGTTG GGCATTAAGG AGCAACTGAT CTTCCCGGAA
+      421 ATCGACTATG ACAAGGTTAC TAAAGTGCGT GGTATGGACA TCGTGATCGT GACGACGGCT
+      481 AACACCGACG AAGAAGCACG CGAGTTGCTG ACCCAGGTTG GCATGCCGTT TCAGAAGTGA
+//

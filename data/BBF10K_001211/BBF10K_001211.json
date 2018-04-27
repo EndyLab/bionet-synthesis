@@ -1,0 +1,95 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_001211",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "secE",
+      "description": "All essential genes from Escherichia coli as defined by http://www.ecogene.org/old/topic.php?topic_id=5",
+      "database_links": [],
+      "source": "Escherichia coli MG1655"
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 4,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": "9"
+  },
+  "sequence": {
+    "original_sequence": "ATGAGTGCGAATACCGAAGCTCAAGGAAGCGGGCGCGGCCTGGAAGCGATGAAGTGGGTCGTTGTGGTGGCATTGCTCCTGGTGGCGATTGTCGGCAACTATCTTTATCGCGACATTATGCTGCCGCTGCGTGCGCTGGCCGTAGTAATTCTGATTGCTGCAGCGGGTGGTGTCGCGCTGTTAACGACAAAAGGTAAAGCTACCGTTGCTTTTGCCCGTGAAGCGCGTACCGAAGTCCGTAAGGTCATTTGGCCGACTCGCCAGGAAACATTGCACACCACGCTGATTGTGGCTGCGGTTACCGCAGTAATGTCACTGATCCTGTGGGGACTGGATGGTATTCTGGTTCGCCTGGTATCCTTTATCACTGGCCTGAGGTTCTGA",
+    "optimized_sequence": "ATGAGCGCTAATACCGAGGCGCAAGGCAGCGGTCGCGGTTTGGAGGCAATGAAATGGGTGGTTGTGGTCGCATTGCTGTTGGTGGCGATCGTGGGCAACTATCTGTATCGTGATATTATGCTGCCGCTGCGCGCTCTGGCCGTCGTGATCCTGATTGCGGCAGCGGGCGGCGTTGCGCTGCTGACCACGAAAGGTAAAGCAACGGTCGCGTTCGCGCGCGAAGCTCGTACGGAAGTTCGTAAGGTGATCTGGCCTACCCGCCAGGAAACGCTGCACACCACTCTGATTGTGGCTGCGGTTACCGCCGTGATGTCCCTGATTTTGTGGGGCCTGGATGGCATTCTGGTGCGCCTGGTTTCCTTTATTACCGGTCTGCGCTTTTGA",
+    "fragment_sequences": {
+      "BBF10K_001211_1": "GAAGACCAGGAGGTCTCAAATGAGCGCTAATACCGAGGCGCAAGGCAGCGGTCGCGGTTTGGAGGCAATGAAATGGGTGGTTGTGGTCGCATTGCTGTTGGTGGCGATCGTGGGCAACTATCTGTATCGTGATATTATGCTGCCGCTGCGCGCTCTGGCCGTCGTGATCCTGATTGCGGCAGCGGGCGGCGTTGCGCTGCTGACCACGAAAGGTAAAGCAACGGTCGCGTTCGCGCGCGAAGCTCGTACGGAAGTTCGTAAGGTGATCTGGCCTACCCGCCAGGAAACGCTGCACACCACTCTGATTGTGGCTGCGGTTACCGCCGTGATGTCCCTGATTTTGTGGGGCCTGGATGGCATTCTGGTGCGCCTGGTTTCCTTTATTACCGGTCTGCGCTTTTGAAGAGCTTAGAGACCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "24-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "b3981",
+    "gene": "secE",
+    "gene_synonyms": "",
+    "product": "preprotein translocase membrane subunit",
+    "note": "preprotein translocase",
+    "Source": "Escherichia coli str. K-12 substr. MG1655",
+    "GenBank_acc": "NC_000913",
+    "protein_id": "NP_418408.1",
+    "EC_number": "",
+    "translation": "MSANTEAQGSGRGLEAMKWVVVVALLLVAIVGNYLYRDIMLPLRALAVVILIAAAGGVALLTTKGKATVAFAREARTEVRKVIWPTRQETLHTTLIVAAVTAVMSLILWGLDGILVRLVSFITGLRF",
+    "references": [
+      "db_xref=\"ASAP:ABE-0013023\"",
+      "db_xref=\"UniProtKB/Swiss-Prot:P0AG96\"",
+      "db_xref=\"EcoGene:EG10939\"",
+      "db_xref=\"GeneID:948486\""
+    ]
+  },
+  "tags": [
+    "Escherichia coli",
+    "Essential"
+  ]
+}

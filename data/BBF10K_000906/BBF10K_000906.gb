@@ -1,0 +1,42 @@
+LOCUS       BBF10K_000906            582 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  yneS
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 582)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..582
+                     /locus_tag="BSU18070"
+                     /gene="yneS"
+                     /gene_synonyms=""
+                     /product="glycerol-3-phosphate acyltransferase"
+                     /note="involved in acylation of glycerol-3-phosphate
+                     toform 1-acyl-glycerol-3 phosphate for use in
+                     phospholipidbiosynthesis; functions with PlsX"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_389689.1"
+                     /EC_number=""
+                     /translation="MLIALLIILAYLIGSIPSGLIVGKLAKGIDIREHGSGNLGATNA
+                     FRTLGVKAGSVVIAGDILKGTLATALPFLMHVDIHPLLAGVFAVLGHVFPIFAKFKGG
+                     KAVATSGGVLLFYAPLLFITMVAVFFIFLYLTKFVSLSSMLTGIYTVIYSFFVHDTYL
+                     LIVVTLLTIFVIYRHRANIKRIINKTEPKVKWL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938037"
+ORIGIN
+        1 ATGCTGATTG CACTGCTGAT CATCTTGGCC TATCTGATCG GTAGCATCCC GAGCGGTCTG
+       61 ATTGTCGGTA AACTGGCAAA AGGTATCGAC ATCCGTGAAC ATGGTAGCGG TAACTTGGGT
+      121 GCGACCAACG CGTTCCGCAC CCTGGGCGTC AAGGCGGGCA GCGTGGTTAT CGCAGGCGAT
+      181 ATTTTGAAAG GTACCCTGGC CACCGCCCTG CCATTCCTGA TGCATGTGGA CATTCATCCG
+      241 CTGCTGGCGG GTGTTTTCGC GGTCCTGGGC CATGTTTTCC CAATCTTTGC AAAATTTAAG
+      301 GGCGGTAAAG CGGTTGCGAC CAGCGGTGGC GTTTTGCTGT TTTATGCGCC GCTGCTGTTT
+      361 ATTACCATGG TGGCGGTTTT CTTTATCTTT CTCTACCTGA CTAAGTTCGT CAGCCTCAGC
+      421 AGCATGTTGA CCGGTATCTA CACTGTGATC TACTCGTTTT TTGTACACGA CACGTATCTG
+      481 CTGATCGTTG TCACCCTGCT GACCATCTTC GTCATTTATC GCCACCGCGC GAATATTAAG
+      541 CGCATCATCA ACAAAACCGA ACCAAAAGTT AAGTGGCTGT GA
+//

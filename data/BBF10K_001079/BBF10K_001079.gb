@@ -1,0 +1,42 @@
+LOCUS       BBF10K_001079            504 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  tadA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 504)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..504
+                     /locus_tag="b2559"
+                     /gene="tadA"
+                     /gene_synonyms=""
+                     /product="tRNA-specific adenosine deaminase"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417054.2"
+                     /EC_number="3.5.4.-"
+                     /translation="MSEVEFSHEYWMRHALTLAKRAWDEREVPVGAVLVHNNRVIGEG
+                     WNRPIGRHDPTAHAEIMALRQGGLVMQNYRLIDATLYVTLEPCVMCAGAMIHSRIGRV
+                     VFGARDAKTGAAGSLMDVLHHPGMNHRVEITEGILADECAALLSDFFRMRRQEIKAQK
+                     KAQSSTD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0008419"
+                     db_xref="UniProtKB/Swiss-Prot:P68398"
+                     db_xref="EcoGene:EG11372"
+                     db_xref="GeneID:947027"
+ORIGIN
+        1 ATGAGCGAGG TCGAATTTTC ACACGAGTAC TGGATGCGCC ATGCTCTGAC CTTAGCCAAG
+       61 CGCGCGTGGG ACGAGCGCGA GGTCCCGGTC GGCGCGGTCC TGGTCCACAA CAACCGTGTG
+      121 ATTGGTGAGG GTTGGAATCG TCCGATTGGC CGTCACGACC CGACGGCACA CGCGGAAATT
+      181 ATGGCGTTGC GCCAGGGCGG TCTGGTTATG CAAAATTACC GCCTGATCGA CGCAACGCTG
+      241 TATGTTACGC TGGAGCCGTG CGTCATGTGT GCCGGTGCCA TGATCCATTC TCGTATCGGT
+      301 CGTGTTGTGT TCGGTGCCCG TGATGCAAAG ACCGGTGCGG CAGGCAGCTT GATGGACGTT
+      361 CTGCATCATC CAGGTATGAA TCACCGCGTT GAAATTACCG AGGGTATCCT GGCGGATGAA
+      421 TGTGCGGCAC TGCTGAGCGA TTTCTTCCGC ATGCGTCGTC AGGAGATTAA GGCTCAGAAA
+      481 AAGGCACAAA GCAGCACCGA TTGA
+//

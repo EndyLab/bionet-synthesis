@@ -1,0 +1,37 @@
+LOCUS       BBF10K_000790            369 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 369)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..369
+                     /locus_tag="BSU01260"
+                     /gene="rplN"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L14"
+                     /note="binds to the 23S rRNA between the centers
+                     forpeptidyl transferase and GTPase"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388007.1"
+                     /EC_number=""
+                     /translation="MIQQETRLKVADNSGAREVLTIKVLGGSGRKTANIGDVIVCTVK
+                     QATPGGVVKKGEVVKAVIVRTKSGARRSDGSYISFDENACVIIRDDKSPRGTRIFGPV
+                     ARELRENNFMKIVSLAPEVI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:935939"
+ORIGIN
+        1 ATGATTCAGC AAGAAACGCG TCTGAAAGTT GCAGACAACT CTGGTGCGCG CGAAGTCCTG
+       61 ACCATTAAAG TTCTGGGCGG CAGCGGCCGT AAGACCGCAA ATATCGGTGA CGTTATCGTT
+      121 TGTACGGTTA AGCAAGCGAC CCCGGGTGGC GTCGTGAAGA AGGGCGAAGT TGTGAAAGCG
+      181 GTGATCGTGC GCACCAAGAG CGGCGCACGT AGAAGCGACG GTAGCTATAT CAGCTTCGAT
+      241 GAGAATGCAT GCGTCATTAT CCGCGACGAC AAATCACCGC GCGGCACCCG CATTTTCGGT
+      301 CCGGTGGCCC GTGAGCTGCG CGAGAATAAT TTCATGAAAA TCGTCAGCCT GGCTCCGGAA
+      361 GTGATTTGA
+//

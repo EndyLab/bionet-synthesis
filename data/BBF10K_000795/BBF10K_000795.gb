@@ -1,0 +1,47 @@
+LOCUS       BBF10K_000795            540 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 540)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..540
+                     /locus_tag="BSU01310"
+                     /gene="rplF"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L6"
+                     /note="ribosomal protein L6 appears to have arisen as
+                     aresult of an ancient gene duplication as based
+                     onstructural comparison of the Bacillus
+                     stearothermophilusprotein; RNA-binding appears to be in
+                     the C-terminaldomain; mutations in the L6 gene confer
+                     resistance toaminoglycoside antibiotics such as gentamicin
+                     and theseoccur in truncations of the C-terminal domain; it
+                     has beenlocalized to a region between the base of the
+                     L7/L12 stalkand the central protuberance"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388012.1"
+                     /EC_number=""
+                     /translation="MSRVGKKLLEIPSDVTVTLNDNNTVAVKGPKGELTRTFHPDMEI
+                     KVEDNVLTVARPSDQKEHRALHGTTRSLLGNMVEGVSKGFERGLELVGVGYRASKSGN
+                     KLVLNVGYSHPVEIVPEEGIEIEVPSQTKVVVKGTDKERVGAIAANIRAVRSPEPYKG
+                     KGIRYEGEVVRRKEGKSAK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938229"
+ORIGIN
+        1 ATGAGCAGAG TAGGTAAAAA ACTGCTGGAG ATCCCGAGCG ACGTGACGGT GACGCTGAAC
+       61 GACAACAACA CCGTTGCCGT GAAGGGCCCG AAGGGCGAGC TGACGCGCAC CTTCCATCCG
+      121 GACATGGAAA TTAAAGTCGA GGACAATGTT TTAACTGTCG CCCGTCCGTC TGATCAGAAA
+      181 GAACACCGTG CATTGCATGG TACCACCCGT AGCCTGCTGG GTAACATGGT TGAGGGTGTC
+      241 TCCAAAGGCT TCGAGCGTGG TCTGGAACTG GTGGGTGTGG GCTATCGTGC ATCCAAGAGC
+      301 GGCAATAAAC TGGTCCTGAA TGTTGGCTAT AGCCATCCGG TGGAAATTGT GCCGGAGGAG
+      361 GGTATCGAAA TTGAGGTCCC TTCCCAAACC AAGGTGGTGG TGAAAGGCAC CGATAAAGAG
+      421 CGTGTGGGCG CTATTGCGGC CAACATTCGC GCGGTCCGTA GCCCGGAGCC GTACAAGGGC
+      481 AAAGGTATTC GTTACGAGGG TGAAGTCGTT AGACGCAAAG AAGGCAAGAG CGCGAAGTGA
+//

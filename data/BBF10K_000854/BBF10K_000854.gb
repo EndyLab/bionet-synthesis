@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000854            282 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ylaN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 282)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..282
+                     /locus_tag="BSU14840"
+                     /gene="ylaN"
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="depletion of this protein in Bacillus
+                     subtilisresults in defects in cell morphology; crystal
+                     structureof Staphylococcus protein shows homodimer; ligand
+                     bindingprotein"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_389367.1"
+                     /EC_number=""
+                     /translation="MASEMIVDHRQKAFELLKVDAEKILKLIRVQMDNLTMPQCPLYE
+                     EVLDTQMFGLSREIDFAVRLGLVDEKDGKDLLYTLERELSALHDAFTAK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936566"
+ORIGIN
+        1 ATGGCAAGCG AAATGATCGT TGACCACCGC CAAAAGGCGT TCGAGCTGCT GAAAGTGGAT
+       61 GCCGAAAAGA TCCTGAAACT GATCCGTGTT CAGATGGACA ATCTGACCAT GCCGCAGTGC
+      121 CCTCTGTATG AAGAGGTTCT GGACACTCAG ATGTTTGGCT TATCCCGTGA AATTGATTTT
+      181 GCGGTTCGTC TGGGTCTGGT CGATGAGAAA GATGGCAAAG ATTTGTTATA CACCCTGGAA
+      241 CGCGAACTGA GCGCGCTGCA CGATGCGTTT ACCGCCAAGT GA
+//

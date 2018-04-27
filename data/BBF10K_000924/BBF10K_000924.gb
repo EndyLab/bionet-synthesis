@@ -1,0 +1,33 @@
+LOCUS       BBF10K_000924            279 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  hbs
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 279)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..279
+                     /locus_tag="BSU22790"
+                     /gene="hbs"
+                     /gene_synonyms=""
+                     /product="DNA-binding protein HU 1"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_390160.1"
+                     /EC_number=""
+                     /translation="MNKTELINAVAEASELSKKDATKAVDSVFDTILDALKNGDKIQL
+                     IGFGNFEVRERSARKGRNPQTGEEIEIPASKVPAFKPGKALKDAVAGK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938995"
+ORIGIN
+        1 ATGAACAAAA CGGAGTTAAT CAATGCCGTG GCGGAGGCGA GCGAGTTGTC CAAGAAGGAT
+       61 GCCACCAAAG CAGTCGATAG CGTTTTCGAC ACGATTCTGG ACGCGTTGAA AAATGGTGAT
+      121 AAAATTCAGT TGATTGGCTT TGGCAACTTC GAGGTGCGCG AACGTTCTGC CCGTAAAGGT
+      181 CGCAATCCGC AAACGGGTGA GGAAATTGAG ATTCCGGCGT CCAAGGTGCC TGCGTTCAAA
+      241 CCGGGTAAGG CATTAAAAGA TGCGGTTGCT GGCAAGTGA
+//

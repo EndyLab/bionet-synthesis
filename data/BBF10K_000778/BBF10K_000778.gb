@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000778            417 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 417)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..417
+                     /locus_tag="BSU01100"
+                     /gene="rpsL"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S12"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387991.2"
+                     /EC_number=""
+                     /translation="MPTINQLIRKGRVSKVENSKSPALNKGYNSFKKEHTNVSSPQKR
+                     GVCTRVGTMTPKKPNSALRKYARVRLTNGIEVTAYIPGIGHNLQEHSVVLIRGGRVKD
+                     LPGVRYHIVRGALDTAGVENRAQGRSKYGTKKPKAK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936616"
+ORIGIN
+        1 ATGCCGACGA TCAACCAGCT GATTCGCAAA GGTCGTGTGA GCAAAGTGGA GAATAGCAAA
+       61 AGCCCGGCAC TGAACAAAGG TTATAATAGC TTCAAAAAAG AACACACGAA TGTGTCTAGC
+      121 CCGCAGAAGC GCGGCGTGTG TACGCGTGTT GGTACCATGA CCCCGAAAAA ACCGAATTCG
+      181 GCTCTGCGCA AGTACGCGCG TGTCCGTCTG ACCAATGGTA TTGAGGTTAC CGCGTACATT
+      241 CCTGGTATTG GTCACAATCT GCAGGAACAT TCGGTGGTTC TTATCCGTGG TGGTCGTGTG
+      301 AAGGATCTGC CGGGCGTACG CTATCATATC GTGCGTGGCG CATTGGACAC CGCGGGTGTG
+      361 GAAAATCGCG CCCAGGGCCG TAGCAAGTAC GGCACCAAGA AGCCGAAGGC GAAGTGA
+//

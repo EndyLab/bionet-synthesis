@@ -1,0 +1,43 @@
+LOCUS       BBF10K_001138            573 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  tsaC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 573)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..573
+                     /locus_tag="b3282"
+                     /gene="tsaC"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417741.1"
+                     /EC_number=""
+                     /translation="MNNNLQRDAIAAAIDVLNEERVIAYPTEAVFGVGCDPDSETAVM
+                     RLLELKQRPVDKGLILIAANYEQLKPYIDDTMLTDVQRETIFSRWPGPVTFVFPAPAT
+                     TPRWLTGRFDSLAVRVTDHPLVVALCQAYGKPLVSTSANLSGLPPCRTVDEVRAQFGA
+                     AFPVVPGETGGRLNPSEIRDALTGELFRQG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010766"
+                     db_xref="UniProtKB/Swiss-Prot:P45748"
+                     db_xref="EcoGene:EG12840"
+                     db_xref="GeneID:947783"
+ORIGIN
+        1 ATGAATAATA ATCTGCAACG TGATGCTATC GCGGCTGCGA TCGACGTTCT GAACGAGGAA
+       61 CGCGTTATCG CGTATCCTAC CGAGGCGGTT TTCGGCGTTG GTTGTGACCC GGACAGCGAA
+      121 ACCGCAGTTA TGCGTCTGCT GGAATTGAAA CAACGCCCGG TCGACAAAGG TCTGATTCTG
+      181 ATCGCGGCTA ACTACGAACA ACTGAAACCG TACATCGACG ACACCATGCT GACCGATGTT
+      241 CAGCGCGAAA CGATCTTTAG CCGTTGGCCG GGCCCAGTGA CCTTTGTCTT TCCTGCGCCT
+      301 GCGACCACTC CACGTTGGCT GACCGGCCGT TTTGATTCGC TGGCCGTCCG TGTTACGGAT
+      361 CATCCGTTGG TGGTGGCATT GTGTCAGGCC TACGGTAAAC CTCTGGTTTC CACCTCCGCC
+      421 AATTTAAGCG GCTTGCCGCC GTGTCGTACC GTTGATGAAG TCCGTGCGCA GTTCGGTGCG
+      481 GCATTTCCGG TCGTCCCGGG TGAAACGGGT GGCCGTCTGA ATCCGTCCGA AATTCGTGAT
+      541 GCGCTGACGG GCGAACTGTT CCGTCAGGGC TGA
+//

@@ -1,0 +1,42 @@
+LOCUS       BBF10K_000813            561 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  aroK
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 561)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..561
+                     /locus_tag="BSU03150"
+                     /gene="aroK"
+                     /gene_synonyms=""
+                     /product="shikimate kinase"
+                     /note="catalyzes the formation of shikimate
+                     3-phosphatefrom shikimate in aromatic amino acid
+                     biosynthesis"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388197.2"
+                     /EC_number="2.7.1.71"
+                     /translation="MNAKRAIPVRERNIVLIGFMGVGKTTIGQLVAKKLYRDFIDIDQ
+                     QIEKDFNMSIPEIFEKKGEDFFRKTEKEYILDICHHKRFKIVSLGGGSFKQEEIRNCC
+                     LENCLVLHLDLSWENWKQRADLLIESRPVLHNRSMDEMEQLFNERKVIYDKHNSKVAT
+                     DNLSPEEVADYIVETLKIGWDLYQPM"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938343"
+ORIGIN
+        1 ATGAACGCCA AGAGAGCCAT TCCGGTGCGC GAGCGTAACA TTGTGCTGAT TGGTTTTATG
+       61 GGCGTGGGTA AGACTACGAT TGGTCAACTG GTCGCCAAAA AGCTGTACCG TGATTTCATT
+      121 GACATCGATC AGCAGATTGA GAAAGACTTT AACATGAGCA TTCCGGAAAT TTTCGAGAAG
+      181 AAAGGTGAGG ACTTTTTTCG TAAGACCGAG AAAGAGTACA TCCTGGACAT CTGTCATCAC
+      241 AAGCGTTTTA AGATTGTGAG CCTGGGCGGT GGTAGCTTCA AGCAGGAAGA AATCCGTAAC
+      301 TGCTGCCTGG AAAATTGTCT GGTGCTGCAC TTGGACCTGA GCTGGGAGAA TTGGAAACAA
+      361 CGTGCCGATC TGCTGATCGA ATCTCGTCCG GTCCTGCATA ACCGTTCCAT GGACGAGATG
+      421 GAACAGCTGT TTAACGAAAG AAAGGTCATC TATGATAAGC ACAACAGCAA AGTTGCAACG
+      481 GACAATCTGT CCCCGGAGGA GGTTGCGGAC TACATTGTTG AAACGCTGAA GATTGGTTGG
+      541 GATTTGTACC AACCTATGTG A
+//

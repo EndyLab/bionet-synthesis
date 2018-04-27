@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001162            303 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplW
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 303)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..303
+                     /locus_tag="b3318"
+                     /gene="rplW"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L23"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417777.1"
+                     /EC_number=""
+                     /translation="MIREERLLKVLRAPHVSEKASTAMEKSNTIVLKVAKDATKAEIK
+                     AAVQKLFEVEVEVVNTLVVKGKVKRHGQRIGRRSDWKKAYVTLKEGQNLDFVGGAE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010856"
+                     db_xref="UniProtKB/Swiss-Prot:P0ADZ0"
+                     db_xref="EcoGene:EG10883"
+                     db_xref="GeneID:947819"
+ORIGIN
+        1 ATGATCCGTG AAGAACGTCT GTTAAAGGTC CTGCGCGCGC CGCATGTTTC AGAGAAAGCG
+       61 TCTACGGCTA TGGAGAAAAG CAACACCATC GTGCTGAAAG TTGCCAAGGA CGCCACCAAA
+      121 GCCGAGATCA AAGCTGCAGT GCAGAAGCTG TTCGAGGTTG AGGTGGAAGT GGTTAACACG
+      181 CTGGTGGTGA AAGGTAAGGT TAAACGTCAT GGTCAACGTA TCGGTCGTCG CTCCGATTGG
+      241 AAGAAGGCGT ATGTGACCCT GAAGGAAGGT CAGAACCTGG ACTTTGTGGG CGGTGCTGAG
+      301 TGA
+//

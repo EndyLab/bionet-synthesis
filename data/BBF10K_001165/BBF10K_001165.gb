@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001165            312 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsJ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 312)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..312
+                     /locus_tag="b3321"
+                     /gene="rpsJ"
+                     /gene_synonyms=""
+                     /product="30S ribosomal subunit protein S10"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417780.1"
+                     /EC_number=""
+                     /translation="MQNQRIRIRLKAFDHRLIDQATAEIVETAKRTGAQVRGPIPLPT
+                     RKERFTVLISPHVNKDARDQYEIRTHLRLVDIVEPTEKTVDALMRLDLAAGVDVQISL
+                     G"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010862"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7R5"
+                     db_xref="EcoGene:EG10909"
+                     db_xref="GeneID:947816"
+ORIGIN
+        1 ATGCAGAATC AACGCATTCG CATTCGTCTG AAGGCGTTTG ACCACCGCCT GATTGATCAA
+       61 GCAACCGCAG AGATTGTCGA AACGGCGAAA CGTACGGGCG CCCAGGTGCG TGGTCCAATC
+      121 CCGCTGCCGA CCCGTAAGGA ACGTTTCACG GTCCTGATCA GCCCGCACGT TAACAAAGAC
+      181 GCTCGTGATC AATACGAGAT TCGTACGCAT CTGCGTCTGG TGGATATCGT GGAACCGACG
+      241 GAGAAAACCG TTGACGCACT GATGCGTCTG GATCTGGCAG CGGGTGTTGA TGTCCAGATC
+      301 AGCCTGGGCT GA
+//

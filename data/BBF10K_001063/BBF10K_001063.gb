@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001063            252 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  yefM
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 252)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..252
+                     /locus_tag="b2017"
+                     /gene="yefM"
+                     /gene_synonyms=""
+                     /product="antitoxin of the YoeB-YefM toxin-
+                     antitoxinsystem"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_416521.2"
+                     /EC_number=""
+                     /translation="MRTISYSEARQNLSATMMKAVEDHAPILITRQNGEACVLMSLEE
+                     YNSLEETAYLLRSPANARRLMDSIDSLKSGKGTEKDIIE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0006705"
+                     db_xref="UniProtKB/Swiss-Prot:P69346"
+                     db_xref="EcoGene:EG12844"
+                     db_xref="GeneID:946542"
+ORIGIN
+        1 ATGCGCACGA TCAGCTACAG CGAGGCGCGT CAGAACCTGA GCGCGACGAT GATGAAAGCG
+       61 GTGGAGGACC ATGCGCCGAT TCTGATCACC CGTCAGAATG GTGAAGCTTG TGTTCTGATG
+      121 AGCCTGGAGG AATATAACAG CCTGGAGGAA ACTGCGTATC TGCTGCGTTC CCCGGCGAAT
+      181 GCTCGTCGTC TGATGGACTC CATCGATAGC CTGAAGTCGG GTAAGGGTAC CGAAAAGGAC
+      241 ATCATTGAGT GA
+//

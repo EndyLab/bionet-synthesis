@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001004            408 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rghRA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 408)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..408
+                     /locus_tag="BSU33660"
+                     /gene="rghRA"
+                     /gene_synonyms=""
+                     /product="HTH-type transcriptional repressor RghR"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_391246.1"
+                     /EC_number=""
+                     /translation="MESFGEQLRALREERKLTVNQLATYSGVSAAGISRIENGKRGVP
+                     KPATIKKLAEALKIPYEGLMYKAGYIEEVHEARAPYETKCKLLEKAEAYDLKNLALLE
+                     NEKWQYLNKEDLLMLDHYFSFISDEAKKRSADD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936180"
+ORIGIN
+        1 ATGGAGTCCT TCGGCGAGCA ATTGCGTGCA TTGCGTGAGG AGCGTAAACT GACCGTCAAT
+       61 CAACTGGCGA CCTACTCCGG TGTCAGCGCG GCGGGCATTA GCCGTATCGA GAACGGCAAA
+      121 CGTGGTGTTC CGAAGCCGGC GACGATTAAG AAGCTGGCAG AGGCGCTGAA AATTCCGTAC
+      181 GAAGGCCTTA TGTACAAGGC AGGCTATATT GAGGAAGTCC ATGAGGCTCG TGCACCGTAT
+      241 GAAACGAAAT GCAAGCTGCT GGAAAAAGCA GAAGCGTACG ATCTGAAAAA TCTGGCACTG
+      301 CTGGAGAATG AGAAGTGGCA ATACTTGAAT AAAGAAGATC TGCTGATGCT GGATCACTAC
+      361 TTCAGCTTTA TCTCTGATGA GGCGAAAAAG CGTTCAGCCG ACGATTGA
+//

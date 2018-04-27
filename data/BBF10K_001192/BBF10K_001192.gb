@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001192            360 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rnpA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 360)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..360
+                     /locus_tag="b3704"
+                     /gene="rnpA"
+                     /gene_synonyms=""
+                     /product="protein C5 component of RNase P"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418159.1"
+                     /EC_number="3.1.26.5"
+                     /translation="MVKLAFPRELRLLTPSQFTFVFQQPQRAGTPQITILGRLNSLGH
+                     PRIGLTVAKKNVRRAHERNRIKRLTRESFRLRQHELPAMDFVVVAKKGVADLDNRALS
+                     EALEKLWRRHCRLARGS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0012117"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7Y8"
+                     db_xref="EcoGene:EG10862"
+                     db_xref="GeneID:948215"
+ORIGIN
+        1 ATGGTGAAGC TGGCATTTCC TCGTGAGCTG CGTCTGCTGA CCCCGAGCCA GTTCACGTTC
+       61 GTCTTTCAAC AACCGCAACG TGCAGGCACC CCGCAAATTA CTATCCTGGG CCGCTTGAAC
+      121 AGCCTGGGCC ACCCGCGTAT CGGTCTGACC GTCGCGAAGA AAAACGTTCG CCGTGCGCAT
+      181 GAGCGTAACC GTATCAAGCG TCTGACCCGT GAGTCTTTCC GTCTGCGTCA GCATGAGCTG
+      241 CCGGCCATGG ACTTCGTCGT GGTCGCGAAA AAAGGCGTCG CGGATCTGGA TAATCGCGCA
+      301 CTGAGCGAGG CCCTGGAGAA GCTGTGGCGT CGTCACTGTC GTCTGGCCCG CGGTTCCTGA
+//

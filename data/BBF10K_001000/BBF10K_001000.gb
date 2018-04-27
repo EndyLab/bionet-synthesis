@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001000            444 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  iscU
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 444)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..444
+                     /locus_tag="BSU32680"
+                     /gene="iscU"
+                     /gene_synonyms=""
+                     /product="NifU-like protein"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_391147.1"
+                     /EC_number=""
+                     /translation="MSFNANLDTLYRQVIMDHYKNPRNKGVLNDSIVVDMNNPTCGDR
+                     IRLTMKLDGDIVEDAKFEGEGCSISMASASMMTQAIKGKDIETALSMSKIFSDMMQGK
+                     EYDDSIDLGDIEALQGVSKFPARIKCATLSWKALEKGVAKEEGGN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936702"
+ORIGIN
+        1 ATGTCCTTTA ACGCGAACCT GGACACGCTG TACCGTCAGG TTATTATGGA CCATTATAAG
+       61 AACCCGCGTA ATAAAGGCGT GTTGAACGAT AGCATTGTCG TTGATATGAA CAACCCGACG
+      121 TGCGGCGACA GAATTCGTCT GACGATGAAG CTGGACGGCG ATATCGTTGA AGATGCGAAG
+      181 TTTGAAGGTG AAGGTTGTTC CATTTCCATG GCGAGCGCTA GCATGATGAC CCAAGCAATT
+      241 AAGGGTAAGG ACATCGAAAC CGCATTAAGC ATGAGCAAAA TTTTCAGCGA TATGATGCAA
+      301 GGCAAGGAGT ACGACGACTC GATCGACCTG GGTGACATCG AGGCACTGCA AGGCGTTAGC
+      361 AAATTCCCGG CCCGTATTAA ATGTGCAACC CTGTCGTGGA AAGCCCTGGA AAAGGGCGTG
+      421 GCAAAAGAAG AGGGTGGTAA CTGA
+//

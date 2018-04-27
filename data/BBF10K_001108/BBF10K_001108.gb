@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001108            396 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  mqsA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 396)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..396
+                     /locus_tag="b3021"
+                     /gene="mqsA"
+                     /gene_synonyms=""
+                     /product="antitoxin for MqsR toxin;
+                     transcriptionalrepressor"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417493.1"
+                     /EC_number=""
+                     /translation="MKCPVCHQGEMVSGIKDIPYTFRGRKTVLKGIHGLYCVHCEESI
+                     MNKEESDAFMAQVKAFRASVNAETVAPEFIVKVRKKLSLTQKEASEIFGGGVNAFSRY
+                     EKGNAQPHPSTIKLLRVLDKHPELLNEIR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0009923"
+                     db_xref="UniProtKB/Swiss-Prot:Q46864"
+                     db_xref="EcoGene:EG13022"
+                     db_xref="GeneID:945814"
+ORIGIN
+        1 ATGAAATGTC CGGTTTGTCA CCAGGGTGAG ATGGTCAGCG GTATTAAGGA CATCCCGTAT
+       61 ACCTTCCGTG GCCGTAAAAC CGTTCTGAAA GGTATCCACG GCCTGTATTG TGTGCATTGC
+      121 GAGGAGAGCA TTATGAACAA AGAGGAATCT GACGCATTTA TGGCTCAGGT TAAAGCATTC
+      181 CGTGCGAGCG TCAACGCAGA GACTGTGGCG CCGGAATTTA TTGTCAAAGT GCGTAAAAAA
+      241 CTGTCGCTGA CCCAGAAGGA GGCTTCTGAG ATTTTCGGTG GCGGCGTTAA CGCGTTCAGC
+      301 CGCTATGAAA AGGGTAATGC ACAGCCGCAC CCAAGCACGA TCAAGCTGCT GCGCGTGTTA
+      361 GATAAGCATC CGGAACTGCT GAACGAAATT CGCTGA
+//

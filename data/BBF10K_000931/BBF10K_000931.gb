@@ -1,0 +1,40 @@
+LOCUS       BBF10K_000931            525 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ypuF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 525)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..525
+                     /locus_tag="BSU23230"
+                     /gene="ypuF"
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Evidence 4: Homologs of previously reported genesof
+                     unknown function"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_390204.1"
+                     /EC_number=""
+                     /translation="MYPKAYIDYLVEFHATRDYFECHEILEEYWKEDPPKKRKRYWVG
+                     FIQLAVALYHHRRQNTAGAKRLMANSIRILQAEHRAVEDLGLDHGRLLELMQSVYEQI
+                     ETVSAYKSIILPIKDEKLEEACRIECRKKKYTWGQPSALSNIFLIDKHRLRDRTDVIR
+                     EREKEIERRKKSRD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938952"
+ORIGIN
+        1 ATGTACCCGA AGGCGTATAT CGACTACCTG GTGGAGTTTC ATGCGACTCG TGATTATTTT
+       61 GAGTGCCACG AGATCCTTGA AGAATACTGG AAAGAGGACC CGCCGAAAAA ACGCAAGCGT
+      121 TACTGGGTGG GTTTTATTCA ACTGGCCGTC GCGCTGTACC ACCACCGTCG CCAAAACACC
+      181 GCGGGTGCTA AGCGTCTGAT GGCGAACAGC ATTCGCATCC TGCAGGCCGA ACACCGTGCG
+      241 GTTGAGGACC TCGGTCTGGA CCACGGTCGT CTGCTGGAAT TGATGCAAAG CGTCTACGAG
+      301 CAGATCGAAA CCGTATCTGC CTATAAGAGC ATCATTCTGC CAATCAAGGA TGAAAAGCTG
+      361 GAAGAAGCAT GCCGTATCGA ATGCCGTAAA AAGAAGTACA CCTGGGGCCA GCCGTCCGCC
+      421 TTAAGCAATA TTTTTCTGAT TGATAAACAC CGCCTGCGTG ACCGTACCGA CGTGATCCGT
+      481 GAGCGCGAGA AAGAGATCGA GCGTCGCAAA AAGAGCCGTG ATTGA
+//

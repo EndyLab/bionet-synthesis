@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_000979",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rpsD",
+      "description": "All essential genes from Bacillus subtilis as defined by https://doi.org/10.1016/j.cell.2016.05.003",
+      "database_links": [],
+      "source": "Bacillus subtilis 168"
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": true,
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 3,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": "9"
+  },
+  "sequence": {
+    "original_sequence": "ATGGCTCGCTATACAGGTCCATCTTGGAAACTGTCCCGCCGTCTAGGAATCTCTCTTAGCGGTACAGGAAAAGAATTAGAAAAACGCCCTTACGCTCCAGGTCCACACGGCCCAGGACAACGTAAAAAATTATCAGAATACGGTTTGCAATTGCAAGAAAAGCAAAAGCTTCGTCACATGTACGGTGTAAACGAACGTCAATTCCGCACTTTGTTTGACAAAGCTGGCAAACTAGCTGGTAAACACGGTGAAAACTTCATGATTCTTTTAGATTCTCGTCTTGATAACGTTGTGTACAAGCTAGGTTTAGCACGTACTCGCCGTCAAGCTCGCCAATTGGTTAACCACGGTCACATTCTTGTAGACGGAAGCCGCGTTGACATCCCGTCTTACCTAGTGAAACCTGGTCAAACAATCGGTGTTCGCGAAAAATCAAGAAACCTTTCTATCATCAAAGAATCTGTTGAAGTGAACAACTTCGTTCCTGAATACCTTACTTTCGACGCTGAAAAGCTTGAAGGTACTTTCACTCGTCTTCCTGAGCGTTCTGAACTTGCTCCGGAAATTAACGAAGCGCTTATCGTTGAGTTCTACTCTCGTTAA",
+    "optimized_sequence": "ATGGCGCGTTATACGGGTCCGAGCTGGAAACTGTCCCGTCGCCTGGGTATTAGCCTGAGCGGTACGGGTAAAGAGCTGGAGAAACGTCCGTACGCACCGGGCCCGCACGGCCCGGGTCAACGTAAAAAACTGAGCGAATACGGTCTGCAGTTGCAGGAGAAGCAAAAACTGCGTCATATGTATGGTGTCAACGAACGCCAGTTCCGTACCCTGTTTGATAAGGCGGGCAAGCTGGCGGGTAAGCACGGTGAAAATTTTATGATTCTGCTTGACAGCCGTCTGGACAATGTGGTCTACAAGCTGGGCCTGGCGCGTACGCGTCGCCAAGCGCGCCAGCTGGTTAATCACGGTCACATTTTAGTGGACGGTTCCCGCGTTGATATCCCGAGCTACCTGGTCAAGCCGGGTCAAACCATCGGCGTGCGCGAAAAGAGCCGTAATTTGAGCATTATCAAAGAGAGCGTGGAAGTCAATAACTTTGTCCCGGAATATTTGACTTTCGATGCGGAGAAGCTGGAGGGTACGTTTACTCGCCTGCCGGAGCGTAGCGAGCTGGCACCGGAAATTAACGAGGCTCTGATTGTGGAGTTCTACAGCCGCTGA",
+    "fragment_sequences": {
+      "BBF10K_000979_1": "GAAGACCAGGAGGTCTCAAATGGCGCGTTATACGGGTCCGAGCTGGAAACTGTCCCGTCGCCTGGGTATTAGCCTGAGCGGTACGGGTAAAGAGCTGGAGAAACGTCCGTACGCACCGGGCCCGCACGGCCCGGGTCAACGTAAAAAACTGAGCGAATACGGTCTGCAGTTGCAGGAGAAGCAAAAACTGCGTCATATGTATGGTGTCAACGAACGCCAGTTCCGTACCCTGTTTGATAAGGCGGGCAAGCTGGCGGGTAAGCACGGTGAAAATTTTATGATTCTGCTTGACAGCCGTCTGGACAATGTGGTCTACAAGCTGGGCCTGGCGCGTACGCGTCGCCAAGCGCGCCAGCTGGTTAATCACGGTCACATTTTAGTGGACGGTTCCCGCGTTGATATCCCGAGCTACCTGGTCAAGCCGGGTCAAACCATCGGCGTGCGCGAAAAGAGCCGTAATTTGAGCATTATCAAAGAGAGCGTGGAAGTCAATAACTTTGTCCCGGAATATTTGACTTTCGATGCGGAGAAGCTGGAGGGTACGTTTACTCGCCTGCCGGAGCGTAGCGAGCTGGCACCGGAAATTAACGAGGCTCTGATTGTGGAGTTCTACAGCCGCTGAAGAGCTTAGAGACCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "24-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "BSU29660",
+    "gene": "rpsD",
+    "gene_synonyms": "",
+    "product": "30S ribosomal protein S4",
+    "note": "primary rRNA binding protein; nucleates 30Sassembly; involved in translational accuracy with proteinsS5 and S12; interacts with protein S5; involved inautogeneously regulating ribosomal proteins by binding topseudoknot structures in the polycistronic mRNA; interactswith transcription complex and functions similar toprotein NusA in antitermination",
+    "Source": "Bacillus subtilis subsp. subtilis str. 168",
+    "GenBank_acc": "NC_000964",
+    "protein_id": "NP_390844.1",
+    "EC_number": "",
+    "translation": "MARYTGPSWKLSRRLGISLSGTGKELEKRPYAPGPHGPGQRKKLSEYGLQLQEKQKLRHMYGVNERQFRTLFDKAGKLAGKHGENFMILLDSRLDNVVYKLGLARTRRQARQLVNHGHILVDGSRVDIPSYLVKPGQTIGVREKSRNLSIIKESVEVNNFVPEYLTFDAEKLEGTFTRLPERSELAPEINEALIVEFYSR",
+    "references": [
+      "db_xref=\"GeneID:937319\""
+    ]
+  },
+  "tags": [
+    "Bacillus subtilis",
+    "Essential"
+  ]
+}

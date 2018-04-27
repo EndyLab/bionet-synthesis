@@ -1,0 +1,42 @@
+LOCUS       BBF10K_000800            654 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  adk
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 654)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..654
+                     /locus_tag="BSU01370"
+                     /gene="adk"
+                     /gene_synonyms=""
+                     /product="adenylate kinase"
+                     /note="essential enzyme that recycles AMP in active
+                     cells;converts ATP and AMP to two molecules of ADP"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388018.1"
+                     /EC_number="2.7.4.3"
+                     /translation="MNLVLMGLPGAGKGTQGERIVEDYGIPHISTGDMFRAAMKEETP
+                     LGLEAKSYIDKGELVPDEVTIGIVKERLGKDDCERGFLLDGFPRTVAQAEALEEILEE
+                     YGKPIDYVINIEVDKDVLMERLTGRRICSVCGTTYHLVFNPPKTPGICDKDGGELYQR
+                     ADDNEETVSKRLEVNMKQTQPLLDFYSEKGYLANVNGQQDIQDVYADVKDLLGGLKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938508"
+ORIGIN
+        1 ATGAACCTGG TGCTGATGGG CCTGCCAGGT GCCGGTAAAG GTACCCAGGG TGAACGTATC
+       61 GTGGAGGACT ATGGCATCCC GCACATTTCA ACCGGCGATA TGTTCCGTGC GGCAATGAAG
+      121 GAGGAAACGC CGCTGGGTCT GGAGGCAAAA AGCTACATCG ATAAAGGTGA ACTGGTCCCG
+      181 GATGAGGTTA CTATCGGTAT TGTGAAGGAA CGTCTGGGTA AAGACGACTG TGAGCGCGGC
+      241 TTCCTGTTGG ACGGTTTCCC GCGTACCGTC GCACAGGCCG AAGCGCTGGA AGAGATCCTG
+      301 GAAGAGTATG GTAAGCCGAT CGATTATGTT ATTAACATTG AAGTCGATAA AGATGTCCTG
+      361 ATGGAGCGCC TGACCGGTCG CCGTATCTGT TCCGTGTGCG GTACGACTTA TCACCTGGTG
+      421 TTCAACCCGC CCAAGACGCC GGGCATCTGT GACAAAGATG GCGGTGAGCT GTACCAGCGT
+      481 GCCGATGATA ACGAAGAAAC CGTTTCTAAA CGCTTGGAGG TTAATATGAA GCAGACCCAG
+      541 CCGCTGCTGG ACTTCTATAG CGAGAAGGGC TACCTGGCGA ATGTTAATGG TCAACAAGAC
+      601 ATTCAAGACG TTTACGCGGA TGTCAAGGAT CTGCTGGGCG GCCTGAAAAA GTGA
+//

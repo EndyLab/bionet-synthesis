@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001027            321 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  yxlC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 321)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..321
+                     /locus_tag="BSU38690"
+                     /gene="yxlC"
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_391748.1"
+                     /EC_number=""
+                     /translation="MNKEKLSDHLKSEWKKIDQTANPSIPNQKELLHQLSQMKAEYRK
+                     KLLQEIILFVFCALMVVSAAILAFTQAPAVFIVLQVCVLAVLPILIAAEKKRHLGECE
+                     VKRG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938082"
+ORIGIN
+        1 ATGAATAAAG AAAAGCTCAG CGACCACCTG AAAAGCGAAT GGAAGAAGAT TGACCAAACC
+       61 GCAAATCCGA GCATCCCGAA CCAAAAGGAG CTGCTGCATC AACTGAGCCA GATGAAAGCG
+      121 GAATACCGTA AAAAGCTGCT GCAAGAAATC ATCCTGTTCG TGTTTTGCGC ACTGATGGTG
+      181 GTTAGCGCTG CGATTCTGGC CTTCACGCAG GCACCGGCCG TCTTTATCGT TCTCCAGGTT
+      241 TGTGTTTTGG CTGTTCTGCC GATTCTGATC GCAGCGGAGA AAAAACGTCA TCTGGGTGAG
+      301 TGTGAAGTGA AACGTGGCTG A
+//

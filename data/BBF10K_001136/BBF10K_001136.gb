@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001136            471 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  accB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 471)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..471
+                     /locus_tag="b3255"
+                     /gene="accB"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417721.1"
+                     /EC_number=""
+                     /translation="MDIRKIKKLIELVEESGISELEISEGEESVRISRAAPAASFPVM
+                     QQAYAAPMMQQPAQSNAAAPATVPSMEAPAAAEISGHIVRSPMVGTFYRTPSPDAKAF
+                     IEVGQKVNVGDTLCIVEAMKMMNQIEADKSGTVKAILVESGQPVEFDEPLVVIE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010675"
+                     db_xref="UniProtKB/Swiss-Prot:P0ABD8"
+                     db_xref="EcoGene:EG10275"
+                     db_xref="GeneID:947758"
+ORIGIN
+        1 ATGGATATCC GCAAAATTAA AAAACTGATC GAGCTGGTGG AGGAGAGCGG TATTTCCGAA
+       61 CTGGAAATTA GCGAAGGTGA AGAGAGCGTC CGTATTTCTC GTGCGGCGCC GGCGGCTAGC
+      121 TTTCCGGTTA TGCAACAGGC CTACGCAGCG CCTATGATGC AGCAACCGGC CCAAAGCAAC
+      181 GCGGCCGCGC CTGCCACCGT GCCGAGCATG GAGGCTCCGG CGGCGGCCGA AATCAGCGGC
+      241 CACATTGTGC GTAGCCCGAT GGTGGGCACC TTCTACCGTA CGCCGAGCCC TGACGCCAAA
+      301 GCCTTCATTG AAGTCGGCCA AAAAGTTAAC GTGGGCGATA CGTTGTGTAT CGTCGAGGCT
+      361 ATGAAAATGA TGAACCAGAT CGAAGCGGAC AAAAGCGGTA CCGTGAAGGC GATCCTGGTT
+      421 GAGAGCGGTC AGCCGGTGGA GTTTGATGAG CCGCTGGTGG TGATTGAGTG A
+//

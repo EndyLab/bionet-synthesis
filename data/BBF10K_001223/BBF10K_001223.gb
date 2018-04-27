@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001223            294 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  groS
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 294)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..294
+                     /locus_tag="b4142"
+                     /gene="groS"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418566.1"
+                     /EC_number=""
+                     /translation="MNIRPLHDRVIVKRKEVETKSAGGIVLTGSAAAKSTRGEVLAVG
+                     NGRILENGEVKPLDVKVGDIVIFNDGYGVKSEKIDNEEVLIMSESDILAIVEA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0013566"
+                     db_xref="UniProtKB/Swiss-Prot:P0A6F9"
+                     db_xref="EcoGene:EG10600"
+                     db_xref="GeneID:948655"
+ORIGIN
+        1 ATGAATATTC GTCCGCTGCA TGATCGTGTT ATTGTCAAGC GTAAAGAAGT CGAAACCAAG
+       61 AGCGCCGGTG GTATTGTTCT GACCGGTAGC GCGGCCGCTA AATCCACGCG TGGCGAGGTG
+      121 CTGGCAGTTG GTAATGGTCG TATCCTGGAG AACGGCGAGG TCAAGCCGCT GGACGTTAAA
+      181 GTGGGTGACA TCGTCATCTT TAACGATGGT TACGGTGTTA AAAGCGAGAA GATTGACAAC
+      241 GAAGAAGTGC TCATCATGAG CGAAAGCGAC ATTCTGGCGA TTGTTGAAGC CTGA
+//

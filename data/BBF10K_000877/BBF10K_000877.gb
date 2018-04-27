@@ -1,0 +1,48 @@
+LOCUS       BBF10K_000877            750 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rnc
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 750)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..750
+                     /locus_tag="BSU15930"
+                     /gene="rnc"
+                     /gene_synonyms=""
+                     /product="ribonuclease 3"
+                     /note="cytoplasmic enzyme involved in processing rRNA
+                     andsome mRNAs; substrates typically have dsRNA regions;
+                     formsa homodimer; have N-terminal nuclease and
+                     C-terminalRNA-binding domains; requires magnesium as
+                     preferred ionfor activity"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_389475.1"
+                     /EC_number="3.1.26.3"
+                     /translation="MSKHSHYKDKKKFYKKVEQFKEFQERISVHFQNEKLLYQAFTHS
+                     SYVNEHRKKPYEDNERLEFLGDAVLELTISRFLFAKYPAMSEGDLTKLRAAIVCEPSL
+                     VSLAHELSFGDLVLLGKGEEMTGGRKRPALLADVFEAFIGALYLDQGLEPVESFLKVY
+                     VFPKINDGAFSHVMDFKSQLQEYVQRDGKGSLEYKISNEKGPAHNREFEAIVSLKGEP
+                     LGVGNGRSKKEAEQHAAQEALAKLQKHHTKQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936169"
+ORIGIN
+        1 ATGAGCAAAC ATAGCCACTA CAAAGATAAG AAAAAATTCT ACAAGAAAGT CGAGCAATTT
+       61 AAGGAATTCC AAGAACGTAT CTCTGTTCAT TTTCAAAATG AAAAACTGCT GTACCAGGCG
+      121 TTCACGCATA GCAGCTATGT CAACGAGCAC CGCAAAAAGC CGTACGAGGA TAACGAACGC
+      181 CTGGAGTTCC TGGGCGACGC TGTTCTGGAG CTGACCATCA GCCGTTTCCT GTTTGCTAAA
+      241 TATCCGGCCA TGAGCGAGGG CGATTTGACC AAACTGCGTG CTGCGATCGT CTGCGAGCCG
+      301 AGCCTGGTCA GCCTGGCGCA TGAACTGAGC TTCGGTGATC TGGTACTGCT GGGTAAGGGT
+      361 GAAGAAATGA CCGGTGGCCG TAAACGCCCG GCTCTGCTGG CTGATGTTTT CGAGGCATTC
+      421 ATTGGCGCCC TGTACCTGGA TCAGGGTCTG GAACCGGTGG AAAGCTTCTT GAAGGTTTAC
+      481 GTTTTCCCGA AGATTAATGA TGGCGCCTTC TCCCACGTTA TGGACTTTAA AAGCCAGCTG
+      541 CAGGAGTACG TGCAGCGTGA CGGCAAAGGT AGCCTGGAGT ATAAAATCTC CAATGAGAAG
+      601 GGCCCTGCCC ACAATCGCGA GTTTGAGGCC ATTGTTAGCC TGAAGGGTGA ACCGCTGGGT
+      661 GTGGGTAACG GTCGTAGCAA AAAAGAGGCA GAACAGCACG CCGCGCAAGA AGCACTGGCA
+      721 AAGCTGCAAA AACACCACAC CAAACAGTGA
+//

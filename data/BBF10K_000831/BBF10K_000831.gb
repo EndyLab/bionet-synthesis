@@ -1,0 +1,38 @@
+LOCUS       BBF10K_000831            456 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  yezG
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 456)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..456
+                     /locus_tag="BSU06811"
+                     /gene="yezG"
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Evidence 4: Homologs of previously reported genesof
+                     unknown function"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="YP_003097692.1"
+                     /EC_number=""
+                     /translation="MQDLYQLIGEKLNDIIPGEWTKIYLYAEVLDDSTMVLFHFRTPE
+                     NNQIIYSQDIPSHYNVSKDIFKTLLRELRELFEELRTEHRNNNDDVWTNLTLTLDRSG
+                     EFQLDYNYDDILASELDGYERIAIWEYKNLGILPEDEDDKEFVISYLGL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:8303066"
+ORIGIN
+        1 ATGCAAGATC TGTATCAACT CATTGGTGAA AAGTTAAATG ACATTATCCC GGGCGAGTGG
+       61 ACCAAGATTT ACTTGTATGC AGAGGTTCTG GACGACAGCA CCATGGTGTT GTTCCATTTT
+      121 CGTACGCCTG AGAATAACCA GATTATCTAC TCTCAGGACA TTCCGAGCCA CTATAATGTG
+      181 AGCAAAGACA TTTTCAAGAC CCTGCTGCGC GAGCTGCGCG AACTGTTTGA GGAGCTGCGT
+      241 ACCGAACACC GCAACAACAA CGATGATGTC TGGACTAATC TGACCCTGAC CCTGGATCGT
+      301 AGCGGTGAAT TCCAACTGGA CTACAACTAT GACGATATCC TGGCGAGCGA GCTGGACGGT
+      361 TACGAGCGTA TCGCCATTTG GGAATATAAG AACCTGGGTA TCCTGCCGGA GGACGAGGAC
+      421 GACAAAGAGT TCGTGATCAG CTACCTGGGT CTGTGA
+//

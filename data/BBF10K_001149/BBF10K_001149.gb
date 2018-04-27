@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001149            354 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplR
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 354)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..354
+                     /locus_tag="b3304"
+                     /gene="rplR"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L18"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417763.1"
+                     /EC_number=""
+                     /translation="MDKKSARIRRATRARRKLQELGATRLVVHRTPRHIYAQVIAPNG
+                     SEVLVAASTVEKAIAEQLKYTGNKDAAAAVGKAVAERALEKGIKDVSFDRSGFQYHGR
+                     VQALADAAREAGLQF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010825"
+                     db_xref="UniProtKB/Swiss-Prot:P0C018"
+                     db_xref="EcoGene:EG10879"
+                     db_xref="GeneID:947804"
+ORIGIN
+        1 ATGGACAAGA AAAGCGCCCG CATCCGCCGC GCGACCCGCG CCCGCCGTAA ACTGCAAGAG
+       61 CTGGGTGCAA CCCGCCTCGT TGTGCATCGT ACCCCTCGTC ATATTTACGC ACAAGTTATT
+      121 GCTCCGAATG GTTCTGAAGT GTTAGTTGCA GCGAGCACGG TGGAGAAGGC GATCGCGGAG
+      181 CAGCTGAAGT ATACCGGCAA CAAAGACGCC GCAGCGGCCG TTGGTAAAGC AGTGGCGGAA
+      241 CGTGCTCTGG AAAAGGGTAT TAAGGATGTC AGCTTCGACC GCAGCGGTTT TCAATATCAC
+      301 GGTCGTGTGC AGGCTCTTGC CGATGCGGCT CGTGAAGCGG GTCTGCAATT TTGA
+//

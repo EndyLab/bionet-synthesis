@@ -1,0 +1,35 @@
+LOCUS       BBF10K_000911            318 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  sunI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 318)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..318
+                     /locus_tag="BSU21490"
+                     /gene="sunI"
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_390032.1"
+                     /EC_number=""
+                     /translation="MEYVVMIIILLALFFIFTVFLNTRYSFDEKCLVLKFGLSKTEIP
+                     INQIVSIKESDKYGVADNIDYKIGMPYAQPDRIVIETTNKRFLVFLNGAQQFIQKYKR
+                     VSV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:939125"
+ORIGIN
+        1 ATGGAATACG TCGTGATGAT TATTATTTTA TTGGCACTGT TTTTCATCTT CACCGTTTTC
+       61 CTCAACACCC GTTATTCTTT TGATGAGAAG TGCTTGGTTC TGAAGTTCGG TCTGAGCAAA
+      121 ACCGAGATCC CGATCAACCA AATCGTCAGC ATCAAGGAGA GCGATAAATA CGGTGTTGCG
+      181 GACAATATCG ACTACAAGAT TGGCATGCCG TACGCGCAGC CGGACCGTAT TGTGATCGAA
+      241 ACCACGAACA AGCGTTTTCT GGTCTTTCTG AATGGTGCAC AGCAATTCAT CCAGAAGTAC
+      301 AAACGTGTGA GCGTGTGA
+//

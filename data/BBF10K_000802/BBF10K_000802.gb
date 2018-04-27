@@ -1,0 +1,32 @@
+LOCUS       BBF10K_000802            219 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  infA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 219)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..219
+                     /locus_tag="BSU01390"
+                     /gene="infA"
+                     /gene_synonyms=""
+                     /product="translation initiation factor IF-1"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388020.1"
+                     /EC_number=""
+                     /translation="MAKDDVIEVEGTIVETLPNAMFKVELENGHTVLAHVSGKIRMHF
+                     IRILPGDKVTVELSPYDLTRGRITYRYK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938924"
+ORIGIN
+        1 ATGGCAAAGG ACGATGTGAT CGAGGTGGAG GGCACGATTG TTGAAACCCT GCCGAACGCC
+       61 ATGTTTAAAG TTGAGCTGGA GAACGGTCAC ACCGTGCTGG CGCATGTGAG CGGTAAAATT
+      121 CGTATGCACT TCATTCGTAT TTTGCCTGGT GATAAGGTTA CCGTTGAACT GAGCCCGTAT
+      181 GACCTGACGC GTGGTCGCAT CACGTATCGC TATAAGTGA
+//

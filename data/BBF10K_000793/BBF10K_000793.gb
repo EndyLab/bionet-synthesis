@@ -1,0 +1,32 @@
+LOCUS       BBF10K_000793            186 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 186)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..186
+                     /locus_tag="BSU01290"
+                     /gene="rpsN"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S14"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388010.1"
+                     /EC_number=""
+                     /translation="MAKKSMIAKQQRTPKFKVQEYTRCERCGRPHSVIRKFKLCRICF
+                     RELAYKGQIPGVKKASW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:935946"
+ORIGIN
+        1 ATGGCCAAGA AAAGCATGAT CGCAAAGCAG CAGCGCACGC CGAAATTCAA AGTGCAGGAG
+       61 TATACGCGCT GTGAGCGTTG TGGCCGTCCG CACAGCGTTA TTCGTAAATT TAAGTTGTGT
+      121 CGCATCTGTT TCCGCGAACT GGCGTACAAG GGCCAGATCC CGGGCGTTAA AAAAGCTTCG
+      181 TGGTGA
+//

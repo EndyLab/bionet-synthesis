@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001131            429 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplM
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 429)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..429
+                     /locus_tag="b3231"
+                     /gene="rplM"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L13"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417698.1"
+                     /EC_number=""
+                     /translation="MKTFTAKPETVKRDWYVVDATGKTLGRLATELARRLRGKHKAEY
+                     TPHVDTGDYIIVLNADKVAVTGNKRTDKVYYHHTGHIGGIKQATFEEMIARRPERVIE
+                     IAVKGMLPKGPLGRAMFRKLKVYAGNEHNHAAQQPQVLDI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010599"
+                     db_xref="UniProtKB/Swiss-Prot:P0AA10"
+                     db_xref="EcoGene:EG10874"
+                     db_xref="GeneID:947828"
+ORIGIN
+        1 ATGAAAACCT TTACGGCGAA ACCGGAAACC GTTAAACGTG ATTGGTACGT AGTGGATGCA
+       61 ACGGGTAAGA CGCTGGGCCG CCTGGCCACG GAACTGGCCC GTCGCCTGAG AGGTAAGCAT
+      121 AAGGCCGAGT ACACCCCGCA CGTGGATACG GGCGACTACA TCATTGTTCT GAACGCGGAC
+      181 AAAGTTGCGG TTACTGGCAA TAAGCGTACC GACAAGGTCT ATTATCATCA CACCGGTCAT
+      241 ATCGGTGGTA TCAAACAAGC CACTTTCGAA GAAATGATCG CTCGTCGCCC GGAGCGCGTT
+      301 ATTGAAATCG CAGTCAAGGG TATGCTGCCG AAAGGTCCGC TGGGTCGTGC CATGTTTCGC
+      361 AAACTGAAAG TGTATGCCGG CAATGAACAC AACCACGCGG CACAGCAGCC CCAGGTGCTG
+      421 GACATTTGA
+//

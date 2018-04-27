@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001052            357 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ydiL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 357)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..357
+                     /locus_tag="b1689"
+                     /gene="ydiL"
+                     /gene_synonyms=""
+                     /product="putative HTH domain DNA-binding protein"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_416204.2"
+                     /EC_number=""
+                     /translation="MNAYELQALRHIFAMTIDECATWIAQTGDSESWRQWENGKCAIP
+                     DRVVEQLLAMRQQRKKHLHAIIEKINNRIGNNTMRFFPDLTAFQRVYPDGNFIDWKIY
+                     QSVAAELYAHDLERLC"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0005641"
+                     db_xref="UniProtKB/Swiss-Prot:P76196"
+                     db_xref="EcoGene:EG13971"
+                     db_xref="GeneID:946181"
+ORIGIN
+        1 ATGAACGCAT ACGAGCTGCA GGCGCTGCGT CACATTTTCG CTATGACGAT TGATGAGTGC
+       61 GCGACTTGGA TCGCACAGAC CGGCGATAGC GAGTCCTGGC GTCAGTGGGA GAATGGTAAA
+      121 TGTGCGATTC CGGACCGTGT CGTGGAGCAA CTGCTGGCCA TGCGCCAACA GCGTAAGAAA
+      181 CATCTGCACG CCATCATTGA GAAAATCAAC AATCGTATTG GTAATAATAC CATGCGTTTT
+      241 TTCCCGGATC TGACTGCATT CCAACGCGTT TATCCGGATG GCAATTTTAT CGACTGGAAA
+      301 ATTTACCAAT CCGTCGCAGC AGAACTGTAT GCCCACGACC TGGAACGTCT GTGCTGA
+//

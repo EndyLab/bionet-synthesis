@@ -1,0 +1,39 @@
+LOCUS       BBF10K_001214            366 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 366)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..366
+                     /locus_tag="b3986"
+                     /gene="rplL"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L7/L12"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418413.1"
+                     /EC_number=""
+                     /translation="MSITKDQIIEAVAAMSVMDVVELISAMEEKFGVSAAAAVAVAAG
+                     PVEAAEEKTEFDVILKAAGANKVAVIKAVRGATGLGLKEAKDLVESAPAALKEGVSKD
+                     DAEALKKALEEAGAEVEVK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0013038"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7K2"
+                     db_xref="EcoGene:EG10873"
+                     db_xref="GeneID:948489"
+ORIGIN
+        1 ATGAGCATCA CCAAAGATCA GATCATTGAG GCCGTGGCGG CAATGTCTGT GATGGACGTC
+       61 GTTGAACTGA TCTCGGCAAT GGAGGAAAAG TTCGGTGTTA GCGCCGCTGC GGCCGTTGCG
+      121 GTTGCGGCGG GCCCGGTTGA GGCAGCGGAG GAAAAGACCG AGTTTGATGT CATCCTGAAG
+      181 GCAGCGGGTG CAAATAAAGT GGCGGTGATT AAGGCTGTTC GCGGTGCTAC CGGTCTGGGT
+      241 CTGAAGGAGG CCAAAGACCT GGTGGAGAGC GCACCAGCTG CGTTGAAAGA GGGCGTCAGC
+      301 AAGGACGACG CGGAGGCGCT GAAAAAGGCC CTCGAAGAGG CGGGCGCGGA GGTCGAGGTG
+      361 AAGTGA
+//

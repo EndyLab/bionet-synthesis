@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001094            480 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ispF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 480)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..480
+                     /locus_tag="b2746"
+                     /gene="ispF"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417226.1"
+                     /EC_number="4.6.1.12"
+                     /translation="MRIGHGFDVHAFGGEGPIIIGGVRIPYEKGLLAHSDGDVALHAL
+                     TDALLGAAALGDIGKLFPDTDPAFKGADSRELLREAWRRIQAKGYTLGNVDVTIIAQA
+                     PKMLPHIPQMRVFIAEDLGCHMDDVNVKATTTEKLGFTGRGEGIACEAVALLIKATK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0009013"
+                     db_xref="UniProtKB/Swiss-Prot:P62617"
+                     db_xref="EcoGene:EG11816"
+                     db_xref="GeneID:945057"
+ORIGIN
+        1 ATGCGTATTG GTCATGGCTT CGATGTTCAT GCATTCGGCG GTGAGGGCCC GATCATCATC
+       61 GGTGGCGTTC GCATTCCGTA TGAGAAGGGC CTGCTGGCTC ACTCCGATGG TGACGTTGCT
+      121 TTACATGCGC TGACGGATGC ACTGCTGGGC GCCGCGGCTC TGGGTGATAT TGGTAAACTG
+      181 TTCCCGGACA CCGACCCGGC ATTCAAGGGT GCGGATTCCC GCGAGCTGCT GCGCGAGGCG
+      241 TGGCGTCGCA TCCAAGCGAA GGGTTATACC CTGGGTAACG TCGATGTTAC CATTATCGCG
+      301 CAGGCGCCGA AAATGCTGCC GCATATTCCG CAGATGCGCG TGTTCATTGC AGAGGATCTG
+      361 GGTTGCCACA TGGACGATGT CAACGTCAAG GCGACGACCA CCGAGAAACT GGGTTTTACG
+      421 GGCCGCGGCG AGGGAATCGC GTGTGAGGCA GTGGCACTGC TGATCAAGGC CACGAAGTGA
+//

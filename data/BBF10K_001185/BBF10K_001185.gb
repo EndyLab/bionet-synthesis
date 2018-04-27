@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001185            456 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  dut
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 456)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..456
+                     /locus_tag="b3640"
+                     /gene="dut"
+                     /gene_synonyms=""
+                     /product="deoxyuridinetriphosphatase"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418097.1"
+                     /EC_number="3.6.1.23"
+                     /translation="MKKIDVKILDPRVGKEFPLPTYATSGSAGLDLRACLNDAVELAP
+                     GDTTLVPTGLAIHIADPSLAAMMLPRSGLGHKHGIVLGNLVGLIDSDYQGQLMISVWN
+                     RGQDSFTIQPGERIAQMIFVPVVQAEFNLVEDFDATDRGEGGFGHSGRQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0011899"
+                     db_xref="UniProtKB/Swiss-Prot:P06968"
+                     db_xref="EcoGene:EG10251"
+                     db_xref="GeneID:948607"
+ORIGIN
+        1 ATGAAGAAAA TTGATGTGAA AATCCTGGAC CCGCGTGTTG GTAAAGAGTT CCCGCTGCCG
+       61 ACCTACGCGA CGTCTGGTTC GGCGGGTTTG GATCTGCGTG CATGTCTGAA CGACGCGGTT
+      121 GAGCTGGCGC CTGGCGACAC GACCCTGGTG CCGACGGGTC TGGCGATCCA TATCGCGGAC
+      181 CCGAGCCTGG CCGCCATGAT GTTGCCGCGC AGCGGTCTGG GTCACAAACA CGGTATTGTT
+      241 CTGGGCAATT TAGTGGGTCT GATCGACAGC GACTACCAAG GTCAACTGAT GATTAGCGTC
+      301 TGGAACCGTG GTCAAGATAG CTTTACCATT CAACCGGGTG AGCGCATTGC GCAGATGATT
+      361 TTCGTTCCGG TTGTGCAGGC GGAATTCAAC CTGGTGGAGG ATTTTGACGC CACGGACCGT
+      421 GGTGAGGGTG GCTTCGGTCA CAGCGGTCGC CAGTGA
+//

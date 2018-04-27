@@ -1,0 +1,33 @@
+LOCUS       BBF10K_000827            291 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  gatC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 291)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..291
+                     /locus_tag="BSU06670"
+                     /gene="gatC"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388549.1"
+                     /EC_number=""
+                     /translation="MSRISIEEVKHVAHLARLAITEEEAKMFTEQLDSIISFAEELNE
+                     VNTDNVEPTTHVLKMKNVMREDEAGKGLPVEDVMKNAPDHKDGYIRVPSILD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936063"
+ORIGIN
+        1 ATGAGCCGCA TCAGCATTGA GGAAGTCAAG CATGTTGCCC ACCTGGCACG CTTGGCGATT
+       61 ACGGAAGAAG AAGCGAAAAT GTTTACCGAA CAGTTAGATA GCATTATTAG CTTCGCGGAG
+      121 GAACTGAATG AAGTGAACAC TGACAACGTT GAGCCGACTA CCCACGTTCT GAAGATGAAG
+      181 AACGTTATGC GTGAGGACGA AGCGGGTAAA GGCCTGCCGG TTGAAGATGT TATGAAGAAT
+      241 GCGCCAGACC ATAAGGATGG CTACATTCGT GTTCCAAGCA TTCTGGATTG A
+//

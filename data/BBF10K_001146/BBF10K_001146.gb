@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001146            435 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplO
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 435)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..435
+                     /locus_tag="b3301"
+                     /gene="rplO"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L15"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417760.1"
+                     /EC_number=""
+                     /translation="MRLNTLSPAEGSKKAGKRLGRGIGSGLGKTGGRGHKGQKSRSGG
+                     GVRRGFEGGQMPLYRRLPKFGFTSRKAAITAEIRLSDLAKVEGGVVDLNTLKAANIIG
+                     IQIEFAKVILAGEVTTPVTVRGLRVTKGARAAIEAAGGKIEE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010819"
+                     db_xref="UniProtKB/Swiss-Prot:P02413"
+                     db_xref="EcoGene:EG10876"
+                     db_xref="GeneID:947798"
+ORIGIN
+        1 ATGCGTCTGA ATACCCTGAG CCCGGCAGAG GGTTCGAAAA AAGCTGGTAA GCGTCTGGGT
+       61 CGTGGCATTG GCAGCGGTCT GGGTAAAACC GGCGGTCGTG GCCATAAAGG TCAAAAGAGC
+      121 CGCAGCGGCG GCGGTGTGCG TCGTGGCTTC GAGGGTGGCC AGATGCCGTT GTATCGTCGC
+      181 CTGCCGAAAT TTGGCTTCAC CAGCCGCAAG GCTGCGATCA CGGCAGAGAT CCGCTTGAGC
+      241 GATCTGGCCA AGGTGGAAGG TGGTGTTGTT GATCTCAATA CGTTGAAGGC CGCTAACATT
+      301 ATTGGTATCC AGATTGAATT CGCAAAAGTG ATCCTGGCGG GCGAAGTGAC GACCCCGGTT
+      361 ACGGTTCGTG GCCTGCGTGT TACCAAGGGT GCGCGTGCTG CCATTGAGGC GGCGGGCGGT
+      421 AAGATCGAGG AGTGA
+//

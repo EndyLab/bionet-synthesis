@@ -1,0 +1,44 @@
+LOCUS       BBF10K_001219            609 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  lexA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 609)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..609
+                     /locus_tag="b4043"
+                     /gene="lexA"
+                     /gene_synonyms=""
+                     /product="transcriptional repressor of SOS regulon"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_418467.1"
+                     /EC_number="3.4.21.88"
+                     /translation="MKALTARQQEVFDLIRDHISQTGMPPTRAEIAQRLGFRSPNAAE
+                     EHLKALARKGVIEIVSGASRGIRLLQEEEEGLPLVGRVAAGEPLLAQQHIEGHYQVDP
+                     SLFKPNADFLLRVSGMSMKDIGIMDGDLLAVHKTQDVRNGQVVVARIDDEVTVKRLKK
+                     QGNKVELLPENSEFKPIVVDLRQQSFTIEGLAVGVIRNGDWL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0013241"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7C2"
+                     db_xref="EcoGene:EG10533"
+                     db_xref="GeneID:948544"
+ORIGIN
+        1 ATGAAAGCGC TGACCGCGCG TCAACAAGAA GTTTTTGACC TGATCCGTGA TCACATTTCC
+       61 CAAACCGGTA TGCCGCCGAC GCGTGCGGAG ATCGCCCAAA GACTGGGCTT TCGTTCCCCG
+      121 AATGCCGCAG AGGAACATCT GAAGGCGCTG GCCCGTAAAG GCGTCATTGA GATTGTGAGC
+      181 GGCGCGAGCC GTGGCATCCG CCTGCTGCAG GAGGAGGAAG AAGGTCTGCC GCTGGTGGGC
+      241 CGCGTTGCCG CGGGTGAACC GCTGCTGGCA CAGCAGCACA TCGAGGGTCA CTACCAGGTT
+      301 GATCCTTCGC TGTTCAAACC TAATGCGGAT TTCCTGCTGC GTGTTAGCGG TATGAGCATG
+      361 AAGGACATCG GTATTATGGA CGGCGATTTG CTGGCAGTTC ATAAAACCCA AGATGTGCGT
+      421 AACGGCCAAG TGGTGGTGGC GCGCATCGAC GATGAGGTCA CCGTTAAACG TCTGAAAAAA
+      481 CAGGGCAACA AGGTCGAATT GCTGCCGGAG AATAGCGAGT TCAAGCCGAT CGTGGTTGAT
+      541 CTGCGTCAAC AGAGCTTTAC GATTGAGGGC CTGGCGGTTG GCGTCATCCG CAACGGTGAC
+      601 TGGCTGTGA
+//

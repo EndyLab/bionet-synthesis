@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000996            375 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  mrpG
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 375)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..375
+                     /locus_tag="BSU31660"
+                     /gene="mrpG"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_391044.1"
+                     /EC_number=""
+                     /translation="MIETAKVVVAVFILLGALICLIASFGVLRLPDVFTRAHAASKGS
+                     TLGVNMILLGVFFYLWFVTGELSAKILLGILFIFITSPIGGHLICRAAYNSGVKLDER
+                     SVQDDYNGIRNFVIKRKEDSYL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938864"
+ORIGIN
+        1 ATGATTGAGA CTGCGAAGGT TGTTGTCGCG GTGTTCATCC TGCTGGGCGC ATTAATTTGC
+       61 CTGATTGCTA GCTTCGGTGT CCTGCGCCTG CCGGATGTTT TCACCCGTGC ACACGCTGCC
+      121 AGCAAGGGCA GCACCTTGGG CGTGAACATG ATCCTGCTGG GCGTTTTCTT TTACTTATGG
+      181 TTTGTTACGG GCGAGCTGTC CGCCAAGATT CTGCTGGGTA TTTTATTTAT CTTTATTACG
+      241 AGCCCGATCG GTGGCCACTT GATTTGCCGT GCAGCATATA ATAGCGGTGT GAAACTGGAC
+      301 GAGCGTAGCG TTCAGGATGA CTATAACGGC ATCCGTAACT TCGTTATTAA ACGTAAGGAG
+      361 GATAGCTACC TGTGA
+//

@@ -1,0 +1,40 @@
+LOCUS       BBF10K_000774            501 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplJ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 501)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..501
+                     /locus_tag="BSU01040"
+                     /gene="rplJ"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L10"
+                     /note="binds the two ribosomal protein L7/L12 dimers
+                     andanchors them to the large ribosomal subunit"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387985.2"
+                     /EC_number=""
+                     /translation="MSSAIETKKVVVEEIASKLKESKSTIIVDYRGLNVSEVTELRKQ
+                     LREANVEFKVYKNTMTRRAVEQAELNGLNDFLTGPNAIAFSTEDVVAPAKVLNDFAKN
+                     HEALEIKAGVIEGKVSTVEEVKALAELPSREGLLSMLLSVLQAPVRNLALAAKAVAEQ
+                     KEEQGA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936153"
+ORIGIN
+        1 ATGAGCAGCG CCATCGAAAC CAAAAAGGTT GTTGTTGAGG AGATCGCATC TAAACTGAAA
+       61 GAGTCTAAAA GCACGATTAT CGTGGACTAC CGCGGTCTGA ATGTTTCCGA GGTGACCGAG
+      121 CTGCGTAAAC AACTGCGTGA GGCAAACGTT GAATTTAAGG TGTATAAAAA CACTATGACG
+      181 CGCCGTGCGG TCGAACAAGC GGAGTTGAAC GGCTTGAATG ACTTTCTGAC GGGTCCGAAC
+      241 GCAATTGCGT TTAGCACGGA AGATGTGGTG GCACCGGCCA AAGTACTGAA TGACTTTGCG
+      301 AAGAATCACG AGGCGCTGGA AATTAAAGCG GGTGTCATCG AAGGTAAGGT GAGCACCGTA
+      361 GAAGAGGTGA AGGCTCTGGC TGAGCTGCCG AGCCGCGAGG GTCTGCTGAG CATGCTGCTG
+      421 AGCGTCCTGC AGGCCCCAGT ACGTAACCTG GCATTGGCTG CGAAAGCAGT GGCGGAGCAA
+      481 AAGGAGGAGC AGGGTGCCTG A
+//

@@ -1,0 +1,34 @@
+LOCUS       BBF10K_000786            279 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsS
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 279)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..279
+                     /locus_tag="BSU01200"
+                     /gene="rpsS"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S19"
+                     /note="protein S19 forms a complex with S13 that
+                     bindsstrongly to the 16S ribosomal RNA"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388001.1"
+                     /EC_number=""
+                     /translation="MARSLKKGPFVDGHLMTKIEKLNETDKKQVVKTWSRRSTIFPQF
+                     IGHTIAVYDGRKHVPVFISEDMVGHKLGEFAPTRTYKGHASDDKKTRR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936818"
+ORIGIN
+        1 ATGGCGCGTA GCCTGAAGAA AGGCCCGTTT GTCGACGGCC ACCTGATGAC GAAAATCGAG
+       61 AAACTGAATG AAACGGATAA GAAACAAGTG GTCAAGACCT GGAGTCGTCG TTCCACCATT
+      121 TTCCCGCAAT TTATTGGTCA CACGATCGCG GTGTACGACG GCCGTAAGCA TGTTCCGGTG
+      181 TTTATCAGCG AGGACATGGT GGGTCACAAA CTGGGTGAAT TTGCGCCAAC TCGTACCTAC
+      241 AAGGGCCACG CGAGTGATGA CAAGAAAACC CGCCGCTGA
+//

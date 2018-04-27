@@ -1,0 +1,34 @@
+LOCUS       BBF10K_001147            180 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpmD
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 180)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..180
+                     /locus_tag="b3302"
+                     /gene="rpmD"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L30"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417761.1"
+                     /EC_number=""
+                     /translation="MAKTIKITQTRSAIGRLPKHKATLLGLGLRRIGHTVEREDTPAI
+                     RGMINAVSFMVKVEE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010821"
+                     db_xref="UniProtKB/Swiss-Prot:P0AG51"
+                     db_xref="EcoGene:EG10888"
+                     db_xref="GeneID:947797"
+ORIGIN
+        1 ATGGCCAAGA CCATCAAGAT CACCCAGACC CGTAGCGCGA TTGGCCGCTT GCCTAAGCAC
+       61 AAAGCAACCC TGCTGGGCCT GGGCCTGCGT AGAATTGGCC ACACCGTTGA GCGCGAAGAT
+      121 ACCCCAGCGA TTCGTGGCAT GATTAACGCA GTTAGCTTCA TGGTTAAGGT CGAAGAGTGA
+//

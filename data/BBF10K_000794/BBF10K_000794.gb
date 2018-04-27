@@ -1,0 +1,38 @@
+LOCUS       BBF10K_000794            399 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 399)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..399
+                     /locus_tag="BSU01300"
+                     /gene="rpsH"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S8"
+                     /note="binds directly to 16S rRNA central domain where
+                     ithelps coordinate assembly of the platform of the
+                     30Ssubunit"
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388011.2"
+                     /EC_number=""
+                     /translation="MVMTDPIADMLTRIRNANMVRHEKLEIPASKLKREIAEILKREG
+                     FIRDVEFVEDSKQGIIRVFLKYGQNNERVITGLKRISKPGLRVYAKSNEVPRVLNGLG
+                     IAIISTSQGVLTDKEARAKQAGGEVLAYVW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936328"
+ORIGIN
+        1 ATGGTTATGA CGGATCCGAT CGCCGATATG CTGACCCGTA TTCGTAATGC GAACATGGTT
+       61 CGTCACGAAA AGCTGGAGAT CCCAGCCAGC AAGCTGAAAC GCGAGATCGC GGAGATCTTA
+      121 AAGCGCGAAG GCTTTATTCG TGATGTGGAG TTCGTCGAGG ACTCAAAACA GGGCATTATT
+      181 CGTGTATTCT TGAAATATGG TCAAAACAAC GAGCGTGTGA TCACCGGTCT GAAGCGTATC
+      241 AGCAAGCCGG GTCTGCGTGT GTACGCCAAG AGCAATGAGG TTCCGCGTGT CCTGAACGGC
+      301 CTGGGTATCG CGATCATCAG CACTAGCCAG GGCGTACTGA CCGATAAAGA GGCGCGTGCG
+      361 AAACAGGCGG GTGGTGAGGT CCTGGCGTAT GTCTGGTGA
+//

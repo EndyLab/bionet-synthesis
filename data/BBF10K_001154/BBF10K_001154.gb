@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001154            315 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rplX
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 315)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..315
+                     /locus_tag="b3309"
+                     /gene="rplX"
+                     /gene_synonyms=""
+                     /product="50S ribosomal subunit protein L24"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417768.1"
+                     /EC_number=""
+                     /translation="MAAKIRRDDEVIVLTGKDKGKRGKVKNVLSSGKVIVEGINLVKK
+                     HQKPVPALNQPGGIVEKEAAIQVSNVAIFNAATGKADRVGFRFEDGKKVRFFKSNSET
+                     IK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010835"
+                     db_xref="UniProtKB/Swiss-Prot:P60624"
+                     db_xref="EcoGene:EG10884"
+                     db_xref="GeneID:947810"
+ORIGIN
+        1 ATGGCGGCTA AAATCCGCCG TGACGATGAG GTAATTGTGC TGACTGGCAA AGACAAAGGT
+       61 AAGCGTGGTA AAGTGAAGAA TGTCCTGAGC AGCGGTAAGG TAATTGTTGA GGGTATTAAC
+      121 CTGGTCAAAA AACACCAAAA GCCGGTGCCG GCACTGAACC AGCCGGGCGG TATTGTTGAG
+      181 AAGGAAGCCG CGATTCAAGT GAGCAACGTG GCTATCTTCA ACGCGGCGAC CGGCAAAGCA
+      241 GATCGCGTTG GCTTCCGTTT TGAGGACGGC AAGAAGGTCC GTTTTTTCAA AAGCAATAGC
+      301 GAAACGATCA AGTGA
+//

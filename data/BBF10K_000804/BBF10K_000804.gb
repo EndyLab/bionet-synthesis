@@ -1,0 +1,36 @@
+LOCUS       BBF10K_000804            396 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsK
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 396)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..396
+                     /locus_tag="BSU01420"
+                     /gene="rpsK"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S11"
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_388023.1"
+                     /EC_number=""
+                     /translation="MAAARKSNTRKRRVKKNIESGIAHIRSTFNNTIVTITDTHGNAI
+                     SWSSAGALGFRGSRKSTPFAAQMAAETAAKGSIEHGLKTLEVTVKGPGSGREAAIRAL
+                     QAAGLEVTAIRDVTPVPHNGCRPPKRRRV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:938926"
+ORIGIN
+        1 ATGGCTGCAG CCCGTAAGAG CAACACGCGT AAGCGTCGTG TTAAGAAGAA CATCGAAAGC
+       61 GGTATTGCGC ACATCCGTAG CACTTTTAAC AACACCATTG TCACCATTAC CGATACCCAC
+      121 GGTAATGCGA TCAGCTGGTC TAGCGCGGGT GCTCTGGGCT TTCGTGGCAG CCGCAAAAGC
+      181 ACCCCGTTTG CTGCCCAAAT GGCGGCAGAA ACGGCGGCAA AAGGTAGCAT CGAGCACGGT
+      241 CTGAAAACCT TGGAGGTGAC CGTAAAAGGC CCGGGCTCAG GTCGCGAGGC AGCGATTCGT
+      301 GCGTTGCAGG CGGCGGGTTT GGAGGTGACC GCTATTCGTG ACGTTACGCC GGTCCCGCAT
+      361 AACGGTTGCC GTCCGCCAAA GCGCCGCCGT GTGTGA
+//

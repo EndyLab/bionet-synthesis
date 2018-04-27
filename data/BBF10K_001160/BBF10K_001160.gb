@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001160            279 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  rpsS
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 279)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..279
+                     /locus_tag="b3316"
+                     /gene="rpsS"
+                     /gene_synonyms=""
+                     /product="30S ribosomal subunit protein S19"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_417775.1"
+                     /EC_number=""
+                     /translation="MPRSLKKGPFIDLHLLKKVEKAVESGDKKPLRTWSRRSTIFPNM
+                     IGLTIAVHNGRQHVPVFVTDEMVGHKLGEFAPTRTYRGHAADKKAKKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="ASAP:ABE-0010852"
+                     db_xref="UniProtKB/Swiss-Prot:P0A7U3"
+                     db_xref="EcoGene:EG10918"
+                     db_xref="GeneID:947811"
+ORIGIN
+        1 ATGCCGCGTA GCCTGAAGAA AGGTCCGTTC ATCGATCTGC ATCTGCTGAA GAAGGTGGAG
+       61 AAGGCGGTTG AATCCGGCGA TAAAAAACCG CTGCGCACCT GGTCCCGTCG TAGCACCATC
+      121 TTTCCAAATA TGATTGGTTT GACTATCGCG GTGCACAATG GCCGCCAACA CGTCCCGGTT
+      181 TTCGTCACCG ATGAGATGGT TGGTCATAAA CTGGGTGAAT TCGCTCCTAC CCGTACGTAC
+      241 AGAGGTCACG CCGCTGACAA AAAAGCCAAG AAAAAGTGA
+//

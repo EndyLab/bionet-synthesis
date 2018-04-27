@@ -1,0 +1,37 @@
+LOCUS       BBF10K_000770            477 bp ds-DNA     linear   BCT 24-APR-2018
+DEFINITION  ispF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 477)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Bacillus subtilis subsp. subtilis str. 168
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..477
+                     /locus_tag="BSU00910"
+                     /gene="ispF"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Bacillus subtilis subsp. subtilis str. 168"
+                     /GenBank_acc="NC_000964"
+                     /protein_id="NP_387972.1"
+                     /EC_number="4.6.1.12"
+                     /translation="MFRIGQGFDVHQLVEGRPLIIGGIEIPYEKGLLGHSDADVLLHT
+                     VADACLGAVGEGDIGKHFPDTDPEFKDADSFKLLQHVWGIVKQKGYVLGNIDCTIIAQ
+                     KPKMLPYIEDMRKRIAEGLEADVSQVNVKATTTEKLGFTGRAEGIAAQATVLIQKG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:936634"
+ORIGIN
+        1 ATGTTTCGCA TCGGTCAAGG CTTCGATGTC CACCAACTGG TCGAAGGTCG TCCGCTGATC
+       61 ATCGGTGGTA TTGAAATCCC GTATGAAAAG GGTCTGCTGG GCCACAGTGA TGCGGACGTC
+      121 CTGTTGCACA CCGTCGCTGA TGCGTGCTTG GGTGCGGTGG GCGAAGGTGA CATTGGTAAA
+      181 CACTTCCCGG ATACCGACCC TGAGTTCAAG GATGCAGATA GCTTCAAACT GCTCCAACAC
+      241 GTCTGGGGCA TTGTGAAGCA AAAGGGTTAC GTCCTGGGCA ATATCGACTG CACTATTATT
+      301 GCACAGAAGC CTAAAATGTT GCCGTACATC GAGGACATGC GTAAGCGTAT CGCGGAAGGT
+      361 CTGGAGGCGG ATGTGAGCCA AGTGAATGTT AAAGCGACCA CGACCGAGAA GCTGGGTTTT
+      421 ACCGGTCGCG CGGAAGGTAT CGCGGCGCAG GCGACCGTTC TGATTCAGAA GGGCTGA
+//
