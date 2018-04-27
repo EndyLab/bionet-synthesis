@@ -17,8 +17,7 @@ var sankey = d3.sankey()
     .nodePadding(10)
     .extent([[1, 1], [width - 1, height - 6]]);
 
-sankey.nodeId = function id(d) {return d.id}
-
+// sankey.nodeId = function id(d) {return d.id}
 
 var link = svg.append("g")
     .attr("class", "links")
@@ -33,7 +32,7 @@ var node = svg.append("g")
     .attr("font-size", 10)
   .selectAll("g");
 
-d3.json("sankey.json", function(error, energy) {
+d3.json("test.json", function(error, energy) {
   if (error) throw error;
 
   sankey(energy);
