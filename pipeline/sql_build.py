@@ -120,20 +120,20 @@ def run_build():
     ## CREATE A BUILD OF DESIRED GENES
     ## =============================================
     max_rxns = 96 # Sets the maximal number of clones you want to run
+    enzyme = 'BbsI'
     to_build = []
-    priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
+    # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
     acceptable_status = ['received'] # List with all of the status that you want to pull from
+    rework = ['cloning_error','cloning_failure','trans_failure']
     ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
     ## sorts them by their plate numbers and returns the earliest set of parts
-    to_build = [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                join(Well,Fragment.wells).join(Plate,Well.plates).filter(Plate.plate_name.in_(priority))\
-                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id)]
-    to_build_names = [part.part_id for part in to_build]
+    to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
+                join(Well,Fragment.wells).join(Plate,Well.plates)\
+                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
     if len(to_build) < 96:
-        extra = [part for part in session.query(Part).join(Fragment,Part.fragments).\
+        to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
                     join(Well,Fragment.wells).join(Plate,Well.plates)\
-                    .filter(Part.status.in_(acceptable_status)).filter(Part.part_id.notin_(to_build_names)).filter(Fragment.cloning_enzyme == 'BbsI').order_by(Plate.id.desc())]
-        to_build += extra
+                    .filter(Part.status.in_(rework)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
 
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
@@ -148,8 +148,19 @@ def run_build():
         'Gene' : building,
         'Destination' : addresses
     })
+    prev_builds = [build.build_name for build in session.query(Build)]
+    build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
+    last_build = max(build_numbers)
     export_map = export_map[['Gene','Destination']]
-    export_map.to_csv('{}/builds/new_map.csv'.format(BASE_PATH),index=False)
+    build_num = str(last_build+1).zfill(3)
+    path = '{}/builds/build{}'.format(BASE_PATH,build_num)
+    if os.path.exists(path):
+        print("Directory build{} already exists".format(build_num))
+    else:
+        # Generates a new directory with the ID# as its name
+        os.makedirs(path)
+        print("Making directory for build{}".format(build_num))
+    export_map.to_csv('{}/build{}_trans_map.csv'.format(path,build_num),index=False)
     input("check map")
 
     ## =============================================
@@ -164,6 +175,8 @@ def run_build():
         for frag in part.fragments:
             unique_plates.append(frag.wells[0].plates.plate_name)
     unique_plates = pd.Series(unique_plates).unique()
+    plate_index = [(y,x) for x,y in enumerate(unique_plates)]
+    plate_index = dict(plate_index)
 
     ## Group the plates so that they can be swapped in batches
     group_plates = [unique_plates[n:n+len(SOURCE_SLOTS)] for n in range(0, len(unique_plates), len(SOURCE_SLOTS))]
@@ -364,39 +377,48 @@ def run_build():
     current_group = group_plates[plate_counter]
     source_plates = change_plates(current_group)
 
+    indexes = []
+    rows = []
     for plate in target_build.plates:
         for well in plate.wells:
             for frag in well.parts.fragments:
-                start_well = frag.wells[0].address
-                dest_well = well.address
-                gene = well.parts.part_id
-                plate = frag.wells[0].plates.plate_name
+                indexes.append(plate_index[frag.wells[0].plates.plate_name])
+                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_name,frag.wells[0].volume]]
 
-                # TEMP: INCLUDE VOLUME ONCE I ACTUALLY RUN THE RESUSPENSION
-                # volume = int(frag.wells[0].volume)
-                if plate not in current_group:
-                    plate_counter += 1
-                    current_group = group_plates[plate_counter]
-                    source_plates = change_plates(current_group)
+    build_plan = [row for i,row in sorted(zip(indexes,rows))]
+    for row in build_plan:
+        start_well = row[0]
+        dest_well = row[1]
+        gene = row[2]
+        plate = row[3]
+        volume = row[4]
+        # TEMP: INCLUDE VOLUME ONCE I ACTUALLY RUN THE RESUSPENSION
+        #volume = int(frag.wells[0].volume)
+        if plate not in current_group:
+            plate_counter += 1
+            current_group = group_plates[plate_counter]
+            source_plates = change_plates(current_group)
 
-                p10s.pick_up_tip()
+        p10s.pick_up_tip()
 
-                # Only dilutes wells that have low starting volume
-                # if volume < 15:
-                #     print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
-                #     p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
+        # Only dilutes wells that have low starting volume
+        if volume < 30:
+            print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
+            p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
-                print("Transferring {} from plate {} well {} to well {}".format(gene,plate,start_well,dest_well))
-                p10s.mix(3, 8, source_plates[plate].wells(start_well).bottom())
+        print("Transferring {} from plate {} well {} to well {}".format(gene,plate,start_well,dest_well))
+        p10s.mix(3, 8, source_plates[plate].wells(start_well).bottom())
 
-                # Checks the calibration to make sure that it can aspirate correctly
-                p10s.aspirate(frag_vol,source_plates[plate].wells(start_well).bottom())
-                if plate not in used_plates:
-                    change_height(source_plates[plate],source_plates[plate].wells(start_well))
-                p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
-                used_plates.append(plate)
+        # Checks the calibration to make sure that it can aspirate correctly
+        p10s.aspirate(frag_vol,source_plates[plate].wells(start_well).bottom())
+        if plate not in used_plates:
+            change_height(source_plates[plate],source_plates[plate].wells(start_well))
+        p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
+        used_plates.append(plate)
 
-                p10s.drop_tip()
+        p10s.drop_tip()
+
+    input("stop again")
 
     commit = int(input("Commit changes (1-yes, 2-no): "))
     if commit == 1:

@@ -105,7 +105,7 @@ def build_db():
         target_build.status = 'sequencing'
         session.add(seq_plate)
         for well in target_build.plates[0].wells:
-            seq_plate.add_item(well.parts,well.address)
+            seq_plate.add_item(well.parts,address=well.address)
             well.parts.change_status('sequencing')
             session.add(seq_plate)
     session.commit()

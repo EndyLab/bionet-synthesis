@@ -14,14 +14,20 @@ import json
 import numpy as np
 import pandas as pd
 from datetime import datetime
+from matplotlib import pyplot as plt
 
 from Bio import pairwise2
 from Bio import Seq
 from Bio import SeqIO
 from Bio.Blast import NCBIXML
+from Bio.pairwise2 import format_alignment
 
 from config import *
 from db_config import *
+
+channels = ['DATA9', 'DATA10', 'DATA11', 'DATA12']
+
+from collections import defaultdict
 
 # TODO: Turn into a function
 
@@ -53,9 +59,16 @@ def verify_seq():
     number = int(input("Enter build: "))
     target = session.query(Build).filter(Build.build_name == build_names[number]).first()
     seq_plate = [plate for plate in target.plates if plate.plate_type == 'seq_plate'][0]
+    targets = []
+    targets.append(target.build_name)
     print("Will analyze build: ",target.build_name)
 
-    path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,target.build_name,target.build_name)
+    fasta_path = "{}/builds/{}/{}_fasta_files".format(BASE_PATH,target.build_name,target.build_name)
+    if os.path.exists(fasta_path):
+        print("Directory build{} already exists".format(target.build_name))
+    else:
+        os.makedirs(fasta_path)
+    # path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,target.build_name,target.build_name)
     SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
 
     # Create a dictionary to link the gene name to the corresponding id number
@@ -82,6 +95,7 @@ def verify_seq():
     # Convert the FSA file into a BLAST database
     os.system("makeblastdb -in {} -parse_seqids -dbtype nucl".format(DATABASE_PATH))
 
+
     count = 0
     align_data = []
     unknown_data = []
@@ -103,6 +117,15 @@ def verify_seq():
         '''Load sequencing reads and trim them based on the specified threshold'''
         seq = SeqIO.read(file, 'abi')
 
+        # trace = defaultdict(list)
+        # for c in channels:
+        #     trace[c] = seq.annotations['abif_raw'][c]
+        # plt.plot(trace['DATA9'], color='blue')
+        # plt.plot(trace['DATA10'], color='red')
+        # plt.plot(trace['DATA11'], color='green')
+        # plt.plot(trace['DATA12'], color='yellow')
+        # plt.show()
+
         maxq = np.max(seq.letter_annotations['phred_quality'])
         rolling = pd.Series(seq.letter_annotations['phred_quality']).rolling(window=20).mean()
         start = (rolling > maxq * threshold).idxmax()
@@ -116,6 +139,10 @@ def verify_seq():
         reverse_align = pairwise2.align.globalms(target_seq, reverse,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
         forward_align = forward_align[0]
         reverse_align = reverse_align[0]
+        # print(format_alignment(*forward_align))
+        # print()
+        # print(format_alignment(*reverse_align))
+        # input()
 
         for_raw = len(forward)
         rev_raw = len(reverse)
@@ -272,8 +299,8 @@ def verify_seq():
             return 'cloning_failure'
     counter = 0
     # targets = ['build007']
-    # for target in session.query(Build).filter(Build.status == 'sequencing').filter(Build.build_name.in_(targets)).order_by(Build.id):
-    for target in session.query(Build).filter(Build.status == 'sequencing').order_by(Build.id):
+    for target in session.query(Build).filter(Build.status == 'sequencing').filter(Build.build_name.in_(targets)).order_by(Build.id):
+    # for target in session.query(Build).filter(Build.status == 'sequencing').order_by(Build.id):
 
         print('================= {} ================='.format(target.build_name))
         SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
@@ -286,12 +313,14 @@ def verify_seq():
                 continue
             id_num = well.parts.part_id
             print(id_num)
-            if glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,well.parts.part_id,forward_primer)):
-                forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,well.parts.part_id,forward_primer))[0]
-                revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,well.parts.part_id,reverse_primer))[0]
-            elif glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[well.parts.part_id],forward_primer)):
-                forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[well.parts.part_id],forward_primer))[0]
-                revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[well.parts.part_id],reverse_primer))[0]
+            with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
+                fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
+            if glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer)):
+                forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer))[0]
+                revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,reverse_primer))[0]
+            elif glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[id_num],forward_primer)):
+                forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[id_num],forward_primer))[0]
+                revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[id_num],reverse_primer))[0]
             else:
                 print("Can't find seq_files",dictionary[well.parts.part_id])
                 no_seq.append(id_num)
@@ -341,9 +370,9 @@ def verify_seq():
             well.parts.status = outcome
 
             print("Status: ",well.parts.status)
-            print()
             counter += 1
         seq_plate.wells += new_wells
+        target.status = 'complete'
 
     for part in session.query(Part):
         part.eval_status()
@@ -366,7 +395,7 @@ def verify_seq():
 
     commit = int(input("Commit changes (1-yes, 2-no): "))
     if commit == 1:
-        session.commit()
+       session.commit()
     return
 
 if __name__ == "__main__":
