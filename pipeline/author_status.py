@@ -9,10 +9,10 @@ part_set=set()
 for file in glob.glob("./../data/*/*.json"):
     with open(file,"r") as json_file:
         data = json.load(json_file)
-    #part = data["author"]["name"]
-    #if data["sequence"]["fragment_sequences"] == "": 
-    if str(data["sequence"]["fragment_sequences"]) == "{}":
-        print(data["gene_id"] + " " + data["info"]["documentation"]["gene_name"] + " " + str(data["info"]["order_number"]))
+    part = data["author"]["name"]
+    print(part)
+    part_set.add(part)
 
 
-#print(part_set)
+print(len(part_set))
+print(part_set)
