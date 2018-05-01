@@ -17,4 +17,3 @@ for part in session.query(Part).order_by(Part.id):
 commit = int(input("Commit changes (1-yes, 2-no): "))
 if commit == 1:
     session.commit()
-return

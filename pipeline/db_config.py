@@ -39,6 +39,7 @@ class Part(Base):
     part_id = Column(String) # Holds the id previously given to it
     part_name = Column(String)
     part_type = Column(String) # For fragmentation
+    cloning_enzyme = Column(String) # Enzyme used in initial cloning
     organism = Column(String) # For codon optimization
     seq = Column(String)
     status = Column(String) # Gives the most updated status of this part
@@ -90,8 +91,6 @@ class Fragment(Base):
 
     id = Column(Integer, primary_key=True)
     fragment_name = Column(String)
-    location = Column(String)
-    cloning_enzyme = Column(String) # Enzyme used in initial cloning
     retrieval_enzyme = Column(String) # Enzyme used to pull it out of dest vector
     syn_yield = Column(Integer) # Yield of DNA from synthesis (in ng)
     seq = Column(String) # Contains the complete sequence including the overhangs for cloning

@@ -129,7 +129,7 @@ def run_build():
     ## sorts them by their plate numbers and returns the earliest set of parts
     to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
                 join(Well,Fragment.wells).join(Plate,Well.plates)\
-                .filter(Part.status.in_(acceptable_status)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
+                .filter(Part.status.in_(acceptable_status)).filter(Part.cloning_enzyme == enzyme).order_by(Plate.id)]
     if len(to_build) < 96:
         to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
                     join(Well,Fragment.wells).join(Plate,Well.plates)\

@@ -19,7 +19,7 @@ for part in session.query(Part).order_by(Part.id):
         print(array)
         not_attempted.append(array)
     print(part.part_id,part.status,str(tries))
-    state = part.status+" - "+str(tries)
+    state = part.status+" - "+str(tries)+" - "+part.cloning_enzyme
     status.append(state)
 
 
