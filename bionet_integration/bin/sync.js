@@ -10,7 +10,8 @@ var bc = require('bionet-client');
 // The maximum file version supported by this program.
 // Any file with no version field is assumed to be version '0.0.0'.
 // Any file with a version above this will be skipped
-MAX_SUPPORTED_VERSION = '0.0.0';
+MAX_SUPPORTED_VERSION = '3.0.0';
+var maxVersion = parseVersion(MAX_SUPPORTED_VERSION);
 
 var settings = require(path.join(__dirname, '..', 'settings.js'));
 
@@ -21,7 +22,7 @@ function fail(err) {
   process.exit(1);
 }
 
-function saveVirtual(remote, data, cb) {
+function saveVirtual(remote, data, fileVersion, cb) {
   var o = {
     freegenes: xtend(data, {}) // clone
   };
@@ -31,7 +32,12 @@ function saveVirtual(remote, data, cb) {
     delete o.freegenes.virtual_id;
   }
 
-  o.name = data.gene_name;
+
+  if(fileVersion < parseVersion('2.0.0')) {
+    o.name = data.gene_name;
+  } else {
+    o.name = data.info.documentation.gene_name;
+  }
 
   o.description = "Submitted to the FreeGenes project";
   if(data.author && data.author.name) {
@@ -89,9 +95,11 @@ function parseVersion(str) {
 }
 
 function syncFile(remote, filepath, data, cb) {
+  var fileVersion;
   if(data.version) {
     try {
-      if(parseVersion(data.version) > parseVersion(MAX_SUPPORTED_VERSION)) {
+      fileVersion = parseVersion(data.version);
+      if(fileVersion > maxVersion) {
         console.warn("Encountered unsupported file version:", data.version);
         return cb(null, false, true); // skip
       }
@@ -100,11 +108,13 @@ function syncFile(remote, filepath, data, cb) {
     }
   }
 
-  if(data.status && !data.status.will_build) {
-    return cb(null, false, true); // skip
+  if(fileVersion < parseVersion('2.0.0')) {
+    if(data.status && !data.status.will_build) {
+      return cb(null, false, true); // skip
+    }
   }
 
-  saveVirtual(remote, data, function(err, newData) {
+  saveVirtual(remote, data, fileVersion, function(err, newData) {
     if(err) return cb(err);
 
     // the data didn't change so we don't need to write to file
@@ -143,10 +153,10 @@ function syncFiles(remote, cb) {
 
         console.log("Synchronizing file:", file);
 
-        syncFile(remote, file, JSON.parse(data), function(err, didCreate, skipped) {
+        syncFile(remote, file, JSON.parse(data), function(err, didCreate, didSkip) {
           if(err) return cb(err);
 
-          if(skipped) {
+          if(didSkip) {
             skipped++;
           } else {
             if(didCreate) {
@@ -161,7 +171,6 @@ function syncFiles(remote, cb) {
 
     }, function(err) {
       if(err) return cb(err);
-
       cb(null, created, updated, skipped);
     })
   });
