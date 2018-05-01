@@ -1,0 +1,5 @@
+Gene Name,Gene ID,Current Status,Attempt 1,Attempt 2
+Arabidopsis_ascpf1,BBF10K_000625,cloning_mutation,cloning_mutation,N/A
+Maize_ascpf1,BBF10K_000626,cloning_mutation,cloning_error,cloning_mutation
+Tobacco_ascpf1,BBF10K_000627,sequence_confirmed,cloning_failure,sequence_confirmed
+Potato_ascpf1,BBF10K_000628,sequence_confirmed,sequence_confirmed,N/A

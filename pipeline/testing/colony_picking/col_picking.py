@@ -1,5 +1,9 @@
 from matplotlib import pyplot as plt
 from scipy.signal import butter, lfilter, freqz, argrelextrema
+# from scipy.optimize import curve_fit
+# from pylab import *
+import matplotlib.mlab as mlab
+from scipy.stats import norm
 
 from imutils import contours
 from skimage import measure
@@ -146,35 +150,27 @@ def find_grid(img):
 	cl1 = clahe.apply(resized)
 	thresh = cv2.threshold(cl1, 170, 255, cv2.THRESH_BINARY)[1]
 	show_image(thresh)
-	# show_image(thresh)
-	# Set bounds on all of the edges to crop out the edge of the plate
-	left_bound = int(thresh.shape[1]/10)
-	right_bound = int((9*thresh.shape[1])/10)
-	top_bound = int(thresh.shape[0]/10)
-	bot_bound = int((9*thresh.shape[0])/10)
-
-	# Sum all of the rows in he thresholded image
-	for row in range(int(top_bound/2),int(bot_bound+top_bound/2)):
-		sum = np.sum(thresh[row,left_bound:right_bound])
+	height,width = thresh.shape[:2]
+	for row in range(height):
+		sum = np.sum(thresh[row,0:width])
 		sums_y.append(sum)
 
-	# Sum all of the columns in he thresholded image
-	for col in range(int(left_bound/2),int(right_bound+left_bound/2)):
-		sum = np.sum(thresh[top_bound:bot_bound,col])
+	for col in range(width):
+		sum = np.sum(thresh[0:height,col])
 		sums_x.append(sum)
 
-	# cl1 = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
-
 	# Generate a plot to visualize the sumations
-	plt.subplot(2, 1, 1)
-	plt.plot(sums_y)
-	plt.ylabel('Row sum')
+	fig1 = plt.figure(0)
+	# fig1.subplot(2, 1, 1)
+	ax1 = fig1.add_subplot(211)
+	ax1.plot(sums_y)
+	# ax1.ylabel('Row sum')
 
 	# Store only the points that have less than 20 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_y):
-		if sum/255 < 30:
-			plt.plot(i,sum, 'r.')
+		if sum/255 < 40:
+			ax1.plot(i,sum, 'r.')
 			bottoms.append(i)
 
 	# Finds the start and end points of streaks of low points
@@ -188,30 +184,30 @@ def find_grid(img):
 	edges.append(bottoms[-1])
 	# Groups the endpoints together
 	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
-
+	print("Bounds: ",bounds)
 	temp = np.copy(cl1)
 
 	# Calculates and plots the midpoints of the low regions
 	mid_y = []
 	for l,r in bounds:
 		mid_point = int(((r-l) / 2)+l)
-		mid_y.append(int(mid_point+top_bound/2))
-		plt.plot(mid_point,sums_y[mid_point], 'bo')
-		cv2.line(temp,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
+		mid_y.append(int(mid_point))#+top_bound/2))
+		ax1.plot(mid_point,sums_y[mid_point], 'bo')
+		# cv2.line(temp,(0,int(mid_point+top_bound/2)),(int(cl1.shape[1]),int(mid_point+top_bound/2)),(0,255,0),1)
+		cv2.line(temp,(0,int(mid_point)),(int(height),int(mid_point)),(0,255,0),1)
 	print("Number of rows: ",len(mid_y)-1)
 
 	# Generate a plot to visualize the sumations
-	plt.subplot(2, 1, 2)
-	plt.plot(sums_x)
-	plt.ylabel('Row sum')
+	ax2 = fig1.add_subplot(212)
+	ax2.plot(sums_x)
+	# ax2.ylabel('Row sum')
 
 	# Store only the points that have less than 60 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_x):
 		if sum/255 < 60:
-			plt.plot(i,sum, 'r.')
+			ax2.plot(i,sum, 'r.')
 			bottoms.append(i)
-
 	# Finds the start and end points of streaks of low points
 	edges = [bottoms[0]]
 	for i,bot in enumerate(bottoms):
@@ -230,17 +226,38 @@ def find_grid(img):
 
 	for t,b in bounds:
 		mid_point = int(((b-t) / 2)+t)
-		mid_x.append(mid_point+top_bound)
-		plt.plot(mid_point,sums_x[mid_point], 'bo')
-		cv2.line(temp,(int(mid_point+left_bound/2),0),(int(mid_point+left_bound/2),int(cl1.shape[0])),(255,0,0),1)
+		mid_x.append(mid_point)
+		ax2.plot(mid_point,sums_x[mid_point], 'bo')
+		cv2.line(temp,(int(mid_point),0),(int(mid_point),int(height)),(255,0,0),1)
 
 	print("Number of columns: ",len(mid_x)-1)
 	show_image(temp)
-	# # Test rectangle
-	# cv2.rectangle(cl1,(mid_x[2],mid_y[4]),(mid_x[3],mid_y[8]),(0,0,255),3)
 
-	# plt.show()
+	fig1.show()
 	return cl1, mid_x, mid_y
+
+def group_sections(img,mid_x,mid_y,x_steps=1,y_steps=4):
+	groups = []
+	for y in range(0,len(mid_y)-1,y_steps):
+		for x in range(0,len(mid_x)-1,x_steps):
+			group = [[mid_x[x],mid_x[x+x_steps]],[mid_y[y],mid_y[y+y_steps]]]
+			print(group)
+			groups.append(group)
+			# cv2.rectangle(img,(mid_x[x],mid_y[y]),(mid_x[x+x_steps],mid_y[y+y_steps]),(0,0,255),3)
+			# show_image(img)
+	return groups
+
+def show_small(img):
+	resized = imutils.resize(img,width=100)
+	cv2.imshow("Image", resized)
+	cv2.waitKey(1)
+	# input("next slice")
+
+def scale_linear_bycolumn(rawpoints, high=100.0, low=0.0):
+    mins = np.min(rawpoints, axis=0)
+    maxs = np.max(rawpoints, axis=0)
+    rng = maxs - mins
+    return high - (((high - low) * (maxs - rawpoints)) / rng)
 
 def find_colonies(image):
 	'''
@@ -249,19 +266,55 @@ def find_colonies(image):
 	'''
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(image)
-	thresh = cv2.threshold(cl1, 150, 255, cv2.THRESH_BINARY)[1]
-
-
+	# show_small(cl1)
+	#
+	# plt.figure(1)
+	# nums, bins, patches = plt.hist(cl1.flatten(),bins=25)
+	# data = zip(bins[1:],nums)
+	# bottoms = []
+	# for i,(b,n) in enumerate(data):
+	# 	if n < 750:
+	# 		plt.plot(b,n, 'b.')
+	# 		bottoms.append(i)
+	# ends = []
+	# print("bottoms",bottoms)
+	# count = 0
+	# for i in bottoms:
+	# 	count += 1
+	# 	if count == (len(bottoms)):
+	# 		break
+	# 	if i != bottoms[count]-1:
+	# 		ends.append(i)
+	# for e in ends:
+	# 	plt.plot(bins[:-1][e],nums[e], 'r.')
+	#
+	# # plt.show()
+	# threshold = bins[:-1][ends[-1]]
+	# if threshold < 150:
+	# 	threshold = 170
+	# print("thresh: ",threshold)
+	threshold = 180
+	thresh = cv2.threshold(cl1, threshold, 255, cv2.THRESH_BINARY)[1]
+	show_image(thresh)
+	input()
 	cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_NONE)
 	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 
 	# edges = cv2.Canny(mask,50,150,apertureSize = 3)
 	color = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+	color_th = cv2.cvtColor(thresh,cv2.COLOR_GRAY2RGB)
 	cv2.drawContours(color, cnts, -1, (255,0,0), 1)
+	cv2.drawContours(color_th, cnts, -1, (255,0,0), 1)
+	show_image(color_th)
+	input()
+	show_image(color)
+	input()
+	# targets = [82.87073341,34.53686446,0.81345018,14.06161272 ,0.9798378]
+	targets = [82.87073341,34.53686446,0.81345018,0.9798378]
 
-	# cv2.drawContours(cl1, cnts, -1, (255,0,0), 1)
 	centers = []
+	data = []
 	for counter,cnt in enumerate(cnts):
 		# compute the center of the contour
 		# print("counter: ",counter)
@@ -270,32 +323,83 @@ def find_colonies(image):
 			continue
 		cX = int(M["m10"] / M["m00"])
 		cY = int(M["m01"] / M["m00"])
+		centers += [[cX,cY]]
 
 		perimeter = cv2.arcLength(cnt,True)
 		approx = cv2.approxPolyDP(cnt,0.01*perimeter,True)
-		area = cv2.contourArea(cnt)
 
-		(rX,rY),(w,h),ang = cv2.minAreaRect(cnt)
+		perimeter = cv2.arcLength(approx,True)
+		area = cv2.contourArea(approx)
+		(rX,rY),(w,h),ang = cv2.minAreaRect(approx)
+		ratio = w/h
+		attributes = [area,perimeter,area/((perimeter**2)/(4*math.pi)),ratio]
+		data.append(attributes)
+		print("Approx",counter,".","Area",area,"Peri",perimeter,"comp",area/((perimeter**2)/(4*math.pi)),"Approx",len(approx),"Ratio",ratio)
+	list(data).append(targets)
+	normed = scale_linear_bycolumn(data)
+	normed_avg = normed[-1]
+	normed_scores = normed[:-1]
+	diffs = abs(normed_scores - normed_avg)
+	scores = enumerate(list(np.sum(diffs,axis=1)))
+	print(scores)
+	order = sorted(scores,key=lambda tup:tup[1])
+	print(order)
+
+	for i,score in order:
+		cnts[i]
+		temp_c = np.copy(color)
+		temp_i = np.copy(image)
+		cv2.drawContours(temp_c, cnts[i], -1, (0,0,255), 1)
+		cv2.drawContours(temp_i, cnts[i], -1, (0,0,255), 1)
+		print(data[i])
+		print(score)
+		show_image(temp_c)
+		# show_small(temp_i)
+		input("next section")
+
+
+
+		# temp_c = np.copy(color)
+		# temp_i = np.copy(image)
+		# cv2.circle(color_th, (cX, cY), 1, (0, 0, 255), -5)
+		# cv2.circle(color, (cX, cY), 1, (0, 0, 255), -5)
+		#
+		# cv2.drawContours(color_th, [approx], -1, (0, 0, 255), 1)
+		# cv2.drawContours(color, [approx], -1, (0, 0, 255), 1)
+		# #
+		# # show_small(color_th)
+		# show_small(color)
+		# col = input("g or b?: ")
+		# if col == 'g':
+		# 	print('good')
+		# 	good_cols.append(attributes)
+		# elif col == 'b':
+		# 	print('bad')
+		# 	bad_cols.append(attributes)
+
+
+
 		# if area > 50 and area < 350 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
-		if area > 40 and area < 200 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
-			temp_c = np.copy(color)
-			temp_i = np.copy(image)
-			cv2.circle(temp_c, (cX, cY), 1, (0, 0, 255), -3)
-			cv2.circle(temp_i, (cX, cY), 1, (0, 0, 255), -3)
-			# cv2.putText(color, "{}".format(counter), (cX - 5, cY - 5),
-			# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 3)
-			((cX, cY), radius) = cv2.minEnclosingCircle(cnt)
-			cv2.circle(temp_c, (int(cX), int(cY)), int(radius+9),
-				(0, 255, 255), 2)
-			cv2.circle(temp_i, (int(cX), int(cY)), int(radius+9),
-				(0, 255, 255), 2)
+		# if area > 40 and area < 200 and w/h > 0.8 and w/h < 1.25 and area > perimeter:
+		# 	temp_c = np.copy(color)
+		# 	temp_i = np.copy(image)
+		# 	cv2.circle(temp_c, (cX, cY), 1, (0, 0, 255), -3)
+		# 	cv2.circle(temp_i, (cX, cY), 1, (0, 0, 255), -3)
+		# 	# cv2.putText(color, "{}".format(counter), (cX - 5, cY - 5),
+		# 	# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 255), 3)
+		# 	((cX, cY), radius) = cv2.minEnclosingCircle(cnt)
+		# 	cv2.circle(temp_c, (int(cX), int(cY)), int(radius+9),
+		# 		(0, 255, 255), 2)
+		# 	cv2.circle(temp_i, (int(cX), int(cY)), int(radius+9),
+		# 		(0, 255, 255), 2)
 
-			print(counter,".","Area",area,"Peri",perimeter,"comp",(perimeter**2)/(4*math.pi),"Approx",len(approx))
-			print(w,h,w/h)
-			show_image(temp_c)
-			show_image(temp_i)
-			print(cX,cY)
-			centers += [[cX,cY]]
+			# print(counter,".","Area",area,"Peri",perimeter,"comp",(perimeter**2)/(4*math.pi),"Approx",len(approx))
+			# print(w,h,w/h)
+			# show_image(temp_c)
+			# # show_image(temp_i)
+			# print(cX,cY)
+	# print("GOOD:",good_cols)
+	# print("BAD:",bad_cols)
 	return color,centers
 
 def change_loc(image,start):
@@ -347,19 +451,19 @@ def find_reference(image):
 	Locate the corners of the agar to link the reference point on the robot
 	to the image
 	'''
-	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
+	# image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
 
-	# all_points = [[22,19],[475,19],[475,305],[22, 305]]
 	all_points = [[19,27],[377,27],[380,612],[19, 614]]
 	all_points = np.array(all_points)
 	ratio = image.shape[1]/400
 	all_points = np.multiply(all_points,ratio)
 	rect = order_points(all_points)
 	new_points = []
-	for point in rect:
-		new_points.append(change_loc(image,point))
-		print("Started at: ",point)
-		print("Ended at: ",new_points[-1],"\n")
+	new_points = rect
+	# for point in rect:
+	# 	new_points.append(change_loc(image,point))
+	# 	print("Started at: ",point)
+	# 	print("Ended at: ",new_points[-1],"\n")
 
 	ref_point = new_points[3]
 	print(new_points)
@@ -468,9 +572,11 @@ def run_ot(image,coords,centers):
 def show_image(image,width=400):
 	'''Scales and then presents the image'''
 	resized = imutils.resize(image,width=width)
+	# if save:
+	# 	cv2.imwrite('./cam_photos/photo{}.jpg'.format(str(counter)),frame)
 	cv2.imshow("Image", resized)
-	cv2.waitKey(1)
-	input()
+	cv2.waitKey(5)
+	# input()
 	return
 
 
@@ -523,28 +629,38 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	height,width = img.shape[:2]
 	rotated = imutils.rotate_bound(dst, 90)
 	show_image(rotated)
-	# dst = undistort_img(img,cali_file)
-	# show_image(dst)
-	# resized = imutils.resize(new,width=10000)
-	# show_image(resized)
+
 	edges, intersections = find_corners(rotated)
 	show_image(edges)
 	warped = four_point_transform(edges,intersections)
 	show_image(warped)
-	grid, mid_x, mid_y = find_grid(warped)
-	show_image(grid)
-	ref, x_dim, y_dim,rect = find_reference(grid)
-	agar = four_point_transform(grid,rect)
-	show_image(agar)
 
-	colonies, centers = find_colonies(agar)
+	ref, x_dim, y_dim,rect = find_reference(warped)
+	agar = four_point_transform(warped,rect)
+	show_image(agar)
+	grid, mid_x, mid_y = find_grid(agar)
+	show_image(grid)
+	groups = group_sections(grid,mid_x,mid_y)
+	colonies, centers = find_colonies(grid)
+	# good_cols = []
+	# bad_cols = []
+	print("all groups:",groups)
+	for group in groups:
+		print("Next section:",group)
+		partial = grid[group[1][0]:group[1][1],group[0][0]:group[0][1]]
+		colonies, centers = find_colonies(partial)
+	print("\n\n")
+	print("GOOD Total",good_cols)
+	print("BAD Total",bad_cols)
+	input("Check")
+	print("\n\n")
 	# coords = ot_coords(centers,ref, x_dim, y_dim)
 	coords = ot_coords(centers,agar)
 	run_ot(colonies,coords,centers)
 	# show_image(colonies)
 	print()
 
-# print(shapes)
+# print(shapes)colonies, centers = find_colonies(grid)
 # input("stop")
 # res = np.hstack(grids)
 # cv2.imshow("Image", res)

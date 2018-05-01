@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "Ordered: 748"
+    },
+    {
+      "id": "Abandoned: 748"
+    },
+    {
+      "id": "Received: 748"
+    },
+    {
+      "id": "Build Attempted: 748"
+    },
+    {
+      "id": "Verified Success: 490"
+    },
+    {
+      "id": "Mutation: 93"
+    },
+    {
+      "id": "Failure: 118"
+    },
+    {
+      "id": "Not Yet Attempted: 2"
+    }
+  ],
+  "links": [
+    {
+      "source": "Ordered",
+      "target": "Abandoned",
+      "value": 45
+    },
+    {
+      "source": "Ordered",
+      "target": "Received",
+      "value": 703
+    },
+    {
+      "source": "Received",
+      "target": "Build Attempted",
+      "value": 703
+    },
+    {
+      "source": "Build Attempted",
+      "target": "Verified Success",
+      "value": 490
+    },
+    {
+      "source": "Build Attempted",
+      "target": "Mutation",
+      "value": 93
+    },
+    {
+      "source": "Build Attempted",
+      "target": "Failure",
+      "value": 118
+    },
+    {
+      "source": "Build Attempted",
+      "target": "Not Yet Attempted",
+      "value": 2
+    }
+  ]
+}

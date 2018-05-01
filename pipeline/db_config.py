@@ -66,10 +66,19 @@ class Part(Base):
     def eval_status(self):
         status = [well.seq_outcome for well in self.wells if well.plates.plate_type == 'seq_plate']
         print(self.part_id,status)
+        simple_status = []
+        for s in status:
+            if "mutation" in s:
+                simple_status.append('cloning_mutation')
+            elif "bad" in s:
+                simple_status.append('sequence_failure')
+            else:
+                simple_status.append(s)
+
         possible = ['cloning_failure','cloning_error','sequence_failure','cloning_mutation','sequence_confirmed']
         rank = dict(zip(possible,range(len(possible))))
         try:
-            new_status = possible[max([rank[r] for r in status])]
+            new_status = possible[max([rank[r] for r in simple_status])]
             print(new_status)
             self.status = new_status
         except:
@@ -148,7 +157,8 @@ class Well(Base):
     # Columns for "seq_plate" wells
     for_read = Column(String)
     rev_read = Column(String)
-    seq_outcome =Column(String)
+    seq_outcome = Column(String)
+    misplaced = Column(String) # To indicate if it is the result of the BLAST alignment
 
     # One plate can have many wells but a well can only have one plate
     plate_id = Column(Integer,ForeignKey('plates.id'))
@@ -164,7 +174,7 @@ class Well(Base):
 
 
     def __init__(self,plate_type,item,address,syn_yield='',vector='',\
-                trans_outcome='',for_read='',rev_read='',seq_outcome=''):
+                trans_outcome='',for_read='',rev_read='',seq_outcome='',misplaced=''):
         self.plate_type = plate_type
         self.address = address
         if self.plate_type == 'syn_plate':
@@ -179,6 +189,7 @@ class Well(Base):
             self.for_read = for_read
             self.rev_read = rev_read
             self.seq_outcome = seq_outcome
+            self.misplaced = misplaced
         else:
             print(plate_type)
             input("plate_type didn't match")

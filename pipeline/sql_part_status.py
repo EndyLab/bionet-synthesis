@@ -10,18 +10,18 @@ from config import *
 from db_config import *
 
 status = []
-multi = []
+not_attempted = []
 # ignore = ['sequence_confirmed','cloning_mutation','building']
 for part in session.query(Part).order_by(Part.id):
-    print(part.part_id,part.status)
-    # if part.status in ignore:
-    #     continue
-    status.append(part.status)
-    tries = [(well.plates.builds.build_name,well.seq_outcome) for well in part.wells if well.plates.plate_type == 'seq_plate']
+    tries = len([well for well in part.wells if well.plates.plate_type == 'seq_plate' and well.misplaced != 'True'])
+    if tries == 0 and part.status != 'ordered' and part.status != 'received':
+        array = [tries,part.part_id,part.status,[[well.misplaced,well.plates.builds.build_name] for well in part.wells if well.plates.plate_type == 'seq_plate']]
+        print(array)
+        not_attempted.append(array)
+    print(part.part_id,part.status,str(tries))
+    state = part.status+" - "+str(tries)
+    status.append(state)
 
-    # if len(tries) > 1:
-    # print(part.part_id,tries)
-        # multi.append(tries)
 
 
 # for build in session.query(Build).order_by(Build.id):
@@ -36,5 +36,7 @@ for part in session.query(Part).order_by(Part.id):
 
 status = pd.Series(status)
 print(status.value_counts())
+for gene in not_attempted:
+    print(gene)
 # multi = pd.Series(multi)
 # print(multi.value_counts())

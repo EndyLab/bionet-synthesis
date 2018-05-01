@@ -29,8 +29,6 @@ channels = ['DATA9', 'DATA10', 'DATA11', 'DATA12']
 
 from collections import defaultdict
 
-# TODO: Turn into a function
-
 def verify_seq():
     ## ============================================
     ## ESTABLISH PATHS AND NAMES
@@ -56,20 +54,20 @@ def verify_seq():
         build_names.append(build.build_name)
 
     # Asks the user for a number corresponding to the plate they want to resuspend
-    number = int(input("Enter build: "))
+    number = int(input("Enter build number: "))
     target = session.query(Build).filter(Build.build_name == build_names[number]).first()
     seq_plate = [plate for plate in target.plates if plate.plate_type == 'seq_plate'][0]
     targets = []
     targets.append(target.build_name)
     print("Will analyze build: ",target.build_name)
 
-    fasta_path = "{}/builds/{}/{}_fasta_files".format(BASE_PATH,target.build_name,target.build_name)
-    if os.path.exists(fasta_path):
-        print("Directory build{} already exists".format(target.build_name))
-    else:
-        os.makedirs(fasta_path)
+    # fasta_path = "{}/builds/{}/{}_fasta_files".format(BASE_PATH,target.build_name,target.build_name)
+    # if os.path.exists(fasta_path):
+    #     print("Directory build{} already exists".format(target.build_name))
+    # else:
+    #     os.makedirs(fasta_path)
     # path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,target.build_name,target.build_name)
-    SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
+    # SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
 
     # Create a dictionary to link the gene name to the corresponding id number
     data = pd.read_csv(DICTIONARY_PATH)
@@ -139,10 +137,6 @@ def verify_seq():
         reverse_align = pairwise2.align.globalms(target_seq, reverse,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
         forward_align = forward_align[0]
         reverse_align = reverse_align[0]
-        # print(format_alignment(*forward_align))
-        # print()
-        # print(format_alignment(*reverse_align))
-        # input()
 
         for_raw = len(forward)
         rev_raw = len(reverse)
@@ -158,28 +152,28 @@ def verify_seq():
             rev_score = target_length - reverse_align[2]
 
         if for_raw < 100 and rev_raw < 100:
-            outcome = "Bad_reads"
+            outcome = "bad_reads"
         elif for_score == 0:
             if rev_score == 0:
-                outcome = "Perfect"
+                outcome = "perfect"
             elif rev_score < 10:
-                outcome = "Mutation: {} {}".format(for_score,rev_score)
+                outcome = "mutation_{}-{}".format(for_score,rev_score)
             else:
-                outcome = "Bad Reverse"
+                outcome = "bad_reverse"
         elif for_score < 10:
             if rev_score == 0:
-                outcome = "Mutation: {} {}".format(for_score,rev_score)
+                outcome = "mutation_{}-{}".format(for_score,rev_score)
             elif rev_score < 10:
-                outcome = "Mutation: {} {}".format(for_score,rev_score)
+                outcome = "mutation_{}-{}".format(for_score,rev_score)
             else:
-                outcome = "Bad Reverse"
+                outcome = "bad_reverse"
         else:
             if rev_score == 0:
-                outcome = "Bad Forward"
+                outcome = "bad_forward"
             elif rev_score < 10:
-                outcome = "Bad Forward".format(for_score,rev_score)
+                outcome = "bad_forward".format(for_score,rev_score)
             else:
-                outcome = "Bad clone"
+                outcome = "bad_clone"
         return outcome
 
     def verify_sequence(id_num,forward,reverse,gene_seq,backbone_seq,strange):
@@ -190,45 +184,45 @@ def verify_seq():
         g_res = align_reads(forward,reverse,gene_seq)
         b_res = align_reads(forward,reverse,backbone_seq)
 
-        if g_res == "Perfect":
-            if b_res == "Bad clone":
+        if g_res == "perfect":
+            if b_res == "bad_clone":
                 final = "sequence_confirmed"
-            elif b_res == "Bad_reads":
-                final = "sequence_failure"
-            elif "Bad" in b_res:
-                final = "sequence_failure"
+            elif b_res == "bad_reads":
+                final = "sequence_confirmed"
+            elif "bad" in b_res:
+                final = "sequence_confirmed"
             else:
                 print("==== Not Sure ====",g_res,b_res)
                 strange += [[id_num,g_res,b_res]]
                 final = "sequence_confirmed"
-        elif "Mutation" in g_res:
-            if b_res == "Bad clone":
-                final = "cloning_mutation"
-            elif "Mutation" in b_res:
-                final = "cloning_failure"
-            elif "Bad" in b_res:
-                final = "cloning_mutation"
+        elif "mutation" in g_res:
+            if b_res == "bad_clone":
+                final = g_res
+            elif "mutation" in b_res:
+                final = g_res
+            elif "bad" in b_res:
+                final = g_res
             else:
                 print("==== Not Sure ====",g_res,b_res)
                 strange += [[id_num,g_res,b_res]]
-                final = "cloning_mutation"
-        elif g_res == "Bad clone":
-            if b_res == "Perfect":
+                final = g_res
+        elif g_res == "bad_clone":
+            if b_res == "perfect":
                 final = "cloning_failure"
-            elif "Mutation" in b_res:
+            elif "mutation" in b_res:
                 final = "cloning_failure"
-            elif b_res == "Bad clone":
-                final = "Unknown_sequence"
-            elif "Bad" in b_res:
-                final = "cloning_mutation"
+            elif b_res == "bad_clone":
+                final = "unknown_sequence"
+            elif "bad" in b_res:
+                final = "cloning_failure"
             else:
                 print("==== Not Sure ====",g_res,b_res)
                 strange += [[id_num,g_res,b_res]]
-                final = "Unknown_sequence"
-        elif g_res == "Bad_reads" and b_res == "Bad_reads":
-            final = "sequence_failure"
-        elif "Bad" in g_res:
-            final = "sequence_failure"
+                final = "unknown_sequence"
+        elif g_res == "bad_reads" and b_res == "bad_reads":
+            final = "bad_reads"
+        elif "bad" in g_res:
+            final = g_res
         else:
             final = "{} - {}".format(g_res,b_res)
         return final,strange
@@ -267,54 +261,57 @@ def verify_seq():
         rev_hit = blast_seq(name,reverse_sequence,'reverse')
         if for_hit == rev_hit:
             target_part = session.query(Part).filter(Part.part_id == for_hit).first()
-            try:
-                target = Seq.Seq(target_part.seq)
-                print("Matched: ",target_part.part_id)
-                g_res = align_reads(forward,reverse,target)
-                print('Unknown align: ',g_res)
-                if g_res == "Perfect":
-                    final = "sequence_confirmed"
-                    new_well = Well('seq_plate',target_part,well.address,seq_outcome=final)
-                    new_wells.append(new_well)
-                    target_part.wells.append(new_well)
-                elif "Mutation" in g_res:
-                    final = "cloning_mutation"
-                    new_well = Well('seq_plate',target_part,well.address,seq_outcome=final)
-                    new_wells.append(new_well)
-                    target_part.wells.append(new_well)
-                elif g_res == "Bad clone":
-                    final = "cloning_failure"
-                elif "Bad" in g_res:
-                    final = "sequence_failure"
-                else:
-                    final = "{} - {}".format(g_res,b_res)
-                print('finished try')
-                return 'cloning_error'
-            except:
+            if type(target_part) == type(None):
                 print("Couldn't find: ",for_hit)
                 no_hit.append(name)
                 no_hit.append(for_hit)
                 return 'cloning_failure'
+
+            target = Seq.Seq(target_part.seq)
+            print("Matched: ",target_part.part_id)
+            g_res = align_reads(forward,reverse,target)
+            print('Unknown align: ',g_res)
+            if g_res == "perfect":
+                final = "sequence_confirmed"
+                new_well = Well('seq_plate',target_part,well.address,seq_outcome=final,misplaced='True')
+                new_wells.append(new_well)
+                target_part.wells.append(new_well)
+            elif "mutation" in g_res:
+                final = "cloning_mutation"
+                new_well = Well('seq_plate',target_part,well.address,seq_outcome=final,misplaced='True')
+                new_wells.append(new_well)
+                target_part.wells.append(new_well)
+            elif g_res == "bad_clone":
+                final = "cloning_failure"
+            elif "bad" in g_res:
+                final = "sequence_failure"
+            else:
+                final = "{} - UNKNOWN".format(g_res)
+            print('finished try')
+            return 'cloning_error'
         else:
             return 'cloning_failure'
     counter = 0
-    # targets = ['build007']
+    targets = ['build007']
     for target in session.query(Build).filter(Build.status == 'sequencing').filter(Build.build_name.in_(targets)).order_by(Build.id):
-    # for target in session.query(Build).filter(Build.status == 'sequencing').order_by(Build.id):
+    # for target in session.query(Build).order_by(Build.id):
 
         print('================= {} ================='.format(target.build_name))
         SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
         seq_plate = [plate for plate in target.plates if plate.plate_type == 'seq_plate'][0]
         new_wells = []
         for well in seq_plate.wells:
-            print(counter)
-            if well.seq_outcome != '':
-                print(well.seq_outcome)
+            if well.misplaced == 'True':
+                print('-=-=-=-=-=- found misplaced -=-=-=-=-=-')
                 continue
+            print(counter)
+            # if well.seq_outcome != '':
+            #     print(well.seq_outcome)
+            #     continue
             id_num = well.parts.part_id
             print(id_num)
-            with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
-                fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
+            # with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
+            #     fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
             if glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer)):
                 forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer))[0]
                 revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,reverse_primer))[0]
@@ -323,8 +320,12 @@ def verify_seq():
                 revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,dictionary[id_num],reverse_primer))[0]
             else:
                 print("Can't find seq_files",dictionary[well.parts.part_id])
+                input("Check why it wasn't found")
                 no_seq.append(id_num)
                 continue
+
+            # TODO: Write in a check that verifies that the well address of the
+            # well object match the well address in the sequencing file
 
             for_seq_file = forfile.split("/")[-1]
             well.for_read = for_seq_file
@@ -359,7 +360,7 @@ def verify_seq():
 
             outcome, strange = verify_sequence(id_num,forward,reverse,gene_seq,backbone_seq,strange)
 
-            if outcome == 'Unknown_sequence':
+            if outcome == 'unknown_sequence':
                 outcome = align_unknown(id_num,forward,reverse,well,seq_plate)
             elif " - " in outcome:
                 check.append(id_num)
@@ -374,7 +375,7 @@ def verify_seq():
         seq_plate.wells += new_wells
         target.status = 'complete'
 
-    for part in session.query(Part):
+    for part in session.query(Part).order_by(Part.part_id):
         part.eval_status()
 
     print("nan:")
