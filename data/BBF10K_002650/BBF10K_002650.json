@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002650",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rpsG",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGCGAAAAAATCGTGCTCCCAAACGGACTGTTTTACCCGATCCCGTTTTTAACAATACGCTGGTAACCCGGATTATTAACGTCATCATGGAAGATGGCAAGAAGGGTTTAGCACAACGAATCTTATACGGTGCTTTTGATCTCATTGAACAACGCACTAAAGAAAAACCCTTAACCGTGTTTGAACGCGCTGTGGGCAACGTGATGCCGCGCTTGGAACTCCGGGTACGGCGGATTGCGGGATCCAACTATCAGGTACCTACCGAAGTACCTCAAGACCGCAAGATTGCTCTAGCACTCCGTTGAATTGCAATGTTTGCGCGTAAGCGTCATGAAAAAACGATGTTAGAGAAGATTGCTAACGAAATTATTGATGCATCGAATAATACTGGTGCAGCCATTAAAAAGAAGGACGATACGCATAAGATGGCTGAAGCCAACAAGGCCTTTGCCCACATGCGTTGGTAA",
+    "optimized_sequence": "ATGCGTAAAAATCGTGCACCGAAACGTACGGTCCTGCCGGATCCGGTGTTCAACAACACCCTGGTTACCCGCATTATCAACGTGATCATGGAGGACGGTAAGAAGGGCTTGGCCCAACGCATCCTGTATGGCGCATTTGATCTGATTGAACAGCGCACTAAAGAGAAGCCGCTGACGGTGTTCGAGCGCGCGGTTGGTAACGTGATGCCGCGCCTGGAGCTGCGTGTTCGTCGTATCGCCGGTAGCAACTACCAGGTTCCGACGGAAGTTCCTCAGGATCGTAAAATTGCTCTGGCGCTGCGCTGGATCGCTATGTTTGCACGTAAACGTCATGAAAAGACGATGCTGGAGAAAATCGCGAACGAAATCATCGATGCCTCGAACAACACCGGCGCAGCCATCAAAAAGAAAGACGACACTCACAAAATGGCAGAAGCGAATAAGGCCTTTGCCCACATGCGTTGGTGA",
+    "fragment_sequences": {
+      "BBF10K_002650_1": "GAAGACCAGGAGAAACCGGAGCCATACAGTACGGTCTCAAATGCGTAAAAATCGTGCACCGAAACGTACGGTCCTGCCGGATCCGGTGTTCAACAACACCCTGGTTACCCGCATTATCAACGTGATCATGGAGGACGGTAAGAAGGGCTTGGCCCAACGCATCCTGTATGGCGCATTTGATCTGATTGAACAGCGCACTAAAGAGAAGCCGCTGACGGTGTTCGAGCGCGCGGTTGGTAACGTGATGCCGCGCCTGGAGCTGCGTGTTCGTCGTATCGCCGGTAGCAACTACCAGGTTCCGACGGAAGTTCCTCAGGATCGTAAAATTGCTCTGGCGCTGCGCTGGATCGCTATGTTTGCACGTAAACGTCATGAAAAGACGATGCTGGAGAAAATCGCGAACGAAATCATCGATGCCTCGAACAACACCGGCGCAGCCATCAAAAAGAAAGACGACACTCACAAAATGGCAGAAGCGAATAAGGCCTTTGCCCACATGCGTTGGTGAAGAGCTTAGAGACCCGGATTCTAGGTGCAACTCTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN226",
+    "gene": "rpsG",
+    "gene_synonyms": "",
+    "product": "30S ribosomal protein S7",
+    "note": "binds directly to 16S rRNA where it nucleatesassembly of the head domain of the 30S subunit",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_109914.1",
+    "EC_number": "",
+    "translation": "MRKNRAPKRTVLPDPVFNNTLVTRIINVIMEDGKKGLAQRILYGAFDLIEQRTKEKPLTVFERAVGNVMPRLELRVRRIAGSNYQVPTEVPQDRKIALALRWIAMFARKRHEKTMLEKIANEIIDASNNTGAAIKKKDDTHKMAEANKAFAHMRW",
+    "references": [
+      "db_xref=\"GeneID:877063\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-e715ae88-35b4-41dc-b1f5-33969cd4a922"
+}

@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002892            162 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmG
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 162)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..162
+                     /locus_tag="MPN471"
+                     /gene="rpmG"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L33"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110159.1"
+                     /EC_number=""
+                     /translation="MAVKRSTRLGCNDCREINYLTFKNVKKNPEKLALNKFCSRCRKV
+                     VVHKEVKRK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877381"
+ORIGIN
+        1 ATGGCGGTTA AGCGCAGCAC CCGCCTGGGC TGTAATGATT GTCGTGAGAT CAATTATCTG
+       61 ACTTTTAAGA ATGTCAAGAA GAACCCTGAG AAGCTGGCGC TGAATAAATT CTGTAGCCGC
+      121 TGTCGTAAAG TTGTGGTGCA CAAGGAAGTT AAACGTAAGT GA
+//

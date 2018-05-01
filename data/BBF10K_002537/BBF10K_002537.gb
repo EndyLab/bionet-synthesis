@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002537            384 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplT
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 384)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..384
+                     /locus_tag="MPN117"
+                     /gene="rplT"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L20"
+                     /note="binds directly to 23S ribosomal RNA prior to
+                     invitro assembly of the 50S ribosomal subunit"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109805.1"
+                     /EC_number=""
+                     /translation="MRIKGGKQTRVRRKKWLKQASGSFGTRHASYKVAKQTVIQAAKY
+                     AYRDRRNKKRDFRSLWILRLNAALREQGMTYSVFINLLKKHNIEINRKVLSELAIKEP
+                     SKFNLIVQKVKSEQPKAAKPAALGN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877370"
+ORIGIN
+        1 ATGCGTATTA AAGGTGGCAA GCAAACCCGC GTGCGCCGTA AGAAGTGGTT GAAGCAGGCG
+       61 TCCGGCAGCT TCGGTACCCG TCATGCAAGC TATAAAGTGG CTAAGCAAAC GGTGATTCAA
+      121 GCTGCGAAGT ACGCGTACCG TGATCGCCGT AATAAGAAAC GTGATTTTCG TAGCCTGTGG
+      181 ATTCTGCGCC TGAACGCAGC CCTGCGTGAG CAGGGTATGA CCTATAGCGT CTTTATTAAC
+      241 TTGCTGAAAA AGCACAACAT CGAAATTAAC CGTAAGGTTC TGAGCGAGCT CGCTATCAAG
+      301 GAGCCGTCTA AATTCAATCT GATCGTCCAA AAAGTTAAGA GCGAGCAGCC GAAGGCCGCG
+      361 AAGCCGGCAG CTTTGGGCAA CTGA
+//

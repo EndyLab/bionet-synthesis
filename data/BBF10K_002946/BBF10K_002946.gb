@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002946            501 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ygl3
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 501)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..501
+                     /locus_tag="MPN521"
+                     /gene="ygl3"
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110209.1"
+                     /EC_number=""
+                     /translation="MYKSAINIVLFCPEIPNNTGNIVRSCTAFKANLHLIKPYGFFLN
+                     DKRMVRAGLNCWDKVQMFEHKSWEHFIETTPPNKAIWLLTKSGTTTPDQINMQTDNRE
+                     QLYFVFGQETKGLPQTLMEQYSQNQVRIPIWNPVRSINLSNTVACVLYEYAKQNHYFN
+                     LDKQCA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876885"
+ORIGIN
+        1 ATGTACAAAA GCGCTATTAA TATCGTGCTG TTCTGCCCGG AGATCCCGAA CAATACCGGT
+       61 AACATCGTGC GCAGCTGTAC CGCGTTCAAA GCCAATCTGC ATCTGATTAA ACCGTACGGC
+      121 TTTTTTCTGA ACGATAAACG TATGGTTCGT GCGGGTCTGA ACTGCTGGGA CAAGGTCCAA
+      181 ATGTTCGAGC ACAAAAGCTG GGAACACTTC ATCGAAACCA CCCCGCCGAA TAAAGCGATC
+      241 TGGCTGTTGA CCAAAAGCGG CACTACCACG CCTGACCAGA TTAATATGCA GACCGACAAC
+      301 CGTGAGCAAC TGTACTTTGT GTTCGGTCAG GAAACGAAGG GTCTGCCGCA GACTCTGATG
+      361 GAGCAGTATT CGCAGAACCA GGTTCGCATT CCGATCTGGA ATCCTGTTCG CAGCATTAAC
+      421 CTGTCCAATA CTGTTGCGTG CGTGCTGTAC GAGTACGCAA AACAGAACCA TTATTTCAAT
+      481 CTGGATAAAC AGTGCGCCTG A
+//

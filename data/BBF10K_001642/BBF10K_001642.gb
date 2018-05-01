@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001642            558 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl407
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 558)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..558
+                     /locus_tag="Mfl407"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="translation elongation factor P"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053650.1"
+                     /EC_number=""
+                     /translation="MSVNDLRPGTTFIYEGNLFVVIEQSFSKTGRQQGKVSVKAKNLR
+                     TGSRVEITFTGGEKVEKAMIERKDMQYLYNDGTDAYLMDTDTYEQIQIPMTRLEWESK
+                     FLTDGLMIKMTEYDGEVLGISLPDKVELEVTEAEAAVKGDTTSGALKKAVVETGLDIM
+                     VPLFVNVGTKVIISTTDGKYSGRAQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898257"
+ORIGIN
+        1 ATGTCTGTCA ACGATCTGCG TCCGGGTACC ACCTTCATTT ACGAAGGTAA CCTGTTTGTT
+       61 GTTATCGAGC AATCCTTTAG CAAAACCGGT CGCCAGCAAG GCAAGGTGTC TGTGAAGGCG
+      121 AAAAATCTGC GCACGGGCAG CCGCGTCGAG ATCACTTTTA CGGGCGGCGA GAAGGTCGAG
+      181 AAAGCTATGA TTGAGCGCAA GGACATGCAA TACCTGTACA ACGATGGTAC CGACGCGTAT
+      241 CTGATGGATA CGGACACCTA CGAACAAATT CAGATCCCTA TGACTCGTCT GGAGTGGGAG
+      301 TCGAAATTCC TGACTGATGG TCTGATGATC AAGATGACCG AATATGACGG TGAGGTGCTG
+      361 GGTATTAGCC TGCCAGATAA GGTCGAACTG GAAGTTACCG AAGCCGAGGC GGCGGTCAAG
+      421 GGTGATACCA CGTCGGGCGC GCTGAAGAAG GCGGTTGTGG AAACCGGCTT AGATATCATG
+      481 GTGCCATTGT TCGTTAATGT TGGTACCAAG GTTATCATCT CCACCACGGA CGGCAAGTAC
+      541 AGCGGTCGCG CTCAGTGA
+//

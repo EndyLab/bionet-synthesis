@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001369            186 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 186)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..186
+                     /locus_tag="Mfl136"
+                     /gene="rpsN"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S14"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053376.1"
+                     /EC_number=""
+                     /translation="MAKKSLKVKQAKHQKFGVRNYTRCNNCGRPHAVLKKFGICRLCF
+                     RKYAYEGQIPGIRKASW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898245"
+ORIGIN
+        1 ATGGCGAAAA AGAGCCTGAA GGTTAAGCAG GCCAAACACC AGAAGTTTGG TGTTCGTAAC
+       61 TACACCCGCT GCAACAATTG TGGTCGCCCG CACGCTGTCT TGAAAAAATT TGGTATCTGT
+      121 CGCCTGTGCT TCCGTAAATA CGCATATGAG GGTCAGATTC CGGGCATTCG TAAGGCAAGC
+      181 TGGTGA
+//

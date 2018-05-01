@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002045            309 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00675
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 309)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..309
+                     /locus_tag="MG_RS00675"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="thiol reductase thioredoxin"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869343.1"
+                     /EC_number=""
+                     /translation="MVTEIRSLKQLEEIFSAKKNVIVDFWAAWCGPCKLTSPEFQKAA
+                     DEFSDAQFVKVNVDDHTDIAAAYNITSLPTIVVFENGVEKKRAIGFMPKTKIIDLFNN
+                     "
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGTAACTG AGATCCGCTC CCTGAAACAG CTGGAAGAGA TTTTTAGCGC GAAGAAAAAC
+       61 GTCATCGTTG ACTTCTGGGC CGCATGGTGC GGCCCTTGTA AGCTGACCAG CCCGGAGTTC
+      121 CAGAAAGCGG CGGACGAATT TTCGGACGCA CAGTTTGTCA AGGTCAATGT GGATGACCAC
+      181 ACGGATATCG CAGCGGCGTA CAATATTACG AGCCTGCCGA CCATTGTCGT GTTCGAAAAT
+      241 GGCGTTGAAA AGAAAAGAGC GATCGGTTTC ATGCCGAAAA CCAAGATCAT TGATCTGTTT
+      301 AACAACTGA
+//

@@ -1,0 +1,41 @@
+LOCUS       BBF10K_001283            492 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl050
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 492)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..492
+                     /locus_tag="Mfl050"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="methionine sulfoxide reductase A"
+                     /note="this stereospecific enzymes reduces the S isomer
+                     ofmethionine sulfoxide while MsrB reduces the R
+                     form;provides protection against oxidative stress"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053290.1"
+                     /EC_number="1.8.4.11"
+                     /translation="MENKTIYLAGGCFWGVQAFFDYQKGIIKTTVGYAQGDIDNPTYE
+                     EVCTGKTNHTETLKIEFNEKEISLKEILDLYFSIINPFLLNQQGNDRGTQYRTGIYSI
+                     NEFDFTFVKKYLENFQKQTTQKVVVENEILKNFFDAEEYHQKYLDKNPNGYCHIDLSD
+                     YKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897601"
+ORIGIN
+        1 ATGGAGAATA AAACCATTTA TCTGGCCGGT GGCTGTTTTT GGGGTGTCCA AGCGTTTTTT
+       61 GATTACCAGA AAGGTATTAT CAAAACCACC GTGGGTTATG CGCAAGGTGA CATCGATAAC
+      121 CCGACCTACG AGGAAGTCTG CACCGGTAAA ACCAATCACA CGGAAACCCT TAAGATCGAG
+      181 TTCAACGAGA AAGAAATCAG CCTGAAGGAG ATTCTGGACC TGTACTTCTC AATCATTAAT
+      241 CCGTTTCTGC TGAATCAACA AGGTAACGAT CGCGGTACCC AATACCGCAC CGGTATTTAC
+      301 TCCATTAACG AATTCGACTT CACGTTCGTG AAAAAATATC TGGAAAATTT TCAAAAGCAG
+      361 ACGACGCAGA AAGTAGTTGT GGAGAACGAG ATCCTGAAGA ATTTCTTTGA TGCGGAGGAG
+      421 TACCACCAAA AATACCTGGA CAAAAACCCG AACGGTTATT GTCACATTGA CCTGAGCGAC
+      481 TATAAAAAGT GA
+//

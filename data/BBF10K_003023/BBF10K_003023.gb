@@ -1,0 +1,36 @@
+LOCUS       BBF10K_003023            369 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN593
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 369)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..369
+                     /locus_tag="MPN593"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110282.1"
+                     /EC_number=""
+                     /translation="MNKKESTTTKKQWFKKCSFKKLKAEICNMLPTTPHNTKRTLIWV
+                     IVFSFITFLSFIFAYVCFNYAPVSTGFLYFLGAVFLLIGFAFAILSFVAMVKFVADYF
+                     ANRFSNTQLKMDCDCAKTKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877147"
+ORIGIN
+        1 ATGAACAAGA AGGAATCTAC CACGACCAAG AAACAGTGGT TTAAGAAATG TTCCTTCAAG
+       61 AAATTGAAAG CGGAGATCTG TAACATGCTG CCGACCACCC CTCACAACAC GAAGCGCACC
+      121 CTGATTTGGG TTATCGTTTT TTCTTTTATT ACCTTCCTGA GCTTCATCTT CGCGTACGTG
+      181 TGTTTTAATT ATGCGCCGGT TAGCACCGGC TTTCTGTATT TCCTGGGCGC CGTGTTTCTG
+      241 TTAATCGGTT TCGCGTTTGC TATCCTGAGC TTTGTGGCTA TGGTAAAATT TGTGGCCGAC
+      301 TACTTCGCGA ACCGTTTTAG CAACACTCAA CTGAAGATGG ATTGCGACTG CGCAAAAACT
+      361 AAGAAGTGA
+//

@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002939            363 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN514
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 363)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..363
+                     /locus_tag="MPN514"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110202.1"
+                     /EC_number=""
+                     /translation="MEQDINNQTGKKIFLNEECFLELDKLPQHVSVLGVSGFGKSNIL
+                     LHFLKYAIDNDHPLIFVNGKGDKELITQFEHYQTSAKQLSPEDGFDTVKLVALKNTSA
+                     KIWSLDDRIATIKYNPFK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876814"
+ORIGIN
+        1 ATGGAACAAG ATATCAACAA TCAAACGGGC AAGAAAATTT TCCTGAACGA AGAATGTTTT
+       61 CTGGAACTGG ACAAGCTGCC GCAACACGTG TCGGTGCTGG GTGTTAGCGG CTTCGGTAAA
+      121 AGCAACATCC TGTTGCATTT CCTGAAATAT GCAATTGATA ACGACCATCC GCTGATCTTT
+      181 GTAAACGGTA AGGGCGACAA GGAACTGATT ACGCAATTTG AGCACTATCA GACGAGCGCG
+      241 AAGCAGCTGA GCCCGGAGGA CGGCTTCGAC ACGGTCAAAC TGGTGGCTCT GAAAAATACC
+      301 AGCGCGAAGA TTTGGAGCCT GGATGATCGT ATCGCGACTA TTAAATACAA CCCGTTCAAG
+      361 TGA
+//

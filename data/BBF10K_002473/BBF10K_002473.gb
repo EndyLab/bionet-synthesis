@@ -1,0 +1,33 @@
+LOCUS       BBF10K_002473            261 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN048a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 261)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..261
+                     /locus_tag="MPN048a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121700.1"
+                     /EC_number=""
+                     /translation="MVPLLTKKVIRFWTKSWVLFMAMALPMSGLSTFWNSSNNVGFVL
+                     PTLSLGLVVQLTKTLTVIRWDLCISWQPSKRVIPDMMLPRVP"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527547"
+ORIGIN
+        1 ATGGTGCCGT TGCTGACCAA AAAAGTTATT CGCTTTTGGA CGAAAAGCTG GGTGCTGTTT
+       61 ATGGCCATGG CGCTGCCGAT GTCCGGTCTG TCGACGTTCT GGAACAGCTC GAACAATGTC
+      121 GGTTTCGTCC TGCCGACGCT GAGCCTGGGT TTGGTTGTGC AACTGACTAA AACCCTGACT
+      181 GTGATTCGTT GGGACTTATG CATTTCCTGG CAACCGTCTA AACGTGTTAT CCCTGACATG
+      241 ATGCTGCCGC GCGTGCCATG A
+//

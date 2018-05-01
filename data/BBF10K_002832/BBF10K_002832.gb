@@ -1,0 +1,29 @@
+LOCUS       BBF10K_002832             93 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN405a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 93)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..93
+                     /locus_tag="MPN405a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121726.1"
+                     /EC_number=""
+                     /translation="MSRNVDIVLCFKHRIKLKVLKVRMLFNGFH"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527695"
+ORIGIN
+        1 ATGAGCCGTA ATGTTGACAT CGTTCTGTGC TTCAAACACC GTATCAAACT GAAGGTCCTG
+       61 AAGGTTCGCA TGCTGTTTAA CGGTTTCCAT TGA
+//

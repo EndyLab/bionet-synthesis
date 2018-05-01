@@ -1,0 +1,38 @@
+LOCUS       BBF10K_002919            480 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  yjfU
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 480)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..480
+                     /locus_tag="MPN494"
+                     /gene="yjfU"
+                     /gene_synonyms=""
+                     /product="PTS system ascorbate-specific transportersubunit
+                     IIA"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110182.1"
+                     /EC_number=""
+                     /translation="MTKLDFKAVLKQHHTVRLHQTAQDWKQAIQLCIHPLIAAKLVQP
+                     AYFDDILKSVAQYGPYFIIAENVAMPHAQNNGTVQQNCFSLVTLKEPVYFDNDPRPVR
+                     LLIGLAATSAAIHTTEALPQIAALVEDTQVVKDLLDCCDETSLFAVIDRVNLHKYLT"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877250"
+ORIGIN
+        1 ATGACCAAAC TCGACTTCAA GGCCGTTCTG AAGCAACACC ACACGGTTCG CCTGCATCAG
+       61 ACTGCGCAAG ATTGGAAGCA GGCGATTCAG CTGTGCATTC ATCCGCTGAT CGCGGCGAAG
+      121 CTGGTGCAGC CGGCGTACTT CGACGATATC CTGAAAAGCG TTGCGCAATA TGGTCCTTAC
+      181 TTCATTATTG CCGAGAATGT GGCCATGCCA CACGCACAGA ATAACGGCAC GGTCCAACAG
+      241 AACTGCTTTA GCCTGGTCAC CCTGAAAGAA CCGGTGTATT TCGATAACGA CCCGCGTCCG
+      301 GTCCGTCTGT TAATCGGTCT GGCCGCCACC TCGGCTGCGA TCCATACTAC GGAAGCGCTG
+      361 CCGCAGATTG CGGCCTTGGT CGAGGACACC CAGGTTGTGA AAGATTTGCT GGACTGTTGT
+      421 GACGAAACTT CTCTTTTTGC GGTGATTGAT CGTGTGAACT TGCATAAATA CCTGACCTGA
+//

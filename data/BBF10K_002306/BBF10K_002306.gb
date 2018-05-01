@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002306            501 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02165
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 501)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..501
+                     /locus_tag="MG_RS02165"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="Holliday junction DNA helicase RecU"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885810.1"
+                     /EC_number=""
+                     /translation="MINANRGMLLETIVNQTIARLKDHPDIWLEKRFLPIKPIAFRHA
+                     HVSGNVSQKSKTDYYGIYKGMYFDFEAKQTNKSNFPIAQIAEHQLNHLKRIDQIGGVS
+                     FLLIYFQTKDQIFAFHTKDLLETIKNQESKTIKRELIEQKSQKVPLLYPGIIDLISII
+                     QSFKNY"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGATCAACG CCAACCGCGG TATGCTGCTG GAAACCATTG TGAACCAAAC GATTGCGCGT
+       61 CTGAAAGACC ACCCGGACAT TTGGCTGGAG AAGCGTTTCC TGCCGATTAA GCCGATTGCA
+      121 TTTCGTCATG CGCATGTGAG CGGCAATGTG AGCCAAAAAA GCAAAACTGA TTACTACGGT
+      181 ATCTACAAGG GTATGTACTT CGACTTTGAG GCAAAGCAAA CCAACAAATC GAACTTCCCA
+      241 ATCGCGCAAA TTGCGGAGCA TCAGTTAAAT CATCTGAAAC GCATCGACCA AATTGGTGGT
+      301 GTTAGCTTCC TGTTGATTTA TTTCCAGACG AAAGATCAGA TCTTCGCCTT CCACACGAAG
+      361 GATCTCCTGG AAACGATTAA AAACCAGGAA TCTAAGACTA TCAAACGTGA GCTGATCGAA
+      421 CAGAAGTCTC AGAAGGTGCC GCTGCTGTAT CCTGGCATTA TCGATCTGAT CAGCATTATC
+      481 CAAAGCTTCA AGAATTACTG A
+//

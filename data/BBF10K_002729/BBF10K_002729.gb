@@ -1,0 +1,43 @@
+LOCUS       BBF10K_002729            627 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  scpB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 627)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..627
+                     /locus_tag="MPN301"
+                     /gene="scpB"
+                     /gene_synonyms=""
+                     /product="segregation and condensation protein B"
+                     /note="functions during chromosome segregation; may form
+                     acondensin-like structure with SMC and ScpA; forms
+                     ahomodimer"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109989.1"
+                     /EC_number=""
+                     /translation="MDATIKVTKPVLKQKDSSAANLVAAIYGLLFVSGEKGLTLAELN
+                     RVLRKVGLEKIKAALVQLERKLSLDDESGIEIKKFGHSFRLVTKMEIKDFIHRYLPNK
+                     IKNPLNSKTMEVLAIIAYNQPCTRPRINEIRGADSFQIVDDLLEKELIVELGRKDTPG
+                     RPFIYEVSPKFYDLFGINSLDELPKVENFDLDKFRQGSFFDSNRYGDD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877283"
+ORIGIN
+        1 ATGGACGCAA CTATTAAAGT TACCAAACCG GTTCTGAAAC AGAAAGACAG CAGCGCCGCG
+       61 AATCTGGTGG CCGCGATTTA TGGCTTGCTG TTTGTTAGCG GCGAGAAAGG TCTGACCCTG
+      121 GCGGAACTGA ATCGTGTGCT GAGAAAAGTG GGTCTGGAAA AGATTAAAGC AGCTCTGGTG
+      181 CAGCTGGAGC GTAAACTGAG CCTGGATGAC GAGAGCGGCA TTGAAATTAA AAAGTTCGGT
+      241 CACAGCTTTC GTCTGGTTAC CAAGATGGAA ATTAAGGATT TCATTCATCG TTATCTGCCG
+      301 AATAAAATCA AGAACCCACT GAACTCCAAG ACCATGGAAG TCCTGGCAAT TATTGCGTAC
+      361 AACCAGCCGT GCACCCGCCC GCGTATTAAC GAGATCCGTG GTGCAGACAG CTTCCAGATC
+      421 GTTGACGATC TCCTGGAGAA GGAGCTGATT GTGGAGCTGG GTCGCAAAGA TACCCCGGGT
+      481 CGTCCGTTCA TCTACGAGGT TAGCCCTAAG TTTTACGACC TGTTTGGCAT CAACTCGCTG
+      541 GACGAACTGC CGAAGGTTGA GAACTTCGAT CTGGACAAGT TCCGCCAAGG CAGCTTCTTC
+      601 GATAGCAATC GCTATGGTGA CGATTGA
+//

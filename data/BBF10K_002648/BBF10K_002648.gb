@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002648            420 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 420)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..420
+                     /locus_tag="MPN225"
+                     /gene="rpsL"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S12"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109913.1"
+                     /EC_number=""
+                     /translation="MATIAQLIRKPRKKKKVKSKSPALHYNLNLLNKKVTNVYSPLKR
+                     GVCTRVGTMTPKKPNSALRKYAKVRLTNGFEVLTYIPGEGHNLQEHSVTLLRGGRVKD
+                     LPGVRYHIVRGTLDTVGVEKRRQQRSAYGAKKPKAKS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877067"
+ORIGIN
+        1 ATGGCGACTA TTGCGCAGCT GATCCGTAAG CCGCGTAAGA AGAAGAAGGT TAAGAGCAAA
+       61 AGCCCGGCAC TGCATTACAA TCTGAATTTG CTGAACAAAA AAGTGACCAA CGTGTATAGC
+      121 CCGTTGAAAC GTGGCGTGTG TACGCGCGTT GGTACGATGA CCCCGAAAAA GCCGAACTCC
+      181 GCTCTCCGTA AGTACGCCAA AGTCCGTTTA ACCAATGGTT TTGAGGTGTT GACGTACATC
+      241 CCGGGTGAAG GTCATAATCT GCAGGAACAC AGCGTTACCC TGTTACGTGG CGGCCGTGTG
+      301 AAGGATCTGC CGGGTGTCCG CTATCATATT GTACGTGGCA CGTTGGACAC CGTCGGTGTC
+      361 GAGAAGCGCC GTCAACAACG TAGCGCGTAT GGCGCAAAGA AACCGAAGGC GAAATCCTGA
+//

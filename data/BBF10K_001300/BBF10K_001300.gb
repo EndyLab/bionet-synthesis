@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001300            237 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl067
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 237)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..237
+                     /locus_tag="Mfl067"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="Cro/CI family transcriptional regulator"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053307.1"
+                     /EC_number=""
+                     /translation="MKKYENENELLLLVASNLKRIRQNKKLSQEELGFRCGISKNYVS
+                     DFERGKRNITIKVFQKIVEGLGVQPEELLKTHSK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898096"
+ORIGIN
+        1 ATGAAAAAAT ACGAAAACGA AAATGAGTTG CTGCTGCTGG TGGCCAGCAA TCTGAAGCGC
+       61 ATCCGCCAGA ATAAAAAACT GTCTCAGGAA GAACTGGGCT TTCGCTGTGG CATCAGCAAA
+      121 AACTATGTCT CTGACTTTGA ACGTGGTAAG CGTAATATTA CCATTAAAGT GTTCCAAAAA
+      181 ATTGTCGAAG GCCTGGGCGT GCAGCCGGAG GAACTGCTGA AAACGCACAG CAAGTGA
+//

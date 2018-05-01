@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002036            474 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00630
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 474)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..474
+                     /locus_tag="MG_RS00630"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="amidohydrolase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885673.1"
+                     /EC_number=""
+                     /translation="MFANLIAEKLQKLQLSVATAESVTGGLLAHCLTSIDGASNYFNG
+                     GVIAYNNQVKINLLNVQSSTIANHGAVSSFCAREMAVGVKQKFQADVGIACSGIAGSK
+                     AVENKAIGLLFFCIIIGNKAYDFEFEMNQNNRKDNIELFTNKILESFHYLLTKLA"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGTTCGCGA ACCTGATTGC CGAGAAGCTC CAGAAGCTGC AGCTGTCCGT CGCAACGGCC
+       61 GAGAGCGTCA CGGGCGGCCT GCTGGCACAC TGCCTGACCT CCATTGACGG CGCAAGCAAT
+      121 TACTTTAATG GCGGTGTCAT TGCATACAAC AATCAGGTCA AAATCAATTT ACTGAATGTT
+      181 CAAAGCAGCA CGATCGCGAA TCACGGCGCA GTTTCTAGCT TTTGCGCGCG CGAGATGGCA
+      241 GTCGGTGTCA AGCAGAAATT TCAGGCTGAC GTTGGTATTG CATGCAGCGG TATCGCCGGT
+      301 AGCAAAGCCG TTGAAAACAA AGCGATCGGT CTGTTGTTCT TTTGTATCAT TATTGGTAAC
+      361 AAAGCGTATG ACTTTGAGTT CGAGATGAAT CAGAATAACC GTAAGGACAA CATTGAGTTG
+      421 TTCACCAATA AAATTCTGGA AAGCTTTCAC TATTTGCTGA CCAAGCTGGC CTGA
+//

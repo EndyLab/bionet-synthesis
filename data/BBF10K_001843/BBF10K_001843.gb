@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001843            285 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl612
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 285)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..285
+                     /locus_tag="Mfl612"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053853.1"
+                     /EC_number=""
+                     /translation="MNIIKRALSTIINGFLNGFTLGILPLVLWILNLPLVGQMIFKTP
+                     QAEGRGAALIYGLIYVLLCLSFVGIIFIIIWCLMGKQPLALQITNWLLKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897831"
+ORIGIN
+        1 ATGAACATTA TTAAACGTGC TCTGAGCACC ATCATTAATG GCTTCTTGAA CGGTTTTACC
+       61 CTGGGCATTC TGCCGTTAGT GCTGTGGATC CTTAATTTGC CATTGGTTGG TCAAATGATC
+      121 TTCAAAACGC CGCAGGCGGA AGGTCGTGGC GCCGCTCTGA TCTATGGCCT GATTTACGTG
+      181 CTGCTGTGCT TGAGCTTTGT TGGCATCATC TTTATCATCA TCTGGTGCCT GATGGGTAAA
+      241 CAACCGCTGG CACTGCAAAT TACGAACTGG CTGCTGAAGA AGTGA
+//

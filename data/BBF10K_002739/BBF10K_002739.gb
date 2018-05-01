@@ -1,0 +1,33 @@
+LOCUS       BBF10K_002739            273 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN313
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 273)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..273
+                     /locus_tag="MPN313"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110001.1"
+                     /EC_number=""
+                     /translation="MQRLKKSEAKQVVGGLSFWSFSAGVIMIVNAFSTLINTALDISE
+                     AANANNANGNGSSYSYKRRNSQKDYFSTGRFRLGLTPGKSSYSFPV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876930"
+ORIGIN
+        1 ATGCAGCGTC TGAAGAAGTC TGAGGCGAAA CAAGTCGTTG GTGGCCTGAG CTTCTGGTCG
+       61 TTCAGCGCGG GTGTCATTAT GATCGTTAAT GCATTCTCAA CTCTTATCAA CACTGCGCTG
+      121 GATATCTCCG AAGCGGCCAA TGCAAATAAT GCAAACGGTA ACGGCTCGAG CTACAGCTAT
+      181 AAGCGTCGTA ACTCTCAGAA GGACTACTTC TCCACCGGCC GTTTCCGTCT GGGTCTGACG
+      241 CCAGGTAAGT CAAGCTACAG CTTCCCGGTG TGA
+//

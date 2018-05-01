@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002621            147 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN199a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 147)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..147
+                     /locus_tag="MPN199a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121708.1"
+                     /EC_number=""
+                     /translation="MLSSATLPKRLLLPLLPFSFLMANIDLGFTSNSRLPIIKRFTLS
+                     LANE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527614"
+ORIGIN
+        1 ATGCTGAGCA GCGCGACCCT GCCGAAGCGC CTGCTGTTGC CGCTGCTGCC GTTTAGCTTC
+       61 CTGATGGCGA ACATCGACCT GGGCTTCACC AGCAATTCCC GCTTGCCTAT CATCAAACGT
+      121 TTCACCCTGT CCCTGGCGAA TGAGTGA
+//

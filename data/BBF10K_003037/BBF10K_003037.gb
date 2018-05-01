@@ -1,0 +1,39 @@
+LOCUS       BBF10K_003037            474 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  pmsR
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 474)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..474
+                     /locus_tag="MPN607"
+                     /gene="pmsR"
+                     /gene_synonyms=""
+                     /product="peptide methionine sulfoxide reductase A"
+                     /note="this stereospecific enzymes reduces the S isomer
+                     ofmethionine sulfoxide while MsrB reduces the R
+                     form;provides protection against oxidative stress"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110296.1"
+                     /EC_number="1.8.4.11"
+                     /translation="MKQIYFGGGCFWGTQKYFDLIKGVQKTSVGYLNSNMKNPTYEQV
+                     CSGQTNAVEAVFVEYDENKVSLNELIDAFFKVIDPTIRNRQGNDIGTQYRTGVYWVDP
+                     QDEQLITQKFRELQANYPKPIVTENRAMENYFLAEEYHQDYLKKNPHGYCHIKFD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876738"
+ORIGIN
+        1 ATGAAGCAAA TCTATTTCGG TGGTGGCTGC TTCTGGGGTA CCCAAAAGTA CTTTGACCTG
+       61 ATTAAAGGTG TGCAGAAAAC TAGCGTTGGC TACCTGAACT CCAATATGAA AAATCCGACC
+      121 TACGAACAGG TCTGTTCCGG CCAGACGAAC GCGGTTGAGG CGGTTTTCGT TGAATACGAT
+      181 GAGAATAAAG TGAGCCTGAA TGAGCTCATT GATGCGTTTT TTAAGGTTAT CGACCCGACC
+      241 ATTCGCAACC GTCAGGGCAA CGATATCGGC ACTCAATATC GCACGGGCGT GTATTGGGTG
+      301 GACCCGCAGG ATGAGCAGCT GATTACTCAG AAATTCCGTG AGCTGCAAGC CAACTATCCG
+      361 AAGCCGATCG TCACGGAAAA CCGTGCCATG GAAAACTATT TCCTGGCGGA GGAGTATCAT
+      421 CAAGACTACC TGAAGAAAAA CCCGCACGGT TACTGCCACA TCAAATTCGA TTGA
+//

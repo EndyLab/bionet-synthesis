@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002852            390 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN423
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 390)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..390
+                     /locus_tag="MPN423"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110111.1"
+                     /EC_number=""
+                     /translation="MKPQLLALKQFVQTEFEKVDFETFRQNFNRCLEREQSTLLIYED
+                     DDYDDQSFFLKPMLSDAFFISSEVVKQLDLLAVLVDNPKGDVKSCCQSFYEALTLFIS
+                     ALAITKGVDVGRYHQQLGKRFGVLTVY"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877277"
+ORIGIN
+        1 ATGAAACCGC AGTTGCTGGC ACTGAAGCAA TTTGTCCAGA CGGAGTTCGA AAAAGTGGAC
+       61 TTTGAAACCT TTCGTCAGAA TTTCAATCGC TGTTTGGAGC GTGAGCAGAG CACCCTGCTC
+      121 ATTTACGAGG ATGATGATTA TGACGATCAG AGCTTTTTCC TGAAACCGAT GCTGAGCGAC
+      181 GCGTTTTTTA TTAGCAGCGA AGTGGTGAAA CAACTGGATC TGCTCGCGGT GCTGGTGGAC
+      241 AACCCGAAGG GTGACGTGAA GTCCTGCTGT CAAAGCTTCT ACGAGGCGCT GACCCTGTTC
+      301 ATTAGCGCGC TGGCGATTAC TAAGGGTGTC GACGTGGGTC GCTATCATCA GCAACTGGGC
+      361 AAACGCTTCG GTGTCCTGAC GGTTTACTGA
+//

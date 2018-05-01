@@ -1,0 +1,34 @@
+LOCUS       BBF10K_001797            270 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl565
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 270)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..270
+                     /locus_tag="Mfl565"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="phosphotransferase systemphosphohistidine-
+                     containing protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053807.1"
+                     /EC_number=""
+                     /translation="MAQFTAVITDKIGLHARPATAIISAASKYGSDIQIVSGSKSGNL
+                     RSIMNILSMQIKNGDEITIIADGSDAEEAVAGIKEAMIAAALIEG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897658"
+ORIGIN
+        1 ATGGCACAAT TCACGGCCGT TATTACCGAC AAAATCGGTT TGCACGCCCG TCCGGCGACC
+       61 GCTATTATTA GCGCAGCGAG CAAGTACGGT TCTGATATTC AGATTGTTAG CGGTAGCAAG
+      121 AGCGGTAATC TGCGCTCCAT TATGAATATT CTGAGCATGC AGATTAAGAA CGGCGACGAG
+      181 ATTACCATTA TTGCGGATGG TTCTGATGCA GAAGAGGCTG TAGCCGGTAT CAAAGAGGCT
+      241 ATGATCGCAG CCGCGCTGAT CGAAGGCTGA
+//

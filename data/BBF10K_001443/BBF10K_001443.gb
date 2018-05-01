@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001443            450 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  smpB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 450)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..450
+                     /locus_tag="Mfl210"
+                     /gene="smpB"
+                     /gene_synonyms=""
+                     /product="SsrA-binding protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053451.1"
+                     /EC_number=""
+                     /translation="MGEHVIALNKKAKFNYEILETWEAGIELYGPEIKSIRNHEANIA
+                     EAFILIRKKEAFLINANIKKYDYANFVKGIDPLRTRKLLLHKKEINKILKRVMLEKLT
+                     IVPLRLYLKGNYAKLEIGLGRGKKIHDKRETIKKRDIERKEMRKYKY"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898065"
+ORIGIN
+        1 ATGGGCGAAC ATGTGATCGC TCTGAATAAA AAGGCGAAGT TTAATTACGA AATCCTGGAG
+       61 ACTTGGGAGG CGGGCATTGA GCTGTACGGT CCTGAGATCA AAAGCATTCG CAACCACGAG
+      121 GCAAATATCG CCGAAGCCTT TATCCTGATC CGTAAAAAAG AGGCGTTCCT GATTAACGCC
+      181 AACATTAAAA AATACGACTA CGCGAATTTC GTCAAAGGCA TTGATCCACT GCGTACGCGC
+      241 AAGCTGTTAC TGCACAAGAA GGAGATTAAT AAAATCCTGA AGCGTGTGAT GCTGGAGAAA
+      301 TTGACGATCG TTCCGCTGCG TCTGTACCTG AAAGGCAACT ACGCGAAGCT GGAGATCGGT
+      361 CTGGGCCGCG GTAAGAAAAT TCACGACAAG CGTGAAACGA TTAAAAAACG CGACATTGAG
+      421 CGTAAGGAGA TGCGTAAATA TAAATACTGA
+//

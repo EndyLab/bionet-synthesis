@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001366            369 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 369)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..369
+                     /locus_tag="Mfl133"
+                     /gene="rplN"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L14"
+                     /note="binds to the 23S rRNA between the centers
+                     forpeptidyl transferase and GTPase"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053373.1"
+                     /EC_number=""
+                     /translation="MIQTLSKLKVADNSGAKEVRVIRNLGGSVRKFTGIGDIIVCSVQ
+                     SATPGGAVKKGQVVKAVIVRTTRELKREDGTYIRFSENAVVIIKEDKSPRGTRIFGPI
+                     AREIKEAGFAKIASLAPEVL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898291"
+ORIGIN
+        1 ATGATCCAGA CCCTGAGCAA GTTGAAAGTC GCGGACAATT CCGGTGCCAA AGAAGTTCGT
+       61 GTGATTCGCA ACCTTGGCGG CAGCGTCCGC AAGTTCACCG GTATCGGCGA TATCATCGTG
+      121 TGCAGCGTGC AAAGCGCTAC CCCGGGTGGC GCGGTCAAGA AGGGTCAAGT CGTCAAAGCG
+      181 GTTATCGTTC GTACTACTCG TGAGTTGAAA CGCGAGGACG GTACGTACAT CCGTTTCTCC
+      241 GAGAACGCAG TTGTGATCAT TAAAGAGGAT AAATCTCCGC GCGGTACGCG TATTTTCGGC
+      301 CCAATCGCTC GTGAAATCAA AGAGGCGGGT TTTGCAAAAA TCGCCTCGCT GGCACCGGAA
+      361 GTCCTGTGA
+//

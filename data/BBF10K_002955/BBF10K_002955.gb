@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002955            330 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN529
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 330)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..330
+                     /locus_tag="MPN529"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110218.1"
+                     /EC_number=""
+                     /translation="MEKTTTSSKPLSRSEINKIIAVATGVKEAKIKEIFKYLNTLLLN
+                     ELVSRSVCILPENLGKLRITIRNARIQKDMKTGEMKHIPPKPLVRYSPSKTIKETAAK
+                     VRWKYAD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876723"
+ORIGIN
+        1 ATGGAGAAAA CCACCACCAG CTCAAAACCG TTGTCGCGTT CTGAGATCAA TAAGATTATT
+       61 GCAGTTGCAA CCGGTGTTAA AGAGGCAAAG ATTAAGGAGA TTTTTAAATA TCTGAACACC
+      121 CTGCTGCTGA ATGAGCTGGT TAGCCGTAGC GTTTGCATCC TGCCGGAGAA TCTGGGTAAG
+      181 CTGCGCATTA CGATTCGCAA CGCACGTATC CAGAAGGACA TGAAAACCGG CGAGATGAAA
+      241 CATATCCCGC CGAAACCGCT GGTGCGTTAT AGCCCGAGCA AAACCATTAA GGAAACCGCG
+      301 GCCAAGGTCC GTTGGAAATA CGCAGATTGA
+//

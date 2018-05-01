@@ -1,0 +1,41 @@
+LOCUS       BBF10K_002953            555 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ppa
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 555)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..555
+                     /locus_tag="MPN528"
+                     /gene="ppa"
+                     /gene_synonyms=""
+                     /product="inorganic pyrophosphatase"
+                     /note="catalyzes the hydrolysis of pyrophosphate
+                     tophosphate"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110216.1"
+                     /EC_number="3.6.1.1"
+                     /translation="MDKFLIDVTVEIPKSSKIKYEYDRKTSQIRVDRILFGSESYPQN
+                     YGFIANTLDWDGDELDCFIFADQAFLPGVVVPTRIVGALEMVDDGELDTKLLGVIDCD
+                     PRYKEINSVNDLPKHRVDEIIGFLKTYKLLQKKEVIIKGVQSLEWAKKEYQVCVDLMK
+                     QYGKLPKDEFIAKMQKLHPEHYQK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876725"
+ORIGIN
+        1 ATGGACAAGT TCCTGATTGA CGTTACGGTT GAGATCCCAA AAAGCTCCAA AATTAAGTAC
+       61 GAATATGATC GTAAAACGAG CCAGATTCGT GTTGATCGTA TCCTGTTCGG CAGCGAAAGC
+      121 TACCCGCAGA ACTACGGCTT TATTGCGAAT ACCCTGGACT GGGACGGTGA TGAGCTGGAT
+      181 TGTTTTATTT TTGCGGACCA AGCATTTCTG CCGGGCGTCG TTGTTCCGAC CCGTATTGTA
+      241 GGTGCGCTGG AGATGGTGGA CGATGGCGAA CTGGATACGA AGCTGTTGGG TGTCATTGAT
+      301 TGCGACCCGC GTTATAAAGA GATTAACTCA GTTAACGACT TGCCGAAGCA CCGCGTTGAC
+      361 GAAATTATTG GCTTCTTAAA GACCTATAAG CTCCTGCAGA AGAAGGAGGT CATCATTAAG
+      421 GGCGTTCAGT CCCTGGAGTG GGCGAAGAAG GAGTACCAAG TTTGTGTGGA TCTGATGAAA
+      481 CAGTATGGCA AGCTGCCTAA AGATGAATTT ATCGCAAAGA TGCAAAAGTT GCACCCGGAG
+      541 CACTACCAAA AGTGA
+//

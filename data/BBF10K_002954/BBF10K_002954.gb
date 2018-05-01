@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002954            519 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN528a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 519)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..519
+                     /locus_tag="MPN528a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="DNA recombination protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110217.1"
+                     /EC_number=""
+                     /translation="MISANRGMFLETIVNQTIVRLGDHPDIWLEKRYLPIQPTAFKET
+                     RVQGALTAQKKSKTDYYGVYKGEIYFDFETKQTNKSNFALAQLAEHQLKHLKRINEIG
+                     GISFLLIYFQVQDLLYALHTKDLLQMIEAQKGKSKTIKRDLIDQKAQKINLIYPGVID
+                     LIDVIENFIKDS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877041"
+ORIGIN
+        1 ATGATTAGCG CGAATCGTGG CATGTTCCTG GAAACCATCG TCAACCAAAC GATTGTTCGC
+       61 CTGGGTGACC ATCCTGACAT CTGGCTGGAA AAACGTTATC TGCCGATTCA ACCGACCGCG
+      121 TTCAAAGAAA CCCGTGTCCA AGGTGCACTG ACGGCGCAGA AGAAAAGCAA AACGGACTAC
+      181 TACGGCGTGT ACAAAGGTGA AATCTACTTC GACTTCGAAA CCAAACAGAC GAACAAATCC
+      241 AATTTTGCGC TGGCACAATT GGCAGAACAT CAGCTGAAAC ACCTGAAACG CATCAATGAG
+      301 ATTGGTGGCA TCAGCTTCCT GCTGATCTAC TTCCAGGTGC AGGATCTGCT GTACGCCCTG
+      361 CATACCAAGG ACCTGTTGCA AATGATCGAG GCGCAGAAGG GCAAAAGCAA GACTATCAAG
+      421 CGTGATCTGA TCGACCAAAA AGCGCAGAAG ATCAACCTGA TTTACCCGGG TGTGATTGAC
+      481 TTAATTGATG TTATTGAAAA TTTCATTAAG GACTCCTGA
+//

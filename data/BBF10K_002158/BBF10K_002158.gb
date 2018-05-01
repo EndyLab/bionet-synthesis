@@ -1,0 +1,38 @@
+LOCUS       BBF10K_002158            426 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01305
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 426)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..426
+                     /locus_tag="MG_RS01305"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="division/cell wall cluster
+                     transcriptionalrepressor MraZ"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869380.1"
+                     /EC_number=""
+                     /translation="MLLGTFNLTLDNKNRISLPAKLRSFFDSSIVINRGFENCLEIRK
+                     PADFESYFQTFNNFPNTQKDTRTLKRLIFANANLVELDSANRILIPNNLISDAKLDKE
+                     IVLIGQFDHLEVWDKVQYEQYLASSESLETVAERMKDAK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGTTGTTGG GCACCTTCAA CCTGACCCTG GACAATAAGA ATCGTATCTC TCTGCCTGCC
+       61 AAACTGCGCA GCTTTTTTGA CAGCTCCATT GTTATCAATC GCGGTTTTGA AAACTGTCTG
+      121 GAGATCCGCA AGCCGGCAGA CTTCGAAAGC TATTTCCAGA CGTTCAACAA CTTTCCAAAT
+      181 ACCCAGAAAG ATACCCGTAC CCTGAAACGC CTGATCTTCG CAAACGCAAA CTTGGTGGAG
+      241 CTGGACAGCG CCAACCGTAT CCTGATCCCG AACAACCTGA TCTCGGATGC GAAGTTGGAC
+      301 AAGGAGATCG TTCTGATCGG TCAGTTCGAC CATCTGGAGG TGTGGGATAA AGTTCAGTAC
+      361 GAACAGTACC TGGCGAGCAG CGAGTCGCTG GAGACTGTCG CCGAGCGTAT GAAGGATGCG
+      421 AAGTGA
+//

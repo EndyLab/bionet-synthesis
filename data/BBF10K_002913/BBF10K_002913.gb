@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002913            204 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN489a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 204)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..204
+                     /locus_tag="MPN489a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121734.1"
+                     /EC_number=""
+                     /translation="MSKTPIMSRVRKPTDLTIRVRQLNPIRYWKAKALTTLPRNRLMI
+                     RRKVKRGLLVVPLTKNTSLALTV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527731"
+ORIGIN
+        1 ATGAGCAAGA CGCCAATCAT GTCTCGTGTC CGCAAGCCTA CGGATTTGAC GATTCGTGTA
+       61 CGTCAGCTGA ATCCGATTCG TTACTGGAAG GCGAAGGCAC TGACCACCTT GCCGCGTAAC
+      121 CGTCTGATGA TTCGTCGCAA AGTTAAACGT GGCCTGCTGG TCGTTCCGCT GACCAAGAAT
+      181 ACCTCTTTGG CGTTGACCGT GTGA
+//

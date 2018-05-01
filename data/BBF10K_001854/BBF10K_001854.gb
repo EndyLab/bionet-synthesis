@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001854            468 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl623
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 468)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..468
+                     /locus_tag="Mfl623"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S7"
+                     /note="binds directly to 16S rRNA where it
+                     nucleatesassembly of the head domain of the 30S subunit"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053864.1"
+                     /EC_number=""
+                     /translation="MRKNRAEKRDVLADPIYNSKLVTRAINKIMLDGKRGTAQTIIYD
+                     AFDIIKEKTGEEPIEIFNKAIENIKPHLELKVRRIGGANYQVPVEVSDERQVTLALRW
+                     LINYARLRNEKVMTVKLANEIIDASNNMGGSVKKREDTHKMAEANKAFAHYRW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897753"
+ORIGIN
+        1 ATGCGTAAAA ATCGCGCTGA AAAGCGCGAC GTTTTAGCCG ACCCGATTTA TAACAGCAAA
+       61 CTGGTTACCC GTGCGATCAA TAAGATCATG CTGGATGGTA AACGTGGTAC GGCGCAAACG
+      121 ATCATCTATG ACGCCTTTGA TATTATTAAG GAGAAAACCG GTGAGGAACC GATCGAAATT
+      181 TTCAATAAAG CCATTGAAAA TATCAAGCCG CACCTGGAGC TGAAGGTCCG CCGTATTGGC
+      241 GGTGCGAACT ACCAAGTTCC GGTTGAGGTG TCCGATGAAC GCCAGGTTAC CCTGGCACTG
+      301 CGCTGGTTGA TTAACTACGC TCGCTTGCGT AACGAGAAGG TGATGACGGT AAAGCTGGCG
+      361 AATGAAATCA TCGATGCCTC TAACAACATG GGTGGTAGCG TTAAGAAGCG TGAGGATACG
+      421 CATAAAATGG CAGAAGCCAA CAAGGCGTTT GCACATTACC GTTGGTGA
+//

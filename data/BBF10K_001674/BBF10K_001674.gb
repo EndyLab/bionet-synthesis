@@ -1,0 +1,34 @@
+LOCUS       BBF10K_001674            288 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 288)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..288
+                     /locus_tag="Mfl439"
+                     /gene="rpmA"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L27"
+                     /note="involved in the peptidyltransferase reaction
+                     duringtranslation"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053682.1"
+                     /EC_number=""
+                     /translation="MRFILNLQFFASKKGVGSTKNGRDSESKRLGAKKADGQFANAGS
+                     IIFRQRGTKIHPGQNVGRGGDDTLFALVSGIVKYEKFGKGRTRVKVVAPAE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897929"
+ORIGIN
+        1 ATGCGTTTCA TTCTGAATCT GCAGTTTTTT GCCAGCAAAA AAGGTGTGGG TAGCACCAAG
+       61 AACGGTCGCG ACAGCGAAAG CAAGCGTCTG GGTGCAAAGA AGGCAGATGG CCAGTTCGCC
+      121 AACGCCGGTA GCATTATTTT TCGCCAAAGA GGCACGAAGA TCCACCCGGG TCAAAACGTC
+      181 GGTCGCGGCG GTGATGACAC GCTGTTCGCG CTGGTAAGCG GTATCGTTAA ATATGAAAAG
+      241 TTTGGTAAAG GCCGCACGCG TGTTAAGGTT GTCGCGCCGG CCGAGTGA
+//

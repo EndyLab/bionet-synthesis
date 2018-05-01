@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002754",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rpmA",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAATAACAAATATTTTTTAACCAAAATTGACTTACAGTTTTTTGCTTCCAAAAAGGGAGTTGGTTCAACCAAGAACGGCCGTGATTCTCATGCTAAGCGTTTAGGTGCTAAGAAGGCTGATGGTCAGATGATCCGTACTGGTCAAATTATTTACCGCCAACGCGGTACTAGGGTATATCCCGGTGTAAATGTTGGCCTTGGTAGTGATGACACCTTGTTTGCTTTAAGCGACGGCTTGGTAAAATACCAAAAGTTTGGACCTAAACAGGGCAAGACCCGCGTGAGTGTGGTCAAACACAAACTAGATGCCTAA",
+    "optimized_sequence": "ATGAACAACAAGTATTTCCTGACCAAAATCGATCTGCAGTTCTTCGCGTCCAAGAAGGGCGTTGGTAGCACGAAAAACGGTCGTGACTCACACGCGAAACGCCTGGGCGCCAAGAAGGCTGATGGTCAGATGATCCGCACCGGCCAGATCATTTATCGTCAACGTGGTACCCGTGTCTATCCTGGCGTTAACGTCGGTCTGGGCTCCGATGATACCCTGTTTGCGCTGAGCGACGGCCTCGTTAAGTACCAGAAGTTTGGTCCAAAACAGGGTAAAACGCGCGTTAGCGTCGTGAAACACAAGCTGGACGCCTGA",
+    "fragment_sequences": {
+      "BBF10K_002754_link_BBF10K_002479": "GAAGACCAGGAGAAGAATTACTGACCCCTCGGGGTCTCAAATGAACAACAAGTATTTCCTGACCAAAATCGATCTGCAGTTCTTCGCGTCCAAGAAGGGCGTTGGTAGCACGAAAAACGGTCGTGACTCACACGCGAAACGCCTGGGCGCCAAGAAGGCTGATGGTCAGATGATCCGCACCGGCCAGATCATTTATCGTCAACGTGGTACCCGTGTCTATCCTGGCGTTAACGTCGGTCTGGGCTCCGATGATACCCTGTTTGCGCTGAGCGACGGCCTCGTTAAGTACCAGAAGTTTGGTCCAAAACAGGGTAAAACGCGCGTTAGCGTCGTGAAACACAAGCTGGACGCCTGAAGAGCTTAGAGACCCTTGAAATCTTGTCGCACGGCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAACACGTGGCAAACATTCCGGTCTCGAATGAAAAAGATCCAGGTTGTTGTGAAAGATCCGGTTGGCATCCATGCGCGTCCGGCGAGCATTATCGCGGGCGAAGCTAATAAGTTCAAAAGCGAGCTGAAATTGGTTAGCCCGAGCGGCGTTGAGGGCAATATCAAGAGCATCATCAATCTGATGAGCCTGGGTATTAAGCAAAATGATCACATCACCATCAAAGCGGAGGGTACTGACGAGGAAGAAGCGCTGAATGCAATCAAGGCTGTGCTGGAAAAACACCAGGTGATTTGAAGAGCTTGGAGACCCCAGCCTCAGATTGTTGTCTCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN327",
+    "gene": "rpmA",
+    "gene_synonyms": "",
+    "product": "50S ribosomal protein L27",
+    "note": "involved in the peptidyltransferase reaction duringtranslation",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110015.1",
+    "EC_number": "",
+    "translation": "MNNKYFLTKIDLQFFASKKGVGSTKNGRDSHAKRLGAKKADGQMIRTGQIIYRQRGTRVYPGVNVGLGSDDTLFALSDGLVKYQKFGPKQGKTRVSVVKHKLDA",
+    "references": [
+      "db_xref=\"GeneID:876951\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-028f70b6-0a41-4920-917d-09c8a41e65e7"
+}

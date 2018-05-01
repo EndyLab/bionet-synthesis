@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003016            453 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN587
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 453)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..453
+                     /locus_tag="MPN587"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="lipoprotein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110276.1"
+                     /EC_number=""
+                     /translation="MVIALKRFSFLASIATLTVLNACATISLSDKSGEFYINNIPSSA
+                     ELHRINYDLTFSLGFTNRIQTKKKNEVNFVAFYGTGLLIDWKEGNQYQPFRVYLATNV
+                     HVAAGLKNEADYLPYSQPDAELGWTVDFRLGKYTNVKDFVSPNENRIT"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876823"
+ORIGIN
+        1 ATGGTTATTG CGCTGAAACG TTTTTCCTTC CTGGCTAGCA TTGCGACGCT TACCGTGCTG
+       61 AACGCTTGCG CCACCATCAG CCTGAGCGAC AAGAGCGGCG AATTTTACAT CAACAACATT
+      121 CCGAGCAGCG CGGAACTGCA CCGCATTAAC TACGATCTGA CCTTTAGCCT GGGTTTCACG
+      181 AACCGTATTC AAACCAAAAA GAAAAATGAG GTGAACTTCG TTGCCTTTTA TGGTACCGGT
+      241 CTGCTGATTG ATTGGAAAGA GGGTAATCAG TACCAGCCGT TTCGTGTTTA TTTGGCCACT
+      301 AATGTTCATG TCGCAGCTGG TCTGAAAAAT GAGGCCGACT ATCTGCCGTA TAGCCAGCCG
+      361 GACGCGGAAT TGGGCTGGAC CGTGGATTTT CGCCTCGGTA AGTACACCAA CGTGAAAGAC
+      421 TTCGTATCCC CGAACGAGAA CCGTATCACC TGA
+//

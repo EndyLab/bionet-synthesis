@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002743            141 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN316a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 141)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..141
+                     /locus_tag="MPN316a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121720.1"
+                     /EC_number=""
+                     /translation="MWVANTYWTVKQLRFLEDKTKLMLIPLALPYRFTQTKLKSSLKS
+                     RF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527659"
+ORIGIN
+        1 ATGTGGGTGG CAAATACCTA CTGGACCGTC AAACAATTGC GTTTTTTGGA GGACAAAACT
+       61 AAGCTGATGC TGATTCCGCT GGCTTTGCCG TATCGCTTTA CCCAGACCAA GCTGAAAAGC
+      121 AGCCTGAAAA GCCGTTTTTG A
+//

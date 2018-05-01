@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002283            576 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02035
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 576)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..576
+                     /locus_tag="MG_RS02035"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="GTP-binding protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869438.1"
+                     /EC_number=""
+                     /translation="MDAHFLKSASDLKDCPQDNIPEICFMGRSNVGKSSLINAFFKKK
+                     LAKTSATPGRTQLLNYFEYKDKRFVDLPGYGFAKINKNKKDFITNLLTQFLNFRSNLV
+                     GVVLIVDSGVVTVQDQEVVKIILQTGLNFLIVANKFDKLNQSERYFSLKNIANFLKVN
+                     FDKCVFASTKTHHNLALVHKKIFELFVEDER"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGACGCGC ACTTCCTTAA GAGCGCATCC GACCTGAAGG ATTGTCCGCA GGACAACATC
+       61 CCAGAGATTT GCTTTATGGG TCGTAGCAAC GTAGGCAAGA GCAGCCTGAT CAACGCCTTC
+      121 TTCAAGAAGA AGCTGGCAAA GACCAGCGCG ACCCCAGGCC GTACCCAGCT GCTGAATTAC
+      181 TTTGAGTATA AGGACAAACG CTTCGTCGAT CTGCCGGGCT ACGGTTTCGC GAAAATCAAC
+      241 AAGAACAAAA AAGACTTCAT CACGAATCTG CTCACCCAGT TTCTGAACTT TCGTAGCAAC
+      301 CTGGTTGGTG TGGTTCTGAT CGTTGACAGC GGTGTGGTAA CCGTACAGGA TCAGGAAGTG
+      361 GTCAAGATCA TTCTGCAGAC GGGTCTGAAT TTTCTGATTG TTGCAAACAA GTTCGACAAG
+      421 CTGAACCAGA GCGAGCGCTA CTTTAGCCTG AAGAATATCG CTAACTTCCT GAAAGTCAAT
+      481 TTTGACAAGT GCGTTTTTGC TTCAACCAAG ACCCACCATA ATCTGGCACT GGTCCACAAG
+      541 AAGATCTTTG AACTGTTTGT GGAGGATGAG CGCTGA
+//

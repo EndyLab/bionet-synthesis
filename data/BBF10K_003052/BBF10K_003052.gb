@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003052            261 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsO
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 261)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..261
+                     /locus_tag="MPN622"
+                     /gene="rpsO"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S15"
+                     /note="primary rRNA binding protein; helps
+                     nucleateassembly of 30S; binds directly to the 16S rRNA
+                     and anintersubunit bridge to the 23S rRNA;
+                     autoregulatestranslation through interactions with the
+                     mRNA leadersequence"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110311.1"
+                     /EC_number=""
+                     /translation="MQIDKNGIIKSAQLHDKDVGSIQVQVSLLTSQIKQLTDHLLANK
+                     KDFISKRGLYAKVSKRKRLLKYLKHNDLEAYRNLVKTLNLRG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877351"
+ORIGIN
+        1 ATGCAGATCG ATAAAAACGG TATTATTAAG AGCGCGCAAC TGCACGACAA GGATGTCGGT
+       61 AGCATCCAGG TCCAAGTTAG CCTGTTGACC AGCCAGATCA AACAGCTTAC CGATCATCTG
+      121 CTGGCTAATA AGAAAGACTT CATCAGCAAA CGTGGCCTGT ACGCGAAGGT TAGCAAACGT
+      181 AAGCGTCTGC TGAAGTACCT GAAGCACAAT GATCTCGAAG CATACCGTAA TCTGGTAAAG
+      241 ACCCTGAATT TGCGTGGCTG A
+//

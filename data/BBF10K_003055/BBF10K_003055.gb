@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003055            426 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN625
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 426)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..426
+                     /locus_tag="MPN625"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hydroperoxide reductase"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110314.1"
+                     /EC_number=""
+                     /translation="MDKKYDITAVLNEDSSMTAISDQFQITLDARPKHTAKGFGPLAA
+                     LLSGLAACELATANLMAPAKMITINKLLMNVTGSRSTNPTDGYFGLREINLHWEIHSP
+                     NSETEIKEFIDFVSKRCPAHNTLQGVSQLKINVNVTLVH"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877343"
+ORIGIN
+        1 ATGGATAAGA AATATGACAT TACCGCGGTG CTGAATGAAG ATAGCAGCAT GACTGCGATC
+       61 TCTGACCAAT TCCAGATTAC CCTGGATGCC CGTCCGAAAC ATACCGCGAA AGGCTTTGGC
+      121 CCACTGGCTG CCCTGCTGAG CGGTCTGGCA GCATGTGAGC TGGCCACCGC TAACCTGATG
+      181 GCACCGGCGA AAATGATCAC TATCAATAAA TTGCTGATGA ATGTTACCGG TAGCCGTAGC
+      241 ACCAATCCGA CGGATGGTTA CTTCGGTCTG CGTGAAATTA ATCTCCATTG GGAGATCCAT
+      301 AGCCCGAATA GCGAAACGGA GATTAAAGAA TTTATCGACT TCGTGAGCAA GCGTTGCCCG
+      361 GCGCACAATA CGCTGCAGGG TGTTAGCCAG CTGAAGATTA ATGTCAACGT TACGCTGGTC
+      421 CATTGA
+//

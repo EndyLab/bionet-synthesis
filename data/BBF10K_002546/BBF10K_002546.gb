@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002546            480 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN126
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 480)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..480
+                     /locus_tag="MPN126"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="metallophosphoesterase"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109814.1"
+                     /EC_number=""
+                     /translation="MTKVLVLSDTHGYNDRWLAVMKLHNPDVVIHAGDHLTTKKFMDQ
+                     NATFWVAGNHDVVGEEIQMFELEGIQFVLMHGHQAPRHDLKQWYKMLVDQAKSYLCDV
+                     LIVGHSHIEHYETIDGIQVINPGSLEIPRNPRKLPTYCNLNLSQGRISDLTFHFPRD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877208"
+ORIGIN
+        1 ATGACCAAGG TTCTCGTCCT GAGCGACACG CACGGCTACA ACGACCGCTG GCTGGCCGTG
+       61 ATGAAGCTGC ACAACCCGGA TGTCGTGATT CATGCTGGCG ACCACTTAAC TACTAAGAAA
+      121 TTTATGGATC AGAATGCGAC CTTTTGGGTC GCGGGTAATC ACGACGTCGT GGGTGAAGAA
+      181 ATCCAAATGT TCGAGCTGGA GGGCATTCAA TTTGTTCTGA TGCATGGTCA TCAAGCCCCG
+      241 AGACATGACC TGAAACAGTG GTACAAAATG CTGGTGGATC AGGCAAAGAG CTATCTGTGT
+      301 GACGTTCTGA TTGTGGGTCA CAGCCATATT GAGCATTACG AAACCATCGA CGGTATTCAA
+      361 GTGATTAACC CGGGCAGCCT GGAAATCCCG CGCAACCCGC GTAAACTGCC TACGTACTGT
+      421 AACCTGAACC TGTCCCAAGG TCGTATTAGC GATCTGACCT TTCACTTCCC GCGTGATTGA
+//

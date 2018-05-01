@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001620            474 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl385
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 474)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..474
+                     /locus_tag="Mfl385"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="deoxycytidylate deaminase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053628.1"
+                     /EC_number=""
+                     /translation="MKRENFLNWEQFFMTVAKVCAMRSKDPSTQVGAILVNNLNQIIS
+                     TGYNGFPRGVNDDEFPWTREGEWIDTKYPYVAHAELNAIVSARTNLTDSDVYVTLFPC
+                     NECTKIIIQAGIKKVYYLEDKYKDSNEVKASKRMLDAAKIEYKQINDFNVKISID"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897804"
+ORIGIN
+        1 ATGAAACGTG AGAACTTTCT GAACTGGGAA CAATTTTTCA TGACGGTCGC CAAAGTGTGT
+       61 GCAATGCGTT CGAAGGACCC GTCTACGCAA GTTGGCGCCA TCTTGGTGAA CAACCTGAAC
+      121 CAAATCATTT CGACTGGCTA TAACGGCTTC CCGCGCGGTG TTAATGACGA CGAATTTCCA
+      181 TGGACCCGTG AGGGCGAGTG GATTGACACC AAATATCCGT ACGTGGCGCA CGCGGAGCTG
+      241 AATGCAATTG TGTCCGCACG CACCAACCTG ACCGACAGCG ACGTGTACGT CACCCTGTTT
+      301 CCGTGTAATG AGTGTACCAA GATCATTATC CAGGCAGGCA TCAAGAAAGT TTACTATCTG
+      361 GAGGATAAAT ACAAGGACTC GAACGAAGTG AAAGCTAGCA AACGTATGTT AGATGCGGCC
+      421 AAAATCGAGT ATAAGCAAAT TAACGACTTC AATGTTAAGA TCTCAATCGA TTGA
+//

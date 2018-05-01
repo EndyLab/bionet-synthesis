@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_003111",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rpmH",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BtgZI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAAACGTACATATCAACCAAGTAAATTAAAGCGAGCAAAAACCCATGGCTTTTTAGCTCGCATGGCCACCGCTTCTGGTCGTAAAGTATTGAAGTTAAGAAGAAAAAAACAACGCGCCCAACTCACCGTATCCAGTGAGCGCTAA",
+    "optimized_sequence": "ATGAAACGTACCTATCAACCGTCCAAGTTGAAACGTGCAAAGACCCATGGCTTTCTGGCGCGTATGGCTACCGCTTCTGGCCGTAAGGTCCTGAAACTGCGCCGTAAAAAGCAGCGCGCGCAACTGACTGTCTCGAGCGAGCGCTGA",
+    "fragment_sequences": {
+      "BBF10K_002347_link_BBF10K_003111": "GAAGACCAGGAGAATGCAAAGCTATTAGCGCGGGTCTCAAATGAAGCAGAAGATCCTGGGTATTACGATTGCGTTTATTATTCTGCTGCTGACCACGGTGGCAATCCTGTTTAGCGTAAAGGTGAAGCAATATCTGAATGTGAACTTGTGGACCACGCAACAACAAAACTTTCTGATGTTTAAAAATGAGAAAGACGAGAATCTGTTCAACAACGTTAGCTGGACGAACTTCCAAGCAGAAACTACCGAAAAGAGCGCAAAAAAGGCATTTCGTCTGTACAAGAAGAAAATTAGCACCAGCGAGATTAGCAGCGAACTGAACAAAAATCTGGTAAAGGTGGACCTGTCCGTCACGCTGGAGCAAGGCTGGTATAATATTACCATCATGCTGCCGTCCAAAGATCTGTTCGAGGTGATCTTTTGAAGAGCTTAGAGACCCCTACGGTTAAGGCTTGTCTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAATAAGACGACGACCCTCGGGTCTCGAATGAAACGTACCTATCAACCGTCCAAGTTGAAACGTGCAAAGACCCATGGCTTTCTGGCGCGTATGGCTACCGCTTCTGGCCGTAAGGTCCTGAAACTGCGCCGTAAAAAGCAGCGCGCGCAACTGACTGTCTCGAGCGAGCGCTGAAGAGCTTGGAGACCCAGTCCTTGCCAATCGAAGTCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN682",
+    "gene": "rpmH",
+    "gene_synonyms": "",
+    "product": "50S ribosomal protein L34",
+    "note": "in Escherichia coli transcription of this gene isenhanced by polyamines",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110371.1",
+    "EC_number": "",
+    "translation": "MKRTYQPSKLKRAKTHGFLARMATASGRKVLKLRRKKQRAQLTVSSER",
+    "references": [
+      "db_xref=\"GeneID:877034\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-c31b2b72-3d50-45f8-82df-2eeb5c6a9d99"
+}

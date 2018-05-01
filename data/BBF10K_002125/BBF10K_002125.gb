@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002125            231 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02815
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 231)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..231
+                     /locus_tag="MG_RS02815"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_081440612.1"
+                     /EC_number=""
+                     /translation="MSGEELGVNTHRVFSLFKCWVIIDLTPTLMLEKVGRGVFELTER
+                     EAVWELEKGLLLPIQGRKSKSPPSPSLLLFDQ"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAGCGGTG AGGAACTGGG CGTTAACACT CACCGTGTGT TCAGCTTGTT CAAATGTTGG
+       61 GTTATTATCG ACCTGACGCC GACCCTCATG CTCGAGAAAG TGGGCCGCGG CGTTTTCGAA
+      121 CTGACCGAGC GCGAAGCGGT GTGGGAGCTG GAGAAGGGCC TGCTGCTGCC AATCCAAGGC
+      181 CGTAAAAGCA AGAGCCCGCC GAGCCCAAGC CTGCTGCTGT TTGACCAGTG A
+//

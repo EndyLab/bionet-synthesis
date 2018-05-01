@@ -1,0 +1,34 @@
+LOCUS       BBF10K_002724            183 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsU
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 183)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..183
+                     /locus_tag="MPN296"
+                     /gene="rpsU"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S21"
+                     /note="a small basic protein that is one of the last inthe
+                     subunit assembly; omission does not prevent assemblybut
+                     the subunit is inactive; binds central domain of 16SrRNA"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109984.1"
+                     /EC_number=""
+                     /translation="MPKIEVKNDDLELALKKFKRVSLEIRRLAQRHEYHLRKGMRLRE
+                     KRKIAQKKRRKFRNMV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877152"
+ORIGIN
+        1 ATGCCGAAAA TTGAGGTGAA AAACGACGAC CTGGAGCTGG CGCTGAAGAA ATTTAAGAGA
+       61 GTTTCTCTGG AAATTCGCCG TCTGGCTCAA CGTCATGAGT ACCATCTGCG CAAAGGCATG
+      121 CGTTTGCGTG AGAAACGCAA GATTGCACAG AAAAAGCGTC GTAAGTTTCG CAACATGGTG
+      181 TGA
+//

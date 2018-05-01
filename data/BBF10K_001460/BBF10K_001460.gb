@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001460            201 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 201)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..201
+                     /locus_tag="Mfl227"
+                     /gene="rpmB"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L28"
+                     /note="required for 70S ribosome assembly"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053468.1"
+                     /EC_number=""
+                     /translation="MARKDMLTGKSALSGNSRSHALNATKRKWNLNLQKVKVMDENGN
+                     VFTIKVSARTLRTLKKQNVVVA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897973"
+ORIGIN
+        1 ATGGCGCGCA AAGACATGCT GACGGGCAAA TCCGCATTGA GCGGCAACAG CCGTTCCCAC
+       61 GCGCTGAACG CGACCAAACG CAAGTGGAAC CTGAATCTGC AGAAGGTCAA AGTCATGGAT
+      121 GAGAACGGTA ACGTCTTTAC GATCAAAGTT AGCGCGCGTA CCCTGCGTAC GCTGAAAAAG
+      181 CAAAACGTGG TCGTGGCCTG A
+//

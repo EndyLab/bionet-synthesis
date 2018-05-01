@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002028            570 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00590
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 570)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..570
+                     /locus_tag="MG_RS00590"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="guanylate kinase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885665.1"
+                     /EC_number=""
+                     /translation="MNNQGRIFVITGPSGVGKSTLVKALLDHFKEQLFYSISATTRKK
+                     RISEKEGIDYFFKDKDEFENLIKQDAFIEWACYNNHYYGTLKSQAEQAIKSGINLMLE
+                     IEYQGALQVKSKYPHNVVLIFIKPPSMQELLKRLKKRNDEDETTIKKRLEQAKIEFQQ
+                     IDNFKYVVTNKEFDKTLNELKSILLSEFI"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAACAACC AGGGTCGCAT CTTCGTGATC ACCGGCCCGA GCGGTGTCGG TAAGAGCACC
+       61 CTTGTCAAAG CCCTGCTGGA TCACTTTAAG GAACAACTGT TCTACAGCAT TAGCGCAACC
+      121 ACGCGCAAGA AACGTATTAG CGAGAAGGAG GGTATTGACT ACTTTTTTAA GGATAAAGAT
+      181 GAGTTTGAGA ACTTGATCAA ACAAGACGCG TTCATCGAGT GGGCGTGCTA TAATAACCAC
+      241 TACTACGGTA CCCTGAAATC GCAGGCCGAG CAAGCTATCA AAAGCGGTAT TAATCTTATG
+      301 CTGGAAATTG AATACCAGGG CGCGTTACAG GTCAAGAGCA AGTACCCGCA CAACGTCGTT
+      361 CTGATCTTTA TTAAACCGCC GTCCATGCAG GAACTGTTGA AGCGTCTGAA AAAGCGTAAT
+      421 GACGAGGACG AAACCACCAT CAAAAAACGC CTGGAGCAGG CAAAGATTGA ATTTCAGCAA
+      481 ATCGACAATT TTAAATATGT TGTTACCAAC AAAGAGTTTG ATAAAACCCT GAATGAGCTG
+      541 AAAAGCATTC TGCTGAGCGA ATTTATTTGA
+//

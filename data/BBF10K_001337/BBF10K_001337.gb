@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001337            300 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl104
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 300)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..300
+                     /locus_tag="Mfl104"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product=""
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053344.1"
+                     /EC_number=""
+                     /translation="MNNYEISKNEFYKLVDEGYIVIDVRSIGEDEMTGLSYKGSHNIP
+                     YPGVIKNAERLFPNKNEKMIIVCNYGSRSGLTAKTYRQMGYPNVFVLHGGLYELK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897896"
+ORIGIN
+        1 ATGAACAACT ATGAAATTAG CAAGAACGAA TTTTACAAGC TGGTTGACGA AGGCTACATT
+       61 GTTATTGATG TCCGTAGCAT CGGCGAAGAT GAGATGACCG GTCTGTCTTA CAAAGGTAGC
+      121 CACAATATCC CGTACCCGGG TGTGATTAAG AACGCGGAGC GTCTGTTCCC GAATAAAAAC
+      181 GAGAAAATGA TCATTGTTTG CAACTACGGT AGCCGCAGCG GTTTGACCGC CAAAACCTAC
+      241 CGTCAGATGG GTTATCCGAA CGTTTTCGTC CTGCACGGCG GCCTGTATGA GCTGAAGTGA
+//

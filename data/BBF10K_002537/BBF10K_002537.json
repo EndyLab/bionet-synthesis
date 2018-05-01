@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002537",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rplT",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAGAATTAAAGGTGGAAAACAAACCCGCGTACGTCGCAAGAAGTGGTTAAAGCAAGCTAGTGGTAGCTTTGGTACCCGACATGCCTCTTATAAGGTGGCAAAGCAAACGGTGATCCAAGCCGCTAAGTATGCTTACCGCGATCGTCGTAACAAAAAGCGCGATTTCCGTTCGTTGTGGATCTTGCGCTTAAACGCCGCTTTGCGCGAACAGGGCATGACCTATTCGGTCTTTATCAATCTATTGAAGAAGCACAACATTGAGATTAACCGCAAAGTGTTGTCGGAACTAGCCATTAAAGAACCAAGTAAATTTAACCTAATTGTGCAAAAGGTTAAAAGTGAACAACCGAAAGCCGCTAAGCCAGCTGCTTTAGGAAACTAG",
+    "optimized_sequence": "ATGCGTATTAAAGGTGGCAAGCAAACCCGCGTGCGCCGTAAGAAGTGGTTGAAGCAGGCGTCCGGCAGCTTCGGTACCCGTCATGCAAGCTATAAAGTGGCTAAGCAAACGGTGATTCAAGCTGCGAAGTACGCGTACCGTGATCGCCGTAATAAGAAACGTGATTTTCGTAGCCTGTGGATTCTGCGCCTGAACGCAGCCCTGCGTGAGCAGGGTATGACCTATAGCGTCTTTATTAACTTGCTGAAAAAGCACAACATCGAAATTAACCGTAAGGTTCTGAGCGAGCTCGCTATCAAGGAGCCGTCTAAATTCAATCTGATCGTCCAAAAAGTTAAGAGCGAGCAGCCGAAGGCCGCGAAGCCGGCAGCTTTGGGCAACTGA",
+    "fragment_sequences": {
+      "BBF10K_002537_link_BBF10K_001615": "GAAGACCAGGAGAAGAATTACTGACCCCTCGGGGTCTCAAATGCGTATTAAAGGTGGCAAGCAAACCCGCGTGCGCCGTAAGAAGTGGTTGAAGCAGGCGTCCGGCAGCTTCGGTACCCGTCATGCAAGCTATAAAGTGGCTAAGCAAACGGTGATTCAAGCTGCGAAGTACGCGTACCGTGATCGCCGTAATAAGAAACGTGATTTTCGTAGCCTGTGGATTCTGCGCCTGAACGCAGCCCTGCGTGAGCAGGGTATGACCTATAGCGTCTTTATTAACTTGCTGAAAAAGCACAACATCGAAATTAACCGTAAGGTTCTGAGCGAGCTCGCTATCAAGGAGCCGTCTAAATTCAATCTGATCGTCCAAAAAGTTAAGAGCGAGCAGCCGAAGGCCGCGAAGCCGGCAGCTTTGGGCAACTGAAGAGCTTAGAGACCGGTTACAATAAGGGCTCCGTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAGGTATGTATAGCGACCGCGGTCTCGAATGCGCGAGAAGTATATCCTGCGTTGTACCGAGTGCAAAAACGAAAATTACATCGGTAAAAATGATAAAAAGAAAGAGAAGATCGAGGTCAAAAAGTTTTGCAGCAACTGCAATAAACATGAGTTGCACAAACAGAAGAAGTGAAGAGCTTGGAGACCCTGTATCATGGTTCCCTCGGCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN117",
+    "gene": "rplT",
+    "gene_synonyms": "",
+    "product": "50S ribosomal protein L20",
+    "note": "binds directly to 23S ribosomal RNA prior to invitro assembly of the 50S ribosomal subunit",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_109805.1",
+    "EC_number": "",
+    "translation": "MRIKGGKQTRVRRKKWLKQASGSFGTRHASYKVAKQTVIQAAKYAYRDRRNKKRDFRSLWILRLNAALREQGMTYSVFINLLKKHNIEINRKVLSELAIKEPSKFNLIVQKVKSEQPKAAKPAALGN",
+    "references": [
+      "db_xref=\"GeneID:877370\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-83f36538-4c60-4960-8145-bbd3b1df5f78"
+}

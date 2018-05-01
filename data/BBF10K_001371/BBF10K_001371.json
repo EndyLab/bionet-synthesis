@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_001371",
+  "author": {
+    "name": "Keoni Gandall",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rplF",
+      "description": "A collection of all genes from Mesoplasma florum L1, codon optimized for Escherichia coli expression.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 5,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "BSL1"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGTCACGTATAGGAAACAGAATTTTAACTATCCCTGCAGGTGTTGAAGTTAGTGTTGCATCAGACAACACAGTTACAGTAAAAGGGTCAAAGGGAACTTTAACTCAAAAATTCGCAGAAGTTATCACAATCAAAGTTGAAGGAGCAGAACTTTCAACAACAAGAGCTAATGAAATTAAACATACAAAACAATTACACGGAACAACAAACTCATTATTACAAGGTATGTTAATCGGTGTAAGTGAAGGGTTCAAAAAAACTCTTGACATTAACGGGGTTGGATATAGAGCAGCTTTAGCTGGAAGTAAATTAAATCTTTCACTAGGATACTCACACCCAGTTGAATATACAATTCCTCAAGGAATTACAGTAGAATGTCCAAAACCAACTCAAATCATTATTTCAGGTATTGATAAACAAGTTGTAGGACAAGTTGCAGCAGAAATTAGATCATACAGAAGACCAGAACCTTATAAAGGTAAAGGAATTAAGTACTCAGATGAAATCATTATTAGAAAAGAAGGGAAAGCAGCTGGTAAATAA",
+    "optimized_sequence": "ATGAGCCGCATCGGCAATCGTATTTTGACGATCCCGGCCGGTGTCGAAGTTTCCGTGGCAAGCGATAACACCGTTACCGTCAAGGGTAGCAAAGGTACGCTGACCCAAAAATTCGCGGAAGTGATTACCATTAAGGTGGAAGGCGCGGAGTTGTCCACCACGCGTGCGAACGAGATCAAACATACCAAACAACTGCATGGCACCACCAATAGCTTACTGCAGGGTATGCTGATTGGCGTGAGCGAAGGTTTTAAAAAGACCCTGGACATCAACGGTGTAGGTTACCGCGCAGCACTGGCGGGCAGCAAGCTGAACCTGAGCTTGGGTTACTCCCACCCGGTCGAGTACACCATTCCGCAAGGTATTACCGTCGAGTGCCCGAAGCCGACCCAGATTATTATTAGCGGCATTGATAAACAGGTCGTCGGTCAAGTGGCAGCGGAGATCCGCAGCTACCGTCGCCCGGAACCGTACAAAGGTAAAGGCATTAAATACAGCGACGAGATCATCATCCGTAAGGAAGGTAAGGCTGCGGGCAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_001371_1": "GAAGACCAGGAGAAGGACTGCATACCAGGTTGGGTCTCAAATGAGCCGCATCGGCAATCGTATTTTGACGATCCCGGCCGGTGTCGAAGTTTCCGTGGCAAGCGATAACACCGTTACCGTCAAGGGTAGCAAAGGTACGCTGACCCAAAAATTCGCGGAAGTGATTACCATTAAGGTGGAAGGCGCGGAGTTGTCCACCACGCGTGCGAACGAGATCAAACATACCAAACAACTGCATGGCACCACCAATAGCTTACTGCAGGGTATGCTGATTGGCGTGAGCGAAGGTTTTAAAAAGACCCTGGACATCAACGGTGTAGGTTACCGCGCAGCACTGGCGGGCAGCAAGCTGAACCTGAGCTTGGGTTACTCCCACCCGGTCGAGTACACCATTCCGCAAGGTATTACCGTCGAGTGCCCGAAGCCGACCCAGATTATTATTAGCGGCATTGATAAACAGGTCGTCGGTCAAGTGGCAGCGGAGATCCGCAGCTACCGTCGCCCGGAACCGTACAAAGGTAAAGGCATTAAATACAGCGACGAGATCATCATCCGTAAGGAAGGTAAGGCTGCGGGCAAGTGAAGAGCTTAGAGACCGTTGCCCTTGCTGAGATACTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "Mfl138",
+    "gene": "rplF",
+    "gene_synonyms": "",
+    "product": "50S ribosomal protein L6",
+    "note": "ribosomal protein L6 appears to have arisen as aresult of an ancient gene duplication as based onstructural comparison of the Bacillus stearothermophilusprotein; RNA-binding appears to be in the C-terminaldomain; mutations in the L6 gene confer resistance toaminoglycoside antibiotics such as gentamicin and theseoccur in truncations of the C-terminal domain; it has beenlocalized to a region between the base of the L7/L12 stalkand the central protuberance",
+    "Source": "Mesoplasma florum L1",
+    "GenBank_acc": "NC_006055",
+    "protein_id": "YP_053378.1",
+    "EC_number": "",
+    "translation": "MSRIGNRILTIPAGVEVSVASDNTVTVKGSKGTLTQKFAEVITIKVEGAELSTTRANEIKHTKQLHGTTNSLLQGMLIGVSEGFKKTLDINGVGYRAALAGSKLNLSLGYSHPVEYTIPQGITVECPKPTQIIISGIDKQVVGQVAAEIRSYRRPEPYKGKGIKYSDEIIIRKEGKAAGK",
+    "references": [
+      "db_xref=\"GeneID:2898111\""
+    ]
+  },
+  "tags": [
+    "Mesoplasma florum"
+  ],
+  "virtual_id": "v-cb270fff-9306-4fda-b22a-dde639c1bd0e"
+}

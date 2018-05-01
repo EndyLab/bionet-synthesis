@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002143            546 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01185
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 546)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..546
+                     /locus_tag="MG_RS01185"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="signal peptidase II"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885747.1"
+                     /EC_number=""
+                     /translation="MKLRKTKFFSQLKHQVLTANQKPFLFYKLTMIGFVGFIILLQVF
+                     ILRNALNGEMDNTMVANSGFINIYVIRNKGVGFSLLQNQTGLVYFLQGLLSVIALVFL
+                     VFMVKYSYIFWITTLAFGSLGNFFDRLTSANDSVLDYFIFQNGSSVFNFADCCITFGF
+                     IGLFFCFLIQMFKEFKHSKNQ"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAGCTGC GTAAGACGAA GTTCTTCAGC CAACTGAAAC ACCAGGTGCT GACGGCAAAC
+       61 CAGAAACCGT TCCTGTTCTA CAAACTGACC ATGATCGGTT TTGTCGGTTT CATCATTCTG
+      121 CTCCAGGTGT TCATCCTGCG TAACGCGCTG AACGGTGAAA TGGACAACAC TATGGTGGCG
+      181 AATAGCGGTT TTATTAACAT CTACGTGATT CGCAACAAGG GTGTTGGTTT CTCTTTGTTG
+      241 CAAAATCAGA CGGGTTTGGT TTATTTTCTG CAGGGTCTGC TGTCTGTTAT TGCCCTGGTT
+      301 TTTCTGGTGT TCATGGTGAA ATACAGCTAT ATTTTTTGGA TCACGACCCT GGCGTTCGGT
+      361 AGCCTGGGTA ATTTCTTTGA CCGTTTGACG AGCGCTAATG ACTCTGTGCT GGACTACTTT
+      421 ATTTTCCAAA ACGGCTCTAG CGTGTTCAAC TTCGCAGACT GCTGCATCAC CTTCGGTTTT
+      481 ATCGGCCTGT TCTTCTGCTT CTTGATCCAG ATGTTCAAAG AGTTTAAACA CTCCAAGAAC
+      541 CAGTGA
+//

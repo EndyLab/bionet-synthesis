@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001301            267 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  secG
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 267)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..267
+                     /locus_tag="Mfl068"
+                     /gene="secG"
+                     /gene_synonyms=""
+                     /product="preprotein translocase subunit SecG"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053308.1"
+                     /EC_number=""
+                     /translation="MSSATAQIVILVIEIIAMIASIIMILIGIFQNKNSQSGLSALNG
+                     GNDELFSNSKERGLDKTLSTWMMSLGIIFFIVALAACILTNIYL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897761"
+ORIGIN
+        1 ATGTCCAGCG CTACCGCACA AATCGTTATT CTGGTTATTG AGATCATTGC AATGATCGCG
+       61 AGCATCATCA TGATTCTGAT TGGTATCTTC CAGAATAAAA ATAGCCAGAG CGGCCTGTCT
+      121 GCACTGAACG GCGGTAACGA TGAGCTGTTC AGCAATTCCA AGGAGCGTGG TCTGGACAAA
+      181 ACTCTGAGCA CCTGGATGAT GAGCCTGGGC ATCATCTTCT TCATTGTCGC TCTGGCGGCG
+      241 TGTATCCTGA CCAATATCTA TCTGTGA
+//

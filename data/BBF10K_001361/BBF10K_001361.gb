@@ -1,0 +1,39 @@
+LOCUS       BBF10K_001361            339 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplV
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 339)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..339
+                     /locus_tag="Mfl128"
+                     /gene="rplV"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L22"
+                     /note="binds specifically to 23S rRNA during the
+                     earlystages of 50S assembly; makes contact with all 6
+                     domainsof the 23S rRNA in the assembled 50S subunit and
+                     ribosome;mutations in this gene result in erythromycin
+                     resistance;located near peptidyl-transferase center"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053368.1"
+                     /EC_number=""
+                     /translation="MEAKAYLNMIRISPRKVRLVADTIRNKPVAAAIATLYNLDKRSA
+                     EPVLKLLNSAIANAVNNNGMDADKLFVKTIFVNEGPTLKRFRPRAHGRAYEILKRTSH
+                     VTIIVSDERI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897616"
+ORIGIN
+        1 ATGGAGGCCA AGGCGTATCT GAATATGATT CGTATCAGCC CGCGTAAAGT GCGTCTGGTT
+       61 GCAGACACCA TCCGTAACAA ACCGGTTGCG GCGGCGATTG CAACCCTGTA CAACTTGGAC
+      121 AAGCGCAGCG CCGAGCCGGT TCTGAAGCTC CTTAATTCCG CTATTGCGAA TGCGGTGAAC
+      181 AACAACGGTA TGGATGCAGA CAAGCTGTTT GTCAAAACCA TTTTCGTGAA TGAAGGCCCG
+      241 ACGTTGAAGC GCTTTCGCCC ACGTGCTCAC GGTCGCGCGT ACGAGATCTT GAAGCGTACT
+      301 TCCCACGTGA CCATCATTGT GTCCGATGAG CGTATTTGA
+//

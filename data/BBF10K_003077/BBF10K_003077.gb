@@ -1,0 +1,36 @@
+LOCUS       BBF10K_003077            411 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN649
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 411)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..411
+                     /locus_tag="MPN649"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110338.1"
+                     /EC_number=""
+                     /translation="MKISLSTSLFSIEQKVEYFNLNYQSLSDFSVVAKLNYTFTWYGN
+                     DFSIGFAPKKGEKLYFDLFFTFKASPNHPFAAENFKPDSEAIDFYVSFSWRLEGKDEV
+                     SKKLFELSVFGRARAFQIDDYKINLFSYLVYVIR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877024"
+ORIGIN
+        1 ATGAAGATCT CGTTGTCTAC CAGCTTGTTC TCTATTGAAC AGAAAGTCGA GTATTTCAAC
+       61 TTGAACTACC AGAGCCTGAG CGATTTCTCT GTCGTTGCAA AACTGAATTA CACGTTCACG
+      121 TGGTACGGTA ACGATTTCAG CATCGGTTTT GCCCCGAAAA AAGGCGAGAA GCTGTATTTT
+      181 GATCTGTTCT TTACCTTTAA AGCCAGCCCG AACCACCCGT TCGCGGCCGA AAACTTTAAA
+      241 CCGGATTCCG AGGCCATTGA TTTTTACGTT TCTTTTAGCT GGCGCCTGGA GGGTAAGGAT
+      301 GAAGTTTCTA AAAAGCTGTT TGAACTGTCT GTCTTTGGTC GCGCGCGTGC ATTCCAGATC
+      361 GACGACTATA AGATTAATCT GTTCAGCTAC CTGGTGTACG TCATCCGCTG A
+//

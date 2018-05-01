@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002357            402 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  atpC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 402)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..402
+                     /locus_tag="MG_RS02420"
+                     /gene="atpC"
+                     /gene_synonyms=""
+                     /product="ATP synthase epsilon chain"
+                     /note=""
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869467.1"
+                     /EC_number="3.6.3.14"
+                     /translation="MKLLRFLVLSPSGIKLDKTIISAQVKTTEGYIGLNFNRAPLIAA
+                     IQSHLCKIIFADQTKREAIIGAGLMLIKKTEAKIFTENFVFADEVDINETLKRKTELE
+                     RKIHHIKDAKLNVKIEQNLMFELLKLSSKKK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAACTGC TGCGTTTCCT GGTGCTGAGC CCGTCCGGCA TTAAGCTGGA CAAAACGATC
+       61 ATTAGCGCAC AGGTTAAAAC GACGGAGGGT TACATTGGTT TGAATTTTAA CCGTGCCCCG
+      121 CTGATCGCCG CTATCCAGAG CCACCTGTGT AAAATTATCT TCGCCGATCA GACGAAGCGC
+      181 GAGGCGATTA TCGGTGCGGG TCTGATGTTG ATTAAGAAAA CTGAGGCAAA AATTTTTACT
+      241 GAGAACTTCG TCTTTGCCGA TGAGGTCGAC ATCAACGAAA CCTTAAAGCG TAAGACTGAG
+      301 TTGGAACGCA AAATCCACCA TATCAAGGAC GCGAAACTGA ACGTCAAAAT CGAGCAAAAC
+      361 CTGATGTTTG AGCTGCTGAA ACTGAGCTCC AAGAAAAAGT GA
+//

@@ -1,0 +1,43 @@
+LOCUS       BBF10K_003032            624 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  atpF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 624)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..624
+                     /locus_tag="MPN602"
+                     /gene="atpF"
+                     /gene_synonyms=""
+                     /product="ATP synthase subunit B"
+                     /note="Produces ATP from ADP in the presence of a
+                     protongradient across the membrane. Subunit B is part of
+                     themembrane proton channel."
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110291.1"
+                     /EC_number="3.6.3.14"
+                     /translation="MKLRATFVFKTTLVALSFALFALFLVSCTENVKEIKSESVINEL
+                     FPNLWVFLAHLLAFVILLFLLLFLFWKPTQKFLNQRKALLEEQVNQANSLEQQAQALL
+                     QQANQRHENSLVVAKEIVDQANYEALQLKSEIEKKANRQANLMIFQARQEIEKEKRLI
+                     QEQSLKESVELAMLAAKELIIKKVDVKADKAFIEEFIRELEAEDDHD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877080"
+ORIGIN
+        1 ATGAAGCTGC GCGCAACGTT TGTGTTCAAG ACCACCCTGG TCGCGCTGTC CTTTGCGTTG
+       61 TTTGCGCTGT TCCTGGTGTC CTGTACCGAA AACGTGAAGG AGATTAAGAG CGAATCCGTG
+      121 ATCAATGAGC TGTTTCCGAA TCTGTGGGTG TTCCTGGCTC ACCTGTTGGC GTTTGTTATC
+      181 CTGTTGTTTC TGCTGCTGTT TCTGTTTTGG AAGCCGACTC AGAAGTTCCT GAACCAACGT
+      241 AAAGCGTTGC TGGAGGAACA GGTCAACCAA GCCAACAGCC TGGAGCAGCA AGCCCAAGCA
+      301 CTGCTGCAGC AGGCCAACCA GCGTCACGAG AACAGCCTGG TGGTGGCAAA GGAGATCGTC
+      361 GATCAGGCGA ACTACGAAGC GTTGCAATTA AAGAGCGAAA TTGAGAAAAA AGCCAATCGC
+      421 CAAGCAAACT TGATGATTTT TCAAGCGCGT CAGGAGATTG AGAAGGAAAA ACGTCTGATT
+      481 CAAGAGCAAA GCCTGAAAGA GAGCGTGGAG TTGGCTATGC TGGCAGCTAA GGAGCTGATC
+      541 ATTAAAAAAG TGGACGTGAA GGCAGACAAA GCGTTCATCG AGGAATTCAT CCGCGAACTG
+      601 GAGGCCGAAG ATGACCATGA TTGA
+//

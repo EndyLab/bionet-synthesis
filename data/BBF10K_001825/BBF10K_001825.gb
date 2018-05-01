@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001825            225 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl593
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 225)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..225
+                     /locus_tag="Mfl593"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="acyl carrier protein I"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053835.1"
+                     /EC_number=""
+                     /translation="MNIHNEIIKELKSKGAKGNLTAETQFSSIGLDSLDLMDMITVLE
+                     DRLSIFVPDDKLLEIKTIKDLENVIAELTK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897584"
+ORIGIN
+        1 ATGAATATTC ATAATGAAAT TATCAAAGAG CTGAAAAGCA AGGGTGCGAA GGGTAACCTG
+       61 ACTGCTGAAA CCCAGTTCAG CAGCATTGGC CTCGATTCCC TGGACCTGAT GGATATGATC
+      121 ACGGTGCTGG AGGACCGTCT GTCGATCTTC GTTCCGGACG ATAAACTGCT GGAAATTAAG
+      181 ACCATTAAAG ATTTGGAGAA TGTTATTGCG GAGCTGACCA AGTGA
+//

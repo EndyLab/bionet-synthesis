@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002636            417 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN214
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 417)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..417
+                     /locus_tag="MPN214"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109902.1"
+                     /EC_number=""
+                     /translation="MLGTQTTNSKPREYGGLIVSTIYIVLFFAILNLTVFFNKTNNIN
+                     LILKNSCVVSFVVVWLLVCLQGIVRLKTCDGARYEISKFNQYLKLGSIYAKPNISFDE
+                     YKAKSSSYRKQTRGFWWMNFSLYLLGSLISIVVSLL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877082"
+ORIGIN
+        1 ATGCTGGGCA CCCAAACGAC GAACTCCAAA CCGCGTGAAT ACGGTGGTCT GATCGTTAGC
+       61 ACCATTTATA TCGTTCTGTT CTTTGCTATC CTGAACCTGA CCGTTTTCTT TAATAAGACC
+      121 AATAATATTA ACCTGATTCT GAAAAACAGC TGTGTGGTCA GCTTCGTTGT CGTTTGGCTG
+      181 CTGGTGTGTT TACAAGGCAT TGTGCGTCTG AAAACGTGTG ATGGTGCACG TTACGAGATC
+      241 TCTAAATTCA ACCAGTATCT GAAGCTGGGC AGCATCTACG CGAAACCGAA CATTAGCTTT
+      301 GACGAGTACA AGGCCAAATC CAGCAGCTAC CGCAAACAAA CGCGTGGCTT CTGGTGGATG
+      361 AATTTCAGCT TGTATCTGCT GGGCAGCCTG ATTAGCATCG TCGTTAGCCT GCTGTGA
+//

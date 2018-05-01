@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002773            135 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN347a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 135)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..135
+                     /locus_tag="MPN347a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121721.1"
+                     /EC_number=""
+                     /translation="MEKKNKKNTATVPTKEQLDGMFKSLEKEENYDVFVQVIKALGKM
+                     "
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527881"
+ORIGIN
+        1 ATGGAAAAGA AAAACAAGAA GAATACTGCA ACTGTCCCGA CCAAAGAACA ACTGGATGGC
+       61 ATGTTTAAAA GCTTAGAAAA GGAGGAAAAC TACGATGTTT TCGTGCAAGT CATCAAGGCG
+      121 CTGGGCAAGA TGTGA
+//

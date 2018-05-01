@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002281            594 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02025
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 594)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..594
+                     /locus_tag="MG_RS02025"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="FMN-dependent NADH-azoreductase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885986.1"
+                     /EC_number=""
+                     /translation="MKKVIIVDASVTPSGSYTHLLLDRFLQTYKKQNSSVEFIDWNLN
+                     ELPVGKISYNTQNASNFFSFENSDYYIDALKTAYGIVILAPMTNFNYPASLKNFIDHV
+                     FVANKTFQDKYVTKGASKGLLTNLKVVVLASQGAPLGWYPWADHVSNLKGLFGFAGVT
+                     HFESVLIDDTKILYKDKNKQEVVDLFAHKVDQVANNF"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAGAAAG TCATTATCGT TGACGCGAGC GTTACCCCGT CGGGCAGCTA CACCCATCTG
+       61 CTGCTGGATC GTTTCCTGCA GACGTATAAA AAGCAGAATA GCAGCGTCGA GTTCATTGAT
+      121 TGGAACCTGA ACGAGCTGCC GGTGGGCAAA ATTAGCTATA ATACCCAAAA CGCATCCAAC
+      181 TTTTTCAGCT TTGAAAATAG CGACTACTAT ATCGATGCAC TGAAAACCGC ATACGGCATT
+      241 GTTATCCTGG CGCCGATGAC CAACTTTAAT TATCCGGCCT CCCTGAAGAA TTTCATCGAC
+      301 CACGTCTTTG TGGCCAATAA GACGTTCCAG GACAAATACG TCACCAAAGG CGCGTCCAAA
+      361 GGCCTGCTTA CCAATTTAAA GGTGGTGGTG CTGGCGAGCC AAGGTGCGCC ATTGGGCTGG
+      421 TATCCGTGGG CGGATCATGT CAGCAATCTG AAGGGTCTGT TCGGCTTTGC GGGTGTTACC
+      481 CACTTTGAGA GCGTGCTGAT CGATGATACG AAAATCCTGT ACAAAGATAA AAATAAGCAA
+      541 GAGGTGGTCG ATCTGTTTGC TCATAAGGTC GACCAAGTGG CGAACAATTT TTGA
+//

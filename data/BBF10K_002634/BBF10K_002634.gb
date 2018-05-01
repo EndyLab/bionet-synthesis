@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002634            408 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN212
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 408)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..408
+                     /locus_tag="MPN212"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109900.1"
+                     /EC_number=""
+                     /translation="MRKLIKLNVIVFVLLYLGELFASLSFKLISCLKTRNQYSLNGYY
+                     ALFVFVNIIQKMANSFQKLASSVVLFETEINEFLVLFTDTKNKREESEPVRQVSTTQE
+                     YHQVTLDQQHYFNHKLSDYFRLFKDKTFFFEII"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877072"
+ORIGIN
+        1 ATGCGTAAGT TAATTAAACT GAACGTGATT GTGTTCGTCT TGCTGTATCT GGGCGAGCTG
+       61 TTTGCGAGCC TCAGCTTTAA ACTGATTTCC TGCCTCAAGA CCCGTAACCA ATATAGCCTG
+      121 AACGGCTATT ATGCACTGTT CGTTTTTGTC AACATCATCC AGAAAATGGC GAACTCCTTT
+      181 CAGAAACTGG CGAGCTCTGT GGTCCTGTTC GAAACGGAGA TCAACGAGTT TCTGGTGCTG
+      241 TTTACCGACA CGAAGAACAA GCGTGAAGAA TCTGAGCCGG TGCGTCAAGT GAGCACGACC
+      301 CAAGAATATC ATCAGGTGAC CCTTGACCAG CAGCATTATT TCAACCATAA GTTGTCTGAT
+      361 TACTTCCGCT TGTTCAAAGA CAAAACCTTC TTTTTCGAGA TTATTTGA
+//

@@ -1,0 +1,35 @@
+LOCUS       BBF10K_003007            330 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN579
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 330)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..330
+                     /locus_tag="MPN579"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110268.1"
+                     /EC_number=""
+                     /translation="MENKEQNNTDQLQTGDLNKARKLHKCYLWLFVVSLIIWLGFISL
+                     FFLYYLPISLVIALVVIAFIFVLVFLGFLETWRKNINQEEEFLRLEGLLITSPTDTQS
+                     AIHKDNQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876800"
+ORIGIN
+        1 ATGGAGAACA AGGAACAAAA TAACACGGAT CAACTGCAGA CGGGTGATCT GAATAAAGCA
+       61 CGTAAGCTGC ACAAGTGTTA CCTGTGGCTG TTTGTCGTCA GCCTGATCAT CTGGCTGGGC
+      121 TTTATTAGCC TGTTCTTCCT GTATTATCTG CCGATTAGCT TGGTTATTGC GTTGGTCGTG
+      181 ATCGCGTTTA TTTTCGTTCT GGTCTTTCTG GGTTTCTTAG AAACCTGGCG TAAAAATATC
+      241 AATCAAGAGG AGGAGTTTCT GCGCCTGGAG GGCCTCCTGA TTACGAGCCC GACCGACACG
+      301 CAGTCCGCGA TCCATAAAGA CAACCAGTGA
+//

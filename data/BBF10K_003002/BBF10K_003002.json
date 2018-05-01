@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_003002",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "groES",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAAGATAACACCAATTCATGACAACATTTTGGTTTCACTAGTGGAATCAAACAAAGAAGAAGTGTCACAAAAAGGGATTATTACAGCACTAGCTAACCCTGATAAAAATGAAAGTGCCCACAAGGGAACTGTCGTTGCTTTAGGTGCAGGACCGGCATATGGTAAAAGCGAAAAACCGAAATATGCTTTTGGCATCGGTGACACGATCTACTTTAAGGAATACAGTGGTATTTCCTTTGAAGAGGAAGGTACCAAGTACAAGATTATTTCCTTGGAAGATGTCCTTGCTTTTGAAAAGCATGGTAATACAAAAACTACTACTGTAAAGAAAGGAGCTAAGAAAAAATAG",
+    "optimized_sequence": "ATGAAGATTACCCCGATCCATGACAATATTTTAGTCTCCCTGGTCGAGAGCAATAAGGAGGAGGTGTCTCAAAAAGGTATCATTACCGCTCTGGCCAACCCGGATAAGAATGAAAGCGCACACAAAGGTACGGTTGTTGCGCTGGGCGCGGGCCCGGCGTATGGTAAAAGCGAGAAACCGAAATATGCTTTTGGTATTGGTGATACGATCTACTTCAAGGAGTACAGCGGTATTTCCTTCGAGGAGGAAGGTACGAAGTACAAGATCATCAGCCTGGAGGACGTTCTGGCGTTCGAAAAGCACGGTAACACCAAAACCACCACCGTCAAGAAAGGCGCGAAAAAGAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_003002_link_BBF10K_002312": "GAAGACCAGGAGAAAGGGGCCGTCAATATCAGGGTCTCAAATGAAGATTACCCCGATCCATGACAATATTTTAGTCTCCCTGGTCGAGAGCAATAAGGAGGAGGTGTCTCAAAAAGGTATCATTACCGCTCTGGCCAACCCGGATAAGAATGAAAGCGCACACAAAGGTACGGTTGTTGCGCTGGGCGCGGGCCCGGCGTATGGTAAAAGCGAGAAACCGAAATATGCTTTTGGTATTGGTGATACGATCTACTTCAAGGAGTACAGCGGTATTTCCTTCGAGGAGGAAGGTACGAAGTACAAGATCATCAGCCTGGAGGACGTTCTGGCGTTCGAAAAGCACGGTAACACCAAAACCACCACCGTCAAGAAAGGCGCGAAAAAGAAGTGAAGAGCTTAGAGACCCGCTCACGGAGTGTACTAATCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAGGAACTATGGCATCGAGCGGTCTCGAATGAAGATTAAGAAGTGCTATATCATTGCAGTTATCAGCGCCTTCATCGGCTTTCTGTTTTACTTTCTGAGCTCCCTGATTGGTATTACCGACGTTAATAACGCGAAAACCGTGGCTACCGTGTTCTTTGTCCTGGCGACCCTGATTGTTGTGAATGCAATTGTTTTTTGGATTCTGTACCTGTTCAAAAAGAAAAACGTTGTGAAGTGAAGAGCTTGGAGACCCTATTCGGTCTGCTCGTTGTCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN574",
+    "gene": "groES",
+    "gene_synonyms": "",
+    "product": "co-chaperonin GroES",
+    "note": "10 kDa chaperonin; Cpn10; GroES; formshomoheptameric ring; binds to one or both ends of theGroEL double barrel in the presence of adenine nucleotidescapping it; folding of unfolded substrates initiates in aGroEL-substrate bound and capped by GroES; release of thefolded substrate is dependent on ATP binding andhydrolysis in the trans ring",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110263.1",
+    "EC_number": "",
+    "translation": "MKITPIHDNILVSLVESNKEEVSQKGIITALANPDKNESAHKGTVVALGAGPAYGKSEKPKYAFGIGDTIYFKEYSGISFEEEGTKYKIISLEDVLAFEKHGNTKTTTVKKGAKKK",
+    "references": [
+      "db_xref=\"GeneID:876761\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-2bf28b2d-a780-4a20-b3c6-c249174e529b"
+}

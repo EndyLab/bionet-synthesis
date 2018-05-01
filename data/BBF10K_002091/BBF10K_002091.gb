@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002091            543 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00925
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 543)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..543
+                     /locus_tag="MG_RS00925"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L5"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885847.1"
+                     /EC_number=""
+                     /translation="MNNLEKTYKTELVNQLQQQLGFSSIMQVPKLTKIVVNMGVGDAI
+                     RDNKFLESALNELHLITGQKPVATKAKNAISTYKLRAGQLIGCKVTLRNKKMWSFLEK
+                     LIYIALPRVRDFRGLSLRSFDGKGNYTIGIKEQIIFPEIVYDDIKRIRGFDITIVTST
+                     NKDSEALALLRALKMPFVKE"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAATAATC TGGAAAAGAC CTACAAAACG GAACTGGTTA ACCAACTGCA GCAACAGCTT
+       61 GGTTTCAGCA GCATTATGCA AGTTCCGAAA CTGACCAAAA TCGTGGTCAA CATGGGCGTT
+      121 GGCGACGCGA TCCGTGACAA TAAATTTTTG GAGAGCGCGC TGAATGAATT GCACCTGATC
+      181 ACGGGTCAGA AGCCTGTTGC AACCAAGGCG AAAAATGCCA TTAGCACGTA CAAACTGCGT
+      241 GCGGGTCAGC TGATTGGCTG CAAAGTGACT CTGCGTAACA AAAAGATGTG GTCGTTCTTG
+      301 GAGAAACTGA TTTATATTGC GCTGCCGCGT GTGCGTGACT TCCGTGGCCT GAGCCTGCGT
+      361 AGCTTCGACG GTAAAGGTAA CTACACCATT GGCATTAAAG AGCAAATTAT TTTTCCTGAA
+      421 ATCGTTTACG ACGATATCAA GCGTATTCGC GGCTTTGACA TTACCATTGT GACGAGCACG
+      481 AACAAGGACA GCGAAGCCCT GGCGCTGCTG CGCGCGCTGA AGATGCCATT TGTGAAGGAG
+      541 TGA
+//

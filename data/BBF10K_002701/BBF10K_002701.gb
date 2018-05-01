@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002701            435 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  hit1
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 435)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..435
+                     /locus_tag="MPN273"
+                     /gene="hit1"
+                     /gene_synonyms=""
+                     /product="hydrolase"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109961.1"
+                     /EC_number=""
+                     /translation="MVQKQSMANNNCIFCGIVEGNVKSFKVGENEHAFAFLDAFPVAD
+                     GHTLVIPKKHAVNYSSTDDESLKAVSLLAKEMALKLQQRLQPAGLNYVVNEGAKAGQE
+                     VFHYHMHVVPKYETGLGFCYNVRKTNNRSIEANWELLTKEVD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876967"
+ORIGIN
+        1 ATGGTTCAAA AGCAGAGCAT GGCGAACAAT AACTGCATCT TCTGCGGCAT CGTGGAGGGT
+       61 AACGTCAAGA GCTTCAAAGT CGGTGAGAAT GAGCATGCGT TCGCATTCCT GGATGCCTTT
+      121 CCGGTTGCGG ACGGTCATAC CCTGGTTATC CCGAAGAAAC ACGCAGTAAA CTACTCCTCC
+      181 ACCGACGATG AAAGCCTGAA AGCAGTCAGC CTGCTGGCGA AGGAAATGGC GTTAAAACTG
+      241 CAGCAACGCT TGCAACCGGC GGGCCTCAAC TACGTTGTGA ACGAGGGTGC AAAGGCGGGT
+      301 CAGGAAGTCT TTCATTACCA CATGCACGTG GTGCCGAAAT ACGAAACGGG TCTGGGTTTC
+      361 TGCTACAATG TGCGTAAGAC GAACAATCGT AGCATCGAAG CGAACTGGGA GCTGCTGACC
+      421 AAGGAGGTTG ATTGA
+//

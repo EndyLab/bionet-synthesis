@@ -1,0 +1,41 @@
+LOCUS       BBF10K_003031            537 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  atpH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 537)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..537
+                     /locus_tag="MPN601"
+                     /gene="atpH"
+                     /gene_synonyms=""
+                     /product="ATP synthase subunit delta"
+                     /note="Produces ATP from ADP in the presence of a
+                     protongradient across the membrane; the delta subunit is
+                     part ofthe catalytic core of the ATP synthase complex"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110290.1"
+                     /EC_number="3.6.3.14"
+                     /translation="MINAQAFGMALFQLSEEEKKVKKVYDQSHDFLKLARNFKDGSLA
+                     ALLNAYTLTKKEKLKLIDKLFKNHFCDLFVDFLKTIVLKGYFNLVEQALKYFFDCVEN
+                     EKHVQFIRIITAFELSAPQLKRIVAAMEKKLNSKIVYKTEIDKSLISGIRIESSAQLF
+                     EKNIRDQLSRLMEQFKGN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876990"
+ORIGIN
+        1 ATGATCAATG CACAGGCATT CGGTATGGCT CTGTTCCAGC TGAGCGAAGA GGAGAAAAAG
+       61 GTTAAGAAGG TCTACGATCA GAGCCATGAT TTTCTGAAAC TGGCACGCAA CTTTAAGGAT
+      121 GGCAGCCTGG CCGCTTTGCT GAATGCCTAC ACCCTGACGA AAAAAGAAAA GTTAAAGCTG
+      181 ATCGACAAAC TGTTTAAAAA CCATTTCTGC GACCTGTTTG TCGATTTCCT GAAAACCATC
+      241 GTTCTGAAGG GCTATTTTAA CCTGGTTGAG CAGGCGCTGA AGTACTTTTT TGACTGCGTA
+      301 GAAAACGAGA AGCACGTCCA GTTCATTCGC ATCATCACCG CGTTCGAGTT GTCCGCCCCG
+      361 CAGCTGAAGC GTATTGTCGC TGCTATGGAG AAAAAACTGA ACTCCAAGAT TGTCTATAAG
+      421 ACGGAAATCG ATAAGAGCCT GATTAGCGGT ATCCGTATCG AGAGCTCCGC CCAACTGTTC
+      481 GAGAAGAATA TTCGTGATCA ACTGAGCCGT CTGATGGAGC AATTCAAAGG TAACTGA
+//

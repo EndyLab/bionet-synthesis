@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001422            195 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 195)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..195
+                     /locus_tag="Mfl189"
+                     /gene="rpmI"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L35"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053430.1"
+                     /EC_number=""
+                     /translation="MPKMKSKKSLAKRVIAKKNGTLKRGKAYRSHRATGKTTKQKRHL
+                     EKATIVHVTDMKRIKGLLQK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897692"
+ORIGIN
+        1 ATGCCGAAGA TGAAGTCTAA AAAATCGCTG GCGAAACGCG TCATTGCTAA GAAAAACGGT
+       61 ACTCTGAAGC GCGGTAAAGC GTACCGTAGC CATCGTGCGA CCGGTAAAAC CACGAAACAA
+      121 AAACGTCACC TGGAAAAAGC AACTATTGTT CACGTTACGG ATATGAAACG TATTAAAGGC
+      181 CTGCTGCAGA AGTGA
+//

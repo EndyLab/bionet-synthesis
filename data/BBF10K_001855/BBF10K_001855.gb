@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001855            414 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 414)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..414
+                     /locus_tag="Mfl624"
+                     /gene="rpsL"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S12"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053865.1"
+                     /EC_number=""
+                     /translation="MPTINQLVKTNRKAKTWKTKAPALNRGVNSLKKKVTKVSAPQKR
+                     GVCTRVATMTPKKPNSALRKYARVRLTNGMEVNAYIPGEGHNLQEHSVVLIRGGRVKD
+                     LPGVRYHIIRGTLDTQAVNNRKQSRSLYGAKRPKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897737"
+ORIGIN
+        1 ATGCCGACCA TTAACCAACT GGTTAAGACG AACCGCAAGG CTAAGACCTG GAAAACCAAA
+       61 GCCCCGGCTC TGAATCGTGG CGTCAACAGC CTGAAAAAGA AAGTGACTAA AGTTAGCGCT
+      121 CCGCAGAAGC GTGGTGTGTG TACCCGTGTA GCGACCATGA CGCCGAAAAA GCCGAATAGC
+      181 GCCCTGCGCA AATACGCGCG CGTGCGCCTG ACGAATGGCA TGGAGGTTAA TGCGTACATC
+      241 CCGGGTGAGG GCCATAATCT GCAAGAGCAT AGCGTGGTTC TGATCCGTGG TGGCCGCGTT
+      301 AAAGACTTGC CGGGTGTCCG TTATCACATC ATCCGTGGTA CCCTGGATAC GCAAGCGGTG
+      361 AACAACCGCA AACAATCTCG CAGCCTGTAC GGCGCAAAGC GTCCGAAGAA GTGA
+//

@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002654            315 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsR
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 315)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..315
+                     /locus_tag="MPN230"
+                     /gene="rpsR"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S18"
+                     /note="binds as a heterodimer with protein S6 to
+                     thecentral domain of the 16S rRNA; helps stabilize
+                     theplatform of the 30S subunit"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109918.1"
+                     /EC_number=""
+                     /translation="MMNNEHDNFQKEVETTTETTFNREEGKRMVRPLFKRSKKYCRFC
+                     AIGQLRIDLIDDLEALKRFLSPYAKINPRRITGNCQMHQRHVAKALKRARYLALVPFV
+                     KD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877081"
+ORIGIN
+        1 ATGATGAACA ACGAGCATGA CAACTTCCAA AAGGAGGTGG AAACGACCAC GGAAACGACG
+       61 TTTAATCGTG AAGAAGGTAA ACGTATGGTC CGTCCGCTGT TTAAACGCAG CAAAAAATAT
+      121 TGCCGCTTCT GCGCAATTGG TCAATTGCGC ATCGATCTCA TTGACGATCT GGAGGCTCTG
+      181 AAACGCTTCC TGAGCCCGTA CGCGAAGATC AACCCGCGTC GCATTACGGG TAATTGCCAA
+      241 ATGCATCAAC GTCATGTTGC AAAAGCCCTG AAGCGTGCAC GCTACCTGGC CCTGGTGCCG
+      301 TTTGTGAAGG ATTGA
+//

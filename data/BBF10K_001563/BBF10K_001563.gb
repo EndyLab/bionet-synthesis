@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001563            207 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl330
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 207)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..207
+                     /locus_tag="Mfl330"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053571.1"
+                     /EC_number=""
+                     /translation="MENKTYDQLIIELKEETLKLSSSEISMEEAMKIFEENIKRIQLA
+                     KEKLTEYKGTINKVLAENKIEEFN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897671"
+ORIGIN
+        1 ATGGAGAATA AAACCTACGA TCAGCTGATT ATCGAGCTGA AAGAGGAAAC GCTGAAACTG
+       61 AGCTCTAGCG AAATCAGCAT GGAGGAGGCT ATGAAAATCT TCGAGGAGAA CATCAAGCGC
+      121 ATCCAACTGG CAAAAGAAAA GCTGACCGAG TACAAGGGTA CGATCAATAA AGTTTTAGCG
+      181 GAGAACAAGA TCGAAGAGTT CAACTGA
+//

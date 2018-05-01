@@ -1,0 +1,43 @@
+LOCUS       BBF10K_002585            639 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplD
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 639)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..639
+                     /locus_tag="MPN166"
+                     /gene="rplD"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L4"
+                     /note="L4 is important during the early stages of
+                     50Sassembly; it initially binds near the 5 end of the
+                     23SrRNA"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109854.1"
+                     /EC_number=""
+                     /translation="MAKLKLIKIDGSFETEPVKLSPGLIAKELKQQPVFDAVLVEQAS
+                     WRQGTHSILTKGEVRGGGKKPYKQKHTGKARQGSTRNPHFVGGGIVFGPKPNRNYSLK
+                     LNKKAHTAALHTVWSEKLASDNTHLVDQNLFNKTEGKTKVMMQFLKSAKLLDKNVLFV
+                     VNTLNTNLEQSTSNIKNVQVKHLDKVSVRDLMLANALLVEKEVLKALEGKFK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877182"
+ORIGIN
+        1 ATGGCCAAGC TGAAATTGAT CAAGATCGAC GGTAGCTTTG AAACCGAACC GGTGAAGCTG
+       61 AGCCCGGGTC TGATTGCCAA GGAGCTGAAA CAGCAGCCAG TGTTCGATGC AGTCCTGGTA
+      121 GAACAGGCAA GCTGGCGCCA GGGTACTCAC AGCATCCTGA CGAAAGGCGA AGTCCGTGGT
+      181 GGCGGCAAGA AACCGTATAA ACAGAAGCAC ACCGGTAAAG CTCGCCAAGG TTCCACCCGT
+      241 AATCCGCACT TTGTGGGCGG CGGTATTGTT TTCGGCCCAA AGCCGAATCG CAATTACAGC
+      301 TTGAAGCTGA ACAAGAAAGC GCACACCGCT GCCCTGCATA CCGTTTGGAG CGAGAAGCTG
+      361 GCGAGCGATA ACACCCATCT GGTCGACCAA AACTTATTCA ATAAGACCGA GGGTAAAACT
+      421 AAAGTCATGA TGCAATTCTT GAAAAGCGCG AAGCTGCTGG ACAAAAACGT GCTGTTCGTT
+      481 GTTAATACGC TGAATACGAA TCTGGAGCAG AGCACGAGCA ATATTAAAAA CGTCCAGGTC
+      541 AAGCATCTGG ATAAGGTCAG CGTCCGTGAC CTGATGCTGG CCAACGCCCT GCTGGTTGAG
+      601 AAAGAGGTTC TGAAGGCATT GGAGGGTAAA TTCAAGTGA
+//

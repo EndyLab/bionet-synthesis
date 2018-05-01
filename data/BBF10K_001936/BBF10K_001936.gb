@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001936            573 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00130
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 573)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..573
+                     /locus_tag="MG_RS00130"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="elongation factor P"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869294.1"
+                     /EC_number=""
+                     /translation="MAEMIEAKNLRNGQTIFGPNKEILLVLENTFNKTAMRQGIVKTK
+                     VKNLRTGAIVWLEFTGDKLEQVIIDKKKMNFLYKDGNNFVFMDQKDYSQIEINEKKLE
+                     WEKNFITEEIEVTVITYQDEILGVNLPDLVPIEVEFAEDAIQGNTANMARKKARLVTG
+                     YELDVPQFINTGDKIVIATVDGNYRERFNK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGCAGAAA TGATTGAGGC CAAAAATTTG AGAAACGGCC AAACGATTTT CGGTCCGAAC
+       61 AAAGAAATTC TGTTGGTGCT GGAAAATACC TTTAACAAAA CTGCAATGCG TCAGGGTATC
+      121 GTTAAGACGA AAGTGAAAAA TCTGCGTACC GGTGCAATTG TTTGGTTAGA GTTCACCGGT
+      181 GACAAGTTGG AACAGGTGAT CATTGACAAG AAAAAGATGA ATTTCCTGTA TAAGGACGGT
+      241 AATAACTTCG TGTTTATGGA TCAGAAGGAT TACAGCCAAA TCGAGATCAA TGAGAAAAAG
+      301 TTGGAATGGG AAAAGAACTT TATCACTGAA GAGATTGAGG TTACGGTGAT TACGTATCAG
+      361 GACGAGATTC TGGGTGTCAA CTTACCGGAC CTGGTTCCGA TTGAGGTTGA GTTCGCAGAG
+      421 GACGCGATCC AGGGCAACAC CGCGAACATG GCGCGTAAAA AGGCCCGCTT GGTGACCGGT
+      481 TACGAATTAG ACGTGCCGCA ATTCATTAAC ACCGGTGACA AAATCGTCAT TGCCACTGTT
+      541 GACGGTAACT ACCGTGAGCG TTTTAACAAG TGA
+//

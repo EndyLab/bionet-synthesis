@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002838            447 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN410
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 447)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..447
+                     /locus_tag="MPN410"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110098.1"
+                     /EC_number=""
+                     /translation="MKEKIPFYNEKEFNEMMKKTKKGTFSGWYIINPENNSVEFSGSF
+                     NRQFKLNKPIIPVNTEYVTRKEFNEYKDSNDQRLIKIETTLTAQGEQINKLTQTVEKQ
+                     GEQIRELQVEQKAQGEQIKAQGETLKLILQTLQKMSDRLDKIDPPK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877313"
+ORIGIN
+        1 ATGAAGGAGA AAATTCCGTT CTATAATGAA AAGGAGTTTA ACGAGATGAT GAAAAAGACC
+       61 AAGAAGGGTA CGTTCAGCGG CTGGTATATC ATTAATCCGG AGAATAACTC TGTTGAGTTC
+      121 AGCGGTAGCT TCAACCGTCA GTTCAAATTG AACAAACCGA TTATTCCGGT GAACACTGAG
+      181 TATGTTACCC GTAAGGAATT CAATGAATAC AAAGATAGCA ACGATCAACG CCTGATCAAG
+      241 ATTGAAACCA CCCTGACCGC GCAAGGTGAG CAGATCAATA AACTTACGCA GACCGTAGAG
+      301 AAACAAGGCG AGCAAATCCG CGAACTCCAG GTCGAGCAAA AAGCACAAGG CGAGCAGATC
+      361 AAAGCCCAAG GCGAAACGCT GAAATTGATT CTGCAGACGC TGCAGAAAAT GAGCGATCGT
+      421 CTGGACAAAA TTGACCCGCC GAAGTGA
+//

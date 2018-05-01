@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001912            333 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl682
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 333)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..333
+                     /locus_tag="Mfl682"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="ribonuclease P protein component"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053922.1"
+                     /EC_number=""
+                     /translation="MKNKKIIKKNFEFQEIISKQEFHRNSAFVIYYSKNDKGYFRYGI
+                     SVGKKLGNAVTRNKIKRQIRMMIQDQIKILPEFSYDIVIIARNRMMQNSFDQNQKELN
+                     KLVVRFLK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897775"
+ORIGIN
+        1 ATGAAAAACA AGAAAATTAT CAAGAAGAAT TTTGAGTTTC AGGAAATCAT CTCCAAACAG
+       61 GAGTTTCACC GCAATAGCGC CTTTGTGATT TATTACAGCA AAAATGATAA GGGTTACTTC
+      121 CGTTATGGTA TCAGCGTCGG TAAGAAGCTG GGCAATGCAG TCACTCGTAA TAAGATTAAG
+      181 CGTCAAATTC GCATGATGAT TCAGGACCAG ATTAAAATTC TGCCGGAATT CAGCTACGAT
+      241 ATTGTGATCA TTGCGCGTAA TCGTATGATG CAGAATTCCT TCGACCAAAA CCAGAAAGAG
+      301 CTGAACAAAC TGGTCGTGCG CTTTCTGAAG TGA
+//

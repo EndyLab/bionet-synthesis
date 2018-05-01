@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003033            318 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  atpE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 318)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..318
+                     /locus_tag="MPN603"
+                     /gene="atpE"
+                     /gene_synonyms=""
+                     /product="ATP synthase subunit C"
+                     /note="Produces ATP from ADP in the presence of a
+                     protongradient across the membrane. Subunit C is part of
+                     themembrane proton channel F0"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110292.1"
+                     /EC_number="3.6.3.14"
+                     /translation="MEHVNEILATVGRILHETTTANTNVANKSTERLGAYIGAGITMV
+                     GGATVGLGQGYIFGKAVEAVARNPEVEKQVFKLIFIGSAISESSSIYSLLIAFILIFV
+                     SGA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876820"
+ORIGIN
+        1 ATGGAGCACG TGAACGAAAT CTTAGCGACC GTTGGTCGCA TCCTGCACGA AACCACCACG
+       61 GCCAACACCA ACGTGGCAAA CAAAAGCACG GAACGCCTGG GCGCATACAT CGGCGCGGGT
+      121 ATTACGATGG TTGGTGGTGC GACGGTTGGT CTTGGTCAAG GTTACATCTT CGGCAAGGCT
+      181 GTCGAGGCGG TGGCACGCAA TCCGGAGGTT GAAAAACAGG TGTTTAAGCT GATTTTTATT
+      241 GGCAGCGCCA TCTCGGAGAG CAGCAGCATC TACAGCCTGC TGATTGCATT CATTCTGATT
+      301 TTTGTCAGCG GCGCCTGA
+//

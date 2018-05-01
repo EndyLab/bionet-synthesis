@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002147            345 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01205
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 345)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..345
+                     /locus_tag="MG_RS01205"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="holo-ACP synthase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885751.1"
+                     /EC_number=""
+                     /translation="MVVGIGIDVVQLKRFLTLVETSDCFAKRLLTSNELNSYWKLNNN
+                     QRANFLAVHWTLKEAIYKATSHIKPLFTKLEIYKLNNQYRCEFIQNINLLLSVSYTNC
+                     HVSAICLAQQNG"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGTTGTGG GCATCGGTAT CGACGTGGTC CAGCTCAAAC GCTTCTTGAC GCTGGTCGAA
+       61 ACGAGCGATT GTTTTGCAAA GCGTTTACTG ACCTCGAACG AGCTGAACAG CTACTGGAAG
+      121 CTGAATAACA ATCAGCGTGC GAATTTCCTG GCAGTTCATT GGACCTTGAA GGAGGCCATC
+      181 TACAAGGCGA CCTCCCATAT TAAACCGCTG TTTACCAAGC TGGAAATTTA TAAACTGAAC
+      241 AACCAGTATC GTTGCGAATT CATTCAAAAC ATTAATCTGT TACTGAGCGT TTCCTATACC
+      301 AACTGCCACG TCAGCGCTAT TTGTCTGGCA CAGCAGAACG GCTGA
+//

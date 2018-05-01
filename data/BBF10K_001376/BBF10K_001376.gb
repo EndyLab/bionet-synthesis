@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001376            408 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl143
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 408)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..408
+                     /locus_tag="Mfl143"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="cytidine deaminase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053383.1"
+                     /EC_number=""
+                     /translation="MTEKQNVFKELLKLKDNSYSPYSNFKVACLIYLNNNEIIKGVNV
+                     ENAAYPATICAERTALSQVYSLGYKKEDIKSLELYTDSESLGSPCGVCRQVISELVNW
+                     TTPISIYNKNGFQLETNINELLPHAFEPAQLIK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897952"
+ORIGIN
+        1 ATGACCGAGA AACAAAATGT GTTCAAAGAA TTACTTAAAC TGAAGGATAA TAGCTATTCC
+       61 CCGTACAGCA ATTTCAAAGT GGCCTGCCTG ATTTATCTGA ATAACAACGA GATCATTAAA
+      121 GGTGTCAATG TCGAAAACGC GGCATATCCG GCGACCATCT GCGCAGAACG TACCGCACTG
+      181 TCCCAGGTTT ACAGCCTGGG TTATAAGAAG GAGGACATTA AATCACTGGA GCTGTACACG
+      241 GACAGCGAGT CTCTGGGCTC CCCTTGCGGT GTTTGTCGCC AAGTTATCAG CGAACTGGTT
+      301 AACTGGACCA CTCCGATCAG CATTTATAAC AAGAATGGTT TCCAGTTGGA AACGAACATC
+      361 AACGAGCTGC TGCCGCACGC CTTCGAGCCG GCGCAACTGA TCAAGTGA
+//

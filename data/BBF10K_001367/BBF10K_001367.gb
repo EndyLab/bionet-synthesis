@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001367            330 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplX
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 330)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..330
+                     /locus_tag="Mfl134"
+                     /gene="rplX"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L24"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053374.1"
+                     /EC_number=""
+                     /translation="MSKSKILVGDVVKVIAGSHKGELGPITWISKDKKWVSVQGINSL
+                     KHVKPSQTDSEGGIKEVPSKINLSNVALQDPKNKDGISKVGYQIEDGKKVRIAKKSNS
+                     PLKKASK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897678"
+ORIGIN
+        1 ATGAGCAAGA GCAAGATCCT GGTTGGCGAC GTCGTAAAAG TGATCGCGGG TAGCCACAAA
+       61 GGTGAGTTGG GCCCGATTAC CTGGATCTCT AAAGACAAGA AATGGGTGTC CGTCCAAGGT
+      121 ATCAACTCAC TGAAGCATGT GAAGCCGTCC CAGACCGATA GCGAGGGCGG TATTAAGGAG
+      181 GTCCCGAGCA AGATCAACCT GAGCAACGTC GCGCTGCAGG ACCCTAAAAA TAAAGATGGT
+      241 ATTAGCAAAG TAGGTTATCA GATTGAAGAT GGCAAGAAAG TCCGTATTGC GAAAAAGTCG
+      301 AATAGCCCGT TGAAAAAAGC TAGCAAGTGA
+//

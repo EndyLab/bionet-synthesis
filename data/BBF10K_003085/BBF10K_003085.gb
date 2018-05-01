@@ -1,0 +1,29 @@
+LOCUS       BBF10K_003085             84 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN655a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 84)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..84
+                     /locus_tag="MPN655a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121741.1"
+                     /EC_number=""
+                     /translation="MVTIADNVCLNNKKQTHLHLPKGLLPF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527867"
+ORIGIN
+        1 ATGGTTACCA TTGCCGATAA TGTTTGTCTG AATAACAAAA AGCAAACGCA TCTCCACTTG
+       61 CCGAAGGGCC TGCTGCCGTT TTGA
+//

@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002450            441 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpoE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 441)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..441
+                     /locus_tag="MPN024"
+                     /gene="rpoE"
+                     /gene_synonyms=""
+                     /product="DNA-directed RNA polymerase subunit delta"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109712.1"
+                     /EC_number=""
+                     /translation="MTMQVEYLDLISQAKEIAETQFKAEPFSFDAIWKEVVKHFKISK
+                     QDEPNLISRFYQDFLEDPNFVYLGERNWKLRDFMKFDEWNKISQAMFVTKEIFEEGYE
+                     DLSNKKKENEEEVNDFIMGNDGDDNSTGDEIVQGLINDFRDDNQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876869"
+ORIGIN
+        1 ATGACCATGC AAGTCGAGTA CTTGGATCTG ATCTCTCAGG CGAAGGAGAT CGCCGAAACT
+       61 CAGTTCAAAG CGGAACCGTT TAGCTTCGAC GCGATTTGGA AGGAAGTGGT CAAGCACTTT
+      121 AAAATCTCCA AGCAGGATGA ACCGAACTTG ATTTCCCGTT TTTATCAGGA CTTCCTGGAG
+      181 GATCCGAACT TTGTGTACCT GGGCGAGCGT AATTGGAAAC TGCGTGACTT CATGAAATTT
+      241 GACGAGTGGA ACAAAATCAG CCAAGCCATG TTTGTCACCA AAGAAATCTT CGAAGAGGGT
+      301 TACGAAGATC TGAGCAATAA GAAGAAGGAG AACGAGGAGG AGGTTAACGA TTTCATCATG
+      361 GGTAATGACG GTGATGATAA CAGCACCGGT GATGAAATCG TCCAAGGTTT GATCAATGAT
+      421 TTCCGTGATG ATAATCAGTG A
+//

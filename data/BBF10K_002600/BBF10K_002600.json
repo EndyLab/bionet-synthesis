@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002600",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rplF",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGTCAAAAATAGGAAACAGAACGATTACACTAGACCCCGCTAAGGTCAACCTTAACTTCCAGAAGGACCACATTGCCGTTAAGGGTCCTTTGGGTCAAATTGAGCTCAAACTACCCCCTAACTTACCGCTCAAGTTTGAACTGAAGGATAATAACCTCCAAATTACGCGGAACAACGAGTTAAAGCAATCCAAGATCTTCCATGGTACTTACAACGCGTTAATTACCAACGCCATTATTGGGGTTACTCAAGGCTTTGAAAAGAAGCTGCGCTTAGTCGGTGTGGGTTACCGTGCTAACGTGGAAGGGGAAACGCTCAACCTCCAGTTGGGTTACTCCCATCCCATTAAGGAAAAGATTCCCAAAGGCTTAACAGTTAAAGTAGAAAAGAACACCGAGATTACCATTTCGGGAATTAGTAAGGAGTTAGTGGGTCAGTTTGCCACTGAGGTGCGCAAGTGACGCAAACCCGAACCGTATAAGGGTAAGGGAGTGTTGTACTTTGATGAAGTGATTGTCCGTAAAGCTGGTAAAACCGCGGAGGGTAAAAAATAG",
+    "optimized_sequence": "ATGAGCAAAATTGGTAATCGTACCATTACGCTGGACCCGGCGAAAGTGAACCTGAATTTCCAAAAAGATCATATCGCGGTCAAAGGTCCGCTGGGCCAAATCGAATTGAAGCTGCCGCCAAATCTGCCGTTAAAATTCGAACTGAAAGATAACAATCTGCAAATTACCCGCAACAATGAATTGAAGCAATCTAAGATTTTCCACGGCACCTATAACGCCTTGATCACGAACGCGATTATCGGTGTGACCCAGGGTTTTGAGAAAAAACTGCGTCTGGTGGGTGTTGGTTACCGTGCAAACGTTGAGGGTGAAACGCTGAATTTGCAATTAGGTTATAGCCACCCGATTAAGGAGAAGATCCCGAAAGGTCTGACCGTCAAGGTTGAGAAAAACACCGAAATCACCATTAGCGGCATCAGCAAAGAGCTGGTGGGCCAATTCGCGACGGAGGTCCGCAAATGGCGCAAGCCGGAGCCGTATAAGGGTAAAGGCGTCCTGTACTTTGACGAAGTGATTGTGCGTAAAGCTGGTAAGACCGCGGAAGGTAAGAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_002600_1": "GAAGACCAGGAGAATGCGTCATTTTACACGGCGGTCTCAAATGAGCAAAATTGGTAATCGTACCATTACGCTGGACCCGGCGAAAGTGAACCTGAATTTCCAAAAAGATCATATCGCGGTCAAAGGTCCGCTGGGCCAAATCGAATTGAAGCTGCCGCCAAATCTGCCGTTAAAATTCGAACTGAAAGATAACAATCTGCAAATTACCCGCAACAATGAATTGAAGCAATCTAAGATTTTCCACGGCACCTATAACGCCTTGATCACGAACGCGATTATCGGTGTGACCCAGGGTTTTGAGAAAAAACTGCGTCTGGTGGGTGTTGGTTACCGTGCAAACGTTGAGGGTGAAACGCTGAATTTGCAATTAGGTTATAGCCACCCGATTAAGGAGAAGATCCCGAAAGGTCTGACCGTCAAGGTTGAGAAAAACACCGAAATCACCATTAGCGGCATCAGCAAAGAGCTGGTGGGCCAATTCGCGACGGAGGTCCGCAAATGGCGCAAGCCGGAGCCGTATAAGGGTAAAGGCGTCCTGTACTTTGACGAAGTGATTGTGCGTAAAGCTGGTAAGACCGCGGAAGGTAAGAAGTGAAGAGCTTAGAGACCGTGTTCTATGTCCCCATCGTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN180",
+    "gene": "rplF",
+    "gene_synonyms": "",
+    "product": "50S ribosomal protein L6",
+    "note": "ribosomal protein L6 appears to have arisen as aresult of an ancient gene duplication as based onstructural comparison of the Bacillus stearothermophilusprotein; RNA-binding appears to be in the C-terminaldomain; mutations in the L6 gene confer resistance toaminoglycoside antibiotics such as gentamicin and theseoccur in truncations of the C-terminal domain; it has beenlocalized to a region between the base of the L7/L12 stalkand the central protuberance",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_109868.1",
+    "EC_number": "",
+    "translation": "MSKIGNRTITLDPAKVNLNFQKDHIAVKGPLGQIELKLPPNLPLKFELKDNNLQITRNNELKQSKIFHGTYNALITNAIIGVTQGFEKKLRLVGVGYRANVEGETLNLQLGYSHPIKEKIPKGLTVKVEKNTEITISGISKELVGQFATEVRKWRKPEPYKGKGVLYFDEVIVRKAGKTAEGKK",
+    "references": [
+      "db_xref=\"GeneID:876780\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-988f26a0-e3a0-4e82-83ff-37e5cab9de04"
+}

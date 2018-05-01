@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001335            471 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  greA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 471)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..471
+                     /locus_tag="Mfl102"
+                     /gene="greA"
+                     /gene_synonyms=""
+                     /product="transcription elongation factor GreA"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053342.1"
+                     /EC_number=""
+                     /translation="MAKEIILTQEGIEELKHELKHLLEVVRPQVIEELVEARNQGDLS
+                     ENADYDAARNRQAEVEARIKELETMISKAKLIEDSSTTDGAIKIGSKVKFIMLNTKQT
+                     REVKIVGAVEADPFKGLISNESPIAKAILGKKVGESVEVKDINAPYSIEIKEVN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897868"
+ORIGIN
+        1 ATGGCGAAAG AGATCATCTT GACCCAAGAA GGTATCGAAG AGTTGAAGCA CGAGCTGAAA
+       61 CATCTGCTGG AGGTGGTGCG CCCTCAAGTT ATTGAGGAGC TGGTCGAGGC ACGTAACCAA
+      121 GGTGATTTGA GCGAGAATGC AGACTATGAT GCCGCCCGTA ACCGCCAAGC GGAGGTTGAG
+      181 GCACGCATTA AGGAGCTGGA AACGATGATT AGCAAAGCCA AGCTGATTGA GGACAGCAGC
+      241 ACTACGGACG GCGCGATTAA GATCGGTTCG AAAGTCAAGT TCATTATGCT GAATACCAAA
+      301 CAAACGAGAG AGGTTAAGAT CGTCGGCGCT GTTGAAGCAG ACCCGTTCAA AGGTCTGATT
+      361 TCCAATGAAA GCCCTATCGC GAAGGCAATC CTGGGTAAAA AGGTGGGTGA ATCTGTAGAG
+      421 GTTAAAGATA TCAATGCGCC TTATAGCATT GAGATTAAAG AAGTCAACTG A
+//

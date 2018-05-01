@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002599            429 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 429)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..429
+                     /locus_tag="MPN179"
+                     /gene="rpsH"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S8"
+                     /note="binds directly to 16S rRNA central domain where
+                     ithelps coordinate assembly of the platform of the
+                     30Ssubunit"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109867.1"
+                     /EC_number=""
+                     /translation="MITTTKPIKAHFDPVADLLTKINNARKAKLMTVTTIASKLKIAI
+                     LEILVKEGYLANFQVLENKSKTKRIVTFNLKYTQRRIPSINGVKQISKPGLRIYRPFE
+                     KLPLVLNGLGIAIISTSDGVMTDKVARLKKIGGEILAYVW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876779"
+ORIGIN
+        1 ATGATTACCA CGACTAAGCC GATCAAAGCC CACTTTGATC CGGTTGCGGA CCTGTTGACC
+       61 AAGATTAATA ACGCGCGTAA AGCGAAGCTG ATGACTGTTA CCACCATTGC GTCAAAACTG
+      121 AAAATTGCGA TTTTGGAGAT CCTGGTCAAG GAGGGTTACC TGGCTAACTT CCAGGTGCTG
+      181 GAGAACAAAA GCAAAACGAA GCGTATCGTT ACGTTCAACC TGAAGTACAC CCAACGCCGC
+      241 ATCCCGAGCA TCAACGGTGT CAAGCAGATC AGCAAGCCTG GCTTGCGTAT TTATCGTCCT
+      301 TTCGAAAAGC TTCCTCTGGT TCTGAATGGT CTGGGCATTG CAATTATCAG CACCTCTGAT
+      361 GGTGTTATGA CTGATAAGGT CGCCCGTCTG AAGAAGATCG GCGGCGAAAT TCTGGCGTAC
+      421 GTTTGGTGA
+//
