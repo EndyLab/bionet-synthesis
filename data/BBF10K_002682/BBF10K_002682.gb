@@ -1,0 +1,29 @@
+LOCUS       BBF10K_002682            117 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN256a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 117)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..117
+                     /locus_tag="MPN256a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121714.1"
+                     /EC_number=""
+                     /translation="MRLLCINVIRSWCLGKLLQLHWFNVSVVKGTVSIFGSH"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527635"
+ORIGIN
+        1 ATGCGCCTCC TGTGCATCAA CGTTATTCGT AGCTGGTGCC TGGGCAAATT GCTGCAGCTG
+       61 CATTGGTTTA ACGTTTCGGT GGTGAAAGGC ACTGTTAGCA TTTTTGGCAG CCATTGA
+//

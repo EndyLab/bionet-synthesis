@@ -1,0 +1,34 @@
+LOCUS       BBF10K_001769            306 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl536
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 306)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..306
+                     /locus_tag="Mfl536"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="single strand binding protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053778.1"
+                     /EC_number=""
+                     /translation="MNLVNIIGQIEGDAQVTYTSKDGNAKLYKFVVRVPNLYKSKTGK
+                     NEDDLINIKAWSSAINDEFALHDQAVVGIEARIHSSVNKESSNVFNEIIANRIMYLN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898281"
+ORIGIN
+        1 ATGAACTTGG TGAACATCAT TGGTCAAATT GAGGGTGATG CGCAAGTCAC CTACACGTCT
+       61 AAAGACGGTA ACGCCAAATT GTACAAATTT GTTGTCCGTG TTCCGAACCT GTATAAATCG
+      121 AAAACTGGTA AGAATGAAGA TGACCTGATC AACATTAAAG CATGGAGCAG CGCTATTAAC
+      181 GACGAGTTCG CTTTACACGA TCAGGCGGTC GTGGGTATCG AAGCCCGTAT CCACAGCAGC
+      241 GTGAACAAAG AGAGCAGCAA CGTTTTCAAT GAAATTATTG CAAATCGCAT TATGTATCTG
+      301 AACTGA
+//

@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002740            426 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  yabB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 426)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..426
+                     /locus_tag="MPN314"
+                     /gene="yabB"
+                     /gene_synonyms=""
+                     /product="transcriptional regulator MraZ"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110002.1"
+                     /EC_number=""
+                     /translation="MLLGTFNITLDAKNRISLPAKLRAFFEGSIVINRGFENCLEVRK
+                     PQDFQKYFEQFNSFPSTQKDTRTLKRLIFANANFVDVDTAGRVLIPNNLINDAKLDKE
+                     IVLIGQFDHLEIWDKKLYEDYLANSESLETVAERMKDVK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877153"
+ORIGIN
+        1 ATGCTGCTGG GTACGTTCAA TATTACCCTG GATGCGAAGA ATCGCATCTC TCTGCCGGCG
+       61 AAACTGCGTG CGTTTTTCGA AGGTAGCATT GTTATCAACC GCGGCTTTGA AAATTGCCTG
+      121 GAGGTTCGTA AACCGCAGGA CTTCCAGAAA TATTTTGAGC AGTTCAATAG CTTCCCGTCC
+      181 ACGCAAAAAG ACACCCGTAC GCTGAAACGC CTGATCTTCG CAAATGCCAA TTTTGTTGAC
+      241 GTGGACACCG CGGGTCGTGT ACTGATTCCG AATAATCTCA TCAATGATGC AAAGCTGGAC
+      301 AAAGAGATCG TCCTGATTGG TCAATTCGAT CACTTGGAAA TCTGGGACAA GAAGTTATAT
+      361 GAGGACTATC TGGCCAATAG CGAGAGCTTG GAAACCGTGG CCGAGCGTAT GAAGGATGTC
+      421 AAGTGA
+//

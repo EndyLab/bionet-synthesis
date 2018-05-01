@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002351            333 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02390
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 333)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..333
+                     /locus_tag="MG_RS02390"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="co-chaperone GroES"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869464.1"
+                     /EC_number=""
+                     /translation="MNITPIHDNVLVSLVESNKEEVSKKGIITSLASNDKSDANANKG
+                     IVIALGAGPAYGKTEKPKYAFGVGDIIYFKEYSGISFENEGNKYKIIGFEDVLAFEKP
+                     ESGKQRKR"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAATATCA CCCCGATTCA CGACAATGTT CTGGTCAGCC TGGTTGAATC CAACAAAGAA
+       61 GAAGTCAGCA AAAAAGGTAT TATCACCTCG CTGGCGAGCA ATGATAAAAG CGACGCAAAC
+      121 GCCAACAAAG GTATTGTGAT TGCACTGGGT GCGGGTCCAG CGTATGGTAA AACGGAGAAG
+      181 CCGAAATATG CCTTTGGTGT GGGCGACATC ATCTATTTTA AGGAGTACTC AGGCATCAGC
+      241 TTCGAGAACG AGGGTAACAA GTACAAAATC ATCGGCTTCG AAGATGTGCT GGCTTTCGAG
+      301 AAGCCTGAGT CTGGCAAACA ACGCAAACGC TGA
+//

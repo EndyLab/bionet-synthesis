@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002653            501 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ssb
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 501)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..501
+                     /locus_tag="MPN229"
+                     /gene="ssb"
+                     /gene_synonyms=""
+                     /product="single-stranded DNA binding protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109917.1"
+                     /EC_number=""
+                     /translation="MNRVFLFGKLSFDPNKLQTRTNNIGASFSLACIDSSGFNDSKSY
+                     IRITAWGKVASFVLTLKPGDSVFVEGRLSTYKMNNRSDDPNSKATYALQVIADKVYRP
+                     DEENSLEQPVDKATVIDSPFLAAKTNATENELAQAFPISLDDEDDDINPILNNDSQLE
+                     EESDDE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877060"
+ORIGIN
+        1 ATGAATCGTG TGTTCCTGTT TGGTAAACTG TCTTTTGATC CAAACAAACT GCAAACCCGT
+       61 ACGAATAATA TTGGCGCGTC TTTTAGCTTG GCGTGCATCG ACAGCAGCGG TTTCAACGAC
+      121 AGCAAAAGCT ATATCCGTAT TACCGCTTGG GGCAAGGTTG CTAGCTTTGT GCTGACCCTG
+      181 AAGCCGGGTG ATAGCGTTTT TGTCGAGGGC CGCCTGAGCA CTTATAAGAT GAATAATCGT
+      241 TCCGATGACC CGAATAGCAA AGCCACGTAC GCCCTTCAGG TTATCGCGGA CAAAGTGTAC
+      301 CGTCCGGATG AAGAAAATTC CCTGGAGCAG CCAGTTGACA AAGCCACGGT AATTGATAGC
+      361 CCATTCCTGG CAGCGAAAAC CAACGCCACG GAGAACGAAC TGGCGCAGGC ATTCCCGATC
+      421 TCCTTAGACG ATGAGGATGA CGACATTAAT CCGATTCTGA ACAACGATAG CCAACTCGAG
+      481 GAAGAGTCTG ATGATGAGTG A
+//

@@ -1,0 +1,41 @@
+LOCUS       BBF10K_002468            576 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  tdk
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 576)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..576
+                     /locus_tag="MPN044"
+                     /gene="tdk"
+                     /gene_synonyms=""
+                     /product="thymidine kinase"
+                     /note="catalyzes the formation of thymidine
+                     5-phosphatefrom thymidine"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109732.1"
+                     /EC_number=""
+                     /translation="MSFSQVFHQSPRGWIEVICGPMFSGKTEELLRKIKRWKLAKIPV
+                     IIFKPKIDTRQQHLVKSRNGHSDEAIEINSPLEIYDYLTKDRFDVVAIDEAQFFSSEI
+                     VEVVKSLNDLGINVIVSGLDTDFRAEPFGSIPQLLAIADKICKLDAVCNVCGQLAQRT
+                     QRIVSKSNETVLIGDIEAYEPRCKLHQPSAG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877408"
+ORIGIN
+        1 ATGAGCTTTA GCCAGGTGTT CCATCAGAGC CCGCGCGGTT GGATCGAGGT GATTTGCGGC
+       61 CCGATGTTCA GCGGCAAAAC GGAGGAGCTG CTGCGCAAGA TTAAACGCTG GAAGCTGGCT
+      121 AAGATTCCGG TTATTATCTT CAAGCCGAAG ATCGATACCC GTCAACAACA CCTGGTTAAA
+      181 AGCCGCAATG GTCATAGCGA CGAGGCAATC GAAATCAATA GCCCGCTGGA GATCTACGAT
+      241 TATCTGACCA AGGACCGTTT CGACGTTGTG GCGATCGATG AGGCGCAGTT TTTCAGCAGC
+      301 GAAATTGTCG AAGTCGTGAA AAGCCTGAAT GATCTGGGTA TTAACGTGAT TGTTTCTGGT
+      361 CTGGACACGG ACTTTCGTGC TGAGCCGTTC GGTAGCATTC CGCAGCTGTT GGCAATCGCG
+      421 GACAAGATTT GTAAGCTGGA TGCCGTGTGT AATGTCTGTG GCCAACTGGC GCAACGTACC
+      481 CAACGTATCG TGTCTAAAAG CAACGAAACG GTGCTGATTG GCGACATTGA GGCGTACGAG
+      541 CCGCGTTGCA AGCTGCACCA ACCGAGCGCG GGCTGA
+//

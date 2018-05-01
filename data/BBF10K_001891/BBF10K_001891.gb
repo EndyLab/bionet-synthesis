@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001891            198 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl661
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 198)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..198
+                     /locus_tag="Mfl661"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053901.1"
+                     /EC_number=""
+                     /translation="MHTELQIGDLVVFKKSHPSGTVKWELIRIGALYKFKSTDKFDLF
+                     IELRRSVLDKQIKQIIKKEGE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898066"
+ORIGIN
+        1 ATGCACACCG AACTGCAGAT CGGCGATCTG GTGGTGTTTA AAAAGAGCCA CCCGAGCGGC
+       61 ACCGTCAAAT GGGAGCTGAT TCGCATCGGT GCCCTGTACA AATTTAAATC TACGGATAAA
+      121 TTCGACCTGT TTATCGAGCT CAGACGTTCT GTGTTGGATA AACAGATTAA ACAGATCATT
+      181 AAAAAGGAGG GTGAGTGA
+//

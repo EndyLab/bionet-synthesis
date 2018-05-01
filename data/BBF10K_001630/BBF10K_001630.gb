@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001630            456 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl395
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 456)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..456
+                     /locus_tag="Mfl395"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="cell division protein MraZ"
+                     /note="MraZ; UPF0040; crystal structure shows similarityto
+                     AbrB"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053638.1"
+                     /EC_number=""
+                     /translation="MGESGMLFFGTYDHNLDDKQRLTIPSKMRNKILNSTVYVSKGFE
+                     GSLEMRTEEEFEKWSSQILNLSSFNKETRMITREIIANTHEVEIDKIGRIKIPNNLLK
+                     LANIEKSVYILGMGDRVEIWDQKSYDNYQNDNSDRMEEIAETIYQGLNK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898030"
+ORIGIN
+        1 ATGGGTGAAA GCGGTATGTT GTTTTTCGGT ACGTATGACC ATAATCTTGA CGATAAGCAG
+       61 CGCCTGACGA TCCCTAGCAA AATGCGTAAC AAGATCCTGA ACAGCACGGT CTACGTAAGC
+      121 AAAGGTTTCG AAGGTAGCCT GGAAATGCGC ACTGAGGAGG AATTCGAGAA ATGGTCGAGC
+      181 CAGATTCTGA ATTTGAGCTC CTTCAATAAG GAAACGCGTA TGATTACCCG CGAAATCATT
+      241 GCGAACACCC ACGAGGTCGA AATCGATAAG ATTGGTCGTA TTAAAATCCC GAATAACTTA
+      301 CTGAAATTGG CAAATATCGA AAAGAGCGTC TACATTCTGG GTATGGGTGA CCGTGTGGAA
+      361 ATCTGGGATC AAAAGAGCTA TGATAATTAT CAAAACGACA ATTCCGACCG TATGGAGGAG
+      421 ATCGCGGAAA CCATTTACCA AGGCCTGAAT AAGTGA
+//

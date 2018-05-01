@@ -1,0 +1,33 @@
+LOCUS       BBF10K_002479            267 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ptsH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 267)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..267
+                     /locus_tag="MPN053"
+                     /gene="ptsH"
+                     /gene_synonyms=""
+                     /product="phosphocarrier protein HPr"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109741.1"
+                     /EC_number=""
+                     /translation="MKKIQVVVKDPVGIHARPASIIAGEANKFKSELKLVSPSGVEGN
+                     IKSIINLMSLGIKQNDHITIKAEGTDEEEALNAIKAVLEKHQVI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876864"
+ORIGIN
+        1 ATGAAAAAGA TCCAGGTTGT TGTGAAAGAT CCGGTTGGCA TCCATGCGCG TCCGGCGAGC
+       61 ATTATCGCGG GCGAAGCTAA TAAGTTCAAA AGCGAGCTGA AATTGGTTAG CCCGAGCGGC
+      121 GTTGAGGGCA ATATCAAGAG CATCATCAAT CTGATGAGCC TGGGTATTAA GCAAAATGAT
+      181 CACATCACCA TCAAAGCGGA GGGTACTGAC GAGGAAGAAG CGCTGAATGC AATCAAGGCT
+      241 GTGCTGGAAA AACACCAGGT GATTTGA
+//

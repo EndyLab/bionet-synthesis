@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002003            570 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00465
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 570)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..570
+                     /locus_tag="MG_RS00465"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="peptidyl-tRNA hydrolase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885642.1"
+                     /EC_number=""
+                     /translation="MPTYKLIVGLGNLGKKYEKTRHNAGFMVLDRLASLFHLNFDKTN
+                     KLGDYLFIKEKAAILAKPATFMNNSGLFVKWLQDHFQIPLANIMIVHDEIAFDLGVIR
+                     LKMQGSANNHNGIKSVIRHLDTEQFNRLRFGIKSQNTSNILHEQVMSEFQNSELTKLE
+                     VAITKSVELLKRYIEGEELQRLMEYYHHG"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGCCGACCT ACAAATTAAT CGTGGGCCTG GGTAACCTCG GCAAGAAGTA TGAAAAGACC
+       61 CGTCACAACG CGGGTTTTAT GGTCCTGGAT CGTCTGGCTA GCCTGTTCCA TCTTAACTTC
+      121 GACAAAACTA ACAAGCTGGG TGATTACCTG TTTATTAAGG AAAAGGCGGC AATCTTGGCG
+      181 AAGCCGGCCA CCTTCATGAA CAACAGCGGC CTGTTTGTCA AATGGCTGCA AGACCACTTC
+      241 CAGATCCCGT TAGCGAATAT CATGATCGTC CACGATGAGA TTGCCTTTGA TCTGGGTGTA
+      301 ATTCGTCTGA AGATGCAGGG TAGCGCAAAC AACCACAATG GCATTAAGAG CGTAATTCGT
+      361 CATCTGGACA CCGAGCAATT TAATCGCCTG CGTTTCGGTA TCAAGAGCCA GAACACCAGC
+      421 AATATCCTGC ACGAACAGGT GATGAGCGAA TTTCAGAATA GCGAATTGAC GAAGCTGGAA
+      481 GTCGCGATCA CTAAAAGCGT CGAACTGCTG AAGCGTTATA TCGAAGGCGA GGAGCTGCAG
+      541 CGCCTGATGG AATACTATCA TCACGGCTGA
+//

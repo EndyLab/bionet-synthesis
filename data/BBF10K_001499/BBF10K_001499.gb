@@ -1,0 +1,55 @@
+LOCUS       BBF10K_001499            906 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  era
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 906)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..906
+                     /locus_tag="Mfl266"
+                     /gene="era"
+                     /gene_synonyms=""
+                     /product="GTP-binding protein Era"
+                     /note="Era; Escherichia coli Ras-like protein;
+                     Bex;Bacillus Era-complementing segment; essential protein
+                     inEscherichia coli that is involved in many
+                     cellularprocesses; GTPase; binds the cell membrane
+                     throughapparent C-terminal domain; mutants are arrested
+                     duringthe cell cycle; Streptococcus pneumoniae Era binds
+                     to RNAand Escherichia coli Era binds 16S rRNA and 30S
+                     ribosome"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053507.1"
+                     /EC_number=""
+                     /translation="MNKIKSGFISIVGRPNVGKSTLLNKIIGHKISIVTNKAQTTRNN
+                     IRGILTEKEYQLIFVDTPGIHTSKNQIDRFMNSSAMRSMKEVDVVVFMAPADETIGKN
+                     DLFILNELSKKNDIKKILVISKADVVSKEKLFLKATEWNTYEQIFDEIIITSSTENIN
+                     IDKLIETIVGFLPETGHYFYDEESITDQPNRFAIREIIRESVLLKAGQEVPHSVAILV
+                     DELEETEDEINIVASIIVERKSQKGIIIGHQGKKISDIKYKSRKQIRELFEKDVNLEL
+                     FVKVQENWRNSASLIKKMGYDKDKY"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898154"
+ORIGIN
+        1 ATGAATAAAA TCAAAAGCGG CTTCATTAGC ATTGTCGGTC GCCCGAATGT GGGTAAGAGC
+       61 ACTCTGCTGA ACAAAATTAT CGGCCATAAG ATTTCAATTG TCACGAACAA AGCTCAAACG
+      121 ACGCGTAACA ACATTCGTGG CATTCTGACC GAGAAAGAGT ACCAGCTGAT TTTTGTTGAC
+      181 ACGCCGGGTA TTCACACCAG CAAAAACCAG ATTGACCGTT TCATGAATAG CAGCGCAATG
+      241 CGCAGCATGA AAGAGGTGGA TGTGGTCGTT TTCATGGCTC CGGCGGACGA AACGATTGGT
+      301 AAGAACGATT TGTTCATCCT GAACGAGCTG AGCAAGAAGA ATGATATTAA GAAGATCCTG
+      361 GTTATCAGCA AAGCAGACGT GGTTTCGAAG GAAAAGCTGT TTCTGAAAGC TACGGAGTGG
+      421 AACACCTACG AACAAATCTT TGACGAGATC ATCATTACGA GCAGCACCGA AAACATCAAC
+      481 ATCGACAAAC TGATTGAAAC GATTGTCGGT TTTCTGCCAG AAACCGGCCA CTACTTTTAT
+      541 GATGAAGAAA GCATCACGGA CCAACCTAAT CGTTTCGCGA TCCGTGAGAT TATTCGCGAG
+      601 AGCGTTCTGT TGAAGGCAGG CCAGGAAGTC CCGCACAGCG TTGCAATCCT GGTGGACGAG
+      661 CTGGAGGAAA CGGAGGACGA AATCAACATC GTGGCTAGCA TTATCGTTGA GCGTAAAAGC
+      721 CAGAAAGGTA TCATTATCGG CCACCAAGGT AAGAAGATCA GCGATATTAA GTACAAGTCT
+      781 CGTAAACAGA TTCGTGAACT TTTCGAAAAG GATGTCAACC TGGAGTTGTT CGTAAAAGTC
+      841 CAGGAAAACT GGCGTAACAG CGCCAGCCTG ATCAAGAAAA TGGGCTACGA TAAGGATAAG
+      901 TACTGA
+//

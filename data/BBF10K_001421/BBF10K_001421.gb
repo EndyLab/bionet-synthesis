@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001421            543 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  infC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 543)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..543
+                     /locus_tag="Mfl188"
+                     /gene="infC"
+                     /gene_synonyms=""
+                     /product="translation initiation factor IF-3"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053429.1"
+                     /EC_number=""
+                     /translation="MDQRRNNSKPIKNQDPINAFIRAREVLIIGDNGEKLGPLKRNEA
+                     IQLAEEKGLDLMQVGQQPDGLAICKILDYGKFRYQQQKKNKEAKKNQVKVENKEIRLT
+                     VNIGQHDLVTKAKKAREFLEAGDRVKISLKFKGREIAYMDLGKETLDRFYKEIEDIAK
+                     IEKEAKLTSRFLDMYVVPKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898202"
+ORIGIN
+        1 ATGGACCAAC GTCGTAACAA TAGCAAACCG ATCAAGAACC AAGACCCAAT TAATGCATTT
+       61 ATCCGTGCGC GCGAAGTGTT AATTATCGGT GACAACGGTG AGAAACTGGG TCCGCTGAAA
+      121 CGCAATGAAG CCATCCAACT GGCGGAAGAG AAAGGTCTGG ATTTGATGCA AGTGGGTCAA
+      181 CAGCCGGACG GTCTGGCAAT TTGCAAGATT CTGGACTATG GTAAATTCCG TTATCAACAA
+      241 CAGAAGAAGA ATAAAGAGGC TAAAAAGAAC CAGGTGAAGG TGGAGAACAA GGAGATTCGC
+      301 CTGACGGTTA ACATTGGCCA GCACGATCTG GTCACCAAAG CCAAGAAGGC CCGCGAGTTT
+      361 CTGGAGGCCG GTGATAGAGT TAAAATTAGC CTGAAGTTCA AAGGCCGTGA AATCGCGTAC
+      421 ATGGACCTGG GTAAGGAAAC CCTGGATCGC TTCTACAAAG AAATTGAGGA TATCGCCAAA
+      481 ATTGAAAAAG AAGCAAAGCT GACCTCGCGC TTTCTGGACA TGTACGTGGT TCCAAAAAAG
+      541 TGA
+//

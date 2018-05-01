@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001932            438 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00110
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 438)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..438
+                     /locus_tag="MG_RS00110"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="DNA-directed RNA polymerase subunit delta"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885918.1"
+                     /EC_number=""
+                     /translation="MQLEYLNLISQAKVIAEKQFKANPFSFETIWKEVVKHFKISKQD
+                     EPSLIGRFYQDFLEDPNFVYLGDRKWKLRDFMKFDEWNKISQSMFVTKEIFEEGYEDL
+                     SNKKVEPEEGVGDFIMGNDGDDNETGSEIVQGLINDSFSEENQ"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGCAGCTGG AATACCTGAA TTTGATTAGC CAGGCAAAAG TCATTGCGGA GAAGCAGTTT
+       61 AAGGCAAATC CGTTCAGCTT CGAAACCATC TGGAAGGAGG TTGTGAAACA TTTTAAGATT
+      121 AGCAAGCAAG ACGAACCGAG CTTGATTGGC CGCTTCTACC AAGATTTCCT GGAAGATCCG
+      181 AATTTCGTGT ATCTGGGTGA CCGCAAGTGG AAGCTGCGTG ATTTTATGAA ATTCGATGAA
+      241 TGGAATAAAA TCTCGCAGAG CATGTTTGTC ACCAAGGAAA TCTTCGAAGA AGGCTATGAG
+      301 GACCTGAGCA ATAAAAAAGT TGAACCGGAA GAAGGCGTGG GCGACTTTAT CATGGGCAAC
+      361 GACGGTGATG ACAATGAAAC CGGCAGCGAA ATTGTGCAGG GCCTGATTAA CGACAGCTTC
+      421 AGCGAGGAGA ATCAGTGA
+//

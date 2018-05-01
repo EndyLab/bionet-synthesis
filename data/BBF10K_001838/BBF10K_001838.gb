@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001838            441 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl607
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 441)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..441
+                     /locus_tag="Mfl607"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="acyltransferase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053848.1"
+                     /EC_number=""
+                     /translation="MKIEFKKLSELTSYEAWEIFKSRSEVFVVEQKWVACEIDEQDLT
+                     ATHLIIRNDDNELVAYLRIYEKLDGTASFGRVLTPFKFRGLKMGKTLLQNAIDWINKE
+                     WPNKDIKISAQYYLLNFYKSFGFVECSEVYDDDGIDHIDMIIKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897622"
+ORIGIN
+        1 ATGAAGATCG AGTTCAAAAA GTTGAGCGAA CTGACCAGCT ACGAAGCATG GGAGATCTTT
+       61 AAGAGCCGCA GCGAAGTTTT TGTTGTCGAG CAGAAATGGG TGGCATGTGA GATCGACGAA
+      121 CAAGATTTGA CCGCCACCCA CCTGATCATT CGTAACGACG ACAACGAGCT GGTTGCATAT
+      181 CTGCGCATCT ATGAGAAATT GGATGGTACT GCGAGCTTTG GTCGTGTGCT GACCCCTTTC
+      241 AAATTTCGTG GTCTGAAAAT GGGCAAAACC CTGTTGCAGA ACGCGATTGA TTGGATTAAC
+      301 AAGGAATGGC CTAATAAAGA TATTAAAATT AGCGCACAAT ACTATCTGCT GAACTTTTAC
+      361 AAGAGCTTCG GTTTTGTGGA GTGCAGCGAA GTCTACGATG ACGATGGCAT CGACCACATC
+      421 GACATGATTA TTAAGAAGTG A
+//

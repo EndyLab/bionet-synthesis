@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002346            465 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02365
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 465)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..465
+                     /locus_tag="MG_RS02365"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="endoribonuclease YbeY"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885634.1"
+                     /EC_number=""
+                     /translation="MKSSFSINSSRLFKRFFGKNYQAGVELCFQIIKSSLNLSFDPEF
+                     ALLIVSCSKMKKLNKQFLKRRGCTDVISLCYNETETGFSLAIGEIFLCPKYIFKKAKE
+                     IGCNNWFLLTRCLIHGILHLFEFNHEESEAFESVTMFFQDAIHEEILSVWKF"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAAAGCA GCTTTAGCAT TAACAGCAGC CGCCTGTTCA AGCGTTTCTT TGGCAAAAAC
+       61 TATCAAGCCG GTGTCGAGCT GTGCTTCCAG ATCATCAAAT CGAGCCTGAA CCTGAGCTTC
+      121 GATCCGGAGT TTGCCTTGCT GATTGTCTCC TGCAGCAAAA TGAAAAAGCT GAATAAGCAA
+      181 TTCCTGAAGC GTCGCGGTTG CACCGACGTT ATCAGCCTGT GCTATAACGA AACCGAAACC
+      241 GGTTTCTCCT TGGCAATCGG TGAAATTTTT CTGTGCCCGA AGTATATCTT CAAAAAAGCG
+      301 AAAGAGATCG GTTGCAATAA CTGGTTTCTG TTGACGCGTT GCCTGATCCA CGGTATTCTG
+      361 CACCTGTTCG AGTTCAACCA CGAAGAAAGC GAAGCGTTCG AGAGCGTGAC CATGTTCTTT
+      421 CAGGATGCGA TCCATGAAGA GATTCTGAGC GTTTGGAAGT TTTGA
+//

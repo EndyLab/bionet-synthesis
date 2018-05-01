@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002171            315 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01375
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 315)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..315
+                     /locus_tag="MG_RS01375"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L27"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885771.1"
+                     /EC_number=""
+                     /translation="MSKNSYCYQINLQFFASKKGVGSTKNGRDSHSKRLGAKKADGQM
+                     IRVGQIIYRQRGTKIFAGQNVAMGSDNTLFALSDGIVRFQKFGSKQSKTRVNIIKHQL
+                     NA"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAGCAAAA ATTCCTATTG CTACCAAATT AATCTGCAGT TCTTCGCGAG CAAGAAGGGC
+       61 GTGGGTAGCA CGAAAAACGG TCGTGACAGC CACAGCAAAC GCCTGGGTGC GAAGAAGGCG
+      121 GATGGCCAAA TGATTCGCGT GGGTCAAATC ATCTACCGTC AACGCGGCAC CAAAATTTTT
+      181 GCGGGTCAAA ATGTCGCTAT GGGTAGCGAT AATACCCTGT TCGCCCTGTC TGATGGTATT
+      241 GTCCGCTTCC AGAAATTCGG CTCTAAACAG AGCAAAACGC GTGTTAACAT TATCAAGCAC
+      301 CAGCTGAACG CCTGA
+//

@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001530            555 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl297
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 555)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..555
+                     /locus_tag="Mfl297"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053538.1"
+                     /EC_number=""
+                     /translation="MKEIKNIIVDTNLMIDILTVREKPVISDYSKNQLLTFFKKGKNF
+                     KLIIAGKKMLNELTGEEYKGKKQNLLELLMLISATSEAIKIEIRNDQAIDELIYKFVL
+                     SDKWDGRKDDPNSVATRMPADPHMIYVSYYFDVKYIMTRDKDFAKKVNSKYLQYFPDK
+                     FFSPEVICKCYWEDKEFDINLLIK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898260"
+ORIGIN
+        1 ATGAAGGAAA TTAAGAACAT CATCGTCGAC ACCAATCTGA TGATCGATAT TTTGACCGTT
+       61 CGTGAGAAAC CAGTGATTTC TGACTATAGC AAAAATCAGC TGTTGACCTT CTTTAAAAAA
+      121 GGCAAGAATT TTAAACTGAT TATCGCCGGT AAGAAGATGC TGAACGAGCT GACCGGTGAA
+      181 GAGTACAAAG GCAAAAAGCA AAATCTGCTG GAGCTGCTGA TGCTGATTAG CGCCACGAGC
+      241 GAGGCTATTA AGATTGAGAT TCGTAACGAC CAAGCCATTG ACGAGCTGAT TTATAAGTTC
+      301 GTCCTGTCCG ATAAGTGGGA TGGTCGCAAA GACGACCCGA ACAGCGTGGC GACCCGTATG
+      361 CCGGCGGACC CGCACATGAT TTATGTGAGC TATTACTTCG ATGTTAAGTA CATCATGACC
+      421 CGCGATAAGG ACTTCGCCAA AAAGGTTAAT AGCAAGTACT TACAGTATTT CCCGGATAAA
+      481 TTCTTTAGCC CGGAAGTCAT TTGCAAGTGT TACTGGGAGG ACAAGGAGTT CGACATCAAC
+      541 CTCCTGATCA AGTGA
+//

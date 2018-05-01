@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002689            309 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  trx
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 309)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..309
+                     /locus_tag="MPN263"
+                     /gene="trx"
+                     /gene_synonyms=""
+                     /product="thioredoxin"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109951.1"
+                     /EC_number=""
+                     /translation="MVTEIKSLKQLGELFASNNKVIIDFWAEWCGPCKITGPEFAKAA
+                     SEVSTVAFAKVNVDEQTDIAAAYKITSLPTIVLFEKGQEKHRAIGFMPKAKIVQLVSQ
+                     "
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876921"
+ORIGIN
+        1 ATGGTGACCG AGATCAAAAG CCTGAAACAG CTGGGCGAAC TGTTTGCATC GAATAACAAG
+       61 GTGATTATCG ACTTCTGGGC GGAATGGTGT GGTCCGTGCA AAATCACCGG CCCGGAATTT
+      121 GCTAAGGCCG CGAGCGAGGT GAGCACGGTA GCCTTTGCGA AAGTGAACGT CGACGAGCAG
+      181 ACCGACATTG CAGCTGCTTA CAAAATCACC TCTCTGCCTA CCATCGTTTT GTTCGAGAAA
+      241 GGCCAGGAGA AACACCGTGC CATTGGTTTC ATGCCTAAGG CCAAAATCGT GCAACTGGTG
+      301 TCTCAGTGA
+//

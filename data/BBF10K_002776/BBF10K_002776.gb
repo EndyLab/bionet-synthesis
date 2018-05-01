@@ -1,0 +1,45 @@
+LOCUS       BBF10K_002776            720 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ygiH
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 720)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..720
+                     /locus_tag="MPN350"
+                     /gene="ygiH"
+                     /gene_synonyms=""
+                     /product="glycerol-3-phosphate acyltransferase"
+                     /note="involved in acylation of glycerol-3-phosphate
+                     toform 1-acyl-glycerol-3 phosphate for use in
+                     phospholipidbiosynthesis; functions with PlsX"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110038.1"
+                     /EC_number=""
+                     /translation="MNAASAIALLIVFSLVIGYLMGSVMFADVFGKILNKDVRKLGSK
+                     NPGATNSIRVFGLKIGFLVGLCDALKGFLAFVFSFLIFSFWLQQYLNVNQYQKVYYLT
+                     YLSCFAATIGHIFPLYFKFKGGKAIATTGGSLLAISLWWFVICLVLWLLVTLITKYVS
+                     LASLVTFFILAIIILVPWLDYLYFFKPNPINAISYQNDWYIILFFVLWYWPLTIAVFW
+                     LHRKNIHRLLNKTENKVTQLN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876931"
+ORIGIN
+        1 ATGAACGCCG CAAGCGCGAT CGCGCTGCTG ATCGTTTTCA GCCTGGTTAT TGGTTACCTG
+       61 ATGGGCAGCG TGATGTTCGC AGATGTTTTC GGTAAGATCT TGAACAAAGA TGTCCGCAAG
+      121 CTGGGCAGCA AAAATCCGGG TGCCACGAAC TCTATTCGTG TGTTTGGTCT GAAAATTGGT
+      181 TTCCTGGTTG GTCTGTGCGA CGCGCTGAAG GGTTTCCTGG CCTTTGTTTT CAGCTTTCTG
+      241 ATCTTTAGCT TCTGGCTGCA GCAGTACCTG AATGTGAATC AGTACCAAAA GGTGTACTAT
+      301 TTGACGTACC TGAGCTGTTT TGCCGCGACC ATTGGTCACA TCTTCCCTCT GTATTTTAAA
+      361 TTTAAAGGTG GTAAGGCAAT CGCAACCACG GGTGGTAGCC TGCTGGCGAT CAGCCTGTGG
+      421 TGGTTTGTTA TTTGTTTAGT ATTGTGGCTG CTGGTTACGC TGATTACTAA ATACGTTAGC
+      481 CTGGCGAGCC TGGTTACCTT CTTCATCTTG GCGATCATTA TTCTGGTGCC GTGGCTGGAT
+      541 TATCTGTATT TCTTTAAACC GAACCCGATT AACGCGATCA GCTACCAGAA CGATTGGTAT
+      601 ATCATTCTGT TCTTCGTTCT GTGGTATTGG CCGCTGACGA TTGCGGTATT CTGGCTGCAC
+      661 CGTAAGAATA TCCACCGCCT GTTGAACAAA ACGGAGAATA AAGTGACCCA ACTGAACTGA
+//

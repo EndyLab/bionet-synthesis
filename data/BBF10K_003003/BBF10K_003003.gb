@@ -1,0 +1,36 @@
+LOCUS       BBF10K_003003            387 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN575
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 387)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..387
+                     /locus_tag="MPN575"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110264.1"
+                     /EC_number=""
+                     /translation="MLQNLALSFPFITRFFQKQMLGSQNSSGKTPGFNEAEGITSNIF
+                     QIAGGISLLVILLLIIGFLSCLLGGIFLHKHKYAEVGSPAHAKTKNLFVAFFVVGSLL
+                     LLVAVVMLIAFGVLDASLPLPKENNS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876795"
+ORIGIN
+        1 ATGCTGCAAA ACCTCGCACT GAGCTTCCCG TTCATCACTC GCTTCTTTCA GAAGCAAATG
+       61 CTGGGCTCCC AGAATTCCTC CGGTAAGACT CCAGGTTTTA ACGAGGCAGA GGGTATCACC
+      121 TCGAATATTT TCCAGATCGC CGGCGGTATT TCTCTGCTGG TTATTCTGCT GCTGATCATT
+      181 GGCTTTCTGT CCTGCCTGTT AGGCGGCATC TTTCTTCATA AGCACAAGTA CGCAGAAGTG
+      241 GGTTCTCCGG CTCACGCAAA GACTAAAAAC CTGTTCGTGG CGTTTTTCGT CGTCGGCAGC
+      301 CTCCTGCTGC TGGTGGCGGT GGTGATGCTG ATTGCATTCG GCGTCCTGGA CGCGAGCCTG
+      361 CCGCTGCCGA AGGAGAACAA CTCCTGA
+//

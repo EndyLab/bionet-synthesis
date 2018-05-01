@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002582            339 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN163
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 339)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..339
+                     /locus_tag="MPN163"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109851.1"
+                     /EC_number=""
+                     /translation="MIDRFFWSILSFLLTNLVFLFVAFLILIIYLISEITQQFAFAFI
+                     ATIVFIIFYNILFLSYLLTMYIKGLKQIEQKSRYLLLVLDVKADELLPFSFLGSLRKS
+                     HMLEEMLLEQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877285"
+ORIGIN
+        1 ATGATTGATC GCTTCTTCTG GAGCATCCTG TCCTTCCTGC TGACGAACCT GGTTTTCTTG
+       61 TTCGTTGCGT TCCTGATCCT GATCATTTAC CTGATTTCCG AAATTACCCA GCAATTCGCT
+      121 TTCGCCTTTA TCGCGACCAT CGTTTTCATT ATTTTTTACA ATATCCTTTT CCTGTCGTAC
+      181 CTGTTGACCA TGTATATCAA AGGTTTGAAA CAAATCGAAC AGAAGTCTCG CTATCTGCTG
+      241 CTGGTGCTGG ACGTTAAGGC GGACGAACTG CTGCCGTTCA GCTTTTTGGG TTCCCTGCGT
+      301 AAGTCACACA TGCTGGAAGA AATGCTGCTG GAGCAGTGA
+//

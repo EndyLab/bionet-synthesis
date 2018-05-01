@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001461            312 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl228
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 312)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..312
+                     /locus_tag="Mfl228"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053469.1"
+                     /EC_number=""
+                     /translation="MNTIDKSVIKVIKDAIVTVPGVVSFSNFNADSYDEIATNDINNA
+                     IEFTNTDNITRFRIHVIILSGVNIKDVIKEIQIRVKYELEKISKFTMKYMVDVVVDDL
+                     A"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897738"
+ORIGIN
+        1 ATGAATACCA TTGACAAATC TGTGATCAAA GTGATTAAGG ACGCTATTGT CACCGTCCCG
+       61 GGCGTGGTTA GCTTTAGCAA TTTTAATGCC GATAGCTACG ATGAGATCGC GACCAACGAT
+      121 ATTAATAACG CTATCGAGTT CACCAATACT GATAACATTA CCCGCTTCCG TATCCACGTC
+      181 ATTATTCTGT CGGGCGTGAA TATTAAGGAC GTTATTAAGG AAATCCAGAT CAGAGTTAAA
+      241 TACGAGCTGG AAAAAATTAG CAAATTCACC ATGAAGTACA TGGTCGATGT GGTGGTTGAT
+      301 GATCTGGCCT GA
+//

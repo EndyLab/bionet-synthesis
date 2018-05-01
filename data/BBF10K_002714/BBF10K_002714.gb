@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002714            357 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN287
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 357)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..357
+                     /locus_tag="MPN287"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109975.1"
+                     /EC_number=""
+                     /translation="MGFSDNLNHMEKRKSGYVTQKQFSEFKDANNQRLIKIETTLATQ
+                     GEQLNQLIKVVILQGEQIKELQVEQKAQGEQIKAKGEQIKAQSEQIKTQGETLKLILQ
+                     ALGGINKRLDKVDPPK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877090"
+ORIGIN
+        1 ATGGGCTTCA GCGACAACCT GAATCATATG GAGAAACGCA AGTCCGGTTA CGTCACGCAG
+       61 AAACAATTTA GCGAGTTCAA AGACGCCAAT AATCAACGCC TGATTAAGAT TGAAACGACC
+      121 CTGGCGACCC AAGGTGAACA ACTGAATCAG CTGATTAAAG TGGTCATCCT CCAGGGCGAA
+      181 CAAATTAAGG AGTTACAGGT CGAGCAAAAG GCGCAAGGTG AACAAATTAA GGCAAAAGGC
+      241 GAACAAATCA AAGCGCAGTC CGAGCAAATT AAGACGCAAG GCGAAACCCT GAAGCTGATC
+      301 TTGCAAGCCC TGGGCGGCAT TAACAAACGC CTGGACAAAG TGGATCCACC AAAGTGA
+//

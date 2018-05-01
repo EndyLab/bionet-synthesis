@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002649            183 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN225a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 183)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..183
+                     /locus_tag="MPN225a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121712.1"
+                     /EC_number=""
+                     /translation="MFLEVVSFTRDISQHLKTVSKSYLGIFAQSRVRFFWSHGTNPGT
+                     HTTFKWWIHVGYLFVE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527624"
+ORIGIN
+        1 ATGTTCCTGG AGGTCGTTAG CTTCACCCGT GATATTAGCC AACACCTGAA AACCGTGAGC
+       61 AAAAGCTACC TGGGTATTTT CGCCCAAAGC CGTGTTCGCT TTTTCTGGAG CCATGGTACC
+      121 AATCCGGGCA CTCACACTAC GTTCAAGTGG TGGATCCACG TGGGCTATCT GTTTGTGGAG
+      181 TGA
+//

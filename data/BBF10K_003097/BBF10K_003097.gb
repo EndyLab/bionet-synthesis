@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003097            423 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  osmC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 423)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..423
+                     /locus_tag="MPN668"
+                     /gene="osmC"
+                     /gene_synonyms=""
+                     /product="organic hydroperoxide resistance protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110357.1"
+                     /EC_number=""
+                     /translation="MAVIYKTTAHASAGREGVVQTVDGFTVSLAFPKPGATHQDKNNP
+                     EQLFASAYAGCFSQAVRVVLQQHQLQLATQPIVGVSVELHDQDGLFHIKAGVELAITG
+                     VDQTTAQTVITAAHAMCPFSRLIKPENFLGLTLNGAKL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877018"
+ORIGIN
+        1 ATGGCTGTCA TTTATAAGAC GACGGCACAC GCGTCGGCCG GTCGCGAGGG TGTTGTGCAA
+       61 ACGGTGGACG GTTTTACTGT CTCTCTGGCT TTTCCAAAGC CGGGTGCTAC GCACCAGGAC
+      121 AAAAACAATC CGGAACAGCT GTTTGCCAGC GCGTACGCCG GTTGTTTCAG CCAGGCCGTT
+      181 CGTGTCGTAT TACAACAACA CCAGCTGCAA TTGGCCACTC AGCCGATTGT GGGCGTTAGC
+      241 GTGGAGCTGC ACGATCAAGA TGGCTTGTTC CACATTAAAG CTGGCGTCGA GCTGGCCATC
+      301 ACGGGCGTTG ACCAGACCAC GGCTCAGACC GTGATCACGG CGGCACATGC AATGTGCCCG
+      361 TTCAGCCGTC TGATCAAACC GGAGAACTTC CTGGGTCTGA CCCTGAATGG CGCGAAGCTG
+      421 TGA
+//

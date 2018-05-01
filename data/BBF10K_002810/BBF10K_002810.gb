@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002810            345 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN385
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 345)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..345
+                     /locus_tag="MPN385"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110073.1"
+                     /EC_number=""
+                     /translation="MLLKRLIKLAIFLFFVAVGFIIFIGSFWLNTYNTKEWANLLAEK
+                     DASGLIVQIIPNINQWFKGTVEQQQKLFQTLVHFFIPVGFGLLFGIAVAIIADLFYHL
+                     IKYLIKRSFKKN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877132"
+ORIGIN
+        1 ATGCTGCTGA AACGTTTGAT TAAACTGGCT ATTTTCCTGT TCTTTGTTGC CGTCGGTTTT
+       61 ATTATTTTCA TCGGTAGCTT TTGGCTGAAT ACGTACAACA CCAAGGAGTG GGCTAATCTG
+      121 CTGGCGGAGA AGGATGCTAG CGGTCTGATC GTCCAAATCA TCCCGAATAT TAATCAATGG
+      181 TTCAAAGGTA CGGTTGAGCA ACAGCAGAAA CTGTTTCAGA CCCTCGTTCA CTTTTTCATC
+      241 CCGGTGGGTT TTGGTCTGCT GTTCGGTATT GCGGTAGCGA TTATCGCGGA CCTGTTCTAC
+      301 CACCTGATTA AATACCTGAT TAAGCGTAGC TTTAAGAAGA ACTGA
+//

@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002609            375 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsM
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 375)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..375
+                     /locus_tag="MPN189"
+                     /gene="rpsM"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S13"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109877.1"
+                     /EC_number=""
+                     /translation="MARILGIDIPNQKRIEIALTYIFGIGLSRSQAILKQANINPDKR
+                     VKDLTEEEFVAIRNVASAYKIEGDLRREIALNIKHLSEIGAWRGLRHRKNLPVRGQRT
+                     RTNARTRKGPRKTVANKKIESK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876976"
+ORIGIN
+        1 ATGGCACGCA TTCTGGGTAT CGATATCCCT AATCAAAAGC GCATCGAAAT CGCTCTGACC
+       61 TATATTTTTG GTATTGGCCT GTCCCGCAGC CAAGCCATCT TGAAACAGGC GAACATTAAT
+      121 CCGGACAAAC GTGTCAAGGA CCTGACCGAG GAGGAATTCG TTGCCATCCG CAATGTCGCA
+      181 AGCGCGTACA AGATTGAAGG CGATCTGCGT CGTGAAATCG CACTGAATAT CAAACACTTG
+      241 AGCGAGATCG GTGCGTGGCG TGGTCTGCGT CACCGCAAAA ATCTGCCGGT TCGCGGCCAG
+      301 CGTACGCGCA CCAATGCACG TACGCGTAAG GGTCCGCGTA AAACTGTGGC GAATAAGAAA
+      361 ATTGAAAGCA AGTGA
+//

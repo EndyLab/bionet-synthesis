@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_003025",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "lacA",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGCAAATGAACCATCCAATTTACATTGCTTCTGACCACACTGGTTTAGAGCTCAAAAGCTTAGTGATAAAACACTTAGAACAACAAAAGTTGCAAGTGATTGATTTAGGTCCTACAGAGCTAGATCCACTTGATGACTACCCGGACTATGCCTTTTTGTTAGCGCAAACAATGCAAGCTAATCCTAATAGTTTAGGCATCCTTATTTGTGGTACTGGTGTGGGTGTTTGTATGGCCGCTAACAAGGCTAAGGGTATCTTAGCTGCTTTAGTGGTAGACAGTAAAACAGCAGCATTGGCACGCCAACATGATGACGCCAATGTGCTGTGTTTGTCTAGCCGCTTTGTGGTTCCTGAAGAAAACATTAAAATAGTAGATGAATTTCTCCAGGCGCAGTTTGAGGGTGGGCGCCATAGTAAACGTGTCGGTAAGATCATTGCTTATGAGAGGGAAAAATAG",
+    "optimized_sequence": "ATGCAGATGAACCACCCGATTTATATCGCCAGCGATCACACGGGTCTGGAGCTTAAGAGCCTGGTTATCAAGCATCTGGAGCAGCAAAAGTTGCAAGTGATTGATTTGGGTCCGACGGAGTTGGATCCACTGGATGACTACCCGGACTATGCATTCCTGTTGGCCCAGACCATGCAGGCCAACCCGAACAGCCTGGGCATTTTAATTTGTGGTACGGGCGTCGGTGTGTGCATGGCGGCTAATAAAGCTAAAGGCATCCTGGCAGCGCTGGTGGTTGACTCAAAGACGGCCGCCCTGGCTCGTCAGCACGACGACGCGAATGTTCTGTGTTTGTCTAGCCGTTTCGTGGTGCCGGAAGAAAATATCAAGATTGTCGATGAATTTCTGCAGGCACAGTTTGAAGGTGGCCGCCATAGCAAACGCGTTGGTAAAATCATTGCCTACGAACGTGAGAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_003025_1": "GAAGACCAGGAGAATATCACGCAAAAGCACCGGGTCTCAAATGCAGATGAACCACCCGATTTATATCGCCAGCGATCACACGGGTCTGGAGCTTAAGAGCCTGGTTATCAAGCATCTGGAGCAGCAAAAGTTGCAAGTGATTGATTTGGGTCCGACGGAGTTGGATCCACTGGATGACTACCCGGACTATGCATTCCTGTTGGCCCAGACCATGCAGGCCAACCCGAACAGCCTGGGCATTTTAATTTGTGGTACGGGCGTCGGTGTGTGCATGGCGGCTAATAAAGCTAAAGGCATCCTGGCAGCGCTGGTGGTTGACTCAAAGACGGCCGCCCTGGCTCGTCAGCACGACGACGCGAATGTTCTGTGTTTGTCTAGCCGTTTCGTGGTGCCGGAAGAAAATATCAAGATTGTCGATGAATTTCTGCAGGCACAGTTTGAAGGTGGCCGCCATAGCAAACGCGTTGGTAAAATCATTGCCTACGAACGTGAGAAGTGAAGAGCTTAGAGACCCCTACGGTTAAGGCTTGTCTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN595",
+    "gene": "lacA",
+    "gene_synonyms": "",
+    "product": "ribose-5-phosphate isomerase B",
+    "note": "catalyzes the interconversion of ribose 5-phosphateto ribulose 5-phosphate; enzyme from E. coli shows allose6-phosphate isomerase activity",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110284.1",
+    "EC_number": "5.3.1.6",
+    "translation": "MQMNHPIYIASDHTGLELKSLVIKHLEQQKLQVIDLGPTELDPLDDYPDYAFLLAQTMQANPNSLGILICGTGVGVCMAANKAKGILAALVVDSKTAALARQHDDANVLCLSSRFVVPEENIKIVDEFLQAQFEGGRHSKRVGKIIAYEREK",
+    "references": [
+      "db_xref=\"GeneID:877130\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-5f8da453-d0e0-48db-82a8-a044e04a0b32"
+}

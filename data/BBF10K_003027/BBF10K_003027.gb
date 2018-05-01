@@ -1,0 +1,36 @@
+LOCUS       BBF10K_003027            402 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  atpC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 402)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..402
+                     /locus_tag="MPN597"
+                     /gene="atpC"
+                     /gene_synonyms=""
+                     /product="ATP synthase subunit epsilon"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110286.1"
+                     /EC_number="3.6.3.14"
+                     /translation="MQPLRFLVLSPSGIKLDQAIISAQVKTTNGYLGLNYNRAPLIAA
+                     VQSHFCKILFANNTRRNAIIGAGLVLIKKTEAKIFTENFVFEDEIDLEATLKRKAELE
+                     RQMNHSKDLKLNIKIEQNLMFELLKLSNKQR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877138"
+ORIGIN
+        1 ATGCAACCAC TGCGTTTTCT GGTCCTGAGC CCTAGCGGTA TTAAACTGGA CCAAGCCATC
+       61 ATCAGCGCCC AGGTGAAAAC CACCAACGGT TATTTGGGTC TGAACTACAA TCGTGCACCG
+      121 TTGATTGCAG CGGTGCAAAG CCACTTTTGC AAGATCCTGT TTGCAAATAA TACGCGTCGT
+      181 AACGCGATTA TCGGCGCCGG TCTGGTTCTG ATCAAGAAAA CTGAGGCGAA AATTTTTACC
+      241 GAAAATTTTG TTTTCGAAGA TGAGATCGAT CTCGAGGCCA CGCTGAAGCG CAAGGCAGAG
+      301 TTGGAGCGCC AAATGAACCA CAGCAAAGAC CTGAAGCTGA ATATTAAAAT CGAGCAGAAC
+      361 CTGATGTTTG AGCTGCTGAA ACTGTCTAAT AAGCAGCGCT GA
+//

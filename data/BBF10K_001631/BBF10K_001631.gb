@@ -1,0 +1,32 @@
+LOCUS       BBF10K_001631            180 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmF
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 180)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..180
+                     /locus_tag="Mfl396"
+                     /gene="rpmF"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L32"
+                     /note="some L32 proteins have zinc finger motifsconsisting
+                     of CXXC while others do not"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053639.1"
+                     /EC_number=""
+                     /translation="MAVPFRKTSKSAKNKRRSHLALVASNLVSCENCGSMIKPHRVCR
+                     ECGFYKGKEVKSVQD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898103"
+ORIGIN
+        1 ATGGCGGTGC CGTTTCGCAA GACCAGCAAG AGCGCGAAAA ACAAACGCCG TAGCCATCTG
+       61 GCGCTGGTGG CCAGCAATTT GGTAAGCTGT GAGAATTGTG GTAGCATGAT CAAGCCGCAC
+      121 CGCGTCTGCC GTGAATGCGG CTTCTACAAG GGTAAAGAGG TTAAATCCGT CCAAGATTGA
+//

@@ -1,0 +1,41 @@
+LOCUS       BBF10K_002305            555 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02160
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 555)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..555
+                     /locus_tag="MG_RS02160"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="inorganic pyrophosphatase"
+                     /note="catalyzes the hydrolysis of pyrophosphate
+                     tophosphate; Derived by automated computational
+                     analysisusing gene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885809.1"
+                     /EC_number=""
+                     /translation="MDKFLIDVIVEIPKNSKIKYEYDRQTGQIRVDRILFGSESYPQN
+                     YGFIKNTLDWDGDELDCFIFADQPFLPATVVPTRIVGALEMIDDGEIDTKLLGVIDCD
+                     PRYKEINQISDLPKHRIEEILIFLKTYKLLQKKTVIIKGLKDVCWAKKEYEICLQLMK
+                     DYGHLSKDQFIQKMQILHPEHYQK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGACAAAT TTTTAATCGA TGTTATCGTG GAGATCCCGA AGAACAGCAA GATCAAATAC
+       61 GAATATGACC GCCAAACCGG CCAGATCCGT GTCGATCGTA TTCTGTTTGG CAGCGAGAGC
+      121 TATCCGCAAA ATTACGGTTT TATCAAAAAT ACGCTGGACT GGGATGGCGA CGAGTTAGAC
+      181 TGCTTTATCT TCGCCGATCA GCCGTTCCTG CCGGCCACCG TGGTTCCGAC GCGCATCGTG
+      241 GGTGCTCTGG AGATGATTGA TGATGGTGAA ATTGACACTA AACTGCTGGG CGTTATTGAT
+      301 TGCGATCCTC GCTACAAAGA GATTAATCAA ATTTCGGACT TGCCGAAGCA CCGCATCGAG
+      361 GAAATCCTGA TCTTTCTGAA AACGTATAAG CTGTTGCAGA AGAAAACCGT TATCATTAAG
+      421 GGTCTGAAGG ATGTCTGCTG GGCCAAAAAG GAGTACGAGA TCTGCCTGCA ACTGATGAAA
+      481 GATTACGGCC ACCTGAGCAA GGATCAGTTC ATCCAAAAGA TGCAGATTCT GCACCCAGAG
+      541 CACTACCAAA AGTGA
+//

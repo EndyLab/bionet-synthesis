@@ -1,0 +1,47 @@
+LOCUS       BBF10K_002433            762 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  holB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 762)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..762
+                     /locus_tag="MPN007"
+                     /gene="holB"
+                     /gene_synonyms=""
+                     /product="DNA polymerase III subunit delta"
+                     /note="catalyzes the DNA-template-directed extension ofthe
+                     3-end of a DNA strand; the delta subunit seems tointeract
+                     with the gamma subunit to transfer the betasubunit on the
+                     DNA"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109695.1"
+                     /EC_number="2.7.7.7"
+                     /translation="MFNPTHALLIIQRRGSYLQPVLTEYLTRVVCEQQTGCQTCPSCL
+                     EILHGTYNNFYSFDQANPFKREHALHLSEVLNRQSESNQKQLYLIKNLETLTATAMNS
+                     LLRLIEEHPVNTYGVFTTKNENMILPTILSRVQKVVLKKATQLPFQVDSKDQAILKSF
+                     FSVDEQLQALDNGSFTRLKTIITTLTNKKNTASTVHEAWVLFKQLNQTETAQVLNFMV
+                     DYTKDLTKKDRLLNMVQNLVFNPPKAALFANLINW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877315"
+ORIGIN
+        1 ATGTTCAACC CGACGCATGC GCTGTTAATC ATCCAGCGCC GCGGTTCCTA TCTGCAACCG
+       61 GTACTGACGG AGTACTTGAC CCGTGTCGTG TGCGAGCAGC AAACGGGTTG TCAAACGTGC
+      121 CCGAGCTGCC TGGAGATCCT GCATGGCACG TATAACAATT TCTACAGCTT CGACCAGGCG
+      181 AACCCGTTCA AACGTGAACA CGCACTGCAT CTGTCTGAGG TGCTGAATCG CCAGTCAGAG
+      241 TCTAACCAAA AACAATTATA CCTGATTAAG AATTTGGAAA CCCTTACGGC TACCGCCATG
+      301 AACTCCCTGC TGCGTCTGAT TGAAGAACAT CCGGTTAACA CCTATGGCGT TTTCACCACC
+      361 AAAAATGAAA ATATGATTCT CCCGACGATT CTGAGCCGTG TGCAGAAAGT AGTCCTGAAA
+      421 AAGGCAACCC AACTGCCGTT TCAAGTCGAC AGCAAAGATC AGGCCATTTT AAAGAGCTTC
+      481 TTCTCTGTGG ATGAACAACT GCAGGCGCTG GACAACGGTT CGTTCACGCG CCTGAAAACC
+      541 ATTATCACGA CGTTAACCAA TAAGAAGAAT ACCGCGTCTA CCGTTCATGA AGCATGGGTT
+      601 TTATTCAAAC AACTGAACCA GACCGAAACG GCCCAGGTGC TGAATTTCAT GGTCGATTAC
+      661 ACCAAGGACC TGACTAAGAA AGATCGTCTG CTGAATATGG TCCAGAATCT GGTTTTCAAC
+      721 CCACCGAAAG CTGCCCTGTT TGCGAATTTG ATCAACTGGT GA
+//

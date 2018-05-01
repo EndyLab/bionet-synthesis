@@ -1,0 +1,34 @@
+LOCUS       BBF10K_003078            306 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN650
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 306)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..306
+                     /locus_tag="MPN650"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="lipoprotein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110339.1"
+                     /EC_number=""
+                     /translation="MKFKYLSTPLLFSALLFSACSSVNVGANLKSLIKETTDQDLDLS
+                     ESVSTSEGKKNLISSLKKSYETNPSKTASVLLNAWKQSVENGQIESSETNWTNWKFP"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876995"
+ORIGIN
+        1 ATGAAGTTCA AATATCTGAG CACCCCGTTA CTCTTCAGCG CGCTGCTGTT CAGCGCCTGC
+       61 AGCAGCGTTA ACGTCGGTGC GAATTTGAAA TCGCTGATCA AAGAAACCAC CGATCAGGAC
+      121 TTGGATCTGA GCGAAAGCGT CAGCACCAGC GAGGGCAAGA AAAATCTGAT TTCCAGCCTG
+      181 AAAAAATCTT ATGAAACCAA CCCGTCTAAA ACGGCTAGCG TCCTGCTGAA CGCATGGAAG
+      241 CAAAGCGTAG AAAACGGTCA AATTGAGAGC AGCGAAACGA ATTGGACCAA TTGGAAATTC
+      301 CCATGA
+//

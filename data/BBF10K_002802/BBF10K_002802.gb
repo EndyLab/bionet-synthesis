@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002802            225 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN377
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 225)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..225
+                     /locus_tag="MPN377"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110065.1"
+                     /EC_number=""
+                     /translation="MSKDKKNKVEQLEPVDLFERTKLEDTQVLNDVELDDIKKLEELK
+                     KELENTFEPRTRIEIKREIKELERKLRRNR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876815"
+ORIGIN
+        1 ATGAGCAAAG ACAAGAAAAA CAAAGTGGAG CAGCTGGAGC CAGTTGACCT GTTCGAGCGT
+       61 ACGAAATTGG AGGATACCCA AGTCTTGAAT GACGTTGAGT TGGATGACAT TAAAAAGTTG
+      121 GAAGAACTGA AAAAGGAGCT GGAGAATACC TTTGAACCGC GTACCCGCAT CGAGATCAAA
+      181 CGCGAGATTA AGGAACTGGA GCGCAAGCTG CGCCGCAACC GCTGA
+//

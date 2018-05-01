@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_001825",
+  "author": {
+    "name": "Keoni Gandall",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "Mfl593",
+      "description": "A collection of all genes from Mesoplasma florum L1, codon optimized for Escherichia coli expression.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BtgZI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 5,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "BSL1"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAATATACATAACGAAATTATAAAAGAATTAAAAAGTAAGGGTGCAAAAGGTAATCTAACAGCTGAGACTCAATTTTCATCAATTGGTTTAGACTCTTTAGATTTAATGGACATGATAACAGTGCTAGAAGACCGTTTATCAATATTTGTGCCAGATGATAAACTATTAGAAATAAAAACAATTAAAGATTTAGAAAATGTTATAGCTGAGCTAACAAAATAA",
+    "optimized_sequence": "ATGAATATTCATAATGAAATTATCAAAGAGCTGAAAAGCAAGGGTGCGAAGGGTAACCTGACTGCTGAAACCCAGTTCAGCAGCATTGGCCTCGATTCCCTGGACCTGATGGATATGATCACGGTGCTGGAGGACCGTCTGTCGATCTTCGTTCCGGACGATAAACTGCTGGAAATTAAGACCATTAAAGATTTGGAGAATGTTATTGCGGAGCTGACCAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_002095_link_BBF10K_001825": "GAAGACCAGGAGAAACCGGAGCCATACAGTACGGTCTCAAATGACCCGCAATGATAAACGTCGCATTCGTCACAAACGTATCGTAAAAAAGATCAGACTGACCAACCTGAATAATCGCGTCGTTCTGATCGTTATCAAGAGCCTGAAAAATATTAGCGTCCAGGCGTGGGATTTCAGCAAGAACGTGGTTCTTACCAGCAGCAGCAGCCTGCAACTGAAACTGAAAAATGGTAATAAGGAAAACGCTAAGCTGGTGGGCATGGATATTGCTACCAAACTGATCAAACTGAACCAGAAGGATGTTGTTTTCGACACTGGTGGCAGCAAGTACCACGGTCGTATCGCGGCGCTTGCCGAAGGCGCGCGTGCTAAGGGCCTGAATTTTTGAAGAGCTTAGAGACCCACTCGATAGGTACAACCGGCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAATGTCCTTAGGCAGTCGTCGGTCTCGAATGAATATTCATAATGAAATTATCAAAGAGCTGAAAAGCAAGGGTGCGAAGGGTAACCTGACTGCTGAAACCCAGTTCAGCAGCATTGGCCTCGATTCCCTGGACCTGATGGATATGATCACGGTGCTGGAGGACCGTCTGTCGATCTTCGTTCCGGACGATAAACTGCTGGAAATTAAGACCATTAAAGATTTGGAGAATGTTATTGCGGAGCTGACCAAGTGAAGAGCTTGGAGACCGGTTCCTAGACCTCCTGGATCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "Mfl593",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "acyl carrier protein I",
+    "note": "",
+    "Source": "Mesoplasma florum L1",
+    "GenBank_acc": "NC_006055",
+    "protein_id": "YP_053835.1",
+    "EC_number": "",
+    "translation": "MNIHNEIIKELKSKGAKGNLTAETQFSSIGLDSLDLMDMITVLEDRLSIFVPDDKLLEIKTIKDLENVIAELTK",
+    "references": [
+      "db_xref=\"GeneID:2897584\""
+    ]
+  },
+  "tags": [
+    "Mesoplasma florum"
+  ],
+  "virtual_id": "v-f5676c9a-f641-460a-b3c3-ba6a9fe04da2"
+}

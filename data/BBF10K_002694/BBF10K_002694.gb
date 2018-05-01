@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002694            354 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN268
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 354)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..354
+                     /locus_tag="MPN268"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="PTS system transporter subunit IIBC"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109956.1"
+                     /EC_number=""
+                     /translation="MKVLLWIGYVLSFGLLYLYLVKRAKRAALQLNNKLVESHTIPFA
+                     VRDFIAACGGRTNFVSLRTSPTQLIVSFAKPELVQIAALQKLGIKGINKSQNQYRFVL
+                     GNFVNQLKQQIENER"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876825"
+ORIGIN
+        1 ATGAAGGTTC TGCTGTGGAT CGGTTACGTC CTCTCCTTCG GTCTGTTGTA CCTGTACCTG
+       61 GTTAAGCGTG CGAAGCGTGC AGCGCTGCAG CTGAATAACA AACTGGTGGA ATCCCATACT
+      121 ATTCCGTTCG CAGTTCGCGA TTTTATCGCG GCATGTGGTG GCCGTACTAA CTTCGTTTCG
+      181 TTGCGTACTT CTCCTACCCA GCTGATTGTG AGCTTTGCGA AGCCGGAGCT GGTGCAGATT
+      241 GCAGCCCTGC AAAAACTTGG TATTAAAGGC ATCAATAAGA GCCAGAACCA GTATCGTTTT
+      301 GTCCTGGGCA ACTTCGTTAA CCAACTGAAG CAACAGATTG AGAATGAGCG CTGA
+//

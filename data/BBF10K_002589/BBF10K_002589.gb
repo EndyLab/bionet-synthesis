@@ -1,0 +1,44 @@
+LOCUS       BBF10K_002589            555 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplV
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 555)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..555
+                     /locus_tag="MPN170"
+                     /gene="rplV"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L22"
+                     /note="binds specifically to 23S rRNA during the
+                     earlystages of 50S assembly; makes contact with all 6
+                     domainsof the 23S rRNA in the assembled 50S subunit and
+                     ribosome;mutations in this gene result in erythromycin
+                     resistance;located near peptidyl-transferase center"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109858.1"
+                     /EC_number=""
+                     /translation="MTWWGTNSVSSPRPVTSNNTPLTVSMIAFAKQFRVRISPQKARL
+                     VCQLIVGKKTADAQNILSNTPKKAATLIAKLLNSAIANATNNHGMNGDALYVFECVAN
+                     QGPSMKRTIPRAKGSSNMITKRSSNLVVKLSDNPNERQELIKQQKALVKKRVEGQQKA
+                     KMARQKAVTSVVKAPSKTQGGVQK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877319"
+ORIGIN
+        1 ATGACCTGGT GGGGTACCAA CAGCGTCAGC AGCCCGCGCC CGGTCACTAG CAACAATACC
+       61 CCACTGACGG TTAGCATGAT CGCCTTCGCG AAGCAATTTC GTGTTCGTAT TAGCCCGCAG
+      121 AAGGCGCGTC TGGTGTGTCA ACTGATCGTC GGTAAAAAGA CCGCAGACGC ACAGAACATT
+      181 CTGAGCAATA CCCCGAAAAA GGCAGCGACC CTGATCGCAA AACTGCTGAA CAGCGCCATT
+      241 GCGAACGCGA CTAATAATCA CGGTATGAAC GGTGATGCAC TGTATGTATT CGAGTGCGTC
+      301 GCGAACCAGG GTCCGAGCAT GAAACGTACC ATCCCTCGCG CGAAAGGCAG CTCTAACATG
+      361 ATTACTAAGC GCAGCAGCAA CTTGGTCGTC AAGTTGTCCG ACAATCCAAA CGAGCGCCAG
+      421 GAGCTGATTA AGCAGCAGAA GGCCCTGGTC AAAAAGCGCG TTGAAGGCCA ACAAAAAGCC
+      481 AAGATGGCTC GTCAGAAGGC TGTGACGTCT GTCGTGAAAG CGCCGAGCAA AACCCAAGGT
+      541 GGCGTTCAAA AGTGA
+//

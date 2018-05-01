@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001951            267 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00205
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 267)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..267
+                     /locus_tag="MG_RS00205"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="phosphocarrier protein HPr"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_010869302.1"
+                     /EC_number=""
+                     /translation="MKKFQAVIKDPVGIHARPASILASEASKFKSELKLVAPSGVEGN
+                     IKSIINLMSLGIRHNDNITIKADGADEEEALAAIKACLEKNKVI"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAAAAGT TTCAAGCGGT GATCAAAGAT CCGGTCGGTA TCCACGCGCG CCCGGCGAGC
+       61 ATCTTGGCGA GCGAAGCGAG CAAATTTAAG TCTGAGCTGA AATTGGTCGC GCCGAGCGGC
+      121 GTCGAGGGCA ACATTAAAAG CATTATCAAT TTGATGAGCC TGGGTATCCG TCATAACGAC
+      181 AATATCACCA TTAAAGCGGA CGGCGCCGAT GAAGAAGAAG CGCTGGCGGC GATCAAAGCA
+      241 TGCCTGGAGA AGAATAAAGT GATTTGA
+//

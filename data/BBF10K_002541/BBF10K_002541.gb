@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002541            366 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN121
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 366)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..366
+                     /locus_tag="MPN121"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109809.1"
+                     /EC_number=""
+                     /translation="MSTNKRRTIQIEITEEHFKDLEKALEALKGTQLPFSTTVEQFVE
+                     LILSNYVATSNKISNLAESGFDVASIQQELEKIGSAAGADDALKSFLDELLKTSQKSF
+                     SNTKDGKKNDDDNNSSSKS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877246"
+ORIGIN
+        1 ATGAGCACCA ACAAACGTCG CACTATCCAA ATTGAAATTA CCGAAGAACA CTTTAAGGAC
+       61 CTGGAGAAGG CGCTGGAAGC ATTGAAAGGT ACTCAACTGC CGTTTAGCAC CACCGTTGAG
+      121 CAATTCGTGG AGCTGATTCT GAGCAATTAT GTGGCAACGA GCAACAAAAT TAGCAACCTC
+      181 GCAGAAAGCG GTTTTGATGT TGCATCCATC CAGCAGGAAC TGGAGAAGAT TGGTAGCGCG
+      241 GCTGGCGCTG ACGACGCCCT GAAAAGCTTT TTGGATGAGC TGCTTAAGAC CAGCCAGAAG
+      301 TCTTTCTCGA ACACGAAAGA CGGTAAGAAA AATGACGACG ACAATAATAG CTCCAGCAAA
+      361 TCCTGA
+//

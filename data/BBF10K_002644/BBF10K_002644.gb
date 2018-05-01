@@ -1,0 +1,41 @@
+LOCUS       BBF10K_002644            567 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  pth
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 567)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..567
+                     /locus_tag="MPN221"
+                     /gene="pth"
+                     /gene_synonyms=""
+                     /product="peptidyl-tRNA hydrolase"
+                     /note="Enables the recycling of peptidyl-tRNAs produced
+                     attermination of translation"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109909.1"
+                     /EC_number="3.1.1.29"
+                     /translation="MDKLRLVVGLGNLGKQYAETRHNAGFKVIDRLLSLYHVQLEERN
+                     NLGEFILLRKHKVVLAKPNTYMNHSGKFVKWACQNWNIKPDKVMVVYDELAFPLGTVR
+                     LKMQGSANNHNGIKSVIAHLNTEHFNRLRFGIKSDNTSNILHEVVMSEFTPAERNLLE
+                     TALTKAIEALKGYIDGVTMLKLMEVFNA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877101"
+ORIGIN
+        1 ATGGATAAGC TGCGCCTGGT GGTGGGCCTG GGTAACCTGG GCAAACAGTA TGCTGAAACC
+       61 CGCCATAACG CGGGCTTTAA AGTTATTGAC CGCCTGCTTA GCCTGTACCA TGTGCAGCTG
+      121 GAGGAGCGTA ACAACCTGGG TGAGTTTATC CTTCTGCGCA AGCACAAGGT CGTTCTGGCA
+      181 AAGCCGAATA CCTACATGAA TCACAGCGGT AAATTTGTCA AGTGGGCATG TCAAAACTGG
+      241 AATATTAAGC CGGACAAAGT TATGGTTGTA TATGATGAGC TGGCCTTCCC GTTGGGTACC
+      301 GTCCGCCTGA AAATGCAAGG CAGCGCGAAT AACCACAATG GTATCAAAAG CGTCATTGCA
+      361 CATCTGAACA CTGAACATTT CAACCGTCTG CGCTTTGGCA TCAAGTCCGA CAATACGTCC
+      421 AATATCTTGC ATGAAGTTGT CATGAGCGAA TTCACCCCGG CCGAACGTAA CTTGCTGGAA
+      481 ACGGCACTGA CGAAAGCCAT CGAGGCTTTA AAAGGCTACA TTGACGGTGT GACGATGTTA
+      541 AAGCTGATGG AGGTTTTCAA CGCCTGA
+//

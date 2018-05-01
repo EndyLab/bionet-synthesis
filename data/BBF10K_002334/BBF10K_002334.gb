@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002334            582 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02300
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 582)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..582
+                     /locus_tag="MG_RS02300"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885940.1"
+                     /EC_number=""
+                     /translation="MATNLKSIAKLQKPIQYDKVIEVDRIFADPAFIEQHRQRILASF
+                     KDAKESALYHELTHIVIKDNLFSAAMNEIVSYFEFQINPEELKNVVEGLKRDVVKDAD
+                     EKTIQSIAEKIIKKALVFNFLQKEWKVEVSDDIVKRVISLYYEKTNQNVREYLDDKQK
+                     FEGIRTALIEERMVLETINHFKFHFNLTGQLPS"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGCCACGA ACCTGAAAAG CATTGCAAAA CTGCAAAAGC CGATCCAGTA CGACAAGGTT
+       61 ATTGAAGTCG ACCGCATTTT CGCTGACCCG GCGTTCATCG AGCAACACCG TCAGCGTATT
+      121 CTGGCGAGCT TCAAAGACGC TAAGGAGAGC GCACTGTACC ACGAACTGAC CCACATTGTC
+      181 ATCAAAGATA ACCTGTTTAG CGCAGCTATG AATGAGATTG TCTCCTACTT CGAATTTCAA
+      241 ATTAATCCGG AGGAGCTGAA GAACGTAGTG GAGGGTCTTA AGCGTGACGT CGTGAAAGAT
+      301 GCAGACGAAA AAACCATCCA ATCGATCGCG GAAAAAATTA TTAAGAAAGC ACTGGTGTTC
+      361 AATTTTCTGC AAAAAGAATG GAAAGTCGAA GTGAGCGACG ATATTGTGAA GCGTGTCATC
+      421 TCACTGTATT ATGAAAAGAC CAACCAGAAT GTGCGTGAGT ACCTGGATGA TAAACAGAAA
+      481 TTTGAAGGTA TTCGTACTGC TCTGATTGAG GAGCGCATGG TTCTGGAAAC CATTAATCAC
+      541 TTCAAATTTC ATTTCAATTT GACCGGCCAG CTGCCATCCT GA
+//

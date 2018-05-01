@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002594            369 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 369)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..369
+                     /locus_tag="MPN175"
+                     /gene="rplN"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L14"
+                     /note="binds to the 23S rRNA between the centers
+                     forpeptidyl transferase and GTPase"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109863.1"
+                     /EC_number=""
+                     /translation="MVSFMTRLNVADNTGAKQVGIIKVLGSTRKRYAFLGDVVVVSVK
+                     DAIPSGMVKKGQVLRAVIVRTKKGQQRKDGTHLKFDDNACVLIKEDKSPRGTRIFGPV
+                     ARELRERGYNKILSLAVEVV"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876969"
+ORIGIN
+        1 ATGGTTAGCT TTATGACTCG TCTGAACGTG GCGGACAATA CCGGTGCCAA ACAAGTCGGC
+       61 ATCATTAAAG TGCTGGGCAG CACCCGTAAA CGTTACGCAT TCCTGGGTGA TGTTGTTGTC
+      121 GTTAGCGTTA AGGATGCGAT TCCGAGCGGC ATGGTTAAAA AAGGTCAAGT GTTACGTGCG
+      181 GTTATTGTCC GTACTAAAAA AGGCCAGCAG CGTAAAGATG GTACCCACCT GAAATTCGAC
+      241 GACAATGCAT GTGTGTTAAT TAAGGAGGAC AAGAGCCCGC GTGGTACGCG TATTTTTGGC
+      301 CCGGTTGCGC GTGAACTGCG TGAGCGTGGC TATAATAAGA TCCTGTCTCT CGCGGTCGAG
+      361 GTTGTGTGA
+//

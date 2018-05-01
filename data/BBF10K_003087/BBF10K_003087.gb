@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003087            360 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplS
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 360)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..360
+                     /locus_tag="MPN658"
+                     /gene="rplS"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L19"
+                     /note="this protein is located at the 30S-50S
+                     ribosomalsubunit interface and may play a role in the
+                     structure andfunction of the aminoacyl-tRNA binding site"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110347.1"
+                     /EC_number=""
+                     /translation="MKKINKQALIDLVEQKQLKAYVPEFSAGDEVNVAIKLKEKEKVR
+                     IQNFTGTVLRRRGKGISETFIVRKTTDGIPIEKNFQIHNPNISIELKRRGKVRRAYIS
+                     YMRERSGKAAKIKERKQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877010"
+ORIGIN
+        1 ATGAAGAAGA TTAATAAACA GGCACTGATC GACTTAGTCG AGCAAAAACA ACTGAAAGCG
+       61 TACGTACCGG AATTTAGCGC CGGTGACGAA GTGAATGTCG CGATCAAGTT GAAAGAGAAG
+      121 GAGAAAGTTC GCATTCAGAA TTTCACCGGT ACGGTCCTGC GCAGACGTGG TAAGGGTATT
+      181 AGCGAAACCT TCATTGTGCG TAAGACGACC GATGGCATTC CGATCGAAAA GAATTTCCAA
+      241 ATTCATAATC CTAACATTAG CATTGAGCTT AAACGTCGTG GCAAGGTCCG CCGTGCCTAC
+      301 ATTTCGTACA TGCGTGAACG TAGCGGTAAG GCGGCCAAAA TTAAAGAGCG CAAGCAGTGA
+//

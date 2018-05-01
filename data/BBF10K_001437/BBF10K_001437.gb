@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001437            357 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl204
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 357)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..357
+                     /locus_tag="Mfl204"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="DNA repair ATPase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053445.1"
+                     /EC_number=""
+                     /translation="MKKPNILAEEILYEKIPKEFPGYKIESVDSLLDKIIVQMKYYEE
+                     ELEQLNKVLEEKNKTIAELEQKASTYQGMAISKSAELDKLTKVHLSNSDFVKQAKQID
+                     TLEKTMKLILEKLENK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897784"
+ORIGIN
+        1 ATGAAGAAAC CAAATATCCT GGCTGAGGAG ATTCTGTATG AGAAGATCCC GAAGGAGTTC
+       61 CCGGGTTATA AAATTGAGTC GGTCGACAGC CTCCTGGACA AGATCATCGT CCAGATGAAA
+      121 TACTATGAGG AGGAGCTGGA GCAGCTGAAC AAGGTTCTGG AAGAGAAGAA TAAAACCATT
+      181 GCGGAATTGG AGCAGAAAGC CTCGACCTAC CAAGGTATGG CAATCAGCAA AAGCGCTGAA
+      241 CTGGACAAAT TGACCAAGGT CCACCTGAGC AACAGCGATT TCGTGAAACA AGCTAAGCAG
+      301 ATTGATACCT TGGAAAAAAC CATGAAGCTG ATCCTGGAGA AACTGGAGAA CAAGTGA
+//

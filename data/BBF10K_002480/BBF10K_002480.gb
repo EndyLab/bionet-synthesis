@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002480            372 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN054
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 372)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..372
+                     /locus_tag="MPN054"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109742.1"
+                     /EC_number=""
+                     /translation="MKIKYFFIPLFSSAILFSACSSIQSDLRNLIKETTGKDFDVSKL
+                     IKTSEGRKNLINSLKKSYESKPDETASLLLIAWKQSAEMGEIGFDDIKEGGIYTRDND
+                     PFKLEQKVEYFNMEYKILVMF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876890"
+ORIGIN
+        1 ATGAAAATCA AATACTTCTT CATTCCGCTG TTTTCGAGCG CCATTCTGTT TAGCGCATGC
+       61 AGCTCAATCC AGAGCGATCT GCGTAACCTG ATTAAGGAAA CGACCGGTAA GGATTTTGAT
+      121 GTTAGCAAGC TGATTAAGAC GAGCGAAGGT CGCAAGAACC TGATTAATTC CCTGAAGAAA
+      181 AGCTACGAAA GCAAACCGGA CGAAACCGCC AGCCTGCTGT TGATTGCGTG GAAACAGAGC
+      241 GCGGAGATGG GTGAGATCGG TTTTGATGAC ATCAAAGAGG GTGGTATTTA TACCCGCGAC
+      301 AATGATCCGT TTAAACTGGA GCAGAAAGTA GAATACTTCA ACATGGAATA TAAGATTCTT
+      361 GTCATGTTTT GA
+//

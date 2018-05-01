@@ -1,0 +1,42 @@
+LOCUS       BBF10K_001340            624 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  upp
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 624)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..624
+                     /locus_tag="Mfl107"
+                     /gene="upp"
+                     /gene_synonyms=""
+                     /product="uracil phosphoribosyltransferase"
+                     /note="Catalyzes the formation of uracil and5-phospho-
+                     alpha-D-ribosy 1-diphosphate from UMP anddiphosphate"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053347.1"
+                     /EC_number=""
+                     /translation="MAFTELKHPLIIDKLSRMRKKETSSKDFRENLNEIAQLMVYEIF
+                     RDLELEAIEIETPMTKTVGYTIDKPIVLVPILRAGIGMLDGIQKLIPTARIAHIGLYR
+                     DEETLEIHQYFAKKTESIDESYVIIVDPMLATGGSANKAIDIVKGWGVKNIKFVCLVA
+                     VEPGISNVLEKHPDVEIYAASKDEKLSDKGYIIPGLGDAGDRIFGTK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897596"
+ORIGIN
+        1 ATGGCCTTTA CGGAGCTTAA GCATCCGCTG ATTATTGATA AACTGAGCCG TATGCGTAAA
+       61 AAGGAGACTA GCTCTAAAGA TTTCCGCGAA AATTTGAATG AGATTGCTCA GTTGATGGTT
+      121 TACGAAATTT TCCGCGATCT GGAACTGGAG GCGATTGAAA TTGAAACGCC GATGACCAAA
+      181 ACCGTGGGTT ATACCATTGA CAAGCCGATC GTGCTGGTTC CAATTCTGCG TGCAGGCATC
+      241 GGCATGCTGG ATGGCATTCA AAAATTGATC CCGACGGCAC GTATTGCACA CATTGGTCTG
+      301 TACCGTGACG AGGAAACTCT GGAGATCCAC CAGTACTTTG CCAAAAAGAC CGAGAGCATT
+      361 GATGAAAGCT ACGTGATTAT CGTCGATCCG ATGTTGGCGA CGGGTGGTAG CGCAAACAAA
+      421 GCAATCGATA TTGTTAAAGG TTGGGGTGTG AAAAACATCA AGTTTGTCTG TCTGGTTGCG
+      481 GTGGAGCCGG GTATCAGCAA CGTTTTGGAA AAACATCCGG ATGTGGAAAT TTATGCAGCG
+      541 AGCAAAGATG AGAAGCTGAG CGATAAGGGC TACATTATTC CGGGCCTGGG CGACGCTGGT
+      601 GATAGAATCT TCGGTACCAA GTGA
+//

@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002101            213 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00975
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 213)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..213
+                     /locus_tag="MG_RS00975"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="translation initiation factor IF-1"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885858.1"
+                     /EC_number=""
+                     /translation="MKNDKLFLTGKILEIIHGDKYRVMLENNVEVDAHLAGKMKMKRT
+                     KILPGDVVEVEFSPYDLKLGRITQRK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGAAAAATG ACAAGTTGTT CCTGACCGGC AAGATTCTGG AGATCATCCA CGGCGACAAG
+       61 TACCGCGTCA TGCTGGAGAA CAACGTTGAG GTGGACGCGC ACCTGGCGGG TAAAATGAAG
+      121 ATGAAACGCA CCAAGATCCT GCCGGGTGAT GTTGTTGAAG TCGAGTTCAG CCCGTATGAC
+      181 CTGAAGCTGG GTCGTATCAC GCAACGTAAG TGA
+//

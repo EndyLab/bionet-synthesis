@@ -1,0 +1,29 @@
+LOCUS       BBF10K_002866             78 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN436a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 78)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..78
+                     /locus_tag="MPN436a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121729.1"
+                     /EC_number=""
+                     /translation="MPFLSLPKKKTLHPTKTLVISAESS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527711"
+ORIGIN
+        1 ATGCCGTTTC TGAGCCTGCC GAAGAAGAAA ACCTTGCACC CGACCAAGAC CCTGGTCATC
+       61 TCTGCTGAAA GCTCCTGA
+//

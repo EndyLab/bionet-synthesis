@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001712            468 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl478
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 468)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..468
+                     /locus_tag="Mfl478"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053720.1"
+                     /EC_number=""
+                     /translation="MNIKIVCFGKLDKKFFIDSFNEYANRISKYANLQVIELKEEYQK
+                     EDVVNKNINSDLLIDKLKAFSDHEIICMDVSSKNYSTEEFMSIIENNKNLKQAKIVFV
+                     IGPSDGFSDKFLQQNYKKVSFGNITLPHQLFRIILAEQIYRAFKIMNNEKYHK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897742"
+ORIGIN
+        1 ATGAATATCA AAATTGTTTG TTTCGGTAAG CTGGACAAGA AATTCTTTAT TGACAGCTTC
+       61 AACGAATATG CGAACCGTAT CAGCAAGTAT GCGAATCTGC AAGTGATCGA ATTGAAGGAG
+      121 GAGTACCAGA AGGAGGACGT TGTTAATAAG AACATTAATT CCGATCTGCT GATTGATAAG
+      181 CTGAAGGCCT TTTCCGATCA TGAGATTATT TGCATGGATG TCTCGAGCAA GAACTATAGC
+      241 ACCGAAGAGT TTATGAGCAT TATTGAAAAC AATAAAAATC TGAAACAGGC GAAAATTGTG
+      301 TTCGTCATCG GTCCGTCGGA TGGTTTTAGC GATAAATTTC TGCAGCAAAA CTACAAAAAG
+      361 GTTTCATTCG GCAACATTAC GCTGCCGCAC CAACTGTTTC GCATCATCCT GGCCGAGCAG
+      421 ATTTATCGTG CGTTCAAAAT TATGAACAAC GAAAAATACC ATAAGTGA
+//

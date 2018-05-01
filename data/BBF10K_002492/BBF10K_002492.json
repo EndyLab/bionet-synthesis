@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002492",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "cdd",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAAAGTTGATTTAGATTGAGTCCACCACAAGTTACAGGAGGTGGTCAATCATGCCTACACGCCTTTTTCAAAGTTTAAGGTAGCTTGTATGTTGGTGGCCAATAACCAGGCATTTTATGGAGTCAATATTGAAAACGCTTCTTACCCAGTAACCCTGTGTGCGGAACGTAGTGCGATTGCTAACATGGTCACTAGTATCGGCAAGGCCACAATTGATTATGTCTTTGTGTACTTTGACACTAAAACTCCAACCAATTCACCTTGTGGCATGTGTCGGCAAAACATCTTTGAGTTTGCCACTGATAAGACCCAGTTATTCTGCATTGAGAAGGACAAGAGCTTTAAACAATTTACTATTCCCGAAATTTTAAAGGGAGGTTTTCGATCATATGAACAGTAA",
+    "optimized_sequence": "ATGAAGGTCGACCTGGACTGGGTCCACCACAAATTGCAGGAAGTTGTGAATCATGCATATACCCCGTTCAGCAAATTTAAAGTGGCGTGCATGCTGGTCGCGAACAACCAAGCGTTCTACGGTGTTAATATCGAGAACGCCAGCTACCCGGTTACGCTGTGCGCGGAGCGCAGCGCAATCGCCAATATGGTCACCAGCATTGGTAAAGCCACCATCGATTACGTTTTTGTCTATTTTGACACCAAGACCCCGACCAATTCTCCGTGCGGCATGTGTCGTCAGAACATTTTCGAGTTCGCGACTGACAAAACCCAACTGTTTTGCATCGAGAAAGACAAGTCGTTTAAGCAATTCACGATTCCGGAGATCCTGAAGGGCGGTTTTCGCTCATACGAACAGTGA",
+    "fragment_sequences": {
+      "BBF10K_002492_link_BBF10K_002696": "GAAGACCAGGAGAAGGACTGCATACCAGGTTGGGTCTCAAATGAAGGTCGACCTGGACTGGGTCCACCACAAATTGCAGGAAGTTGTGAATCATGCATATACCCCGTTCAGCAAATTTAAAGTGGCGTGCATGCTGGTCGCGAACAACCAAGCGTTCTACGGTGTTAATATCGAGAACGCCAGCTACCCGGTTACGCTGTGCGCGGAGCGCAGCGCAATCGCCAATATGGTCACCAGCATTGGTAAAGCCACCATCGATTACGTTTTTGTCTATTTTGACACCAAGACCCCGACCAATTCTCCGTGCGGCATGTGTCGTCAGAACATTTTCGAGTTCGCGACTGACAAAACCCAACTGTTTTGCATCGAGAAAGACAAGTCGTTTAAGCAATTCACGATTCCGGAGATCCTGAAGGGCGGTTTTCGCTCATACGAACAGTGAAGAGCTTAGAGACCGGCTGCCAAAGAAACTGATTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAATGTCCTTAGGCAGTCGTCGGTCTCGAATGATTCAACGCACCCGTACCAGCTACGCAATCCACCGTTTCAATTCCACTGTTTACTTTTATCGTAGCCATGGTGTGGTGTGGTTTTGAAGAGCTTGGAGACCCGACTGCCGACATGATCTATCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN065",
+    "gene": "cdd",
+    "gene_synonyms": "",
+    "product": "cytidine deaminase",
+    "note": "",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_109753.1",
+    "EC_number": "",
+    "translation": "MKVDLDWVHHKLQEVVNHAYTPFSKFKVACMLVANNQAFYGVNIENASYPVTLCAERSAIANMVTSIGKATIDYVFVYFDTKTPTNSPCGMCRQNIFEFATDKTQLFCIEKDKSFKQFTIPEILKGGFRSYEQ",
+    "references": [
+      "db_xref=\"GeneID:877155\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-f53847ed-8fdc-4f28-8e0e-24d7558c1da4"
+}

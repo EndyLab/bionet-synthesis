@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002966            369 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 369)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..369
+                     /locus_tag="MPN539"
+                     /gene="rplL"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L7/L12"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110228.1"
+                     /EC_number=""
+                     /translation="MAKLDKNQLIESLKEMTIMEIDEIIKAVEEAFGVSATPVVAAGA
+                     VGGTQEAASEVTVKVTGYTDNAKLAVLKLYREIAGVGLMEAKTAVEKLPCVVKQDIKP
+                     EEAEELKKRFVEVGATVEIK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877373"
+ORIGIN
+        1 ATGGCAAAAC TGGATAAAAA CCAGTTGATT GAGTCCCTGA AGGAGATGAC GATCATGGAA
+       61 ATCGATGAGA TTATTAAAGC CGTCGAGGAG GCGTTCGGTG TGAGCGCGAC TCCGGTCGTT
+      121 GCGGCCGGTG CGGTGGGTGG TACCCAAGAG GCGGCCTCCG AGGTGACCGT AAAAGTCACG
+      181 GGCTACACCG ACAACGCAAA ACTGGCCGTG TTGAAGCTGT ATCGTGAGAT TGCGGGTGTT
+      241 GGTCTGATGG AGGCTAAGAC GGCAGTGGAA AAACTGCCTT GCGTCGTCAA GCAAGATATT
+      301 AAGCCGGAGG AGGCGGAGGA ACTGAAAAAA CGTTTCGTTG AGGTCGGCGC GACCGTGGAG
+      361 ATCAAGTGA
+//

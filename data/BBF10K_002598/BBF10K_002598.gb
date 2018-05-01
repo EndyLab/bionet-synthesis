@@ -1,0 +1,32 @@
+LOCUS       BBF10K_002598            186 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsN
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 186)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..186
+                     /locus_tag="MPN178"
+                     /gene="rpsN"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S14"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109866.1"
+                     /EC_number=""
+                     /translation="MAKKSLKVKQTRIPKFAVRAYTRCQRCGRARAVLSHFGVCRLCF
+                     RELAYAGAIPGVKKASW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876916"
+ORIGIN
+        1 ATGGCCAAGA AAAGCCTGAA GGTCAAGCAG ACGCGTATCC CGAAGTTCGC GGTTCGTGCG
+       61 TATACCCGCT GTCAGCGCTG TGGCCGCGCA CGCGCAGTCC TGTCTCACTT TGGTGTGTGC
+      121 CGTCTGTGTT TCCGCGAGCT GGCATACGCG GGTGCGATCC CGGGTGTCAA AAAGGCGAGC
+      181 TGGTGA
+//

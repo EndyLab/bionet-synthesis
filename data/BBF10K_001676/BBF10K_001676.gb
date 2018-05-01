@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001676            300 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplU
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 300)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..300
+                     /locus_tag="Mfl441"
+                     /gene="rplU"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L21"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053684.1"
+                     /EC_number=""
+                     /translation="MFAIIKTGGKQIKVEAGMEIFIEKLEGELNTEVTFEEVLMVDGK
+                     FGSPLVQGAKVTGTIVKQGKGKKIRVVRYHPKKNVNKVYGHRQPYTKVKIEKIEA"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897593"
+ORIGIN
+        1 ATGTTCGCGA TCATTAAGAC CGGTGGTAAG CAAATTAAGG TGGAGGCGGG CATGGAGATC
+       61 TTCATCGAGA AGCTGGAAGG TGAGCTGAAT ACCGAAGTTA CCTTTGAAGA AGTGTTGATG
+      121 GTTGATGGTA AATTCGGTTC CCCGCTGGTC CAGGGTGCGA AAGTGACCGG CACTATCGTG
+      181 AAACAGGGTA AAGGTAAAAA GATTCGTGTG GTCCGCTATC ACCCGAAGAA AAATGTTAAT
+      241 AAAGTTTACG GCCACCGTCA GCCGTATACG AAGGTGAAGA TCGAGAAAAT CGAGGCCTGA
+//

@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002718            438 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN290
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 438)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..438
+                     /locus_tag="MPN290"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109978.1"
+                     /EC_number=""
+                     /translation="MVYSKTFRVEEKSITVSARGTIGVVFYRDFAYLPAVSLICFVPK
+                     EEFDIRFLFHALRAIKFKKQGSATGQLTVAQFKEYGIHVPSLKKQKEIAAILDPLYSF
+                     FTDLNEGLPAEIELRKKQLDYYQNFLFNWIQKQKELVEQASTN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877414"
+ORIGIN
+        1 ATGGTCTACA GCAAGACGTT TCGTGTCGAG GAAAAGAGCA TCACTGTCTC TGCTCGTGGC
+       61 ACCATCGGTG TCGTCTTTTA TCGCGATTTC GCGTATCTGC CGGCCGTGAG CCTGATCTGT
+      121 TTCGTGCCGA AGGAAGAGTT CGACATCCGC TTTCTGTTTC ATGCACTGCG TGCCATTAAA
+      181 TTCAAGAAAC AAGGTAGCGC GACCGGTCAG TTAACCGTTG CGCAATTCAA GGAATACGGT
+      241 ATCCATGTCC CGTCCCTGAA GAAGCAGAAA GAAATTGCCG CAATCCTGGA TCCGTTGTAT
+      301 AGCTTCTTTA CCGATCTGAA CGAGGGTCTG CCAGCGGAGA TTGAGCTGCG CAAGAAGCAA
+      361 CTGGATTACT ACCAGAACTT TCTGTTCAAT TGGATCCAGA AGCAAAAGGA ACTGGTGGAA
+      421 CAAGCCAGCA CCAACTGA
+//

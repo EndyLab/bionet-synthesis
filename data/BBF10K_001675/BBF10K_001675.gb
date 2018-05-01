@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001675            315 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl440
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 315)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..315
+                     /locus_tag="Mfl440"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053683.1"
+                     /EC_number=""
+                     /translation="MIKVKIKNEGELLKQFEISGHAESGPYGQDLVCAAVSGITFGAL
+                     NALDIHFSKEVDLKVLENKIVITNNNIENQSLQTMLKMLKIQLSTIQTQYKQFIEIME
+                     VY"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898201"
+ORIGIN
+        1 ATGATCAAAG TTAAAATCAA GAACGAGGGT GAGCTCCTGA AACAGTTTGA GATCAGCGGT
+       61 CATGCTGAGA GCGGCCCGTA CGGTCAAGAC CTGGTTTGTG CCGCGGTTTC CGGTATTACG
+      121 TTTGGTGCAC TGAACGCGCT GGATATTCAT TTTAGCAAAG AGGTGGATCT GAAAGTTCTG
+      181 GAGAATAAGA TTGTCATCAC GAACAACAAC ATTGAGAATC AGAGCTTGCA AACTATGCTG
+      241 AAAATGCTGA AAATTCAGCT GAGCACCATT CAGACCCAGT ATAAGCAATT TATCGAAATT
+      301 ATGGAGGTCT ACTGA
+//

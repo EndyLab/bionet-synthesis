@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001656            549 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl421
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 549)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..549
+                     /locus_tag="Mfl421"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="holliday junction DNA helicase ruvA"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053664.1"
+                     /EC_number=""
+                     /translation="MKDYLVCDINSKDDNYLYVEYQNKGEYFSYLTKDNFKNEKNIKL
+                     FIVDHNTEFENVEIVFRSRDERNLFKELVKIKTVGLKTSFYLLNNFSFEEFIKMIEEY
+                     DIEKLAKLKGIGNYTAKLIIEELQKHFFKNKITQKKEKIITSLVKLGFSYKTIMKNIA
+                     NVDNLLSVDEITKIVMEQISYE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897603"
+ORIGIN
+        1 ATGAAAGACT ATCTGGTTTG CGATATTAAC AGCAAAGATG ATAATTACCT GTATGTGGAG
+       61 TATCAAAACA AGGGTGAGTA TTTCAGCTAC TTGACCAAAG ACAATTTTAA GAACGAGAAA
+      121 AATATCAAAC TGTTTATCGT CGACCACAAC ACTGAGTTCG AAAATGTGGA AATTGTGTTT
+      181 CGCAGCCGTG ATGAAAGAAA CCTGTTCAAG GAATTAGTTA AAATTAAGAC CGTTGGTCTG
+      241 AAAACGTCTT TCTACCTGTT AAATAATTTC TCCTTTGAGG AATTCATTAA AATGATCGAA
+      301 GAGTACGACA TTGAAAAACT CGCTAAACTG AAAGGTATTG GCAACTATAC TGCCAAACTG
+      361 ATCATTGAGG AGCTGCAGAA ACACTTCTTC AAAAATAAGA TTACGCAAAA GAAAGAGAAA
+      421 ATCATTACCA GCCTGGTCAA GCTGGGCTTT AGCTACAAGA CTATCATGAA AAATATCGCG
+      481 AACGTGGATA ATCTGCTGAG CGTCGATGAA ATTACCAAAA TCGTCATGGA GCAAATCTCT
+      541 TATGAGTGA
+//

@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002592            336 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 336)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..336
+                     /locus_tag="MPN173"
+                     /gene="rpmC"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L29"
+                     /note="one of the stabilizing components for the
+                     largeribosomal subunit"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109861.1"
+                     /EC_number=""
+                     /translation="MTVAKELRQKSSEELVKLVIKLKGELLEYRFKLAHGELDKPHLI
+                     NQTRRLLATILTILTERKLNWQEEQAKYKLLTKKTNEAAVNAWKQHLEANKAKLLKSR
+                     AKREDASKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876851"
+ORIGIN
+        1 ATGACGGTGG CCAAAGAACT GCGCCAAAAA TCAAGCGAGG AGCTGGTTAA ACTGGTGATC
+       61 AAATTGAAAG GCGAGTTGTT GGAGTATCGC TTTAAGCTGG CCCACGGTGA ACTGGACAAA
+      121 CCGCATCTGA TCAACCAGAC TCGTCGTCTG CTGGCGACGA TTTTGACCAT CCTGACCGAA
+      181 CGCAAGCTGA ATTGGCAGGA GGAGCAAGCT AAATACAAGT TACTGACCAA AAAGACGAAT
+      241 GAGGCTGCCG TTAACGCTTG GAAGCAGCAC TTGGAGGCCA ATAAGGCCAA ACTGTTAAAA
+      301 TCCCGCGCCA AGCGTGAGGA TGCTAGCAAA AAGTGA
+//

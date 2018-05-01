@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001732            354 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl498
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 354)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..354
+                     /locus_tag="Mfl498"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053740.1"
+                     /EC_number=""
+                     /translation="MRYNDREKARFSLNSSIAVFIVSTLLFIISCIYIGVVKQFPFWW
+                     ILPCIVFIQTIVSALYCWQAIYKIDIYGSYLNEKSMKTMFILIIFELLTLNIFAFLYG
+                     IYTYRKIYLSTRHIL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898113"
+ORIGIN
+        1 ATGCGTTACA ACGATCGCGA GAAAGCCCGC TTCAGCCTGA ATAGCAGCAT TGCTGTTTTT
+       61 ATCGTGTCGA CGTTGCTGTT TATCATTAGC TGTATCTACA TCGGTGTTGT GAAGCAGTTC
+      121 CCGTTTTGGT GGATCCTGCC GTGTATCGTT TTCATTCAAA CCATCGTCAG CGCGCTGTAC
+      181 TGTTGGCAAG CTATTTACAA GATTGACATC TACGGTAGCT ACCTGAACGA AAAGAGCATG
+      241 AAAACCATGT TCATTCTGAT CATCTTCGAA CTGCTGACCC TGAATATTTT CGCATTTCTG
+      301 TACGGTATCT ACACCTATCG TAAAATTTAC CTGAGCACCC GTCACATCCT GTGA
+//

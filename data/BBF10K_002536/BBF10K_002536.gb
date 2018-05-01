@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002536            180 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 180)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..180
+                     /locus_tag="MPN116"
+                     /gene="rpmI"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L35"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109804.1"
+                     /EC_number=""
+                     /translation="MKVKSAAKKRFKLTKSGQIKRKHAYTSHLAPHKTTKQKRHLRKQ
+                     GTVSASDFKRIGNLI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877369"
+ORIGIN
+        1 ATGAAAGTCA AATCGGCGGC CAAAAAACGC TTCAAGCTGA CCAAGAGCGG TCAAATCAAG
+       61 CGTAAACACG CTTATACGAG CCATCTGGCA CCGCACAAAA CCACCAAGCA AAAACGCCAC
+      121 TTGCGCAAAC AGGGTACCGT TAGCGCGAGC GATTTTAAAC GCATTGGTAA CCTGATTTGA
+//

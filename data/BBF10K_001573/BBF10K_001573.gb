@@ -1,0 +1,39 @@
+LOCUS       BBF10K_001573            492 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl340
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 492)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..492
+                     /locus_tag="Mfl340"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="nicotinamidase/pyrazinamidase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053581.1"
+                     /EC_number=""
+                     /translation="MNKALIIVDYQYDFVDSNGKLYVHAAESKKTYIEYLIKIFNENN
+                     DLVVATKDMHPLDHYSFAQWGPHCVVGTKGTDLYFDSSSIDKIIEKGKNKKTESYSAF
+                     FDEKGNSNFLDEYLRENNIQELTIVGVALEVCVKATFEHAIELGYKTNLDLKGCAGFQ
+                     DKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897953"
+ORIGIN
+        1 ATGAATAAAG CTCTGATCAT CGTGGATTAC CAGTATGACT TCGTGGACTC TAATGGTAAA
+       61 CTGTATGTTC ACGCCGCGGA GTCGAAAAAG ACCTACATCG AGTATCTGAT TAAGATCTTT
+      121 AACGAAAATA ACGACCTGGT CGTGGCGACC AAAGATATGC ACCCACTGGA CCACTACTCT
+      181 TTTGCTCAAT GGGGTCCGCA TTGCGTGGTC GGCACGAAAG GCACTGATCT GTATTTTGAT
+      241 TCCAGCAGCA TCGATAAAAT TATTGAGAAA GGTAAGAATA AGAAAACGGA AAGCTACAGC
+      301 GCATTTTTTG ACGAGAAGGG TAATTCCAAT TTCCTGGATG AGTATCTGAG AGAGAATAAT
+      361 ATTCAAGAGC TGACCATTGT CGGCGTGGCT TTGGAGGTTT GCGTTAAGGC GACCTTTGAA
+      421 CACGCCATTG AGCTGGGTTA CAAAACGAAC CTGGACCTGA AGGGTTGTGC GGGTTTTCAA
+      481 GATAAGAAGT GA
+//

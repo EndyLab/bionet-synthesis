@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002740",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "yabB",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGCTTTTAGGAACCTTCAACATTACCCTTGATGCAAAAAACAGGATCAGTCTGCCAGCGAAGCTGCGGGCTTTCTTTGAAGGTAGCATTGTTATCAACCGTGGCTTTGAAAACTGCTTGGAAGTGCGTAAACCACAAGACTTCCAAAAGTACTTTGAGCAGTTCAACAGCTTTCCCTCCACCCAAAAAGACACTAGAACACTCAAGCGCTTAATTTTTGCCAACGCTAACTTTGTGGATGTAGATACAGCGGGACGGGTTTTAATTCCCAACAATCTGATTAACGATGCCAAGCTAGACAAGGAAATTGTTTTAATTGGCCAGTTTGACCACTTAGAGATTTGGGACAAGAAGCTGTATGAGGACTACCTAGCCAACTCTGAGTCGTTGGAAACGGTAGCGGAAAGGATGAAAGATGTTAAGTAA",
+    "optimized_sequence": "ATGCTGCTGGGTACGTTCAATATTACCCTGGATGCGAAGAATCGCATCTCTCTGCCGGCGAAACTGCGTGCGTTTTTCGAAGGTAGCATTGTTATCAACCGCGGCTTTGAAAATTGCCTGGAGGTTCGTAAACCGCAGGACTTCCAGAAATATTTTGAGCAGTTCAATAGCTTCCCGTCCACGCAAAAAGACACCCGTACGCTGAAACGCCTGATCTTCGCAAATGCCAATTTTGTTGACGTGGACACCGCGGGTCGTGTACTGATTCCGAATAATCTCATCAATGATGCAAAGCTGGACAAAGAGATCGTCCTGATTGGTCAATTCGATCACTTGGAAATCTGGGACAAGAAGTTATATGAGGACTATCTGGCCAATAGCGAGAGCTTGGAAACCGTGGCCGAGCGTATGAAGGATGTCAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_002740_1": "GAAGACCAGGAGACAAGGAGTCGGCATATCACGGTCTCAAATGCTGCTGGGTACGTTCAATATTACCCTGGATGCGAAGAATCGCATCTCTCTGCCGGCGAAACTGCGTGCGTTTTTCGAAGGTAGCATTGTTATCAACCGCGGCTTTGAAAATTGCCTGGAGGTTCGTAAACCGCAGGACTTCCAGAAATATTTTGAGCAGTTCAATAGCTTCCCGTCCACGCAAAAAGACACCCGTACGCTGAAACGCCTGATCTTCGCAAATGCCAATTTTGTTGACGTGGACACCGCGGGTCGTGTACTGATTCCGAATAATCTCATCAATGATGCAAAGCTGGACAAAGAGATCGTCCTGATTGGTCAATTCGATCACTTGGAAATCTGGGACAAGAAGTTATATGAGGACTATCTGGCCAATAGCGAGAGCTTGGAAACCGTGGCCGAGCGTATGAAGGATGTCAAGTGAAGAGCTTAGAGACCCCAGCCTCAGATTGTTGTCTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN314",
+    "gene": "yabB",
+    "gene_synonyms": "",
+    "product": "transcriptional regulator MraZ",
+    "note": "",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110002.1",
+    "EC_number": "",
+    "translation": "MLLGTFNITLDAKNRISLPAKLRAFFEGSIVINRGFENCLEVRKPQDFQKYFEQFNSFPSTQKDTRTLKRLIFANANFVDVDTAGRVLIPNNLINDAKLDKEIVLIGQFDHLEIWDKKLYEDYLANSESLETVAERMKDVK",
+    "references": [
+      "db_xref=\"GeneID:877153\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-4c958472-cc3f-4423-859e-1c5d2f2c07b1"
+}

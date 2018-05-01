@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002307            330 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02170
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 330)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..330
+                     /locus_tag="MG_RS02170"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885811.1"
+                     /EC_number=""
+                     /translation="MEKTSNTSKPLSRSEINKIIAVATGIKEKKIKEIFKYLNTLLLN
+                     ELVSRSVCILPENLGKLRITIRNARYQKDMQTGEIRHIPPKPLVRYSPSKTIKETAAK
+                     VRWKYAD"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGAAAAGA CCAGCAATAC CAGCAAGCCG TTGAGCCGCT CAGAGATTAA CAAGATTATC
+       61 GCCGTGGCGA CGGGCATCAA GGAGAAGAAA ATCAAAGAGA TTTTCAAATA CCTGAACACC
+      121 CTGTTGCTGA ACGAGTTGGT CAGCCGCAGC GTCTGTATTT TGCCGGAGAA TCTGGGTAAA
+      181 CTCCGTATCA CCATTCGCAA TGCACGCTAC CAGAAAGACA TGCAGACCGG TGAAATTCGT
+      241 CACATTCCGC CTAAACCACT GGTGCGTTAT AGCCCAAGCA AGACGATTAA GGAAACCGCA
+      301 GCGAAGGTTC GCTGGAAGTA TGCGGATTGA
+//

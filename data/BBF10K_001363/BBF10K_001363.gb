@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001363            414 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplP
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 414)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..414
+                     /locus_tag="Mfl130"
+                     /gene="rplP"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L16"
+                     /note="located in the peptidyl transferase center and
+                     maybe involved in peptidyl transferase activity; similar
+                     toarchaeal L10e"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053370.1"
+                     /EC_number=""
+                     /translation="MLLPKRTKYRKPHKVSFKGKAKGAKTINFGEYGLMSLDGAWIDN
+                     RQIEAARIAMTRYMRRDGKVWMRIFPHISMSKKPAEVRMGSGKGNPEKWVAVVKEGTV
+                     MFEIAGVSEETAREALRLAMHKLPVRCKFVKRGEE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898284"
+ORIGIN
+        1 ATGCTGCTGC CGAAGCGCAC CAAGTATCGC AAGCCGCATA AGGTTTCTTT TAAAGGCAAA
+       61 GCGAAAGGCG CGAAAACCAT CAATTTTGGT GAATACGGTC TGATGAGCCT GGACGGTGCC
+      121 TGGATTGACA ACCGCCAGAT TGAGGCGGCA CGCATTGCTA TGACCCGCTA CATGCGTCGT
+      181 GACGGCAAGG TCTGGATGCG TATTTTCCCG CACATCAGCA TGAGCAAGAA GCCTGCCGAA
+      241 GTCCGTATGG GCAGCGGTAA GGGTAACCCG GAGAAATGGG TGGCTGTCGT TAAGGAGGGC
+      301 ACCGTTATGT TTGAAATTGC GGGTGTGTCT GAAGAAACGG CGCGCGAGGC ACTGCGTCTG
+      361 GCAATGCATA AGCTGCCGGT TCGTTGTAAG TTTGTTAAAC GCGGTGAGGA GTGA
+//

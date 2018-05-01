@@ -1,0 +1,34 @@
+LOCUS       BBF10K_001380            114 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmJ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 114)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..114
+                     /locus_tag="Mfl147"
+                     /gene="rpmJ"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L36"
+                     /note="smallest protein in the large subunit; similar
+                     towhat is found with protein L31 and L33 several
+                     bacterialgenomes contain paralogs which may be regulated
+                     by zinc;the protein from Thermus thermophilus has a zinc-
+                     bindingmotif and contains a bound zinc ion; the proteins
+                     in thisgroup have the motif"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053387.1"
+                     /EC_number=""
+                     /translation="MKVRSSVKKICDKCRVIRRKGRVMIICAQPKHKQRQG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897947"
+ORIGIN
+        1 ATGAAAGTTC GTAGCAGCGT GAAAAAGATT TGCGACAAGT GCCGTGTGAT TCGTCGTAAA
+       61 GGCCGCGTGA TGATTATCTG TGCGCAGCCG AAACATAAAC AGCGTCAGGG CTGA
+//

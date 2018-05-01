@@ -1,0 +1,34 @@
+LOCUS       BBF10K_002752            303 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplU
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 303)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..303
+                     /locus_tag="MPN325"
+                     /gene="rplU"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L21"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110013.1"
+                     /EC_number=""
+                     /translation="MHAIVVCGSKQYLVHENDTFFVEKLEAPVGKEIQLDKVLMLDEK
+                     IGAPYLEKARVVCVVEKHGLQRKVNVIKHISQKHHLKKYGHRQPYTKLKVVRFVHD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876945"
+ORIGIN
+        1 ATGCATGCGA TCGTGGTTTG CGGTAGCAAA CAGTACCTGG TTCACGAGAA TGATACCTTC
+       61 TTTGTTGAGA AACTGGAAGC ACCGGTGGGC AAAGAGATTC AGCTGGATAA AGTTTTAATG
+      121 CTGGACGAGA AAATTGGTGC ACCGTACCTT GAGAAAGCTC GTGTGGTGTG TGTCGTGGAA
+      181 AAACATGGTC TGCAACGCAA AGTCAATGTC ATCAAGCACA TCAGCCAAAA GCACCACCTG
+      241 AAAAAGTATG GCCACCGTCA ACCTTACACC AAACTGAAAG TGGTTCGCTT TGTTCATGAT
+      301 TGA
+//

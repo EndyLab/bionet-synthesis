@@ -1,0 +1,35 @@
+LOCUS       BBF10K_001471            327 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl238
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 327)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..327
+                     /locus_tag="Mfl238"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="DNA-binding protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053479.1"
+                     /EC_number=""
+                     /translation="MSKITLEKTLELSSLFYLYKNMLTEKQIEYFELYFEEDLSFQEI
+                     ADQLGISKAAAHDAINKIIKSLNDLEDKLQLNHKKISINELLEKNKNSKNEEVLNLIK
+                     KIEEVI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897840"
+ORIGIN
+        1 ATGAGCAAAA TCACCCTGGA AAAGACCTTG GAGCTGTCCA GCCTGTTTTA CCTGTATAAA
+       61 AACATGCTGA CGGAGAAACA AATCGAGTAC TTTGAGCTGT ATTTCGAGGA GGACCTGTCC
+      121 TTCCAGGAGA TCGCGGACCA GCTGGGTATC AGCAAGGCGG CCGCGCACGA TGCTATCAAC
+      181 AAGATCATTA AGTCGCTGAA CGATTTGGAG GATAAACTGC AGCTTAACCA CAAAAAGATC
+      241 AGCATCAATG AGCTGCTGGA GAAAAACAAA AACAGCAAAA ACGAAGAAGT GTTGAACTTG
+      301 ATCAAAAAGA TTGAGGAGGT GATTTGA
+//

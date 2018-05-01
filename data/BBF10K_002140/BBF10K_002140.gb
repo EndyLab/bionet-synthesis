@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002140            504 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01170
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 504)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..504
+                     /locus_tag="MG_RS01170"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="metallophosphoesterase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885744.1"
+                     /EC_number=""
+                     /translation="MQNKLIKVLVIADTHGQNQRWIELKNYHNPDVIIHAGDHMTTKQ
+                     FMDQNATFWVAGNNDSIGNEIEIFQLGQINFVLMHGHQAPRDNLKKWYQLLVLKAQQY
+                     PCDVLIFGHSHIEYTNKINMIQLINPGSLQLPRNQTNTPSYCTFIVNKDELTDLTIHY
+                     YQASKVS"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGCAAAACA AACTGATTAA GGTTCTGGTT ATTGCGGACA CCCACGGCCA AAATCAGCGT
+       61 TGGATTGAGC TGAAAAACTA TCACAATCCG GACGTTATCA TTCACGCGGG CGACCACATG
+      121 ACTACCAAGC AGTTCATGGA CCAAAACGCC ACCTTTTGGG TTGCCGGTAA CAATGACAGC
+      181 ATCGGTAATG AGATTGAGAT TTTCCAACTG GGCCAGATCA ACTTCGTGCT GATGCACGGC
+      241 CACCAGGCAC CGCGTGATAA CCTTAAGAAA TGGTATCAGC TGTTGGTCCT GAAGGCGCAG
+      301 CAATATCCGT GCGACGTCCT GATCTTTGGC CATAGCCATA TCGAATACAC CAACAAAATC
+      361 AACATGATCC AGCTGATCAA CCCGGGCTCT CTCCAACTGC CGCGTAACCA GACGAACACG
+      421 CCGAGCTACT GCACGTTTAT CGTCAACAAG GACGAGCTGA CGGACCTGAC TATTCACTAT
+      481 TACCAAGCCA GCAAAGTGTC CTGA
+//

@@ -1,0 +1,35 @@
+LOCUS       BBF10K_002601            351 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplR
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 351)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..351
+                     /locus_tag="MPN181"
+                     /gene="rplR"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L18"
+                     /note="binds 5S rRNA along with protein L5 and L25"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109869.1"
+                     /EC_number=""
+                     /translation="MKTRTEQRRLRHKRIVKKIRATNHDNRVVLMVIKSLNHISVQAW
+                     DFSQNIVLASSSSLALKLKNGNKDNAKLVGQDIADKLVKLKLTNVVFDTGGSKYHGRI
+                     AALAEAARERGLNF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876739"
+ORIGIN
+        1 ATGAAAACCC GCACCGAGCA GCGCCGTCTG CGTCACAAGC GTATTGTCAA AAAGATCCGT
+       61 GCGACGAACC ATGACAACCG CGTAGTTCTG ATGGTCATCA AGTCCCTGAA TCATATCAGC
+      121 GTTCAAGCGT GGGACTTCTC CCAGAATATC GTGTTGGCCA GCAGCAGCAG CTTGGCGTTG
+      181 AAACTGAAAA ACGGCAACAA AGATAACGCG AAACTGGTTG GCCAAGATAT TGCAGACAAA
+      241 TTGGTGAAAC TGAAGTTGAC GAATGTCGTG TTCGATACCG GTGGTAGCAA GTATCACGGT
+      301 CGTATTGCCG CATTGGCGGA AGCGGCGCGT GAACGTGGCC TGAATTTTTG A
+//

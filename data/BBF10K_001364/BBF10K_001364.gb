@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001364            420 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpmC
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 420)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..420
+                     /locus_tag="Mfl131"
+                     /gene="rpmC"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L29"
+                     /note="one of the stabilizing components for the
+                     largeribosomal subunit"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053371.1"
+                     /EC_number=""
+                     /translation="MANKLMDEIRALSVEQLLERNEAKKAELFALKFQAAVGSLEQTH
+                     RIKEIKKEIARIQLVIAEKAKAGEEVNKTVKTNYNQAVTEAEKAGKEVRAKQRKMIEE
+                     LQAQYENNGASNDDAIAEAMANAVVEEQNDVNEGETK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898288"
+ORIGIN
+        1 ATGGCCAATA AGCTGATGGA CGAGATTCGT GCGCTGAGCG TGGAACAGTT ATTGGAACGT
+       61 AATGAGGCCA AAAAGGCGGA GCTGTTTGCG CTGAAGTTTC AAGCTGCCGT TGGCAGCCTG
+      121 GAGCAGACTC ACCGTATCAA GGAAATCAAA AAGGAGATCG CCCGTATTCA GCTGGTTATC
+      181 GCAGAAAAGG CCAAAGCGGG CGAAGAGGTT AACAAGACCG TTAAGACGAA CTATAATCAA
+      241 GCGGTGACCG AAGCAGAGAA GGCGGGCAAG GAGGTTCGCG CGAAACAGCG TAAAATGATC
+      301 GAGGAACTGC AGGCCCAGTA CGAGAACAAC GGTGCTAGCA ATGACGACGC GATCGCAGAA
+      361 GCAATGGCGA ATGCGGTTGT TGAAGAACAA AATGACGTTA ATGAAGGTGA AACCAAGTGA
+//

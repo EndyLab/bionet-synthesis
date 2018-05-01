@@ -1,0 +1,36 @@
+LOCUS       BBF10K_001719            405 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl485
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 405)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..405
+                     /locus_tag="Mfl485"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053727.1"
+                     /EC_number=""
+                     /translation="MNNKEYLSKLEIYNFDKYQLIDKKEFNEVEKYFLSDEYVIDIIV
+                     GEINAFAHMILLTNKRLFTISKFIQTASQIKQYGLEQIEDVKLGVLGDIADLTMIFKN
+                     GNIFKIDYLHTEVAQKFGYNISKMYDEFIKSL"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897818"
+ORIGIN
+        1 ATGAATAATA AAGAGTACCT GAGCAAACTG GAAATTTACA ACTTCGACAA ATATCAGCTG
+       61 ATTGACAAGA AGGAATTCAA TGAAGTGGAA AAGTACTTTT TAAGCGACGA GTACGTGATC
+      121 GACATTATTG TTGGTGAGAT CAACGCGTTT GCGCACATGA TTCTGCTGAC CAACAAGCGT
+      181 CTTTTTACGA TCTCCAAATT CATCCAAACG GCAAGCCAAA TTAAGCAATA TGGCCTGGAA
+      241 CAGATCGAGG ATGTTAAACT GGGTGTTCTG GGTGATATCG CCGATCTGAC GATGATTTTC
+      301 AAAAACGGCA ATATCTTCAA AATTGATTAT CTGCATACGG AGGTGGCCCA GAAATTTGGT
+      361 TATAACATTA GCAAGATGTA CGACGAATTC ATCAAAAGCC TGTGA
+//

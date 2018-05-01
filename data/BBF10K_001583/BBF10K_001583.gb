@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001583            255 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl350
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 255)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..255
+                     /locus_tag="Mfl350"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053591.1"
+                     /EC_number=""
+                     /translation="MSQSKEMSMPEVIQEINRLAKIKKDRELTSEESAYREELKVLYL
+                     NYFRNGFEQQLKSTKVIDAQGNDVTPSKLKNEGDKYDKQK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897998"
+ORIGIN
+        1 ATGTCCCAGA GCAAGGAGAT GAGCATGCCG GAGGTTATTC AGGAAATTAA CCGTCTGGCA
+       61 AAAATTAAGA AGGATCGTGA GCTGACTAGC GAGGAGAGCG CGTACCGTGA GGAGCTGAAA
+      121 GTGTTGTACT TGAATTATTT TCGCAATGGC TTTGAGCAGC AGCTCAAGAG CACCAAGGTG
+      181 ATCGATGCGC AGGGCAACGA TGTAACCCCG TCCAAACTGA AAAATGAGGG TGACAAATAC
+      241 GACAAGCAGA AGTGA
+//

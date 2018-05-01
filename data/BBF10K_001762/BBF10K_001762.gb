@@ -1,0 +1,38 @@
+LOCUS       BBF10K_001762            456 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  nrdI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 456)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..456
+                     /locus_tag="Mfl529"
+                     /gene="nrdI"
+                     /gene_synonyms=""
+                     /product="ribonucleotide reductase stimulatory protein"
+                     /note="in Salmonella NrdI has a stimulatory effect on
+                     theribonucleotide reductase activity of NrdH with NrdEF"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053771.1"
+                     /EC_number=""
+                     /translation="MHDDIKLVSGEEIVKPTGEVHVVYFSSISNNTHRFIQKLSVKNS
+                     RIPYELEEEINVDSDYVLITPTYSGGGEFTSGAVPKQVIKFLNKENNRNYCRGVIASG
+                     NTNFGNTFAMAGPILSKKLNVPLLYQFELLGTQNDVEKINEILKEFWGK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898098"
+ORIGIN
+        1 ATGCACGACG ACATCAAACT GGTTTCGGGC GAGGAAATCG TGAAACCGAC CGGCGAGGTT
+       61 CATGTTGTTT ACTTCAGCAG CATCTCCAAT AATACCCACC GCTTCATTCA GAAACTGAGC
+      121 GTTAAGAACA GCCGTATCCC GTACGAGCTG GAGGAAGAGA TTAATGTGGA TAGCGACTAC
+      181 GTACTGATCA CTCCGACCTA TAGCGGTGGC GGTGAATTTA CCAGCGGTGC GGTCCCGAAG
+      241 CAAGTCATTA AATTTCTGAA TAAAGAGAAC AATCGCAATT ATTGTCGTGG TGTTATCGCT
+      301 AGCGGCAACA CCAACTTTGG TAACACGTTC GCCATGGCCG GTCCGATTTT AAGCAAAAAA
+      361 TTAAATGTTC CGCTGCTGTA CCAATTTGAG CTGCTGGGTA CGCAGAACGA CGTCGAAAAA
+      421 ATCAATGAGA TTTTGAAGGA GTTCTGGGGT AAGTGA
+//

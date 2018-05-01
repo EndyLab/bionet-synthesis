@@ -1,0 +1,91 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002367",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "MG_RS02470",
+      "description": "All genes from Mycoplasma genitalium G37, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 6,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAAAGAAATTTATTTTGGTGGTGGTTGTTTTTGAGGAATAGAAAAATATTTTCAACTTATTAAGGGTGTTAAAAAAACATCTGTTGGTTATCTCAACTCTAGGATTAGAAATCCTAGTTATGAGCAGGTTTGTTCTGGTTATACTAATGCTGTTGAAGCTGTAAAAGTTGAATACGAAGAAAAAGAAATTTCTCTTTCAGAATTAATTGAAGCACTTTTTGAAGTTATTGATCCAACTATAAGAAATAGACAAGGTAATGATATTGGAACACAATATCGTACTGGTATTTATTGAACTGATAGCAGTGATGAAAAAATAATTAATGATAAGTTCTTAAAACTTCAAAAAAACTACAGTAAACCAATTGTTACAGAAAATAAAAAAGTAGAAAATTATTATCTTGCTGAAGAATACCATCAGGATTATTTAAAAAAGAATCCAAACGGTTATTGCCACATCAAATTTGACTAA",
+    "optimized_sequence": "ATGAAAGAAATTTATTTCGGTGGCGGTTGCTTCTGGGGTATCGAAAAATATTTTCAGTTGATTAAGGGTGTTAAGAAAACCAGCGTTGGTTACTTGAATAGCCGTATTCGCAACCCGAGCTACGAACAGGTGTGTAGCGGCTACACCAACGCGGTGGAGGCAGTGAAGGTGGAGTATGAGGAAAAGGAAATCAGCTTGAGCGAGCTGATCGAGGCGCTGTTCGAAGTGATCGATCCGACCATCCGTAATCGTCAGGGTAATGACATTGGTACCCAGTACCGTACCGGTATCTATTGGACCGACAGCTCTGATGAGAAAATTATTAATGACAAGTTTCTGAAATTGCAAAAGAACTACTCCAAGCCGATTGTGACCGAGAACAAAAAAGTGGAAAATTACTACCTGGCGGAGGAATACCACCAGGACTATCTGAAGAAAAATCCGAACGGTTACTGTCACATCAAATTCGATTGA",
+    "fragment_sequences": {
+      "BBF10K_002367_1": "GAAGACCAGGAGAATCAGTTTCTTTGGCAGCCGGTCTCAAATGAAAGAAATTTATTTCGGTGGCGGTTGCTTCTGGGGTATCGAAAAATATTTTCAGTTGATTAAGGGTGTTAAGAAAACCAGCGTTGGTTACTTGAATAGCCGTATTCGCAACCCGAGCTACGAACAGGTGTGTAGCGGCTACACCAACGCGGTGGAGGCAGTGAAGGTGGAGTATGAGGAAAAGGAAATCAGCTTGAGCGAGCTGATCGAGGCGCTGTTCGAAGTGATCGATCCGACCATCCGTAATCGTCAGGGTAATGACATTGGTACCCAGTACCGTACCGGTATCTATTGGACCGACAGCTCTGATGAGAAAATTATTAATGACAAGTTTCTGAAATTGCAAAAGAACTACTCCAAGCCGATTGTGACCGAGAACAAAAAAGTGGAAAATTACTACCTGGCGGAGGAATACCACCAGGACTATCTGAAGAAAAATCCGAACGGTTACTGTCACATCAAATTCGATTGAAGAGCTTAGAGACCCGCTCACGGAGTGTACTAATCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MG_RS02470",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "",
+    "note": "Derived by automated computational analysis usinggene prediction method: Protein Homology.",
+    "Source": "Mycoplasma genitalium G37",
+    "GenBank_acc": "NC_000908 NZ_U39679-NZ_U39729",
+    "protein_id": "WP_010869470.1",
+    "EC_number": "1.8.4.11",
+    "translation": "MKEIYFGGGCFWGIEKYFQLIKGVKKTSVGYLNSRIRNPSYEQVCSGYTNAVEAVKVEYEEKEISLSELIEALFEVIDPTIRNRQGNDIGTQYRTGIYWTDSSDEKIINDKFLKLQKNYSKPIVTENKKVENYYLAEEYHQDYLKKNPNGYCHIKFD",
+    "references": []
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma genitalium"
+  ],
+  "virtual_id": "v-66be86ba-3952-4fbb-b22f-97199fb75fa1"
+}

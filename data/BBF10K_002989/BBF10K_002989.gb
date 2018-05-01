@@ -1,0 +1,44 @@
+LOCUS       BBF10K_002989            642 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  udk
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 642)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..642
+                     /locus_tag="MPN561"
+                     /gene="udk"
+                     /gene_synonyms=""
+                     /product="uridine kinase"
+                     /note="functions in pyrimidine salvage;
+                     pyrimidineribonucleoside kinase; phosphorylates
+                     nucleosides ordinucleosides to make UMP or CMP using ATP
+                     or GTP as thedonor"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110250.1"
+                     /EC_number="2.7.1.48"
+                     /translation="MDSKKGILVAIGGGSCSGKTTIADMIYQLLRKKLKVAILPQDNY
+                     YKPYKNKSMAQRKAINFDHPDAFDWKLLWSHLDNLLMGKTVAVPMYDYVNYTRKKETI
+                     EIGPLNVVILEGLMPWFDERIAKLCKLKIFVEATGEERLIRRIERDWERGRDVASIIK
+                     QWREAVSPMYEIFVEKMKQKADLIIPWSERHEVSTNVLDFAIEHLFRKHVDPN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876884"
+ORIGIN
+        1 ATGGACTCGA AAAAAGGTAT TCTGGTCGCG ATCGGTGGTG GCAGCTGCAG CGGTAAGACC
+       61 ACGATCGCGG ACATGATCTA CCAGCTGCTG CGTAAGAAAC TGAAAGTTGC CATTCTGCCG
+      121 CAGGATAATT ATTATAAACC ATACAAAAAC AAGTCTATGG CACAACGTAA GGCAATTAAC
+      181 TTCGATCACC CGGATGCGTT TGATTGGAAA TTGTTGTGGA GCCACCTGGA CAATCTGCTG
+      241 ATGGGCAAAA CCGTGGCGGT GCCGATGTAC GATTATGTAA ACTACACTCG CAAAAAGGAA
+      301 ACCATCGAAA TCGGTCCGCT GAATGTTGTC ATTCTCGAAG GCCTCATGCC GTGGTTTGAC
+      361 GAGCGTATCG CGAAACTGTG CAAGCTGAAA ATCTTCGTCG AAGCGACTGG CGAGGAGCGT
+      421 CTGATCAGAC GCATTGAGCG CGATTGGGAA CGTGGCCGCG ACGTGGCATC GATTATCAAG
+      481 CAATGGCGTG AAGCAGTCAG CCCAATGTAT GAAATTTTCG TTGAAAAGAT GAAGCAGAAA
+      541 GCTGATCTGA TCATTCCGTG GAGCGAGCGT CACGAGGTTA GCACCAACGT GCTGGACTTC
+      601 GCCATCGAGC ACCTGTTCCG TAAACATGTG GACCCGAACT GA
+//

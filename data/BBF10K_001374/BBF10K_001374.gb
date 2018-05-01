@@ -1,0 +1,37 @@
+LOCUS       BBF10K_001374            438 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplO
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 438)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..438
+                     /locus_tag="Mfl141"
+                     /gene="rplO"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L15"
+                     /note="late assembly protein"
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053381.1"
+                     /EC_number=""
+                     /translation="MKLHELKYTEGSKKDVTRVGRGMASGKGKTSTRGHKGQNSRSGG
+                     GVRVGFEGGQTPLYRRLPKIGFTSPNQKEYVILNLSDLERLNLALIDHKVLVEQKIIK
+                     NEKQLVKVLGKGSITSAINVKLNKVSKSAQAEIEKLGGKVEVI"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898047"
+ORIGIN
+        1 ATGAAGCTGC ACGAACTGAA ATACACGGAG GGCTCCAAAA AAGACGTTAC TCGCGTCGGC
+       61 CGTGGTATGG CGTCGGGTAA AGGCAAAACG TCCACCCGCG GTCATAAGGG TCAGAATAGC
+      121 CGCTCCGGTG GCGGTGTGCG CGTTGGTTTC GAAGGTGGCC AGACCCCGTT ATACCGTCGT
+      181 CTGCCGAAGA TCGGCTTTAC CTCTCCTAAT CAAAAGGAGT ACGTGATTCT GAATTTGAGC
+      241 GACCTGGAGC GTCTGAACTT AGCGCTGATC GATCACAAGG TCCTGGTTGA ACAAAAAATT
+      301 ATCAAAAATG AAAAACAGCT GGTCAAGGTC CTGGGTAAAG GCAGCATCAC GAGCGCGATC
+      361 AATGTCAAAC TGAACAAGGT GTCAAAGAGC GCGCAAGCGG AAATTGAGAA GCTGGGCGGT
+      421 AAAGTCGAGG TGATTTGA
+//

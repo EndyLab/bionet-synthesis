@@ -1,0 +1,93 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_002928",
+  "author": {
+    "name": "FreeGenes Team",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "MPN504",
+      "description": "All genes from Mycoplasma pneumonia M129, codon optimized for Escherichia coli. Requested by the JCVI.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 7,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "NA"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGAAAGAGAAAATTTCCGAAAAGGAATACAAAGCTTTAATCCGTAAAACTGGCAAAGAGCACTTTGATGGTGAAAAAGAAGAGTATGGTGATGGCACAGTTGGAGTTTGAACTTATGAATTGCGAAAATATAAACTTAAACCACCTGTGAAAGTTAAATACGTAACCCAAGAACAATTTCAGGAATATAAAGATTCCAACAATCAGCGACTCATAAAGATTGAAAATAAGGTTGATAAATTAGTTGAAATTGTTCAAATTCACGGCGAACAAATTAAAGCACAGGGAGAAACCCTGCAATTAATTTTGCAAACGCTGCAAAAGATGAGTGATCGCTTGGACAAGATGGAAAAAAGAATAGACAAACTTGAGTCCAAATAA",
+    "optimized_sequence": "ATGAAAGAAAAAATTTCGGAGAAGGAATACAAAGCACTGATTCGTAAGACCGGCAAAGAGCACTTCGATGGCGAGAAAGAGGAATATGGTGACGGTACGGTTGGTGTGTGGACGTACGAGTTACGCAAATACAAGCTGAAACCACCAGTGAAAGTCAAGTATGTCACCCAAGAACAGTTTCAGGAGTACAAGGATTCAAACAATCAGCGCCTGATCAAGATCGAGAATAAAGTGGATAAACTGGTCGAGATTGTGCAGATTCATGGTGAACAGATTAAAGCGCAGGGTGAAACCCTGCAGCTGATTCTGCAGACGCTGCAAAAGATGAGCGACCGCCTGGATAAAATGGAAAAACGTATCGACAAACTGGAGAGCAAGTGA",
+    "fragment_sequences": {
+      "BBF10K_002928_link_BBF10K_002421": "GAAGACCAGGAGACAAGGAGTCGGCATATCACGGTCTCAAATGAAAGAAAAAATTTCGGAGAAGGAATACAAAGCACTGATTCGTAAGACCGGCAAAGAGCACTTCGATGGCGAGAAAGAGGAATATGGTGACGGTACGGTTGGTGTGTGGACGTACGAGTTACGCAAATACAAGCTGAAACCACCAGTGAAAGTCAAGTATGTCACCCAAGAACAGTTTCAGGAGTACAAGGATTCAAACAATCAGCGCCTGATCAAGATCGAGAATAAAGTGGATAAACTGGTCGAGATTGTGCAGATTCATGGTGAACAGATTAAAGCGCAGGGTGAAACCCTGCAGCTGATTCTGCAGACGCTGCAAAAGATGAGCGACCGCCTGGATAAAATGGAAAAACGTATCGACAAACTGGAGAGCAAGTGAAGAGCTTAGAGACCGGACATTCGTCAGATCACCTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAACCGGAGCCATACAGTACGGTCTCGAATGAAGAGAACGTATCAGCCAAGCAAACTGAAACGTGCGAAAACCCATGGTTTCATGGCGCGTATGGCAACCGCGCAAGGTCGCAAGGTGCTGCGTCAGCGCAGATTTAAGAACCGTGCGCAGTTGACGGTGAGCAGCGAACGCTGAAGAGCTTGGAGACCGGTTCCTAGACCTCCTGGATCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "MPN504",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "hypothetical protein",
+    "note": "",
+    "Source": "Mycoplasma pneumoniae M129",
+    "GenBank_acc": "NC_000912",
+    "protein_id": "NP_110192.1",
+    "EC_number": "",
+    "translation": "MKEKISEKEYKALIRKTGKEHFDGEKEEYGDGTVGVWTYELRKYKLKPPVKVKYVTQEQFQEYKDSNNQRLIKIENKVDKLVEIVQIHGEQIKAQGETLQLILQTLQKMSDRLDKMEKRIDKLESK",
+    "references": [
+      "db_xref=\"GeneID:877271\""
+    ]
+  },
+  "tags": [
+    "Mycoplasma",
+    "Mycoplasma pneumonia"
+  ],
+  "virtual_id": "v-13bff456-abcd-41f3-a86e-a1bd8fbb720b"
+}

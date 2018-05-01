@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002774            495 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN348
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 495)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..495
+                     /locus_tag="MPN348"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="5-formyltetrahydrofolate cyclo-ligase"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110036.1"
+                     /EC_number=""
+                     /translation="MDKNALRKQILQKRMALSTIEKSHLDQKINQKLVAFLTPKPCIK
+                     TIALYEPIKNEVTFVDFFFEFLKINQIRAVYPKVISDTEIIFIDQETNTFEPNQIDCF
+                     LIPLVGFNKDNYRLGFGKGYYDRYLMQLTRQQPKIGIAYSFQKGDFLADPWDVQLDLI
+                     INDE"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876747"
+ORIGIN
+        1 ATGGACAAGA ATGCCCTGCG CAAGCAGATC CTGCAAAAAC GTATGGCGCT GAGCACGATT
+       61 GAAAAAAGCC ATCTGGACCA GAAAATTAAC CAAAAGCTGG TGGCGTTTCT GACGCCTAAG
+      121 CCATGCATTA AAACCATTGC ACTGTACGAG CCGATTAAAA ACGAGGTCAC TTTTGTCGAT
+      181 TTCTTCTTTG AATTCCTGAA GATCAATCAA ATTCGTGCCG TGTATCCGAA AGTTATCAGC
+      241 GACACCGAAA TTATCTTCAT CGACCAGGAA ACCAATACGT TCGAACCGAA CCAAATTGAC
+      301 TGTTTTCTGA TTCCGCTGGT TGGCTTCAAT AAGGACAATT ATCGCCTGGG TTTCGGCAAA
+      361 GGTTATTACG ACCGCTATTT GATGCAGTTG ACCCGTCAGC AACCTAAAAT CGGTATCGCA
+      421 TACAGCTTTC AGAAGGGCGA CTTTCTGGCG GATCCTTGGG ACGTGCAGCT GGATCTGATT
+      481 ATCAACGATG AGTGA
+//

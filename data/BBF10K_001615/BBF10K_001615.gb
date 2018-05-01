@@ -1,0 +1,31 @@
+LOCUS       BBF10K_001615            144 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl380
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 144)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..144
+                     /locus_tag="Mfl380"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L33"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053623.1"
+                     /EC_number=""
+                     /translation="MREKYILRCTECKNENYIGKNDKKKEKIEVKKFCSNCNKHELHK
+                     QKK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897802"
+ORIGIN
+        1 ATGCGCGAGA AGTATATCCT GCGTTGTACC GAGTGCAAAA ACGAAAATTA CATCGGTAAA
+       61 AATGATAAAA AGAAAGAGAA GATCGAGGTC AAAAAGTTTT GCAGCAACTG CAATAAACAT
+      121 GAGTTGCACA AACAGAAGAA GTGA
+//

@@ -1,0 +1,33 @@
+LOCUS       BBF10K_002700            282 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN272
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 282)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..282
+                     /locus_tag="MPN272"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109960.1"
+                     /EC_number=""
+                     /translation="MNRPTPNFEAIDKKISAFVTNHDNLLDKLLKQQTELLTSEITTN
+                     FEVTQQIQEEVAKKTKQHSKNYKWLVTVVLANGVVSLFLLGGLIYLFSK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876865"
+ORIGIN
+        1 ATGAATCGTC CGACGCCTAA CTTCGAAGCG ATCGATAAAA AGATCTCGGC ATTCGTGACC
+       61 AACCATGACA ATCTGCTGGA TAAGCTGCTG AAGCAACAAA CGGAGTTGCT GACCAGCGAA
+      121 ATCACCACCA ACTTCGAGGT TACGCAACAG ATTCAGGAAG AGGTTGCGAA GAAAACCAAA
+      181 CAGCACAGCA AAAATTACAA ATGGCTGGTT ACGGTGGTCC TGGCAAACGG TGTGGTTAGC
+      241 CTGTTCCTGC TGGGTGGTCT GATTTACCTG TTCAGCAAGT GA
+//

@@ -1,0 +1,33 @@
+LOCUS       BBF10K_001349            300 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl116
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 300)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..300
+                     /locus_tag="Mfl116"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="ATP synthase subunit epsilon"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053356.1"
+                     /EC_number=""
+                     /translation="MAINLIITTPNGKFIDNKKVDIINLKTIDGDIGVLGNMSPLVTA
+                     LKIGNMNFKVNNQTHWIHLHRGLAIINATECKIITERLYLVNENGTKIPTPDKLD"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897687"
+ORIGIN
+        1 ATGGCGATCA ATCTGATTAT CACCACCCCG AATGGTAAAT TCATCGACAA CAAAAAAGTT
+       61 GACATTATCA ATCTCAAAAC GATCGATGGT GACATCGGCG TGCTGGGTAA TATGAGCCCG
+      121 CTGGTCACCG CCCTGAAAAT CGGTAACATG AACTTTAAGG TCAATAATCA GACGCATTGG
+      181 ATTCATCTGC ACCGTGGCTT GGCGATCATC AACGCAACCG AGTGTAAAAT CATCACGGAG
+      241 CGTCTGTATC TGGTCAATGA GAACGGCACT AAAATCCCGA CCCCAGACAA ACTGGATTGA
+//

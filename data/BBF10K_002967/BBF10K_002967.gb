@@ -1,0 +1,31 @@
+LOCUS       BBF10K_002967            162 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN539a
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 162)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..162
+                     /locus_tag="MPN539a"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="YP_009121738.1"
+                     /EC_number=""
+                     /translation="MLLSKTSNLKKLKNLKSVSLKLEQLLKSNNQQWQYNNDAQANTV
+                     VTKDVPTMH"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:23527753"
+ORIGIN
+        1 ATGCTGCTGA GCAAAACTAG CAACCTGAAA AAATTGAAGA ATCTGAAGTC CGTAAGCCTG
+       61 AAACTGGAGC AGCTGCTGAA GTCTAACAAT CAGCAGTGGC AATATAACAA TGACGCACAG
+      121 GCAAACACCG TCGTCACGAA AGATGTGCCG ACGATGCATT GA
+//

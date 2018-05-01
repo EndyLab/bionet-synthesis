@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002679            474 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN254
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 474)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..474
+                     /locus_tag="MPN254"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109942.1"
+                     /EC_number=""
+                     /translation="MYARLIAEKLLNHKLTIATAESVTGGLLSSSLTDIAGASRFFKG
+                     AIVAYSNELKKSLLNVKQSTLINHGAVSRYCVREMALGLMQKLNVDIAVACSGVAGPD
+                     ALENQAVGSLFFCVIVANKAYDFETKLPAGSRNELRQLFVQKILQTVEHILSEIS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876878"
+ORIGIN
+        1 ATGTACGCGC GTCTGATCGC CGAAAAGCTG CTGAATCACA AGCTGACGAT CGCGACGGCG
+       61 GAAAGCGTCA CCGGCGGTCT GCTGTCATCC AGCCTGACTG ATATTGCGGG TGCATCTCGC
+      121 TTTTTCAAAG GCGCGATCGT TGCGTACTCC AATGAGCTGA AGAAGTCCTT GCTGAACGTT
+      181 AAGCAGAGCA CGTTGATTAA CCATGGTGCC GTCAGCCGTT ATTGCGTGCG TGAGATGGCT
+      241 TTGGGTTTGA TGCAAAAATT GAACGTTGAT ATTGCGGTGG CGTGTAGCGG TGTCGCGGGT
+      301 CCGGATGCGT TGGAGAACCA AGCAGTCGGC AGCCTGTTTT TCTGCGTCAT CGTGGCAAAC
+      361 AAGGCATATG ATTTTGAAAC CAAGCTGCCG GCGGGTAGCC GTAATGAACT GCGCCAGCTG
+      421 TTCGTTCAGA AAATTCTGCA GACCGTTGAG CATATCTTGA GCGAAATTTC CTGA
+//

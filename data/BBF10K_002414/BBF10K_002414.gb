@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002414            510 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02705
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 510)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..510
+                     /locus_tag="MG_RS02705"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885572.1"
+                     /EC_number=""
+                     /translation="MQLRVGLGSKKYHIKLRKESKNKFWLGGVDFENSKYIYDLENSD
+                     EVSDVIQLAVADALFGATALGDGHIVFNKGKSTVQFKGTAKKEAPRVLARTYNFIRKN
+                     WIINNIDISLEIPQEQKVDDYKHAIFAFICSALRISELTINLKVRKPLDSNEINCLAV
+                     VLVERQKTK"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGCAGCTGC GTGTGGGTTT GGGTAGCAAA AAGTACCATA TCAAACTGCG TAAGGAAAGC
+       61 AAAAACAAGT TCTGGCTGGG CGGCGTTGAC TTCGAAAATA GCAAATATAT TTACGATCTG
+      121 GAGAACAGCG ACGAAGTTTC TGACGTCATT CAACTGGCTG TGGCGGACGC ACTGTTTGGT
+      181 GCGACGGCTT TGGGTGACGG TCATATCGTT TTCAATAAAG GTAAGTCTAC GGTGCAATTC
+      241 AAAGGTACGG CGAAAAAGGA GGCCCCGCGT GTGCTGGCGC GTACCTATAA TTTTATCCGT
+      301 AAAAACTGGA TCATCAATAA CATTGACATT TCCCTGGAGA TTCCTCAAGA GCAGAAAGTT
+      361 GACGACTACA AACACGCTAT CTTTGCATTC ATTTGCTCCG CATTGCGTAT TAGCGAATTG
+      421 ACGATTAATC TGAAGGTTCG TAAACCGCTG GATAGCAACG AGATTAACTG TCTGGCGGTG
+      481 GTCCTGGTGG AGCGTCAAAA GACGAAGTGA
+//

@@ -1,0 +1,40 @@
+LOCUS       BBF10K_002205            597 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS01570
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 597)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..597
+                     /locus_tag="MG_RS01570"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="dephospho-CoA kinase"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885895.1"
+                     /EC_number=""
+                     /translation="MLIAIVGKPGVGKTSLLQYLKDNYHFSVFYADSFIHEQYQKNNP
+                     GYQLIMDHFGKEFVNQTEVDRKKLANYVFSDDKLIEKLSLVTKPLLIAWIKSLKTQFQ
+                     KKLALIEIAVMLNYWNEYRSLFDYVIKLERDDQLVNLALQQRNSHKKVKDLIKEPNCK
+                     IDTIFNNDSIATAALKLIKLLETFLERNKCRCDCCHIQ"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGCTGATCG CGATCGTCGG TAAGCCGGGT GTAGGCAAAA CGAGCCTGCT GCAATACCTG
+       61 AAGGACAATT ACCACTTCTC TGTGTTCTAT GCAGACAGCT TTATCCACGA ACAATACCAG
+      121 AAAAATAACC CAGGTTACCA ACTGATTATG GACCACTTTG GTAAAGAATT CGTAAATCAA
+      181 ACGGAGGTTG ATCGTAAGAA ACTGGCGAAC TACGTGTTTT CTGATGACAA GCTGATCGAG
+      241 AAACTGAGCC TGGTTACGAA ACCGCTGCTG ATTGCTTGGA TTAAGAGCCT TAAAACCCAG
+      301 TTCCAGAAAA AGTTAGCGCT GATCGAGATT GCCGTTATGC TGAATTACTG GAACGAGTAC
+      361 CGTAGCCTCT TTGATTATGT TATCAAACTG GAGCGTGACG ATCAACTGGT GAATCTGGCG
+      421 CTGCAGCAGC GTAATTCTCA CAAGAAAGTT AAAGACCTGA TCAAAGAGCC GAATTGCAAG
+      481 ATCGACACCA TCTTCAATAA TGACTCAATC GCGACCGCCG CATTAAAACT GATTAAGCTG
+      541 CTGGAAACGT TCCTGGAGCG TAATAAGTGC CGTTGTGATT GCTGTCATAT CCAGTGA
+//

@@ -1,0 +1,42 @@
+LOCUS       BBF10K_002721            555 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  lspA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 555)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..555
+                     /locus_tag="MPN293"
+                     /gene="lspA"
+                     /gene_synonyms=""
+                     /product="signal peptidase II"
+                     /note="lipoprotein signal peptidase; integral
+                     membraneprotein that removes signal peptides from
+                     prolipoproteinsduring lipoprotein biosynthesis"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109981.1"
+                     /EC_number="3.4.23.36"
+                     /translation="MAKAPTFFSKLLKQILFANRKPFLYYKLALILFVGFVILFQVFM
+                     LRAALNGEKGINGANGTDVARSSFISIYVIGNKGVGFSLLADQPGLVYFLQGFLSFIA
+                     LFFLVFSTSYNYIFWITTLAFGSLGNFFDRLTSGSGEVLDYFVFSGGNSVFNLADCCI
+                     TFSFIGLFLSFLIQFFKEMKQTKS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877085"
+ORIGIN
+        1 ATGGCGAAAG CCCCAACCTT CTTTAGCAAG CTGCTGAAAC AGATCCTGTT CGCGAACCGT
+       61 AAACCGTTCT TATACTACAA ACTGGCGCTG ATCCTGTTCG TTGGTTTCGT TATTTTGTTC
+      121 CAGGTTTTCA TGCTGCGTGC AGCACTGAAC GGTGAGAAGG GCATTAACGG TGCAAACGGC
+      181 ACGGATGTCG CGCGTAGCAG CTTTATTAGC ATCTACGTGA TCGGTAATAA AGGCGTGGGC
+      241 TTTAGCCTGC TGGCGGATCA GCCGGGTCTG GTTTATTTTC TGCAGGGTTT CCTGAGCTTT
+      301 ATCGCCCTGT TCTTTTTGGT GTTCAGCACC AGCTACAACT ACATTTTTTG GATTACCACC
+      361 CTGGCGTTTG GTAGCTTGGG TAACTTCTTT GATCGCCTGA CCAGCGGTAG CGGCGAAGTG
+      421 CTGGACTATT TCGTTTTCAG CGGTGGCAAC AGCGTGTTTA ACCTCGCTGA TTGCTGCATT
+      481 ACCTTTAGCT TCATTGGTTT ATTCCTGTCC TTCCTGATCC AGTTCTTCAA AGAAATGAAA
+      541 CAAACGAAGT CCTGA
+//

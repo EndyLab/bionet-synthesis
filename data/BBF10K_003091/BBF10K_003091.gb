@@ -1,0 +1,39 @@
+LOCUS       BBF10K_003091            456 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  pilB
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 456)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..456
+                     /locus_tag="MPN662"
+                     /gene="pilB"
+                     /gene_synonyms=""
+                     /product="methionine sulfoxide reductase B"
+                     /note="this stereospecific enzymes reduces the R isomer
+                     ofmethionine sulfoxide while MsrA reduces the S
+                     form;provides protection against oxidative stress"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110351.1"
+                     /EC_number="1.8.4.11"
+                     /translation="MSKYQKKSDGELKRTLTKLQYDVTQNAHTEPPYTNEYNRHYEKG
+                     IYVDITSGEPLFISTDKFKSGCGWPAFTKPISQDLIANYRDESHGMIRTEVRAKNSNS
+                     HLGHVFRDGPEEHGGLRYCINSAALKFIPFAEMESAGYGEYLKLFKESN"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877011"
+ORIGIN
+        1 ATGAGCAAAT ATCAGAAGAA ATCCGATGGT GAGCTGAAGC GTACCCTGAC GAAGCTGCAG
+       61 TACGACGTGA CCCAGAATGC GCACACCGAA CCGCCGTACA CCAACGAGTA CAATCGTCAT
+      121 TACGAAAAAG GCATTTACGT TGATATTACT AGCGGTGAAC CGCTGTTCAT TAGCACCGAT
+      181 AAGTTCAAGA GCGGCTGCGG TTGGCCGGCA TTCACCAAAC CGATCAGCCA GGATCTGATC
+      241 GCGAACTATC GTGATGAGAG CCACGGTATG ATCCGCACGG AAGTGCGTGC CAAGAACAGC
+      301 AACTCCCACC TGGGCCACGT GTTCCGCGAC GGTCCGGAGG AGCACGGCGG TCTGCGTTAT
+      361 TGTATCAATT CCGCGGCCCT GAAATTCATC CCGTTCGCAG AAATGGAGAG CGCCGGTTAC
+      421 GGCGAGTATC TGAAACTGTT CAAGGAATCC AACTGA
+//

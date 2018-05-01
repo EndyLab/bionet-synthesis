@@ -1,0 +1,38 @@
+LOCUS       BBF10K_002650            468 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsG
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 468)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..468
+                     /locus_tag="MPN226"
+                     /gene="rpsG"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S7"
+                     /note="binds directly to 16S rRNA where it
+                     nucleatesassembly of the head domain of the 30S subunit"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109914.1"
+                     /EC_number=""
+                     /translation="MRKNRAPKRTVLPDPVFNNTLVTRIINVIMEDGKKGLAQRILYG
+                     AFDLIEQRTKEKPLTVFERAVGNVMPRLELRVRRIAGSNYQVPTEVPQDRKIALALRW
+                     IAMFARKRHEKTMLEKIANEIIDASNNTGAAIKKKDDTHKMAEANKAFAHMRW"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877063"
+ORIGIN
+        1 ATGCGTAAAA ATCGTGCACC GAAACGTACG GTCCTGCCGG ATCCGGTGTT CAACAACACC
+       61 CTGGTTACCC GCATTATCAA CGTGATCATG GAGGACGGTA AGAAGGGCTT GGCCCAACGC
+      121 ATCCTGTATG GCGCATTTGA TCTGATTGAA CAGCGCACTA AAGAGAAGCC GCTGACGGTG
+      181 TTCGAGCGCG CGGTTGGTAA CGTGATGCCG CGCCTGGAGC TGCGTGTTCG TCGTATCGCC
+      241 GGTAGCAACT ACCAGGTTCC GACGGAAGTT CCTCAGGATC GTAAAATTGC TCTGGCGCTG
+      301 CGCTGGATCG CTATGTTTGC ACGTAAACGT CATGAAAAGA CGATGCTGGA GAAAATCGCG
+      361 AACGAAATCA TCGATGCCTC GAACAACACC GGCGCAGCCA TCAAAAAGAA AGACGACACT
+      421 CACAAAATGG CAGAAGCGAA TAAGGCCTTT GCCCACATGC GTTGGTGA
+//

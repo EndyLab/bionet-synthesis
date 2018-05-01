@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002998            390 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN570
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 390)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..390
+                     /locus_tag="MPN570"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110259.1"
+                     /EC_number=""
+                     /translation="MKQKIIGLTLAFFVLFLTAVAILFTVKVQRYLTTSLWAKLSEQT
+                     FLVFKNEQDEAQFNQVSWTNFQAETTKKEDKKAFRLYKKKISLEQLENENQQQLFQAV
+                     NLSINLKQGWYNITILLPSKALFETVF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876852"
+ORIGIN
+        1 ATGAAGCAGA AAATCATTGG CCTGACCCTG GCGTTCTTTG TCCTGTTCTT GACGGCTGTC
+       61 GCGATCCTGT TTACCGTTAA AGTCCAGCGT TACCTGACCA CGAGCCTGTG GGCCAAACTG
+      121 TCGGAACAAA CCTTCCTGGT ATTCAAGAAT GAGCAGGATG AAGCCCAGTT CAACCAAGTG
+      181 AGCTGGACCA ACTTTCAAGC CGAAACCACG AAAAAGGAGG ACAAGAAAGC TTTCCGTCTG
+      241 TACAAGAAGA AGATTAGCCT GGAGCAGCTG GAGAACGAGA ACCAACAACA GCTGTTTCAA
+      301 GCGGTCAATC TGTCCATTAA TTTGAAGCAG GGTTGGTACA ACATCACCAT TCTGCTGCCG
+      361 TCCAAAGCTT TGTTCGAAAC CGTTTTTTGA
+//

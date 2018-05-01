@@ -1,0 +1,39 @@
+LOCUS       BBF10K_002924            492 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MPN499
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 492)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..492
+                     /locus_tag="MPN499"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="hypothetical protein"
+                     /note=""
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110187.1"
+                     /EC_number=""
+                     /translation="MVKMLTMDKILSKKIKVNWLGGVFWLLPNLLDLFSASKRKASVR
+                     PYQSLLELVQENFLNRYDLVHFSFNGDHDFFHFNDLQAIRSFNFTIEEEQLGAMQPDE
+                     VLLFEPVDRVTVELDQKGLSLIHSGKAFCASANYFKHWLKRVPQQDKVTLVWRKSGFE
+                     LKQ"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877262"
+ORIGIN
+        1 ATGGTGAAGA TGCTCACCAT GGATAAGATC CTGAGCAAGA AAATTAAGGT CAACTGGCTG
+       61 GGTGGTGTGT TTTGGCTGCT GCCGAATCTC CTGGACCTGT TTAGCGCAAG CAAACGTAAG
+      121 GCGAGCGTTC GTCCGTACCA GAGCCTGCTG GAGCTGGTTC AAGAGAACTT TTTGAACCGT
+      181 TACGACCTGG TTCATTTTTC TTTTAATGGT GATCATGACT TTTTTCATTT TAACGATTTG
+      241 CAGGCTATTC GCAGCTTCAA CTTCACCATC GAAGAGGAGC AGTTGGGTGC CATGCAACCG
+      301 GATGAGGTCC TGCTGTTTGA GCCGGTGGAC CGCGTCACCG TGGAACTGGA CCAAAAAGGC
+      361 CTCAGCCTGA TTCATAGCGG CAAGGCATTC TGCGCAAGCG CGAACTACTT CAAACACTGG
+      421 TTGAAGCGCG TTCCGCAGCA GGATAAAGTC ACCTTGGTTT GGCGTAAATC TGGCTTTGAA
+      481 TTGAAACAGT GA
+//

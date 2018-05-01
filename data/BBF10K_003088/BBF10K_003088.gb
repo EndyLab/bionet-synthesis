@@ -1,0 +1,42 @@
+LOCUS       BBF10K_003088            633 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  trmD
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 633)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..633
+                     /locus_tag="MPN659"
+                     /gene="trmD"
+                     /gene_synonyms=""
+                     /product=""
+                     /note="methylates guanosine-37 in various tRNAs; usesS-
+                     adenosyl-L-methionine to transfer methyl group to tRNA"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110348.1"
+                     /EC_number=""
+                     /translation="MAQAQKAKLVEFEVINWRQYCKDKHQTVDDMAYGGGGGMVLKAE
+                     PILKALKACRTPQSKVVLLSPEGQQFSQPMAQALTQTEHLILICGHYEGFDYRLYKHV
+                     DQIISLGDFVLSGGELVALSVIDATVRLIKGVINDQSLIHESFNNYLLDFPAYTRPYD
+                     LDGDKVPEILLSGDHKKIEAYRKEQQLLRTAQYRPDLYKQYLAKKDEKNK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877016"
+ORIGIN
+        1 ATGGCACAGG CCCAAAAAGC GAAGCTGGTG GAGTTCGAGG TCATCAACTG GCGTCAGTAC
+       61 TGCAAGGACA AGCATCAAAC TGTGGATGAT ATGGCGTATG GCGGCGGTGG TGGCATGGTT
+      121 CTGAAGGCGG AGCCGATTCT GAAAGCGCTG AAAGCCTGCC GTACCCCGCA GAGCAAAGTG
+      181 GTGCTGTTAA GCCCGGAAGG CCAACAGTTC AGCCAGCCGA TGGCCCAAGC TCTGACCCAG
+      241 ACCGAGCACC TGATTCTGAT TTGCGGTCAT TATGAGGGCT TTGATTACCG CCTGTACAAA
+      301 CACGTCGACC AAATTATCAG CCTGGGCGAC TTCGTACTGA GCGGTGGTGA ACTGGTCGCC
+      361 CTGAGCGTGA TTGACGCGAC CGTTCGCCTG ATTAAAGGCG TGATCAATGA CCAGAGCCTG
+      421 ATCCATGAAA GCTTTAACAA CTATTTGCTG GACTTCCCGG CGTATACGCG TCCGTACGAC
+      481 CTGGATGGTG ACAAGGTGCC TGAGATCCTG CTGTCGGGTG ATCACAAGAA AATTGAAGCT
+      541 TACCGTAAAG AACAGCAGCT GCTGAGAACG GCCCAATATC GTCCGGACCT GTACAAACAG
+      601 TACTTGGCAA AGAAAGATGA GAAGAACAAG TGA
+//

@@ -1,0 +1,42 @@
+LOCUS       BBF10K_002596            543 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 543)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..543
+                     /locus_tag="MPN177"
+                     /gene="rplE"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L5"
+                     /note="part of 50S and 5S/L5/L18/L25 subcomplex;
+                     contacts5S rRNA and P site tRNA; forms a bridge to the 30S
+                     subunitin the ribosome by binding to S13"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109865.1"
+                     /EC_number=""
+                     /translation="MNNLKAHYQKTIAKELQKSFAFSSIMQVPRLEKIVINMGVGDAI
+                     RDSKFLESALNELHLISGQKPVATKAKNAISTYKLRAGQLIGCKVTLRGERMWAFLEK
+                     LIYVALPRVRDFRGLSLKSFDGRGNYTIGIKEQIIFPEIVYDDIKRIRGFDVTLVTST
+                     NKDSEALALLRALNLPLVKG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876962"
+ORIGIN
+        1 ATGAACAATC TGAAGGCGCA CTACCAAAAG ACTATTGCGA AAGAGCTGCA AAAGAGCTTC
+       61 GCATTCTCCT CCATTATGCA AGTCCCGCGT CTGGAAAAGA TTGTGATCAA TATGGGTGTT
+      121 GGTGATGCGA TTCGTGACAG CAAATTTTTG GAGAGCGCGC TGAATGAACT GCATCTGATT
+      181 AGCGGCCAGA AGCCGGTTGC CACCAAAGCA AAAAACGCAA TCTCCACCTA CAAACTGCGT
+      241 GCGGGTCAGC TGATCGGCTG CAAGGTGACG CTTCGTGGTG AACGTATGTG GGCCTTTTTG
+      301 GAAAAGCTGA TCTATGTTGC GCTGCCGCGC GTGCGTGACT TCCGTGGTCT GAGCCTGAAG
+      361 TCTTTCGATG GTCGTGGCAA CTACACCATC GGTATCAAGG AGCAAATTAT CTTCCCGGAG
+      421 ATCGTTTACG ATGACATCAA ACGTATCCGT GGTTTTGACG TCACCCTGGT GACTAGCACT
+      481 AATAAAGACA GCGAAGCTCT GGCACTGCTG CGCGCGCTGA ATCTGCCGCT GGTTAAAGGC
+      541 TGA
+//

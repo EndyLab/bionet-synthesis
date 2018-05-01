@@ -1,0 +1,46 @@
+LOCUS       BBF10K_002659            723 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  ung
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 723)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..723
+                     /locus_tag="MPN235"
+                     /gene="ung"
+                     /gene_synonyms=""
+                     /product="uracil-DNA glycosylase"
+                     /note="Excises uracil residues from the DNA which canarise
+                     as a result of misincorporation of dUMP residues byDNA
+                     polymerase or due to deamination of cytosine"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109923.1"
+                     /EC_number=""
+                     /translation="MEQLLDQFLSGVLSEWKAFILQEAKQTYFQELLAKLKNVEQELT
+                     PKASQVFRPFSFFAPNNTKLIIYGQDPYPNPQHACGLSFASNAPKLPQSLKRMILRLQ
+                     QEYPELAGQNHWTKQLLEGWAQQGILLLNGVFTTNAFQTNAHRNWGWEQFNCHLLDFL
+                     LSQKLYVLLVFLGKQTENFVLKKIGGASQFASLSYPHPSPLTGRKFFDHPDALFKQIN
+                     QWLKHHNHTPIDWTNGQVQYQF"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877251"
+ORIGIN
+        1 ATGGAGCAGC TGCTGGATCA ATTCCTGAGC GGCGTTCTGA GCGAATGGAA AGCGTTCATT
+       61 CTGCAAGAGG CAAAACAAAC CTACTTTCAA GAGCTGCTGG CCAAGCTGAA AAACGTCGAA
+      121 CAGGAACTGA CGCCGAAGGC CAGCCAAGTG TTCCGCCCGT TTAGCTTCTT TGCGCCAAAC
+      181 AACACTAAAC TGATCATTTA CGGTCAGGAC CCGTATCCGA ACCCGCAGCA CGCCTGTGGT
+      241 TTGTCCTTTG CCTCGAATGC CCCGAAGCTG CCGCAAAGCC TGAAACGCAT GATCCTGCGC
+      301 CTGCAGCAAG AGTATCCGGA ATTGGCTGGT CAAAATCACT GGACGAAACA GCTGCTGGAG
+      361 GGCTGGGCAC AACAAGGCAT TCTGCTGCTG AATGGCGTTT TTACGACGAA CGCCTTCCAA
+      421 ACGAACGCGC ACCGTAACTG GGGCTGGGAG CAATTTAATT GTCACTTACT GGACTTTCTG
+      481 CTGTCCCAAA AACTGTATGT GCTGCTGGTA TTCCTGGGTA AGCAAACCGA AAACTTTGTC
+      541 CTGAAAAAGA TCGGCGGCGC GAGCCAGTTT GCCTCCCTCA GCTACCCGCA CCCGAGCCCG
+      601 CTGACGGGCC GCAAATTTTT TGACCACCCG GATGCGCTGT TTAAGCAAAT CAATCAGTGG
+      661 CTGAAGCATC ACAACCACAC GCCGATCGAT TGGACGAACG GCCAAGTCCA GTATCAATTT
+      721 TGA
+//

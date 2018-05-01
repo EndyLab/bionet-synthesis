@@ -1,0 +1,39 @@
+LOCUS       BBF10K_001436            501 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl203
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 501)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..501
+                     /locus_tag="Mfl203"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="recombination protein U"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053444.1"
+                     /EC_number=""
+                     /translation="MNPIKNQGMFLETLLNITHQKYIDNNDCVVSKIPTNIIPITTKN
+                     NQITSAKFKDSLNCDYIGAYKGTYFEFEAKETYKDYFDFHLIRKNQNEKLKLVLNNKG
+                     IAFIIVYFGNYEEFFLVNYLTLINWVNKNKKTIPYEWFLDNAYQVYLDNEFKLNYLPK
+                     LNFLIS"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2897695"
+ORIGIN
+        1 ATGAACCCAA TTAAAAATCA GGGTATGTTT CTGGAAACCC TGCTGAATAT TACCCACCAG
+       61 AAATATATTG ACAACAACGA TTGCGTGGTC AGCAAGATTC CGACGAATAT TATCCCGATC
+      121 ACTACTAAGA ATAACCAAAT CACCTCTGCG AAATTCAAAG ATAGCCTGAA CTGCGATTAC
+      181 ATTGGCGCAT ACAAGGGCAC GTACTTCGAG TTCGAGGCCA AGGAAACCTA TAAGGACTAT
+      241 TTCGATTTCC ACCTGATTCG TAAGAATCAG AACGAGAAAC TGAAACTGGT CTTGAATAAT
+      301 AAGGGTATCG CGTTTATCAT CGTCTACTTC GGTAACTACG AGGAATTCTT CCTGGTCAAT
+      361 TATCTGACCT TAATCAATTG GGTTAACAAA AACAAAAAGA CCATCCCGTA CGAGTGGTTT
+      421 CTGGATAATG CGTACCAAGT GTATCTGGAC AACGAGTTCA AACTGAATTA TCTGCCGAAA
+      481 CTGAACTTTC TGATCTCCTG A
+//

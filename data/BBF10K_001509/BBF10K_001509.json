@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_001509",
+  "author": {
+    "name": "Keoni Gandall",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "Mfl276",
+      "description": "A collection of all genes from Mesoplasma florum L1, codon optimized for Escherichia coli expression.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 5,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "BSL1"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGGATTTAAAAAAACATATTTTAAATGTTAAGGATTTCCCAATTGATGGAATTGACTTTAAAGATGTAACACCATTATTAAATGATGCTGATGCTTTTGCTTATGTAATTGATGAAATGGCAAAATTTGTTATTGAATGTGGAGCTAATGTTGTAGTTGCTCCAGAAGCAAGAGGATTCTTATTTGCAAGTGCTGTAGCTTATAAATCACATACTAGATTTGTATTAGTTAGAAAACCTGGTAAATTACCTCGTGAAGTTATCGATATTGAATATACTTTAGAGTATGGAACAAATCATCAACAAATGCACAAAGGTGATATTAAACCTGGTGATAAAGTAGTTATTATAGATGATGTACTAGCAACTGGTGGAACAATTGAAGCTATTGTTAAATTAGTTGAAATGCAAGAAGGTAAAGTTGAGGGAGTTTCATTCTTAATTGATTTGCCAGCATTACATGATGAAAATCTATTACAAGAATACAAAGTTCAAAAACTTGTTAAATATTAA",
+    "optimized_sequence": "ATGGACCTGAAGAAACACATCCTTAATGTGAAGGACTTTCCGATTGACGGTATCGACTTTAAGGACGTGACCCCACTCCTGAATGACGCCGATGCATTTGCCTATGTTATCGATGAAATGGCGAAATTCGTCATTGAATGCGGTGCGAACGTTGTGGTGGCACCTGAGGCGCGTGGTTTCTTATTTGCATCGGCTGTGGCGTACAAGTCCCATACCCGCTTTGTGCTCGTGCGCAAGCCGGGCAAACTGCCGCGTGAGGTCATTGACATTGAGTACACCCTGGAGTATGGTACCAATCATCAACAAATGCATAAGGGTGATATTAAGCCGGGCGATAAAGTTGTTATTATCGACGACGTTCTGGCGACCGGCGGTACCATCGAAGCAATTGTGAAACTGGTTGAGATGCAAGAAGGCAAAGTGGAAGGTGTGAGCTTTCTGATCGATCTGCCTGCTCTGCACGATGAGAATCTGCTGCAAGAATACAAAGTCCAAAAACTGGTCAAATACTGA",
+    "fragment_sequences": {
+      "BBF10K_001509_1": "GAAGACCAGGAGAAGGATATGTAGACACCGCCGGTCTCAAATGGACCTGAAGAAACACATCCTTAATGTGAAGGACTTTCCGATTGACGGTATCGACTTTAAGGACGTGACCCCACTCCTGAATGACGCCGATGCATTTGCCTATGTTATCGATGAAATGGCGAAATTCGTCATTGAATGCGGTGCGAACGTTGTGGTGGCACCTGAGGCGCGTGGTTTCTTATTTGCATCGGCTGTGGCGTACAAGTCCCATACCCGCTTTGTGCTCGTGCGCAAGCCGGGCAAACTGCCGCGTGAGGTCATTGACATTGAGTACACCCTGGAGTATGGTACCAATCATCAACAAATGCATAAGGGTGATATTAAGCCGGGCGATAAAGTTGTTATTATCGACGACGTTCTGGCGACCGGCGGTACCATCGAAGCAATTGTGAAACTGGTTGAGATGCAAGAAGGCAAAGTGGAAGGTGTGAGCTTTCTGATCGATCTGCCTGCTCTGCACGATGAGAATCTGCTGCAAGAATACAAAGTCCAAAAACTGGTCAAATACTGAAGAGCTTAGAGACCGTTGCCCTTGCTGAGATACTCGCTGCGTCTTC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "Mfl276",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "adenine phosphoribosyltransferase",
+    "note": "catalyzes a salvage reaction resulting in theformation of AMP which is metabolically less costly than ade novo synthesis",
+    "Source": "Mesoplasma florum L1",
+    "GenBank_acc": "NC_006055",
+    "protein_id": "YP_053517.1",
+    "EC_number": "2.4.2.7",
+    "translation": "MDLKKHILNVKDFPIDGIDFKDVTPLLNDADAFAYVIDEMAKFVIECGANVVVAPEARGFLFASAVAYKSHTRFVLVRKPGKLPREVIDIEYTLEYGTNHQQMHKGDIKPGDKVVIIDDVLATGGTIEAIVKLVEMQEGKVEGVSFLIDLPALHDENLLQEYKVQKLVKY",
+    "references": [
+      "db_xref=\"GeneID:2897963\""
+    ]
+  },
+  "tags": [
+    "Mesoplasma florum"
+  ],
+  "virtual_id": "v-ba204dac-ea9b-49a9-b166-b43e39c0fbfd"
+}

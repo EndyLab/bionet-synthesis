@@ -1,0 +1,41 @@
+LOCUS       BBF10K_002087            603 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS00905
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 603)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..603
+                     /locus_tag="MG_RS00905"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L29"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885843.1"
+                     /EC_number=""
+                     /translation="MTIAKELKQKSNEELVKLVIKLKGELLEYRFKLAHGELDKPHLI
+                     AKVRKLLAVVLTILTERKLNWQVEKDKYKLLSRKTNELIVNSWKQKLSTKPESKQETK
+                     KAEVKPKVESKPESKQETKKAEVKPLKQETKKVEVKPKVEPKPLKQETKKVEARIETK
+                     TKVESKPLKQEVKKVEAKKSVSKPQKPVKAKMIKTKEKKQ"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGACTATCG CGAAAGAGCT GAAACAAAAG AGCAATGAGG AATTGGTTAA ACTGGTGATC
+       61 AAACTGAAGG GTGAGCTGCT GGAGTATCGT TTTAAACTGG CACACGGTGA GCTGGACAAA
+      121 CCGCACCTGA TCGCCAAGGT GCGTAAGCTG CTGGCAGTTG TGCTGACTAT CCTGACGGAG
+      181 CGCAAGCTGA ATTGGCAAGT CGAAAAGGAC AAGTATAAAC TGCTGAGCCG TAAGACCAAC
+      241 GAACTGATTG TCAATAGCTG GAAACAAAAG CTGTCCACGA AACCGGAATC CAAGCAGGAA
+      301 ACCAAGAAGG CGGAAGTGAA GCCGAAAGTC GAGAGCAAGC CGGAAAGCAA GCAGGAAACC
+      361 AAAAAAGCGG AGGTGAAACC TCTGAAGCAG GAAACCAAGA AGGTTGAAGT TAAACCGAAA
+      421 GTGGAACCGA AACCGTTGAA GCAGGAAACT AAGAAAGTCG AGGCTCGCAT CGAAACGAAA
+      481 ACCAAGGTTG AATCCAAGCC GCTGAAACAG GAAGTCAAGA AGGTTGAAGC GAAAAAGTCT
+      541 GTCTCCAAAC CGCAAAAGCC GGTTAAGGCT AAGATGATTA AGACGAAGGA AAAGAAGCAG
+      601 TGA
+//

@@ -1,0 +1,37 @@
+LOCUS       BBF10K_002612            375 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rplQ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 375)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..375
+                     /locus_tag="MPN192"
+                     /gene="rplQ"
+                     /gene_synonyms=""
+                     /product="50S ribosomal protein L17"
+                     /note="is a component of the macrolide binding site in
+                     thepeptidyl transferase center"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_109880.1"
+                     /EC_number=""
+                     /translation="MSYINKPGKTSAWRVMTVRQQVSAVLAYGKIETTLKKAKNTQKR
+                     LDKLITLAKVDNFNNRRQVKKWLLNTNLFDVDQLMDHLFSKVAPKYEKTPGGYSRVLK
+                     LGPRRGDATEMAILQLTDAKYK"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:877223"
+ORIGIN
+        1 ATGTCTTATA TTAATAAACC AGGCAAGACC AGCGCATGGC GTGTCATGAC TGTTCGCCAA
+       61 CAAGTTAGCG CTGTTCTGGC GTATGGTAAG ATCGAAACCA CGCTGAAAAA GGCAAAGAAC
+      121 ACTCAAAAAC GTCTGGACAA ACTGATCACC CTGGCGAAGG TGGATAACTT TAACAATCGT
+      181 CGTCAGGTTA AAAAGTGGCT GCTGAACACC AATCTGTTCG ATGTCGATCA ACTGATGGAT
+      241 CATCTGTTTA GCAAAGTTGC CCCAAAGTAT GAAAAGACTC CGGGTGGTTA CTCCCGTGTG
+      301 CTGAAACTGG GCCCGCGCAG AGGTGATGCG ACGGAGATGG CGATCTTACA GCTTACCGAC
+      361 GCGAAATATA AGTGA
+//

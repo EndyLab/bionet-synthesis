@@ -1,0 +1,37 @@
+LOCUS       BBF10K_003046            399 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  rpsI
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 399)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma pneumoniae M129
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..399
+                     /locus_tag="MPN616"
+                     /gene="rpsI"
+                     /gene_synonyms=""
+                     /product="30S ribosomal protein S9"
+                     /note="forms a direct contact with the tRNA
+                     duringtranslation"
+                     /Source="Mycoplasma pneumoniae M129"
+                     /GenBank_acc="NC_000912"
+                     /protein_id="NP_110305.1"
+                     /EC_number=""
+                     /translation="MEKQSYYGLGRRKSSSAKVYLTPTQDKGKITVNRRDPSEYFPNK
+                     LVIQDMEQPLDLTDLKKNFDINVVVKGGGFTGQAGAIRLGIVRALLQFNPELKKILKS
+                     KKLTTRDKRVKERKKFGLYGARRAPQFTKR"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:876980"
+ORIGIN
+        1 ATGGAAAAGC AGAGCTACTA TGGTTTGGGT CGTCGCAAAA GCAGCAGCGC GAAGGTCTAT
+       61 CTGACGCCGA CGCAAGATAA GGGTAAGATC ACCGTTAATC GTCGCGACCC GAGCGAGTAC
+      121 TTCCCGAACA AACTGGTTAT TCAAGACATG GAGCAGCCAC TGGATCTGAC GGACCTCAAA
+      181 AAGAATTTTG ATATTAATGT GGTCGTGAAA GGTGGCGGTT TCACCGGCCA GGCCGGTGCG
+      241 ATTCGTCTGG GTATTGTCCG TGCTCTGCTG CAATTCAATC CAGAACTGAA AAAGATCCTG
+      301 AAAAGCAAAA AGCTGACCAC TCGTGACAAG CGTGTAAAGG AGCGCAAGAA GTTTGGTCTG
+      361 TATGGTGCGC GCCGTGCCCC ACAGTTCACG AAGCGCTGA
+//

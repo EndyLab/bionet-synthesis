@@ -1,0 +1,36 @@
+LOCUS       BBF10K_002308            414 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  MG_RS02175
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 414)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mycoplasma genitalium G37
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..414
+                     /locus_tag="MG_RS02175"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="DUF1951 domain-containing protein"
+                     /note="Derived by automated computational analysis
+                     usinggene prediction method: Protein Homology."
+                     /Source="Mycoplasma genitalium G37"
+                     /GenBank_acc="NC_000908 NZ_U39679-NZ_U39729"
+                     /protein_id="WP_009885812.1"
+                     /EC_number=""
+                     /translation="MEQNNIKEQLISFFNQACSTHQERLDFICSTRESDTFSSVDVPL
+                     EPIKNIIEITKDENQQIEITKIAVNNIKTLSSVGATGQYMASFFSTNSEPAIIFCVIY
+                     FLYHFGFLKDNNKKQIIKKAYETIADNIADYLNEN"
+                     /transl_table=11
+                     /codon_start=1
+ORIGIN
+        1 ATGGAACAGA ATAACATTAA AGAACAATTG ATCAGCTTCT TCAACCAAGC ATGCAGCACC
+       61 CATCAAGAAC GTCTGGATTT TATCTGTTCC ACCCGTGAGA GCGACACGTT CTCCAGCGTT
+      121 GACGTTCCAC TGGAACCGAT CAAGAACATT ATTGAAATTA CGAAAGATGA AAATCAACAG
+      181 ATTGAAATCA CGAAAATTGC GGTCAATAAT ATCAAAACCC TGAGCAGCGT TGGCGCGACC
+      241 GGCCAATACA TGGCAAGCTT CTTTAGCACC AATAGCGAAC CAGCCATCAT CTTTTGCGTT
+      301 ATTTATTTTC TGTATCATTT CGGCTTTCTG AAAGATAACA ACAAAAAACA GATCATCAAG
+      361 AAAGCCTACG AAACGATTGC CGACAATATC GCGGATTACC TGAATGAGAA CTGA
+//

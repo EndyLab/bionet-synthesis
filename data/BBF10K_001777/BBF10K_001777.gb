@@ -1,0 +1,40 @@
+LOCUS       BBF10K_001777            564 bp ds-DNA     linear   BCT 30-APR-2018
+DEFINITION  Mfl544
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 564)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Mesoplasma florum L1
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..564
+                     /locus_tag="Mfl544"
+                     /gene=""
+                     /gene_synonyms=""
+                     /product="inorganic pyrophosphatase"
+                     /note=""
+                     /Source="Mesoplasma florum L1"
+                     /GenBank_acc="NC_006055"
+                     /protein_id="YP_053786.1"
+                     /EC_number=""
+                     /translation="MSKNNVLDMIVEIPKGSSNKYEVDAKTGRIILDRVLYGANFYPG
+                     EYGMVENTLDWDGDPLDVISLCTYPTMPGVQVSVRILGSIKMIDAGEIDTKLFGVFND
+                     DPRFSSYEKLEDVPQHLRDEIENFFLQYKALQKKSVKINGWGTLEEAIEELHECKERF
+                     AEYKDRLEAGERDLILAEWKEKGIGQG"
+                     /transl_table=11
+                     /codon_start=1
+                     db_xref="GeneID:2898101"
+ORIGIN
+        1 ATGAGCAAGA ATAACGTGCT CGACATGATT GTGGAGATTC CGAAGGGTAG CAGCAACAAA
+       61 TACGAGGTGG ATGCAAAGAC CGGTCGCATC ATTCTGGATC GTGTGCTGTA TGGCGCAAAT
+      121 TTCTACCCGG GTGAGTATGG TATGGTTGAG AACACGCTGG ACTGGGACGG CGATCCGCTG
+      181 GATGTGATCA GCCTGTGCAC CTACCCGACC ATGCCGGGTG TGCAAGTGAG CGTTCGTATT
+      241 CTGGGTAGCA TTAAAATGAT TGACGCAGGC GAAATTGATA CCAAGCTGTT CGGCGTTTTC
+      301 AATGATGACC CGCGCTTCAG CTCCTACGAG AAGCTGGAGG ACGTGCCACA ACATCTGCGT
+      361 GATGAGATCG AAAACTTCTT TCTGCAGTAC AAGGCACTGC AGAAAAAGAG CGTCAAAATC
+      421 AACGGTTGGG GTACGCTGGA GGAAGCGATT GAGGAGCTGC ATGAGTGCAA AGAGCGTTTC
+      481 GCGGAATATA AGGATCGTCT GGAAGCCGGT GAACGTGACT TGATTCTGGC AGAGTGGAAG
+      541 GAGAAGGGTA TCGGCCAAGG CTGA
+//

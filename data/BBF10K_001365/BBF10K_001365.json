@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0",
+  "gene_id": "BBF10K_001365",
+  "author": {
+    "name": "Keoni Gandall",
+    "email": "koeng101@gmail.com",
+    "affiliation": "BioBricks Foundation",
+    "orcid": "NA"
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "rpsQ",
+      "description": "A collection of all genes from Mesoplasma florum L1, codon optimized for Escherichia coli expression.",
+      "database_links": [],
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BtgZI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "Escherichia coli",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": ""
+        }
+      },
+      "collection_id": 5,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "BSL1"
+    },
+    "order_number": 10
+  },
+  "sequence": {
+    "original_sequence": "ATGGAAAGAAATAGTAGAAGAATACTAGTTGGTAAAGTTGTATCTGACAAAATGGATAAAACAATTACTGTATTAGTTGAAACTTACAAAAACCACCCAATCTACAAAAAACGTGTTAAGTATTCTAAAAAATATAAAGCACATGACGAACAACAAGTTGCTAAAATAGGGGACAAAGTTCAAATTATGGAAACACGTCCTTTATCAAAAACAAAAAACTTCAGATTAGTAAAAGTAGTAGAAAAAGCTATTTTATAG",
+    "optimized_sequence": "ATGGAACGCAACAGCCGCAGAATTCTGGTCGGTAAAGTCGTCAGCGACAAGATGGACAAGACCATCACCGTCTTGGTTGAAACCTATAAAAACCACCCTATCTACAAAAAGCGTGTTAAATACAGCAAAAAGTATAAGGCACACGATGAGCAGCAAGTTGCAAAGATCGGCGACAAAGTGCAGATCATGGAAACGCGTCCGTTGAGCAAAACCAAAAACTTCCGTCTGGTTAAGGTGGTTGAGAAAGCGATCCTGTGA",
+    "fragment_sequences": {
+      "BBF10K_001471_link_BBF10K_001365": "GAAGACCAGGAGAACGATGATGCTCACTCTCGGGTCTCAAATGAGCAAAATCACCCTGGAAAAGACCTTGGAGCTGTCCAGCCTGTTTTACCTGTATAAAAACATGCTGACGGAGAAACAAATCGAGTACTTTGAGCTGTATTTCGAGGAGGACCTGTCCTTCCAGGAGATCGCGGACCAGCTGGGTATCAGCAAGGCGGCCGCGCACGATGCTATCAACAAGATCATTAAGTCGCTGAACGATTTGGAGGATAAACTGCAGCTTAACCACAAAAAGATCAGCATCAATGAGCTGCTGGAGAAAAACAAAAACAGCAAAAACGAAGAAGTGTTGAACTTGATCAAAAAGATTGAGGAGGTGATTTGAAGAGCTTAGAGACCGCGGGTTAGATACTGCAACTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGAAATAAGACGACGACCCTCGGGTCTCGAATGGAACGCAACAGCCGCAGAATTCTGGTCGGTAAAGTCGTCAGCGACAAGATGGACAAGACCATCACCGTCTTGGTTGAAACCTATAAAAACCACCCTATCTACAAAAAGCGTGTTAAATACAGCAAAAAGTATAAGGCACACGATGAGCAGCAAGTTGCAAAGATCGGCGACAAAGTGCAGATCATGGAAACGCGTCCGTTGAGCAAAACCAAAAACTTCCGTCTGGTTAAGGTGGTTGAGAAAGCGATCCTGTGAAGAGCTTGGAGACCCGCATGTAGGCACCATCTATCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "30-APR-2018",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "Mfl132",
+    "gene": "rpsQ",
+    "gene_synonyms": "",
+    "product": "30S ribosomal protein S17",
+    "note": "primary binding protein; helps mediate assembly;involved in translation fidelity",
+    "Source": "Mesoplasma florum L1",
+    "GenBank_acc": "NC_006055",
+    "protein_id": "YP_053372.1",
+    "EC_number": "",
+    "translation": "MERNSRRILVGKVVSDKMDKTITVLVETYKNHPIYKKRVKYSKKYKAHDEQQVAKIGDKVQIMETRPLSKTKNFRLVKVVEKAIL",
+    "references": [
+      "db_xref=\"GeneID:2897902\""
+    ]
+  },
+  "tags": [
+    "Mesoplasma florum"
+  ],
+  "virtual_id": "v-e9a0f094-6780-49ce-812b-7c88481a482a"
+}
