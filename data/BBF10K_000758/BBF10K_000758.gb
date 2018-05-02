@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      YAVRMIGEQNALD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936970"
+                     /db_xref="GeneID:936970"
 ORIGIN
         1 ATGCGTATCT TGGAAAAGGC GCCGGCGAAG ATTAATCTGA GCCTGGACGT TACGCGCAAG
        61 CGTCCAGATG GTTACCATGA AGTTGAAATG ATTATGACGA CCATTGACCT GGCCGATCGT

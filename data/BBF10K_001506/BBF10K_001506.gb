@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      YRKRREELFD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897844"
+                     /db_xref="GeneID:2897844"
 ORIGIN
         1 ATGAGCAACA ACAACGAACG TAAGTTCAGC GACTTCGGCT TCAAAAAGTA CATTAATGAC
        61 ACCTTGAAGG AGATCAATTT TGAAACCCCT ACGCGTATCC AGGCGGAAAT TATTCCGCTG

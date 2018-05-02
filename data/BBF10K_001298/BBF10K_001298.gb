@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      KNGYLYEKEYFSIN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897926"
+                     /db_xref="GeneID:2897926"
 ORIGIN
         1 ATGAACATTA AGGATTTCAA GATCAACAAG ATTAGCTTCG ATTTCAAGCG TGACAAGTTA
        61 AAGTGGATTA GCATTGGTTT GTGGGCGAGC TTGTTTATTG TCGTCATCGT TTTGTTTAGC

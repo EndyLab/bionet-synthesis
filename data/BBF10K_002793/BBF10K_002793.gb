@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      SMDGRLDSMETRLDKIDPLK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876877"
+                     /db_xref="GeneID:876877"
 ORIGIN
         1 ATGAAGGAGA AGATCCCGTT CTATAATGAA AAGGAATTCC ACTACATGAT GAAAAAGACC
        61 AAAAAAGGCA CCTTCAGCGG CTGGTATATC ATTAATCCGG AGAACAACAG CGTGGAATTT

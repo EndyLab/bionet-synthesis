@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      FLAGKIPFLAIEDCIEKALTRHQLLKKPSLADIQEVDKDTRGYVNSILT"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939636"
+                     /db_xref="GeneID:939636"
 ORIGIN
         1 ATGAAAAATA TTTGCTTACT GGGCGCGACG GGCAGCATTG GTGAGCAGAC CCTCGATGTT
        61 CTCCGTGCGC ACCAGGATCA ATTTCAACTG GTGAGCATGA GCTTCGGTAG AAATATCGAC

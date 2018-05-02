@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      ILNTIK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898039"
+                     /db_xref="GeneID:2898039"
 ORIGIN
         1 ATGGAGCGTT TCAAGCTGAA CACGACCTTG AGCTACTTGG TGGCAGTGAG CGGTGGTCCG
        61 GACAGCATGT TTATGCTGAA TGAGCTGATT AAAATGAACA TTAAGGAAAT TGTGGTTTGC

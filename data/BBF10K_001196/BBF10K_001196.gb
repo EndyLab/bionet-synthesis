@@ -31,10 +31,10 @@ FEATURES             Location/Qualifiers
                      RPVKKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0012201"
-                     db_xref="UniProtKB/Swiss-Prot:P0ACC7"
-                     db_xref="EcoGene:EG11198"
-                     db_xref="GeneID:948246"
+                     /db_xref="ASAP:ABE-0012201"
+                     /db_xref="UniProtKB/Swiss-Prot:P0ACC7"
+                     /db_xref="EcoGene:EG11198"
+                     /db_xref="GeneID:948246"
 ORIGIN
         1 ATGCTCAATA ATGCCATGTC CGTCGTAATT CTTGCGGCGG GTAAGGGTAC GCGTATGTAT
        61 TCGGATCTGC CGAAAGTTCT GCACACCCTG GCCGGTAAGG CTATGGTGCA GCACGTAATT

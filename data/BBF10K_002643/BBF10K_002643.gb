@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      SLKVKLPD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877074"
+                     /db_xref="GeneID:877074"
 ORIGIN
         1 ATGGCAAAGC TGAGCAAGAA AATGAAAATC GCAGTCGGTC TGGTTGACAA AACCAAGCTG
        61 TATCCGCTGC AGGAGGCAGT CGATCTGGTT AAAAAGACGA GCATCACTAA GTTTAATGGT

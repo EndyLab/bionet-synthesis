@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      HWELKDFLIELKMKTEFI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898017"
+                     /db_xref="GeneID:2898017"
 ORIGIN
         1 ATGAAGCTGA TCATTTTCCC GCTGCTGATC AGCCTGATTC TGATGGCCTA CGCATTCTAT
        61 ATCGCGATTA AGGATTGGAA ATATTTCAAA CAGATTCAGA AGCTCATCAA GCAGGATAGC

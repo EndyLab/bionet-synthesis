@@ -35,7 +35,7 @@ FEATURES             Location/Qualifiers
                      TNG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897950"
+                     /db_xref="GeneID:2897950"
 ORIGIN
         1 ATGAACGAAC TGCTGACGTT CCGTGGCTAT GTCGTTAAGT ATGGCTTCAG CAACGATGCG
        61 GGCTGGGGCA CTGGTACCTT CGCTAGCGAG GACAACCTGA AACAACATAT GAGCATTAAG

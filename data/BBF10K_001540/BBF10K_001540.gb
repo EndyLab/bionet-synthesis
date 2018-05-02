@@ -30,8 +30,8 @@ FEATURES             Location/Qualifiers
                      LI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="REBASE:MflLORF308P"
-                     db_xref="GeneID:2897741"
+                     /db_xref="REBASE:MflLORF308P"
+                     /db_xref="GeneID:2897741"
 ORIGIN
         1 ATGAATAAAA CCATCGATGA CATTTTCCGC CGCGCCAAAG AAGCAGAGAA TAAGCAACTG
        61 GGTGAGATCA TCAACTTCGA TGAGATTGAT TATAAGCTGA AAGACAAGGG TCGCATTGGT

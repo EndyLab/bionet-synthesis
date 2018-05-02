@@ -36,7 +36,7 @@ FEATURES             Location/Qualifiers
                      ISKEIELNDINDLNSNYFNAIHSIDINYLITEKQETFFNQKNVKKNLLNNR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898015"
+                     /db_xref="GeneID:2898015"
 ORIGIN
         1 ATGAAGAACA AGAAAATTAT TATCTATGCG CCGGTTAATG GTGTCATTGG TAAGATTAAA
        61 GATCTGAAGG ATGGTGTCTT TTCCGAGGGC ATGCTGGGTG AAGGTGTCTA TATCATCCCG

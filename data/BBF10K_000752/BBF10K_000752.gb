@@ -37,7 +37,7 @@ FEATURES             Location/Qualifiers
                      HVATVALVEKNEEDENEEEQEEV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:940002"
+                     /db_xref="GeneID:940002"
 ORIGIN
         1 ATGAGCGAGC AGAACACCCC TCAGGTTCGT GAGATTAACA TCAGCCAGGA GATGCGTACC
        61 AGCTTCCTGG ATTATGCCAT GAGCGTGATT GTTAGCCGCG CGCTGCCGGA TGTCCGTGAC

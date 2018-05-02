@@ -32,7 +32,7 @@ FEATURES             Location/Qualifiers
                      RKNKAE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897720"
+                     /db_xref="GeneID:2897720"
 ORIGIN
         1 ATGAAAAAGA AGGACTACGC ATTTGAAGCA AAGCGTTTCA TTAAAGCAGT CGGTGGCAAG
        61 TCTAACATCG AATCGTATCT GCACTGTGTT ACTCGTCTGC GTCTGAACCT GATTGACAAG

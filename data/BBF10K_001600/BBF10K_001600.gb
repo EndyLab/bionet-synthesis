@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      KYLKGEK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897585"
+                     /db_xref="GeneID:2897585"
 ORIGIN
         1 ATGAAAACCA ATAAAAACAA AACGAATATC AAGATGATTG GTTTCTACCA TTTCTTTTAC
        61 TTCGTGAAGC CTTATTATCT GCTGATCAAT GAGAACGTCA TTATTTTCAA GGCGAAAGGC

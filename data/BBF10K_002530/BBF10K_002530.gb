@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      SLFKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877222"
+                     /db_xref="GeneID:877222"
 ORIGIN
         1 ATGAAGTTCA AACTGAATTT TCATGAAAAA ATCAACCAGA AGGACTGTTG GCAATCCTTG
        61 ATTGACCACA AGGAGCGTAG CTACAGCCTG GACTTCGTCA ATAACACCGA AAAGGAACTC

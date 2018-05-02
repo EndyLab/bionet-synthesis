@@ -23,10 +23,10 @@ FEATURES             Location/Qualifiers
                      SK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0012115"
-                     db_xref="UniProtKB/Swiss-Prot:P0A7P5"
-                     db_xref="EcoGene:EG10892"
-                     db_xref="GeneID:948216"
+                     /db_xref="ASAP:ABE-0012115"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A7P5"
+                     /db_xref="EcoGene:EG10892"
+                     /db_xref="GeneID:948216"
 ORIGIN
         1 ATGAAGCGTA CGTTCCAGCC GAGCGTGTTG AAACGTAACC GTAGCCACGG TTTCCGTGCG
        61 CGTATGGCCA CCAAAAACGG TCGTCAGGTG TTAGCGCGCC GCCGCGCAAA AGGCCGTGCG

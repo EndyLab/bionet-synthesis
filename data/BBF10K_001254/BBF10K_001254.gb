@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      AQN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898176"
+                     /db_xref="GeneID:2898176"
 ORIGIN
         1 ATGAAGAAAC TGATCGCAAT TCTGGGTGCG GTGGGCTTGA CCGCGACCGG TTCCGCGTCC
        61 CTGTTGGTTA GCTGTAGCAC CCCGGTCGAG AAGGATTTCA GCAGCGAAAT CGGTAAAATG

@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      KTIPLY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877361"
+                     /db_xref="GeneID:877361"
 ORIGIN
         1 ATGAACAAAG GTGACGCTAT CGATTTTCTG TGTGAGAAGC TGAATCTGCA GCCGACGGCT
        61 GTTGCGCATG TCGAGCAAAT CCACAGCGGT TTTACCAATT TCAGCTTCTT CACCGAGCTG

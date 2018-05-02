@@ -28,10 +28,10 @@ FEATURES             Location/Qualifiers
                      VSAVETIS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0012999"
-                     db_xref="UniProtKB/Swiss-Prot:P08373"
-                     db_xref="EcoGene:EG11205"
-                     db_xref="GeneID:948470"
+                     /db_xref="ASAP:ABE-0012999"
+                     /db_xref="UniProtKB/Swiss-Prot:P08373"
+                     /db_xref="EcoGene:EG11205"
+                     /db_xref="GeneID:948470"
 ORIGIN
         1 ATGAACCACA GCTTGAAACC GTGGAACACC TTTGGCATCG ACCATAACGC ACAGCACATT
        61 GTCTGCGCGG AGGATGAGCA GCAGTTGCTG AACGCCTGGC AATACGCCAC GGCGGAAGGT

@@ -26,10 +26,10 @@ FEATURES             Location/Qualifiers
                      PSLPDEVALGVTYDNIDDYLEGKNVPQQVARTIENWYLKTEHKRRPPITVFDDFWKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0005803"
-                     db_xref="UniProtKB/Swiss-Prot:P18843"
-                     db_xref="EcoGene:EG10663"
-                     db_xref="GeneID:946946"
+                     /db_xref="ASAP:ABE-0005803"
+                     /db_xref="UniProtKB/Swiss-Prot:P18843"
+                     /db_xref="EcoGene:EG10663"
+                     /db_xref="GeneID:946946"
 ORIGIN
         1 ATGACCCTTC AACAACAAAT TATCAAAGCA CTGGGTGCGA AACCGCAGAT TAATGCTGAG
        61 GAGGAGATCC GCCGCAGCGT GGACTTCCTT AAGAGCTATC TGCAGACCTA CCCGTTTATC

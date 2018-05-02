@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      LANE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:23527614"
+                     /db_xref="GeneID:23527614"
 ORIGIN
         1 ATGCTGAGCA GCGCGACCCT GCCGAAGCGC CTGCTGTTGC CGCTGCTGCC GTTTAGCTTC
        61 CTGATGGCGA ACATCGACCT GGGCTTCACC AGCAATTCCC GCTTGCCTAT CATCAAACGT

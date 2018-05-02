@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      SMFLMLAPKNEKQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937835"
+                     /db_xref="GeneID:937835"
 ORIGIN
         1 ATGATTTCTA AAGATCAGCT GGTTAACGAA GGTATTCGCG CGCGCGAGGT GCGTCTGATT
        61 GGTCAGAACG GTGATCAATT GGGCATTAAA AGCCGTCAAG AGGCCCTGGA AATCGCCGGT

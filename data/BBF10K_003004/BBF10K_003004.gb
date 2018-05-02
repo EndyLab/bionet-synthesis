@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      KLLERFPLYKGLEY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876801"
+                     /db_xref="GeneID:876801"
 ORIGIN
         1 ATGGAACCGA AGATTCGCCG CATTCTGAAT AAGGAGCTGC AACGTCAGCG TGATTGCATT
        61 TGCTTGATTG CAAGCGAGAA CTACGTTTCC CGTGACATTT TGGAAGTTAC CGGCTCGATT

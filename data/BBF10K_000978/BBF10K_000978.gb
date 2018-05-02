@@ -41,7 +41,7 @@ FEATURES             Location/Qualifiers
                      FHINADHQVLYRLKELLGQKNVVLKQW"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936593"
+                     /db_xref="GeneID:936593"
 ORIGIN
         1 ATGAGCTTTG TTCATCTCCA GGTCCATTCC GGCTACTCCC TGCTGAACAG CGCTGCAGCG
        61 GTTGAGGAGC TGGTGAGCGA GGCGGACCGC CTGGGTTACG CAAGCCTGGC ACTGACCGAC

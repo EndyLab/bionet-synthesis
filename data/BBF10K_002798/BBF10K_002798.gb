@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      FSKRKQSWNYC"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877395"
+                     /db_xref="GeneID:877395"
 ORIGIN
         1 ATGAAGGAAG TCATCGACAC CAATACCACC GGCACCAACT TTAAATTCGA GAATCGTAAC
        61 TATAAGCTGC AAAACCAGAG CTTCAGCTTC GTGCGCTACA AAAACTTTAA TCTCGATAAA

@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      YELDVPQFIRTGDKIVISTIDGSYRERYNK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876940"
+                     /db_xref="GeneID:876940"
 ORIGIN
         1 ATGGCTGACA TGATTGAGGC GAAGTCCCTG CGTAGCGGCC AAACCATCTT CGGCCCGAAC
        61 AAAGAAATTC TGCTGGTGCT GGAAAATACC TTTAACAAAA CCGCCATGCG TCAAGGCATC

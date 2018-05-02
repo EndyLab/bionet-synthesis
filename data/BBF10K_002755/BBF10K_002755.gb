@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      ERIRAWFGAR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876950"
+                     /db_xref="GeneID:876950"
 ORIGIN
         1 ATGCCGAAGT TGCTGGGTTC CTTTATCAGC TTCAAATCCC CGCACTACCT GGTCGGCTCG
        61 GTCCGTGATG CGGTGAGCAT TAAAGCGCAG GCGTTTATGA TCTTCCTGGG CGCGCCGCAC

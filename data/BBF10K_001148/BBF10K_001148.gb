@@ -25,10 +25,10 @@ FEATURES             Location/Qualifiers
                      VEEILGK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010823"
-                     db_xref="UniProtKB/Swiss-Prot:P0A7W1"
-                     db_xref="EcoGene:EG10904"
-                     db_xref="GeneID:947795"
+                     /db_xref="ASAP:ABE-0010823"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A7W1"
+                     /db_xref="EcoGene:EG10904"
+                     /db_xref="GeneID:947795"
 ORIGIN
         1 ATGGCTCATA TTGAGAAGCA AGCGGGTGAA CTGCAAGAGA AACTGATCGC GGTTAATCGT
        61 GTCAGCAAAA CGGTCAAAGG TGGTCGTATC TTTAGCTTCA CGGCTCTGAC CGTGGTTGGC

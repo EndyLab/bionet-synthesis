@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      EESDDE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877060"
+                     /db_xref="GeneID:877060"
 ORIGIN
         1 ATGAATCGTG TGTTCCTGTT TGGTAAACTG TCTTTTGATC CAAACAAACT GCAAACCCGT
        61 ACGAATAATA TTGGCGCGTC TTTTAGCTTG GCGTGCATCG ACAGCAGCGG TTTCAACGAC

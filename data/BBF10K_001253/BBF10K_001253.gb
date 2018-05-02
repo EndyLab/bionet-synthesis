@@ -34,7 +34,7 @@ FEATURES             Location/Qualifiers
                      PSYLTYWLRRNQGDFYQEININHK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897681"
+                     /db_xref="GeneID:2897681"
 ORIGIN
         1 ATGAAAAAGC TGTTGTTGAC CCTGAGCAGC GTTCTGATCG TGGGCGGTGC TGCCGGCTCC
        61 GTGATCTCAT GCGGTGTCAA ACCGGAGAAG GAAGTTGTTT TCGCACTGAT TGGTGGTAGC

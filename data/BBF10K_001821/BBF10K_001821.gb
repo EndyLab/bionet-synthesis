@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      AKELNIEEGKFNSEGIIELDEKYRNNLGSEFKG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898213"
+                     /db_xref="GeneID:2898213"
 ORIGIN
         1 ATGAGCACCA AATTCGGCGT GTTCTACAAT AAACAGTTCA ACTGTCTGAT GCTGACCTTT
        61 AAAAACAAGC CGATCACCAG CAGCGAGAAG AAAGGTAATA TTGTGATTCT GAAGAATGAG

@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      TLRFSK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877180"
+                     /db_xref="GeneID:877180"
 ORIGIN
         1 ATGAATGCAG CGAATGCTGT TAAGTACCCG GAGCTGAAGA TTAAGCTGGA AAGCTATGAC
        61 AGCACCCTCT TGGACTTGAC TACCAAGAAA ATCGTGGAGG TGGTCAAAGG TGTTGACGTT

@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      FLAQFTD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877225"
+                     /db_xref="GeneID:877225"
 ORIGIN
         1 ATGATCGACC AATCAAAACT GATTGAACGT TGGAAAACCA CGTTCGAAAC CGCGCAGAAC
        61 CCGACGGAAC TGTTAGCATT CAAGAACTCG TTTCGTAATG CCGACCTGAA ACCGCTCCTG

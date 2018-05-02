@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      KVKADS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876735"
+                     /db_xref="GeneID:876735"
 ORIGIN
         1 ATGAAGAATA AAAAAGATAA AACGCAAAAG CCGAAAGTGA TTGATGAGAA ATTTGTTGCC
        61 TTTTTCAAGA GCTTAAACAT TGAACCGCAA AATTGGCAAT TCTACGAGGA CGCGTTCGTT

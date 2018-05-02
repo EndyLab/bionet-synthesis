@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      LRKEALGE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937090"
+                     /db_xref="GeneID:937090"
 ORIGIN
         1 ATGAGCAAGA ATCGCCGTCT GTTTACGAGC GAAAGCGTCA CCGAAGGTCA CCCGGACAAA
        61 ATTTGCGACC AGATCTCCGA TTCCATTCTG GATGAAATTC TGAAGAAAGA TCCGAATGCT

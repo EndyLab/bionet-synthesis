@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      SFIVVSFSLEKGDDYLLKTPFFGSSLMALITIATLVTTILLFIRFNKKRLLKD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877144"
+                     /db_xref="GeneID:877144"
 ORIGIN
         1 ATGCAAACCA TTTTAACCGA TCAAGCATCT TTCAATATCC TGACCAGCAA ACGTAATCTG
        61 ATTAATAAAT TGACGATCAC CAACATCGTA CTGTGGGCCC TGTTCGTGTT TTGCGCTATC

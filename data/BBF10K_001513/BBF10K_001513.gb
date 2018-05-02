@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      TKTFKINGMLYLSASNTNIFFVINESSNTLVTVTLVSAEKQLRLMGGW"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897966"
+                     /db_xref="GeneID:2897966"
 ORIGIN
         1 ATGAGCTATT ACTACAAACC GAGCATGGGC TACTCCGTCC ACGCTCTGCA GCGTGCGAAA
        61 GAGCGCCTGA AGCTGCAAGA TAAACAAGAC TGGGAGGTGA AAGAGGCAAT TAAGAATCAC

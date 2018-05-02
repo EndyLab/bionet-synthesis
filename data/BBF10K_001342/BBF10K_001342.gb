@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      LKRIELQK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898251"
+                     /db_xref="GeneID:2898251"
 ORIGIN
         1 ATGCTGGAAG GTCTGTGGAG CCTGACCACG CAGTTTAGCG CAATCATCAT TACTACCATT
        61 CTGATTTGTG CGATCTGCAT CACGTACAAC ATTAAAGTTC GTGGTCAGGA CGAGGACAAG

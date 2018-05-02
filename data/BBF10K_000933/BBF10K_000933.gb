@@ -35,7 +35,7 @@ FEATURES             Location/Qualifiers
                      PKTHKGIGS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938609"
+                     /db_xref="GeneID:938609"
 ORIGIN
         1 ATGGATCTGC TGAGCATCCA GGATCCGTCT TTCCTGAAGA ACATGTCCAT CGATGAACTG
        61 GAGAAACTGT CGGACGAAAT CCGTCAGTTT TTGATTACCA GCCTGAGCGC AAGCGGCGGC

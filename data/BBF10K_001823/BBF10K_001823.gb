@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      FIITKKI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898220"
+                     /db_xref="GeneID:2898220"
 ORIGIN
         1 ATGAAAATCG TCATCCTGCT GGACAGCTCG GGCACTAACC AATCTGAAAA AATCAAAAAC
        61 AAAAACATTG AAGTTCTGCC GCTGCACTTC ACTTTCCCGA ATGGTACTGA TATGCTGGAC

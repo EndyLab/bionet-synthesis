@@ -23,10 +23,10 @@ FEATURES             Location/Qualifiers
                      RKRAKASAVKRHAKKLARENARRTRLY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010063"
-                     db_xref="UniProtKB/Swiss-Prot:P68679"
-                     db_xref="EcoGene:EG10920"
-                     db_xref="GeneID:947577"
+                     /db_xref="ASAP:ABE-0010063"
+                     /db_xref="UniProtKB/Swiss-Prot:P68679"
+                     /db_xref="EcoGene:EG10920"
+                     /db_xref="GeneID:947577"
 ORIGIN
         1 ATGCCGGTGA TTAAGGTCCG TGAAAACGAA CCGTTTGACG TCGCGCTGCG TCGCTTCAAG
        61 CGTAGCTGCG AAAAGGCGGG TGTCCTGGCG GAAGTCCGCC GTCGTGAATT TTACGAGAAG

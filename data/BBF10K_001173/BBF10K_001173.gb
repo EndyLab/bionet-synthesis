@@ -27,10 +27,10 @@ FEATURES             Location/Qualifiers
                      VGHE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0011313"
-                     db_xref="UniProtKB/Swiss-Prot:P0A9R7"
-                     db_xref="EcoGene:EG10340"
-                     db_xref="GeneID:947968"
+                     /db_xref="ASAP:ABE-0011313"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A9R7"
+                     /db_xref="EcoGene:EG10340"
+                     /db_xref="GeneID:947968"
 ORIGIN
         1 ATGATTCGTT TCGAACATGT CAGCAAGGCG TATCTGGGCG GTCGCCAAGC GCTGCAGGGT
        61 GTGACGTTTC ACATGCAGCC GGGCGAGATG GCATTTCTGA CCGGTCATTC TGGCGCGGGT

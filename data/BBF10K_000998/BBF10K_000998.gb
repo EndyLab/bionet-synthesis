@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      VCEGVYFL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937110"
+                     /db_xref="GeneID:937110"
 ORIGIN
         1 ATGAACTCCT TCCGTTTCAC CAAGATGCAT GGTCTGGGTA ATTCGTACAT TTACGTGAAT
        61 CAATTTGAAG AACAGTTACC TGAAGAAAAA CTGTCTGAAA TCGCGATCCA GGTGTCCAGC

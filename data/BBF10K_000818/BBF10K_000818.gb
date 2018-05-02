@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      TPAKVDLPNS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939913"
+                     /db_xref="GeneID:939913"
 ORIGIN
         1 ATGCGTAAGA AGCGCGTCAT CACGTGTGTG ATGGCCGCTA GCCTGACGCT GGGCAGCCTG
        61 CTGCCAGCGG GCTACGCGTC TGCTAAGGAG GATAGCAAGA CCACGCCAAG CTACGAGGAA

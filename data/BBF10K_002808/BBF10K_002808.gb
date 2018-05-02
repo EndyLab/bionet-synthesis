@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      CFLKIE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877093"
+                     /db_xref="GeneID:877093"
 ORIGIN
         1 ATGAAACCAA AAGTTCAGAA TCTGATTTTT GACCTGGACG GCACCCTGCT GTCCTGGGGT
        61 CACGAGCCGC TGCCGCAAAC GGTTACTTTC CTGAAAGAGT TACAAAAGCA AGGCTTCAAG

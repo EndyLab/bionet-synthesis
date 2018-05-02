@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      VR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897706"
+                     /db_xref="GeneID:2897706"
 ORIGIN
         1 ATGAAGAACA AAGTTTGGTT TATTACCGGT GCATCCCAGG GTTTTGGTTT GGGTATTACC
        61 AAGAAGTTGT TAGAGCAGGG TCACCAGGTC GCAGCTACTA CCCGTAATCC GCAAAAGCTG

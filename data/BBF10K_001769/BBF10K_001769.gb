@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      NEDDLINIKAWSSAINDEFALHDQAVVGIEARIHSSVNKESSNVFNEIIANRIMYLN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898281"
+                     /db_xref="GeneID:2898281"
 ORIGIN
         1 ATGAACTTGG TGAACATCAT TGGTCAAATT GAGGGTGATG CGCAAGTCAC CTACACGTCT
        61 AAAGACGGTA ACGCCAAATT GTACAAATTT GTTGTCCGTG TTCCGAACCT GTATAAATCG

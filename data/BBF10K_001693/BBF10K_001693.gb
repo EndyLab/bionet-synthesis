@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      LMSGLSMSTRNNSALTFGISTDLLDVSFGKGQRFDIQSHGRYTFIERVQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897613"
+                     /db_xref="GeneID:2897613"
 ORIGIN
         1 ATGAAAAAGC TGCTGCTGAT TCTGAGCAGC TTCGCAGTCG TCGGCACCAG CAGCATGGCC
        61 GTGATTAGCT GTAGCAAAGA TCCGGTCGAA CCTCCAGTTG ACCCGGCGGA AAAAGAGAAG

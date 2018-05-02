@@ -36,10 +36,10 @@ FEATURES             Location/Qualifiers
                      AANIDI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0012093"
-                     db_xref="UniProtKB/Swiss-Prot:P0AES6"
-                     db_xref="EcoGene:EG10424"
-                     db_xref="GeneID:948211"
+                     /db_xref="ASAP:ABE-0012093"
+                     /db_xref="UniProtKB/Swiss-Prot:P0AES6"
+                     /db_xref="EcoGene:EG10424"
+                     /db_xref="GeneID:948211"
 ORIGIN
         1 ATGAGCAATA GCTACGATTC AAGCTCCATC AAAGTTCTGA AAGGTCTGGA CGCCGTTCGT
        61 AAACGCCCGG GTATGTACAT CGGTGACACG GATGACGGTA CTGGTCTGCA CCATATGGTG

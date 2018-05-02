@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      SSER"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877034"
+                     /db_xref="GeneID:877034"
 ORIGIN
         1 ATGAAACGTA CCTATCAACC GTCCAAGTTG AAACGTGCAA AGACCCATGG CTTTCTGGCG
        61 CGTATGGCTA CCGCTTCTGG CCGTAAGGTC CTGAAACTGC GCCGTAAAAA GCAGCGCGCG

@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      VISAKSQLPIKLIGHTKLEKPLHFEVHKVSKQALKAVENANGSVKLLEK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876773"
+                     /db_xref="GeneID:876773"
 ORIGIN
         1 ATGGAACTGA ACCAGTTAAA GAGCGTGCCG AAGGCGCGTA ACCATAAGAC CAAAACGTTG
        61 GGCCGTGGCC ACGGCAGCGG CCTGGGTAAA ACCAGCGGTC GTGGCCAAAA AGGCCAAAAG

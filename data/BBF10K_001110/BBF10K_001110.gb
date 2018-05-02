@@ -25,10 +25,10 @@ FEATURES             Location/Qualifiers
                      MTLAGFKPAGVLCELTNDDGTMARAPECIEFANKHNMALVTIEDLVAYRQAHERKAS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0009980"
-                     db_xref="UniProtKB/Swiss-Prot:P0A7J0"
-                     db_xref="EcoGene:EG10465"
-                     db_xref="GeneID:947526"
+                     /db_xref="ASAP:ABE-0009980"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A7J0"
+                     /db_xref="EcoGene:EG10465"
+                     /db_xref="GeneID:947526"
 ORIGIN
         1 ATGAATCAGA CCCTGCTGTC TAGCTTTGGT ACCCCGTTCG AACGCGTGGA AAATGCGCTG
        61 GCGGCGCTGC GCGAAGGCCG TGGCGTCATG GTGCTGGATG ACGAGGACCG TGAGAATGAA

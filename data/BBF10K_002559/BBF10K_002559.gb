@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      EFRSNGINVREVALKYGGGGHIQASGAVLKSKRDIIRVVQDCQKQIAV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877340"
+                     /db_xref="GeneID:877340"
 ORIGIN
         1 ATGAACTCCC AAGTGCACCG TAAGGGTTCT ATCGCAGAAG CAGTCTCTGC GATTCAGGCG
        61 CACGATAAAA TCGTTATCTT CCACCATATT CGTCCGGACG GCGATTGTCT GGGTGCGCAG

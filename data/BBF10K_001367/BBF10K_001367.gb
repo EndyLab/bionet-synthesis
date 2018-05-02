@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      PLKKASK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897678"
+                     /db_xref="GeneID:2897678"
 ORIGIN
         1 ATGAGCAAGA GCAAGATCCT GGTTGGCGAC GTCGTAAAAG TGATCGCGGG TAGCCACAAA
        61 GGTGAGTTGG GCCCGATTAC CTGGATCTCT AAAGACAAGA AATGGGTGTC CGTCCAAGGT

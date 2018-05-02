@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      DILD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897604"
+                     /db_xref="GeneID:2897604"
 ORIGIN
         1 ATGTCTCTGA TTCTGCTGGA GAATATTTCC CACCAAAACG GTGGTAAGAA ACTGTACGAA
        61 GAAAGCAGCA TGCGCATTAA TAAGGGCGAG CATGTCGCGC TGCTGGGTCC AAATGGCGCC

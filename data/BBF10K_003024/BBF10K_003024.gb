@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      ASFLYFVSFKKLKPKANSAS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877092"
+                     /db_xref="GeneID:877092"
 ORIGIN
         1 ATGAACTTTA GCCGTCGCTC CCTCCGTGTT GGCGCGATCG TGAACGTTAG CGTACGTAGC
        61 TTGCTGATGC GCGGCAAAAA CCGCAACAAG TGCAATAGCA TCATCTTTTT GACTGTTGGT

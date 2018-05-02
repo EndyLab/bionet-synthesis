@@ -25,10 +25,10 @@ FEATURES             Location/Qualifiers
                      KAQSSTD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0008419"
-                     db_xref="UniProtKB/Swiss-Prot:P68398"
-                     db_xref="EcoGene:EG11372"
-                     db_xref="GeneID:947027"
+                     /db_xref="ASAP:ABE-0008419"
+                     /db_xref="UniProtKB/Swiss-Prot:P68398"
+                     /db_xref="EcoGene:EG11372"
+                     /db_xref="GeneID:947027"
 ORIGIN
         1 ATGAGCGAGG TCGAATTTTC ACACGAGTAC TGGATGCGCC ATGCTCTGAC CTTAGCCAAG
        61 CGCGCGTGGG ACGAGCGCGA GGTCCCGGTC GGCGCGGTCC TGGTCCACAA CAACCGTGTG

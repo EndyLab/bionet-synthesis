@@ -34,10 +34,10 @@ FEATURES             Location/Qualifiers
                      ADISLLQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0011624"
-                     db_xref="UniProtKB/Swiss-Prot:P00961"
-                     db_xref="EcoGene:EG10410"
-                     db_xref="GeneID:948080"
+                     /db_xref="ASAP:ABE-0011624"
+                     /db_xref="UniProtKB/Swiss-Prot:P00961"
+                     /db_xref="EcoGene:EG10410"
+                     /db_xref="GeneID:948080"
 ORIGIN
         1 ATGAGCGAGA AAACGTTCTT GGTCGAGATT GGTACGGAGG AACTGCCGCC AAAGGCGCTG
        61 CGCTCCCTCG CGGAATCCTT CGCGGCCAAC TTTACCGCGG AGCTGGACAA CGCGGGTCTG

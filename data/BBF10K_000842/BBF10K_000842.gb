@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      VVNALKPIQDRYYELIESEELDRILDEGAERANRTANKMLKKMENAMGLGRKRR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939361"
+                     /db_xref="GeneID:939361"
 ORIGIN
         1 ATGAAGCAGA CCATCTTCAG CGGTATCCAA CCGTCCGGTA GCGTTACTTT GGGTAACTAC
        61 ATTGGCGCAA TGAAACAATT TGTTGAACTT CAACACGATT ATAACAGCTA CTTTTGTATC

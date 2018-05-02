@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      EREKEIERRKKSRD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938952"
+                     /db_xref="GeneID:938952"
 ORIGIN
         1 ATGTACCCGA AGGCGTATAT CGACTACCTG GTGGAGTTTC ATGCGACTCG TGATTATTTT
        61 GAGTGCCACG AGATCCTTGA AGAATACTGG AAAGAGGACC CGCCGAAAAA ACGCAAGCGT

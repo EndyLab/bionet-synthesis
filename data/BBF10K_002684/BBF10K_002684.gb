@@ -32,7 +32,7 @@ FEATURES             Location/Qualifiers
                      GKLIMQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876920"
+                     /db_xref="GeneID:876920"
 ORIGIN
         1 ATGAGCAAAA TTGCGTTTCG CATGGAGAAT ATCTGTAAAA GCTTTGACAA CGGTCGTGTG
        61 AAGGCGAACG TTGATGTAAA TTTGACGGTC TACGAAAACA CGGTCCACAC GCTGCTGGGT

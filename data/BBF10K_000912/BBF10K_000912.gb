@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      NSSKAGGF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939091"
+                     /db_xref="GeneID:939091"
 ORIGIN
         1 ATGATTAGCT TTATCTTTGC TATGGATGCG AACCGTCTGA TCGGCAAAGA CAATGATCTG
        61 CCGTGGCATC TTCCGAATGA CCTGGCGTAT TTTAAAAAGA TTACCAGCGG CCACAGCATC

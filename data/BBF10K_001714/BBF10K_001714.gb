@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      TLLY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897653"
+                     /db_xref="GeneID:2897653"
 ORIGIN
         1 ATGGATATCA AGTTCCTGTA CGATAATCAT GAAACCCTGA AGGAGCAAAA AGTGACCATC
        61 ATCGGCCGTG TCCGTTCCAA CCGCCAAGGC AAGGCCGTTA GCTTTATGGT GCTGAACGAT

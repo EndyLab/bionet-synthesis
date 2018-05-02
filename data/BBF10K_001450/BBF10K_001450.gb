@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      LVDIMCVLVFIGFALIIV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897703"
+                     /db_xref="GeneID:2897703"
 ORIGIN
         1 ATGCTGAAGC TGGACCATAT TGAAGAAATG CTGGAGAAGG CGCTGGAAGA AAAGGACGTG
        61 AAGAAAATTC GTAGCATCAG CAAGGAATTC CAGTTCGTTG ACTTCGCAGA GGCAATGGAG

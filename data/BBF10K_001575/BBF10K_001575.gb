@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      TIEWE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897992"
+                     /db_xref="GeneID:2897992"
 ORIGIN
         1 ATGAAGAACA CGCAGATTCT GATTCTTGAT TTCGGTTCGC AGTATACCCA ACTGCTGGCC
        61 CGTCGTGTTC GTGAAGCGAA CATTTATACC GAGGTTCTGC CGTTCGATAC CAGCATCGAA

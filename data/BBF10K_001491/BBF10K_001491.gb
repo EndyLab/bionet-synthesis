@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      PLIDINLNIEMSNEVESLNAAIAGSIIMYNIKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897785"
+                     /db_xref="GeneID:2897785"
 ORIGIN
         1 ATGGAAAAAA TCACCTCTAC CTCCAATAAA AAGATCAAGG ATCTCATCAA ACTGCGCGAC
        61 GACAAAAAGT TCCAAACGGT TGAGAATTTG TTCGTTATCG AGGGTCTGCA CATGGTTAAT

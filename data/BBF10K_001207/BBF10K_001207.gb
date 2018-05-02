@@ -27,10 +27,10 @@ FEATURES             Location/Qualifiers
                      TLEKLAVLG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0012989"
-                     db_xref="UniProtKB/Swiss-Prot:P22634"
-                     db_xref="EcoGene:EG11204"
-                     db_xref="GeneID:948467"
+                     /db_xref="ASAP:ABE-0012989"
+                     /db_xref="UniProtKB/Swiss-Prot:P22634"
+                     /db_xref="EcoGene:EG11204"
+                     /db_xref="GeneID:948467"
 ORIGIN
         1 ATGGCCACCA AACTGCAAGA CGGCAATACT CCTTGCCTCG CGGCGACCCC GAGCGAGCCG
        61 CGTCCGACGG TCTTAGTGTT CGACTCTGGT GTTGGCGGCC TGTCTGTTTA CGATGAAATT

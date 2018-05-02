@@ -46,7 +46,7 @@ FEATURES             Location/Qualifiers
                      IAKEIKNS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877100"
+                     /db_xref="GeneID:877100"
 ORIGIN
         1 ATGCGTAACC TGATTAAGAA TGTGTTCCGT AGCTTCCGTA CGGCCAAGAT TGCCTTGATT
        61 GCACTGACCT TTCTGATCTT CGTTGCGGTC GGCAGCTTCG TTCTGCTGAA TAATACGGTC

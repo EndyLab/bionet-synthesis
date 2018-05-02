@@ -45,7 +45,7 @@ FEATURES             Location/Qualifiers
                      WVRRF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877091"
+                     /db_xref="GeneID:877091"
 ORIGIN
         1 ATGCACACGT TTACCAGAAA AGTGAAATGG CCATTCATGT TTACGGCGAT TGGTCTGACT
        61 TTTGGTATCG TGGCGGTGGC CTGCGCCCAA CCGACGGCGT CCACGGTTGA GGGCCTGTTT

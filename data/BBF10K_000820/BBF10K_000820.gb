@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      GLELTSYQSLTR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938020"
+                     /db_xref="GeneID:938020"
 ORIGIN
         1 ATGTCCGAAC AAAAGGATAT GTATGTCCTG GGTATTGAAA CCAGCTGTGA CGAAACCGCG
        61 GCGGCGATCG TGAAAAACGG CAAGGAGATT ATCAGCAACG TTGTGGCCAG CCAAATTGAG

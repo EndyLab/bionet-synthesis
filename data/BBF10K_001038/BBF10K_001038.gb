@@ -27,10 +27,10 @@ FEATURES             Location/Qualifiers
                      PLHRAML"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0004056"
-                     db_xref="UniProtKB/Swiss-Prot:P62615"
-                     db_xref="EcoGene:EG11294"
-                     db_xref="GeneID:945774"
+                     /db_xref="ASAP:ABE-0004056"
+                     /db_xref="UniProtKB/Swiss-Prot:P62615"
+                     /db_xref="EcoGene:EG11294"
+                     /db_xref="GeneID:945774"
 ORIGIN
         1 ATGCGTACCC AGTGGCCGTC CCCGGCGAAG TTGAACCTGT TCCTGTATAT TACGGGCCAG
        61 CGTGCGGACG GCTATCACAC CCTGCAAACC CTGTTCCAAT TTCTGGATTA CGGTGATACC

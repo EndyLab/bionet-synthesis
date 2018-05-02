@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      RNAKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898237"
+                     /db_xref="GeneID:2898237"
 ORIGIN
         1 ATGGCTATTA AGAAATATAA ACCAACGACC AATGGTCGCC GTAATATGAC CTCCATCGAT
        61 TACAAGGCAA CTTTAACGAC GAGCACCCCG GAGAAAAGCT TGCTGGCGGC CAAGAACAGC

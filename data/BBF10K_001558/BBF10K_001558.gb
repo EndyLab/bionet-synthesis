@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      NERDKDMSKFFFTDFVHPTKQVHELVSEILLDHAKELSKKWEN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898076"
+                     /db_xref="GeneID:2898076"
 ORIGIN
         1 ATGAAGAAAC TGCTGGCGAT TCTGGCGGCG ACTGCGCTGA TCACGCCGGT CGTTACGAGC
        61 GTGATTAGCT GCGGTGAGAA CCAAGAGCCT TTCACCAACA ACCCATTGAT GATTGGCAAA

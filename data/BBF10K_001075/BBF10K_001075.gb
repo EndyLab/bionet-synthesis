@@ -30,10 +30,10 @@ FEATURES             Location/Qualifiers
                      SPIRIQFKEGENPYANKRNTLTPTQMRKRKRLMKHIKKNK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0008270"
-                     db_xref="UniProtKB/Swiss-Prot:P0A6P5"
-                     db_xref="EcoGene:EG14207"
-                     db_xref="GeneID:946983"
+                     /db_xref="ASAP:ABE-0008270"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A6P5"
+                     /db_xref="EcoGene:EG14207"
+                     /db_xref="GeneID:946983"
 ORIGIN
         1 ATGGTCCCGG TGGTTGCCCT GGTGGGTCGC CCGAATGTGG GTAAGAGCAC GCTGTTCAAT
        61 CGTCTGACTC GTACGCGCGA CGCGCTCGTC GCGGACTTTC CGGGTCTGAC GCGTGACCGT

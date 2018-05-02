@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      HGRVKALADAAREAGLKF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936785"
+                     /db_xref="GeneID:936785"
 ORIGIN
         1 ATGATCACCA AAACCAGCAA GAACGCGGCG CGCCTGAAAC GTCATGCGCG TGTTCGCGCG
        61 AAACTGTCCG GCACCGCAGA GCGTCCGCGC CTGAACGTTT TCCGTTCGAA CAAACATATC

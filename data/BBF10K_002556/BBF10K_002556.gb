@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      TRLDKIDPPK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877336"
+                     /db_xref="GeneID:877336"
 ORIGIN
         1 ATGGAAAAGA AACCGTGGGA GGAGGACATC TCTATTGAGG AATTTAAAAA ATCCCTGAAC
        61 AAGGATAAGA TCACGAACCT GATTATCAAG CGTCGCTGGA ACAAAGGTAA AAGCACCTAC

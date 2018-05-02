@@ -45,10 +45,10 @@ FEATURES             Location/Qualifiers
                      ESFNVLLKEIRSLGINIELEDE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0013041"
-                     db_xref="UniProtKB/Swiss-Prot:P0A8V2"
-                     db_xref="EcoGene:EG10894"
-                     db_xref="GeneID:948488"
+                     /db_xref="ASAP:ABE-0013041"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A8V2"
+                     /db_xref="EcoGene:EG10894"
+                     /db_xref="GeneID:948488"
 ORIGIN
         1 ATGGTGTATA GCTACACCGA GAAGAAACGT ATTCGTAAAG ACTTTGGCAA GCGTCCTCAG
        61 GTGCTGGATG TTCCATATCT GCTGAGCATT CAGTTAGATA GCTTCCAAAA ATTTATTGAG

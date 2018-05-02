@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      LNQN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877264"
+                     /db_xref="GeneID:877264"
 ORIGIN
         1 ATGAGCTTCA GCGTTCAGAT CAAACACGAA CTGGCGACTA ATCCGTTGAT CAAAACCGAA
        61 TGGAGCTCCT TCTTGGCCGG TTACTTTCAG AATGGCCTGA AACTGCTGGC GACGGGTCAA

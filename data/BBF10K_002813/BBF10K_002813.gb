@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      NKKDE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877079"
+                     /db_xref="GeneID:877079"
 ORIGIN
         1 ATGAAAACGT ATATTCTCAC CAGCCCGAAG AATATCCCTT ATTTTAATGC GGCGCTGGAG
        61 GAGTGGTTGC TGACCGAGTT CAAAAAGGGT GAGGAGATCA AAGTGATTTA TTTTTGGCAA

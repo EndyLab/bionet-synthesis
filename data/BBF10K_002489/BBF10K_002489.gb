@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      RQATFKNMAILSLEMASQLV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876955"
+                     /db_xref="GeneID:876955"
 ORIGIN
         1 ATGACCCCGC ATATTAATGC AAAGAAGGAT GATATTGCCA AGGTGGTGCT GATGCCAGGC
        61 GACCCGCTGC GTGCGAAATG GATTGCGGAG CAGTTCATGG AGAAGCCGCG CCTGGTCAAT

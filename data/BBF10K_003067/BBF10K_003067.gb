@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      NLFPYTLFALL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876994"
+                     /db_xref="GeneID:876994"
 ORIGIN
         1 ATGCTGGGCA GCATGGCATT GAAGCTGCGT AAGTGGATCT GGGCTAGCAT TCCGAGCCTG
        61 GCCTTGATCC TGAGCAGCTG TAGCGCACTG GTTGCAAGCG TTGAACTGAA GTCGCTGAGC

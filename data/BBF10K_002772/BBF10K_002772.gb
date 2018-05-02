@@ -24,8 +24,8 @@ FEATURES             Location/Qualifiers
                      IAQTKVVMNKKLV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="REBASE:MpnORF342P"
-                     db_xref="GeneID:877416"
+                     /db_xref="REBASE:MpnORF342P"
+                     /db_xref="GeneID:877416"
 ORIGIN
         1 ATGTCGGACG CGCTGGACGA CGAGAATGTG TTGTGCTTCC GTTACAAAAG CTACTACATT
        61 AAGGACGACG GCAGCCGCAT CGACACCTTG AATGAGGAGC GTATCAAACA CATCGTCGAC

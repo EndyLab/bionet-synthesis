@@ -23,10 +23,10 @@ FEATURES             Location/Qualifiers
                      RGMINAVSFMVKVEE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010821"
-                     db_xref="UniProtKB/Swiss-Prot:P0AG51"
-                     db_xref="EcoGene:EG10888"
-                     db_xref="GeneID:947797"
+                     /db_xref="ASAP:ABE-0010821"
+                     /db_xref="UniProtKB/Swiss-Prot:P0AG51"
+                     /db_xref="EcoGene:EG10888"
+                     /db_xref="GeneID:947797"
 ORIGIN
         1 ATGGCCAAGA CCATCAAGAT CACCCAGACC CGTAGCGCGA TTGGCCGCTT GCCTAAGCAC
        61 AAAGCAACCC TGCTGGGCCT GGGCCTGCGT AGAATTGGCC ACACCGTTGA GCGCGAAGAT

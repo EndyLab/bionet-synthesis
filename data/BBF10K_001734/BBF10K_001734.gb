@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      NIEVKAAELLK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897716"
+                     /db_xref="GeneID:2897716"
 ORIGIN
         1 ATGGGTAAGA AAGAAAAACT TCCACAGGTG AAGATTGATC TGAAAGCGTG GTCTAAAGAA
        61 CTGGTTGAGT ATTTGGGTGG CAGCGAAAAT ATCATCAGCG CAACTCACTG TCTGACCCGT

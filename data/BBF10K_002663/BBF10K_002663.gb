@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      IINA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877219"
+                     /db_xref="GeneID:877219"
 ORIGIN
         1 ATGATCTCTG CCAAGGAACA AGCAAAGAAA GGTCAGATCA TCTACCGCTA CATTCTGCTC
        61 AAAATTCAAA GCTTCAAGTG GCCGGCGGGT ACCCGCATCT TTAGCGAACG CCAGCTGGAA

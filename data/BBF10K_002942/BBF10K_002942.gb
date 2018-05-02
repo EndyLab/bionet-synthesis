@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      DVQKLI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876915"
+                     /db_xref="GeneID:876915"
 ORIGIN
         1 ATGAGCACGA AGCCGCTGAT CCTCTTACTG GCTAATAGCA AGAACTCCAT TAATCGCAAG
        61 TTTGCCAAAG CACTGGAACA GCAGCTGAAC GCCGAGCTGA TCGAGCTGGT TGACTACCAG

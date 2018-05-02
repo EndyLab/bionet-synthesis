@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      LEQLGD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876778"
+                     /db_xref="GeneID:876778"
 ORIGIN
         1 ATGCAAGTCA AGGTTATTGA TGAGAACAGC AATACCACCG CGGTCCTGAA TTGCGCGAAA
        61 GCCAAGACCC GTGCACTGGC TTGGCTGTGC GACACCGTTT TGCTGGCAAT TCTGTTGGCC

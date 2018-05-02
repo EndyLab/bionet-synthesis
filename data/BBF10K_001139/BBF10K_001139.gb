@@ -25,10 +25,10 @@ FEATURES             Location/Qualifiers
                      KLDRLKARA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010779"
-                     db_xref="UniProtKB/Swiss-Prot:P0A6K3"
-                     db_xref="EcoGene:EG11440"
-                     db_xref="GeneID:947780"
+                     /db_xref="ASAP:ABE-0010779"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A6K3"
+                     /db_xref="EcoGene:EG11440"
+                     /db_xref="GeneID:947780"
 ORIGIN
         1 ATGAGCGTGC TCCAGGTGCT CCACATTCCG GATGAGCGTC TGCGCAAAGT GGCCAAGCCG
        61 GTGGAAGAAG TTAATGCGGA AATTCAGCGT ATCGTTGACG ATATGTTCGA AACCATGTAC

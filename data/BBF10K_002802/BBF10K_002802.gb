@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      KELENTFEPRTRIEIKREIKELERKLRRNR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876815"
+                     /db_xref="GeneID:876815"
 ORIGIN
         1 ATGAGCAAAG ACAAGAAAAA CAAAGTGGAG CAGCTGGAGC CAGTTGACCT GTTCGAGCGT
        61 ACGAAATTGG AGGATACCCA AGTCTTGAAT GACGTTGAGT TGGATGACAT TAAAAAGTTG

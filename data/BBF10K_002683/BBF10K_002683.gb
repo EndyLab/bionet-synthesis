@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      YNRL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876834"
+                     /db_xref="GeneID:876834"
 ORIGIN
         1 ATGTCCGAAA CGAAGTCTAA GGTTCTGGTG TTGGGTGGTT TGGGTTACAT CGGTAGCTGC
        61 TTCATTGATC AGTTGCTTAA GCAATACCCA GATGTTACGG TTTCTGTGAT CGACATCAAT

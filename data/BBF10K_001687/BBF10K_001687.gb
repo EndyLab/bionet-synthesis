@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      NV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897885"
+                     /db_xref="GeneID:2897885"
 ORIGIN
         1 ATGAAGAAAC TGCTGAATCT GCTGACTGGC CTCACGCTGA CCATGTGCAC GAGCACCATT
        61 GTTATCAGCT GCGATACCAA GGAGATCCCG ATCATTGTTA AGACCGATAT TAAGACCATC

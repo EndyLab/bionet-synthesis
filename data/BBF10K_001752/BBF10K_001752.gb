@@ -32,7 +32,7 @@ FEATURES             Location/Qualifiers
                      DAFLATK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898119"
+                     /db_xref="GeneID:2898119"
 ORIGIN
         1 ATGAGCAAAC AATTCAAGGG TATTGGTGCA AGCGAAGGTA TCGCCGTTGC GAAAGCCCTG
        61 GTGCTGGCCG AGGACCATAT TGAAATCAAA AAGACCAAGG TGTCTGATAT CGAGGCGGAG

@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      GIS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876987"
+                     /db_xref="GeneID:876987"
 ORIGIN
         1 ATGGCGTTTA TCCAAGAAAT CAAACGCAAG ATGACGACTG TGCAAAGCAC CATCAAGATC
        61 ACGAATGCCA TGAAAATGGT AAGCCGTGCG AAATTCGTGC GTTTTAAAAA GCAGTTTAAA

@@ -53,7 +53,7 @@ FEATURES             Location/Qualifiers
                      FLATQQSISKQQQIAQLNAEINSIKKLIAQKAAK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876917"
+                     /db_xref="GeneID:876917"
 ORIGIN
         1 ATGAACGACA CGGACAAGAA ATTCCCACTG CAGCCGGTTT ACGATACGGG CTTCGACGAT
        61 GGTTATCTGC AGCGTGATTA TGAGAAGTGC CTGGAATCCG CAGCGGCAAA CGATGCGCAG

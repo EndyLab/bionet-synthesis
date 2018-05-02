@@ -34,7 +34,7 @@ FEATURES             Location/Qualifiers
                      KIISGEIEENIRYTITVENDDFELTKIRN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898207"
+                     /db_xref="GeneID:2898207"
 ORIGIN
         1 ATGGAATTTC AACAAAAAGG TGAGGAAATC AACGCACTGG AGAAATATAC CCGCGATCTG
        61 ACGCAGTCTG CCAAGGATGG TAAAATTGAC CCGATCATCG GTCGTGAGGA GGAAATCCTG

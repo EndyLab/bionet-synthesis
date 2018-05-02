@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      KRLD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876981"
+                     /db_xref="GeneID:876981"
 ORIGIN
         1 ATGAAACGTT GCTACATCAC CACGCCGATT TACTATGCCA GCGGTAAGCC TCACATCGGC
        61 CATGCATTTA CCACCATTTT GGCGGATGTG ATCAAGCGTT ATAAACAACA GAATGGTTAC

@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      VIRETRAVEYAK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939680"
+                     /db_xref="GeneID:939680"
 ORIGIN
         1 ATGACCCCGA TTATGATGGT TCTGATTTCG ATTCTGTTGA TTCTGCTGGG TCTGGTTGTC
        61 GGTTATTTCG TTCGCAAGAC GATTGCCGAG GCGAAAATTG CCGGCGCACG TGGTGCCGCG

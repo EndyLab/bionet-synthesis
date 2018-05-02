@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      TEGIPAEIELRKKQLDYYQNFLFNWVQNKKLESLKSL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877149"
+                     /db_xref="GeneID:877149"
 ORIGIN
         1 ATGGAAATCA AAACCTACAA AATTAAAGAC ATCTGCGACA TTAAACGCGG CCGCGTTATT
        61 TCCAAGCTGG ACATTAAAAA AGATCCGGGT GTTTTCCCGG TTTACAGCGC AGCAACCAAC

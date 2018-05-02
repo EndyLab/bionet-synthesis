@@ -24,10 +24,10 @@ FEATURES             Location/Qualifiers
                      KVAFTALVEKAKAALA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0005729"
-                     db_xref="UniProtKB/Swiss-Prot:P0A7L3"
-                     db_xref="EcoGene:EG10881"
-                     db_xref="GeneID:945152"
+                     /db_xref="ASAP:ABE-0005729"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A7L3"
+                     /db_xref="EcoGene:EG10881"
+                     /db_xref="GeneID:945152"
 ORIGIN
         1 ATGGCGCGTG TTAAACGTGG CGTGATTGCG CGTGCCCGTC ACAAGAAGAT CTTGAAACAA
        61 GCGAAAGGTT ACTATGGCGC CCGTTCCCGT GTTTACCGTG TTGCCTTCCA GGCCGTTATC

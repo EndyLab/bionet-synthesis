@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      KLEIVVVIEKEVINSKLSDYFCFFKYRSLFFELR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877003"
+                     /db_xref="GeneID:877003"
 ORIGIN
         1 ATGAAGTCGC AATTCAAAGC TAACGTTCTG GCGATCCTGC TGGTGAGCCT GTTTCTGATC
        61 AACGGTCTGG TTTTCCTGAG CAAAACGCTG TTCAAACTGT TCAACTTTCG CGTTACGCAT

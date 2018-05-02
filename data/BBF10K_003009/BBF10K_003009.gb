@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      TYFALGYPLLESNIDAIHFNQTGATLTSVPVKDRIKVKNQSFWTLNK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877281"
+                     /db_xref="GeneID:877281"
 ORIGIN
         1 ATGCAACTGG AGAAGGTGCC GCGTGCGGAA TACCAGACCA AATGGGCGAC GAACACGGTG
        61 CCAAAACCGA CGGATTTCTA CCATCAGCTG TATAATCTGA GCTTTTCACT GACTCTGACC

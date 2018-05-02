@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      VNK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897647"
+                     /db_xref="GeneID:2897647"
 ORIGIN
         1 ATGAACGAAC TGAAACTGAT CGACTATAGC GAAAAGATTA AACAGCTGAT CAAGATCGTT
        61 AAGAACAAGC GTATTAAGCA GAGCGAGGCG GACGATATTC TGTTCTTCAT TGCAAACATG

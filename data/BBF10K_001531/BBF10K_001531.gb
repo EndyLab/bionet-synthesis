@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      NELIK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898007"
+                     /db_xref="GeneID:2898007"
 ORIGIN
         1 ATGATCATTT ACAAGAACAT TAAAAGCGGC TTCATCAAAG ACGTTGAGCA AGGTCTTATT
        61 GTCGAGATTC TGCAAGAGAA GGTTGACAGC CTGCTGAAAC GTAAGACCAA TATCGCAGAG

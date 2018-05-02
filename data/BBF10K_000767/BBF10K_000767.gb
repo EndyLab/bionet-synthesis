@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      EFVHSES"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936940"
+                     /db_xref="GeneID:936940"
 ORIGIN
         1 ATGAATAATA TTGCGTATAT TGCACTGGGT AGCAACATCG GTGACCGTGA AACCTACCTG
        61 AGACAGGCCG TCGCTCTGCT GCATCAGCAC GCTGCGGTGA CCGTGACGAA GGTGTCCAGC

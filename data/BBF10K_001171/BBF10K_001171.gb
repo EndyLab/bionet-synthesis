@@ -28,10 +28,10 @@ FEATURES             Location/Qualifiers
                      LNMGPEFLSAFTVGDQLLWGAAEPLRRMLRQLA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0011211"
-                     db_xref="UniProtKB/Swiss-Prot:P0A9Q9"
-                     db_xref="EcoGene:EG10088"
-                     db_xref="GeneID:947939"
+                     /db_xref="ASAP:ABE-0011211"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A9Q9"
+                     /db_xref="EcoGene:EG10088"
+                     /db_xref="GeneID:947939"
 ORIGIN
         1 ATGAAGAACG TGGGTTTCAT CGGTTGGCGT GGTATGGTGG GCAGCGTCTT GATGCAACGC
        61 ATGGTAGAAG AACGTGATTT TGACGCGATC CGTCCGGTGT TTTTTAGCAC CAGCCAGCTG

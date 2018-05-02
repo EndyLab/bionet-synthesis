@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      GSWLEYVAKPKETK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898217"
+                     /db_xref="GeneID:2898217"
 ORIGIN
         1 ATGGCGAAGT ATCTGGTTTT GCTGGAAAGC CCGTCTAAAG TGGAGAAAAT CAAACACTAT
        61 CTGGAAAAGA ACTTCCAGGA GGATAGCTTT GAGGTTCTGG CATCGGGTGG TCACATCAAC

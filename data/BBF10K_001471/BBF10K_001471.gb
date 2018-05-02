@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      KIEEVI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897840"
+                     /db_xref="GeneID:2897840"
 ORIGIN
         1 ATGAGCAAAA TCACCCTGGA AAAGACCTTG GAGCTGTCCA GCCTGTTTTA CCTGTATAAA
        61 AACATGCTGA CGGAGAAACA AATCGAGTAC TTTGAGCTGT ATTTCGAGGA GGACCTGTCC

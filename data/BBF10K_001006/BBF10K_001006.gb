@@ -32,7 +32,7 @@ FEATURES             Location/Qualifiers
                      IQK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938574"
+                     /db_xref="GeneID:938574"
 ORIGIN
         1 ATGTCCAAAA AGCCGGCAGC ACTGATCATC CTGGACGGCT TCGGTCTGCG TAACGAAACG
        61 GTCGGTAACG CCGTCGCCCT GGCCAAAAAG CCAAATTTCG ATCGCTACTG GAATCAATAC

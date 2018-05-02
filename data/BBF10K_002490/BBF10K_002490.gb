@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      ESHEHR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876837"
+                     /db_xref="GeneID:876837"
 ORIGIN
         1 ATGAAGCTGG AGTACAACCG CATTATTGAC AGCACTCTCT TGAAGGCGGA CACTCTGCCA
        61 CATGAAATCG ATGCGTTGTG CGCTGACGCA CATAAATACC AATTTTACGC GGTGTGCGTG

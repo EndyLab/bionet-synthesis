@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      KAKS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877133"
+                     /db_xref="GeneID:877133"
 ORIGIN
         1 ATGAAGTACA AAACCGTTAA GAGCATCCCG TTGTTTCTGC TGGGTAGCAT CGTTTTTACC
        61 GCATGTAGCA CCCCGCAGTC CACCTTCCAT CTGCCGGTGC AAACCACCGT GAGCGCAATT

@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      TNLAIQLLASIA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876841"
+                     /db_xref="GeneID:876841"
 ORIGIN
         1 ATGAAGCACA TCAGCGCGGT CTACAACCCG GCATTCACCA ACATTGCAAG CAAACTGAAT
        61 CAAACCGAAC TGCTGAAAGA CGCTGCCCAG AGCCTGAATA TCCAACTGGA TTTCTTTACT

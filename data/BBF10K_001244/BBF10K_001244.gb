@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      HWYKELIKNNGENI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898258"
+                     /db_xref="GeneID:2898258"
 ORIGIN
         1 ATGAACAAAT TCCCGAAAGA CTTTTTGTGG GGCGCAAGCA CCAGCGCGTA TCAGTTTGAA
        61 GGCGCAATTA AGCAGGGCGG CAAAGTTAGC AGCATTATGG ACCGCTTCGA CGAACAACCG

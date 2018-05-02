@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      GTVSASDFKRIGNLI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877369"
+                     /db_xref="GeneID:877369"
 ORIGIN
         1 ATGAAAGTCA AATCGGCGGC CAAAAAACGC TTCAAGCTGA CCAAGAGCGG TCAAATCAAG
        61 CGTAAACACG CTTATACGAG CCATCTGGCA CCGCACAAAA CCACCAAGCA AAAACGCCAC

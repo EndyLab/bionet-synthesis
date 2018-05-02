@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      AIHKDNQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876800"
+                     /db_xref="GeneID:876800"
 ORIGIN
         1 ATGGAGAACA AGGAACAAAA TAACACGGAT CAACTGCAGA CGGGTGATCT GAATAAAGCA
        61 CGTAAGCTGC ACAAGTGTTA CCTGTGGCTG TTTGTCGTCA GCCTGATCAT CTGGCTGGGC

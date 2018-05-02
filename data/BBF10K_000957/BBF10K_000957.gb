@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      NRDVPTVDTEEEGS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937498"
+                     /db_xref="GeneID:937498"
 ORIGIN
         1 ATGCCAAATA AACGTCTGAT GCTGCTGTTG CTGTGCATCA TCATCCTGGT GGCAATGATT
        61 GGTTTCTCTC TGAAAGGCGG CCGCAACACC ACCTGGCCAG AGAAGGTGAT TGGTGACACG

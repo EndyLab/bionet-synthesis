@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      ALFDHFK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877059"
+                     /db_xref="GeneID:877059"
 ORIGIN
         1 ATGAACTACG ACCTGATCAT TATTGGTGCG GGTCCGGCGG GTTATGTGGC AGCTGAGTAT
        61 GCGGGCAAGC ACAAGCTGAA AACGCTGGTT GTGGAGAAGG AGTACTTTGG TGGCGTCTGC

@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      SLKHD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898124"
+                     /db_xref="GeneID:2898124"
 ORIGIN
         1 ATGCAGAAAA TTACGATTGC GCCAAGCTTT CTGTCCGCCA ACTTTGCGGA CCTGAAAAAC
        61 GAAATCAAAC GTTGTAAGGA GGCAAATATT GAATGGATCC ACTATGATGT GATGGATTAC

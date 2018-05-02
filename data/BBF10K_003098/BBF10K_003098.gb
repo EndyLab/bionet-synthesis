@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      QVIANTK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877033"
+                     /db_xref="GeneID:877033"
 ORIGIN
         1 ATGACCAAAG ATCTGCTGGC TCTGCTGAAG GAACGTGGTC TGTTCGTGCA AGCGAATTTT
        61 GAAAAAGAGC TGAAACAGCT GCTGAACCAA GGTAGCTTTG CCTTTTACGT GGGTTTTGAT

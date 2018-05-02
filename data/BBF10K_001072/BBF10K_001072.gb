@@ -30,10 +30,10 @@ FEATURES             Location/Qualifiers
                      TRSIERINKALDFIAERENQQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0007911"
-                     db_xref="UniProtKB/Swiss-Prot:P04805"
-                     db_xref="EcoGene:EG10407"
-                     db_xref="GeneID:946906"
+                     /db_xref="ASAP:ABE-0007911"
+                     /db_xref="UniProtKB/Swiss-Prot:P04805"
+                     /db_xref="EcoGene:EG10407"
+                     /db_xref="GeneID:946906"
 ORIGIN
         1 ATGAAGATCA AGACCCGTTT TGCTCCGAGC CCGACCGGTT ATCTGCACGT GGGTGGTGCG
        61 CGTACGGCTC TGTACAGCTG GCTGTTTGCG CGTAATCACG GCGGTGAGTT CGTGCTGCGC

@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      LIEEFVIKEKNIEIIREKFKSVFIKESIL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897958"
+                     /db_xref="GeneID:2897958"
 ORIGIN
         1 ATGAGCCGTA TTCGCCCGAT TTGGAAAAAG GTGAAACTGA TGATTAGCAT CAATAACGTT
        61 AGCAAGAAAT ACGGTGAGAA AGTTGGTAAT TTTAACATTA ATATTCAGAT TAAAAAGGGC

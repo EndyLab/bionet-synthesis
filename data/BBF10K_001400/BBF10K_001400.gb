@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      LYEKHINKSK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898248"
+                     /db_xref="GeneID:2898248"
 ORIGIN
         1 ATGATCATCC TGGATGGCAA AAAAGTCGCG TCCCGTCGTA AGGAGGAACT GACCGCGAAG
        61 ATCTCCAAAT ACCACAATAA GGGTCTGCGT AAACCGAAGC TTGTGGTCAT TATGGTCGGT

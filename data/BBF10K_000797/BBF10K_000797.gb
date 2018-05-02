@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      VEELLG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938012"
+                     /db_xref="GeneID:938012"
 ORIGIN
         1 ATGCGCCGTA TTGATCCGTC CAAACTGGAG CTTGAGGAAC GTCTGGTGAC GGTAAACCGT
        61 GTTGCCAAAG TGGTTAAAGG TGGTCGCCGC TTTCGTTTCG CGGCCCTGGT TGTTGTGGGT

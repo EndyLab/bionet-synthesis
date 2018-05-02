@@ -35,7 +35,7 @@ FEATURES             Location/Qualifiers
                      TVFKAE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936803"
+                     /db_xref="GeneID:936803"
 ORIGIN
         1 ATGAGCCTGG TCGTGGACAC GAACAAACGT AAGCAGAAAG GTAAAAGCTT TTATACCGAG
        61 GAACAAAAGA AGGTCATGAT CGAAAACACC GTTATCAAGT GTATTTTGAA ATCCCTGAAG

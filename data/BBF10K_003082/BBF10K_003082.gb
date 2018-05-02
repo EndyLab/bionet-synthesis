@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      QVTNPTEKDPFKNGAKGRAFRHWISKY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876997"
+                     /db_xref="GeneID:876997"
 ORIGIN
         1 ATGCTGATGC GCAAGAAAAA GCTGCTGAGC CGCATCAGCT TTGGTAGCCT GTTCCTTCTG
        61 TGCGGTACCA TCCTGTCTGC CTGCACTTGG ATCCAGGCAA ATCTGCGCAA TCTGCTCAAG

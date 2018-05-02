@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      LEKTKGREEKTESNW"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876840"
+                     /db_xref="GeneID:876840"
 ORIGIN
         1 ATGGAGCAAC AAAAGATCCG TAATTTTTCT ATTATCGCGC ACATCGACCA CGGTAAGAGC
        61 ACCTTGAGCG ACCGCCTGAT CGAACGCAGC ATTGGCTTCG AAAAGCGCCT GCTGCAGGCG

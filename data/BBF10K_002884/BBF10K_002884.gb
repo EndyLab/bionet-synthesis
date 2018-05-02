@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      INPNDKNKYKASE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877150"
+                     /db_xref="GeneID:877150"
 ORIGIN
         1 ATGAAGCGCG CTGACTTTTG TATCATCGGC CTGGGTCGTT TTGGTATGCA AGTTGCGCAC
        61 AGCCTGAAAG AAAACAATTT TACCCTGGTG TTGATCGACA ACGACCAGCA TAAAACGAAT

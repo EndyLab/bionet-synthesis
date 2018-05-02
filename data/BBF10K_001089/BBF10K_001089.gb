@@ -30,10 +30,10 @@ FEATURES             Location/Qualifiers
                      PGR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0008586"
-                     db_xref="UniProtKB/Swiss-Prot:P0AGD7"
-                     db_xref="EcoGene:EG10300"
-                     db_xref="GeneID:947102"
+                     /db_xref="ASAP:ABE-0008586"
+                     /db_xref="UniProtKB/Swiss-Prot:P0AGD7"
+                     /db_xref="EcoGene:EG10300"
+                     /db_xref="GeneID:947102"
 ORIGIN
         1 ATGTTCGACA ACCTGACGGA CCGTTTGAGC CGTACCCTGC GTAACATCAG CGGTCGTGGT
        61 CGCCTGACCG AAGATAATGT GAAGGACACC CTGCGCGAAG TTCGCATGGC TCTGCTGGAG

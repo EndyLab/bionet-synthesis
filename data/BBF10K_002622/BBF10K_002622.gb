@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      EPADFLGIRLRDAVKSTFNAAINNTSINFDKFIQYINDSLGSDFKQRQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:23527805"
+                     /db_xref="GeneID:23527805"
 ORIGIN
         1 ATGATGGTTC ATCGTACCAA GGTCCGTCGT GCAATGGAGC TGAAAATGGT CAGAATGATC
        61 AAACAGAGCA CCATGGTGTT TGTTGATATC GCGGTATCCC AGTTCCTGAA CGGCAGCGTG

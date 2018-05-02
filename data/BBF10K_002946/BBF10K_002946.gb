@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      LDKQCA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876885"
+                     /db_xref="GeneID:876885"
 ORIGIN
         1 ATGTACAAAA GCGCTATTAA TATCGTGCTG TTCTGCCCGG AGATCCCGAA CAATACCGGT
        61 AACATCGTGC GCAGCTGTAC CGCGTTCAAA GCCAATCTGC ATCTGATTAA ACCGTACGGC

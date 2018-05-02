@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      QINLFRYLVYLIE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877413"
+                     /db_xref="GeneID:877413"
 ORIGIN
         1 ATGAAGTTTA AGTTTTTGCT GACCCCGCTG CTCAGCTCTG TTCTGTTTCT CAGCGCGTGT
        61 TCTGCAACCT TTGAGGCGGA CCTGAAGAAT CTGATTAAAG AGACTGACGG TAAAGACCTG

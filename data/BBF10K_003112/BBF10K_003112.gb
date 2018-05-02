@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      VRPLS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877035"
+                     /db_xref="GeneID:877035"
 ORIGIN
         1 ATGAAAGACA CCGAGAAGAA AACTGAAAAA GAATTGGTCT GGGACGAATG CGTGGACATT
        61 CTGGAAAATG TTAAGGCAAA CAGCTTCAAA GCAACCTTGG AATACTATTT AGCGAGCGAC

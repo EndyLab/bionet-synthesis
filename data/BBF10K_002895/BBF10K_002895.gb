@@ -40,7 +40,7 @@ FEATURES             Location/Qualifiers
                      GKQ"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877396"
+                     /db_xref="GeneID:877396"
 ORIGIN
         1 ATGGAATTTC TGGAGCAAGA GGGTCAGGAA GTGCTGACGA AAGAGATTAA AGCGGGTTTT
        61 TGTGAAATCA CCCCGAGCAG CATCACCGAG CAAACCACGA AACCACAACT GGACGAAACG

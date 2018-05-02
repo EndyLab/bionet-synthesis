@@ -40,7 +40,7 @@ FEATURES             Location/Qualifiers
                      EVFGED"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876843"
+                     /db_xref="GeneID:876843"
 ORIGIN
         1 ATGCCTAAGA CCATCAAAAA ACAGAACCCG AGCAACACCA CTCTGCAGTA TAAAAAATAC
        61 TTGGAGCAAA GCAAGGAAAA GACGGCCAAG GCGAAAAACA AAGATGTTAG CATCGATGAT

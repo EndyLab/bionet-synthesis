@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      DKYGIKALAQKFSQL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877399"
+                     /db_xref="GeneID:877399"
 ORIGIN
         1 ATGAAAAACG CAATTCTCAT TGACGGTAAC AGCCTGGCGT ACCGTGCCTA TTTTGCGACG
        61 TGGCAACAGG TAGAGTTCGC CAAGCTGCAT AATCTGCCAT TCAATAATGC CATTCGCACG

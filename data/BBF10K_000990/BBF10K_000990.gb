@@ -36,7 +36,7 @@ FEATURES             Location/Qualifiers
                      SGE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938828"
+                     /db_xref="GeneID:938828"
 ORIGIN
         1 ATGCAACTGC TGCACCTGGC GATTCTGTCT CCATTTCTGT TCGCGTTTAT TATCCCGTTC
        61 CTGGCAAAAT ATGCGAAGCG TGTTCACACC GGTTGGTTCG TGCTGATTCT GCCGGTTCTG

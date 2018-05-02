@@ -26,10 +26,10 @@ FEATURES             Location/Qualifiers
                      RNNVAWKKLPGKE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0006013"
-                     db_xref="UniProtKB/Swiss-Prot:P76256"
-                     db_xref="EcoGene:EG13512"
-                     db_xref="GeneID:946304"
+                     /db_xref="ASAP:ABE-0006013"
+                     /db_xref="UniProtKB/Swiss-Prot:P76256"
+                     /db_xref="EcoGene:EG13512"
+                     /db_xref="GeneID:946304"
 ORIGIN
         1 ATGCGTATTC TGGCGATTGA TACCGCGACT GAGGCGTGCA GCGTGGCATT GTGGAATGAT
        61 GGTACGGTTA ATGCTCACTT TGAACTGTGT CCGCGCGAAC ACACGCAACG CATTCTGCCG

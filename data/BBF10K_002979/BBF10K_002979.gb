@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      ENGIA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877295"
+                     /db_xref="GeneID:877295"
 ORIGIN
         1 ATGGGTTTCA CTAAACAGTA CAAAATCGAT TTCGATATTA TCGATAACCA AATCGTTCTG
        61 AGCAATAATT ATTTCCAAAA GCACAAGGGT TCGTTCCGCA AAATTACCGG CACGCGCTTC

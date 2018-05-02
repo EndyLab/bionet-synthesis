@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      PFVALLINELHK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876989"
+                     /db_xref="GeneID:876989"
 ORIGIN
         1 ATGAAGCTGT CGAAATTTCT GATTAAGCTG GCCATGTGCT ATATTTTAAT TTGGTTCCGT
        61 CATTTCCTTC TGAGCAGCAT CCGCATTATT GGCACGACTT GGACCTTTTG GACGGCTTGG

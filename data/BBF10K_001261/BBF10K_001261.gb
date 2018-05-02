@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      KRG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897704"
+                     /db_xref="GeneID:2897704"
 ORIGIN
         1 ATGCCAATTC TGAAATTTAA CGGTACTACG GAGGAGAAAG TTAAGGAGTA TAGCAAGAAA
        61 ATTAACGAAA TCGCGGATCT GATCGTGTCC AAACCGGAGG CGATCCTGAT GATGGTTAAC

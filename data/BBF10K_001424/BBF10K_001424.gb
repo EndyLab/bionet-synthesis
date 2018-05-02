@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      MVGWMAPE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898243"
+                     /db_xref="GeneID:2898243"
 ORIGIN
         1 ATGGCCAAGA TTGATCAAAA GAGCAATAAG GTTATCTTCA CCAACGCGGA GTATACCAAG
        61 GCATGGGAAA ATTGCCCGAT TATCCAGAAT CGCGACCGTA AAGACTTCCG TTTATGCTAT

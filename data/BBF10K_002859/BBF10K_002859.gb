@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      AKL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876854"
+                     /db_xref="GeneID:876854"
 ORIGIN
         1 ATGCTGGCCA AGAGCAAAAC TATTCGTGTC GCGATTAACG GCTTCGGCCG CATCGGCCGC
        61 CTGGTTTTCC GCGCCCTGCT GAGCCAGAAG AATATCGAAA TTGTTGCGGT TAATGATCTG

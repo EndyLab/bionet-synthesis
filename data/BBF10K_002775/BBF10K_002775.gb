@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      YFNLI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876765"
+                     /db_xref="GeneID:876765"
 ORIGIN
         1 ATGATGAACA GCATCAAGTT CATCTTCCTC GGTGACGTTT ACGGCAAGGC GGGTCGTAAT
        61 ATTATTAAGA ACAATCTGGC ACAACTGAAG TCTAAGTACC AAGCGGATCT GGTGATCGTC

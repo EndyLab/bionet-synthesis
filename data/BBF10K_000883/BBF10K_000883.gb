@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      FEQPTM"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:940134"
+                     /db_xref="GeneID:940134"
 ORIGIN
         1 ATGACCATTC AGTGGTTCCC GGGTCATATG GCGAAAGCGC GTCGTGAGGT GACGGAAAAA
        61 TTGAAACTGA TCGACATTGT TTATGAGCTC GTCGACGCGC GCATCCCGAT GTCCAGCCGT

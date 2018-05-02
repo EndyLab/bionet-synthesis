@@ -36,7 +36,7 @@ FEATURES             Location/Qualifiers
                      MNPYMMM"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938122"
+                     /db_xref="GeneID:938122"
 ORIGIN
         1 ATGAACTTTG CGGAAGTCAT TGTGGACGTT TCAACGAAGA ATATTGATCG TCCTTTTGAC
        61 TACAAAATTC CGGACCACCT GAAGGGTATG ATTAAAACCG GTATGCGCGT CATCGTTCCG

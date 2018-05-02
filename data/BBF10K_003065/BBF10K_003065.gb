@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      AVS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876996"
+                     /db_xref="GeneID:876996"
 ORIGIN
         1 ATGGACCTGA AGGATAACAG CTTCGCCAAA AAGCGTAGCA CGGTTTTTGT GGTCCTGCTG
        61 ATTGTGTTTT GTTTCTTTCT GATGTTTAGC GCGTTTGCGG ACGGTTTTAA TTTTTGGAGC

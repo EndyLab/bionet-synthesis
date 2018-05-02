@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      ITFTLSE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898036"
+                     /db_xref="GeneID:2898036"
 ORIGIN
         1 ATGAAAAAAC TTCTCGCAAT TCTGGGCGCA GTTGGCCTGA GCGTTACGGG TGCGAGCATC
        61 GTGGTTTCCT GCGGCGGTAA TGGTAACACG GACATCACCG ACCCTGAAAC GGGTCTGGTC

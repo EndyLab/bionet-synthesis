@@ -35,10 +35,10 @@ FEATURES             Location/Qualifiers
                      SPRRASSGDSEE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0009916"
-                     db_xref="UniProtKB/Swiss-Prot:P0AFI2"
-                     db_xref="EcoGene:EG10686"
-                     db_xref="GeneID:947499"
+                     /db_xref="ASAP:ABE-0009916"
+                     /db_xref="UniProtKB/Swiss-Prot:P0AFI2"
+                     /db_xref="EcoGene:EG10686"
+                     /db_xref="GeneID:947499"
 ORIGIN
         1 ATGTCCGACA TGGCCGAACG TCTGGCACTG CACGAATTCA CGGAGAACGC GTATCTGAAC
        61 TATTCTATGT ACGTCATTAT GGACCGTGCC TTGCCGTTCA TCGGTGACGG TCTGAAGCCG

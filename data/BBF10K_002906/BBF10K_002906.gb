@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      VQAQPHL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876759"
+                     /db_xref="GeneID:876759"
 ORIGIN
         1 ATGAACAAAT TGATCTCAAT TTTGGTTCCG TGTTACCAGT CACAGCCATT TCTGGACCGT
        61 TTCTTCAAAA GCCTGCTGAA GCAAGATTGG AACGGCGTTA AAGTCATTTT CTTTAACGAC

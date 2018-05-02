@@ -34,7 +34,7 @@ FEATURES             Location/Qualifiers
                      FIEANARYVKNLDI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939456"
+                     /db_xref="GeneID:939456"
 ORIGIN
         1 ATGGAACAAC AGCAGAATAG CTACGACGAA AATCAAATTC AAGTCCTGGA GGGTCTGGAG
        61 GCGGTCCGCA AGCGCCCGGG TATGTACATT GGTAGCACCA ACTCAAAGGG TCTGCACCAT

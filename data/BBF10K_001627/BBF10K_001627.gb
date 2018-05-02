@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      TFLK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897823"
+                     /db_xref="GeneID:2897823"
 ORIGIN
         1 ATGAATAATA ATACCCAGGA ATTTAGCCAA AAAGCAAAAA TTAAAGTTAT TGGTGTGGGT
        61 GGTGGCGGTA ATAACGCAGT CTCTCGCATG TTCGAGCAGG GTGCGCACGG CGTCGATTTT

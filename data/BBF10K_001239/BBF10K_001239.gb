@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      ENAEFVENIDF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898150"
+                     /db_xref="GeneID:2898150"
 ORIGIN
         1 ATGGCGGAGC AGAATTACGG TGCCGAAAGC ATTAAAGTTT TGAAAGGTCT GGAGGCAGTC
        61 CGTAAACGCC CAGGCATGTA CATCGGCTCT ACCAGCAAAG CGGGTCTGCA CCACTTGGTC

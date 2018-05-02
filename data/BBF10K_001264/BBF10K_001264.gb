@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      LTLHPFFTLILDEEANSIANA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898156"
+                     /db_xref="GeneID:2898156"
 ORIGIN
         1 ATGAAAATTA TCAAGACCAA GGACTATGAA AGCATGACCG ACAAGACCAT TGAAGCCTTT
        61 ATGGAAATCT TGGAGAAAAA TAAGCATAAG GAGCGCATTA ATGTCTCTGT GACTGGTGGT

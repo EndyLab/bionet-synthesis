@@ -24,10 +24,10 @@ FEATURES             Location/Qualifiers
                      RTGKAARIKERLN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0008574"
-                     db_xref="UniProtKB/Swiss-Prot:P0A7K6"
-                     db_xref="EcoGene:EG10880"
-                     db_xref="GeneID:947096"
+                     /db_xref="ASAP:ABE-0008574"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A7K6"
+                     /db_xref="EcoGene:EG10880"
+                     /db_xref="GeneID:947096"
 ORIGIN
         1 ATGTCCAACA TCATCAAGCA ATTAGAGCAA GAACAAATGA AACAGGACGT TCCATCTTTT
        61 CGCCCGGGCG ACACCGTGGA GGTTAAAGTT TGGGTTGTGG AAGGTAGCAA AAAACGCCTG

@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      MGL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898192"
+                     /db_xref="GeneID:2898192"
 ORIGIN
         1 ATGAGCAAAA AAGTCGCGAT TAATGGCTTT GGTCGCATCG GTCGCTTGAC GTTCCGCCAA
        61 CTCTTTAACC AGGGTGTTGA GATTGTTGCT GTGAACGACC TGACCGATAC CAAGACCCTG

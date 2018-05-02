@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      STKKINE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898054"
+                     /db_xref="GeneID:2898054"
 ORIGIN
         1 ATGAAAAAGC TGCTGCTGGC ACTTCTGTCT ACTACGATCA TCTCTACGAG CGCGACCACC
        61 GTCATCAGCT GCGGTACGGA AAAGCATTTT GGTGAGATTT ACCTGATCAC CGATAGCGGC

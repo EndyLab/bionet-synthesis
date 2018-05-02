@@ -32,10 +32,10 @@ FEATURES             Location/Qualifiers
                      DTLGIETVERM"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0006264"
-                     db_xref="UniProtKB/Swiss-Prot:P11875"
-                     db_xref="EcoGene:EG10071"
-                     db_xref="GeneID:946452"
+                     /db_xref="ASAP:ABE-0006264"
+                     /db_xref="UniProtKB/Swiss-Prot:P11875"
+                     /db_xref="EcoGene:EG10071"
+                     /db_xref="GeneID:946452"
 ORIGIN
         1 ATGAATATTC AGGCGCTGCT GAGCGAAAAA GTACGTCAGG CTATGATTGC GGCCGGTGCG
        61 CCGGCCGATT GCGAACCTCA GGTTCGCCAA AGCGCGAAGG TGCAGTTCGG TGATTACCAA

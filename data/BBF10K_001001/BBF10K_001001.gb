@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      EALQKTKEYFTNVF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937108"
+                     /db_xref="GeneID:937108"
 ORIGIN
         1 ATGAACATTA CGGATATTCG TGAACAATTC CCGATCCTGC ATCAACAAGT TAACGGCCAT
        61 GACCTGGTCT ATCTTGATTC GGCCGCAACC AGCCAGAAGC CGCGCGCAGT GATCGAAACC

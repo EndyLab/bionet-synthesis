@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      MRKNKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897954"
+                     /db_xref="GeneID:2897954"
 ORIGIN
         1 ATGGAGAACA TTAATTACAA GAAAGCGAAA AAGCAAATCC GCAAATATAA ATACACGTTC
        61 CTGAAAGTTC TGGGTACGAT CATTCTGTTC CCGATTGTTT TTATTGTCAG CGCAATCCTG

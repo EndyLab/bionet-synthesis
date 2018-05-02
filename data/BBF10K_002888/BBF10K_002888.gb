@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      ALGGINKRLDKIDPPK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:16791260"
+                     /db_xref="GeneID:16791260"
 ORIGIN
         1 ATGAAGGAGA AAATTCCTTT CTATAACGAA AAAGAGTTTC ACGATATGGT GAAGAAAACC
        61 AAAAAGGGTA CCTTTAGCGG CTGGTACATC ATCAACCCGG AGAACAATAG CGTGGAATTC

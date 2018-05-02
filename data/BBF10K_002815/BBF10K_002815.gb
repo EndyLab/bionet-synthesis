@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      IEELIDLEVA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877106"
+                     /db_xref="GeneID:877106"
 ORIGIN
         1 ATGGCGAATG AATTTAAGTT CACGGACGTG GGCGAGGGCT TACACGAGGG TAAAGTGACC
        61 GAAATCCTGA AAAAGGTTGG TGACACGATT AAGGTCGACG AAGCACTGTT TGTCGTTGAA

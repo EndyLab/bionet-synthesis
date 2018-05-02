@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      NALMG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897978"
+                     /db_xref="GeneID:2897978"
 ORIGIN
         1 ATGGCTAATT TGAGCAACCT TAAGACGCAG ATCAGCAACA CCCAAGACAT TGGTAAAATT
        61 ACTAATGCCA TGCAACTGGT TGCGAGCGCG AAACTGCGTC GTATCGGTAA AAAGGTTACC

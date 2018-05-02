@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      IFK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898114"
+                     /db_xref="GeneID:2898114"
 ORIGIN
         1 ATGATCAAGA TGATTGCCAT TGATATTGAC GGCACCGTTC TGGACCACAA GACCGGTATT
        61 CACCAAACCA CGAAGGATGC GATTTTGAAA GCGAAAGAGC TGAACATTCC TGTCATTATC

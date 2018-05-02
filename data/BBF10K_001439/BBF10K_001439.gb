@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      IEFELKEFIEKS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898126"
+                     /db_xref="GeneID:2898126"
 ORIGIN
         1 ATGTCTAACA GCAAGATCGT TGAAGGTGCG TTAAAGACGA TGAGCAGCAA AAACGAGATT
        61 TGGAAGAATG AGGCGCTGAT TTCGGCGTTA AAGACGATCG AGAAGAACTA TGGTAAAGAG

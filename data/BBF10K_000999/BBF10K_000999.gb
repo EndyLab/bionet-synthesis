@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      EMNRLIKFEMEGSIG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936706"
+                     /db_xref="GeneID:936706"
 ORIGIN
         1 ATGGCCAAGA AAATGCCGGA CATTGGCGAG TATAAATACG GTTTTCACGA CAAGGACGTT
        61 TCAATTTTCC GCTCCGAGCG TGGCCTGACG AAGGAGATCG TGGAGGAAAT CTCCCGTATG

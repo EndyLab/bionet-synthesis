@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      NSRVFRF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876816"
+                     /db_xref="GeneID:876816"
 ORIGIN
         1 ATGCCGAACA ATGCACAAGC GTTCGTCAAC GTTCAAACTA CGGTCATTCC GAAAACCGCC
        61 TTCACCGCAC ACGACTTCGT GAATTACACC CTGCCGAAAG ACAAAAAGAA ACAAAACGAT

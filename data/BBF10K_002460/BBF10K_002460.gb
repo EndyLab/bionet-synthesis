@@ -50,7 +50,7 @@ FEATURES             Location/Qualifiers
                      DNQKKLF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877158"
+                     /db_xref="GeneID:877158"
 ORIGIN
         1 ATGGTGTTTG ACACGGAAAC CGAAAAAGGT AAGCGTATTT GGGCACTGTC CCAATTCCTG
        61 GTCAAGAAGA ATATCCTGGA TCACAATGAG TTGCATCAAC TGAACAACCG CATTGAGCTG

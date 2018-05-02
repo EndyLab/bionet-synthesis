@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      LHFVILTAK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877145"
+                     /db_xref="GeneID:877145"
 ORIGIN
         1 ATGAAATTCC CTAAGAAACG TTGGCAGAAG TGGGCGTTCC TGACGGGTTC CTTTACCGTC
        61 TTACCGACTC TGATCGCCTT CTTCTCTATC CTGCCGCACA GCAGCGTTCT GGAACCGAGC

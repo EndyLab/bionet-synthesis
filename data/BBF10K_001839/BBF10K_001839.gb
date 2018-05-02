@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      GPGIKVEIN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898262"
+                     /db_xref="GeneID:2898262"
 ORIGIN
         1 ATGGCGAAGA TCAGCAAACG CATGAAAAGC GTGAAAGGTC TGGTGGACAA ACAGAAAGTT
        61 TACGCCCTGG ACGAGGCGAT CAAGCTGGCT AAAGAAACCA GCACGACCAA GTTTGATAGC

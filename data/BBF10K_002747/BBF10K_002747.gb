@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      HHPTIKGEVAV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876944"
+                     /db_xref="GeneID:876944"
 ORIGIN
         1 ATGCAGCAAT ACTTGGACCT GGCCCGCTAC GTTCTGGAGC ATGGCAAGTA CCGCCCAAAC
        61 CGCACTGATA CCGCGGGTAT CGGTGTTTTC GGCTACCAAA TGCACTTCGA CATTTCTAAG

@@ -33,10 +33,10 @@ FEATURES             Location/Qualifiers
                      MAEIEV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0009950"
-                     db_xref="UniProtKB/Swiss-Prot:P20083"
-                     db_xref="EcoGene:EG10687"
-                     db_xref="GeneID:947501"
+                     /db_xref="ASAP:ABE-0009950"
+                     /db_xref="UniProtKB/Swiss-Prot:P20083"
+                     /db_xref="EcoGene:EG10687"
+                     /db_xref="GeneID:947501"
 ORIGIN
         1 ATGACGCAAA CCTACAACGC AGACGCAATT GAAGTTTTAA CCGGTCTGGA GCCTGTGCGC
        61 CGTCGCCCGG GTATGTACAC CGATACCACC AGACCGAACC ATCTGGGTCA AGAAGTAATT

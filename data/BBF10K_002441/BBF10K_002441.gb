@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      HHLKRQMIP"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876734"
+                     /db_xref="GeneID:876734"
 ORIGIN
         1 ATGGCGAAAA TCAAACTGAA AAATCGTAAG GCCCTGGTCG TCTACAATAA AACCGACTTC
        61 GATAAAAATA AACACTTCGC CCAAGCCCTG GTTGACGAAC TGAACAAAAA GAAACTGGTC

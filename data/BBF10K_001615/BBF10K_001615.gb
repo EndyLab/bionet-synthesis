@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      QKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897802"
+                     /db_xref="GeneID:2897802"
 ORIGIN
         1 ATGCGCGAGA AGTATATCCT GCGTTGTACC GAGTGCAAAA ACGAAAATTA CATCGGTAAA
        61 AATGATAAAA AGAAAGAGAA GATCGAGGTC AAAAAGTTTT GCAGCAACTG CAATAAACAT

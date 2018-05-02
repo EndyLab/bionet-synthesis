@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      TNSAYERKLWSLYEEMKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898267"
+                     /db_xref="GeneID:2898267"
 ORIGIN
         1 ATGAACACGC CGCTGGCATA TCTGCTGCGT CCAAAGACCA CGAGCGAAAT TATCGGTCAA
        61 GAAAATCTGC TGAAGGAGGA TGGCCTGATC AAGAAGATGA TTAGCAATAA CTTCTGCCGC

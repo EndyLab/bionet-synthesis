@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      LRH"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876873"
+                     /db_xref="GeneID:876873"
 ORIGIN
         1 ATGAATCTGT ACGAACTCTT CCTGAACCAA AAACTGCTGT ATGGCACTGA CCCGCACTTT
        61 AACGGTGTTT TTCTGACCCT GCTGGAAAAG TTCGGTTTGC ATTTTAAGGA CCTGACTGCA

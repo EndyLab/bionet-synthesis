@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      SIQNEV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897968"
+                     /db_xref="GeneID:2897968"
 ORIGIN
         1 ATGGCACGTA AGAAGCGTAT CAAAATTTAC AGCTCTAACG GTAAAAAGGC CCTGCTGCTG
        61 TCGCCGGAGG AAATCACCAT TGTTAAGAAT GACCCGAGCT ATGAAAAGAA TTACGAGATT

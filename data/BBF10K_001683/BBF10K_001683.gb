@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      QNRKATY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897873"
+                     /db_xref="GeneID:2897873"
 ORIGIN
         1 ATGCGTAGCA ACAATAAGAA GATGCACCTG AGCGCGAAAT TCCCGACGAA GAACAAATTT
        61 GCGATTTACT TCAAATACAA TTTCTTTAAC GGCTTTAAGA GCGGCTTCGT CATCCTGTCT

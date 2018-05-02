@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      GSINY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877339"
+                     /db_xref="GeneID:877339"
 ORIGIN
         1 ATGAGCGCGA CCGCGATCTC CGACCTGTTC GAAAAACCGG CACAGTTCAA GAACAAAAAG
        61 ATTAAGCTGA CGGGTTGGCT GAAGAATAAA CGTACCAGCG CGAACATCAT CTTCCTGGAA

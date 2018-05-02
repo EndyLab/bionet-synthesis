@@ -25,7 +25,7 @@ FEATURES             Location/Qualifiers
                      PPK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877170"
+                     /db_xref="GeneID:877170"
 ORIGIN
         1 ATGAAAGAGA AAATTCCATT TTACAACGAG AAAGAATTCC ATGATATGGT GAAGAAAACC
        61 AAGAAGGGCA CCTTCTCTGG TTGGTACATT ATCAATAAAA ACAATAACTC CGTGGAGTTC

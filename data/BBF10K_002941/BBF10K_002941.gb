@@ -50,7 +50,7 @@ FEATURES             Location/Qualifiers
                      DLFNDFEFDTEGY"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876806"
+                     /db_xref="GeneID:876806"
 ORIGIN
         1 ATGAGCCAGA AGCCGAGCTT CTTTCAGAAG AAGTACAGCC CTACCGCAAC CCGTCGTTAT
        61 TACGGTAAAA TCGCAACCGA TTTCGTTCAA CCGAACTTGG CAGATATCCA GATCCGTAGC

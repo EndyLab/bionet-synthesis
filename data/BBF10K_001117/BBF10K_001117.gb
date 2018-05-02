@@ -27,10 +27,10 @@ FEATURES             Location/Qualifiers
                      LYKYALEQQG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010337"
-                     db_xref="UniProtKB/Swiss-Prot:P67087"
-                     db_xref="EcoGene:EG12777"
-                     db_xref="GeneID:947664"
+                     /db_xref="ASAP:ABE-0010337"
+                     /db_xref="UniProtKB/Swiss-Prot:P67087"
+                     /db_xref="EcoGene:EG12777"
+                     /db_xref="GeneID:947664"
 ORIGIN
         1 ATGAAGCAGC ACCAATCCGC GGATAACAGC CAGGGTCAAC TGTATATCGT ACCGACCCCA
        61 ATTGGCAATC TGGCAGACAT TACCCAGCGC GCGTTGGAAG TTCTGCAGGC CGTCGACCTG

@@ -24,10 +24,10 @@ FEATURES             Location/Qualifiers
                      ITVVVSDR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0010850"
-                     db_xref="UniProtKB/Swiss-Prot:P61175"
-                     db_xref="EcoGene:EG10882"
-                     db_xref="GeneID:947813"
+                     /db_xref="ASAP:ABE-0010850"
+                     /db_xref="UniProtKB/Swiss-Prot:P61175"
+                     /db_xref="EcoGene:EG10882"
+                     /db_xref="GeneID:947813"
 ORIGIN
         1 ATGGAGACTA TCGCTAAACA CCGTCATGCA CGTAGCTCTG CACAGAAAGT TCGTTTAGTT
        61 GCTGATCTGA TCCGCGGTAA AAAAGTCAGC CAAGCACTGG ATATCCTGAC TTATACGAAC

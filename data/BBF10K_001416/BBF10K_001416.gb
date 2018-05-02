@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      RGDK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898132"
+                     /db_xref="GeneID:2898132"
 ORIGIN
         1 ATGAAAACGA ACAAGAACTT TAAAATCTTC CTGCGTTTGA TGAAGGCCCA AACCTTTAAT
        61 TATATTACCG ATCCGATCAA CATCATCCTG GGCTTCGTTC TGACGACCGT TACGATGCTG

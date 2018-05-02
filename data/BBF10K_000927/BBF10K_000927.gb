@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      VEQKSR"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938982"
+                     /db_xref="GeneID:938982"
 ORIGIN
         1 ATGGAAAAGA AACTGAGCAT TGCGATCGAC GGCCCGGCCG CGGCGGGTAA AAGCACCGTG
        61 GCGAAGATTG TTGCCGAGAA GAAGTCCTAC ATTTACATCG ACACCGGTGC TATGTATCGT

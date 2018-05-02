@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      IIDIREMERI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939030"
+                     /db_xref="GeneID:939030"
 ORIGIN
         1 ATGCGTCAAA TCACTGATAT TTCCCAACTG AAAGAGGCGA TCAAGCAATA TCACAGCGAG
        61 GGTAAGAGCA TCGGCTTCGT TCCAACGATG GGTTTCCTGC ACGAGGGTCA CCTGACGCTG

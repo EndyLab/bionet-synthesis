@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      IIKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897769"
+                     /db_xref="GeneID:2897769"
 ORIGIN
         1 ATGAAGAACG AGGAGTTTGA AGTGATCAAT AAGCTGGGTG GTAAGCAAGT GAACATCTAC
        61 CTGAATGACG AAACGCTGAT CCTGGAAAAG CTGTTCGAGC AAAAGTACAA CCAGAAACCG

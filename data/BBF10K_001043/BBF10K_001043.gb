@@ -28,10 +28,10 @@ FEATURES             Location/Qualifiers
                      FEELDTSK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0004077"
-                     db_xref="UniProtKB/Swiss-Prot:P0A715"
-                     db_xref="EcoGene:EG10518"
-                     db_xref="GeneID:945785"
+                     /db_xref="ASAP:ABE-0004077"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A715"
+                     /db_xref="EcoGene:EG10518"
+                     /db_xref="GeneID:945785"
 ORIGIN
         1 ATGAAGCAAA AGGTCGTCAG CATTGGTGAT ATCAACGTCG CGAACGATCT GCCGTTCGTG
        61 CTGTTTGGTG GTATGAACGT ACTGGAAAGC CGTGATCTGG CAATGCGCAT TTGCGAGCAT

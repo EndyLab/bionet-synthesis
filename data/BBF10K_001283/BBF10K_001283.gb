@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      YKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897601"
+                     /db_xref="GeneID:2897601"
 ORIGIN
         1 ATGGAGAATA AAACCATTTA TCTGGCCGGT GGCTGTTTTT GGGGTGTCCA AGCGTTTTTT
        61 GATTACCAGA AAGGTATTAT CAAAACCACC GTGGGTTATG CGCAAGGTGA CATCGATAAC

@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      DTPNVL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876894"
+                     /db_xref="GeneID:876894"
 ORIGIN
         1 ATGAAAAAAC TGCTGGTGAT CGTGTACCCG GATATGAATG ATGTCGAATA CACGAATACG
        61 ATGGTCGTCT TTGGTTTTGT GAAAGAGCTC CAAACCGTCA TTTACCATCC GAATTTAAGC

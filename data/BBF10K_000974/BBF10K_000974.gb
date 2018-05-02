@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      NFDF"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937384"
+                     /db_xref="GeneID:937384"
 ORIGIN
         1 ATGACCACGC ATCTGCAAGC GAAGGCGACG CTGCATAACG GTGTCGAGAT GCCGTGGTTC
        61 GGTCTGGGCG TGTTTCAAGT CGAGGAGGGT TCTGAGCTGG TCAATGCCGT TAAGACCGCT

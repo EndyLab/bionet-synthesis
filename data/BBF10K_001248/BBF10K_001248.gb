@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      MISIGGAIGGNIA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898141"
+                     /db_xref="GeneID:2898141"
 ORIGIN
         1 ATGAAGAATG ACTTCAAAAT TAAAAACCCA TTTAAAAAGA ATAAGGATGT TCCTAGCACC
        61 AAAGAGAAGA AACAGTTTAA GATGCTGAGC GCCTTTACCA TTCTGTTGTT AATTATCGCG

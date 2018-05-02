@@ -23,7 +23,7 @@ FEATURES             Location/Qualifiers
                      EI"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898271"
+                     /db_xref="GeneID:2898271"
 ORIGIN
         1 ATGAAGAAAG TCATTATGCG TGGCGCAGAG ATCCTGTTCA CCGCTGAATC CGATAACCAA
        61 CAGGTTCTGG ATCAGATGCT GTACGACTTC TGTGTGGGTA ACAACATCCC GGTCGACAGC

@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      LKKAQASVA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876846"
+                     /db_xref="GeneID:876846"
 ORIGIN
         1 ATGCAGAGCT TGAACTACTT AGTCGTGATT CTGACGGTTG CGGGTGTTCT GGTCATTCTG
        61 GGTTTCACGC CGCTGATTAG AAAGCTGAAG ATCCAGTTTT ACTGCCTCCA GGTTTTTGCC

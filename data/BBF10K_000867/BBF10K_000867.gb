@@ -38,7 +38,7 @@ FEATURES             Location/Qualifiers
                      VEKYYQK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:940119"
+                     /db_xref="GeneID:940119"
 ORIGIN
         1 ATGGACTTCA AGGATACCTT GTTGATGCCA AAGACGGACT TCCCGATGCG CGGCAATCTG
        61 CCGAATCGTG AACCTGATAT CCAAAAGAAG TGGGAGGAAG AAGATATCTA CCGTCTGGTC

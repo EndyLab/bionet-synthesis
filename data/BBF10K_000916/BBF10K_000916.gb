@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      TCGQH"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939025"
+                     /db_xref="GeneID:939025"
 ORIGIN
         1 ATGGAGAAAG TTTTCATTAA AGCGCTGCCG GTGTTGCGCA TTCTGATTGA AGCGGGTCAT
        61 CAAGCCTATT TCGTTGGCGG TGCAGTGCGT GACTCTTACA TGAAACGTAC CATTGGTGAC

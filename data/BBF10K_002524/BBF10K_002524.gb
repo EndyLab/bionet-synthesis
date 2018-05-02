@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      SK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877156"
+                     /db_xref="GeneID:877156"
 ORIGIN
         1 ATGGTCGAGC TGGACGGTAA ATTTGCGACC AAAGCAGATC TGAAGAGAGT GGAGGATAAG
        61 GTTGATGTTC TGTTCGAGTT GCAAAAGACC CAAGGTGAAC AGATCAAGGT GCAGGGCAAA

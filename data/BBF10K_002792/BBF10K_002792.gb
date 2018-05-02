@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      EGIPAEVEMRKKQLDYYQNFLFNWVQEQKTQLEQIM"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876911"
+                     /db_xref="GeneID:876911"
 ORIGIN
         1 ATGGAAATCA AAACTTACAA AATCAAAGAT ATTTGTGAGA TCTCCCGTGG TAAGGCGATT
        61 ACGAAAGAAT ACATTCGTGC GAATCCGGGT GAATATCCGG TCTACAGCGG TTCCACCCTG

@@ -36,7 +36,7 @@ FEATURES             Location/Qualifiers
                      AKIALDL"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877228"
+                     /db_xref="GeneID:877228"
 ORIGIN
         1 ATGCTGATCA GCAAGAAAAC CTTGGCGGTG CTGATCCCGG AAATTACCCA CGTAAGCAAC
        61 AACGAAATTT GTGAGAAGCT GCAGCAGATT GGCATTGAAG TTGAGGCGAT CCGTGCCTTC

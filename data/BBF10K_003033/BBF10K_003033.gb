@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      SGA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876820"
+                     /db_xref="GeneID:876820"
 ORIGIN
         1 ATGGAGCACG TGAACGAAAT CTTAGCGACC GTTGGTCGCA TCCTGCACGA AACCACCACG
        61 GCCAACACCA ACGTGGCAAA CAAAAGCACG GAACGCCTGG GCGCATACAT CGGCGCGGGT

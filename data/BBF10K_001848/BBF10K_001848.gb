@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      FYWYKELIKNNGDYNE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898265"
+                     /db_xref="GeneID:2898265"
 ORIGIN
         1 ATGAACAAAT TTCCGAAGGA TTTCCTGTGG GGCGCTGCGA CGAGCGCGTA CCAAGTGGAG
        61 GGTGGTATTT ACCAGGGTGG TAAAGTGCCG AGCAGCATGG ACCCGTCCAG CAAGAAGCAC

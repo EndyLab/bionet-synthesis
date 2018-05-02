@@ -34,7 +34,7 @@ FEATURES             Location/Qualifiers
                      KTKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898082"
+                     /db_xref="GeneID:2898082"
 ORIGIN
         1 ATGCAGCCGG AAGCCACCAA TGCGACCGAA AACATCGTCA TTAAGACCAG CGCGCGCACC
        61 AGCGTTTGGA GCGCGCTGGT TGGCGTGGCG ATCAGCCTGA CCAATACGAT CATCCAAATT

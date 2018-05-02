@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      VRWKYAD"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876723"
+                     /db_xref="GeneID:876723"
 ORIGIN
         1 ATGGAGAAAA CCACCACCAG CTCAAAACCG TTGTCGCGTT CTGAGATCAA TAAGATTATT
        61 GCAGTTGCAA CCGGTGTTAA AGAGGCAAAG ATTAAGGAGA TTTTTAAATA TCTGAACACC

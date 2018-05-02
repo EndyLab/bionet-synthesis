@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      VVE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898058"
+                     /db_xref="GeneID:2898058"
 ORIGIN
         1 ATGAAGAATA TCAATGCGGT GGAGATGAAA AACATCTCCA TGATTTTTAA CAAGAAAATC
        61 ATTGCGAACA AAAACATCAA CCTGGACGTG AAGAAGGGCG AGGTCCACGC GTTAATGGGT

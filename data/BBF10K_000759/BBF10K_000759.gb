@@ -34,7 +34,7 @@ FEATURES             Location/Qualifiers
                      KNIHKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936139"
+                     /db_xref="GeneID:936139"
 ORIGIN
         1 ATGGATAAAC GTTTCGCGGT TGTTCTGGCG GCGGGTCAAG GCACGCGCAT GAAAAGCAAA
        61 CTGTATAAGG TGCTGCATCC GGTGTGCGGT AAGCCGATGG TAGAACACGT TGTTGATGAG

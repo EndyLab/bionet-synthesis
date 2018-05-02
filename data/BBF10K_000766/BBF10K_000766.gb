@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      PIPGHYKSVAIEITRKKS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937976"
+                     /db_xref="GeneID:937976"
 ORIGIN
         1 ATGGACAAGG TTTATGTGGA AGGCATGGAA TTTTACGGCT ATCACGGTGT CTTTACCGAA
        61 GAAAACAAAT TGGGTCAGCG TTTCAAGGTC GACTTGACGG CAGAACTGGA CCTGTCCAAA

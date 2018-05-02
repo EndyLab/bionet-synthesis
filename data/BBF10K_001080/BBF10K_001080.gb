@@ -25,10 +25,10 @@ FEATURES             Location/Qualifiers
                      GVANMHVTLADERHYACATVIIES"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="ASAP:ABE-0008433"
-                     db_xref="UniProtKB/Swiss-Prot:P24224"
-                     db_xref="EcoGene:EG10247"
-                     db_xref="GeneID:947037"
+                     /db_xref="ASAP:ABE-0008433"
+                     /db_xref="UniProtKB/Swiss-Prot:P24224"
+                     /db_xref="EcoGene:EG10247"
+                     /db_xref="GeneID:947037"
 ORIGIN
         1 ATGGCAATTC TGGGCCTGGG TACGGATATT GTTGAGATTG CACGTATTGA GGCGGTGATT
        61 GCACGTAGCG GCGACCGTCT GGCACGTCGT GTTCTTTCCG ATAATGAATG GGCTATTTGG

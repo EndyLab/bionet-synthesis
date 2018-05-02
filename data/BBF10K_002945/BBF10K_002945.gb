@@ -37,7 +37,7 @@ FEATURES             Location/Qualifiers
                      WPQRN"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876906"
+                     /db_xref="GeneID:876906"
 ORIGIN
         1 ATGAATCTTA AGAAAACGCT GCTGATGCCG CAGACGGCTT TTGAGATGCA GGGTAAGTTA
        61 ACTACCAAGG AACAACAGTT TCAGGCGTTT TGGCAGAGCA AGCGTATCTA TCAGAAACTG

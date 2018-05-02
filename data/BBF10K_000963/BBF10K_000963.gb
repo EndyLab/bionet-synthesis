@@ -30,7 +30,7 @@ FEATURES             Location/Qualifiers
                      PLVSE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:937443"
+                     /db_xref="GeneID:937443"
 ORIGIN
         1 ATGCATATCC TCGTCGTGGG CGTTGATTAC AAGAGCGCGC CGATCGAAAT CCGTGAGAAA
        61 GTCTCCTTCC AACCGAATGA ACTGGCAGAA GCCATGGTCC AGCTGAAAGA GGAAAAAAGC

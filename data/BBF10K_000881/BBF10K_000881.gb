@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      RRPDLLKDHPLTEQQRKWISEWEKE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:936650"
+                     /db_xref="GeneID:936650"
 ORIGIN
         1 ATGAAAATTG ATTTCCTGAC CCTGTTCCCG GAGATGTTCG AGGGCGTTCT CGGTAGCTCC
        61 ATTCTGCAGA AGGCGCAGGA GAAAGATGCG GTGCAGTTTC AAGTCGTAAA CTTTCGTGAG

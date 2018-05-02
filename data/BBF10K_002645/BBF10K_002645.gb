@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      SIKDERLTLLYKS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877151"
+                     /db_xref="GeneID:877151"
 ORIGIN
         1 ATGCCGAAAA CCCAGTACAT TGCGGGCGTG AGCGGTGGCC CGGATAGCAT GCTGCTGTTG
        61 AAACTGTATC ATAAAAAGAT CGCATGCGTC GTTCATGTTA ACTACAATAA GCGTACGACG

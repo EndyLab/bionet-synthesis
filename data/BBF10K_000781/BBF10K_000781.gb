@@ -29,7 +29,7 @@ FEATURES             Location/Qualifiers
                      TITE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:935965"
+                     /db_xref="GeneID:935965"
 ORIGIN
         1 ATGGCGAAGG AGAAATTTGA CCGCTCCAAG TCCCACGCCA ATATCGGTAC CATCGGCCAC
        61 GTTGATCATG GTAAAACGAC GTTAACCGCC GCGATTACCA CCGTCCTCCA CAAAAAGAGC

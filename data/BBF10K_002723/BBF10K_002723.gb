@@ -26,7 +26,7 @@ FEATURES             Location/Qualifiers
                      DE"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876832"
+                     /db_xref="GeneID:876832"
 ORIGIN
         1 ATGAATAACA CCAAAAATAA GAGCGACTGG CAGCTGTTCC TGGAGGATTA CCGCTTTTAT
        61 CATGAGAAGG AGTTCGACTG GATTACTTAT CTGAATCACT GCCTGAATAG CTACCCGGAC

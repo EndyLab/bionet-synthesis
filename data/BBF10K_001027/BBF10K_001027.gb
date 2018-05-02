@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      VKRG"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:938082"
+                     /db_xref="GeneID:938082"
 ORIGIN
         1 ATGAATAAAG AAAAGCTCAG CGACCACCTG AAAAGCGAAT GGAAGAAGAT TGACCAAACC
        61 GCAAATCCGA GCATCCCGAA CCAAAAGGAG CTGCTGCATC AACTGAGCCA GATGAAAGCG

@@ -32,7 +32,7 @@ FEATURES             Location/Qualifiers
                      IISQNINSIKYAHKIMVIDNGRIAGFDSDAKLMQSCDIYVKMKQAQKDQGGDFDAVA"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876861"
+                     /db_xref="GeneID:876861"
 ORIGIN
         1 ATGGGCTTGG TTCTGAAACA GTTCAATCGT AAGATCAGAA CCGCCCTGAT TCTGGCGCCG
        61 CTGTTTACCT TCGCGCAGAT TATCATTGAC CTGATCATCC CGAGCTTCCT GGCAAGCGCC

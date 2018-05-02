@@ -27,7 +27,7 @@ FEATURES             Location/Qualifiers
                      PGTKKIERLKENNSGTNVMFSKEELENIKKMLDTIELVGHRYNDATESRVDK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897959"
+                     /db_xref="GeneID:2897959"
 ORIGIN
         1 ATGAAAACCC GCACGTTGGG TAAGGATCTG ATCGTTTCCG AGATGGGCCT GGGTTGTATG
        61 GGTCTGAGCT ATAGCCAACC GCCGTTTCCG ACCAAGGAAG AAGCCATTAA GTTCCTGCGC

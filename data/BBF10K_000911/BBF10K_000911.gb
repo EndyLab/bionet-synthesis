@@ -24,7 +24,7 @@ FEATURES             Location/Qualifiers
                      VSV"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:939125"
+                     /db_xref="GeneID:939125"
 ORIGIN
         1 ATGGAATACG TCGTGATGAT TATTATTTTA TTGGCACTGT TTTTCATCTT CACCGTTTTC
        61 CTCAACACCC GTTATTCTTT TGATGAGAAG TGCTTGGTTC TGAAGTTCGG TCTGAGCAAA

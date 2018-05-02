@@ -33,7 +33,7 @@ FEATURES             Location/Qualifiers
                      YLILADKS"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:877309"
+                     /db_xref="GeneID:877309"
 ORIGIN
         1 ATGCGCTTCC GCTATAAAGC TTTCCTGCTG ACTCTCTTTG CGAGCACCAC GACCCTGACT
        61 GGTTTTATTA TCCCTACGTT GAGCCAACAC GGCAGCTCTA CCGACCCGTC CTTTGTCGCG

@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      TPELYPREYAKIVKESGKK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2898145"
+                     /db_xref="GeneID:2898145"
 ORIGIN
         1 ATGTGGACGA TGTTCAACAA TTGGAAGATC TTCGAAGATA ATCTGGGTTT CGTGCCGAGC
        61 GAAGAGATCA AGGACAAATT AAACGAATAT TACAAAATCC TGGTAGAGGA AAACTTGAAG

@@ -28,7 +28,7 @@ FEATURES             Location/Qualifiers
                      EVNETK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:2897712"
+                     /db_xref="GeneID:2897712"
 ORIGIN
         1 ATGCGTTTCA CCCTGGAGAA AATCAACAAA TATAAGTACT CGTTGAAAAC GGTTCTGATT
        61 ACCCTGCTGC AAATGAAAAG CATCAAAAAG AACAGCAGCA GCCATTTCCT GGACTATAAA

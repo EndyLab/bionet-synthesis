@@ -31,7 +31,7 @@ FEATURES             Location/Qualifiers
                      AISQKLEEK"
                      /transl_table=11
                      /codon_start=1
-                     db_xref="GeneID:876922"
+                     /db_xref="GeneID:876922"
 ORIGIN
         1 ATGAATGCCC TCAATTACCT GAAACACCGC TTCCTGTTCT CCAAGGATAA GTTTTGGTAT
        61 GCTCCATTCA AGCAAAAGCA ACGCCGTAGC ATTTACAGCA CCTTTAGCCT GATCGTTCTG
