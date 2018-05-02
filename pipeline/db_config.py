@@ -94,6 +94,7 @@ class Fragment(Base):
     retrieval_enzyme = Column(String) # Enzyme used to pull it out of dest vector
     syn_yield = Column(Integer) # Yield of DNA from synthesis (in ng)
     seq = Column(String) # Contains the complete sequence including the overhangs for cloning
+    cloning_method = Column(String) # Details which vector class it must be cloned into
 
     # A part can have many fragments and one fragment can have many parts
     parts = relationship('Part',
