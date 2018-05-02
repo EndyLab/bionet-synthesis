@@ -1,0 +1,333 @@
+LOCUS       Exported                1626 bp ds-DNA     linear   PRI 02-MAY-2018
+DEFINITION  Homo sapiens solute carrier family 1 member 5 (SLC1A5), transcript 
+            variant 1, mRNA.
+ACCESSION   NM_005628
+VERSION     .
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens (human)
+REFERENCE   1  (bases 1 to 1626)
+  AUTHORS   Esaki N, Ohkawa Y, Hashimoto N, Tsuda Y, Ohmi Y, Bhuiyan RH, Kotani 
+            N, Honke K, Enomoto A, Takahashi M, Furukawa K, Furukawa K.
+  TITLE     ASC amino acid transporter 2, defined by enzyme-mediated activation 
+            of radical sources, enhances malignancy of GD2-positive small-cell 
+            lung cancer
+  JOURNAL   Cancer Sci. 109 (1), 141-153 (2018)
+  PUBMED    29151270
+REFERENCE   2  (bases 1 to 1626)
+  AUTHORS   Tao X, Lu Y, Qiu S, Wang Y, Qin J, Fan Z.
+  TITLE     AP1G1 is involved in cetuximab-mediated downregulation of ASCT2-EGFR
+            complex and sensitization of human head and neck squamous cell 
+            carcinoma cells to ROS-induced apoptosis
+  JOURNAL   Cancer Lett. 408, 33-42 (2017)
+  PUBMED    28823958
+REFERENCE   3  (bases 1 to 1626)
+  AUTHORS   Jensen H, Potempa M, Gotthardt D, Lanier LL.
+  TITLE     Cutting Edge: IL-2-Induced Expression of the Amino Acid Transporters
+            SLC1A5 and CD98 Is a Prerequisite for NKG2D-Mediated Activation of 
+            Human NK Cells
+  JOURNAL   J. Immunol. 199 (6), 1967-1972 (2017)
+  PUBMED    28784848
+REFERENCE   4  (bases 1 to 1626)
+  AUTHORS   Toda K, Nishikawa G, Iwamoto M, Itatani Y, Takahashi R, Sakai Y, 
+            Kawada K.
+  TITLE     Clinical Role of ASCT2 (SLC1A5) in KRAS-Mutated Colorectal Cancer
+  JOURNAL   Int J Mol Sci 18 (8), E1632 (2017)
+  PUBMED    28749408
+REFERENCE   5  (bases 1 to 1626)
+  AUTHORS   Bjersand K, Seidal T, Sundstrom-Poromaa I, Akerud H, Skirnisdottir 
+            I.
+  TITLE     The clinical and prognostic correlation of HRNPM and SLC1A5 in 
+            pathogenesis and prognosis in epithelial ovarian cancer
+  JOURNAL   PLoS ONE 12 (6), e0179363 (2017)
+  PUBMED    28609484
+REFERENCE   6  (bases 1 to 1626)
+  AUTHORS   Tailor CS, Marin M, Nouri A, Kavanaugh MP, Kabat D.
+  TITLE     Truncated forms of the dual function human ASCT2 neutral amino acid 
+            transporter/retroviral receptor are translationally initiated at 
+            multiple alternative CUG and GUG codons
+  JOURNAL   J. Biol. Chem. 276 (29), 27221-27230 (2001)
+  PUBMED    11350958
+REFERENCE   7  (bases 1 to 1626)
+  AUTHORS   Broer A, Wagner C, Lang F, Broer S.
+  TITLE     Neutral amino acid transporter ASCT2 displays substrate-induced Na+ 
+            exchange and a substrate-gated anion conductance
+  JOURNAL   Biochem. J. 346 Pt 3, 705-710 (2000)
+  PUBMED    10698697
+REFERENCE   8  (bases 1 to 1626)
+  AUTHORS   Tailor CS, Nouri A, Zhao Y, Takeuchi Y, Kabat D.
+  TITLE     A sodium-dependent neutral-amino-acid transporter mediates 
+            infections of feline and baboon endogenous retroviruses and simian 
+            type D retroviruses
+  JOURNAL   J. Virol. 73 (5), 4470-4474 (1999)
+  PUBMED    10196349
+REFERENCE   9  (bases 1 to 1626)
+  AUTHORS   Rasko JE, Battini JL, Gottschalk RJ, Mazo I, Miller AD.
+  TITLE     The RD114/simian type D retrovirus receptor is a neutral amino acid 
+            transporter
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 96 (5), 2129-2134 (1999)
+  PUBMED    10051606
+REFERENCE   10  (bases 1 to 1626)
+  AUTHORS   Kekuda R, Prasad PD, Fei YJ, Torres-Zamorano V, Sinha S, Yang-Feng 
+            TL, Leibach FH, Ganapathy V.
+  TITLE     Cloning of the sodium-dependent, broad-scope, neutral amino acid 
+            transporter Bo from a human placental choriocarcinoma cell line
+  JOURNAL   J. Biol. Chem. 271 (31), 18657-18661 (1996)
+  PUBMED    8702519
+REFERENCE   11  (bases 1 to 1626)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 2, 2018 from SnapGene 4.1.9
+            http://www.snapgene.com
+COMMENT     VALIDATED REFSEQ: This record has undergone validation or 
+            preliminary review. The reference sequence was derived from 
+            U53347.1, AB209738.1, AK301661.1 and AC008622.6.
+            On Feb 12, 2009 this sequence version replaced NM_005628.1.
+            Summary: The SLC1A5 gene encodes a sodium-dependent neutral amino 
+            acid transporter that can act as a receptor for RD114/type D 
+            retrovirus (Larriba et al., 2001 [PubMed 11781704]).[supplied by 
+            OMIM, Jan 2011].
+            
+            Transcript Variant: This variant (1) represents the longest 
+            transcript and encodes the longest isoform (1).
+            
+            Sequence Note: This RefSeq record was created from transcript and 
+            genomic sequence data because no single transcript was available for
+            the full length of the gene. The extent of this transcript is 
+            supported by transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the 
+            publications that are available for this gene. Please see the Gene 
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: U53347.1, AK292690.1 [ECO:0000332] 
+            RNAseq introns              :: mixed/partial sample support
+                                           SAMEA1965299, SAMEA1966682
+                                           [ECO:0000350]
+            ##Evidence-Data-END##
+            COMPLETENESS: complete on the 3' end.
+FEATURES             Location/Qualifiers
+     source          1..1626
+                     /organism="Homo sapiens"
+                     /chromosome="19"
+                     /map="19q13.32"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+     gene            1..1626
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /label=SLC1A5
+                     /note="solute carrier family 1 member 5"
+                     /db_xref="GeneID:6510"
+                     /db_xref="HGNC:HGNC:10943"
+                     /db_xref="MIM:109190"
+     CDS             1..1626
+                     /codon_start=1
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /product="neutral amino acid transporter B(0) isoform 1"
+                     /label=SLC1A5
+                     /note="isoform 1 is encoded by transcript variant 1; baboon
+                     M7 virus receptor; RD114 virus receptor; neutral amino acid
+                     transporter B; neutral amino acid transporter B(0); ATB(0);
+                     RD114/simian type D retrovirus receptor; sodium-dependent 
+                     neutral amino acid transporter type 2; solute carrier 
+                     family 1 (neutral amino acid transporter), member 5"
+                     /db_xref="CCDS:CCDS12692.1"
+                     /db_xref="GeneID:6510"
+                     /db_xref="HGNC:HGNC:10943"
+                     /db_xref="MIM:109190"
+                     /protein_id="NP_005619.1"
+                     /translation="MVADPPRDSKGLAAAEPTANGGLALASIEDQGAAAGGYCGSRDQV
+                     RRCLRANLLVLLTVVAVVAGVALGLGVSGAGGALALGPERLSAFVFPGELLLRLLRMII
+                     LPLVVCSLIGGAASLDPGALGRLGAWALLFFLVTTLLASALGVGLALALQPGAASAAIN
+                     ASVGAAGSAENAPSKEVLDSFLDLARNIFPSNLVSAAFRSYSTTYEERNITGTRVKVPV
+                     GQEVEGMNILGLVVFAIVFGVALRKLGPEGELLIRFFNSFNEATMVLVSWIMWYAPVGI
+                     MFLVAGKIVEMEDVGLLFARLGKYILCCLLGHAIHGLLVLPLIYFLFTRKNPYRFLWGI
+                     VTPLATAFGTSSSSATLPLMMKCVEENNGVAKHISRFILPIGATVNMDGAALFQCVAAV
+                     FIAQLSQQSLDFVKIITILVTATASSVGAAGIPAGGVLTLAIILEAVNLPVDHISLILA
+                     VDWLVDRSCTVLNVEGDALGAGLLQNYVDRTESRSTEPELIQVKSELPLDPLPVPTEEG
+                     NPLLKHYRGPAGDATVASEKESVM"
+     exon            1..566
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    1..3
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="N-acetylmethionine. {ECO:0000244|PubMed:19413330, 
+                     ECO:0000244|PubMed:22814378}; propagated from 
+                     UniProtKB/Swiss-Prot (Q15758.2); acetylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    157..219
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    295..357
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    397..459
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     exon            567..609
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     exon            610..657
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     exon            658..824
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    673..735
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    796..858
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     exon            825..1058
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    916..978
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1006..1068
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     exon            1059..1253
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    1129..1191
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1195..1257
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     exon            1254..1388
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    1276..1338
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     exon            1389..1626
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /inference="alignment:same species:2.1.0"
+     misc_feature    1477..1479
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:21406692, 
+                     ECO:0000244|PubMed:23186163}; propagated from 
+                     UniProtKB/Swiss-Prot (Q15758.2); phosphorylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1480..1482
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="Phosphothreonine. {ECO:0000244|PubMed:23186163}; 
+                     propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     phosphorylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1507..1509
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:19690332}; 
+                     propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     phosphorylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1603..1605
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:17081983, 
+                     ECO:0000244|PubMed:18669648, ECO:0000244|PubMed:19690332, 
+                     ECO:0000244|PubMed:20068231, ECO:0000244|PubMed:23186163}; 
+                     propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     phosphorylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1615..1617
+                     /gene="SLC1A5"
+                     /gene_synonym="AAAT; ASCT2; ATBO; M7V1; M7VS1; R16; RDRC"
+                     /note="Phosphoserine. {ECO:0000244|PubMed:23186163}; 
+                     propagated from UniProtKB/Swiss-Prot (Q15758.2); 
+                     phosphorylation site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+ORIGIN
+        1 ATGGTGGCGG ACCCGCCGCG CGATTCTAAA GGCCTGGCGG CTGCGGAACC GACCGCGAAC
+       61 GGTGGTCTGG CCCTGGCGAG CATCGAGGAC CAAGGTGCAG CGGCGGGCGG TTACTGTGGC
+      121 TCCCGTGATC AGGTTCGTCG TTGCCTTAGA GCGAACTTAC TGGTGCTGCT GACCGTTGTC
+      181 GCGGTTGTCG CCGGTGTGGC GCTGGGTTTA GGTGTCAGCG GCGCGGGTGG TGCGCTGGCC
+      241 CTGGGTCCGG AGCGTCTGTC CGCGTTTGTC TTTCCGGGTG AACTGCTTCT GCGTCTGCTG
+      301 CGTATGATTA TCCTGCCGCT GGTCGTCTGC AGCCTGATTG GTGGTGCGGC TAGCCTGGAC
+      361 CCGGGTGCCC TTGGCCGTCT GGGTGCCTGG GCTCTGCTGT TCTTCCTGGT AACCACGCTG
+      421 CTTGCTTCCG CTCTGGGTGT GGGTCTGGCA CTGGCGCTGC AACCGGGCGC AGCCAGCGCG
+      481 GCGATTAATG CGAGCGTTGG CGCGGCGGGC AGCGCAGAAA ATGCGCCGAG CAAGGAAGTG
+      541 CTGGACAGCT TCCTGGACCT GGCGCGTAAT ATCTTCCCGA GCAATCTGGT ATCTGCCGCC
+      601 TTCCGTAGCT ATTCAACCAC GTATGAAGAA CGCAATATCA CCGGCACGCG TGTCAAGGTT
+      661 CCTGTTGGTC AGGAGGTTGA GGGTATGAAT ATTCTGGGCT TGGTGGTGTT CGCAATCGTT
+      721 TTCGGCGTTG CTCTGCGCAA ACTGGGTCCG GAGGGCGAGT TGCTGATCCG TTTCTTTAAT
+      781 TCCTTTAATG AGGCAACGAT GGTCCTTGTC TCTTGGATCA TGTGGTATGC CCCGGTTGGT
+      841 ATCATGTTTT TGGTCGCAGG CAAAATCGTT GAAATGGAAG ATGTCGGCCT GCTGTTCGCG
+      901 CGCCTGGGCA AGTACATTTT GTGTTGCCTG CTGGGTCACG CGATCCACGG TCTGCTGGTT
+      961 CTGCCGCTGA TCTATTTCCT GTTCACCCGT AAAAACCCGT ATCGTTTCCT GTGGGGCATC
+     1021 GTCACCCCGC TGGCGACCGC GTTCGGTACC TCCTCTTCCA GCGCCACGCT GCCGCTGATG
+     1081 ATGAAATGCG TGGAGGAAAA CAACGGTGTC GCAAAGCACA TTTCCCGCTT CATTTTGCCG
+     1141 ATTGGTGCCA CCGTGAATAT GGACGGCGCG GCACTGTTTC AATGTGTTGC TGCGGTGTTT
+     1201 ATCGCCCAGC TGAGCCAACA GAGCCTGGAC TTTGTTAAGA TCATCACCAT CCTGGTTACC
+     1261 GCGACGGCGA GCTCCGTTGG CGCTGCGGGC ATTCCAGCCG GTGGTGTTCT GACCCTGGCA
+     1321 ATTATCCTGG AGGCCGTGAA TCTGCCGGTG GACCACATTA GCCTGATCCT GGCGGTGGAC
+     1381 TGGTTGGTGG ATCGTTCCTG CACCGTTCTG AATGTGGAAG GCGACGCTCT GGGCGCCGGT
+     1441 CTGCTGCAAA ATTACGTCGA CCGCACCGAG TCCCGTTCTA CGGAACCGGA ACTGATCCAG
+     1501 GTTAAAAGCG AGCTGCCGCT GGATCCGCTG CCTGTTCCGA CCGAAGAGGG TAATCCGCTG
+     1561 CTGAAGCATT ATAGAGGTCC TGCGGGTGAC GCAACCGTGG CCTCCGAAAA AGAAAGCGTG
+     1621 ATGTGA
+//

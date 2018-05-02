@@ -1,0 +1,40 @@
+LOCUS       BBF10K_003168            471 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  ribE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 471)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..471
+                     /locus_tag="b0415"
+                     /gene="ribE"
+                     /gene_synonyms=""
+                     /product="riboflavin synthase beta chain"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_414949.1"
+                     /EC_number="2.5.1.9"
+                     /translation="MNIIEANVATPDARVAITIARFNNFINDSLLEGAIDALKRIGQVK
+                     /DENITVVWVPGAYELPLAAGALAKTGKYDAVIALGTVIRGGTAHFEYVAGGASNGLAH
+                     /VAQDSEIPVAFGVLTTESIEQAIERAGTKAGNKGAEAALTALEMINVLKAIKA"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0001444"
+                     /db_xref="UniProtKB/Swiss-Prot:P61714"
+                     /db_xref="EcoGene:EG11322"
+                     /db_xref="GeneID:946453"
+ORIGIN
+        1 ATGAATATCA TCGAAGCAAA CGTCGCAACC CCTGACGCGC GTGTCGCGAT TACGATTGCA
+       61 CGCTTCAATA ATTTCATCAA CGATAGCCTG TTGGAAGGTG CGATCGATGC CCTGAAACGT
+      121 ATCGGCCAGG TTAAGGACGA GAATATCACC GTTGTCTGGG TACCGGGTGC ATACGAACTG
+      181 CCGCTGGCGG CGGGCGCTCT GGCAAAGACG GGCAAGTACG ATGCAGTGAT CGCGCTGGGC
+      241 ACGGTTATTC GCGGTGGTAC GGCTCATTTC GAGTACGTGG CGGGTGGTGC TAGCAACGGT
+      301 CTGGCCCACG TCGCCCAGGA CAGCGAGATT CCGGTTGCGT TTGGTGTTCT GACCACCGAG
+      361 TCTATCGAGC AGGCGATCGA ACGTGCCGGC ACTAAGGCAG GCAACAAGGG TGCGGAGGCG
+      421 GCGCTGACCG CATTGGAAAT GATCAACGTG TTGAAGGCAA TTAAAGCCTG A
+//

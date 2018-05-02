@@ -1,0 +1,44 @@
+LOCUS       BBF10K_003209            642 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  tmk
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 642)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..642
+                     /locus_tag="b1098"
+                     /gene="tmk"
+                     /gene_synonyms=""
+                     /product="thymidylate kinase"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_415616.1"
+                     /EC_number="2.7.4.9"
+                     /translation="MRSKYIVIEGLEGAGKTTARNVVVETLEQLGIRDMVFTREPGGTQ
+                     /LAEKLRSLVLDIKSVGDEVITDKAEVLMFYAARVQLVETVIKPALANGTWVIGDRHDL
+                     /STQAYQGGGRGIDQHMLATLRDAVLGDFRPDLTLYLDVTPEVGLKRARARGELDRIEQ
+                     /ESFDFFNRTRARYLELAAQDKSIHTIDATQPLEAVMDAIRTTVTHWVKELDA"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0003714"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A720"
+                     /db_xref="EcoGene:EG12302"
+                     /db_xref="GeneID:945663"
+ORIGIN
+        1 ATGCGTTCAA AATATATTGT GATTGAGGGT CTGGAGGGCG CCGGCAAAAC GACGGCGCGC
+       61 AATGTTGTAG TTGAAACCCT GGAGCAACTT GGTATTCGTG ATATGGTTTT CACCCGTGAG
+      121 CCTGGCGGCA CGCAGCTGGC GGAGAAACTG CGTTCCCTGG TTCTGGACAT CAAAAGCGTC
+      181 GGTGACGAGG TGATCACCGA CAAGGCGGAG GTGCTGATGT TCTACGCGGC ACGTGTCCAG
+      241 CTTGTTGAAA CCGTCATCAA ACCGGCCCTG GCAAATGGTA CCTGGGTAAT CGGCGACCGT
+      301 CACGATTTAA GCACTCAAGC ATATCAGGGT GGTGGCCGTG GTATCGACCA GCACATGCTG
+      361 GCGACGTTGC GTGATGCCGT TCTGGGTGAT TTTCGTCCGG ATTTGACCCT GTATCTGGAC
+      421 GTGACCCCGG AGGTTGGTCT GAAACGCGCG CGCGCACGTG GCGAACTGGA TCGCATCGAG
+      481 CAAGAATCCT TCGACTTCTT TAACCGCACG CGCGCGCGTT ACTTGGAGCT GGCGGCACAA
+      541 GATAAGAGCA TTCACACGAT CGACGCGACC CAGCCGCTGG AGGCAGTGAT GGACGCGATC
+      601 CGCACCACGG TTACGCACTG GGTTAAGGAG CTGGATGCCT GA
+//

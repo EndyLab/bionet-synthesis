@@ -1,0 +1,13 @@
+LOCUS       lambda_antirepressor_cro 201 bp ds-DNA     circular     29-MAR-2018
+DEFINITION  .
+FEATURES             Location/Qualifiers
+     misc_feature    1..201
+                     /label="lambda antirepressor cro"
+                     /ApEinfo_revcolor=#85dae9
+                     /ApEinfo_fwdcolor=#85dae9
+ORIGIN
+        1 ATGGAACAAC GCATAACCCT GAAAGATTAT GCAATGCGCT TTGGGCAAAC CAAGACAGCT
+       61 AAAGATCTCG GCGTATATCA AAGCGCGATC AACAAGGCCA TTCATGCAGG CCGAAAGATC
+      121 TTTTTAACTA TAAACGCTGA TGGAAGCGTT TATGCGGAAG AGGTAAAGCC CTTCCCGAGT
+      181 AACAAGAAAA CAACAGCCTG A
+//

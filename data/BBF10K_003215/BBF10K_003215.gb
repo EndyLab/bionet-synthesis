@@ -1,0 +1,46 @@
+LOCUS       BBF10K_003215            675 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  cohE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 675)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..675
+                     /locus_tag="b1145"
+                     /gene="cohE"
+                     /gene_synonyms=""
+                     /product="e14 prophage; repressor protein phage e14"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_415663.1"
+                     /EC_number=""
+                     /translation="MKTIHDIRRSNARKLRDGVGGNSSFATMIDREPTQTSRFMGDGAT
+                     /KNIGDSMARHIEKCFDLPVGWLDQEHQTTNITKKPDVSITNKQITLVPVISWVQAGAW
+                     /KEVGYSEVDLSTAETYPCPVPCGEMTYILRVIGDSMIDEYRPGDMIFVDPEVPACHGD
+                     /DVIALMHDTGETTFKRLIEDGTQRYLKALNPNWPEPYIKINGNCSIIGTVIFSGKPRR
+                     /YKIKA"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0003851"
+                     /db_xref="UniProtKB/Swiss-Prot:P75974"
+                     /db_xref="EcoGene:EG14249"
+                     /db_xref="GeneID:945719"
+ORIGIN
+        1 ATGAAAACGA TCCACGATAT CCGTCGTTCG AACGCGCGTA AATTACGTGA TGGCGTTGGT
+       61 GGCAACAGCA GCTTTGCGAC CATGATTGAC CGCGAGCCGA CCCAAACCAG CAGATTTATG
+      121 GGTGACGGCG CAACGAAAAA CATCGGTGAT AGCATGGCCC GCCACATTGA AAAGTGCTTT
+      181 GATCTGCCGG TGGGCTGGTT GGATCAGGAA CATCAAACTA CCAATATTAC CAAGAAACCT
+      241 GACGTGAGCA TCACGAACAA GCAGATTACG CTGGTCCCGG TTATCAGCTG GGTGCAGGCA
+      301 GGCGCGTGGA AAGAAGTGGG CTACTCCGAA GTTGACCTGT CGACCGCAGA AACCTACCCA
+      361 TGCCCGGTCC CTTGCGGTGA GATGACTTAC ATTCTGAGAG TTATTGGTGA CTCCATGATT
+      421 GATGAATACC GTCCGGGTGA CATGATTTTC GTCGACCCGG AAGTCCCGGC GTGTCACGGT
+      481 GATGATGTTA TCGCACTGAT GCACGACACG GGTGAAACCA CCTTTAAACG TCTGATTGAG
+      541 GACGGTACTC AACGCTACCT GAAAGCGCTG AATCCGAACT GGCCTGAACC GTACATTAAG
+      601 ATCAACGGTA ACTGTTCCAT CATCGGCACG GTGATTTTTA GCGGTAAACC GCGCCGTTAT
+      661 AAAATCAAGG CCTGA
+//

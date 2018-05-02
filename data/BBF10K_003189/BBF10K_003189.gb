@@ -1,0 +1,35 @@
+LOCUS       BBF10K_003189            219 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  infA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 219)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..219
+                     /locus_tag="b0884"
+                     /gene="infA"
+                     /gene_synonyms=""
+                     /product="translation initiation factor IF-1"
+                     /note="protein chain initiation factor IF-1"
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_415404.1"
+                     /EC_number=""
+                     /translation="MAKEDNIEMQGTVLETLPNTMFRVELENGHVVTAHISGKMRKNYI
+                     /RILTGDKVTVELTPYDLSKGRIVFRSR"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0003005"
+                     /db_xref="UniProtKB/Swiss-Prot:P69222"
+                     /db_xref="EcoGene:EG10504"
+                     /db_xref="GeneID:945500"
+ORIGIN
+        1 ATGGCTAAAG AGGACAATAT CGAGATGCAG GGTACCGTCC TGGAAACCCT GCCGAACACC
+       61 ATGTTCCGTG TCGAACTGGA AAATGGTCAC GTTGTGACCG CGCACATCTC CGGTAAAATG
+      121 CGCAAGAATT ACATCCGTAT CCTGACCGGT GACAAGGTTA CGGTGGAACT GACTCCGTAC
+      181 GACCTGAGCA AGGGCCGTAT TGTGTTCCGC AGCCGCTGA
+//

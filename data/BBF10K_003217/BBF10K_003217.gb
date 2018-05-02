@@ -1,0 +1,285 @@
+LOCUS       Exported                1617 bp ds-DNA     linear   PRI 01-MAY-2018
+DEFINITION  Homo sapiens endogenous retrovirus group W member 1, envelope 
+            (ERVW-1), transcript variant 1, mRNA.
+ACCESSION   NM_014590
+VERSION     .
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens (human)
+REFERENCE   1  (bases 1 to 1617)
+  AUTHORS   Xiao R, Li S, Cao Q, Wang X, Yan Q, Tu X, Zhu Y, Zhu F.
+  TITLE     Human endogenous retrovirus W env increases nitric oxide production 
+            and enhances the migration ability of microglia by regulating the 
+            expression of inducible nitric oxide synthase
+  JOURNAL   Virol Sin 32 (3), 216-225 (2017)
+  PUBMED    28656540
+REFERENCE   2  (bases 1 to 1617)
+  AUTHORS   Moller AM, Delaisse JM, Soe K.
+  TITLE     Osteoclast Fusion: Time-Lapse Reveals Involvement of CD47 and 
+            Syncytin-1 at Different Stages of Nuclearity
+  JOURNAL   J. Cell. Physiol. 232 (6), 1396-1403 (2017)
+  PUBMED    27714815
+REFERENCE   3  (bases 1 to 1617)
+  AUTHORS   Soygur B, Sati L.
+  TITLE     The role of syncytins in human reproduction and reproductive organ 
+            cancers
+  JOURNAL   Reproduction 152 (5), R167-R178 (2016)
+  PUBMED    27486264
+REFERENCE   4  (bases 1 to 1617)
+  AUTHORS   van Horssen J, van der Pol S, Nijland P, Amor S, Perron H.
+  TITLE     Human endogenous retrovirus W in brain lesions: Rationale for 
+            targeted therapy in multiple sclerosis
+  JOURNAL   Mult Scler Relat Disord 8, 11-18 (2016)
+  PUBMED    27456869
+REFERENCE   5  (bases 1 to 1617)
+  AUTHORS   Priscakova P, Konkolova J, Petrovic R, Lipov J, Minarik G, Bohmer D,
+            Repiska V, Gbelcova H.
+  TITLE     ERVW-1 gene polymorphisms related to preeclampsia
+  JOURNAL   Bratisl Lek Listy 117 (6), 340-344 (2016)
+  PUBMED    27546366
+REFERENCE   6  (bases 1 to 1617)
+  AUTHORS   Blond JL, Lavillette D, Cheynet V, Bouton O, Oriol G, 
+            Chapel-Fernandes S, Mandrand B, Mallet F, Cosset FL.
+  TITLE     An envelope glycoprotein of the human endogenous retrovirus HERV-W 
+            is expressed in the human placenta and fuses cells expressing the 
+            type D mammalian retrovirus receptor
+  JOURNAL   J. Virol. 74 (7), 3321-3329 (2000)
+  PUBMED    10708449
+REFERENCE   7  (bases 1 to 1617)
+  AUTHORS   Mi S, Lee X, Li X, Veldman GM, Finnerty H, Racie L, LaVallie E, Tang
+            XY, Edouard P, Howes S, Keith JC Jr, McCoy JM.
+  TITLE     Syncytin is a captive retroviral envelope protein involved in human 
+            placental morphogenesis
+  JOURNAL   Nature 403 (6771), 785-789 (2000)
+  PUBMED    10693809
+REFERENCE   8  (bases 1 to 1617)
+  AUTHORS   Voisset C, Blancher A, Perron H, Mandrand B, Mallet F, 
+            Paranhos-Baccala G.
+  TITLE     Phylogeny of a novel family of human endogenous retrovirus 
+            sequences, HERV-W, in humans and other primates
+  JOURNAL   AIDS Res. Hum. Retroviruses 15 (17), 1529-1533 (1999)
+  PUBMED    10580403
+REFERENCE   9  (bases 1 to 1617)
+  AUTHORS   Blond JL, Beseme F, Duret L, Bouton O, Bedin F, Perron H, Mandrand 
+            B, Mallet F.
+  TITLE     Molecular characterization and placental expression of HERV-W, a new
+            human endogenous retrovirus family
+  JOURNAL   J. Virol. 73 (2), 1175-1185 (1999)
+  PUBMED    9882319
+REFERENCE   10  (bases 1 to 1617)
+  AUTHORS   Alliel PM, Perin JP, Pierig R, Nussbaum JL, Menard A, Rieger F.
+  TITLE     Endogenous retroviruses and multiple sclerosis. II. HERV-7q
+  JOURNAL   C. R. Acad. Sci. III, Sci. Vie 321 (10), 857-863 (1998)
+  PUBMED    9835022
+REFERENCE   11  (bases 1 to 1617)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 1, 2018 from SnapGene 4.1.9
+            http://www.snapgene.com
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The 
+            reference sequence was derived from BG012022.1, AF208161.1, 
+            BX391741.1 and BX365066.2.
+            On Jun 18, 2004 this sequence version replaced NM_014590.2.
+            Summary: Many different human endogenous retrovirus (HERV) families 
+            are expressed in normal placental tissue at high levels, suggesting 
+            that HERVs are functionally important in reproduction. This gene is 
+            part of an HERV provirus on chromosome 7 that has inactivating 
+            mutations in the gag and pol genes. This gene is the envelope 
+            glycoprotein gene which appears to have been selectively preserved. 
+            The gene's protein product is expressed in the placental 
+            syncytiotrophoblast and is involved in fusion of the cytotrophoblast
+            cells to form the syncytial layer of the placenta. The protein has 
+            the characteristics of a typical retroviral envelope protein, 
+            including a furin cleavage site that separates the surface (SU) and 
+            transmembrane (TM) proteins which form a heterodimer. Alternatively 
+            spliced transcript variants encoding the same protein have been 
+            found for this gene. [provided by RefSeq, Mar 2010].
+            
+            Transcript Variant: This variant (1) represents the longer, 
+            unspliced transcript. Variants 1 and 2 encode the same protein.
+            
+            Publication Note:  This RefSeq record includes a subset of the 
+            publications that are available for this gene. Please see the Gene 
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            endogenous retrovirus :: PMID: 10693809
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+FEATURES             Location/Qualifiers
+     source          1..1617
+                     /organism="Homo sapiens"
+                     /chromosome="7"
+                     /map="7q21.2"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+     gene            1..1617
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /label=ERVW-1
+                     /note="endogenous retrovirus group W member 1, envelope"
+                     /db_xref="GeneID:30816"
+                     /db_xref="HGNC:HGNC:13525"
+                     /db_xref="MIM:604659"
+     exon            1..1617
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /inference="alignment:same species:2.1.0"
+     CDS             1..1617
+                     /codon_start=1
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /product="syncytin-1 precursor"
+                     /label=ERVW-1
+                     /note="envelope glycoprotein; endogenous retroviral family 
+                     W, env(C7), member 1; enverin; HERV-tryptophan envelope 
+                     protein; HERV-7q envelope protein; HERV-W Env glycoprotein;
+                     HERV-W_7q21.2 provirus ancestral Env polyprotein; human 
+                     endogenous retrovirus W envC7-1 envelope protein; envelope 
+                     polyprotein gPr73; syncytin-1; endogenous retrovirus group 
+                     W member 1; HERV-W envelope protein"
+                     /db_xref="CCDS:CCDS5626.1"
+                     /db_xref="GeneID:30816"
+                     /db_xref="HGNC:HGNC:13525"
+                     /db_xref="MIM:604659"
+                     /protein_id="NP_055405.3"
+                     /translation="MALPYHIFLFTVLLPSFTLTAPPPCRCMTSSSPYQEFLWRMQRPG
+                     NIDAPSYRSLSKGTPTFTAHTHMPRNCYHSATLCMHANTHYWTGKMINPSCPGGLGVTV
+                     CWTYFTQTGMSDGGGVQDQAREKHVKEVISQLTRVHGTSSPYKGLDLSKLHETLRTHTR
+                     LVSLFNTTLTGLHEVSAQNPTNCWICLPLNFRPYVSIPVPEQWNNFSTEINTTSVLVGP
+                     LVSNLEITHTSNLTCVKFSNTTYTTNSQCIRWVTPPTQIVCLPSGIFFVCGTSAYRCLN
+                     GSSESMCFLSFLVPPMTIYTEQDLYSYVISKPRNKRVPILPFVIGAGVLGALGTGIGGI
+                     TTSTQFYYKLSQELNGDMERVADSLVTLQDQLNSLAAVVLQNRRALDLLTAERGGTCLF
+                     LGEECCYYVNQSGIVTEKVKEIRDRIQRRAEELRNTGPWGLLSQWMPWILPFLGPLAAI
+                     ILLLLFGPCIFNLLVNFVSSRIEAVKLQMEPKMQSKTKIYRRPLDRPASPRSDVNDIKG
+                     TPPEEISAAQPLLRPNSAGSS"
+     sig_peptide     1..60
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /inference="COORDINATES:same species:SignalP"
+     mat_peptide     61..1614
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /product="syncytin"
+     mat_peptide     61..951
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /product="syncytin surface protein (SU)"
+                     /note="/exception=alternative processing"
+     misc_feature    556..567
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     Region: CXXC. {ECO:0000305}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    940..951
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /label=furin cleavage site
+                     /note="furin cleavage site"
+     misc_feature    949..954
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="Cleavage. {ECO:0000269|PubMed:15827173}; propagated 
+                     from UniProtKB/Swiss-Prot (Q9UQF0.1); cleavage site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     mat_peptide     952..1614
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /product="syncytin transmembrane protein (TM)"
+                     /note="/exception=alternative processing"
+     misc_feature    958..1020
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     Region: Fusion peptide. {ECO:0000255}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     STS             1059..1189
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /standard_name="STS-T93615"
+                     /label=STS-T93615
+                     /db_xref="UniSTS:15760"
+     misc_feature    1138..1188
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     Region: Immunosuppression. {ECO:0000250}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     STS             1149..1617
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /standard_name="ERVWE1_2140"
+                     /label=ERVWE1_2140
+                     /db_xref="UniSTS:280658"
+     misc_feature    1189..1218
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     Region: CX6CC. {ECO:0000305}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1330..1392
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1393..1452
+                     /gene="ERVW-1"
+                     /gene_synonym="ENV; ENVW; ERVWE1; HERV-7q; HERV-W-ENV; 
+                     HERV7Q; HERVW; HERVWENV"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q9UQF0.1); 
+                     Region: Essential for the fusiogenic function"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+ORIGIN
+        1 ATGGCCCTCC CTTATCATAT TTTTCTCTTT ACTGTTCTTT TACCCTCTTT CACTCTCACT
+       61 GCACCCCCTC CATGCCGCTG TATGACCAGT AGCTCCCCTT ACCAAGAGTT TCTATGGAGA
+      121 ATGCAGCGTC CCGGAAATAT TGATGCCCCA TCGTATAGGA GTCTTTCTAA GGGAACCCCC
+      181 ACCTTCACTG CCCACACCCA TATGCCCCGC AACTGCTATC ACTCTGCCAC TCTTTGCATG
+      241 CATGCAAATA CTCATTATTG GACAGGAAAA ATGATTAATC CTAGTTGTCC TGGAGGACTT
+      301 GGAGTCACTG TCTGTTGGAC TTACTTCACC CAAACTGGTA TGTCTGATGG GGGTGGAGTT
+      361 CAAGATCAGG CAAGAGAAAA ACATGTAAAA GAAGTAATCT CCCAACTCAC CCGGGTACAT
+      421 GGCACCTCTA GCCCCTACAA AGGACTAGAT CTCTCAAAAC TACATGAAAC CCTCCGTACC
+      481 CATACTCGCC TGGTAAGCCT ATTTAATACC ACCCTCACTG GGCTCCATGA AGTCTCGGCC
+      541 CAAAACCCTA CTAACTGTTG GATATGCCTC CCCCTGAACT TCAGGCCATA TGTTTCAATC
+      601 CCTGTACCTG AACAATGGAA CAACTTCAGC ACAGAAATAA ACACCACTTC CGTTTTAGTA
+      661 GGACCTCTTG TTTCCAATCT GGAAATAACC CATACCTCAA ACCTCACCTG TGTAAAATTT
+      721 AGCAATACTA CATACACAAC CAACTCCCAA TGCATCAGGT GGGTAACTCC TCCCACACAA
+      781 ATAGTCTGCC TACCCTCAGG AATATTTTTT GTCTGTGGTA CCTCAGCCTA TCGTTGTTTG
+      841 AATGGTTCTT CAGAATCTAT GTGCTTCCTC TCATTCTTAG TGCCCCCTAT GACCATCTAC
+      901 ACTGAACAAG ATTTATACAG TTATGTCATA TCTAAGCCCC GCAACAAAAG AGTACCCATT
+      961 CTTCCTTTTG TTATAGGAGC AGGAGTGCTA GGTGCACTAG GTACTGGCAT TGGCGGTATC
+     1021 ACAACCTCTA CTCAGTTCTA CTACAAACTA TCTCAAGAAC TAAATGGGGA CATGGAACGG
+     1081 GTCGCCGACT CCCTGGTCAC CTTGCAAGAT CAACTTAACT CCCTAGCAGC AGTAGTCCTT
+     1141 CAAAATCGCA GAGCTTTAGA CTTGCTAACC GCTGAAAGAG GGGGAACCTG TTTATTTTTA
+     1201 GGGGAAGAAT GCTGTTATTA TGTTAATCAA TCCGGAATCG TCACTGAGAA AGTTAAAGAA
+     1261 ATTCGAGATC GAATACAACG TAGAGCAGAG GAGCTTCGAA ACACTGGACC CTGGGGCCTC
+     1321 CTCAGCCAAT GGATGCCCTG GATTCTCCCC TTCTTAGGAC CTCTAGCAGC TATAATATTG
+     1381 CTACTCCTCT TTGGACCCTG TATCTTTAAC CTCCTTGTTA ACTTTGTCTC TTCCAGAATC
+     1441 GAAGCTGTAA AACTACAAAT GGAGCCCAAG ATGCAGTCCA AGACTAAGAT CTACCGCAGA
+     1501 CCCCTGGACC GGCCTGCTAG CCCACGATCT GATGTTAATG ACATCAAAGG CACCCCTCCT
+     1561 GAGGAAATCT CAGCTGCACA ACCTCTACTA CGCCCCAATT CAGCAGGAAG CTCCTGA
+//

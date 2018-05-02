@@ -1,0 +1,44 @@
+LOCUS       BBF10K_003139            621 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  coaE
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 621)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..621
+                     /locus_tag="b0103"
+                     /gene="coaE"
+                     /gene_synonyms=""
+                     /product="dephospho-CoA kinase"
+                     /note="putative DNA repair protein"
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_414645.1"
+                     /EC_number="2.7.1.24"
+                     /translation="MRYIVALTGGIGSGKSTVANAFADLGINVIDADIIARQVVEPGAP
+                     /ALHAIADHFGANMIAADGTLQRRALRERIFANPEEKNWLNALLHPLIQQETQHQIQQA
+                     /TSPYVLWVVPLLVENSLYKKANRVLVVDVSPETQLKRTMQRDDVTREHVEQILAAQAT
+                     /REARLAVADDVIDNNGAPDAIASDVARLHAHYLQLASQFVSQEKP"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0000357"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A6I9"
+                     /db_xref="EcoGene:EG12312"
+                     /db_xref="GeneID:949060"
+ORIGIN
+        1 ATGCGCTATA TTGTGGCGCT GACGGGTGGT ATTGGCTCCG GTAAAAGCAC GGTCGCTAAT
+       61 GCTTTCGCGG ACCTGGGTAT TAATGTTATT GACGCTGACA TTATCGCGCG CCAGGTTGTC
+      121 GAACCGGGTG CGCCGGCTCT CCATGCTATT GCGGATCACT TTGGCGCGAA CATGATTGCA
+      181 GCGGATGGCA CCCTGCAGCG CCGTGCGCTG CGCGAGCGTA TTTTCGCCAA CCCGGAGGAG
+      241 AAAAATTGGC TGAATGCGCT GCTGCATCCG CTGATTCAGC AGGAAACCCA GCACCAGATT
+      301 CAACAAGCGA CGAGCCCGTA CGTGCTGTGG GTCGTACCAC TGCTGGTCGA AAACTCCCTG
+      361 TACAAGAAGG CGAATCGTGT GCTGGTCGTT GACGTCAGCC CTGAAACGCA GCTCAAACGT
+      421 ACGATGCAAC GTGACGATGT TACTCGTGAA CACGTTGAGC AAATCCTGGC GGCTCAGGCG
+      481 ACCCGTGAGG CTCGTCTGGC GGTTGCGGAT GATGTGATCG ATAATAACGG TGCGCCGGAT
+      541 GCGATCGCCT CGGATGTTGC CCGCCTGCAT GCCCACTATT TGCAGTTGGC CTCTCAGTTT
+      601 GTTAGCCAGG AGAAGCCATG A
+//

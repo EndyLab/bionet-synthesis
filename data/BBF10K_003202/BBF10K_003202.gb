@@ -1,0 +1,42 @@
+LOCUS       BBF10K_003202            519 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  fabA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 519)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..519
+                     /locus_tag="b0954"
+                     /gene="fabA"
+                     /gene_synonyms=""
+                     /product="beta-hydroxydecanoyl thioester dehydrase"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_415474.1"
+                     /EC_number="4.2.1.595.3.3.14"
+                     /translation="MVDKRESYTKEDLLASGRGELFGAKGPQLPAPNMLMMDRVVKMTE
+                     /TGGNFDKGYVEAELDINPDLWFFGCHFIGDPVMPGCLGLDAMWQLVGFYLGWLGGEGK
+                     /GRALGVGEVKFTGQVLPTAKKVTYRIHFKRIVNRRLIMGLADGEVLVDGRLIYTASDL
+                     /KVGLFQDTSAF"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0003229"
+                     /db_xref="UniProtKB/Swiss-Prot:P0A6Q3"
+                     /db_xref="EcoGene:EG10273"
+                     /db_xref="GeneID:945568"
+ORIGIN
+        1 ATGGTCGACA AACGCGAGAG CTATACCAAG GAGGATCTTT TGGCGAGCGG TCGTGGCGAG
+       61 CTCTTTGGTG CGAAAGGTCC GCAGCTGCCG GCACCGAACA TGCTCATGAT GGACCGTGTC
+      121 GTTAAAATGA CGGAAACCGG TGGCAACTTC GATAAGGGTT ACGTGGAGGC GGAACTGGAC
+      181 ATTAATCCGG ACCTGTGGTT TTTCGGCTGC CATTTCATCG GCGATCCGGT TATGCCGGGC
+      241 TGTCTGGGCT TGGATGCAAT GTGGCAATTA GTTGGCTTCT ATTTGGGCTG GCTGGGCGGC
+      301 GAGGGTAAAG GTCGTGCCCT GGGCGTGGGT GAGGTGAAGT TCACCGGTCA GGTTTTGCCG
+      361 ACCGCGAAGA AGGTGACTTA TCGTATCCAC TTTAAACGCA TTGTGAACCG CCGTCTGATT
+      421 ATGGGCTTGG CGGATGGCGA AGTGCTGGTC GACGGCCGCT TAATTTATAC CGCGAGCGAC
+      481 TTGAAGGTGG GTCTGTTCCA GGATACGAGC GCATTTTGA
+//

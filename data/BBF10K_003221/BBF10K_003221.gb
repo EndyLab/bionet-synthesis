@@ -1,0 +1,140 @@
+LOCUS       Exported                1599 bp ds-DNA     linear   PRI 02-MAY-2018
+DEFINITION  Homo sapiens solute carrier family 1 (glutamate/neutral amino acid 
+            transporter), member 4, mRNA (cDNA clone MGC:90209 IMAGE:6186177), 
+            complete cds.
+ACCESSION   BC072423
+VERSION     .
+KEYWORDS    MGC.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens (human)
+REFERENCE   1  (bases 1 to 1599)
+  AUTHORS   Strausberg RL, Feingold EA, Grouse LH, Derge JG, Klausner RD, 
+            Collins FS, Wagner L, Shenmen CM, Schuler GD, Altschul SF, Zeeberg 
+            B, Buetow KH, Schaefer CF, Bhat NK, Hopkins RF, Jordan H, Moore T, 
+            Max SI, Wang J, Hsieh F, Diatchenko L, Marusina K, Farmer AA, Rubin 
+            GM, Hong L, Stapleton M, Soares MB, Bonaldo MF, Casavant TL, Scheetz
+            TE, Brownstein MJ, Usdin TB, Toshiyuki S, Carninci P, Prange C, Raha
+            SS, Loquellano NA, Peters GJ, Abramson RD, Mullahy SJ, Bosak SA, 
+            McEwan PJ, McKernan KJ, Malek JA, Gunaratne PH, Richards S, Worley 
+            KC, Hale S, Garcia AM, Gay LJ, Hulyk SW, Villalon DK, Muzny DM, 
+            Sodergren EJ, Lu X, Gibbs RA, Fahey J, Helton E, Ketteman M, Madan 
+            A, Rodrigues S, Sanchez A, Whiting M, Madan A, Young AC, Shevchenko 
+            Y, Bouffard GG, Blakesley RW, Touchman JW, Green ED, Dickson MC, 
+            Rodriguez AC, Grimwood J, Schmutz J, Myers RM, Butterfield YS, 
+            Krzywinski MI, Skalska U, Smailus DE, Schnerch A, Schein JE, Jones 
+            SJ, Marra MA.
+  TITLE     Generation and initial analysis of more than 15,000 full-length 
+            human and mouse cDNA sequences
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 99 (26), 16899-16903 (2002)
+  PUBMED    12477932
+REFERENCE   2  (bases 1 to 1599)
+  AUTHORS   Strausberg R.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (01-JUN-2004) National Institutes of Health, Mammalian 
+            Gene Collection (MGC), Cancer Genomics Office, National Cancer 
+            Institute, 31 Center Drive, Room 11A03, Bethesda, MD 20892-2590, USA
+REFERENCE   3  (bases 1 to 1599)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 2, 2018 from SnapGene 4.1.9
+            http://www.snapgene.com
+COMMENT     Contact: MGC help desk
+            Email: cgapbs-r@mail.nih.gov
+            Tissue Procurement: Dr. James R. Lupski
+            cDNA Library Preparation: Life Technologies, Inc.
+            cDNA Library Arrayed by: The I.M.A.G.E. Consortium (LLNL)
+            DNA Sequencing by: National Institutes of Health Intramural 
+            Sequencing Center (NISC),
+            Gaithersburg, Maryland;
+            Web site: http://www.nisc.nih.gov/
+            Contact: nisc_mgc@nhgri.nih.gov
+            Akhter,N., Ayele,K., Beckstrom-Sternberg,S.M., Benjamin,B., 
+            Blakesley,R.W., Bouffard,G.G., Breen,K., Brinkley,C., Brooks,S., 
+            Dietrich,N.L., Granite,S., Guan,X., Gupta,J., Haghighi,P., 
+            Hansen,N., Ho,S.-L., Karlins,E., Kwong,P., Laric,P., Legaspi,R., 
+            Maduro,Q.L., Masiello,C., Maskeri,B., Mastrian,S.D.,McCloskey,J.C., 
+            McDowell,J., Pearson,R., Stantripop,S., Thomas,P.J., Touchman,J.W., 
+            Tsurgeon,C., Vogt,J.L., Walker,M.A., Wetherby,K.D., Wiggins,L., 
+            Young,A., Zhang,L.-H. and Green,E.D.
+            Clone distribution: MGC clone distribution information can be found 
+            through the I.M.A.G.E. Consortium/LLNL at: http://image.llnl.gov 
+            Series: IRAK Plate: 174 Row: m Column: 23
+            This clone was selected for full length sequencing because it passed
+            the following selection criteria: matched mRNA gi: 21314631.
+            Differences found between this sequence and the human reference 
+            genome (build 36) are described in misc_difference features below 
+            and these differences were also compared to chimpanzee genome (build
+            2).
+FEATURES             Location/Qualifiers
+     source          1..1599
+                     /organism="Homo sapiens"
+                     /lab_host="DH10B"
+                     /mol_type="mRNA"
+                     /clone_lib="Lupski_dorsal_root_ganglion"
+                     /clone="MGC:90209 IMAGE:6186177"
+                     /tissue_type="Peripheral Nervous System, dorsal root 
+                     ganglion"
+                     /label=Vector: pCMV-SPORT6
+                     /note="Vector: pCMV-SPORT6"
+                     /db_xref="taxon:9606"
+     gene            1..1599
+                     /gene="SLC1A4"
+                     /gene_synonym="ASCT1; SATT"
+                     /label=SLC1A4
+                     /db_xref="GeneID:6509"
+                     /db_xref="MIM:600229"
+     CDS             1..1599
+                     /codon_start=1
+                     /gene="SLC1A4"
+                     /gene_synonym="ASCT1; SATT"
+                     /product="SLC1A4 protein"
+                     /label=SLC1A4
+                     /db_xref="GeneID:6509"
+                     /db_xref="MIM:600229"
+                     /protein_id="AAH72423.1"
+                     /translation="MEKSNETNGYLDSAQAGPAAGPGAPGTAAGRARRCAGFLRRQALV
+                     LLTVSGVLAGAGLGAALRGLSLSRTQVTYLAFPGEMLLRMLRMIILPLVVCSLVSGAAS
+                     LDASCLGRLGGIAVAYFGLTTLSASALAVALAFIIKPGSGAQTLQSSDLGLEDSGPPPV
+                     PKETVDSFLDLARNLFPSNLVVAAFRTYATDYKVVTQNSSSGNVTHEKIPIGTEIEGMN
+                     ILGLVLFALVLGVALKKLGSEGEDLIRFFNSLNEATMVLVSWIMWYVPVGIMFLVGSKI
+                     VEMKDIIVLVTSLGKYIFASILGHVIHGGIVLPLIYFVFTRKNPFRFLLGLLAPFATAF
+                     ATCSSSATLPSMMKCIEENNGVDKRISRFILPIGATVNMDGAAIFQCVAAVFIAQLNNV
+                     ELNAGQIFTILVTATASSVGAAGVPAGGVLTIAIILEAIGLPTHDLPLILAVDWIVDRT
+                     TTVVNVEGDALGAGILHHLNQKATKKGEQELAEVKVEAIPNCKSEEETSPLVTHQNPAG
+                     PVASAPELESKESVL"
+     misc_difference 312
+                     /gene="SLC1A4"
+                     /gene_synonym="ASCT1; SATT"
+                     /note="'C' in cDNA is 'G' in the human genome; no amino 
+                     acid change. The chimpanzee genome agrees with the cDNA 
+                     sequence, suggesting that this difference is unlikely to be
+                     due to an artifact."
+ORIGIN
+        1 ATGGAAAAGA GCAACGAAAC CAACGGCTAC CTTGACAGCG CTCAAGCCGG CCCTGCAGCT
+       61 GGCCCGGGCG CTCCGGGTAC CGCCGCGGGT CGTGCACGTC GTTGCGCGGG CTTCCTGCGG
+      121 CGCCAAGCGC TGGTGCTGCT CACGGTGTCT GGTGTTCTGG CAGGCGCCGG TTTGGGCGCG
+      181 GCACTGCGTG GGCTCAGCCT GAGCCGCACC CAGGTCACCT ACCTGGCCTT CCCCGGCGAG
+      241 ATGCTGCTCC GCATGCTGCG CATGATCATC CTGCCGCTGG TGGTCTGCAG CCTGGTGTCG
+      301 GGCGCCGCCT CCCTCGATGC CAGCTGCCTC GGGCGTCTGG GCGGTATCGC TGTCGCCTAC
+      361 TTTGGCCTCA CCACACTGAG TGCCTCGGCG CTCGCCGTGG CCTTGGCGTT CATCATCAAG
+      421 CCAGGATCCG GTGCGCAGAC CCTTCAGTCC AGCGACCTGG GGCTGGAGGA CTCGGGGCCT
+      481 CCTCCTGTCC CCAAAGAAAC GGTGGACTCT TTCCTCGACC TGGCCAGAAA CCTGTTTCCC
+      541 TCCAATCTTG TGGTTGCAGC TTTCCGTACG TATGCAACCG ATTATAAAGT CGTGACCCAG
+      601 AACAGCAGCT CTGGAAATGT AACCCATGAA AAGATCCCCA TAGGCACTGA GATAGAAGGG
+      661 ATGAACATTT TAGGATTGGT CCTGTTTGCT CTGGTGTTAG GAGTGGCCTT AAAGAAACTA
+      721 GGCTCCGAAG GAGAGGACCT CATCCGTTTC TTCAATTCCC TCAACGAGGC GACGATGGTG
+      781 CTGGTGTCCT GGATTATGTG GTACGTACCT GTGGGCATCA TGTTCCTTGT TGGAAGCAAG
+      841 ATCGTGGAAA TGAAAGACAT CATCGTGCTG GTGACCAGCC TGGGGAAATA CATCTTCGCA
+      901 TCTATATTGG GCCACGTCAT TCATGGTGGT ATCGTCCTGC CGCTGATTTA TTTTGTTTTC
+      961 ACACGAAAAA ACCCATTCAG ATTCCTCCTG GGCCTCCTCG CCCCATTTGC GACAGCATTT
+     1021 GCTACGTGCT CCAGCTCAGC GACCCTTCCC TCTATGATGA AGTGCATTGA AGAGAACAAT
+     1081 GGTGTGGACA AGAGGATCTC CAGGTTTATT CTCCCCATCG GGGCCACCGT GAACATGGAC
+     1141 GGAGCAGCCA TCTTCCAGTG TGTGGCCGCG GTGTTCATTG CGCAACTCAA CAACGTAGAG
+     1201 CTCAACGCAG GACAGATTTT CACCATTCTA GTGACTGCCA CAGCGTCCAG TGTTGGAGCA
+     1261 GCAGGCGTGC CAGCTGGAGG GGTCCTCACC ATTGCCATTA TCCTGGAGGC CATTGGGCTG
+     1321 CCTACTCATG ATCTGCCTCT GATCCTGGCT GTGGACTGGA TTGTGGACCG GACCACCACG
+     1381 GTGGTGAATG TGGAAGGGGA TGCCCTGGGT GCAGGCATTC TCCACCACCT GAATCAGAAG
+     1441 GCAACAAAGA AAGGCGAGCA GGAACTTGCT GAGGTGAAAG TGGAAGCCAT CCCCAACTGC
+     1501 AAGTCTGAGG AGGAAACCTC GCCCCTGGTG ACACACCAGA ACCCCGCTGG CCCCGTGGCC
+     1561 AGTGCCCCAG AACTGGAATC CAAGGAGTCG GTTCTGTGA
+//

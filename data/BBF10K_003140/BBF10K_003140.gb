@@ -1,0 +1,46 @@
+LOCUS       BBF10K_003140            663 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  can
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 663)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..663
+                     /locus_tag="b0126"
+                     /gene="can"
+                     /gene_synonyms=""
+                     /product="carbonic anhydrase"
+                     /note="putative carbonic anhdrase"
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_414668.1"
+                     /EC_number="4.2.1.1"
+                     /translation="MKDIDTLISNNALWSKMLVEEDPGFFEKLAQAQKPRFLWIGCSDS
+                     /RVPAERLTGLEPGELFVHRNVANLVIHTDLNCLSVVQYAVDVLEVEHIIICGHYGCGG
+                     /VQAAVENPELGLINNWLLHIRDIWFKHSSLLGEMPQERRLDTLCELNVMEQVYNLGHS
+                     /TIMQSAWKRGQKVTIHGWAYGIHDGLLRDLDVTATNRETLEQRYRHGISNLKLKHANH
+                     /K"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0000442"
+                     /db_xref="UniProtKB/Swiss-Prot:P61517"
+                     /db_xref="EcoGene:EG12319"
+                     /db_xref="GeneID:944832"
+ORIGIN
+        1 ATGAAGGATA TTGACACCTT GATCAGCAAT AACGCGTTGT GGAGCAAGAT GCTGGTTGAA
+       61 GAAGATCCAG GCTTTTTTGA GAAACTGGCG CAGGCGCAAA AGCCACGTTT CCTGTGGATC
+      121 GGTTGTTCTG ACAGCCGCGT CCCGGCGGAG CGTTTGACCG GTCTGGAACC GGGCGAGCTG
+      181 TTCGTACACC GTAACGTGGC GAACCTCGTC ATCCACACGG ACCTGAACTG TCTGAGCGTT
+      241 GTTCAATACG CCGTCGACGT CCTGGAAGTC GAGCACATCA TCATTTGCGG TCACTATGGC
+      301 TGTGGCGGCG TCCAGGCTGC AGTTGAGAAC CCGGAACTGG GTTTGATTAA CAATTGGCTG
+      361 CTGCACATCC GCGATATCTG GTTTAAACAT TCCAGCCTGC TGGGCGAAAT GCCACAGGAA
+      421 CGTCGCCTGG ACACCCTGTG CGAATTGAAT GTCATGGAAC AGGTCTACAA CTTGGGTCAC
+      481 TCCACCATCA TGCAGAGCGC ATGGAAGCGC GGTCAGAAAG TGACCATTCA TGGCTGGGCT
+      541 TACGGCATTC ACGATGGCCT GCTGCGTGAC CTGGATGTAA CGGCAACCAA TCGTGAAACC
+      601 CTGGAACAGC GCTACCGTCA CGGTATCAGC AACCTCAAGC TGAAACATGC CAACCACAAG
+      661 TGA
+//

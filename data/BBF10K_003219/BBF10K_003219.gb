@@ -1,0 +1,246 @@
+LOCUS       Exported                1854 bp ds-DNA     linear   ROD 02-MAY-2018
+DEFINITION  Mus musculus syncytin a (Syna), mRNA.
+ACCESSION   NM_001013751
+VERSION     .
+KEYWORDS    .
+SOURCE      Mus musculus (house mouse)
+  ORGANISM  Mus musculus (house mouse)
+REFERENCE   1  (bases 1 to 1854)
+  AUTHORS   Bacquin A, Bireau C, Tanguy M, Romanet C, Vernochet C, Dupressoir A,
+            Heidmann T.
+  TITLE     A Cell Fusion-Based Screening Method Identifies 
+            Glycosylphosphatidylinositol-Anchored Protein Ly6e as the Receptor 
+            for Mouse Endogenous Retroviral Envelope Syncytin-A
+  JOURNAL   J. Virol. 91 (18), e00832-17 (2017)
+  PUBMED    28679758
+REFERENCE   2  (bases 1 to 1854)
+  AUTHORS   Lacko LA, Hurtado R, Hinds S, Poulos MG, Butler JM, Stuhlmann H.
+  TITLE     Altered feto-placental vascularization, feto-placental malperfusion 
+            and fetal growth restriction in mice with Egfl7 loss of function
+  JOURNAL   Development 144 (13), 2469-2479 (2017)
+  PUBMED    28526753
+REFERENCE   3  (bases 1 to 1854)
+  AUTHORS   Bourke LM, Del Monte-Nieto G, Outhwaite JE, Bharti V, Pollock PM, 
+            Simmons DG, Adam A, Hur SS, Maghzal GJ, Whitelaw E, Stocker R, Suter
+            CM, Harvey RP, Harten SK.
+  TITLE     Loss of Rearranged L-Myc Fusion (RLF) results in defects in heart 
+            development in the mouse
+  JOURNAL   Differentiation 94, 8-20 (2017)
+  PUBMED    27930960
+REFERENCE   4  (bases 1 to 1854)
+  AUTHORS   Chubanov V, Ferioli S, Wisnowsky A, Simmons DG, Leitzinger C, Einer 
+            C, Jonas W, Shymkiv Y, Bartsch H, Braun A, Akdogan B, Mittermeier L,
+            Sytik L, Torben F, Jurinovic V, van der Vorst EP, Weber C, Yildirim 
+            OA, Sotlar K, Schurmann A, Zierler S, Zischka H, Ryazanov AG, 
+            Gudermann T.
+  TITLE     Epithelial magnesium transport by TRPM6 is essential for prenatal 
+            development and adult survival
+  JOURNAL   Elife 5, e20914 (2016)
+  PUBMED    27991852
+REFERENCE   5  (bases 1 to 1854)
+  AUTHORS   Tunster SJ, McNamara GI, Creeth HDJ, John RM.
+  TITLE     Increased dosage of the imprinted Ascl2 gene restrains two key 
+            endocrine lineages of the mouse Placenta
+  JOURNAL   Dev. Biol. 418 (1), 55-65 (2016)
+  PUBMED    27542691
+REFERENCE   6  (bases 1 to 1854)
+  AUTHORS   Schubert SW, Lamoureux N, Kilian K, Klein-Hitpass L, 
+            Hashemolhosseini S.
+  TITLE     Identification of integrin-alpha4, Rb1, and syncytin a as murine 
+            placental target genes of the transcription factor GCMa/Gcm1
+  JOURNAL   J. Biol. Chem. 283 (9), 5460-5465 (2008)
+  PUBMED    18167345
+REFERENCE   7  (bases 1 to 1854)
+  AUTHORS   Mangeney M, Renard M, Schlecht-Louf G, Bouallaga I, Heidmann O, 
+            Letzelter C, Richaud A, Ducos B, Heidmann T.
+  TITLE     Placental syncytins: Genetic disjunction between the fusogenic and 
+            immunosuppressive activity of retroviral envelope proteins
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 104 (51), 20534-20539 (2007)
+  PUBMED    18077339
+REFERENCE   8  (bases 1 to 1854)
+  AUTHORS   Peng X, Pan J, Gong R, Liu Y, Kang S, Feng H, Qiu G, Guo D, Tien P, 
+            Xiao G.
+  TITLE     Functional characterization of syncytin-A, a newly murine endogenous
+            virus envelope protein. Implication for its fusion mechanism
+  JOURNAL   J. Biol. Chem. 282 (1), 381-389 (2007)
+  PUBMED    17105734
+REFERENCE   9  (bases 1 to 1854)
+  AUTHORS   Gong R, Huang L, Shi J, Luo K, Qiu G, Feng H, Tien P, Xiao G.
+  TITLE     Syncytin-A mediates the formation of syncytiotrophoblast involved in
+            mouse placental development
+  JOURNAL   Cell. Physiol. Biochem. 20 (5), 517-526 (2007)
+  PUBMED    17762178
+REFERENCE   10  (bases 1 to 1854)
+  AUTHORS   Dupressoir A, Marceau G, Vernochet C, Benit L, Kanellopoulos C, 
+            Sapin V, Heidmann T.
+  TITLE     Syncytin-A and syncytin-B, two fusogenic placenta-specific murine 
+            envelope genes of retroviral origin conserved in Muridae
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 102 (3), 725-730 (2005)
+  PUBMED    15644441
+REFERENCE   11  (bases 1 to 1854)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 2, 2018 from SnapGene 4.1.9
+            http://www.snapgene.com
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The 
+            reference sequence was derived from BC138919.1 and AC166938.5.
+            On May 14, 2011 this sequence version replaced NM_001013751.1.
+            Summary: Many different endogenous retrovirus families are expressed
+            in normal placental tissue at high levels, suggesting that 
+            endogenous retroviruses are functionally important in reproduction. 
+            This gene is part of a mouse endogenous retrovirus provirus on 
+            chromosome 5 that has inactivating mutations in the gag and pol 
+            genes. This gene is the envelope glycoprotein gene which appears to 
+            have been selectively preserved. The gene's protein product plays a 
+            major role in placental development and trophoblast fusion. The 
+            protein has the characteristics of a typical retroviral envelope 
+            protein, including a cleavage site that separates the surface (SU) 
+            and transmembrane (TM) proteins which form a heterodimer. [provided 
+            by RefSeq, Apr 2015].
+            
+            Sequence Note: This RefSeq record was created from transcript and 
+            genomic sequence data to make the sequence consistent with the 
+            reference genome assembly. The genomic coordinates used for the 
+            transcript record were based on transcript alignments.
+            
+            Publication Note:  This RefSeq record includes a subset of the 
+            publications that are available for this gene. Please see the Gene 
+            record to access additional publications.
+            
+            ##RefSeq-Attributes-START##
+            endogenous retrovirus :: PMID: 15644441
+            ##RefSeq-Attributes-END##
+            COMPLETENESS: complete on the 3' end.
+FEATURES             Location/Qualifiers
+     source          1..1854
+                     /organism="Mus musculus"
+                     /chromosome="5"
+                     /map="5"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:10090"
+     gene            1..1854
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /label=Syna
+                     /note="syncytin a"
+                     /db_xref="GeneID:214292"
+                     /db_xref="MGI:MGI:2684898"
+     exon            1..1854
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /inference="alignment:same species:1.39.8"
+     CDS             1..1854
+                     /codon_start=1
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /product="syncytin-A precursor"
+                     /label=Syna
+                     /note="envelope glycoprotein syncytin-A"
+                     /db_xref="CCDS:CCDS19721.1"
+                     /db_xref="GeneID:214292"
+                     /db_xref="MGI:MGI:2684898"
+                     /protein_id="NP_001013773.1"
+                     /translation="MVRPWVFCLLLFPCSSAYSDSWMPLVNLTQHLLQEANSSFSSNCW
+                     VCLSIQTQRSLAMPAPLRTWTETPMKLRIMYSARTLSGPYPITDLERRLQNFQPLTPHS
+                     SFVNPDQRAIAFLQITSVTGILPILSRITSVRYPDDHVYESAQRPIWGSLSTQTILTSQ
+                     APLCISRFFKNSNHATFVGKLPASLCNHTFQLSPSANHQSIDLSSSYAFAPLMAMPGSK
+                     WRNPLRFSGPPSLNSGMPHYSCPIDDIHCHTYPTTPWRSCPSFPASTCYNLTLFEPDNS
+                     SHPITLSVDTTYFKIKLQGHKDPYPLFQYQPLMGAALSGQYSIWEYEPTVKKNGGITPN
+                     IFSHLVSLTYSFCLNSSGVFFLCGNSTYVCLPANWSGVCTLVFQYPDIELLPNNQTISV
+                     PLFATVPSSVPASRRKRALPLLPLLAGLGIASALGLGIAGITTSTVYFQQLSKALSDSL
+                     DEIATSIISLQDQIDSLAGVVLQNRRALDLIVAERGGTCLFLQEECCFYINQSGVVRHA
+                     ARKLRERASELGTSSSSWIQWLGLGPWLPSWLTSLMAPILFILVLLVFRPCLLNCLTHS
+                     VSRRMSSFIHTTTEGHVDKILLLRESQYKRLPQEPPEEDAV"
+     sig_peptide     1..51
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /inference="COORDINATES:same species:SignalP"
+     mat_peptide     52..1851
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /product="syncytin-A"
+     mat_peptide     52..1248
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /product="syncytin-A"
+                     /note="surface subunit"
+     misc_feature    130..141
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q5G5D5.1); 
+                     Region: CXXC. {ECO:0000305}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     STS             564..874
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /db_xref="UniSTS:548131"
+     misc_feature    1246..1251
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /note="Cleavage. {ECO:0000250|UniProtKB:Q9UQF0}; propagated
+                     from UniProtKB/Swiss-Prot (Q5G5D5.1); cleavage site"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     mat_peptide     1249..1851
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /product="syncytin-A"
+                     /note="transmembrane subunit"
+     misc_feature    1258..1317
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /label=Region: fusion peptide
+                     /note="Region: fusion peptide"
+     misc_feature    1438..1488
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /label=Region: immunosuppressive domain
+                     /note="Region: immunosuppressive domain"
+     misc_feature    1489..1515
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q5G5D5.1); 
+                     Region: CX6CC. {ECO:0000305}"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+     misc_feature    1633..1695
+                     /gene="Syna"
+                     /gene_synonym="Gm453; Gm52; syncytin-A"
+                     /note="propagated from UniProtKB/Swiss-Prot (Q5G5D5.1); 
+                     transmembrane region"
+                     /experiment="experimental evidence, no additional details 
+                     recorded"
+ORIGIN
+        1 ATGGTTCGTC CTTGGGTTTT CTGTCTCCTC CTGTTCCCTT GTTCCTCTGC CTACTCGGAC
+       61 AGCTGGATGC CCCTGGTAAA CCTCACTCAA CACCTCCTCC AGGAGGCTAA CTCTTCCTTC
+      121 TCTTCCAACT GCTGGGTCTG CTTATCCATC CAAACCCAGC GCTCTCTAGC CATGCCAGCC
+      181 CCACTAAGGA CTTGGACAGA GACACCCATG AAACTTCGAA TCATGTACTC AGCCCGGACC
+      241 CTCTCCGGCC CATACCCTAT CACCGACCTT GAGAGGCGCC TCCAGAATTT CCAACCATTG
+      301 ACTCCCCACT CCTCTTTTGT CAACCCTGAC CAGCGGGCCA TTGCTTTCCT TCAGATCACC
+      361 AGCGTGACAG GCATACTTCC CATACTTTCT CGGATCACCT CGGTGAGATA CCCCGATGAC
+      421 CACGTCTATG AATCTGCCCA GCGCCCCATA TGGGGCTCAC TCTCCACCCA GACGATCCTC
+      481 ACCTCCCAGG CCCCTCTCTG CATATCCCGC TTCTTCAAGA ATTCAAACCA TGCCACCTTC
+      541 GTGGGCAAAC TCCCTGCCTC TCTTTGCAAT CACACCTTTC AGCTCTCCCC CTCTGCCAAC
+      601 CACCAATCCA TAGATCTGTC CTCCAGCTAT GCATTCGCCC CATTAATGGC CATGCCAGGG
+      661 TCTAAATGGA GAAACCCCTT ACGCTTTTCA GGACCCCCTT CCCTGAACTC AGGGATGCCT
+      721 CACTACTCCT GCCCGATAGA TGACATCCAC TGCCACACCT ACCCCACCAC CCCCTGGAGG
+      781 TCCTGTCCTT CCTTCCCAGC TTCTACGTGC TATAATCTCA CCCTATTCGA GCCGGACAAT
+      841 TCGAGCCACC CTATTACCCT GTCTGTGGAC ACCACATACT TCAAGATTAA ACTCCAGGGA
+      901 CACAAAGACC CCTATCCACT CTTTCAGTAC CAGCCCCTCA TGGGGGCAGC CCTCTCTGGA
+      961 CAATATTCAA TCTGGGAATA TGAACCCACT GTTAAGAAAA ACGGCGGTAT CACTCCAAAT
+     1021 ATCTTCTCCC ACCTTGTCTC CTTAACATAC TCCTTCTGCC TCAACTCCTC TGGTGTTTTC
+     1081 TTCCTCTGTG GAAACTCAAC TTATGTCTGT CTCCCGGCCA ATTGGTCCGG CGTCTGTACC
+     1141 CTTGTTTTCC AATACCCGGA TATTGAACTC CTTCCCAACA ACCAAACCAT ATCTGTCCCG
+     1201 CTTTTTGCTA CAGTTCCCTC CTCTGTCCCC GCTTCTCGCC GGAAGCGAGC CCTTCCTCTC
+     1261 CTTCCTCTCC TCGCGGGCCT GGGCATTGCT TCTGCCCTGG GGTTAGGTAT CGCGGGTATC
+     1321 ACCACCTCAA CTGTGTATTT CCAACAGCTT TCCAAGGCTC TCTCGGACAG CCTAGATGAA
+     1381 ATAGCCACCT CCATCATCAG CCTCCAAGAC CAAATAGACT CGCTGGCGGG TGTCGTTCTC
+     1441 CAAAACCGCA GAGCTCTGGA CCTCATTGTG GCTGAGCGTG GGGGTACTTG CCTCTTCCTC
+     1501 CAGGAAGAGT GCTGCTTCTA CATAAACCAG TCCGGGGTAG TCCGGCACGC GGCAAGGAAA
+     1561 CTTCGAGAAA GGGCCTCGGA ACTCGGCACA AGCTCGAGTT CTTGGATCCA GTGGCTGGGG
+     1621 CTAGGACCCT GGCTGCCCTC TTGGTTGACT TCCCTCATGG CTCCCATTCT CTTTATCCTG
+     1681 GTACTGCTGG TTTTCAGGCC TTGCCTTCTT AACTGCCTGA CTCATTCTGT ATCGCGGCGA
+     1741 ATGAGTTCTT TCATTCACAC CACCACCGAA GGACACGTGG ACAAGATCCT TCTGCTTCGA
+     1801 GAGTCCCAGT ACAAGAGACT TCCCCAAGAG CCCCCGGAGG AGGATGCCGT GTGA
+//

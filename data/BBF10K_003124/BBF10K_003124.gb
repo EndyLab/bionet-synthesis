@@ -1,0 +1,40 @@
+LOCUS       BBF10K_003124            366 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  ftsL
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 366)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..366
+                     /locus_tag="b0083"
+                     /gene="ftsL"
+                     /gene_synonyms=""
+                     /product="membrane bound cell division leucine zipperseptum
+                     /protein"
+                     /note="cell division protein; ingrowth of wall at septum"
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_414625.1"
+                     /EC_number=""
+                     /translation="MISRVTEALSKVKGSMGSHERHALPGVIGDDLLRFGKLPLCLFIC
+                     /IILTAVTVVTTAHHTRLLTAQREQLVLERDALDIEWRNLILEENALGDHSRVERIATE
+                     /KLQMQHVDPSQENIVVQK"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0000306"
+                     /db_xref="UniProtKB/Swiss-Prot:P0AEN4"
+                     /db_xref="EcoGene:EG11086"
+                     /db_xref="GeneID:944803"
+ORIGIN
+        1 ATGATCAGCC GTGTTACCGA AGCGCTGAGC AAGGTGAAGG GTAGCATGGG TAGCCATGAG
+       61 CGTCATGCAC TGCCGGGCGT CATTGGTGAC GATCTGCTGC GTTTTGGCAA GTTGCCGTTA
+      121 TGTCTGTTCA TTTGTATTAT CCTGACCGCG GTGACCGTTG TCACTACCGC GCACCACACC
+      181 CGCCTGCTGA CCGCACAGCG TGAACAGTTG GTCCTGGAAC GTGATGCGCT GGATATTGAG
+      241 TGGCGCAATT TGATTCTGGA GGAGAACGCG CTGGGCGACC ACAGCCGTGT GGAACGTATT
+      301 GCGACCGAGA AGCTGCAAAT GCAGCACGTG GACCCGAGCC AGGAGAACAT CGTCGTCCAA
+      361 AAGTGA
+//

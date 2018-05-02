@@ -1,0 +1,38 @@
+LOCUS       BBF10K_003205            321 bp ds-DNA     linear   BCT 02-MAY-2018
+DEFINITION  yceQ
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+REFERENCE   1  (bases 1 to 321)
+SOURCE      synthetic DNA sequence
+  ORGANISM  Escherichia coli str. K-12 substr. MG1655
+  AUTHORS   FreeGenes Team
+  TITLE     Direct Submission
+FEATURES             Location/Qualifiers
+     CDS             1..321
+                     /locus_tag="b1085"
+                     /gene="yceQ"
+                     /gene_synonyms=""
+                     /product="uncharacterized protein"
+                     /note=""
+                     /Source="Escherichia coli str. K-12 substr. MG1655"
+                     /GenBank_acc="NC_000913"
+                     /protein_id="NP_415603.2"
+                     /EC_number=""
+                     /translation="MSVARFSCGKTAQLSKKQTGYYSPEIFPSTGKDCNPQPANCLKDQ
+                     /YVLRHCCVDDRSGKMGYSVKFLVLTRMDTETASLFHCKPCYSKMTFTIYHPLTHSFFT
+                     /SCW"
+                     /transl_table=11
+                     /codon_start=1
+                     /db_xref="ASAP:ABE-0003672"
+                     /db_xref="UniProtKB/Swiss-Prot:P62066"
+                     /db_xref="EcoGene:EG14413"
+                     /db_xref="GeneID:945640"
+ORIGIN
+        1 ATGAGCGTGG CCCGTTTCTC GTGTGGCAAG ACGGCACAAC TGTCGAAGAA GCAAACCGGC
+       61 TATTACAGCC CAGAGATTTT TCCATCAACC GGCAAGGATT GCAACCCGCA ACCGGCGAAC
+      121 TGTTTGAAAG ACCAGTACGT CTTGCGTCAC TGTTGTGTGG ATGACCGTAG CGGTAAGATG
+      181 GGTTACAGCG TGAAGTTTTT GGTCCTGACC CGTATGGATA CCGAAACCGC GAGCCTGTTT
+      241 CACTGCAAGC CGTGTTATTC GAAAATGACG TTTACCATCT ATCACCCACT GACCCACTCC
+      301 TTTTTTACCT CATGTTGGTG A
+//

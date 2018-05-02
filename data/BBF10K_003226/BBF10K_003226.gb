@@ -1,0 +1,237 @@
+LOCUS       PETH_IDESA               290 aa            linear   BCT 28-MAR-2018
+DEFINITION  RecName: Full=Poly(ethylene terephthalate) hydrolase; Short=PET
+            hydrolase; Short=PETase; Flags: Precursor.
+ACCESSION   A0A0K8P6T7
+VERSION     A0A0K8P6T7.1
+DBSOURCE    UniProtKB: locus PETH_IDESA, accession A0A0K8P6T7;
+            class: standard.
+            created: May 11, 2016.
+            sequence updated: Nov 11, 2015.
+            annotation updated: Mar 28, 2018.
+            xrefs: BBYR01000074.1, GAP38373.1, WP_054022242.1, 5XFY_A, 5XFZ_A,
+            5XG0_A, 5XG0_B, 5XG0_C, 5XH2_A, 5XH3_A, 5XJH_A, 5YNS_A
+            xrefs (non-sequence databases): PDBsum:5XFY, PDBsum:5XFZ,
+            PDBsum:5XG0, PDBsum:5XH2, PDBsum:5XH3, PDBsum:5XJH, PDBsum:5YNS,
+            SMR:A0A0K8P6T7, ESTHER:idesa-peth, EnsemblBacteria:GAP38373,
+            EnsemblBacteria:GAP38373, EnsemblBacteria:ISF6_4831,
+            KEGG:ag:GAP38373, KO:K21104, BioCyc:MetaCyc:MONOMER-19898,
+            Proteomes:UP000037660, GO:0005576, GO:0003847, GO:0052689,
+            GO:0071310, GO:0016042, GO:0042178, Gene3D:3.40.50.1820,
+            InterPro:IPR029058, InterPro:IPR002925, InterPro:IPR005065,
+            PANTHER:PTHR10272, Pfam:PF01738, SUPFAM:SSF53474
+KEYWORDS    3D-structure; Complete proteome; Hydrolase; Reference proteome;
+            Secreted; Serine esterase; Signal.
+SOURCE      Ideonella sakaiensis
+  ORGANISM  Ideonella sakaiensis
+            Bacteria; Proteobacteria; Betaproteobacteria; Burkholderiales;
+            Ideonella.
+REFERENCE   1  (residues 1 to 290)
+  AUTHORS   Yoshida,S., Hiraga,K., Takehana,T., Taniguchi,I., Yamaji,H.,
+            Maeda,Y., Toyohara,K., Miyamoto,K., Kimura,Y. and Oda,K.
+  TITLE     A bacterium that degrades and assimilates poly(ethylene
+            terephthalate)
+  JOURNAL   Science 351 (6278), 1196-1199 (2016)
+   PUBMED   26965627
+  REMARK    NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA], FUNCTION, CATALYTIC
+            ACTIVITY, BIOPHYSICOCHEMICAL PROPERTIES, SUBCELLULAR LOCATION,
+            INDUCTION BY PET, AND BIOTECHNOLOGY.;
+            STRAIN=201-F6
+COMMENT     [FUNCTION] Involved in the degradation and assimilation of the
+            plastic poly(ethylene terephthalate) (PET), which allows
+            I.sakaiensis to use PET as its major energy and carbon source for
+            growth. Catalyzes the hydrolysis of PET to produce
+            mono(2-hydroxyethyl) terephthalate (MHET) as the major product. Is
+            also able to hydrolyze bis(hydroxyethyl) terephthalate (BHET) to
+            yield MHET with no further decomposition. Shows low activity
+            towards p-nitrophenol-linked aliphatic esters (pNP-aliphatic
+            esters) in vitro. {ECO:0000269|PubMed:26965627}.
+            [CATALYTIC ACTIVITY] (Ethylene terephthalate)(n) + H(2)O =
+            (ethylene terephthalate)(n-1) + ethylene terephthalate.
+            {ECO:0000269|PubMed:26965627}.
+            [BIOPHYSICOCHEMICAL PROPERTIES] pH dependence: Optimum pH is 9 for
+            PET film hydrolysis. {ECO:0000269|PubMed:26965627}; Temperature
+            dependence: Optimum temperature is 40 degrees Celsius for PET film
+            hydrolysis. {ECO:0000269|PubMed:26965627}.
+            [SUBCELLULAR LOCATION] Secreted {ECO:0000305|PubMed:26965627}.
+            [INDUCTION] Highly up-regulated during growth on PET film.
+            {ECO:0000269|PubMed:26965627}.
+            [BIOTECHNOLOGY] Has potential for application in environmental
+            remediation and biological recycling of PET waste products.
+            {ECO:0000305|PubMed:26965627}.
+            [SIMILARITY] Belongs to the AB hydrolase superfamily.
+            {ECO:0000305}.
+            [WEB RESOURCE] Name=Protein Spotlight; Note=Of plastic and men -
+            Issue 181 of July 2016;
+            URL='https://web.expasy.org/spotlight/back_issues/181/'.
+FEATURES             Location/Qualifiers
+     source          1..290
+                     /organism="Ideonella sakaiensis"
+                     /db_xref="taxon:1547922"
+     gene            1..290
+                     /locus_tag="ISF6_4831"
+     Protein         1..290
+                     /product="Poly(ethylene terephthalate) hydrolase"
+                     /EC_number="3.1.1.101"
+                     /note="PET hydrolase; PETase"
+                     /UniProtKB_evidence="Evidence at protein level"
+     Region          1..27
+                     /region_name="Signal"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000255}."
+     Region          28..290
+                     /region_name="Mature chain"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Poly(ethylene terephthalate) hydrolase.
+                     /FTId=PRO_5005513763."
+     Region          40..44
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          45..47
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          52..56
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          61..72
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          78..84
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          80..238
+                     /region_name="Abhydrolase_5"
+                     /note="Alpha/beta hydrolase family; pfam12695"
+                     /db_xref="CDD:289465"
+     Region          91..93
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          94..96
+                     /region_name="Hydrogen bonded turn"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          97..102
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          103..105
+                     /region_name="Hydrogen bonded turn"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          107..112
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          120..138
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          144..147
+                     /region_name="Hydrogen bonded turn"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          149..159
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Site            160
+                     /site_type="active"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Charge relay system.
+                     {ECO:0000250|UniProtKB:Q53547}."
+     Region          161..172
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          198..203
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Site            206
+                     /site_type="active"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Charge relay system.
+                     {ECO:0000250|UniProtKB:Q53547}."
+     Region          207..209
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          211..214
+                     /region_name="Hydrogen bonded turn"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          215..221
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          227..232
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          237..240
+                     /region_name="Hydrogen bonded turn"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Site            237
+                     /site_type="active"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Charge relay system.
+                     {ECO:0000250|UniProtKB:Q53547}."
+     Region          247..262
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          266..268
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          269..273
+                     /region_name="Helical region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+     Region          281..287
+                     /region_name="Beta-strand region"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="{ECO:0000244|PDB:5XH2}."
+ORIGIN
+        1 MNFPRASRLM QAAVLGGLMA VSAAATAQTN PYARGPNPTA ASLEASAGPF TVRSFTVSRP
+       61 SGYGAGTVYY PTNAGGTVGA IAIVPGYTAR QSSIKWWGPR LASHGFVVIT IDTNSTLDQP
+      121 SSRSSQQMAA LRQVASLNGT SSSPIYGKVD TARMGVMGWS MGGGGSLISA ANNPSLKAAA
+      181 PQAPWDSSTN FSSVTVPTLI FACENDSIAP VNSSALPIYD SMSRNAKQFL EINGGSHSCA
+      241 NSGNSNQALI GKKGVAWMKR FMDNDTRYST FACENPNSTR VSDFRTANCS
+//
+

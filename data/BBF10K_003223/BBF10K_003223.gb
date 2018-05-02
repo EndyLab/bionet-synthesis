@@ -1,0 +1,243 @@
+LOCUS       Exported                1593 bp ds-DNA     linear   PRI 02-MAY-2018
+DEFINITION  Homo sapiens major facilitator superfamily domain containing 2A 
+            (MFSD2A), transcript variant 2, mRNA.
+ACCESSION   NM_032793
+VERSION     .
+KEYWORDS    .
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens (human)
+REFERENCE   1  (bases 1 to 1593)
+  AUTHORS   Ungaro F, Tacconi C, Massimino L, Corsetto PA, Correale C, Fonteyne 
+            P, Piontini A, Garzarelli V, Calcaterra F, Della Bella S, Spinelli 
+            A, Carvello M, Rizzo AM, Vetrano S, Petti L, Fiorino G, Furfaro F, 
+            Mavilio D, Maddipati KR, Malesci A, Peyrin-Biroulet L, D'Alessio S, 
+            Danese S.
+  TITLE     MFSD2A Promotes Endothelial Generation of Inflammation-Resolving 
+            Lipid Mediators and Reduces Colitis in Mice
+  JOURNAL   Gastroenterology 153 (5), 1363-1377 (2017)
+  PUBMED    28827082
+REFERENCE   2  (bases 1 to 1593)
+  AUTHORS   Prieto-Sanchez MT, Ruiz-Palacios M, Blanco-Carnero JE, Pagan A, 
+            Hellmuth C, Uhl O, Peissner W, Ruiz-Alcaraz AJ, Parrilla JJ, 
+            Koletzko B, Larque E.
+  TITLE     Placental MFSD2a transporter is related to decreased DHA in cord 
+            blood of women with treated gestational diabetes
+  JOURNAL   Clin Nutr 36 (2), 513-521 (2017)
+  PUBMED    26869380
+REFERENCE   3  (bases 1 to 1593)
+  AUTHORS   Quek DQ, Nguyen LN, Fan H, Silver DL.
+  TITLE     Structural Insights into the Transport Mechanism of the Human 
+            Sodium-dependent Lysophosphatidylcholine Transporter MFSD2A
+  JOURNAL   J. Biol. Chem. 291 (18), 9383-9394 (2016)
+  PUBMED    26945070
+REFERENCE   4  (bases 1 to 1593)
+  AUTHORS   Wang JZ, Xiao N, Zhang YZ, Zhao CX, Guo XH, Lu LM.
+  TITLE     Mfsd2a-based pharmacological strategies for drug delivery across the
+            blood-brain barrier
+  JOURNAL   Pharmacol. Res. 104, 124-131 (2016)
+  PUBMED    26747400
+REFERENCE   5  (bases 1 to 1593)
+  AUTHORS   Guemez-Gamboa A, Nguyen LN, Yang H, Zaki MS, Kara M, Ben-Omran T, 
+            Akizu N, Rosti RO, Rosti B, Scott E, Schroth J, Copeland B, Vaux KK,
+            Cazenave-Gassiot A, Quek DQ, Wong BH, Tan BC, Wenk MR, Gunel M, 
+            Gabriel S, Chi NC, Silver DL, Gleeson JG.
+  TITLE     Inactivating mutations in MFSD2A, required for omega-3 fatty acid 
+            transport in brain, cause a lethal microcephaly syndrome
+  JOURNAL   Nat. Genet. 47 (7), 809-813 (2015)
+  PUBMED    26005868
+REFERENCE   6  (bases 1 to 1593)
+  AUTHORS   Spinola M, Falvella FS, Colombo F, Sullivan JP, Shames DS, Girard L,
+            Spessotto P, Minna JD, Dragani TA.
+  TITLE     MFSD2A is a novel lung tumor suppressor gene modulating cell cycle 
+            and matrix attachment
+  JOURNAL   Mol. Cancer 9, 62 (2010)
+  PUBMED    20236515
+REFERENCE   7  (bases 1 to 1593)
+  AUTHORS   Angers M, Uldry M, Kong D, Gimble JM, Jetten AM.
+  TITLE     Mfsd2a encodes a novel major facilitator superfamily 
+            domain-containing protein highly induced in brown adipose tissue 
+            during fasting and adaptive thermogenesis
+  JOURNAL   Biochem. J. 416 (3), 347-355 (2008)
+  PUBMED    18694395
+REFERENCE   8  (bases 1 to 1593)
+  AUTHORS   Esnault C, Priet S, Ribet D, Vernochet C, Bruls T, Lavialle C, 
+            Weissenbach J, Heidmann T.
+  TITLE     A placenta-specific receptor for the fusogenic, endogenous 
+            retrovirus-derived, human syncytin-2
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 105 (45), 17532-17537 (2008)
+  PUBMED    18988732
+REFERENCE   9  (bases 1 to 1593)
+  AUTHORS   Spinola M, Falvella FS, Galvan A, Pignatiello C, Leoni VP, Pastorino
+            U, Paroni R, Chen S, Skaug V, Haugen A, Dragani TA.
+  TITLE     Ethnic differences in frequencies of gene polymorphisms in the MYCL1
+            region and modulation of lung cancer patients' survival
+  JOURNAL   Lung Cancer 55 (3), 271-277 (2007)
+  PUBMED    17145094
+REFERENCE   10  (bases 1 to 1593)
+  AUTHORS   Yamada S, Ohira M, Horie H, Ando K, Takayasu H, Suzuki Y, Sugano S, 
+            Hirata T, Goto T, Matsunaga T, Hiyama E, Hayashi Y, Ando H, Suita S,
+            Kaneko M, Sasaki F, Hashizume K, Ohnuma N, Nakagawara A.
+  TITLE     Expression profiling and differential screening between 
+            hepatoblastomas and the corresponding normal livers: identification 
+            of high expression of the PLK1 oncogene as a poor-prognostic 
+            indicator of hepatoblastomas
+  JOURNAL   Oncogene 23 (35), 5901-5911 (2004)
+  PUBMED    15221005
+REFERENCE   11  (bases 1 to 1593)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 2, 2018 from SnapGene 4.1.9
+            http://www.snapgene.com
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The 
+            reference sequence was derived from BP321361.1, AB073383.1, 
+            DB376308.1 and AF370364.1.
+            On Dec 20, 2013 this sequence version replaced NM_032793.3.
+            Summary: The protein encoded by this gene is a transmembrane protein
+            and sodium-dependent lysophosphatidylcholine transporter. The 
+            encoded protein is involved in the establishment of the blood-brain 
+            barrier and is required for brain growth and function. Defects in 
+            this gene are a cause of a progressive microcephaly syndrome. 
+            [provided by RefSeq, Mar 2017].
+            
+            Transcript Variant: This variant (2) uses an alternate in-frame 
+            splice site in the central coding region, compared to variant 1. The
+            encoded isoform (2) is shorter, compared to isoform 1.
+            
+            Publication Note:  This RefSeq record includes a subset of the 
+            publications that are available for this gene. Please see the Gene 
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: SRR1803616.230951.1, BC011587.1
+                                           [ECO:0000332]
+            RNAseq introns              :: single sample supports all introns
+                                           SAMEA1965299, SAMEA1966682
+                                           [ECO:0000348]
+            ##Evidence-Data-END##
+            COMPLETENESS: complete on the 3' end.
+FEATURES             Location/Qualifiers
+     source          1..1593
+                     /organism="Homo sapiens"
+                     /chromosome="1"
+                     /map="1p34.2"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+     gene            1..1593
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /label=MFSD2A
+                     /note="major facilitator superfamily domain containing 2A"
+                     /db_xref="GeneID:84879"
+                     /db_xref="HGNC:HGNC:25897"
+                     /db_xref="MIM:614397"
+     CDS             1..1593
+                     /codon_start=1
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /product="sodium-dependent lysophosphatidylcholine 
+                     symporter 1 isoform 2"
+                     /label=MFSD2A
+                     /note="isoform 2 is encoded by transcript variant 2; major 
+                     facilitator superfamily domain-containing protein 2A; 
+                     sodium-dependent LPC symporter 1; sodium-dependent 
+                     lysophosphatidylcholine symporter 1"
+                     /db_xref="CCDS:CCDS446.1"
+                     /db_xref="GeneID:84879"
+                     /db_xref="HGNC:HGNC:25897"
+                     /db_xref="MIM:614397"
+                     /protein_id="NP_116182.2"
+                     /translation="MAKGEGAESGSAAGLLPTSILQSTERPAQVKKEPKKKKQQLSVCN
+                     KLCYALGGAPYQVTGCALGFFLQIYLLDVAQVGPFSASIILFVGRAWDAITDPLVGLCI
+                     SKSPWTCLGRLMPWIIFSTPLAVIAYFLIWFVPDFPHGQTYWYLLFYCLFETMVTCFHV
+                     PYSALTMFISTEQTERDSATAYRMTVEVLGTVLGTAIQGQIVGQADTPCFQDLNSSTVA
+                     SQSANHTHGTTSHRETQKAYLLAAGVIVCIYIICAVILILGVREQREPYEAQQSEPIAY
+                     FRGLRLVMSHGPYIKLITGFLFTSLAFMLVEGNFVLFCTYTLGFRNEFQNLLLAIMLSA
+                     TLTIPIWQWFLTRFGKKTAVYVGISSAVPFLILVALMESNLIITYAVAVAAGISVAAAF
+                     LLPWSMLPDVIDDFHLKQPHFHGTEPIFFSFYVFFTKFASGVSLGISTLSLDFAGYQTR
+                     GCSQPERVKFTLNMLVTMAPIVLILLGLLLFKMYPIDEERRRQNKKALQALRDEASSSG
+                     CSETDSTELASIL"
+     exon            1..93
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            94..228
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            229..353
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            354..477
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            478..556
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            557..714
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            715..805
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            806..927
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            928..1011
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            1012..1095
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            1096..1208
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            1209..1352
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            1353..1529
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+     exon            1530..1593
+                     /gene="MFSD2A"
+                     /gene_synonym="MCPH15; MFSD2; NLS1"
+                     /inference="alignment:same species:2.0.8"
+ORIGIN
+        1 ATGGCCAAAG GAGAAGGCGC CGAGAGCGGC TCCGCGGCGG GGCTGCTACC CACCAGCATC
+       61 CTCCAAAGCA CTGAACGCCC GGCCCAGGTG AAGAAAGAAC CGAAAAAGAA GAAACAACAG
+      121 TTGTCTGTTT GCAACAAGCT TTGCTATGCA CTTGGGGGAG CCCCCTACCA GGTGACGGGC
+      181 TGTGCCCTGG GTTTCTTCCT TCAGATCTAC CTATTGGATG TGGCTCAGGT GGGCCCTTTC
+      241 TCTGCCTCCA TCATCCTGTT TGTGGGCCGA GCCTGGGATG CCATCACAGA CCCCCTGGTG
+      301 GGCCTCTGCA TCAGCAAATC CCCCTGGACG TGCCTGGGTC GCCTTATGCC CTGGATCATC
+      361 TTCTCCACGC CCCTGGCCGT CATTGCCTAC TTCCTCATCT GGTTCGTGCC CGACTTCCCA
+      421 CACGGCCAGA CCTATTGGTA TCTGCTTTTC TATTGCCTCT TTGAAACAAT GGTCACGTGT
+      481 TTCCATGTTC CCTACTCGGC TCTCACCATG TTCATCAGCA CCGAGCAGAC TGAGCGGGAT
+      541 TCTGCCACCG CCTATCGGAT GACTGTGGAA GTGCTGGGCA CAGTGCTGGG CACGGCGATC
+      601 CAGGGACAAA TCGTGGGCCA AGCAGACACG CCTTGTTTCC AGGACCTCAA TAGCTCTACA
+      661 GTAGCTTCAC AAAGTGCCAA CCATACACAT GGCACCACCT CACACAGGGA AACGCAAAAG
+      721 GCATATCTGC TGGCAGCGGG GGTCATTGTC TGTATCTATA TAATCTGTGC TGTCATCCTG
+      781 ATCCTGGGCG TGCGGGAGCA GAGAGAACCC TATGAAGCCC AGCAGTCTGA GCCAATCGCC
+      841 TACTTCCGGG GCCTACGGCT GGTCATGAGC CACGGCCCAT ACATCAAACT TATTACTGGC
+      901 TTCCTCTTCA CCTCCTTGGC TTTCATGCTG GTGGAGGGGA ACTTTGTCTT GTTTTGCACC
+      961 TACACCTTGG GCTTCCGCAA TGAATTCCAG AATCTACTCC TGGCCATCAT GCTCTCGGCC
+     1021 ACTTTAACCA TTCCCATCTG GCAGTGGTTC TTGACCCGGT TTGGCAAAAA GACAGCTGTA
+     1081 TATGTTGGGA TCTCATCAGC AGTGCCATTT CTCATCTTGG TGGCCCTCAT GGAGAGTAAC
+     1141 CTCATCATTA CATATGCGGT AGCTGTGGCA GCTGGCATCA GTGTGGCAGC TGCCTTCTTA
+     1201 CTACCCTGGT CCATGCTGCC TGATGTCATT GACGACTTCC ATCTGAAGCA GCCCCACTTC
+     1261 CATGGAACCG AGCCCATCTT CTTCTCCTTC TATGTTTTCT TCACCAAGTT TGCCTCTGGA
+     1321 GTGTCACTGG GCATTTCTAC CCTCAGTCTG GACTTTGCAG GGTACCAGAC CCGTGGCTGC
+     1381 TCGCAGCCGG AACGTGTCAA GTTTACACTG AACATGCTCG TGACCATGGC TCCCATAGTT
+     1441 CTCATCCTGC TGGGCCTGCT CCTCTTCAAA ATGTACCCCA TTGATGAGGA GAGGCGGCGG
+     1501 CAGAATAAGA AGGCCCTGCA GGCACTGAGG GACGAGGCCA GCAGCTCTGG CTGCTCAGAA
+     1561 ACAGACTCCA CAGAGCTGGC TAGCATCCTG TGA
+//
