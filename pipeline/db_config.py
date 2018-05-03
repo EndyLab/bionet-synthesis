@@ -116,6 +116,7 @@ class Twist_order(Base):
     __tablename__ = 'twist_orders'
 
     id = Column(Integer, primary_key=True)
+    sub_name = Column(String)
     date = Column(String) # Date that the order was sent out
     invoice = Column(String) # Invoice number for order
 

@@ -40,7 +40,7 @@ for file in sorted(glob.glob("{}/data/*/*.json".format(BASE_PATH))):
             new_frag = Fragment(
                 fragment_name=fragment,
                 seq=data['sequence']['fragment_sequences'][fragment].upper(),
-                parts=[new])
+                parts=[new],cloning_method='entry_1')
             session.add(new_frag)
     session.add(new)
 ## Add the extra connections in for the small linked genes
