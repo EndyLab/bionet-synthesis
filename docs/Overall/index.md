@@ -2,7 +2,7 @@
 
 ## Current status
 
-![Status diagram](./sankey.svg)
+![Status diagram](./sankey.html)
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
