@@ -3,9 +3,6 @@ from sqlalchemy import create_engine,Column,Integer,String,ForeignKey,Table,Text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker,relationship
 
-import numpy as np
-import pandas as pd
-
 from config import *
 from db_config import *
 

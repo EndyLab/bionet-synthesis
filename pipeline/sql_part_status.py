@@ -12,14 +12,19 @@ from db_config import *
 status = []
 not_attempted = []
 # ignore = ['sequence_confirmed','cloning_mutation','building']
+counter = 0
 for part in session.query(Part).order_by(Part.id):
+    if counter == 750:
+        break
+    counter += 1
     tries = len([well for well in part.wells if well.plates.plate_type == 'seq_plate' and well.misplaced != 'True'])
     if tries == 0 and part.status != 'ordered' and part.status != 'received':
         array = [tries,part.part_id,part.status,[[well.misplaced,well.plates.builds.build_name] for well in part.wells if well.plates.plate_type == 'seq_plate']]
         print(array)
         not_attempted.append(array)
     print(part.part_id,part.status,str(tries))
-    state = part.status+" - "+str(tries)+" - "+part.cloning_enzyme
+    frags = len([frag for frag in part.fragments])
+    state = part.status+" - "+str(tries)+" - "+part.cloning_enzyme+" - "+str(frags)
     status.append(state)
 
 
