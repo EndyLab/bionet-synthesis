@@ -1,40 +1,35 @@
 from opentrons import robot, containers, instruments
+from opentrons.helpers import helpers
 import argparse
+import os
 
+def mix_in_well(pipette,depth=-0.75,location=None,radius=0.7):
 
-def inoculate(pipette,location=None,radius=1.0):
+    well_edges = [
+        location.from_center(x=radius, y=0, z=depth),       # right edge
+        location.from_center(x=0, y=radius, z=depth),       # back edge
+        location.from_center(x=radius * -1, y=0, z=depth),  # left edge
+        location.from_center(x=0, y=radius * -1, z=depth)   # front edge
+    ]
 
+    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
+
+    return pipette
+
+def inoculate(pipette,location=None,depth=-0.75,radius=0.7,mix=3):
+    
     _description = 'Inoculating'
     pipette.robot.add_command(_description)
-
-    height_offset = 0
-
-    if helpers.is_number(location):
-        height_offset = location
-        location = None
-
-    # if no location specified, use the previously
-    # associated placeable to get Well dimensions
+    
     if location:
         pipette.move_to(location, strategy='arc')
     else:
         location = pipette.previous_placeable
-
-    v_offset = (0, 0, height_offset)
-
-    well_edges = [
-        location.from_center(x=radius, y=0, z=0.5),       # right edge
-        location.from_center(x=radius * -1, y=0, z=0.5),  # left edge
-        location.from_center(x=0, y=radius, z=0.5),       # back edge
-        location.from_center(x=0, y=radius * -1, z=0.5)   # front edge
-    ]
-
-    # Apply vertical offset to well edges
-    well_edges = map(lambda x: x + v_offset, well_edges)
-
-    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
-    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
-    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
+    
+    for num in range(mix):
+        mix_in_well(pipette,location=location,depth=depth,radius=radius)
+    
+    pipette.move_to((location,location.from_center(x=0, y=0, z=depth)),strategy='direct')
 
     pipette.motor.move(pipette._get_plunger_position('drop_tip'))
     pipette.motor.move(pipette._get_plunger_position('bottom'))
@@ -42,8 +37,7 @@ def inoculate(pipette,location=None,radius=1.0):
     pipette.current_volume = 0
     pipette.current_tip(None)
 
-    return pipette
-
+    return
 
 if __name__ == "__main__":
 
@@ -63,7 +57,7 @@ if __name__ == "__main__":
     p10s_tipracks = [
         containers.load('tiprack-10ul', 'E2'),
     ]
-    trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
+    trash = containers.load('point', 'D1', 'holywastedplasticbatman')
     culture = containers.load('96-deep-well', 'C2')
 
     p10s = instruments.Pipette(
@@ -79,13 +73,10 @@ if __name__ == "__main__":
     )
 
     robot.home()
-
-    p10s.pick_up_tip()
-
-    p10s.move_to(culture.wells('B1').bottom())
-
-    p10s = inoculate(p10s)
-
+    
+    for num in range(3):
+        p10s.pick_up_tip()
+        inoculate(p10s,location=culture.wells(num))
 
 
 
