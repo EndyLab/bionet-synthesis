@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "name": "Total_ordered"
+    },
+    {
+      "name": "Order_006"
+    },
+    {
+      "name": "Received"
+    },
+    {
+      "name": "Attempted"
+    },
+    {
+      "name": "sequence_confirmed"
+    },
+    {
+      "name": "cloning_mutation"
+    },
+    {
+      "name": "cloning_failure"
+    },
+    {
+      "name": "sequence_failure"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 0,
+      "value": 7
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "value": 7
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "value": 7
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 2
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 2
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "value": 2
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "value": 1
+    }
+  ]
+}
