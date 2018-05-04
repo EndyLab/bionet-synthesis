@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE svg>
 <svg width="1200" height="500"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://unpkg.com/d3-sankey@0.6"></script>
