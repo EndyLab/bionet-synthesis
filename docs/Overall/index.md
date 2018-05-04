@@ -2,7 +2,7 @@
 
 ## Current status
 
-<iframe src="sankey.html"></iframe>
+<iframe class={width: 1000px;  height: 500px;} src="sankey.html"></iframe>
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
