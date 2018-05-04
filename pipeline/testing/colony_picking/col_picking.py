@@ -20,6 +20,8 @@ import math
 from itertools import chain
 
 from opentrons import robot, containers, instruments
+from opentrons.helpers import helpers
+
 import sys
 
 from cam_calibrate import *
@@ -618,7 +620,42 @@ def calibrate_ot(image,coords,centers):
 
 	return mX,bX,mY,bY
 
-def run_ot(image,coords,centers):
+def mix_in_well(pipette,depth=-0.75,location=None,radius=0.7):
+    well_edges = [
+        location.from_center(x=radius, y=0, z=depth),       # right edge
+        location.from_center(x=0, y=radius, z=depth),       # back edge
+        location.from_center(x=radius * -1, y=0, z=depth),  # left edge
+        location.from_center(x=0, y=radius * -1, z=depth)   # front edge
+    ]
+    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
+
+    return
+
+def inoculate(pipette,location=None,depth=-0.75,radius=0.7,mix=3):
+
+    _description = 'Inoculating'
+    pipette.robot.add_command(_description)
+
+    if location:
+        pipette.move_to(location, strategy='arc')
+    else:
+        location = pipette.previous_placeable
+
+    for num in range(mix):
+        mix_in_well(pipette,location=location,depth=depth,radius=radius)
+
+    pipette.move_to((location,location.from_center(x=0, y=0, z=depth)),strategy='direct')
+
+    pipette.motor.move(pipette._get_plunger_position('drop_tip'))
+    pipette.motor.move(pipette._get_plunger_position('bottom'))
+
+    pipette.current_volume = 0
+    pipette.current_tip(None)
+
+    return
+
+
+def run_ot(image,coords,centers,pick):
 	'''
 	Pass the coordinates to the robot to pick the colony
 	'''
@@ -654,6 +691,7 @@ shapes = []
 
 parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+parser.add_argument('-i', '--inoculate', required=False, action="store_false", help="Picks colonies and inoculates a deep well plate.")
 args = parser.parse_args()
 
 if args.run:
@@ -671,7 +709,7 @@ p10s_tipracks = [
     containers.load('tiprack-10ul', 'E2')
 ]
 trash = containers.load('point', 'D1', 'holywastedplasticbatman')
-well_plate = containers.load('96-deep-well', 'D2')
+well_plate = containers.load('96-deep-well', 'C2')
 trans_plate = containers.load('point','B2')
 
 
@@ -735,7 +773,7 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 	show_image(color)
 	input("check image w/ col")
 	coords = ot_coords(centers,agar)
-	run_ot(color,coords,centers)
+	run_ot(color,coords,centers,args.inoculate)
 	print("Complete")
 
 # print(shapes)colonies, centers = find_colonies(grid)
