@@ -17,7 +17,7 @@ data = []
 mis = []
 counter = 1
 no_order = []
-max = int(input("Max number to query"))
+max = int(input("Max number to query: "))
 for part in session.query(Part).order_by(Part.part_id):
     counter += 1
     if counter == max:
@@ -90,6 +90,8 @@ data_df['Frags'] = pd.to_numeric(data_df['Frags'])
 data_df.sort_values(by=['Length'])
 
 data_b = data_df[data_df['Enzyme'] == 'BbsI']
+
+
 
 # sankey = {}
 #
