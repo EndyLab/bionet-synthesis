@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "name": "Total_ordered"
+    },
+    {
+      "name": "Order_submission010"
+    },
+    {
+      "name": "Order_submission009"
+    },
+    {
+      "name": "Order_submission001"
+    },
+    {
+      "name": "Order_submission011"
+    },
+    {
+      "name": "Order_submission004"
+    },
+    {
+      "name": "Order_submission007"
+    },
+    {
+      "name": "Order_submission003"
+    },
+    {
+      "name": "Order_submission002"
+    },
+    {
+      "name": "Order_submission008"
+    },
+    {
+      "name": "Order_submission005"
+    },
+    {
+      "name": "Order_submission006"
+    },
+    {
+      "name": "Synthesizing"
+    },
+    {
+      "name": "Abandoned"
+    },
+    {
+      "name": "Received"
+    },
+    {
+      "name": "Attempted"
+    },
+    {
+      "name": "sequence_confirmed"
+    },
+    {
+      "name": "cloning_mutation"
+    },
+    {
+      "name": "cloning_failure"
+    },
+    {
+      "name": "abandoned"
+    },
+    {
+      "name": "sequence_failure"
+    },
+    {
+      "name": "cloning_error"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 0,
+      "value": 1740
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "value": 452
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "value": 420
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "value": 110
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "value": 101
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "value": 82
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "value": 68
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "value": 27
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "value": 13
+    },
+    {
+      "source": 10,
+      "target": 0,
+      "value": 10
+    },
+    {
+      "source": 11,
+      "target": 0,
+      "value": 7
+    },
+    {
+      "source": 0,
+      "target": 12,
+      "value": 2302
+    },
+    {
+      "source": 0,
+      "target": 13,
+      "value": 45
+    },
+    {
+      "source": 0,
+      "target": 14,
+      "value": 683
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "value": 683
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "value": 494
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "value": 76
+    },
+    {
+      "source": 15,
+      "target": 18,
+      "value": 66
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "value": 45
+    },
+    {
+      "source": 15,
+      "target": 20,
+      "value": 30
+    },
+    {
+      "source": 15,
+      "target": 21,
+      "value": 17
+    }
+  ]
+}
