@@ -4,7 +4,7 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Order_submission004"
+      "name": "Order_004"
     },
     {
       "name": "Abandoned"
@@ -28,10 +28,10 @@
       "name": "cloning_error"
     },
     {
-      "name": "abandoned"
+      "name": "sequence_failure"
     },
     {
-      "name": "sequence_failure"
+      "name": "abandoned"
     }
   ],
   "links": [
