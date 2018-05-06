@@ -6,7 +6,13 @@
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
-## Cloning Results
+## General Stats
+
+| Amount Ordered | Amount Received  | Amount Built | Cloning Success Rate |
+| :-------------: | :-------------: | :-------------: | :-------------: |
+| 3615654 bp / 3229 genes | 915639 bp / 702 genes | 609369 bp / 495 genes | 71% |
+
+## Detailed Results
 
 ### Individual Cloning Run Breakdown
 

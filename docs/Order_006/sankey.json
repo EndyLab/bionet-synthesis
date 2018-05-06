@@ -13,13 +13,13 @@
       "name": "Attempted"
     },
     {
-      "name": "sequence_confirmed"
-    },
-    {
       "name": "cloning_mutation"
     },
     {
       "name": "cloning_failure"
+    },
+    {
+      "name": "sequence_confirmed"
     },
     {
       "name": "sequence_failure"

@@ -6,7 +6,11 @@
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
-## Cloning Results
+## General Stats
+
+[General Table]
+
+## Detailed Results
 
 ### Individual Cloning Run Breakdown
 
