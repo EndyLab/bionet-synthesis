@@ -4,7 +4,8 @@
 
 <iframe width="800" height="500" src="sankey.html"></iframe>
 
-<img src="./outcomes.png" width="1200" height="500" />
+![Outcome versus orders](./outcomes.png){:height="500px" width="1200px"}
+
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
