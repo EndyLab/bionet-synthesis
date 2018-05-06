@@ -31,4 +31,8 @@
 
 ![Cloning Failure versus Sequence Length](./raw_length.png)
 
+### Table of genes that have failed twice to clone
+
+[Failure Table]
+
 ##### Last updated: [DATE]
