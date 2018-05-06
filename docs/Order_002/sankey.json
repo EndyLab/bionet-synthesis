@@ -19,13 +19,10 @@
       "name": "sequence_confirmed"
     },
     {
-      "name": "abandoned"
+      "name": "sequence_failure"
     },
     {
       "name": "cloning_mutation"
-    },
-    {
-      "name": "sequence_failure"
     }
   ],
   "links": [
@@ -57,16 +54,11 @@
     {
       "source": 4,
       "target": 6,
-      "value": 6
-    },
-    {
-      "source": 4,
-      "target": 7,
       "value": 1
     },
     {
       "source": 4,
-      "target": 8,
+      "target": 7,
       "value": 1
     }
   ]

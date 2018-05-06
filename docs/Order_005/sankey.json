@@ -16,9 +16,6 @@
       "name": "Attempted"
     },
     {
-      "name": "abandoned"
-    },
-    {
       "name": "cloning_mutation"
     },
     {
@@ -52,21 +49,16 @@
     {
       "source": 4,
       "target": 5,
-      "value": 6
-    },
-    {
-      "source": 4,
-      "target": 6,
       "value": 2
     },
     {
       "source": 4,
-      "target": 7,
+      "target": 6,
       "value": 1
     },
     {
       "source": 4,
-      "target": 8,
+      "target": 7,
       "value": 1
     }
   ]

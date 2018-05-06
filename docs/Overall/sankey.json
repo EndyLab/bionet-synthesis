@@ -58,9 +58,6 @@
       "name": "cloning_failure"
     },
     {
-      "name": "abandoned"
-    },
-    {
       "name": "sequence_failure"
     },
     {
@@ -161,16 +158,11 @@
     {
       "source": 15,
       "target": 19,
-      "value": 45
-    },
-    {
-      "source": 15,
-      "target": 20,
       "value": 30
     },
     {
       "source": 15,
-      "target": 21,
+      "target": 20,
       "value": 17
     }
   ]

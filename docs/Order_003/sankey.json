@@ -23,9 +23,6 @@
     },
     {
       "name": "sequence_failure"
-    },
-    {
-      "name": "abandoned"
     }
   ],
   "links": [
@@ -63,11 +60,6 @@
       "source": 4,
       "target": 7,
       "value": 2
-    },
-    {
-      "source": 4,
-      "target": 8,
-      "value": 1
     }
   ]
 }
