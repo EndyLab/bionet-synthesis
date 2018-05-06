@@ -4,7 +4,7 @@
 
 <iframe width="800" height="500" src="sankey.html"></iframe>
 
-![Status based on orders diagram](../outcome.png)
+![Status based on orders diagram](./outcome.png)
 
 ### Above is a Sankey Diagram reflecting the current status of the Free Genes project workflow
 
