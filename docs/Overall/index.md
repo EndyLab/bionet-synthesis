@@ -33,7 +33,8 @@
 
 ### Table of genes that have failed twice to clone
 
-| Part ID | Gene Name | Sequence Length | # of Fragments | Part Type | | :------------- | :------------- | :------------- | :------------- | :------------- |
+| Part ID | Gene Name | Sequence Length | # of Fragments | Part Type |
+| ------------- | ------------- | :-------------: | :-------------: | ------------- |
 | BBF10K_000157 | MMSYN1_0361 | 468 | 1 | cds |
 | BBF10K_000032 | MMSYN1_0065 | 309 | 1 | cds |
 | BBF10K_000013 | MMSYN1_0026 | 441 | 1 | cds |
@@ -71,6 +72,7 @@
 | BBF10K_000661 | pctV_Sni^opt | 1329 | 1 | cds |
 | BBF10K_000303 | MMSYN1_0663 | 417 | 1 | cds |
 | BBF10K_000235 | MMSYN1_0501 | 303 | 1 | cds |
+
 
 
 ##### Last updated: 2018-05-06
