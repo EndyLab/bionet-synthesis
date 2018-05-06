@@ -28,10 +28,10 @@
       "name": "cloning_error"
     },
     {
-      "name": "abandoned"
+      "name": "sequence_failure"
     },
     {
-      "name": "sequence_failure"
+      "name": "abandoned"
     }
   ],
   "links": [
