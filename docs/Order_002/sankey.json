@@ -22,10 +22,10 @@
       "name": "abandoned"
     },
     {
-      "name": "cloning_mutation"
+      "name": "sequence_failure"
     },
     {
-      "name": "sequence_failure"
+      "name": "cloning_mutation"
     }
   ],
   "links": [
