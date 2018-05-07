@@ -2,3 +2,4 @@
 .ipynb_checkpoints
 pipeline/config.py
 raw_files/BLAST_db
+bionet-synthesis/settings.js

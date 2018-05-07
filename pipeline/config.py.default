@@ -5,6 +5,10 @@ BASE_PATH = "./"
 SQL_USERNAME = ""
 SQL_PASSWORD = ""
 
+BIONET_RPC_URL = "http://localhost:8000/rpc"
+BIONET_USERNAME = None 
+BIONET_PASSWORD = None
+
 LOGGING_CONFIG = {
     'version': 1,
     'formatters': {

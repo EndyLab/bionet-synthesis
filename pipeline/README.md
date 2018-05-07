@@ -1,6 +1,33 @@
 # Pipeline tools for Twist synthesis
 
+## Dependencies
+
+```
+pip3 install --user numpy sqlalchemy pandas biopython matplotlib seaborn jsonrpc_requests
+```
+
+## Config
+
+```
+cp config.py.default config.py
+```
+
+Edit `config.py` to set SQL_USERNAME and SQL_PASSWORD.
+
+If you want bionet integration, also set:
+
+* BIONET_RPC_URL
+* BIONET_USERNAME
+* BIONET_PASSWORD
+
+## Check if it's working
+
+```
+python3 sql_analyze.py
+```
+
 ## Quickstart
+
 1. Get yo' gene coding sequences into a CSV with the format Gene,Sequence
 2. Optimize: `cat genes.csv | python optimize-genes.py > optimized.csv`
    This removes invalid restriction sites, converts stops to TGA for MoClo, and sets the penultimate codon to our fixed list
