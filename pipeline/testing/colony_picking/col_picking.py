@@ -699,6 +699,7 @@ def run_ot(image,coords,centers,pick):
 	'''
 	Pass the coordinates to the robot to pick the colony
 	'''
+
 	fx,fy = calibrate_ot(image,coords,centers)
 
 	for i,((x,y),cen) in enumerate(zip(coords,centers)):
