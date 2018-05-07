@@ -1,0 +1,17 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <title>rpc-multiauth rpc_http_combined example</title>
+    <script src="bundle.js"></script>
+  </head>
+  <body>
+    <h3>rpc-multiauth rpc_http_combined example</h3>
+    <p>This example demonstrates combining all of the functionality of rpc-multiauth: RPC authentication using LocalStorage, XMLHTTPRequest authentication using custom headers, non-js-triggered HTTP request (such as the ones triggered by img tags) authentication using client-side cookies, all with the same token so login only happens once.</p>
+    <input id="login-btn" type="button" value="Log in using RPC" disabled />
+    <input id="xhr-btn" type="button" value="XHR with custom auth header" disabled />
+    <input id="image-btn" type="button" value="Load image with cookie auth" disabled />
+    <input id="logout-btn" type="button" value="Log out" disabled />
+    <br/>
+    <textarea id="debug" cols="50" rows="10"></textarea>
+  </body>
+</html>

@@ -20,6 +20,7 @@ glycerol = labware.load('96-flat', '7')
 liquid_trash = labware.load('trash-box', '10')
 # Instrument Set-up
 pipette = instruments.P300_Multi(mount='left', tip_racks=[tiprack, tiprack2])
+pipette_single = instruments.P300_Single(mount='left', tip_racks = [tiprack, tiprack2])
 
 plates = [plate1, plate2]
 pipette.set_pick_up_current(0.8)
