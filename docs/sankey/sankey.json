@@ -1,65 +1,137 @@
 {
   "nodes": [
     {
-      "id": "Ordered: 748"
+      "name": "Total_ordered"
     },
     {
-      "id": "Abandoned: 748"
+      "name": "Order_001"
     },
     {
-      "id": "Received: 748"
+      "name": "Order_004"
     },
     {
-      "id": "Build Attempted: 748"
+      "name": "Order_007"
     },
     {
-      "id": "Verified Success: 490"
+      "name": "Order_003"
     },
     {
-      "id": "Mutation: 93"
+      "name": "Order_002"
     },
     {
-      "id": "Failure: 118"
+      "name": "Order_008"
     },
     {
-      "id": "Not Yet Attempted: 2"
+      "name": "Order_005"
+    },
+    {
+      "name": "Order_006"
+    },
+    {
+      "name": "Abandoned"
+    },
+    {
+      "name": "Received"
+    },
+    {
+      "name": "Attempted"
+    },
+    {
+      "name": "sequence_confirmed"
+    },
+    {
+      "name": "cloning_mutation"
+    },
+    {
+      "name": "cloning_failure"
+    },
+    {
+      "name": "sequence_failure"
+    },
+    {
+      "name": "cloning_error"
     }
   ],
   "links": [
     {
-      "source": "Ordered",
-      "target": "Abandoned",
+      "source": 1,
+      "target": 0,
+      "value": 420
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "value": 101
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "value": 82
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "value": 68
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "value": 27
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "value": 13
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "value": 10
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "value": 7
+    },
+    {
+      "source": 0,
+      "target": 9,
       "value": 45
     },
     {
-      "source": "Ordered",
-      "target": "Received",
-      "value": 703
+      "source": 0,
+      "target": 10,
+      "value": 683
     },
     {
-      "source": "Received",
-      "target": "Build Attempted",
-      "value": 703
+      "source": 10,
+      "target": 11,
+      "value": 683
     },
     {
-      "source": "Build Attempted",
-      "target": "Verified Success",
-      "value": 490
+      "source": 11,
+      "target": 12,
+      "value": 494
     },
     {
-      "source": "Build Attempted",
-      "target": "Mutation",
-      "value": 93
+      "source": 11,
+      "target": 13,
+      "value": 76
     },
     {
-      "source": "Build Attempted",
-      "target": "Failure",
-      "value": 118
+      "source": 11,
+      "target": 14,
+      "value": 66
     },
     {
-      "source": "Build Attempted",
-      "target": "Not Yet Attempted",
-      "value": 2
+      "source": 11,
+      "target": 15,
+      "value": 30
+    },
+    {
+      "source": 11,
+      "target": 16,
+      "value": 17
     }
   ]
 }
