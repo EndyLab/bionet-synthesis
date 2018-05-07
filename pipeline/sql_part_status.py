@@ -7,7 +7,8 @@ import numpy as np
 import pandas as pd
 
 from config import *
-from db_config import *
+import db_config
+session,engine = db_config.connect_db()
 
 status = []
 not_attempted = []
