@@ -2,6 +2,9 @@
 
 BASE_PATH = "./"
 
+SQL_USERNAME = ""
+SQL_PASSWORD = ""
+
 LOGGING_CONFIG = {
     'version': 1,
     'formatters': {

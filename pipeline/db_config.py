@@ -9,7 +9,7 @@ import pandas as pd
 from config import *
 
 ## Connect to the AWS server running the openfoundry database
-conn_str = 'postgresql+psycopg2://openfoundry:freegenestomakegenesfree@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'
+conn_str = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
 engine = sqlalchemy.create_engine(conn_str, echo=False)
 
 ## Begin using sqlite as a local database
