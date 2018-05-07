@@ -1,0 +1,315 @@
+2018-05-06 18:36:24,557 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 1 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:36:25,566 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 4 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:36:29,568 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 9 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:36:38,571 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 16 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:36:54,573 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 25 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:37:19,575 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 36 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:39:05,122 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 1 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:39:06,125 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 4 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:39:10,127 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 9 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:39:19,129 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 16 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:39:35,131 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 25 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:40:00,133 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 36 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:42:20,438 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 1 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:42:21,441 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 4 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:42:25,444 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 9 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:42:34,446 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 16 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:42:50,447 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 25 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:43:21,607 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 1 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:43:22,610 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 4 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:43:26,613 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 9 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+2018-05-06 18:43:35,615 opentrons.drivers.smoothie_drivers.v2_0_0.driver ERROR [Line 349]     Failed to send MOVE command. Will reconnect and try again in 16 seconds
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 339, in move
+    self.send_command(self.MOVE, **args, m400=True, timeout=300)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/driver.py", line 274, in send_command
+    self.connection.write_string(gcode_line)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/connection.py", line 85, in write_string
+    self.serial_port.write(data_string.encode())
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 358, in write
+    self.process_command(data)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 340, in process_command
+    message = command_func(arguments)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/opentrons/drivers/smoothie_drivers/v2_0_0/virtual_smoothie.py", line 166, in process_move_command
+    if self.coordinates['target'][axis] < -3 and self.limit_switches:
+TypeError: '<' not supported between instances of 'NoneType' and 'int'

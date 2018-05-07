@@ -1,9 +1,6 @@
 from matplotlib import pyplot as plt
-from scipy.signal import butter, lfilter, freqz, argrelextrema
-# from scipy.optimize import curve_fit
-# from pylab import *
-import matplotlib.mlab as mlab
-from scipy.stats import norm
+import seaborn as sns
+from scipy import interpolate
 
 from imutils import contours
 from skimage import measure
@@ -270,7 +267,7 @@ def find_colonies(image):
 	'''
 	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
 	cl1 = clahe.apply(image)
-	show_small(cl1)
+	# show_small(cl1)
 
 	# nested = cl1.tolist()
 	# unnest = list(chain(*nested))
@@ -323,16 +320,16 @@ def find_colonies(image):
 	# for e in ends:
 	# 	ax2.plot(bins[:-1][e],nums[e], 'r.')
 	ax2.plot(threshold*np.ones(5000), range(5000), marker='o', markersize=3, color="green")
-	fig2.show()
-	input('Check hist')
-	plt.close()
+	# fig2.show()
+	# input('Check hist')
+	# plt.close()
 	# threshold = bins[:-1][ends[-1]]
 	# if threshold < 160:
 	# 	threshold = 170
 	# threshold = lowest
 	print("thresh: ",threshold)
 	thresh = cv2.threshold(cl1, threshold, 255, cv2.THRESH_BINARY)[1]
-	show_small(thresh)
+	# show_small(thresh)
 	cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_NONE)
 	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
@@ -403,8 +400,8 @@ def find_colonies(image):
 	cv2.drawContours(color_th, good_cols, -1, (0,255,0), 1)
 	cv2.drawContours(color, bad_cols, -1, (0,0,255), 1)
 	cv2.drawContours(color_th, bad_cols, -1, (0,0,255), 1)
-	show_small(color_th)
-	show_small(color)
+	# show_small(color_th)
+	# show_small(color)
 
 	# 	attributes = [area,perimeter,area/((perimeter**2)/(4*math.pi)),ratio]
 	# 	data.append(attributes)
@@ -591,34 +588,77 @@ def move_motor():
 	print(x,y)
 	return x,y
 
+def find_offset(x,y,z):
+	f = interpolate.interp2d(x, y, z, kind='linear')
+
+	xnew = np.arange(min(x), max(x))
+	ynew = np.arange(min(y), max(y))
+
+	xx, yy = np.meshgrid(xnew, ynew)
+
+	znew = f(xnew, ynew)
+	z_flat = [z for sublist in znew.tolist() for z in sublist]
+
+	xx, yy = np.meshgrid(xnew, ynew)
+	x_flat = [x for sublist in xx.tolist() for x in sublist]
+	y_flat = [y for sublist in yy.tolist() for y in sublist]
+
+	all_data = pd.DataFrame({
+		'X':x_flat,
+		'Y':y_flat,
+		'Offset':z_flat
+	})
+	result = all_data.pivot(index='Y', columns='X', values='Offset')
+	fig, ax = plt.subplots()
+
+	ax = sns.heatmap(result,ax=ax,xticklabels=10,yticklabels=10)
+	xt = np.arange(int(min(x)), int(max(x)), step=10)
+	xl = [str(num) for num in xt]
+	# yt = np.arange(int(min(y)), int(max(y)), step=10)
+	# yl = [str(num) for num in yt]
+	plt.xticks(xt,xl)
+	# print(yt,yl)
+	# plt.yticks(yt,yl)
+
+	fig.show()
+	print('Y-axis is reversed')
+	input("Check heatmap")
+	plt.close()
+
+	return f
+
 def calibrate_ot(image,coords,centers):
-	first,_,last,_ = order_points(coords)
-	print(last,first)
-	input("check")
-	_,last_cen,_,first_cen = order_points(centers)
+	bl_O, tl_O, tr_O, br_O = order_points(coords)
+	tl_I, tr_I, br_I, bl_I = order_points(centers)
+
+	paired_coords = [[bl_O,bl_I],[tl_O,tl_I],[tr_O,tr_I],[br_O,br_I]]
 
 	temp = np.copy(image)
+	Ox_l = []
+	Oy_l = []
+	Ozx = []
+	Ozy = []
+	for [[Ox,Oy],[Ix,Iy]] in paired_coords:
+		cv2.line(temp,(int(Ix),int(Iy)-30),(int(Ix),int(Iy)+30),(0,0,255),2)
+		cv2.line(temp,(int(Ix)-30,int(Iy)),(int(Ix)+30,int(Iy)),(0,0,255),2)
+		show_image(temp)
+		p10s.move_to((trans_plate,[Ox,Oy,0]))
+		print("Calibrate the position for the colony")
+		off_x,off_y = move_motor()
+		Ox_l.append(Ox)
+		Oy_l.append(Oy)
+		Ozx.append(off_x)
+		Ozy.append(off_y)
+	print(paired_coords)
+	print(Ox_l)
+	print(Oy_l)
+	print(Ozx)
+	print(Ozy)
+	fx = find_offset(Ox_l,Oy_l,Ozx)
+	fy = find_offset(Ox_l,Oy_l,Ozy)
 
-	cv2.line(temp,(int(first_cen[0]),int(first_cen[1])-30),(int(first_cen[0]),int(first_cen[1])+30),(0,0,255),2)
-	cv2.line(temp,(int(first_cen[0])-30,int(first_cen[1])),(int(first_cen[0])+30,int(first_cen[1])),(0,0,255),2)
-	show_image(temp)
-	p10s.move_to((trans_plate,[first[0],first[1],0]))
-	print("Calibrate the first colony")
-	off_x1,off_y1 = move_motor()
 
-	cv2.line(temp,(int(last_cen[0]),int(last_cen[1])-30),(int(last_cen[0]),int(last_cen[1])+30),(0,0,255),2)
-	cv2.line(temp,(int(last_cen[0])-30,int(last_cen[1])),(int(last_cen[0])+30,int(last_cen[1])),(0,0,255),2)
-	show_image(temp)
-	p10s.move_to((trans_plate,[last[0],last[1],0]))
-	print("Calibrate the last colony")
-	off_x2,off_y2 = move_motor()
-
-	mX = (off_x2-off_x1)/(last[0]-first[0])
-	bX = off_x1 - mX*first[0]
-	mY = (off_y2-off_y1)/(last[1]-first[1])
-	bY = off_y1 - mY*first[1]
-
-	return mX,bX,mY,bY
+	return fx,fy
 
 def mix_in_well(pipette,depth=-0.75,location=None,radius=0.7):
     well_edges = [
@@ -659,14 +699,13 @@ def run_ot(image,coords,centers,pick):
 	'''
 	Pass the coordinates to the robot to pick the colony
 	'''
-	mX,bX,mY,bY = calibrate_ot(image,coords,centers)
-	print(mX,bX,mY,bY)
+	fx,fy = calibrate_ot(image,coords,centers)
 
 	for i,((x,y),cen) in enumerate(zip(coords,centers)):
 		temp = image
 		print(i,":",x,y)
-		x_off = (mX * x) + bX
-		y_off = (mY * y) + bY
+		x_off = fx(x,y)[0]
+		y_off = fy(x,y)[0]
 		new_x = x + x_off
 		new_y = y + y_off
 		print(i,":",new_x,new_y)
@@ -682,7 +721,7 @@ def show_image(image,width=400):
 	resized = imutils.resize(image,width=width)
 	cv2.imshow("Image", resized)
 	cv2.waitKey(5)
-	input()
+	input('Enter to move to next image')
 	return
 
 
@@ -758,8 +797,8 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 			midg_y = int(((group[1][0]-group[0][0])/2)+group[0][0])
 			midg_x = int(((group[1][1]-group[0][1])/2)+group[0][1])
 			cv2.rectangle(color,(group[0][0],group[1][0]),(group[0][1],group[1][1]),(0,0,255),3)
-			show_image(color)
-			input("check image")
+			# show_image(color)
+			# input("check image")
 		else:
 			cali_cenX = center[0][0]+group[0][0]
 			cali_cenY = center[0][1]+group[1][0]
@@ -769,19 +808,13 @@ for file in sorted(glob.glob('./cam_photos/*.jpg')):
 				(0,0,255), 2)
 			show_image(color)
 			centers.append([cali_cenX,cali_cenY])
-			input("check image w/ col")
+			# input("check image w/ col")
 	show_image(color)
-	input("check image w/ col")
+	input("check image")
 	coords = ot_coords(centers,agar)
 	run_ot(color,coords,centers,args.inoculate)
 	print("Complete")
 
-# print(shapes)colonies, centers = find_colonies(grid)
-# input("stop")
-# res = np.hstack(grids)
-# cv2.imshow("Image", res)
-# cv2.imshow("Image", warped)
-# cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 ## Finding the reference point
