@@ -1,0 +1,88 @@
+
+var auth = require('../../index.js');
+var xhr = require('xhr'); // XMLHTTPRequests
+var jwt = require('jsonwebtoken'); // json web tokens (jwt)
+
+
+function log(str) {
+    var txt = document.getElementById('debug');
+    txt.innerHTML += str + "\n";
+    txt.scrollTop = txt.scrollHeight;
+}
+
+var req = function() {log("Not logged in.")};
+
+
+
+function pageInit() {
+
+    var loginBtn = document.getElementById('login-btn');
+    var publicBtn = document.getElementById('public-btn');
+    var userBtn = document.getElementById('user-btn');
+    var adminBtn = document.getElementById('admin-btn');
+    var logoutBtn = document.getElementById('logout-btn');
+
+    if(auth.isLoggedIn()) {
+        log("Already logged in!");
+        req = auth.requester();
+    } else {
+        log("Not logged in");
+    }
+
+    loginBtn.addEventListener('click', function() {
+        auth.login('/login', {
+            username: 'cookie',
+            password: 'cat'
+        }, function(err, token) {
+            if(err) return log("Error: " + err);
+            log("Logged in!");
+
+            req = auth.requester();
+        });
+    });
+    
+    publicBtn.addEventListener('click', function() {
+        req({
+            uri: '/public'
+        }, function(err, res, body) {
+            if(err) return log("Error: " + err + ' | ' + body);
+            log("Server said: " + body);
+        });
+    });
+
+    userBtn.addEventListener('click', function() {
+        req({
+            uri: '/user/profile'
+        }, function(err, res, body) {
+            if(err) return log("Error: " + err + ' | ' + body);
+            log("Server said: " + body);
+        });
+    });
+
+    adminBtn.addEventListener('click', function() {
+        req({
+            uri: '/admin/settings'
+        }, function(err, res, body) {
+            if(err) return log("Error: " + err + ' | ' + body);
+            log("Server said: " + body);
+        });
+    });
+
+
+    logoutBtn.addEventListener('click', function() {
+        auth.logout();
+        log("Logged out!");
+    });
+   
+}
+
+
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+ready(pageInit);

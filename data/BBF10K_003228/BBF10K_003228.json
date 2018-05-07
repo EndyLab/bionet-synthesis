@@ -10,7 +10,7 @@
   "info": {
     "documentation": {
       "gene_name": "Klenow Fragment (3'-5' exo-)",
-      "description": "Klenow Fragment (3\u00b4\u2192 5\u00b4 exo-) is an N-terminal truncation of DNA Polymerase I which retains polymerase activity, but has lost the 5\u00b4\u2192 3\u00b4 exonuclease activity and has mutations (D355A, E357A) which abolish the 3\u00b4\u2192 5\u00b4 exonuclease activity.",
+      "description": "Klenow Fragment (3´→ 5´ exo-) is an N-terminal truncation of DNA Polymerase I which retains polymerase activity, but has lost the 5´→ 3´ exonuclease activity and has mutations (D355A, E357A) which abolish the 3´→ 5´ exonuclease activity.",
       "database_links": "http://www.cybertory.org/exercises/primerDesign/polA.html",
       "source": ""
     },
@@ -86,5 +86,6 @@
   },
   "tags": [
     ""
-  ]
+  ],
+  "virtual_id": "v-5f759d90-534a-49a8-a301-08a2bf953f84"
 }

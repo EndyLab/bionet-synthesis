@@ -41,6 +41,7 @@ class Part(Base):
     part_type = Column(String) # For fragmentation
     cloning_enzyme = Column(String) # Enzyme used in initial cloning
     organism = Column(String) # For codon optimization
+    bionet_id = Column(String) # Unique ID for the bionet vitual
     seq = Column(String)
     status = Column(String) # Gives the most updated status of this part
 
