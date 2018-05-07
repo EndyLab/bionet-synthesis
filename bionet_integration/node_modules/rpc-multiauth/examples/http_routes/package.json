@@ -1,0 +1,12 @@
+{
+  "name": "rpc-multiauth-example-http_routes",
+  "version": "0.0.0",
+  "dependencies": {
+    "ecstatic": "^1.1.3",
+    "routes": "^2.1.0"
+  },
+  "scripts": {
+    "build": "browserify client.js > bundle.js"
+  },
+  "license": "AGPL-1.0"
+}
