@@ -2,9 +2,8 @@ import numpy as np
 import cv2
 import imutils
 
-cam = cv2.VideoCapture(0)
-
 def stream_cam():
+    cam = cv2.VideoCapture(0)
     counter = 0
     while(True):
         ret, frame = cam.read()
@@ -16,15 +15,15 @@ def stream_cam():
         cv2.imshow('img', gray)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
+            name = input('enter build and plate number (e.g. 10p2): ')
+            cv2.imwrite('./new_photos/new_build_{}.jpg'.format(name),frame)
+            cv2.waitKey(10)
             counter += 1
-            cv2.imwrite('./cam_photos/photo{}.jpg'.format(str(counter)),frame)
-            cv2.waitKey(0)
-            # break
+            if counter == 5:
+                break
+
+    cam.release()
+    cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     stream_cam()
-
-
-# When everything done, release the capture
-cam.release()
-cv2.destroyAllWindows()
