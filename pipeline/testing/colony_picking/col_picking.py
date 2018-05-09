@@ -291,7 +291,7 @@ def show_small(img):
 	cv2.waitKey(1)
 	input("next image")
 
-def find_colonies(image):
+def find_colonies(image,check):
 	'''
 	Searches the image for pickable colonies and returns the
 	location of their centers
@@ -429,40 +429,42 @@ def find_colonies(image):
 	else:
 		# Currently picks the good colony closest to the top of the plate
 		# TODO: Modify the selection process to allow for sorting by proximity
-		# def choose_colony(img,centers):
-		# 	print("Enter 'g'->good, 'b'->bad")
-		# 	x = len(centers)
-		# 	counter = 0
-		# 	temp_o = np.copy(img)
-		# 	while x != 0:
-		# 		temp = np.copy(temp_o)
-		# 		counter -= 1
-		# 		good_center = centers[counter]
-		# 		print(good_center)
-		# 		cv2.circle(temp, (int(good_center[0][0]),int(good_center[0][1])), int(20),
-		# 			(0,255,255), 2)
-		# 		resized = imutils.resize(temp,width=100)
-		# 		cv2.imshow("Image", resized)
-		# 		cv2.waitKey(10)
-		# 		c = getch.getch()
-		# 		if c == "g":
-		# 			print("Good")
-		# 			return good_center
-		# 		elif c == "b":
-		# 			print("Going to next option")
-		# 			x -= 1
-		# 		else:
-		# 			print("Going to next option")
-		# 			x -= 1
-		# 	print('Iterated through all colonies')
-		# 	ans = str(input('r-retry, q-quit'))
-		# 	if ans == 'r':
-		# 		return choose_colony(img,centers)
-		# 	elif ans == 'q':
-		# 		return []
-		#
-		# good_center = choose_colony(color,centers)
-		good_center = centers[-1]
+		def choose_colony(img,centers):
+			print("Enter 'g'->good, 'b'->bad")
+			show_small(color)
+			x = len(centers)
+			counter = 0
+			temp_o = np.copy(img)
+			while x != 0:
+				temp = np.copy(temp_o)
+				counter -= 1
+				good_center = centers[counter]
+				print(good_center)
+				cv2.circle(temp, (int(good_center[0][0]),int(good_center[0][1])), int(20),
+					(0,255,255), 2)
+				resized = imutils.resize(temp,width=100)
+				cv2.imshow("Image", resized)
+				cv2.waitKey(10)
+				c = getch.getch()
+				if c == "g":
+					print("Good")
+					return good_center
+				elif c == "b":
+					print("Going to next option")
+					x -= 1
+				else:
+					print("Going to next option")
+					x -= 1
+			print('Iterated through all colonies')
+			ans = str(input('r-retry, q-quit'))
+			if ans == 'r':
+				return choose_colony(img,centers)
+			elif ans == 'q':
+				return []
+		if check:
+			good_center = choose_colony(color,centers)
+		else:
+			good_center = centers[-1]
 
 	# print("GOOD:",good_cols)
 	# print("BAD:",bad_cols)
@@ -518,7 +520,7 @@ def find_reference(image):
 	to the image
 	'''
 	# The agar outline
-	all_points = [[19,27],[377,27],[378,610],[19, 614]]
+	all_points = [[19,27],[377,27],[376,605],[19, 610]]
 	all_points = np.array(all_points)
 	ratio = image.shape[1]/400
 	all_points = np.multiply(all_points,ratio)
@@ -742,7 +744,7 @@ def well_addresses():
             target_well.append(temp_well)
     return target_well
 
-def find_colony_coordinates(file):
+def find_colony_coordinates(file,check):
 	build_num,plate_num = re.match(r'.*\/.+.([0-9]{3})p([0-9]).jpg',file).groups()
 	print('Build: {}, Plate: {}'.format(build_num,plate_num))
 	print((int(plate_num)-1)*24,int(plate_num)*24)
@@ -776,7 +778,7 @@ def find_colony_coordinates(file):
 	for well,group in zip(wells,groups):
 		print("Next section:",group)
 		partial = grid[group[1][0]:group[1][1],group[0][0]:group[0][1]]
-		center = find_colonies(partial)
+		center = find_colonies(partial,check)
 		if center == []:
 			midg_y = int(((group[1][0]-group[0][0])/2)+group[0][0])
 			midg_x = int(((group[1][1]-group[0][1])/2)+group[0][1])
@@ -803,6 +805,7 @@ def pick_colonies():
 	parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
 	parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
 	parser.add_argument('-i', '--inoculate', required=False, action="store_true", help="Picks colonies and inoculates a deep well plate.")
+	parser.add_argument('-c', '--check', required=False, action="store_true", help="Allows the user to choose the colonies.")
 	args = parser.parse_args()
 
 	if args.run:
@@ -840,7 +843,7 @@ def pick_colonies():
 		print(file)
 		print("Inoculate: ",args.inoculate)
 		input()
-		centers,agar,x_dim,y_dim,missing = find_colony_coordinates(file)
+		centers,agar,x_dim,y_dim,missing = find_colony_coordinates(file,args.check)
 		coords = ot_coords(centers,agar,x_dim,y_dim)
 		run_ot(p10s,trans_plate,deep_well,agar,coords,centers,args.inoculate)
 		print('The following wells were skipped:\n',missing)
