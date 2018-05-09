@@ -679,8 +679,23 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 		print('Already has a tip')
 
 	print(colony)
+	x,y,z = colony
 	pipette.move_to((agar_plate,colony), strategy='arc')
-
+	input('Above colony?')
+	move = True
+	print('Use "r"->up, "f"->down to pick colony')
+	while move == True:
+		c = getch.getch()
+		if c == 'r':
+			z += 0.5
+			print('up')
+		elif c == 'f':
+			z -= 0.5
+			print('down')
+		elif c == 'x':
+			break
+		pipette.move_to((agar_plate,[x,y,z]), strategy='direct')
+	print('Final z:', z)
 	pipette.move_to(well, strategy='arc')
 
 	for num in range(mix):
