@@ -555,7 +555,7 @@ def ot_coords(centers,image,x_dim,y_dim):
 		coords.append([x,y])
 	return coords
 
-def move_motor():
+def move_motor(pipette):
 	'''Allows for real-time calibration of the p10single channel xy location'''
 	z = 0
 	print("Change xy - w:back, d:forward, a:left, d:right, x:exit")
@@ -564,19 +564,19 @@ def move_motor():
 	while z == 0:
 		c = getch.getch()
 		if c == "w":
-			p10s.robot._driver.move(y=0.5,mode="relative")
+			pipette.robot._driver.move(y=0.5,mode="relative")
 			print("up")
 			y += 0.5
 		elif c == "s":
-			p10s.robot._driver.move(y=-0.5,mode="relative")
+			pipette.robot._driver.move(y=-0.5,mode="relative")
 			print("down")
 			y -= 0.5
 		elif c == "a":
-			p10s.robot._driver.move(x=-0.5,mode="relative")
+			pipette.robot._driver.move(x=-0.5,mode="relative")
 			print("left")
 			x -= 0.5
 		elif c == "d":
-			p10s.robot._driver.move(x=0.5,mode="relative")
+			pipette.robot._driver.move(x=0.5,mode="relative")
 			print("right")
 			x += 0.5
 		elif c == "x":
@@ -643,7 +643,7 @@ def calibrate_ot(pipette,agar_plate,image,coords,centers):
 		show_image(temp)
 		pipette.move_to((agar_plate,[Ox,Oy,0]))
 		print("Calibrate the position for the colony")
-		off_x,off_y = move_motor()
+		off_x,off_y = move_motor(pipette)
 		Ox_l.append(Ox)
 		Oy_l.append(Oy)
 		Ozx.append(off_x)
