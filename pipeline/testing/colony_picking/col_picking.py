@@ -671,31 +671,47 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 	_description = 'Inoculating'
 	pipette.robot.add_command(_description)
 
+	x,y,z = colony
+
 	if not pipette.current_tip():
 		print('no tip')
 		pipette.pick_up_tip()
 		print('picking up tip')
 	else:
 		print('Already has a tip')
+		print('Calibrate Z')
+		print('Use "r"->up, "f"->down to pick colony')
+		pipette.move_to((agar_plate,[x,y,z]), strategy='arc')
+		while True:
+			c = getch.getch()
+			if c == 'r':
+				z += 0.5
+				print('up')
+			elif c == 'f':
+				z -= 0.5
+				print('down')
+			elif c == 'x':
+				break
+			pipette.move_to((agar_plate,[x,y,z]), strategy='direct')
+		print('Final z:', z)
 
-	print(colony)
-	x,y,z = colony
-	pipette.move_to((agar_plate,colony), strategy='arc')
-	input('Above colony?')
-	move = True
-	print('Use "r"->up, "f"->down to pick colony')
-	while move == True:
-		c = getch.getch()
-		if c == 'r':
-			z += 0.5
-			print('up')
-		elif c == 'f':
-			z -= 0.5
-			print('down')
-		elif c == 'x':
-			break
-		pipette.move_to((agar_plate,[x,y,z]), strategy='direct')
-	print('Final z:', z)
+	print(x,y,z)
+	pipette.move_to((agar_plate,[x,y,z]), strategy='arc')
+	input('Picked colony?')
+	# move = True
+	# print('Use "r"->up, "f"->down to pick colony')
+	# while move == True:
+	# 	c = getch.getch()
+	# 	if c == 'r':
+	# 		z += 0.5
+	# 		print('up')
+	# 	elif c == 'f':
+	# 		z -= 0.5
+	# 		print('down')
+	# 	elif c == 'x':
+	# 		break
+	# 	pipette.move_to((agar_plate,[x,y,z]), strategy='direct')
+	# print('Final z:', z)
 	pipette.move_to(well, strategy='arc')
 
 	for num in range(mix):
@@ -709,7 +725,7 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 	pipette.current_volume = 0
 	pipette.current_tip(None)
 
-	return
+	return z
 
 
 def run_ot(pipette,agar_plate,deep_well,image,coords,centers,pick):
@@ -718,7 +734,7 @@ def run_ot(pipette,agar_plate,deep_well,image,coords,centers,pick):
 	'''
 
 	fx,fy = calibrate_ot(pipette,agar_plate,image,coords,centers)
-
+	z = 0
 	for i,((Ox,Oy),(Ix,Iy,well)) in enumerate(zip(coords,centers)):
 		temp = image
 		print(i,":",Ox,Oy)
@@ -731,12 +747,12 @@ def run_ot(pipette,agar_plate,deep_well,image,coords,centers,pick):
 			(0,0,255), 2)
 		show_image(temp)
 		print(well)
-		colony = [new_x,new_y,0]
+		colony = [new_x,new_y,z]
 		if pick:
 			print('inoculating')
-			inoculate(pipette,agar_plate,colony,deep_well.wells(well))
+			z = inoculate(pipette,agar_plate,colony,deep_well.wells(well))
 		else:
-			pipette.move_to((agar_plate,[new_x,new_y,0]))
+			pipette.move_to((agar_plate,[new_x,new_y,z]))
 		input("click to move to next colony")
 
 def show_image(image,width=400):
