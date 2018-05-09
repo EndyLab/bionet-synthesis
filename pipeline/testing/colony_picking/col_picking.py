@@ -12,6 +12,7 @@ import imutils
 import cv2
 import glob
 import os
+import re
 import getch
 import math
 from itertools import chain
@@ -420,7 +421,7 @@ def find_colonies(image):
 	cv2.drawContours(color_th, good_cols, -1, (0,255,0), 1)
 	cv2.drawContours(color, bad_cols, -1, (0,0,255), 1)
 	cv2.drawContours(color_th, bad_cols, -1, (0,0,255), 1)
-	show_small(color_th)
+	# show_small(color_th)
 	# show_small(color)
 
 	if len(centers) == 0:
@@ -428,39 +429,40 @@ def find_colonies(image):
 	else:
 		# Currently picks the good colony closest to the top of the plate
 		# TODO: Modify the selection process to allow for sorting by proximity
-		def choose_colony(img,centers):
-			print("Enter 'g'->good, 'b'->bad")
-			x = len(centers)
-			counter = 0
-			temp_o = np.copy(img)
-			while x != 0:
-				temp = np.copy(temp_o)
-				counter -= 1
-				good_center = centers[counter]
-				print(good_center)
-				cv2.circle(temp, (int(good_center[0][0]),int(good_center[0][1])), int(20),
-					(0,255,255), 2)
-				resized = imutils.resize(temp,width=100)
-				cv2.imshow("Image", resized)
-				cv2.waitKey(10)
-				c = getch.getch()
-				if c == "g":
-					print("Good")
-					return good_center
-				elif c == "b":
-					print("Going to next option")
-					x -= 1
-				else:
-					print("Going to next option")
-					x -= 1
-			print('Iterated through all colonies')
-			ans = str(input('r-retry, q-quit'))
-			if ans == 'r':
-				return choose_colony(img,centers)
-			elif ans == 'q':
-				return []
-
-		good_center = choose_colony(color,centers)
+		# def choose_colony(img,centers):
+		# 	print("Enter 'g'->good, 'b'->bad")
+		# 	x = len(centers)
+		# 	counter = 0
+		# 	temp_o = np.copy(img)
+		# 	while x != 0:
+		# 		temp = np.copy(temp_o)
+		# 		counter -= 1
+		# 		good_center = centers[counter]
+		# 		print(good_center)
+		# 		cv2.circle(temp, (int(good_center[0][0]),int(good_center[0][1])), int(20),
+		# 			(0,255,255), 2)
+		# 		resized = imutils.resize(temp,width=100)
+		# 		cv2.imshow("Image", resized)
+		# 		cv2.waitKey(10)
+		# 		c = getch.getch()
+		# 		if c == "g":
+		# 			print("Good")
+		# 			return good_center
+		# 		elif c == "b":
+		# 			print("Going to next option")
+		# 			x -= 1
+		# 		else:
+		# 			print("Going to next option")
+		# 			x -= 1
+		# 	print('Iterated through all colonies')
+		# 	ans = str(input('r-retry, q-quit'))
+		# 	if ans == 'r':
+		# 		return choose_colony(img,centers)
+		# 	elif ans == 'q':
+		# 		return []
+		#
+		# good_center = choose_colony(color,centers)
+		good_center = centers[-1]
 
 	# print("GOOD:",good_cols)
 	# print("BAD:",bad_cols)
@@ -516,7 +518,7 @@ def find_reference(image):
 	to the image
 	'''
 	# The agar outline
-	all_points = [[19,27],[377,27],[380,612],[19, 614]]
+	all_points = [[19,27],[377,27],[378,610],[19, 614]]
 	all_points = np.array(all_points)
 	ratio = image.shape[1]/400
 	all_points = np.multiply(all_points,ratio)
@@ -535,7 +537,7 @@ def find_reference(image):
 
 	return ref_point,x_dim,y_dim,rect
 
-def ot_coords(centers,image):
+def ot_coords(centers,image,x_dim,y_dim):
 	'''
 	Establish a relationship between pixels in the image to xy coords on the robot
 	'''
@@ -619,9 +621,10 @@ def find_offset(x,y,z):
 
 	return f
 
-def calibrate_ot(image,coords,centers):
+def calibrate_ot(pipette,agar_plate,image,coords,centers):
+	no_well = [[x,y] for [x,y,w] in centers]
 	bl_O, tl_O, tr_O, br_O = order_points(coords)
-	tl_I, tr_I, br_I, bl_I = order_points(centers)
+	tl_I, tr_I, br_I, bl_I = order_points(no_well)
 
 	paired_coords = [[bl_O,bl_I],[tl_O,tl_I],[tr_O,tr_I],[br_O,br_I]]
 
@@ -630,11 +633,13 @@ def calibrate_ot(image,coords,centers):
 	Oy_l = []
 	Ozx = []
 	Ozy = []
+	pipette.pick_up_tip()
+	print('picking up tip')
 	for [[Ox,Oy],[Ix,Iy]] in paired_coords:
 		cv2.line(temp,(int(Ix),int(Iy)-30),(int(Ix),int(Iy)+30),(0,0,255),2)
 		cv2.line(temp,(int(Ix)-30,int(Iy)),(int(Ix)+30,int(Iy)),(0,0,255),2)
 		show_image(temp)
-		p10s.move_to((trans_plate,[Ox,Oy,0]))
+		pipette.move_to((agar_plate,[Ox,Oy,0]))
 		print("Calibrate the position for the colony")
 		off_x,off_y = move_motor()
 		Ox_l.append(Ox)
@@ -659,49 +664,62 @@ def mix_in_well(pipette,depth=-0.75,location=None,radius=0.7):
 
     return
 
-def inoculate(pipette,location=None,depth=-0.75,radius=0.7,mix=3):
+def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 
-    _description = 'Inoculating'
-    pipette.robot.add_command(_description)
+	_description = 'Inoculating'
+	pipette.robot.add_command(_description)
 
-    if location:
-        pipette.move_to(location, strategy='arc')
-    else:
-        location = pipette.previous_placeable
+	if not pipette.current_tip():
+		print('no tip')
+		pipette.pick_up_tip()
+		print('picking up tip')
+	else:
+		print('Already has a tip')
 
-    for num in range(mix):
-        mix_in_well(pipette,location=location,depth=depth,radius=radius)
+	print(colony)
+	pipette.move_to((agar_plate,colony), strategy='arc')
 
-    pipette.move_to((location,location.from_center(x=0, y=0, z=depth)),strategy='direct')
+	pipette.move_to(well, strategy='arc')
 
-    pipette.motor.move(pipette._get_plunger_position('drop_tip'))
-    pipette.motor.move(pipette._get_plunger_position('bottom'))
+	for num in range(mix):
+		mix_in_well(pipette,location=well,depth=depth,radius=radius)
 
-    pipette.current_volume = 0
-    pipette.current_tip(None)
+	pipette.move_to((well,well.from_center(x=0, y=0, z=depth)),strategy='direct')
 
-    return
+	pipette.motor.move(pipette._get_plunger_position('drop_tip'))
+	pipette.motor.move(pipette._get_plunger_position('bottom'))
+
+	pipette.current_volume = 0
+	pipette.current_tip(None)
+
+	return
 
 
-def run_ot(image,coords,centers,pick):
+def run_ot(pipette,agar_plate,deep_well,image,coords,centers,pick):
 	'''
 	Pass the coordinates to the robot to pick the colony
 	'''
 
-	fx,fy = calibrate_ot(image,coords,centers)
+	fx,fy = calibrate_ot(pipette,agar_plate,image,coords,centers)
 
-	for i,((x,y),cen) in enumerate(zip(coords,centers)):
+	for i,((Ox,Oy),(Ix,Iy,well)) in enumerate(zip(coords,centers)):
 		temp = image
-		print(i,":",x,y)
-		x_off = fx(x,y)[0]
-		y_off = fy(x,y)[0]
-		new_x = x + x_off
-		new_y = y + y_off
+		print(i,":",Ox,Oy)
+		x_off = fx(Ox,Oy)[0]
+		y_off = fy(Ox,Oy)[0]
+		new_x = Ox + x_off
+		new_y = Oy + y_off
 		print(i,":",new_x,new_y)
-		cv2.circle(temp, (int(cen[0]),int(cen[1])), int(20),
+		cv2.circle(temp, (int(Ix),int(Iy)), int(20),
 			(0,0,255), 2)
 		show_image(temp)
-		p10s.move_to((trans_plate,[new_x,new_y,0]))
+		print(well)
+		colony = [new_x,new_y,0]
+		if pick:
+			print('inoculating')
+			inoculate(pipette,agar_plate,colony,deep_well.wells(well))
+		else:
+			pipette.move_to((agar_plate,[new_x,new_y,0]))
 		input("click to move to next colony")
 
 def show_image(image,width=400):
@@ -712,48 +730,22 @@ def show_image(image,width=400):
 	input('Enter to move to next image')
 	return
 
+def well_addresses():
+    '''Generates a list of well address A1-H12'''
+    letter = ["A","B","C","D","E","F","G","H"]
+    number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    target_well = []
+    temp_well = 0
+    for n in number:
+        for l in letter:
+            temp_well = l + n
+            target_well.append(temp_well)
+    return target_well
 
-grids = []
-shapes = []
-
-parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
-parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
-parser.add_argument('-i', '--inoculate', required=False, action="store_false", help="Picks colonies and inoculates a deep well plate.")
-args = parser.parse_args()
-
-if args.run:
-	port = os.environ["ROBOT_DEV"]
-	print("Connecting robot to port {}".format(port))
-	robot.connect(port)
-else:
-	print("Simulating protcol run")
-	robot.connect()
-
-robot.home()
-
-p10s_tipracks = [
-    containers.load('tiprack-10ul', 'E1'),
-    containers.load('tiprack-10ul', 'E2')
-]
-trash = containers.load('point', 'D1', 'holywastedplasticbatman')
-well_plate = containers.load('96-deep-well', 'C2')
-trans_plate = containers.load('point','B2')
-
-
-p10s = instruments.Pipette(
-    axis='a',
-    max_volume=10,
-    min_volume=0.5,
-    tip_racks=p10s_tipracks,
-    trash_container=trash,
-    channels=1,
-    name='p10-8s',
-    aspirate_speed=400,
-    dispense_speed=800
-)
-
-for file in sorted(glob.glob('./new_photos/*.jpg')):
-	print(file)
+def find_colony_coordinates(file):
+	build_num,plate_num = re.match(r'.*\/.+.([0-9]{3})p([0-9]).jpg',file).groups()
+	print('Build: {}, Plate: {}'.format(build_num,plate_num))
+	print((int(plate_num)-1)*24,int(plate_num)*24)
 	img = cv2.imread(file)
 	show_image(img)
 	cali_file = './webcam_calibrations.npz'
@@ -775,8 +767,13 @@ for file in sorted(glob.glob('./new_photos/*.jpg')):
 	show_image(grid)
 	color = cv2.cvtColor(grid,cv2.COLOR_GRAY2RGB)
 	groups = group_sections(grid,mid_x,mid_y)
+	groups = groups[16:24] + groups[8:16] + groups[:8]
 	centers = []
-	for group in groups:
+	missing = []
+	wells = well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
+	print(wells)
+	input("check wells")
+	for well,group in zip(wells,groups):
 		print("Next section:",group)
 		partial = grid[group[1][0]:group[1][1],group[0][0]:group[0][1]]
 		center = find_colonies(partial)
@@ -784,8 +781,8 @@ for file in sorted(glob.glob('./new_photos/*.jpg')):
 			midg_y = int(((group[1][0]-group[0][0])/2)+group[0][0])
 			midg_x = int(((group[1][1]-group[0][1])/2)+group[0][1])
 			cv2.rectangle(color,(group[0][0],group[1][0]),(group[0][1],group[1][1]),(0,0,255),3)
+			missing.append(well)
 			# show_image(color)
-			# input("check image")
 		else:
 			cali_cenX = center[0][0]+group[0][0]
 			cali_cenY = center[0][1]+group[1][0]
@@ -793,16 +790,66 @@ for file in sorted(glob.glob('./new_photos/*.jpg')):
 				(0,255,255), 3)
 			cv2.circle(color, (cali_cenX,cali_cenY), int(2),
 				(0,0,255), 2)
-			show_image(color)
-			centers.append([cali_cenX,cali_cenY])
-			# input("check image w/ col")
+			# show_image(color)
+			centers.append([cali_cenX,cali_cenY,well])
 	show_image(color)
 	input("check image")
-	coords = ot_coords(centers,agar)
-	run_ot(color,coords,centers,args.inoculate)
-	print("Complete")
-cv2.destroyAllWindows()
+	return centers,agar,x_dim,y_dim,missing
 
+
+
+def pick_colonies():
+
+	parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+	parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+	parser.add_argument('-i', '--inoculate', required=False, action="store_true", help="Picks colonies and inoculates a deep well plate.")
+	args = parser.parse_args()
+
+	if args.run:
+		port = os.environ["ROBOT_DEV"]
+		print("Connecting robot to port {}".format(port))
+		robot.connect(port)
+	else:
+		print("Simulating protcol run")
+		robot.connect()
+
+	robot.home()
+
+	p10s_tipracks = [
+	    containers.load('tiprack-10ul', 'E1'),
+	    containers.load('tiprack-10ul', 'E2')
+	]
+	trash = containers.load('point', 'D1', 'holywastedplasticbatman')
+	deep_well = containers.load('96-deep-well', 'C2')
+	trans_plate = containers.load('point','B2')
+
+
+	p10s = instruments.Pipette(
+	    axis='a',
+	    max_volume=10,
+	    min_volume=0.5,
+	    tip_racks=p10s_tipracks,
+	    trash_container=trash,
+	    channels=1,
+	    name='p10-8s',
+	    aspirate_speed=400,
+	    dispense_speed=800
+	)
+
+	for file in sorted(glob.glob('./new_photos/*.jpg')):
+		print(file)
+		print("Inoculate: ",args.inoculate)
+		input()
+		centers,agar,x_dim,y_dim,missing = find_colony_coordinates(file)
+		coords = ot_coords(centers,agar,x_dim,y_dim)
+		run_ot(p10s,trans_plate,deep_well,agar,coords,centers,args.inoculate)
+		print('The following wells were skipped:\n',missing)
+		print("Complete")
+		robot.home()
+	cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    pick_colonies()
 
 
 
