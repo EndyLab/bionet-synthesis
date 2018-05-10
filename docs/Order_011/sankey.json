@@ -4,7 +4,25 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Order_011"
+      "name": "FreeGenes Team"
+    },
+    {
+      "name": "Ben Bell"
+    },
+    {
+      "name": "Alec Lourenco"
+    },
+    {
+      "name": "Drew Endy"
+    },
+    {
+      "name": "Stori Oates"
+    },
+    {
+      "name": "Jason Lyu"
+    },
+    {
+      "name": "Keoni Gandall"
     },
     {
       "name": "Synthesizing"
@@ -14,11 +32,41 @@
     {
       "source": 1,
       "target": 0,
-      "value": 110
+      "value": 95
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "value": 8
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "value": 2
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "value": 2
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "value": 1
     },
     {
       "source": 0,
-      "target": 2,
+      "target": 8,
       "value": 110
     }
   ]
