@@ -17,7 +17,8 @@ import pandas as pd
 from datetime import datetime
 
 from config import *
-from db_config import *
+import db_config
+session,engine = db_config.connect_db()
 
 # ## Generate the SQL Database
 # session = build_db()

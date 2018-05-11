@@ -1,5 +1,4 @@
 import pandas as pd
-from db_config import *
 from datetime import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,6 +9,9 @@ import os
 import matplotlib
 font = {'size'   : 15}
 matplotlib.rc('font', **font)
+
+import db_config
+session,engine = db_config.connect_db()
 
 print(datetime.now(),'Began run')
 

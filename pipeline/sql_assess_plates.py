@@ -18,7 +18,8 @@ from datetime import datetime
 import getch
 
 from config import *
-from db_config import *
+import db_config
+session,engine = db_config.connect_db()
 
 def assess_plate():
     # Determine which build/plate to assess

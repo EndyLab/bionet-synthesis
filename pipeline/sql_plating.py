@@ -18,11 +18,8 @@ from datetime import datetime
 import getch
 
 from config import *
-from db_config import *
-from db_gen import *
-from sql_frag_loc import *
-from sql_resuspension import *
-from sql_build import *
+import db_config
+session,engine = db_config.connect_db()
 
 def plate():
     print("\n============ Beginning plating ============\n")

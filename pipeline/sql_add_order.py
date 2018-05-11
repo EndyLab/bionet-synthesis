@@ -3,7 +3,8 @@ import pandas as pd
 import glob
 
 from config import *
-from db_config import *
+import db_config
+session,engine = db_config.connect_db()
 
 def add_order(file,no_frag=[],prev_subs=[]):
     order = pd.read_csv(file)

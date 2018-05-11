@@ -10,7 +10,8 @@ import glob
 from datetime import datetime
 
 from config import *
-from db_config import *
+import db_config
+session,engine = db_config.connect_db()
 
 confirmed = [part.part_id for part in session.query(Part).filter(Part.status == 'sequence_confirmed').order_by(Part.id)]
 # print(confirmed)
