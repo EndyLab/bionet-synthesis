@@ -11,8 +11,8 @@ import glob
 from datetime import datetime
 
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 data = []
 mis = []

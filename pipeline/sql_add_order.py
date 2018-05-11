@@ -3,8 +3,8 @@ import pandas as pd
 import glob
 
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 def add_order(file,no_frag=[],prev_subs=[]):
     order = pd.read_csv(file)
@@ -43,7 +43,7 @@ def add_order(file,no_frag=[],prev_subs=[]):
 if __name__ == "__main__":
     no_frag = []
     prev_subs = [sub.sub_name for sub in session.query(Twist_order).order_by(Twist_order.id)]
-    for file in sorted(glob.glob('{}/submissions/submission005.csv'.format(BASE_PATH))):
+    for file in sorted(glob.glob('{}/submissions/*.csv'.format(BASE_PATH))):
         print(file)
         no_frag = add_order(file,no_frag=no_frag,prev_subs=prev_subs)
     print("Missing fragments:")

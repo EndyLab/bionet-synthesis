@@ -13,8 +13,8 @@ import sys
 import math
 
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 def validate_part(part):
     print(part.part_id)

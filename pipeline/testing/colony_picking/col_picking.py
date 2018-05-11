@@ -16,6 +16,7 @@ import re
 import getch
 import math
 from itertools import chain
+from datetime import datetime
 
 from opentrons import robot, containers, instruments
 from opentrons.helpers import helpers
@@ -131,7 +132,7 @@ def find_corners(image):
 	epsilon = 0.1*cv2.arcLength(cnts[0],True)
 	pts = cv2.approxPolyDP(cnts[0],epsilon,True)
 	image = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
-	cv2.polylines(image,[pts],True,(0,255,255),1)
+	cv2.polylines(image,[pts],True,(0,255,255),4)
 
 	# Unnest the coordinates of the corners to create a numpy array
 	corners = [[x,y] for [[x,y]] in pts]
@@ -224,7 +225,7 @@ def find_grid(img):
 		mid_point = int(((r-l) / 2)+l)
 		mid_y.append(int(mid_point))#+top_bound/2))
 		ax1.plot(mid_point,sums_y[mid_point], 'bo')
-		cv2.line(temp,(0,int(mid_point)),(int(height),int(mid_point)),(0,255,0),1)
+		cv2.line(temp,(0,int(mid_point)),(int(height),int(mid_point)),(0,255,255),3)
 	print("Number of rows: ",len(mid_y)-1)
 
 	# Generate a plot to visualize the sumations
@@ -258,7 +259,7 @@ def find_grid(img):
 		mid_point = int(((b-t) / 2)+t)
 		mid_x.append(mid_point)
 		ax2.plot(mid_point,sums_x[mid_point], 'bo')
-		cv2.line(temp,(int(mid_point),0),(int(mid_point),int(height)),(255,0,0),1)
+		cv2.line(temp,(int(mid_point),0),(int(mid_point),int(height)),(0,255,255),3)
 	print("Number of columns: ",len(mid_x)-1)
 	show_image(temp)
 
@@ -282,12 +283,14 @@ def group_sections(img,mid_x,mid_y,x_steps=1,y_steps=4):
 			cv2.rectangle(img,(mid_x[x],mid_y[y]),(mid_x[x+x_steps],mid_y[y+y_steps]),(0,0,255),3)
 			cv2.imshow("Image", img)
 			cv2.waitKey(10)
+		# cv2.imwrite('saved_pics/image{}.png'.format(datetime.now()),img)
 	return groups
 
 def show_small(img):
 	'''Displays images at a smaller width'''
 	resized = imutils.resize(img,width=100)
 	cv2.imshow("Image", resized)
+	# cv2.imwrite('saved_pics/image{}.png'.format(datetime.now()),img)
 	cv2.waitKey(1)
 	input("next image")
 
@@ -698,20 +701,7 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 	print(x,y,z)
 	pipette.move_to((agar_plate,[x,y,z]), strategy='arc')
 	input('Picked colony?')
-	# move = True
-	# print('Use "r"->up, "f"->down to pick colony')
-	# while move == True:
-	# 	c = getch.getch()
-	# 	if c == 'r':
-	# 		z += 0.5
-	# 		print('up')
-	# 	elif c == 'f':
-	# 		z -= 0.5
-	# 		print('down')
-	# 	elif c == 'x':
-	# 		break
-	# 	pipette.move_to((agar_plate,[x,y,z]), strategy='direct')
-	# print('Final z:', z)
+
 	pipette.move_to(well, strategy='arc')
 
 	for num in range(mix):
@@ -759,6 +749,7 @@ def show_image(image,width=400):
 	'''Scales and then presents the image'''
 	resized = imutils.resize(image,width=width)
 	cv2.imshow("Image", resized)
+	# cv2.imwrite('saved_pics/image{}.png'.format(datetime.now()),image)
 	cv2.waitKey(5)
 	input('Enter to move to next image')
 	return
@@ -870,7 +861,7 @@ def pick_colonies():
 	    dispense_speed=800
 	)
 
-	for file in sorted(glob.glob('./new_photos/*.jpg')):
+	for file in sorted(glob.glob('./new_photos/*.jpg'),reverse=True):
 		print(file)
 		print("Inoculate: ",args.inoculate)
 		input()

@@ -18,8 +18,8 @@ from datetime import datetime
 import getch
 
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 def transform():
     # Take in command line arguments

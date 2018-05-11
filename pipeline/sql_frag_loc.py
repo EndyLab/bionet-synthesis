@@ -7,8 +7,8 @@ import glob
 import json
 import pandas as pd
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 def frag_assign():
     ## Build a list of the previously entered synthesis plates

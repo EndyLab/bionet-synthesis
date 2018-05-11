@@ -1,5 +1,5 @@
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 total = 0
 for frag in session.query(Fragment).order_by(Fragment.id):

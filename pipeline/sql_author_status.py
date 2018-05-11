@@ -6,12 +6,12 @@ import json
 from shutil import copyfile
 import os
 import glob
-import db_config
+from db_config import *
+session,engine = connect_db()
 from config import *
 
 
 def author_status():
-    session,engine = db_config.connect_db()
 
     print(datetime.now(),'Began run')
 

@@ -23,8 +23,8 @@ from Bio.Blast import NCBIXML
 from Bio.pairwise2 import format_alignment
 
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 channels = ['DATA9', 'DATA10', 'DATA11', 'DATA12']
 

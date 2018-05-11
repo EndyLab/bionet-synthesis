@@ -8,8 +8,8 @@ import json
 import re
 import pandas as pd
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 j_counter = 0
 linked = []

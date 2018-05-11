@@ -10,8 +10,8 @@ import matplotlib
 font = {'size'   : 15}
 matplotlib.rc('font', **font)
 
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
 print(datetime.now(),'Began run')
 
