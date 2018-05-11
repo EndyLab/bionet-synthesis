@@ -1,0 +1,39 @@
+LOCUS       Exported                 510 bp ds-DNA     linear   UNA 03-MAY-2018
+DEFINITION  natural linear DNA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+SOURCE      natural DNA sequence
+  ORGANISM  unspecified
+REFERENCE   1  (bases 1 to 510)
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+  JOURNAL   Exported May 3, 2018 from SnapGene 4.0.4
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..510
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..510
+                     /codon_start=1
+                     /label=DARPin G3 +M3
+                     /translation="MRGSHHHHHHGSDLGKKLLEAARAGQDDEVRILMANGADVNAKDE
+                     YGLTPLYLATAHGHLEIVEVLLKNGADVNAVDAIGFTPLHLAAFIGHLEIAEVLLKHGA
+                     DVNASDSSGSTPLHLAASIGHLEIAEVLLKHGADVNAQDKFGKTAFDISIGNGNEDLAE
+                     ILQKLN"
+     CDS             13..30
+                     /codon_start=1
+                     /product="6xHis affinity tag"
+                     /label=6xHis
+                     /translation="HHHHHH"
+ORIGIN
+        1 ATGCGTGGTA GCCACCATCA CCACCACCAT GGTAGCGACC TGGGTAAAAA GCTTCTGGAA
+       61 GCGGCCCGCG CGGGCCAAGA CGACGAAGTC CGCATCTTGA TGGCTAATGG TGCGGACGTG
+      121 AACGCTAAAG ATGAGTACGG TTTAACCCCG TTGTACTTGG CCACGGCACA TGGCCATCTG
+      181 GAAATTGTGG AAGTCCTGTT GAAGAATGGC GCGGATGTGA ACGCGGTGGA TGCGATCGGC
+      241 TTTACTCCGC TGCACCTGGC CGCTTTTATC GGCCATCTGG AGATCGCGGA GGTGCTGCTG
+      301 AAGCACGGTG CCGACGTGAA CGCTTCAGAT TCCTCCGGTA GCACTCCGCT GCATCTGGCC
+      361 GCCAGCATTG GTCACCTCGA AATCGCAGAA GTCCTGCTGA AACACGGCGC TGACGTGAAT
+      421 GCGCAAGATA AATTCGGCAA AACCGCGTTC GATATCAGCA TCGGCAATGG TAATGAGGAC
+      481 CTGGCAGAAA TTCTGCAAAA ACTGAACTGA
+//

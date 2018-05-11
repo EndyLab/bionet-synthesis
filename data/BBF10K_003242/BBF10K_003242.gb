@@ -1,0 +1,16 @@
+LOCUS       P54a                      41 bp    DNA              UNK 01-JAN-1980
+DEFINITION  MoClo assembly fragment for part P54a.
+ACCESSION   P54a
+VERSION     P54a
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     regulatory      1..41
+                     /standard_name="P54a"
+                     /label="P54a"
+                     /regulatory_class="promoter"
+ORIGIN
+        1 GGCAATTTAA AAGTTGGCAC AGATTTCGCT TTATCTTTTT A
+//

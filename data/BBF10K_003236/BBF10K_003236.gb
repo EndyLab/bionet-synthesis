@@ -1,0 +1,16 @@
+LOCUS       P70a                      55 bp    DNA              UNK 01-JAN-1980
+DEFINITION  MoClo assembly fragment for part P70a.
+ACCESSION   P70a
+VERSION     P70a
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     regulatory      1..55
+                     /standard_name="P70a"
+                     /label="P70a"
+                     /regulatory_class="promoter"
+ORIGIN
+        1 TGAGCTAACA CCGTGCGTGT TGACAATTTT ACCTCTGGCG GTGATAATGG TTGCA
+//
