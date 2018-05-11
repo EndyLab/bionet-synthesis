@@ -1,0 +1,36 @@
+LOCUS       Exported                 411 bp ds-DNA     linear   UNA 03-MAY-2018
+DEFINITION  natural linear DNA
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+SOURCE      natural DNA sequence
+  ORGANISM  unspecified
+REFERENCE   1  (bases 1 to 411)
+  AUTHORS   Keoni Gandall
+  TITLE     Direct Submission
+  JOURNAL   Exported May 3, 2018 from SnapGene 4.0.4
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..411
+                     /organism="unspecified"
+                     /mol_type="genomic DNA"
+     CDS             1..411
+                     /codon_start=1
+                     /label=DARPin pE59
+                     /translation="MRGSHHHHHHGSDLGKKLLEAARAGQDDEVRILMANGADVNALDE
+                     DGLTPLHLAAQLGHLEIVEVLLKYGADVNAEDNFGITPLHLAAIRGHLEIVEVLLKHGA
+                     DVNAQDKFGKTAFDISIDNGNEDLAEILQKLN"
+     CDS             13..30
+                     /codon_start=1
+                     /product="6xHis affinity tag"
+                     /label=6xHis
+                     /translation="HHHHHH"
+ORIGIN
+        1 ATGCGTGGCA GCCATCACCA TCACCACCAC GGCTCAGACT TGGGTAAAAA GCTGCTGGAA
+       61 GCGGCGCGTG CAGGCCAGGA TGATGAAGTG CGCATTCTGA TGGCGAATGG TGCCGACGTG
+      121 AATGCCTTAG ATGAGGACGG TCTGACTCCG TTGCATCTGG CGGCACAACT TGGTCACCTC
+      181 GAGATTGTTG AGGTTCTGCT GAAATATGGT GCTGACGTTA ACGCTGAGGA TAATTTTGGT
+      241 ATCACGCCGC TGCACCTCGC AGCTATCCGT GGCCATCTGG AGATCGTTGA AGTCCTGCTG
+      301 AAACATGGCG CGGATGTCAA TGCACAGGAC AAATTCGGTA AGACGGCGTT TGATATCAGC
+      361 ATCGACAACG GTAATGAGGA CCTGGCAGAG ATCTTGCAAA AACTGAACTG A
+//

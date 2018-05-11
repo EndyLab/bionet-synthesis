@@ -1,0 +1,21 @@
+LOCUS       pBad                     303 bp    DNA              UNK 01-JAN-1980
+DEFINITION  MoClo assembly fragment for part pBad.
+ACCESSION   pBad
+VERSION     pBad
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     regulatory      1..303
+                     /standard_name="pBad"
+                     /label="pBad"
+                     /regulatory_class="misc_signal"
+ORIGIN
+        1 AGAAGAAACC AATTGTCCAT ATTGACTCAG ACATTGCCGT CACTGCGTCT TTTACTGGCT
+       61 CTTCTCGCTA ACCAAACCGG TAACCCCGCT TATTAAAAGC ATTCTGTAAC AAAGCGGGAC
+      121 CAAAGCCATG ACAAAAACGC GTAACAAAAG TGTCTATAAT CACGGCAGAA AAGTCCACAT
+      181 TGATTATTTG CACGGCGTCA CACTTTGCTA TGCCATAGCA TTTTTATCCA TAAGATTAGC
+      241 GGATCCTACC TGACGCTTTT TATCGCAACT CTCTACTGTT TCTCCATACC CGTTTTTTTG
+      301 GGC
+//

@@ -1,0 +1,93 @@
+{
+  "version": "3.0.1",
+  "gene_id": "BBF10K_003275",
+  "author": {
+    "name": "Anton Jackson-Smith",
+    "email": "acjs@stanford.edu",
+    "affiliation": "Endy Lab",
+    "orcid": ""
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "mazF",
+      "description": "TXTL Toolbox 2.0 Part. E. coli interferase MazF (chpA gene). GenBank: CDJ74047.1.",
+      "project_description": "A FreeGenes reimplementation of the TXTL2.0 toolbox.",
+      "database_links": "https://doi.org/10.1021/acssynbio.5b00335",
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "cds",
+        "cloning_enzyme": "BbsI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "E.coli cell free",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": "",
+          "cut_by": ""
+        }
+      },
+      "collection_id": 8,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "",
+      "conditions": {}
+    },
+    "order_number": 12
+  },
+  "sequence": {
+    "original_sequence": "ATGGTAAGCCGATACGTACCCGATATGGGCGATCTGATTTGGGTTGATTTTGACCCGACAAAAGGTAGCGAGCAAGCTGGACATCGTCCAGCTGTTGTCCTGAGTCCTTTCATGTACAACAACAAAACAGGTATGTGTCTGTGTGTTCCTTGTACAACGCAATCAAAAGGATATCCGTTCGAAGTTGTTTTATCCGGTCAGGAACGTGATGGCGTAGCGTTAGCTGATCAGGTAAAAAGTATCGCCTGGCGGGCAAGAGGAGCAACGAAGAAAGGAACAGTTGCCCCAGAGGAATTACAACTCATTAAAGCCAAAATTAACGTACTGATTGGGTAG",
+    "optimized_sequence": "ATGGTAAGCCGATACGTACCCGATATGGGCGATCTGATTTGGGTTGATTTTGACCCGACAAAAGGTAGCGAGCAAGCTGGACATCGTCCAGCTGTTGTCCTGAGTCCTTTCATGTACAACAACAAAACAGGTATGTGTCTGTGTGTTCCTTGTACAACGCAATCAAAAGGATATCCGTTCGAAGTTGTTTTATCCGGTCAGGAACGTGATGGCGTAGCGTTAGCTGATCAGGTAAAAAGTATCGCCTGGCGGGCAAGAGGAGCAACGAAGAAAGGAACAGTTGCCCCAGAGGAATTACAACTCATTAAAGCCAAAATTAACGTACTGATTGGCTGA",
+    "fragment_sequences": {
+      "BBF10K_003275_link_BBF10K_003274": "GAAGACCAGGAGAAACCGGAGCCATACAGTACGGTCTCAAATGGTAAGCCGATACGTACCCGATATGGGCGATCTGATTTGGGTTGATTTTGACCCGACAAAAGGTAGCGAGCAAGCTGGACATCGTCCAGCTGTTGTCCTGAGTCCTTTCATGTACAACAACAAAACAGGTATGTGTCTGTGTGTTCCTTGTACAACGCAATCAAAAGGATATCCGTTCGAAGTTGTTTTATCCGGTCAGGAACGTGATGGCGTAGCGTTAGCTGATCAGGTAAAAAGTATCGCCTGGCGGGCAAGAGGAGCAACGAAGAAAGGAACAGTTGCCCCAGAGGAATTACAACTCATTAAAGCCAAAATTAACGTACTGATTGGCTGAAGAGCTTAGAGACCGAGGTCAATCATGCCTCTCTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGGGTCTCGAATGATCCACAGTAGCGTAAAGCGTTGGGGAAATTCACCGGCGGTGCGGATCCCGGCTACGTTAATGCAGGCGCTCAATCTGAATATTGATGATGAAGTGAAGATTGACCTGGTGGATGGCAAATTAATTATTGAGCCAGTGCGTAAAGAGCCCGTATTTACGCTTGCTGAACTGGTCAACGACATCACGCCGGAAAACCTCCACGAGAATATCGACTGGGGAGAGCCGAAAGATAAGGAAGTCTGGTGAAGAGCTTGGAGACCCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "10-May-2018 9:30:05",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "",
+    "note": "",
+    "Source": "",
+    "GenBank_acc": "",
+    "protein_id": "",
+    "EC_number": "",
+    "translation": "",
+    "references": ""
+  },
+  "tags": "TXTL2.0 Toolbox, Cell Free",
+  "hashtags": [
+    ""
+  ]
+}

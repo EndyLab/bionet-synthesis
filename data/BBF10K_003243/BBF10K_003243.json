@@ -1,0 +1,95 @@
+{
+  "version": "3.0.1",
+  "gene_id": "BBF10K_003243",
+  "author": {
+    "name": "Anton Jackson-Smith",
+    "email": "acjs@stanford.edu",
+    "affiliation": "Endy Lab",
+    "orcid": ""
+  },
+  "info": {
+    "documentation": {
+      "gene_name": "PLtetO1",
+      "description": "TXTL Toolbox 2.0 Part. Promoter specific to E. coli \u03c370 and regulated by the tetR gene. Lutz, R., and Bujard, H. (1997) Independent and tight regulation of transcriptional units in Escherichia coli via the LacR/O, the TetR/O and AraC/I\u00ad1\u00adI\u00ad2 regulatory elements, Nucleic Acids Res 25, 1203\u00ad1210.",
+      "project_description": "A FreeGenes reimplementation of the TXTL2.0 toolbox.",
+      "database_links": "https://doi.org/10.1021/acssynbio.5b00303",
+      "source": ""
+    },
+    "gene_metadata": {
+      "cloning": {
+        "part_type": "prokaryotic promoter",
+        "cloning_enzyme": "BtgZI",
+        "retrieval_enzyme": "BsaI",
+        "optimize": "",
+        "target_organism": {
+          "organism_name": "E.coli cell free",
+          "taxid": ""
+        },
+        "conditions": {
+          "vector": "",
+          "strain": "",
+          "selection": [
+            ""
+          ],
+          "media": "",
+          "temperature": "",
+          "mastermix_notes": "",
+          "cut_by": ""
+        }
+      },
+      "collection_id": 8,
+      "IP": {
+        "submission_number": "",
+        "results": ""
+      },
+      "safety": "",
+      "conditions": {
+        "cut_by": []
+      }
+    },
+    "order_number": 12
+  },
+  "sequence": {
+    "original_sequence": "GGCAATTTAAAAGTTGGCACAGATTTCGCTTTATCTTTTTA",
+    "optimized_sequence": "GGCAATTTAAAAGTTGGCACAGATTTCGCTTTATCTTTTTA",
+    "fragment_sequences": {
+      "BBF10K_003263_link_BBF10K_003243": "GAAGACCAGGAGAAACCGGAGCCATACAGTACGGTCTCAAATGTCTGACCGCGCCACTACCACAGCTTCCTTAACGTTCGAGTCGCTTTATGGCACACATCACGGCTGGTTGAAAAGCTGGCTGACGCGCAAACTCCAGTCTGCTTTTGATGCAGATGACATTGCCCAGGACACTTTTTTGCGGGTAATGGTCAGCGAAACGCTCTCGACGATCCGCGATCCTCGCTCCTTCCTCTGCACTATCGCCAAACGCGTGATGGTGGACCTGTTTCGCCGAAACGCGCTGGAAAAAGCGTATCTGGAGATGCTGGCGCTTATGCCGGAGGGGGGAGCGCCTTCACCTGAGGAACGCGAAAGCCAACTCGAAACCCTACAACTCCTCGACAGCATGCTGGACGGGCTAAACGGCAAAACACGTGAAGCGTTTCTGCTTTCGCAACTGGATGGTCTGACATACAGCGAGATTGCGCACAAACTCGGTGTTTCCATCAGCTCCGTGAAAAAATACGTGGCGAAAGCCGTCGAGCACTGCCTGCTGTTCCGTCTGGAGTATGGGCTGTGAAGAGCTTAGAGACCGCTTGACGGAGCATCTATCTCGCTGCGTCTTCGCGATGCATGCTTGCAGGAGGGTCTCGGGAGGGCAATTTAAAAGTTGGCACAGATTTCGCTTTATCTTTTTATACTGGAGACCCGCTGCTCTGAATACATCGC"
+    }
+  },
+  "status": {
+    "current_status": "",
+    "build_attempts": [
+      {
+        "build_number": "",
+        "build_well": "",
+        "build_date": "",
+        "build_outcome": "",
+        "forward_read": "",
+        "reverse_read": ""
+      }
+    ]
+  },
+  "dates": {
+    "submitted": "10-May-2018 9:30:05",
+    "ordered": "",
+    "received": "",
+    "complete": ""
+  },
+  "genbank": {
+    "locus_tag": "",
+    "gene": "",
+    "gene_synonyms": "",
+    "product": "",
+    "note": "",
+    "Source": "",
+    "GenBank_acc": "",
+    "protein_id": "",
+    "EC_number": "",
+    "translation": "",
+    "references": ""
+  },
+  "tags": "TXTL2.0 Toolbox, Cell Free",
+  "hashtags": [
+    ""
+  ]
+}
