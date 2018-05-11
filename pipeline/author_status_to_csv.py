@@ -15,7 +15,7 @@ from db_config import *
 confirmed = [part.part_id for part in session.query(Part).filter(Part.status == 'sequence_confirmed').order_by(Part.id)]
 # print(confirmed)
 author_info = []
-ignore = ['Stanford BIOE80 class 2017','Stanley Qi','Keoni Gandall','Scott Pownall','Connor Tansley']
+ignore = ['Stanford BIOE80 class 2017','Stanley Qi','Keoni Gandall','Scott Pownall']
 for part in confirmed:
     for file in glob.glob('../data/{}/{}.json'.format(part,part)):
 #         print(file)
