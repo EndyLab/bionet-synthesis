@@ -15,19 +15,23 @@ def author_status():
 
     print(datetime.now(),'Began run')
 
+    # Creates a dataframe with all of the parts that have been attempted and what their outcomes were
     query_outcomes = "SELECT parts.part_id,parts.status,wells.seq_outcome,wells.plate_type,builds.build_name,wells.misplaced FROM parts \
             INNER JOIN wells ON parts.id = wells.part_id\
             INNER JOIN plates ON wells.plate_id = plates.id\
             INNER JOIN builds ON plates.build_id = builds.id"
 
+    # Creates a dataframe of all parts and their fragments and which orders they were submitted in
     query_frag = "SELECT parts.part_id,fragments.fragment_name,twist_orders.sub_name FROM parts\
             INNER JOIN part_frag ON parts.id = part_frag.part_id\
             INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
             INNER JOIN frag_order ON fragments.id = frag_order.frag_id\
             INNER JOIN twist_orders ON twist_orders.id = frag_order.twist_order_id"
 
+    # Builds a table of all the current parts in the database
     query_parts = "SELECT * FROM parts"
 
+    # Creates a dictionary to link the part_ids to the # of fragments and the order #
     df_frag = pd.read_sql_query(query_frag, con=engine)
     frags = df_frag.groupby('part_id')['fragment_name'].agg(len)
     frags.name = 'Count'
@@ -36,16 +40,16 @@ def author_status():
     subs_dict = dict(zip(df_frag.part_id.tolist(),df_frag.sub_name.tolist()))
     print(datetime.now(),'Finished frags')
 
+    # Creates a dictionary to link all of the parts with their author names
     author_dict = []
     for file in sorted(glob.glob('../data/*/*.json')):
         with open(file,"r") as json_file:
             data = json.load(json_file)
         author_dict.append([data['gene_id'],data['author']['name']])
     author_dict = dict(author_dict)
-    # print(author_dict)
-    # input()
 
     def multiple(x):
+        '''Adds an N/A for parts that have less than 2 attempts'''
         if len(x) == 1:
             x.append('N/A')
         return x
@@ -70,9 +74,7 @@ def author_status():
         else:
             return x
 
-    def find_author(x):
-        return author_dict[x]
-
+    # Takes in all of the build outcome information
     df_res = pd.read_sql_query(query_outcomes, con=engine)
     df_res = df_res[df_res.plate_type == 'seq_plate']
 
@@ -89,6 +91,7 @@ def author_status():
     df_build_dict = dict(zip(df_build.part_id.tolist(),df_build.Builds.tolist()))
     print(datetime.now(),'Finished outcomes')
 
+    # Creates a comprehensive tabel that incorporates all of the gathered information
     df_parts = pd.read_sql_query(query_parts, con=engine)
     print('finished part query')
     df_parts['Fragments'] = df_parts.part_id.apply(lambda x: frags_dict[x])
@@ -104,21 +107,20 @@ def author_status():
     df_parts['Attempt_2_Outcome_G'] = df_parts.Attempt_2_Outcome.apply(simplify_outcome)
     df_parts['Attempt_2_Build'] = df_parts.Builds.apply(lambda x: x[1])
     df_parts['Length'] = df_parts.seq.apply(len)
-    df_parts['Author'] = df_parts.part_id.apply(find_author)
+    df_parts['Author'] = df_parts.part_id.apply(lambda x: author_dict[x])
+
+    print(datetime.now(),'Finished building dataframe')
 
     print(df_parts.Author.value_counts())
 
     author_name = input('Enter author name: ')
-
-    print(datetime.now(),'Finished building dataframe')
-
     author_df = df_parts[df_parts.Author == author_name]
-
     limited_df = author_df[['part_name','part_id','status','Attempt_1_Outcome_G','Attempt_2_Outcome_G']]
     print(limited_df)
 
     current = str(datetime.now()).split(" ")[0]
 
+    # Generates a directory and csv file of all of the cloning information
     file_name = "{}_status_{}.csv".format(author_name,current)
     path = '{}/authors/{}'.format(BASE_PATH,author_name)
     if os.path.exists(path):
