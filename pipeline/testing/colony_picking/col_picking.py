@@ -85,6 +85,16 @@ def four_point_transform(image, pts):
 	# return the warped image
 	return warped
 
+def apply_threshold(image,size=201):
+	'''Applies an adaptive threshold to the image and returns the result'''
+
+	# The size and C were derived emperically through studying their effect on
+	# the specific images used here. May need to be modified for other cameras
+	thresh = cv2.adaptiveThreshold(image,255,cv2.ADAPTIVE_THRESH_MEAN_C,\
+                cv2.THRESH_BINARY,size,-8)
+	return thresh
+
+
 def find_corners(image):
 	'''
 	Searches the image to find the edges of the agar plate
@@ -151,35 +161,7 @@ def find_grid(img):
 
 	# Gray-scale, enhance contrast and threshold to only see the colonies
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-	cl1 = clahe.apply(gray)
-
-	fig3 = plt.figure(2)
-	ax3 = fig3.add_subplot(111)
-	nums, bins, patches = ax3.hist(cl1.flatten(),bins=30)
-	data = zip(bins[1:],nums)
-	print(nums)
-	print(bins)
-
-	# Uses the peak of the empty space intensity to bound the search and then
-	# finds the least common bin to determine the cut off
-	bound = np.argmax(nums)
-	low = np.argmin(nums[bound:-5])
-	threshold = bins[low+bound+2]
-
-	# If the background is too bright it can't find the minimum so bound it to 190
-	if threshold >= 180:
-		threshold = 150
-
-	print("thresh: ",threshold)
-
-	# Plot the cut off line and show to verify that it is correct
-	ax3.plot(threshold*np.ones(50000), range(50000), marker='o', markersize=2, color="green")
-	fig3.show()
-	input('Check hist')
-	plt.close()
-
-	thresh = cv2.threshold(cl1, threshold, 255, cv2.THRESH_BINARY)[1]
+	thresh = apply_threshold(gray)
 	show_image(thresh)
 
 	# Find the sum of the points in the rows and cols and store them in lists
@@ -217,7 +199,9 @@ def find_grid(img):
 	# Groups the endpoints together to define the bounds of each section
 	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
 	print("Bounds: ",bounds)
-	temp = np.copy(cl1)
+	# temp = np.copy(cl1)
+	temp = np.copy(gray)
+
 
 	# Calculates and plots the midpoints of the low regions
 	mid_y = []
@@ -236,7 +220,7 @@ def find_grid(img):
 	# Store only the points that have less than 60 pixels in the line
 	bottoms = []
 	for i,sum in enumerate(sums_x):
-		if sum/255 < 60:
+		if sum/255 < 80:
 			ax2.plot(i,sum, 'r.')
 			bottoms.append(i)
 	# Finds the start and end points of streaks of low points
@@ -267,7 +251,7 @@ def find_grid(img):
 	input('Review grid')
 	plt.close()
 
-	return cl1, mid_x, mid_y
+	return gray, mid_x, mid_y
 
 def group_sections(img,mid_x,mid_y,x_steps=1,y_steps=4):
 	'''
@@ -294,46 +278,15 @@ def show_small(img):
 	cv2.waitKey(1)
 	input("next image")
 
-def find_colonies(image,check):
+def find_colonies(image,check,size=201):
 	'''
 	Searches the image for pickable colonies and returns the
 	location of their centers
 	'''
-	# Enhances the contrast
-	clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-	cl1 = clahe.apply(image)
-	# show_small(cl1)
 
-	## Determines the threshold to use to pick out colonies by finding the
-	## populatation of pixel intensities that corresponds to them
-
-	# Generates a histogram of the pixel intensities
-	fig2 = plt.figure(1)
-	ax2 = fig2.add_subplot(111)
-	nums, bins, patches = ax2.hist(cl1.flatten(),bins=25)
-	data = zip(bins[1:],nums)
-
-	# Uses the peak of the empty space intensity to bound the search and then
-	# finds the least common bin to determine the cut off
-	bound = np.argmax(nums)
-	low = np.argmin(nums[bound:-3])
-	threshold = bins[low+bound+2]
-
-	# If the background is too bright it can't find the minimum so bound it to 190
-	if threshold >= 200:
-		threshold = 190
-
-	# Plot the cut off line and show to verify that it is correct
-	ax2.plot(threshold*np.ones(5000), range(5000), marker='o', markersize=3, color="green")
-	# fig2.show()
-	# input('Check hist')
-	# plt.close()
-
-	print("thresh: ",threshold)
-
-	# Use the threshold to pull out the colonies
-	thresh = cv2.threshold(cl1, threshold, 255, cv2.THRESH_BINARY)[1]
-	# show_small(thresh)
+	thresh = apply_threshold(image,size=size)
+	show_small(thresh)
+	show_small(image)
 
 	# Find the contours of each colony
 	cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
@@ -341,7 +294,7 @@ def find_colonies(image,check):
 	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 
 	# Convert the color to be able to draw on them in color
-	color = cv2.cvtColor(cl1,cv2.COLOR_GRAY2RGB)
+	color = cv2.cvtColor(image,cv2.COLOR_GRAY2RGB)
 	color_th = cv2.cvtColor(thresh,cv2.COLOR_GRAY2RGB)
 
 	## Iterate over each colony, extract several different parameters, then
@@ -427,11 +380,13 @@ def find_colonies(image,check):
 	# show_small(color_th)
 	# show_small(color)
 
-	if len(centers) == 0:
+	if size < 100:
 		print("No colonies found")
+	elif len(centers) == 0:
+		print("No colonies found, changing threshold")
+		return (find_colonies(image,check,size=size-50))
 	else:
 		# Currently picks the good colony closest to the top of the plate
-		# TODO: Modify the selection process to allow for sorting by proximity
 		def choose_colony(img,centers):
 			print("Enter 'g'->good, 'b'->bad")
 			show_small(color)
@@ -469,8 +424,6 @@ def find_colonies(image,check):
 		else:
 			good_center = centers[-1]
 
-	# print("GOOD:",good_cols)
-	# print("BAD:",bad_cols)
 	return good_center
 
 def change_loc(image,start):
@@ -613,11 +566,7 @@ def find_offset(x,y,z):
 	ax = sns.heatmap(result,ax=ax,xticklabels=10,yticklabels=10)
 	xt = np.arange(int(min(x)), int(max(x)), step=10)
 	xl = [str(num) for num in xt]
-	# yt = np.arange(int(min(y)), int(max(y)), step=10)
-	# yl = [str(num) for num in yt]
 	plt.xticks(xt,xl)
-	# print(yt,yl)
-	# plt.yticks(yt,yl)
 
 	fig.show()
 	print('Y-axis is reversed')
@@ -797,16 +746,16 @@ def find_colony_coordinates(file,check):
 	wells = well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
 	print(wells)
 	input("check wells")
+	agar = cv2.cvtColor(agar, cv2.COLOR_BGR2GRAY)
 	for well,group in zip(wells,groups):
 		print("Next section:",group)
-		partial = grid[group[1][0]:group[1][1],group[0][0]:group[0][1]]
+		partial = agar[group[1][0]:group[1][1],group[0][0]:group[0][1]]
 		center = find_colonies(partial,check)
 		if center == []:
 			midg_y = int(((group[1][0]-group[0][0])/2)+group[0][0])
 			midg_x = int(((group[1][1]-group[0][1])/2)+group[0][1])
 			cv2.rectangle(color,(group[0][0],group[1][0]),(group[0][1],group[1][1]),(0,0,255),3)
 			missing.append(well)
-			# show_image(color)
 		else:
 			cali_cenX = center[0][0]+group[0][0]
 			cali_cenY = center[0][1]+group[1][0]
@@ -814,10 +763,10 @@ def find_colony_coordinates(file,check):
 				(0,255,255), 3)
 			cv2.circle(color, (cali_cenX,cali_cenY), int(2),
 				(0,0,255), 2)
-			# show_image(color)
 			centers.append([cali_cenX,cali_cenY,well])
 	show_image(color)
 	input("check image")
+	agar = cv2.cvtColor(agar,cv2.COLOR_GRAY2RGB)
 	return centers,agar,x_dim,y_dim,missing
 
 
