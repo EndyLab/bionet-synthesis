@@ -25,8 +25,19 @@ def transform():
     # Take in command line arguments
     parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
     parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
-    parser.add_argument('-m', '--manual', required=False, action="store_true", help="Maunal entry of parameters.")
+    # parser.add_argument('-m', '--manual', required=False, action="store_true", help="Maunal entry of parameters.")
     args = parser.parse_args()
+
+    build_num = int(input('Enter the build to be transformed: '))
+    build_name = 'build' + str(build_num).zfill(3)
+    build_path = '{}/builds/{}/{}_trans_map.csv'.format(BASE_PATH,build_name,build_name)
+
+    build = pd.read_csv(build_path)
+    num_reactions = len(build)
+    print(num_reactions)
+    input()
+
+    num_rows = num_reactions // 8
 
     # Verify that the correct robot is being used
     if args.run:
@@ -92,7 +103,10 @@ def transform():
     p10_tipracks = [
         containers.load('tiprack-10ul', locations['tiprack-10_2']),
         containers.load('tiprack-10ul', locations['tiprack-10_1']),
-        containers.load('tiprack-10ul', locations['tiprack-10_3'])
+    ]
+
+    p10s_tipracks = [
+        containers.load('tiprack-10ul', locations["tiprack-10_3"])
     ]
 
     transformation_plate = containers.load('96-PCR-tall', locations['Transformation'])
@@ -111,6 +125,17 @@ def transform():
         aspirate_speed=400,
         dispense_speed=800
     )
+    p10s = instruments.Pipette(
+        axis='a',
+        max_volume=10,
+        min_volume=0.5,
+        tip_racks=p10s_tipracks,
+        trash_container=trash,
+        channels=1,
+        name='p10-8s',
+        aspirate_speed=400,
+        dispense_speed=800
+    )
     p200 = instruments.Pipette(
         axis='b',
         max_volume=200,
@@ -123,10 +148,22 @@ def transform():
         dispense_speed=800
     )
 
-    for row in range(2,9):
+    dna_vol = 2
+
+    for row in range(num_rows):
         p10.pick_up_tip()
-        p10.transfer(row, build_plate.rows(0).bottom(), transformation_plate.rows(0).bottom(),new_tip='never',mix_before=(2,9),blow_out=True)
+        p10.transfer(dna_vol, build_plate.rows(row).bottom(), transformation_plate.rows(row).bottom(),new_tip='never',mix_before=(2,9),blow_out=True)
+        print('Transferring DNA from row {}'.format(row))
         p10.drop_tip()
+    if num_reactions % 8 > 0:
+        p10s.pick_up_tip()
+        print("need single channel for {}".format(num_reactions % 8))
+        for missing in range(num_reactions % 8):
+            current_well = (8 * num_rows) + (missing)
+            print("Transferring {}ul of DNA to {}".format(dna_vol,current_well))
+            p10s.transfer(dna_vol, build_plate.wells(current_well).bottom(), transformation_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+            p10s.drop_tip()
+
 
 
 if __name__ == '__main__':

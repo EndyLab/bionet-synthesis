@@ -1,0 +1,15 @@
+item_type,product_name,manufacturer,catalogue_number,items_per_order,cost_per_order,cost_per_item,amount_per_build,cost_per_build
+agar_plate,Nunc™ Rectangular Dishes,Thermo Fischer,267060,100,379.00,3.79,4,15.16
+deep_well_block,"VWR® 96-Well Deep Well Plates (2.2mL, sterile, pack of 10)",VWR,10755-250,10,76.34,7.63,1,7.63
+p10_tip_box,"10 ul XL TipOne filter tip refill cassette, sterile",USA Scientific,1120-3710,10,56.45,5.65,5,28.23
+p200_tip_box,Fisherbrand™ SureOne™ Filter Tip Reload Pipette Tips (case of 5 PK),Fisherbrand,02-707-478,50,523.60,10.47,0.1,1.05
+BbsI,BbsI-HF,NEB,R3539L,75,272.00,3.63,24,87.04
+BtgZI,BtgZI,NEB,R0703L,100,272.00,2.72,0,0.00
+T4_ligase,T4 DNA Ligase,NEB,M0202L,250,262.00,1.05,48,50.30
+cutsmart,CutSmart Buffer,NEB,B7204S,5000,22.00,0.00,96,0.42
+atp,Adenosine 5'-Triphosphate (ATP),NEB,P0756L,5000,134.00,0.03,96,2.57
+pcr_tube_plate,"Thermo-Fast PCR Plate, 48-well, clear",Thermo,AB0648,50,179.00,3.58,2,7.16
+pcr_tube_lid,"Flat PCR Caps, strips of 8",Thermo,AB0783,120,43.00,0.36,12,4.30
+breathable_seal,AeraSeal Adhesive Microplate Seals,EandK Scientific,T896100,100,74.72,0.75,2,1.49
+aluminum_seal,VWR® Aluminum Foils for 96 well plates,VMR,60941-126,100,86.13,0.86,2,1.72
+well_plate,"Greiner 96 well plates, polypropylene",Sigma,M8935-100EA,100,283.00,2.83,2,5.66

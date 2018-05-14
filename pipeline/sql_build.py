@@ -121,7 +121,9 @@ def run_build():
     ## =============================================
     ## CREATE A BUILD OF DESIRED GENES
     ## =============================================
-    max_rxns = 96 # Sets the maximal number of clones you want to run
+    # max_rxns = 96 # Sets the maximal number of clones you want to run
+    max_rxns = int(input("Enter the desired number of builds: "))
+
     enzyme = 'BbsI'
     to_build = []
     # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
@@ -135,10 +137,13 @@ def run_build():
     if len(to_build) < 96:
         to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
                     join(Well,Fragment.wells).join(Plate,Well.plates)\
-                    .filter(Part.status.in_(rework)).filter(Fragment.cloning_enzyme == enzyme).order_by(Plate.id)]
+                    .filter(Part.status.in_(rework)).filter(Part.cloning_enzyme == enzyme).order_by(Plate.id)]
 
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
+    part_names = [[part.part_id,part.status] for part in to_build]
+    print(part_names)
+    input("stop")
     target_build = Build(to_build)
     session.add(target_build)
     building = []

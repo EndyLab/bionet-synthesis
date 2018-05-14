@@ -98,8 +98,8 @@ def plate():
 
     assemblies = []
     print("Choose which plate you would like to transform/plate:")
-    for index,assembly in enumerate(session.query(Plate).filter(Plate.plated == 'not_plated').order_by(Plate.id)):
-        print("{}. {}-{}".format(index,assembly.builds.build_name,assembly.plate_name))
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
+        print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
     plate_num = int(input("Enter plate here: "))
@@ -124,10 +124,10 @@ def plate():
     num_plates = num_rows // trans_per_plate
 
     agar_plate_names = []
-    for row in range(num_plates):
+    for plate_num in range(num_plates):
         if portion == 2:
-            row += 2
-        current_plate = "build" + str(target_plate.builds.id).zfill(3) + "_p" + str(row + 1)
+            plate_num += 2
+        current_plate = target_plate.builds.build_name + "_p" + str(plate_num + 1)
         agar_plate_names.append(current_plate)
     print(agar_plate_names)
     print("You will need {} agar plates".format(len(agar_plate_names)))

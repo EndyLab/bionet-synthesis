@@ -12,24 +12,24 @@
 
 ## Detailed Results
 
-### Individual Cloning Run Breakdown
+### Individual Cloning Run Statistics
 
-![Cloning Run Breakdown](./raw_build.png)
+![Cloning Run Statistics](./raw_build.png)
 ![](./norm_build.png)
 
-### Individual Twist Order Breakdown
+### Individual Twist Order Statistics
 
-![Twist Order Breakdown](./raw_order.png)
+![Twist Order Statistics](./raw_order.png)
 ![](./norm_order.png)
 
-### Cloning Rework Breakdown
+### Cloning Rework Statistics
 
-![Rework Breakdown](./raw_attempt.png)
+![Rework Statistics](./raw_attempt.png)
 ![](./norm_attempt.png)
 
-### Synthesis Failure Breakdown
+### Synthesis Failure Statistics
 
-![Synthesis Failure Breakdown](./syn_fail.png)
+![Synthesis Failure Statistics](./syn_fail.png)
 
 ### Cloning Failure versus Sequence Length
 
