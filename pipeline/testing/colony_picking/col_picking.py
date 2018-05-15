@@ -151,6 +151,53 @@ def find_corners(image):
 
 	return image, corners
 
+def find_minima(sums,number,threshold=40):
+	# Sets a threshold to define regions considered 'empty' and stores their indexes
+	bottoms = []
+	for i,sum in enumerate(sums):
+		if sum/255 < threshold:
+			bottoms.append(i)
+	# Finds the start and end points of streaks of low points
+	edges = [bottoms[0]]
+
+	for i,bot in enumerate(bottoms):
+		if i == (len(bottoms) - 1):
+			break
+		if bot != (bottoms[i+1] - 1) or bot != (bottoms[i-1] + 1):
+			if bottoms[i+1] - bot > 20 or bot - bottoms[i-1] > 20:
+				edges.append(bot)
+	edges.append(bottoms[-1])
+
+	# Groups the endpoints together to define the bounds of each section
+	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
+	print("Bounds: ",bounds)
+
+	single = [bound for bound in bounds if len(bound) < 2]
+	print(single,len(single))
+
+	if len(single) > 0:
+		print('single',threshold)
+		return find_minima(sums,number,threshold=threshold+1)
+
+	# Calculates and plots the midpoints of the low regions
+	mid = []
+	for l,r in bounds:
+		mid_point = int(((r-l) / 2)+l)
+		mid.append(int(mid_point))
+
+	if len(mid)-1 > number:
+		print('Too many minima',threshold)
+		return find_minima(sums,number,threshold=threshold-5)
+	if len(mid)-1 < number:
+		print('Too few minima',threshold)
+		return find_minima(sums,number,threshold=threshold+5)
+
+	print("Number of minima: ",len(mid)-1)
+	print("Threshold: ",threshold)
+
+	return mid
+
+
 def find_grid(img):
 	'''
 	Scans the image for the rows and columns of the image with the fewest colonies
@@ -173,83 +220,8 @@ def find_grid(img):
 		sum = np.sum(thresh[0:height,col])
 		sums_x.append(sum)
 
-	# Generate a plot to visualize the sumations
-	fig1 = plt.figure(0)
-	ax1 = fig1.add_subplot(211)
-	ax1.plot(sums_y)
-	# ax1.ylabel('Pixel summation')
-
-	# Sets a threshold to define regions considered 'empty' and stores their indexes
-	bottoms = []
-	for i,sum in enumerate(sums_y):
-		if sum/255 < 30:
-			ax1.plot(i,sum, 'r.')
-			bottoms.append(i)
-
-	# Finds the start and end points of streaks of low points
-	edges = [bottoms[0]]
-	for i,bot in enumerate(bottoms):
-		if i == (len(bottoms) - 1):
-			break
-		if bot != (bottoms[i+1] - 1) or bot != (bottoms[i-1] + 1):
-			if bottoms[i+1] - bot > 20 or bot - bottoms[i-1] > 20:
-				edges.append(bot)
-	edges.append(bottoms[-1])
-
-	# Groups the endpoints together to define the bounds of each section
-	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
-	print("Bounds: ",bounds)
-	# temp = np.copy(cl1)
-	temp = np.copy(gray)
-
-
-	# Calculates and plots the midpoints of the low regions
-	mid_y = []
-	for l,r in bounds:
-		mid_point = int(((r-l) / 2)+l)
-		mid_y.append(int(mid_point))#+top_bound/2))
-		ax1.plot(mid_point,sums_y[mid_point], 'bo')
-		cv2.line(temp,(0,int(mid_point)),(int(height),int(mid_point)),(0,255,255),3)
-	print("Number of rows: ",len(mid_y)-1)
-
-	# Generate a plot to visualize the sumations
-	ax2 = fig1.add_subplot(212)
-	ax2.plot(sums_x)
-	# ax2.ylabel('Pixel summation')
-
-	# Store only the points that have less than 60 pixels in the line
-	bottoms = []
-	for i,sum in enumerate(sums_x):
-		if sum/255 < 80:
-			ax2.plot(i,sum, 'r.')
-			bottoms.append(i)
-	# Finds the start and end points of streaks of low points
-	edges = [bottoms[0]]
-	for i,bot in enumerate(bottoms):
-		if i == (len(bottoms) - 1):
-			break
-		if bot != (bottoms[i+1] - 1) or bot != (bottoms[i-1] + 1):
-			if bottoms[i+1] - bot > 20 or bot - bottoms[i-1] > 20:
-				edges.append(bot)
-	edges.append(bottoms[-1])
-
-	# Groups the endpoints together
-	bounds = [edges[n:n+2] for n in range(0, len(edges), 2)]
-	print("Bounds: ",bounds)
-
-	# Calculates and plots the midpoints of the low regions
-	mid_x = []
-	for t,b in bounds:
-		mid_point = int(((b-t) / 2)+t)
-		mid_x.append(mid_point)
-		ax2.plot(mid_point,sums_x[mid_point], 'bo')
-		cv2.line(temp,(int(mid_point),0),(int(mid_point),int(height)),(0,255,255),3)
-	print("Number of columns: ",len(mid_x)-1)
-	show_image(temp)
-
-	fig1.show()
-	input('Review grid')
-	plt.close()
+	mid_y = find_minima(sums_y,12)
+	mid_x = find_minima(sums_x,8)
 
 	return gray, mid_x, mid_y
 
@@ -812,6 +784,9 @@ def pick_colonies():
 
 	for file in sorted(glob.glob('./new_photos/*.jpg'),reverse=True):
 		print(file)
+		skip = input('Skip? y/n: ')
+		if skip == 'y':
+			continue
 		print("Inoculate: ",args.inoculate)
 		input()
 		centers,agar,x_dim,y_dim,missing = find_colony_coordinates(file,args.check)
