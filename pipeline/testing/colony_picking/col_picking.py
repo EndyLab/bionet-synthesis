@@ -250,7 +250,7 @@ def show_small(img):
 	cv2.waitKey(1)
 	input("next image")
 
-def find_colonies(image,check,size=201):
+def find_colonies(image,check,size=201,criteria=1):
 	'''
 	Searches the image for pickable colonies and returns the
 	location of their centers
@@ -276,6 +276,23 @@ def find_colonies(image,check,size=201):
 	good_cols = []
 	bad_cols = []
 	good_center = []
+
+	# Set the acceptable ranges for the different attributes. Values were
+	# determined by generating a test set and extracting the acceptable ranges
+
+	if criteria == 1:
+		area_r = [50,200]
+		peri_r = [27,50]
+		calc_r = [0.77,1]
+		ratio_r = [0.80,1.2]
+	elif criteria == 2:
+		area_r = [10,375]
+		peri_r = [12.5,80]
+		calc_r = [0.55,1]
+		ratio_r = [0.7,1.5]
+
+	crit = [area_r,peri_r,calc_r,ratio_r]
+
 	for counter,cnt in enumerate(cnts):
 		print("counter: ",counter)
 
@@ -305,15 +322,6 @@ def find_colonies(image,check,size=201):
 
 		attributes = [area,perimeter,calc,ratio]
 
-		# Set the acceptable ranges for the different attributes. Values were
-		# determined by generating a test set and extracting the acceptable ranges
-		area_r = [10,375]
-		peri_r = [12.5,80]
-		calc_r = [0.55,1]
-		ratio_r = [0.7,1.5]
-
-		crit = [area_r,peri_r,calc_r,ratio_r]
-
 		# Check each attribute against the ranges specified
 		bad = False
 		if perimeter > area:
@@ -339,12 +347,7 @@ def find_colonies(image,check,size=201):
 			# cv2.drawContours(color_th, cnt, -1, (0,255,0), 1)
 			# show_small(color_th)
 			# show_small(color)
-	if len(centers) == 0:
-		print("No colonies found")
-	else:
-		# Currently picks the good colony closest to the top of the plate
-		# TODO: Modify the selection process to allow for sorting by proximity
-		good_center = centers[-1]
+
 	cv2.drawContours(color, good_cols, -1, (0,255,0), 1)
 	cv2.drawContours(color_th, good_cols, -1, (0,255,0), 1)
 	cv2.drawContours(color, bad_cols, -1, (0,0,255), 1)
@@ -352,7 +355,10 @@ def find_colonies(image,check,size=201):
 	# show_small(color_th)
 	# show_small(color)
 
-	if size < 100:
+	if len(centers) == 0 and criteria == 1:
+		print("No colonies found with the stringent criteria")
+		return find_colonies(image,check,size=size,criteria=2)
+	elif size < 100:
 		print("No colonies found")
 	elif len(centers) == 0:
 		print("No colonies found, changing threshold")
@@ -386,10 +392,19 @@ def find_colonies(image,check,size=201):
 					print("Going to next option")
 					x -= 1
 			print('Iterated through all colonies')
-			ans = str(input('r-retry, q-quit'))
-			if ans == 'r':
-				return choose_colony(img,centers)
+			ans = str(input('b-broaden, q-quit'))
+
+			if ans == 'b' or ans == '' and criteria == 1:
+				print('Changing colony criteria')
+				return find_colonies(image,check,size=size,criteria=2)
+			elif ans == 'b' or ans == '' and size > 100:
+				print('Changing threshold criteria')
+				return find_colonies(image,check,size=size-50,criteria=2)
+			elif ans == 'b' or ans == '' and size < 100:
+				print('No colonies found in this section')
+				return []
 			elif ans == 'q':
+				print('No colonies found in this section')
 				return []
 		if check:
 			good_center = choose_colony(color,centers)
