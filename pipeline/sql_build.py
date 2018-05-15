@@ -19,6 +19,8 @@ import getch
 
 from config import *
 
+import sql_resuspension
+
 from db_config import *
 session,engine = connect_db()
 
@@ -190,6 +192,14 @@ def run_build():
     for num,group in enumerate(group_plates):
         print("Group{}: {}".format(num+1,group))
 
+    for plate in unique_plates:
+        current_plate = session.query(Plate).filter(Plate.plate_name == plate).one()
+        if current_plate.resuspended == 'not_resuspended':
+            ans = input("Plate {} is not resuspended, would you like to resuspend it? y/n: ".format(plate))
+            if ans == 'y':
+                sql_resuspension.resuspension(current_plate)
+        else:
+            print(plate,current_plate.resuspended)
     input("Press enter to continue")
 
     # Create a means to index to the plates

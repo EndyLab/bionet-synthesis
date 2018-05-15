@@ -22,7 +22,7 @@ session,engine = connect_db()
 
 # ## Generate the SQL Database
 # session = build_db()
-def resuspension():
+def resuspension(target):
     print("\n============ Beginning resuspension ============\n")
 
     ## Set up initial paths
@@ -46,18 +46,6 @@ def resuspension():
         else:
             sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
 
-    # Present all available plates to resuspend
-    print("Which plate would you like to resuspend:")
-    plate_names = []
-    for index,plate in enumerate(session.query(Plate).filter(Plate.plate_type == 'syn_plate').filter(Plate.resuspended != 'resuspended')):
-        print("{}. {}".format(index,plate.plate_name))
-        plate_names.append(plate.plate_name)
-
-    # Asks the user for a number corresponding to the plate they want to resuspend
-    number = int(input("Which file: "))
-    target = session.query(Plate).filter(Plate.plate_name == plate_names[number]).first()
-    print("Will resuspend plate ",target.plate_name)
-
     ## =============================================
     ## SETUP THE OT-1 DECK
     ## =============================================
@@ -68,8 +56,6 @@ def resuspension():
                 "tiprack-10s1" : "E3",
                 "tiprack-10s2" : "E1",
                 "trash" : "D1",
-                "PCR-strip-tall" : "C3",
-                "DEST_PLATE" : "C2",
                 "PLATE HERE" : "B2",
                 "Tube_rack" : "B1"
             }
@@ -105,7 +91,7 @@ def resuspension():
         session.add(well)
 
     print("total volume of water needed: {}uL".format(total))
-    num_tubes = math.ceil(total / 1200)
+    num_tubes = math.ceil(total / 1000)
     print("Prep {} tubes with 1.2mL".format(num_tubes))
 
     input("Press Enter when you have added them to the tube rack")
@@ -142,7 +128,6 @@ def resuspension():
     ]
 
     trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
-    master = containers.load('PCR-strip-tall', locations["PCR-strip-tall"])
     centrifuge_tube = containers.load('tube-rack-2ml',locations["Tube_rack"])
 
     resuspend_plate = containers.load('96-flat', locations["PLATE HERE"])
@@ -259,6 +244,17 @@ def resuspension():
     return
 
 if __name__ == "__main__":
-    resuspension()
+    # Present all available plates to resuspend
+    print("Which plate would you like to resuspend:")
+    plate_names = []
+    for index,plate in enumerate(session.query(Plate).filter(Plate.plate_type == 'syn_plate').filter(Plate.resuspended != 'resuspended')):
+        print("{}. {}".format(index,plate.plate_name))
+        plate_names.append(plate.plate_name)
+
+    # Asks the user for a number corresponding to the plate they want to resuspend
+    number = int(input("Which file: "))
+    target = session.query(Plate).filter(Plate.plate_name == plate_names[number]).first()
+    print("Will resuspend plate ",target.plate_name)
+    resuspension(target)
 
 #
