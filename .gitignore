@@ -4,4 +4,4 @@ pipeline/config.py
 raw_files/BLAST_db
 bionet-synthesis/settings.js
 bionet-synthesis/node_modules/**
-pipeline/__pycache__
+pipeline/__pycache__/**
