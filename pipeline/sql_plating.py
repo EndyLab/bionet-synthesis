@@ -116,6 +116,7 @@ def plate():
             print(build_map)
         num_reactions = len(build_map)
     else:
+        portion = 1
         num_reactions = len(build_map)
 
     num_rows = math.ceil(num_reactions / 8)
