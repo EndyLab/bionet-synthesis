@@ -144,9 +144,15 @@ def run_build():
     to_build = to_build[:max_rxns]
     print("to_build",len(to_build))
     part_names = [[part.part_id,part.status] for part in to_build]
-    print(part_names)
-    input("stop")
-    target_build = Build(to_build)
+
+    prev_builds = [build.build_name for build in session.query(Build)]
+    build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
+    last_build = max(build_numbers)
+    export_map = export_map[['Gene','Destination']]
+    build_num = str(last_build+1).zfill(3)
+    build_name = 'build' + build_num
+    
+    target_build = Build(to_build,build_name=build_name)
     session.add(target_build)
     building = []
     addresses = []
@@ -157,11 +163,7 @@ def run_build():
         'Gene' : building,
         'Destination' : addresses
     })
-    prev_builds = [build.build_name for build in session.query(Build)]
-    build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
-    last_build = max(build_numbers)
-    export_map = export_map[['Gene','Destination']]
-    build_num = str(last_build+1).zfill(3)
+
     path = '{}/builds/build{}'.format(BASE_PATH,build_num)
     if os.path.exists(path):
         print("Directory build{} already exists".format(build_num))

@@ -104,7 +104,7 @@ def plate():
 
     plate_num = int(input("Enter plate here: "))
     target_plate = assemblies[plate_num]
-
+    build_map = target_plate.wells
     if len(target_plate.wells) > 48:
         print("Too many samples to plate at once")
         portion = int(input("Choose which half to plate, 1 or 2: "))
