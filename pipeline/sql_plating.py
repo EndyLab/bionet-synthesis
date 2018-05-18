@@ -241,12 +241,10 @@ def plate():
     )
 
     def agar_plating(pipette,row,volume,calibrate,z):
-        pipette.move_to((row,[0,0,1]),strategy='arc')
-        pipette.dispense(volume)
+        pipette.dispense(volume-1,row.top())
+        pipette.dispense(1,row.bottom())
         if calibrate:
             calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
-        pipette.move_to((row,[0,0,z]),strategy='direct')
-        input("Successful plating?")
         return calibrate,z
 
     num_dilutions = 4
@@ -292,14 +290,6 @@ def plate():
             p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
 
             calibrate,z = agar_plating(p10,agar_plates[plate].rows(plating_row),plate_vol,calibrate,z)
-
-
-            # p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
-
-            # Will continue to try and recalibrate until no change is made to the height
-            # if redo:
-            #     redo = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
-            #     p10.blow_out()
 
             print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
             p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
