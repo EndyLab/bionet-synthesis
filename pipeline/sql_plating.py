@@ -28,38 +28,46 @@ def plate():
     ## ============================================
 
     def change_height(container,target):
-        x = 0
         counter = 0
+        z = 0
         print("Change height - s-g:up h-l:down x:exit")
-        while x == 0:
+        while True:
             c = getch.getch()
             if c == "s":
                 print("Up 20mm")
                 p10.robot._driver.move(z=20,mode="relative")
+                z += 20
             elif c == "d":
                 print("Up 5mm")
                 p10.robot._driver.move(z=5,mode="relative")
+                z += 5
             elif c == "f":
                 print("Up 0.5mm")
                 p10.robot._driver.move(z=0.5,mode="relative")
+                z += 0.5
             elif c == "g":
                 print("Up 0.1mm")
                 p10.robot._driver.move(z=0.1,mode="relative")
+                z += 0.1
             elif c == "h":
                 print("Down 0.1mm")
                 p10.robot._driver.move(z=-0.1,mode="relative")
+                z += -0.1
             elif c == "j":
                 print("Down 0.5mm")
                 p10.robot._driver.move(z=-0.5,mode="relative")
+                z += -0.5
             elif c == "k":
                 print("Down 5mm")
                 p10.robot._driver.move(z=-5,mode="relative")
+                z += -5
             elif c == "l":
                 print("Down 20mm")
                 p10.robot._driver.move(z=-20,mode="relative")
+                z += -10
             elif c == "x":
                 print("Exit")
-                x = 1
+                break
             counter += 1
         if counter > 1:
             print("Will recalibrate")
@@ -69,7 +77,7 @@ def plate():
             redo = False
         p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
 
-        return redo
+        return redo,z
 
     ## Take in required information
     ## ============================================
@@ -116,6 +124,7 @@ def plate():
             print(build_map)
         num_reactions = len(build_map)
     else:
+        portion = 1
         num_reactions = len(build_map)
 
     num_rows = math.ceil(num_reactions / 8)
@@ -231,29 +240,37 @@ def plate():
         dispense_speed=800
     )
 
+    def agar_plating(pipette,row,volume,calibrate,z):
+        pipette.move_to((row,[0,0,1]),strategy='arc')
+        pipette.dispense(volume)
+        if calibrate:
+            calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+        pipette.move_to((row,[0,0,z]),strategy='direct')
+        input("Successful plating?")
+        return calibrate,z
+
     num_dilutions = 4
     plate_vol = 7.5
     dilution_vol = 9
     waste_vol = 2.5
     plating_row = 0
 
-    redo = True
+    calibrate = True
+    z = 0
     media_per_tube = 150
     plate = agar_plate_names[0]
     plate_counter = 0
 
     # Aliquot the LB into the PCR tube strip for the dilutions
-    #p200.pick_up_tip()
-    #for well in range(8):
-    #    print("Transferring {}ul to tube {}".format(media_per_tube,well))
-    #    p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
-    #p200.drop_tip()
+    p200.pick_up_tip()
+    for well in range(8):
+       print("Transferring {}ul to tube {}".format(media_per_tube,well))
+       p200.transfer(media_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(),new_tip='never')
+    p200.drop_tip()
 
     #input("Start the other run")
     # Iterate through each row of the transformation plate
     for trans_row in range(num_rows):
-        if trans_row == 0:
-            continue
         # Iterates through each dilution
         for dilution in range(num_dilutions):
             # Resets to switch to the next plate
@@ -273,12 +290,16 @@ def plate():
             p10.transfer(dilution_vol, master['A1'].bottom(), transformation_plate.rows(trans_row).bottom(),new_tip='never',mix_before=(1,9))
             print("Plating {}ul from transformation row {} onto {} in row {}".format(plate_vol,trans_row,plate,plating_row))
             p10.aspirate(plate_vol,transformation_plate.rows(trans_row).bottom())
-            p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
+
+            calibrate,z = agar_plating(p10,agar_plates[plate].rows(plating_row),plate_vol,calibrate,z)
+
+
+            # p10.dispense(plate_vol, agar_plates[plate].rows(plating_row).bottom())
 
             # Will continue to try and recalibrate until no change is made to the height
-            if redo:
-                redo = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
-                p10.blow_out()
+            # if redo:
+            #     redo = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+            #     p10.blow_out()
 
             print("Discard {}ul from transformation row {} into waste tube".format(waste_vol,trans_row))
             p10.aspirate(waste_vol,transformation_plate.rows(trans_row).bottom())
