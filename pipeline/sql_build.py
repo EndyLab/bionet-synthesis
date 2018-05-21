@@ -148,10 +148,10 @@ def run_build():
     prev_builds = [build.build_name for build in session.query(Build)]
     build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
     last_build = max(build_numbers)
-    export_map = export_map[['Gene','Destination']]
+
     build_num = str(last_build+1).zfill(3)
     build_name = 'build' + build_num
-    
+
     target_build = Build(to_build,build_name=build_name)
     session.add(target_build)
     building = []
@@ -163,6 +163,7 @@ def run_build():
         'Gene' : building,
         'Destination' : addresses
     })
+    export_map = export_map[['Gene','Destination']]
 
     path = '{}/builds/build{}'.format(BASE_PATH,build_num)
     if os.path.exists(path):
@@ -181,21 +182,24 @@ def run_build():
     SOURCE_SLOTS = ['D2','D3','B2']
 
     ## Generate a list of unique plates that are needed
+    print("Finding the required plates")
     unique_plates = []
     for part in to_build:
         for frag in part.fragments:
-            unique_plates.append(frag.wells[0].plates.plate_name)
+            unique_plates.append(frag.wells[0].plates.plate_id)
     unique_plates = pd.Series(unique_plates).unique()
     plate_index = [(y,x) for x,y in enumerate(unique_plates)]
     plate_index = dict(plate_index)
 
     ## Group the plates so that they can be swapped in batches
+    print("Grouping plates")
     group_plates = [unique_plates[n:n+len(SOURCE_SLOTS)] for n in range(0, len(unique_plates), len(SOURCE_SLOTS))]
     for num,group in enumerate(group_plates):
         print("Group{}: {}".format(num+1,group))
 
+    print("Checking if plates need to be resuspended")
     for plate in unique_plates:
-        current_plate = session.query(Plate).filter(Plate.plate_name == plate).one()
+        current_plate = session.query(Plate).filter(Plate.plate_id == plate).one()
         if current_plate.resuspended == 'not_resuspended':
             ans = input("Plate {} is not resuspended, would you like to resuspend it? y/n: ".format(plate))
             if ans == 'y':
@@ -411,8 +415,7 @@ def run_build():
         gene = row[2]
         plate = row[3]
         volume = row[4]
-        # TEMP: INCLUDE VOLUME ONCE I ACTUALLY RUN THE RESUSPENSION
-        #volume = int(frag.wells[0].volume)
+
         if plate not in current_group:
             plate_counter += 1
             current_group = group_plates[plate_counter]

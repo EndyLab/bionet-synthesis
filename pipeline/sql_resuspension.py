@@ -249,11 +249,11 @@ if __name__ == "__main__":
     print("Which plate would you like to resuspend:")
     plate_names = []
     for index,plate in enumerate(session.query(Plate).filter(Plate.plate_type == 'syn_plate').filter(Plate.resuspended != 'resuspended')):
-        print("{}. {}".format(index,plate.plate_name))
+        print("{}. {} - {}".format(index,plate.plate_id,plate.plate_name))
         plate_names.append(plate.plate_name)
 
     # Asks the user for a number corresponding to the plate they want to resuspend
-    number = int(input("Which file: "))
+    number = int(input("Which plate: "))
     target = session.query(Plate).filter(Plate.plate_name == plate_names[number]).first()
     print("Will resuspend plate ",target.plate_name)
     resuspension(target)
