@@ -76,6 +76,7 @@ def resuspension(target):
     print("\n Please arrange the items in the following configuration: \n")
     print(layout_table,"\n")
     input("Press enter to continue")
+    print('Calculating the volumes to resuspend with')
 
     def calc_vol(amount,length,fmoles=40):
         return math.ceil(((((amount * 1000)/(660*length))*1000) / fmoles) * 2),fmoles

@@ -208,6 +208,7 @@ class Plate(Base):
     id = Column(Integer, primary_key=True)
     plate_type = Column(String) # Takes in syn_plate, assembly_plate, or seq_plate
     plate_name = Column(String)
+    plate_id = Column(String) # Sequential ID given to synthesis plates
     resuspended = Column(String) # 'resuspended' or 'not resuspended'
     plated = Column(String) # 'plated' or 'not_plated'
     assessed = Column(String) # 'assessed' or 'not_assessed'
@@ -219,12 +220,13 @@ class Plate(Base):
     # One plate can have many wells but a well can only have one plate
     wells = relationship("Well", back_populates="plates")
 
-    def __init__(self,items,plate_type,plate_name):
+    def __init__(self,items,plate_type,plate_name,plate_id=''):
         # Increment through all of the possible well addresses
         self.plate_name = plate_name
         self.plate_type = plate_type
         if self.plate_type == 'syn_plate':
             self.resuspended = 'not_resuspended'
+            self.plate_id = plate_id
         if self.plate_type == 'assembly_plate':
             self.plated = 'not_plated'
         # Generate a well for every part provided
