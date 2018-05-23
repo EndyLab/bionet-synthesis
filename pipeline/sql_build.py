@@ -18,6 +18,7 @@ from datetime import datetime
 import getch
 
 from config import *
+import ot_functions as ot
 
 import sql_resuspension
 
@@ -125,7 +126,7 @@ def run_build():
     ## =============================================
     # max_rxns = 96 # Sets the maximal number of clones you want to run
     max_rxns = int(input("Enter the desired number of builds: "))
-
+    print("Finding genes to build")
     enzyme = 'BbsI'
     to_build = []
     # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
@@ -225,23 +226,7 @@ def run_build():
                 "DEST_PLATE" : "C2",
                 "Tube_rack" : "B1"
             }
-
-    # Make the dataframe to represent the OT-1 deck
-    deck = ['A1','B2','C3','D2','E1']
-    slots = pd.Series(deck)
-    columns = sorted(slots.str[0].unique())
-    rows = sorted(slots.str[1].unique(), reverse=True)
-    layout_table = pd.DataFrame(index=rows, columns=columns)
-    layout_table.fillna("---", inplace=True)
-
-    # Fill in the data frame with the locations
-    for obj in locations:
-            layout_table.loc[locations[obj][1], locations[obj][0]] = obj
-
-    # Displays the required plate map and waits to proceed
-    print("\n Please arrange the items in the following configuration: \n")
-    print(layout_table,"\n")
-    input("Press enter to continue")
+    ot.print_layout(locations)
 
     ## =============================================
     ## SETUP THE MASTER MIX
@@ -301,42 +286,7 @@ def run_build():
     master = containers.load('PCR-strip-tall', locations["PCR-strip-tall"])
     dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
 
-    # Declare all of the pipettes
-    p10 = instruments.Pipette(
-        axis='a',
-        max_volume=10,
-        min_volume=0.5,
-        tip_racks=p10_tipracks,
-        trash_container=trash,
-        channels=8,
-        name='p10-8',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
-
-    p10s = instruments.Pipette(
-        axis='a',
-        max_volume=10,
-        min_volume=0.5,
-        tip_racks=p10s_tipracks,
-        trash_container=trash,
-        channels=1,
-        name='p10-8s',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
-
-    p200 = instruments.Pipette(
-        axis='b',
-        max_volume=200,
-        min_volume=20,
-        tip_racks=p200_tipracks,
-        trash_container=trash,
-        channels=1,
-        name='p200-1',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
+    p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
 
     ## =============================================
     ## OT-1 PROTOCOL
@@ -405,8 +355,8 @@ def run_build():
     for plate in target_build.plates:
         for well in plate.wells:
             for frag in well.parts.fragments:
-                indexes.append(plate_index[frag.wells[0].plates.plate_name])
-                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_name,frag.wells[0].volume]]
+                indexes.append(plate_index[frag.wells[0].plates.plate_id])
+                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_id,frag.wells[0].volume]]
 
     build_plan = [row for i,row in sorted(zip(indexes,rows))]
     for row in build_plan:
