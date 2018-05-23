@@ -510,21 +510,21 @@ def move_motor(pipette):
 	while z == 0:
 		c = getch.getch()
 		if c == "w":
-			pipette.robot._driver.move(y=0.5,mode="relative")
+			pipette.robot._driver.move(y=0.1,mode="relative")
 			print("up")
-			y += 0.5
+			y += 0.1
 		elif c == "s":
-			pipette.robot._driver.move(y=-0.5,mode="relative")
+			pipette.robot._driver.move(y=-0.1,mode="relative")
 			print("down")
-			y -= 0.5
+			y -= 0.1
 		elif c == "a":
-			pipette.robot._driver.move(x=-0.5,mode="relative")
+			pipette.robot._driver.move(x=-0.1,mode="relative")
 			print("left")
-			x -= 0.5
+			x -= 0.1
 		elif c == "d":
-			pipette.robot._driver.move(x=0.5,mode="relative")
+			pipette.robot._driver.move(x=0.1,mode="relative")
 			print("right")
-			x += 0.5
+			x += 0.1
 		elif c == "x":
 			z = 1
 	print(x,y)
@@ -632,10 +632,16 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 		# Calibrate it such that the tip barely pierces the agar
 		while True:
 			c = getch.getch()
-			if c == 'r':
+			if c == '4':
 				z += 0.5
 				print('up')
+			elif c == 'r':
+				z += 0.1
+				print('down')
 			elif c == 'f':
+				z -= 0.1
+				print('up')
+			elif c == 'v':
 				z -= 0.5
 				print('down')
 			elif c == 'x':
@@ -702,18 +708,6 @@ def show_image(image,width=400):
 	input('Enter to move to next image')
 	return
 
-def well_addresses():
-    '''Generates a list of well address A1-H12'''
-    letter = ["A","B","C","D","E","F","G","H"]
-    number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    target_well = []
-    temp_well = 0
-    for n in number:
-        for l in letter:
-            temp_well = l + n
-            target_well.append(temp_well)
-    return target_well
-
 def find_colony_coordinates(file,check):
 	'''
 	Takes in a file handle for an image and returns the modified image along with
@@ -746,7 +740,7 @@ def find_colony_coordinates(file,check):
 	groups = groups[16:24] + groups[8:16] + groups[:8]
 	centers = []
 	missing = []
-	wells = well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
+	wells = ot.well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
 	print(wells)
 	input("check wells")
 	agar = cv2.cvtColor(agar, cv2.COLOR_BGR2GRAY)

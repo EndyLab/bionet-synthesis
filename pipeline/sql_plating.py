@@ -23,62 +23,7 @@ from db_config import *
 session,engine = connect_db()
 
 def plate():
-    print("\n============ Beginning plating ============\n")
-
-    ## Establish initial functions
-    ## ============================================
-
-    def change_height(container,target):
-        counter = 0
-        z = 0
-        print("Change height - s-g:up h-l:down x:exit")
-        while True:
-            c = getch.getch()
-            if c == "s":
-                print("Up 20mm")
-                p10.robot._driver.move(z=20,mode="relative")
-                z += 20
-            elif c == "d":
-                print("Up 5mm")
-                p10.robot._driver.move(z=5,mode="relative")
-                z += 5
-            elif c == "f":
-                print("Up 0.5mm")
-                p10.robot._driver.move(z=0.5,mode="relative")
-                z += 0.5
-            elif c == "g":
-                print("Up 0.1mm")
-                p10.robot._driver.move(z=0.1,mode="relative")
-                z += 0.1
-            elif c == "h":
-                print("Down 0.1mm")
-                p10.robot._driver.move(z=-0.1,mode="relative")
-                z += -0.1
-            elif c == "j":
-                print("Down 0.5mm")
-                p10.robot._driver.move(z=-0.5,mode="relative")
-                z += -0.5
-            elif c == "k":
-                print("Down 5mm")
-                p10.robot._driver.move(z=-5,mode="relative")
-                z += -5
-            elif c == "l":
-                print("Down 20mm")
-                p10.robot._driver.move(z=-20,mode="relative")
-                z += -10
-            elif c == "x":
-                print("Exit")
-                break
-            counter += 1
-        if counter > 1:
-            print("Will recalibrate")
-            redo = True
-        else:
-            print("Calibrated")
-            redo = False
-        p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
-
-        return redo,z
+    print("\n============ Beginning to plate ============\n")
 
     ## Take in required information
     ## ============================================
@@ -119,10 +64,8 @@ def plate():
         portion = int(input("Choose which half to plate, 1 or 2: "))
         if portion == 1:
             build_map = target_plate.wells[:48]
-            print(build_map)
         else:
             build_map = target_plate.wells[48:]
-            print(build_map)
         num_reactions = len(build_map)
     else:
         portion = 1
@@ -148,7 +91,7 @@ def plate():
     # Allocate slots for the required agar plates
     AGAR_SLOTS = ['D2','D3']
     layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
-
+    print(layout)
     # Specify the locations of each object on the deck
     locations = {
                 "tiprack-200" : "A3",
@@ -160,7 +103,7 @@ def plate():
                 "Transformation" : "C2",
                 "Tube_rack" : "B1"
             }
-
+    locations.update(dict(layout))
     ot.print_layout(locations)
 
     ## Initialize the OT-1
@@ -217,7 +160,7 @@ def plate():
         pipette.dispense(volume-1,row.top())
         pipette.dispense(1,row.bottom())
         if calibrate:
-            calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+            calibrate,z = ot.change_height(p10,agar_plates[plate],agar_plates[plate].rows(plating_row)[0],recalibrate=True)
         return calibrate,z
 
     num_dilutions = 4

@@ -47,50 +47,13 @@ def run_build():
     ## ============================================
     ## ESTABLISH INITIAL FUNCTIONS
     ## ============================================
-    def change_height(container,target):
-        '''Allows for real-time calibration of the p10 single height'''
-        x = 0
-        print("Change height - s-g:up h-l:down x:exit")
-        while x == 0:
-            c = getch.getch()
-            if c == "s":
-                p10.robot._driver.move(z=20,mode="relative")
-            elif c == "d":
-                p10.robot._driver.move(z=5,mode="relative")
-            elif c == "f":
-                p10.robot._driver.move(z=0.5,mode="relative")
-            elif c == "g":
-                p10.robot._driver.move(z=0.1,mode="relative")
-            elif c == "h":
-                p10.robot._driver.move(z=-0.1,mode="relative")
-            elif c == "j":
-                p10.robot._driver.move(z=-0.5,mode="relative")
-            elif c == "k":
-                p10.robot._driver.move(z=-5,mode="relative")
-            elif c == "l":
-                p10.robot._driver.move(z=-20,mode="relative")
-            elif c == "x":
-                x = 1
-        p10s.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
-
-    def well_addresses():
-        '''Generates a list of well address A1-H12'''
-        letter = ["A","B","C","D","E","F","G","H"]
-        number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-        target_well = []
-        temp_well = 0
-        for n in number:
-            for l in letter:
-                temp_well = l + n
-                target_well.append(temp_well)
-        return target_well
-
-    def change_plates(current_plates):
+    def change_plates(locations,current_plates):
         '''Allows the user to swap plates in the middle of a protocol'''
         source_plates = {}
+        temp = locations
         plate_locations = list(zip(pd.unique(current_plates),SOURCE_SLOTS[:len(current_plates)]))
-        print("plate_locations","\n", plate_locations)
-        input("Switch out plates for those listed. Press enter when ready.")
+        temp.update(plate_locations)
+        ot.print_layout(temp)
         for plate, slot in plate_locations:
             source_plates[plate] = containers.load('96-flat', slot)
         return source_plates
@@ -119,14 +82,12 @@ def run_build():
         else:
             sys.exit("Run roboswitch 'ROBOT_NAME' to change to the correct robot")
 
-    target_well = well_addresses()
-
     ## =============================================
     ## CREATE A BUILD OF DESIRED GENES
     ## =============================================
     # max_rxns = 96 # Sets the maximal number of clones you want to run
     max_rxns = int(input("Enter the desired number of builds: "))
-    print("Finding genes to build")
+    print("...Finding genes to build...")
     enzyme = 'BbsI'
     to_build = []
     # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
@@ -183,7 +144,7 @@ def run_build():
     SOURCE_SLOTS = ['D2','D3','B2']
 
     ## Generate a list of unique plates that are needed
-    print("Finding the required plates")
+    print("...Finding the required plates...")
     unique_plates = []
     for part in to_build:
         for frag in part.fragments:
@@ -348,7 +309,7 @@ def run_build():
     used_plates = []
     plate_counter = 0
     current_group = group_plates[plate_counter]
-    source_plates = change_plates(current_group)
+    source_plates = change_plates(locations,current_group)
 
     indexes = []
     rows = []
@@ -369,7 +330,7 @@ def run_build():
         if plate not in current_group:
             plate_counter += 1
             current_group = group_plates[plate_counter]
-            source_plates = change_plates(current_group)
+            source_plates = change_plates(locations,current_group)
 
         p10s.pick_up_tip()
 
@@ -384,7 +345,7 @@ def run_build():
         # Checks the calibration to make sure that it can aspirate correctly
         p10s.aspirate(frag_vol,source_plates[plate].wells(start_well).bottom())
         if plate not in used_plates:
-            change_height(source_plates[plate],source_plates[plate].wells(start_well))
+            ot.change_height(p10s,source_plates[plate],source_plates[plate].wells(start_well))
         p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
         used_plates.append(plate)
 

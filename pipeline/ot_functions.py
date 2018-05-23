@@ -1,6 +1,7 @@
 from opentrons import robot, containers, instruments
 import numpy as np
 import pandas as pd
+import getch
 
 def initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash):
     # Declare all of the pipettes
@@ -68,9 +69,73 @@ def print_layout(locations):
 
 def change_speed(robot):
     robot.head_speed(5000)
-    # return robot
 
+def change_height(pipette,container,target,recalibrate=False):
+    counter = 0
+    z = 0
+    print("Change height - s-g:up h-l:down x:exit")
+    while True:
+        c = getch.getch()
+        if c == "s":
+            print("Up 20mm")
+            pipette.robot._driver.move(z=20,mode="relative")
+            z += 20
+        elif c == "d":
+            print("Up 5mm")
+            pipette.robot._driver.move(z=5,mode="relative")
+            z += 5
+        elif c == "f":
+            print("Up 0.5mm")
+            pipette.robot._driver.move(z=0.5,mode="relative")
+            z += 0.5
+        elif c == "g":
+            print("Up 0.1mm")
+            pipette.robot._driver.move(z=0.1,mode="relative")
+            z += 0.1
+        elif c == "h":
+            print("Down 0.1mm")
+            pipette.robot._driver.move(z=-0.1,mode="relative")
+            z += -0.1
+        elif c == "j":
+            print("Down 0.5mm")
+            pipette.robot._driver.move(z=-0.5,mode="relative")
+            z += -0.5
+        elif c == "k":
+            print("Down 5mm")
+            pipette.robot._driver.move(z=-5,mode="relative")
+            z += -5
+        elif c == "l":
+            print("Down 20mm")
+            pipette.robot._driver.move(z=-20,mode="relative")
+            z += -20
+        elif c == "x":
+            print("Exit")
+            break
+        counter += 1
+    pipette.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
 
+    if recalibrate:
+        if counter > 1:
+            print("Will recalibrate")
+            redo = True
+        else:
+            print("Calibrated")
+            redo = False
+        return redo,z
+    else:
+        return z
+
+def well_addresses():
+    '''Generates a list of well address A1-H12'''
+    letter = ["A","B","C","D","E","F","G","H"]
+    number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    target_well = []
+    temp_well = 0
+    for n in number:
+        for l in letter:
+            temp_well = l + n
+            target_well.append(temp_well)
+    return target_well
 
 
 
