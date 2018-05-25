@@ -18,6 +18,7 @@ from datetime import datetime
 import getch
 
 from config import *
+import ot_functions as ot
 from db_config import *
 session,engine = connect_db()
 
@@ -28,15 +29,16 @@ def transform():
     # parser.add_argument('-m', '--manual', required=False, action="store_true", help="Maunal entry of parameters.")
     args = parser.parse_args()
 
-    build_num = int(input('Enter the build to be transformed: '))
-    build_name = 'build' + str(build_num).zfill(3)
-    build_path = '{}/builds/{}/{}_trans_map.csv'.format(BASE_PATH,build_name,build_name)
+    assemblies = []
+    print("Choose which plate you would like to transform/plate:")
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
+        print("{}. {}".format(index,assembly.builds.build_name))
+        assemblies.append(assembly)
 
-    build = pd.read_csv(build_path)
-    num_reactions = len(build)
-    print(num_reactions)
-    input()
+    plate_num = int(input("Enter plate here: "))
+    target_plate = assemblies[plate_num]
 
+    num_reactions = len(target_plate.wells)
     num_rows = num_reactions // 8
 
     # Verify that the correct robot is being used
@@ -59,23 +61,7 @@ def transform():
                 "Build_plate" : "C3",
                 "Tube_rack" : "B1"
             }
-
-    # Make the dataframe to represent the OT-1 deck
-    deck = ['A1','B2','C3','D2','E1']
-    slots = pd.Series(deck)
-    columns = sorted(slots.str[0].unique())
-    rows = sorted(slots.str[1].unique(), reverse=True)
-    layout_table = pd.DataFrame(index=rows, columns=columns)
-    layout_table.fillna("---", inplace=True)
-
-    # Fill in the data frame with the locations
-    for obj in locations:
-            layout_table.loc[locations[obj][1], locations[obj][0]] = obj
-
-    # Displays the required plate map and waits to proceed
-    print("\n Please arrange the items in the following configuration: \n")
-    print(layout_table,"\n")
-    input("Press enter to continue")
+    ot.print_layout(locations)
 
     ## Initialize the OT-1
     ## ============================================
@@ -92,6 +78,8 @@ def transform():
     # Start timer
     start = datetime.now()
     print("Starting run at: ",start)
+
+    ot.change_speed(robot)
 
     # Start up and declare components on the deck
     robot.home()
@@ -114,39 +102,8 @@ def transform():
     centrifuge_tube = containers.load('tube-rack-2ml',locations['Tube_rack'])
     build_plate = containers.load('96-PCR-tall', locations['Build_plate'])
 
-    p10 = instruments.Pipette(
-        axis='a',
-        max_volume=10,
-        min_volume=0.5,
-        tip_racks=p10_tipracks,
-        trash_container=trash,
-        channels=8,
-        name='p10-8',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
-    p10s = instruments.Pipette(
-        axis='a',
-        max_volume=10,
-        min_volume=0.5,
-        tip_racks=p10s_tipracks,
-        trash_container=trash,
-        channels=1,
-        name='p10-8s',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
-    p200 = instruments.Pipette(
-        axis='b',
-        max_volume=200,
-        min_volume=20,
-        tip_racks=p200_tipracks,
-        trash_container=trash,
-        channels=1,
-        name='p200-1',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
+    p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
+
 
     dna_vol = 2
 

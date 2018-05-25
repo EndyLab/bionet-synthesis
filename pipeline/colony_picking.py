@@ -15,15 +15,18 @@ import os
 import re
 import getch
 import math
+import sys
 from itertools import chain
 from datetime import datetime
 
 from opentrons import robot, containers, instruments
 from opentrons.helpers import helpers
 
-import sys
-
 from cam_calibrate import *
+from db_config import *
+session,engine = connect_db()
+from config import *
+import ot_functions as ot
 
 def order_points(pts):
 	'''
@@ -507,21 +510,21 @@ def move_motor(pipette):
 	while z == 0:
 		c = getch.getch()
 		if c == "w":
-			pipette.robot._driver.move(y=0.5,mode="relative")
+			pipette.robot._driver.move(y=0.1,mode="relative")
 			print("up")
-			y += 0.5
+			y += 0.1
 		elif c == "s":
-			pipette.robot._driver.move(y=-0.5,mode="relative")
+			pipette.robot._driver.move(y=-0.1,mode="relative")
 			print("down")
-			y -= 0.5
+			y -= 0.1
 		elif c == "a":
-			pipette.robot._driver.move(x=-0.5,mode="relative")
+			pipette.robot._driver.move(x=-0.1,mode="relative")
 			print("left")
-			x -= 0.5
+			x -= 0.1
 		elif c == "d":
-			pipette.robot._driver.move(x=0.5,mode="relative")
+			pipette.robot._driver.move(x=0.1,mode="relative")
 			print("right")
-			x += 0.5
+			x += 0.1
 		elif c == "x":
 			z = 1
 	print(x,y)
@@ -595,38 +598,50 @@ def calibrate_ot(pipette,agar_plate,image,coords,centers):
 	return fx,fy
 
 def mix_in_well(pipette,depth=-0.75,location=None,radius=0.7):
-    well_edges = [
+	'''Moves the pipette in a circle to remove the colony from the tip'''
+	well_edges = [
         location.from_center(x=radius, y=0, z=depth),       # right edge
         location.from_center(x=0, y=radius, z=depth),       # back edge
         location.from_center(x=radius * -1, y=0, z=depth),  # left edge
         location.from_center(x=0, y=radius * -1, z=depth)   # front edge
     ]
-    [pipette.move_to((location, e), strategy='direct') for e in well_edges]
+	[pipette.move_to((location, e), strategy='direct') for e in well_edges]
 
-    return
+	return
 
 def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
+	'''Picks a colony and then inoculates the corresponding well'''
 
 	_description = 'Inoculating'
 	pipette.robot.add_command(_description)
 
 	x,y,z = colony
 
+	# Checks for a tip and if there is no tip it picks up a new one
 	if not pipette.current_tip():
 		print('no tip')
 		pipette.pick_up_tip()
 		print('picking up tip')
 	else:
+		# The only time that the pipet will already have a tip is if it is the
+		# first colony on a plate so it has the user calibrate the  z axis
 		print('Already has a tip')
 		print('Calibrate Z')
 		print('Use "r"->up, "f"->down to pick colony')
 		pipette.move_to((agar_plate,[x,y,z]), strategy='arc')
+		# Calibrate it such that the tip barely pierces the agar
 		while True:
 			c = getch.getch()
-			if c == 'r':
+			if c == '4':
 				z += 0.5
 				print('up')
+			elif c == 'r':
+				z += 0.1
+				print('down')
 			elif c == 'f':
+				z -= 0.1
+				print('up')
+			elif c == 'v':
 				z -= 0.5
 				print('down')
 			elif c == 'x':
@@ -640,14 +655,17 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 
 	pipette.move_to(well, strategy='arc')
 
+	# Mixes the tip around inside the well several times
 	for num in range(mix):
 		mix_in_well(pipette,location=well,depth=depth,radius=radius)
 
 	pipette.move_to((well,well.from_center(x=0, y=0, z=depth)),strategy='direct')
 
+	# Ejects the tip while still inside the well
 	pipette.motor.move(pipette._get_plunger_position('drop_tip'))
 	pipette.motor.move(pipette._get_plunger_position('bottom'))
 
+	# Resets the pipette volume
 	pipette.current_volume = 0
 	pipette.current_tip(None)
 
@@ -656,9 +674,9 @@ def inoculate(pipette,agar_plate,colony,well,depth=-0.75,radius=0.7,mix=3):
 
 def run_ot(pipette,agar_plate,deep_well,image,coords,centers,pick):
 	'''
-	Pass the coordinates to the robot to pick the colony
+	Applies the calibrated offset to the xy coordinates and directs the robot to
+	pick up the colonies at those coordinates and inoculate a well in a well plate with it
 	'''
-
 	fx,fy = calibrate_ot(pipette,agar_plate,image,coords,centers)
 	z = 0
 	for i,((Ox,Oy),(Ix,Iy,well)) in enumerate(zip(coords,centers)):
@@ -690,20 +708,12 @@ def show_image(image,width=400):
 	input('Enter to move to next image')
 	return
 
-def well_addresses():
-    '''Generates a list of well address A1-H12'''
-    letter = ["A","B","C","D","E","F","G","H"]
-    number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    target_well = []
-    temp_well = 0
-    for n in number:
-        for l in letter:
-            temp_well = l + n
-            target_well.append(temp_well)
-    return target_well
-
 def find_colony_coordinates(file,check):
-	build_num,plate_num = re.match(r'.*\/.+.([0-9]{3})p([0-9]).jpg',file).groups()
+	'''
+	Takes in a file handle for an image and returns the modified image along with
+	the pixel coordinates for the desired colonies and the dimensions of the plate
+	'''
+	build_num,plate_num = re.match(r'.*\/.+.([0-9]{3})_?p([0-9]).jpg',file).groups()
 	print('Build: {}, Plate: {}'.format(build_num,plate_num))
 	print((int(plate_num)-1)*24,int(plate_num)*24)
 	img = cv2.imread(file)
@@ -730,7 +740,7 @@ def find_colony_coordinates(file,check):
 	groups = groups[16:24] + groups[8:16] + groups[:8]
 	centers = []
 	missing = []
-	wells = well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
+	wells = ot.well_addresses()[(int(plate_num)-1)*24:int(plate_num)*24]
 	print(wells)
 	input("check wells")
 	agar = cv2.cvtColor(agar, cv2.COLOR_BGR2GRAY)
@@ -776,6 +786,9 @@ def pick_colonies():
 
 	robot.home()
 
+	p200_tipracks = []
+	p10_tip_racks = []
+
 	p10s_tipracks = [
 	    containers.load('tiprack-10ul', 'E1'),
 	    containers.load('tiprack-10ul', 'E2')
@@ -785,20 +798,24 @@ def pick_colonies():
 	trans_plate = containers.load('point','B2')
 
 
-	p10s = instruments.Pipette(
-	    axis='a',
-	    max_volume=10,
-	    min_volume=0.5,
-	    tip_racks=p10s_tipracks,
-	    trash_container=trash,
-	    channels=1,
-	    name='p10-8s',
-	    aspirate_speed=400,
-	    dispense_speed=800
-	)
+	p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
 
-	for file in sorted(glob.glob('./new_photos/*.jpg'),reverse=True):
+	assemblies = []
+	print("Choose which plate you would like to transform/plate:")
+	for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
+		print("{}. {}".format(index,assembly.builds.build_name))
+		assemblies.append(assembly)
+	plate_num = int(input("Enter plate here: "))
+	target_plate = assemblies[plate_num]
+	build_name = target_plate.builds.build_name
+	path = '{}/builds/{}/{}_trans_pics'.format(BASE_PATH,build_name,build_name)
+
+
+	for file in sorted(glob.glob('{}/*.jpg'.format(path)),reverse=True):
 		print(file)
+		plate_name = file.split("/")[-1].split(".")[0]
+		print(plate_name)
+
 		skip = input('Skip? y/n: ')
 		if skip == 'y':
 			continue

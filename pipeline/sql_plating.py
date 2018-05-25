@@ -18,66 +18,12 @@ from datetime import datetime
 import getch
 
 from config import *
+import ot_functions as ot
 from db_config import *
 session,engine = connect_db()
 
 def plate():
-    print("\n============ Beginning plating ============\n")
-
-    ## Establish initial functions
-    ## ============================================
-
-    def change_height(container,target):
-        counter = 0
-        z = 0
-        print("Change height - s-g:up h-l:down x:exit")
-        while True:
-            c = getch.getch()
-            if c == "s":
-                print("Up 20mm")
-                p10.robot._driver.move(z=20,mode="relative")
-                z += 20
-            elif c == "d":
-                print("Up 5mm")
-                p10.robot._driver.move(z=5,mode="relative")
-                z += 5
-            elif c == "f":
-                print("Up 0.5mm")
-                p10.robot._driver.move(z=0.5,mode="relative")
-                z += 0.5
-            elif c == "g":
-                print("Up 0.1mm")
-                p10.robot._driver.move(z=0.1,mode="relative")
-                z += 0.1
-            elif c == "h":
-                print("Down 0.1mm")
-                p10.robot._driver.move(z=-0.1,mode="relative")
-                z += -0.1
-            elif c == "j":
-                print("Down 0.5mm")
-                p10.robot._driver.move(z=-0.5,mode="relative")
-                z += -0.5
-            elif c == "k":
-                print("Down 5mm")
-                p10.robot._driver.move(z=-5,mode="relative")
-                z += -5
-            elif c == "l":
-                print("Down 20mm")
-                p10.robot._driver.move(z=-20,mode="relative")
-                z += -10
-            elif c == "x":
-                print("Exit")
-                break
-            counter += 1
-        if counter > 1:
-            print("Will recalibrate")
-            redo = True
-        else:
-            print("Calibrated")
-            redo = False
-        p10.calibrate_position((container,target.from_center(x=0, y=0, z=-1,reference=container)))
-
-        return redo,z
+    print("\n============ Beginning to plate ============\n")
 
     ## Take in required information
     ## ============================================
@@ -118,10 +64,8 @@ def plate():
         portion = int(input("Choose which half to plate, 1 or 2: "))
         if portion == 1:
             build_map = target_plate.wells[:48]
-            print(build_map)
         else:
             build_map = target_plate.wells[48:]
-            print(build_map)
         num_reactions = len(build_map)
     else:
         portion = 1
@@ -147,7 +91,7 @@ def plate():
     # Allocate slots for the required agar plates
     AGAR_SLOTS = ['D2','D3']
     layout = list(zip(agar_plate_names,AGAR_SLOTS[:len(agar_plate_names)]))
-
+    print(layout)
     # Specify the locations of each object on the deck
     locations = {
                 "tiprack-200" : "A3",
@@ -159,23 +103,8 @@ def plate():
                 "Transformation" : "C2",
                 "Tube_rack" : "B1"
             }
-
-    # Make the dataframe to represent the OT-1 deck
-    deck = ['A1','B2','C3','D2','E1']
-    slots = pd.Series(deck)
-    columns = sorted(slots.str[0].unique())
-    rows = sorted(slots.str[1].unique(), reverse=True)
-    layout_table = pd.DataFrame(index=rows, columns=columns)
-    layout_table.fillna("---", inplace=True)
-
-    # Fill in the data frame with the locations
-    for obj in locations:
-            layout_table.loc[locations[obj][1], locations[obj][0]] = obj
-
-    # Displays the required plate map and waits to proceed
-    print("\n Please arrange the items in the following configuration: \n")
-    print(layout_table,"\n")
-    input("Press enter to continue")
+    locations.update(dict(layout))
+    ot.print_layout(locations)
 
     ## Initialize the OT-1
     ## ============================================
@@ -205,6 +134,8 @@ def plate():
         containers.load('tiprack-10ul', locations['tiprack-10_1']),
         containers.load('tiprack-10ul', locations['tiprack-10_3'])
     ]
+    p10s_tipracks = [
+    ]
 
     transformation_plate = containers.load('96-PCR-tall', locations['Transformation'])
     trash = containers.load('point', locations['trash'], 'holywastedplasticbatman')
@@ -217,34 +148,19 @@ def plate():
         print("agar_plates", agar_plates[plate])
     print("agar_plates",agar_plates,"\n")
 
-    p10 = instruments.Pipette(
-        axis='a',
-        max_volume=10,
-        min_volume=0.5,
-        tip_racks=p10_tipracks,
-        trash_container=trash,
-        channels=8,
-        name='p10-8',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
-    p200 = instruments.Pipette(
-        axis='b',
-        max_volume=200,
-        min_volume=20,
-        tip_racks=p200_tipracks,
-        trash_container=trash,
-        channels=1,
-        name='p200-1',
-        aspirate_speed=400,
-        dispense_speed=800
-    )
+    p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
+
 
     def agar_plating(pipette,row,volume,calibrate,z):
+        '''
+        Dispenses the cells to be plated prior to reaching the agar and then
+        stabs the tips slightly into the agar such that the droplets that pull
+        up on the side of the tips make contact with the agar
+        '''
         pipette.dispense(volume-1,row.top())
         pipette.dispense(1,row.bottom())
         if calibrate:
-            calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+            calibrate,z = ot.change_height(p10,agar_plates[plate],agar_plates[plate].rows(plating_row)[0],recalibrate=True)
         return calibrate,z
 
     num_dilutions = 4

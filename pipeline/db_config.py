@@ -7,6 +7,7 @@ import glob
 import json
 import pandas as pd
 from config import *
+import ot_functions as ot
 import bionet
 
 
@@ -188,19 +189,6 @@ class Well(Base):
             print(plate_type)
             input("plate_type didn't match")
 
-def well_addresses():
-    '''Generates a list of well address A1-H12'''
-    letter = ["A","B","C","D","E","F","G","H"]
-    number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    target_well = []
-    temp_well = 0
-    for n in number:
-        for l in letter:
-            temp_well = l + n
-            target_well.append(temp_well)
-    return target_well
-
-
 class Plate(Base):
     '''Describes a 96 well plate'''
     __tablename__ = 'plates'
@@ -237,7 +225,7 @@ class Plate(Base):
         '''Allows the user to set the specific wells to
         associate with each part'''
         used_wells = [well.address for well in self.wells]
-        all_wells = well_addresses()
+        all_wells = ot.well_addresses()
         empty_wells = [well for well in all_wells if well not in used_wells]
         if len(used_wells) == len(all_wells):
             print("Plate is full")
