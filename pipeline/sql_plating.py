@@ -8,14 +8,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker,relationship
 
 import os
-import re
 import math
 import glob
 import json
 import numpy as np
 import pandas as pd
 from datetime import datetime
-import getch
 
 from config import *
 import ot_functions as ot
