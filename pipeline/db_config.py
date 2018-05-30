@@ -37,6 +37,7 @@ class Part(Base):
     bionet_id = Column(String) # Unique ID for the bionet vitual
     seq = Column(String)
     status = Column(String) # Gives the most updated status of this part
+    ip_order = Column(String) # Stores the submission number sent to sagacious i.e. 'ip_order002'
 
     # A part can have many fragments and one fragment can have many parts
     fragments = relationship('Fragment',
