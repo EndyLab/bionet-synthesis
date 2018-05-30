@@ -1459,3 +1459,15 @@ WHERE %(param_1)s = wells.part_id
 FROM wells 
 WHERE %(param_1)s = wells.part_id
 2018-04-09 15:22:07,046 sqlalchemy.engine.base.Engine INFO [Line 109]     {'param_1': 353}
+2018-05-29 17:11:56,423 sqlalchemy.pool.QueuePool ERROR [Line 712]     Exception during reset or similar
+Traceback (most recent call last):
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/sqlalchemy/pool.py", line 703, in _finalize_fairy
+    fairy._reset(pool)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/sqlalchemy/pool.py", line 873, in _reset
+    pool._dialect.do_rollback(self)
+  File "/Users/conarymeyer/anaconda3/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 457, in do_rollback
+    dbapi_connection.rollback()
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+

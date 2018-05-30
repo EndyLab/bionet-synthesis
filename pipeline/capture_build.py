@@ -48,7 +48,7 @@ def make_directory(assembly):
 
 def capture_build():
     assemblies = []
-    print("Choose which plate you would like to transform/plate:")
+    print("Choose which build you would like to photograph:")
     for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)

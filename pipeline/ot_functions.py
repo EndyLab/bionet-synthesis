@@ -2,6 +2,8 @@ from opentrons import robot, containers, instruments
 import numpy as np
 import pandas as pd
 import getch
+import shutil
+import os
 
 def initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash):
     # Declare all of the pipettes
@@ -42,14 +44,14 @@ def initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash):
     )
     return p10,p10s,p200
 
-def display_deck():
+def display_deck(robot):
     df = pd.DataFrame(np.zeros((3,5)), columns=['A','B','C','D','E'], index=['3','2','1'])
     df.loc[:,:] = "---"
 
-    for container, placeable in robot.containers().items():
-        coord = list(placeable.get_parent().get_name())
-        df.loc[coord[1],coord[0]] = placeable.get_name()
-
+    for slot in robot.deck:
+        for child in slot.get_children_list():
+            print(slot.get_name()[0],slot.get_name()[1],child.get_name())
+            df.loc[slot.get_name()[1],slot.get_name()[0]] = child.get_name()
     print(df)
 
 def print_layout(locations):
@@ -137,7 +139,26 @@ def well_addresses():
             target_well.append(temp_well)
     return target_well
 
+def print_center(statement):
+    columns = shutil.get_terminal_size().columns
+    print('\n',statement.center(columns))
 
+def request_info(statement):
+    ans = input(statement)
+    if ans == '':
+        print("Not a valid answer\n")
+        return request_info(statement)
+    else:
+        return ans
+
+def make_directory(path):
+    dir_name = path.split("/")[-1]
+    if os.path.exists(path):
+        print("Directory {} already exists".format(dir_name))
+    else:
+        # Generates a new directory with the ID# as its name
+        os.makedirs(path)
+        print("Making directory for ".format(dir_name))
 
 
 

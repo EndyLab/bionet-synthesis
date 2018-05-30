@@ -8,7 +8,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker,relationship
 
 import os
-import re
 import math
 import glob
 import json
@@ -16,6 +15,7 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 import getch
+import shutil
 
 from config import *
 import ot_functions as ot
@@ -27,26 +27,10 @@ session,engine = connect_db()
 
 def run_build():
 
-    print("\n============ Beginning build ============\n")
-
-    ## ============================================
-    ## Take in required information
-    ## ============================================
-
-    # Set starting paths
-    # BASE_PATH is defined in the config file
-    PIPELINE_PATH = BASE_PATH + "/pipeline"
-    BUILDS_PATH = BASE_PATH + "/builds"
-    DATA_PATH = BASE_PATH + "/data"
-
-    # Load files
-    parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
-    parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
-    args = parser.parse_args()
-
     ## ============================================
     ## ESTABLISH INITIAL FUNCTIONS
     ## ============================================
+
     def change_plates(locations,current_plates):
         '''Allows the user to swap plates in the middle of a protocol'''
         source_plates = {}
@@ -73,6 +57,13 @@ def run_build():
         )
         return master_mix
 
+    ot.print_center("============ Beginning build ============")
+
+    # Take in the 'run' argument from the command line
+    parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+    parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+    args = parser.parse_args()
+
     # Verify that the correct robot is being used
     if args.run:
         robot_name = str(os.environ["ROBOT_DEV"][-5:])
@@ -86,13 +77,21 @@ def run_build():
     ## CREATE A BUILD OF DESIRED GENES
     ## =============================================
     # max_rxns = 96 # Sets the maximal number of clones you want to run
-    max_rxns = int(input("Enter the desired number of builds: "))
-    print("...Finding genes to build...")
-    enzyme = 'BbsI'
+    max_rxns = int(input("Enter the desired number of parts: "))
+    enzyme = input("Which enzyme: (1 - BbsI or 2 - BtgZI)")
+    if enzyme == '':
+        enzyme = 'BbsI'
+    elif int(enzyme) == 1:
+        enzyme == 'BbsI'
+    else:
+        enzyme = 'BtgZI'
+    print("Using: ",enzyme)
+    ot.print_center("...Finding genes to build...")
+
     to_build = []
-    # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
     acceptable_status = ['received'] # List with all of the status that you want to pull from
     rework = ['cloning_error','cloning_failure','trans_failure']
+
     ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
     ## sorts them by their plate numbers and returns the earliest set of parts
     to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
@@ -144,7 +143,7 @@ def run_build():
     SOURCE_SLOTS = ['D2','D3','B2']
 
     ## Generate a list of unique plates that are needed
-    print("...Finding the required plates...")
+    ot.print_center("...Finding the required plates...")
     unique_plates = []
     for part in to_build:
         for frag in part.fragments:
@@ -154,7 +153,7 @@ def run_build():
     plate_index = dict(plate_index)
 
     ## Group the plates so that they can be swapped in batches
-    print("Grouping plates")
+    ot.print_center("...Grouping plates...")
     group_plates = [unique_plates[n:n+len(SOURCE_SLOTS)] for n in range(0, len(unique_plates), len(SOURCE_SLOTS))]
     for num,group in enumerate(group_plates):
         print("Group{}: {}".format(num+1,group))
@@ -269,6 +268,9 @@ def run_build():
         print("Transferring {}ul to well {}".format(vol_per_tube,well))
         p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
     p200.drop_tip()
+
+    # REVIEW:
+    input("Run other build")
 
     # Aliquot the master mix into all of the desired wells
     p10.pick_up_tip()
