@@ -122,17 +122,13 @@ def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_fr
         build_path = '{}/builds/{}'.format(BASE_PATH,build)
         ot.make_directory(build_path)
         build_plan.to_csv('{}/{}_plan.csv'.format(build_path,build),index=False)
-    print(pd.Series(used_plates).value_counts())
+    print(pd.Series(used_plates).sort_values())
 
 
 if __name__ == "__main__":
     session,engine = connect_db()
     print('1 build = 96 parts\n2 builds = 192 parts\n3 builds = 288 parts')
-    num_builds = int(ot.request_info("Enter the desired number of builds or rxns: ",type='int'))
-    if num_builds < 4:
-        max_rxns = num_builds * 96
-    else:
-        max_rxns = num_builds
+    num_parts = int(ot.request_info("Enter the desired number of parts to build: ",type='int'))
 
     enzyme_num = ot.request_info("Which enzyme (1 - BbsI or 2 - BtgZI): ",type='int')
     if int(enzyme_num) == 1:
@@ -142,4 +138,4 @@ if __name__ == "__main__":
     print("Using enzyme: ",enzyme)
     frag_num = int(ot.request_info("Maximum number of fragments ('0' for no limit): ",type='int'))
 
-    create_build_plans(session,engine,max_rxns,enzyme=enzyme,max_frag=frag_num)
+    create_build_plans(session,engine,num_parts,enzyme=enzyme,max_frag=frag_num)
