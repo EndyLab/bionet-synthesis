@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from config import *
 from db_config import *
-session,engine = connect_db()
+import ot_functions as ot
 
 def frag_assign():
     ## Build a list of the previously entered synthesis plates
@@ -62,9 +62,18 @@ def frag_assign():
             print("Parsing plate {}".format(plate))
             # Create a subset of rows pertaining to a specific plate
             current_plate_map = plate_map[plate_map[plate_key] == plate]
-            current_plate = Plate('','syn_plate',plate,plate_id='syn_plate'+str(current_id).zfill(3))
-            plate_id_array.append([current_plate.plate_name,current_plate.plate_id])
-            current_id += 1
+            current_plate = Plate('','syn_plate',plate)
+
+            # Determine the next available plate id
+            current_ids = pd.read_sql_query("SELECT plates.plate_name,plates.plate_id FROM plates WHERE plates.plate_type = 'syn_plate'", con=engine)
+            current_ids.plate_id = current_ids.plate_id.apply(lambda x: int(x[-3:]))
+            all_ids = range(max(current_ids.plate_id.tolist()))
+            missing_ids = [x for x in all_ids if x not in current_ids.plate_id.tolist()]
+            if missing_ids == []:
+                current_plate.plate_id = 'syn_plate'+str(max(current_ids.plate_id.tolist()) + 1).zfill(3)
+            else:
+                current_plate.plate_id = 'syn_plate'+str(missing_ids[0]).zfill(3)
+
             session.add(current_plate)
             current_missing = []
             for index,row in current_plate_map.iterrows():
@@ -105,12 +114,13 @@ def frag_assign():
 
     input('Click enter when done')
 
-    commit = int(input("Commit changes (1-yes, 2-no): "))
+    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
     return
 
 if __name__ == "__main__":
+    session,engine = connect_db()
     frag_assign()
 
 

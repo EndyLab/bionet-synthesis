@@ -8,7 +8,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker,relationship
 
 import os
-import re
 import math
 import glob
 import json
@@ -16,6 +15,7 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 import getch
+import shutil
 
 from config import *
 import ot_functions as ot
@@ -23,30 +23,13 @@ import ot_functions as ot
 import sql_resuspension
 
 from db_config import *
-session,engine = connect_db()
 
-def run_build():
-
-    print("\n============ Beginning build ============\n")
-
-    ## ============================================
-    ## Take in required information
-    ## ============================================
-
-    # Set starting paths
-    # BASE_PATH is defined in the config file
-    PIPELINE_PATH = BASE_PATH + "/pipeline"
-    BUILDS_PATH = BASE_PATH + "/builds"
-    DATA_PATH = BASE_PATH + "/data"
-
-    # Load files
-    parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
-    parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
-    args = parser.parse_args()
+def run_build(session,engine):
 
     ## ============================================
     ## ESTABLISH INITIAL FUNCTIONS
     ## ============================================
+
     def change_plates(locations,current_plates):
         '''Allows the user to swap plates in the middle of a protocol'''
         source_plates = {}
@@ -73,49 +56,35 @@ def run_build():
         )
         return master_mix
 
+    ot.print_center("============ Beginning build ============")
+
+    # Take in the 'run' argument from the command line
+    parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+    parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+    args = parser.parse_args()
+
     # Verify that the correct robot is being used
     if args.run:
-        robot_name = str(os.environ["ROBOT_DEV"][-5:])
-        robot_number = str(input("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name)))
-        if robot_number == "1":
-            print("Proceeding with run")
-        else:
-            sys.exit("Run roboswitch 'ROBOT_NAME' to change to the correct robot")
+        ot.check_robot()
 
-    ## =============================================
-    ## CREATE A BUILD OF DESIRED GENES
-    ## =============================================
-    # max_rxns = 96 # Sets the maximal number of clones you want to run
-    max_rxns = int(input("Enter the desired number of builds: "))
-    print("...Finding genes to build...")
-    enzyme = 'BbsI'
-    to_build = []
-    # priority = ['pSHPs0325B569005MU','pSHPs0325B569008MU','pSHPs0325B569010MU']
-    acceptable_status = ['received'] # List with all of the status that you want to pull from
-    rework = ['cloning_error','cloning_failure','trans_failure']
-    ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
-    ## sorts them by their plate numbers and returns the earliest set of parts
-    to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                join(Well,Fragment.wells).join(Plate,Well.plates)\
-                .filter(Part.status.in_(acceptable_status)).filter(Part.cloning_enzyme == enzyme).order_by(Plate.id)]
-    if len(to_build) < 96:
-        to_build += [part for part in session.query(Part).join(Fragment,Part.fragments).\
-                    join(Well,Fragment.wells).join(Plate,Well.plates)\
-                    .filter(Part.status.in_(rework)).filter(Part.cloning_enzyme == enzyme).order_by(Plate.id)]
+    build_options = []
+    for num,file in enumerate(sorted(glob.glob('{}/builds/*/*_plan.csv'.format(BASE_PATH)))):
+        print('{} - {}'.format(num,file.split("/")[-1]))
+        build_options.append(file)
+    ans = ot.request_info("Enter desired plan number: ",type='int')
+    target_file = build_options[int(ans)]
+    build_plan = pd.read_csv(target_file)
+    build_parts = build_plan.Gene.tolist()
 
-    to_build = to_build[:max_rxns]
-    print("to_build",len(to_build))
-    part_names = [[part.part_id,part.status] for part in to_build]
+    to_build = [part for part in session.query(Part).filter(Part.part_id.in_(build_parts))]
+    # print(to_build[0].part_id)
 
-    prev_builds = [build.build_name for build in session.query(Build)]
-    build_numbers = [int(name[-3:]) for name in prev_builds if name != '']
-    last_build = max(build_numbers)
-
-    build_num = str(last_build+1).zfill(3)
-    build_name = 'build' + build_num
+    build_name = target_file.split('/')[-1].split('_')[0]
+    # print(build_name)
 
     target_build = Build(to_build,build_name=build_name)
     session.add(target_build)
+
     building = []
     addresses = []
     for well in target_build.plates[0].wells:
@@ -127,39 +96,50 @@ def run_build():
     })
     export_map = export_map[['Gene','Destination']]
 
-    path = '{}/builds/build{}'.format(BASE_PATH,build_num)
-    if os.path.exists(path):
-        print("Directory build{} already exists".format(build_num))
-    else:
-        # Generates a new directory with the ID# as its name
-        os.makedirs(path)
-        print("Making directory for build{}".format(build_num))
-    export_map.to_csv('{}/build{}_trans_map.csv'.format(path,build_num),index=False)
-    input("check map")
+    build_path = '{}/builds/{}'.format(BASE_PATH,build_name)
+
+    if args.run:
+        ot.make_directory(build_path)
+        export_map.to_csv('{}/{}_trans_map.csv'.format(build_path,build_name),index=False)
+        os.remove(glob.glob('{}/{}_plan.csv'.format(build_path,build_name))[0])
 
     ## =============================================
     ## CREATE PLATE GROUPS
     ## =============================================
+
+    ot.print_center("...Finding the required plates...")
+
+    parts_df = ot.query_for_plates(build_parts,engine)
+    unique_plates = parts_df.plate_id.unique().tolist()
+
+    ## Add required columns to the dataframe
+
+    # Rename the columnn names to reflect the values
+    parts_df = parts_df.rename(columns={'id':'destination','plate_name':'plate_rank'})
+
+    # Add the destination wells to each row which represents a single fragment
+    dest_dict = dict(zip(building,addresses))
+    parts_df.destination = parts_df.part_id.apply(lambda x: dest_dict[x])
+
+    # Give each row a rank based on the order of the plates to sort on later
+    plate_dict = dict([[y,x] for x,y in enumerate(unique_plates)])
+    parts_df.plate_rank = parts_df.plate_id.apply(lambda x: plate_dict[x])
+
     # Currently available spots on the OT-one deck
     SOURCE_SLOTS = ['D2','D3','B2']
 
     ## Generate a list of unique plates that are needed
-    print("...Finding the required plates...")
-    unique_plates = []
-    for part in to_build:
-        for frag in part.fragments:
-            unique_plates.append(frag.wells[0].plates.plate_id)
-    unique_plates = pd.Series(unique_plates).unique()
+
     plate_index = [(y,x) for x,y in enumerate(unique_plates)]
     plate_index = dict(plate_index)
 
     ## Group the plates so that they can be swapped in batches
-    print("Grouping plates")
+    ot.print_center("...Grouping plates...")
     group_plates = [unique_plates[n:n+len(SOURCE_SLOTS)] for n in range(0, len(unique_plates), len(SOURCE_SLOTS))]
     for num,group in enumerate(group_plates):
         print("Group{}: {}".format(num+1,group))
 
-    print("Checking if plates need to be resuspended")
+    ot.print_center("...Checking if plates need to be resuspended...")
     for plate in unique_plates:
         current_plate = session.query(Plate).filter(Plate.plate_id == plate).one()
         if current_plate.resuspended == 'not_resuspended':
@@ -187,14 +167,24 @@ def run_build():
                 "DEST_PLATE" : "C2",
                 "Tube_rack" : "B1"
             }
-    ot.print_layout(locations)
+    # Sets the first group of plates
+    used_plates = []
+    plate_counter = 0
+    current_group = group_plates[plate_counter]
+    source_plates = change_plates(locations,current_group)
 
     ## =============================================
     ## SETUP THE MASTER MIX
     ## =============================================
 
-    # Set the volume of master mix to use per reaction
-    master_volume = 8
+    vol = int(ot.request_info('Enter desired reaction volume (i.e. 5,10,20): ',type='int'))
+
+    # Set the proportion of master mix to fragment to 4:1
+    master_volume = 0.8 * vol
+    frag_vol = 0.2 * vol
+
+    ot.print_center('...Calculating master mix volumes...')
+
     # Set a multiplier to account for pipetting error and evaporation
     extra_master = 1.3
 
@@ -217,12 +207,15 @@ def run_build():
     print()
     print(master_mix)
     print()
+    print("Place the master mix in the 'A1' position of the tube rack")
+    print("Also place a tube of water in the 'B1' position ")
     input("Press enter to continue")
 
     ## =============================================
     ## INITIALIZE THE OT-1
     ## =============================================
     # Determine whether to simulate or run the protocol
+
     if args.run:
         port = os.environ["ROBOT_DEV"]
         print("Connecting robot to port {}".format(port))
@@ -270,6 +263,9 @@ def run_build():
         p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
     p200.drop_tip()
 
+    # REVIEW:
+    input("Run other build")
+
     # Aliquot the master mix into all of the desired wells
     p10.pick_up_tip()
     for row in range(num_rows):
@@ -288,7 +284,6 @@ def run_build():
         p10s.drop_tip()
 
     # Aliquot extra master mix into wells with multiple fragments
-    # TEMP: Only allows for a single destination plate
     p10s.pick_up_tip()
     for transfer in need_extra[0]:
         extra_volume = (int(transfer['frags']) - 1) * master_volume
@@ -299,33 +294,17 @@ def run_build():
 
     ## Add the fragments from the source plates to the destination plate
     ## ============================================
-    # Sets the volume to pipet of each fragment to 2uL
-    frag_vol = 2
 
     # Sets the volume of water to dilute with, if needed
     dil_vol = 5
 
-    # Sets the first group of plates
-    used_plates = []
-    plate_counter = 0
-    current_group = group_plates[plate_counter]
-    source_plates = change_plates(locations,current_group)
-
-    indexes = []
-    rows = []
-    for plate in target_build.plates:
-        for well in plate.wells:
-            for frag in well.parts.fragments:
-                indexes.append(plate_index[frag.wells[0].plates.plate_id])
-                rows += [[frag.wells[0].address,well.address,well.parts.part_id,frag.wells[0].plates.plate_id,frag.wells[0].volume]]
-
-    build_plan = [row for i,row in sorted(zip(indexes,rows))]
-    for row in build_plan:
-        start_well = row[0]
-        dest_well = row[1]
-        gene = row[2]
-        plate = row[3]
-        volume = row[4]
+    parts_df = parts_df.sort_values('plate_rank')
+    for i,row in parts_df.iterrows():
+        start_well = row['address']
+        dest_well = row['destination']
+        gene = row['part_id']
+        plate = row['plate_id']
+        volume = row['volume']
 
         if plate not in current_group:
             plate_counter += 1
@@ -339,7 +318,7 @@ def run_build():
             print("Diluting sample in plate {} well {} with {}uL of water".format(plate,start_well,dil_vol))
             p10s.transfer(dil_vol,centrifuge_tube['B1'].bottom(),source_plates[plate].wells(start_well).bottom(),new_tip='never')
 
-        print("Transferring {} from plate {} well {} to well {}".format(gene,plate,start_well,dest_well))
+        print("Transferring {} of {} from plate {} well {} to well {}".format(frag_vol,gene,plate,start_well,dest_well))
         p10s.mix(3, 8, source_plates[plate].wells(start_well).bottom())
 
         # Checks the calibration to make sure that it can aspirate correctly
@@ -351,15 +330,14 @@ def run_build():
 
         p10s.drop_tip()
 
-    input("stop again")
-
-    commit = int(input("Commit changes (1-yes, 2-no): "))
+    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
     return
 
 if __name__ == "__main__":
-    run_build()
+    session,engine = connect_db()
+    run_build(session,engine)
 
 
 

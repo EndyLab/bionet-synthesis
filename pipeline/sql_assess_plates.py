@@ -17,6 +17,7 @@ import pandas as pd
 from datetime import datetime
 import getch
 
+import ot_functions as ot
 from config import *
 from db_config import *
 session,engine = connect_db()
@@ -59,7 +60,9 @@ def assess_plate():
     used_wells = [well for well in seq_plate.wells]
     remaining = 96 - len(used_wells)
     print("Remaining: ",remaining)
-
+    ans = input("backfill empty wells? (y/n): ")
+    if ans == 'n':
+        remaining = 0
     # Pull parts that need to the retried
     acceptable_status = ['sequence_failure','cloning_mutation'] # List with all of the status that you want to pull from
     replacement_parts = [part for part in session.query(Part).join(Well,Part.wells)\
@@ -85,20 +88,8 @@ def assess_plate():
         seq_plate.add_item(well.parts)
         print(well.parts.part_id,well.plates.builds.build_name,well.address)
 
-    # Generate a
-    def well_addresses():
-        '''Generates a list of well address A1-H12'''
-        letter = ["A","B","C","D","E","F","G","H"]
-        number = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-        target_well = []
-        temp_well = 0
-        for n in number:
-            for l in letter:
-                temp_well = l + n
-                target_well.append(temp_well)
-        return target_well
     # Generate a dictionary to sort on well addresses A1-H1 instead of A1-A12
-    well_index = well_addresses()
+    well_index = ot.well_addresses()
     well_index = enumerate(well_index)
     well_index = [(y,x) for x,y in well_index]
     well_index = dict(well_index)

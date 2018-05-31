@@ -62,13 +62,13 @@ def verify_seq():
     targets.append(target.build_name)
     print("Will analyze build: ",target.build_name)
 
-    # fasta_path = "{}/builds/{}/{}_fasta_files".format(BASE_PATH,target.build_name,target.build_name)
-    # if os.path.exists(fasta_path):
-    #     print("Directory build{} already exists".format(target.build_name))
-    # else:
-    #     os.makedirs(fasta_path)
-    # path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,target.build_name,target.build_name)
-    # SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
+    fasta_path = "{}/builds/{}/{}_fasta_files".format(BASE_PATH,target.build_name,target.build_name)
+    if os.path.exists(fasta_path):
+        print("Directory build{} already exists".format(target.build_name))
+    else:
+        os.makedirs(fasta_path)
+    path = "{}/builds/{}/{}_20*.csv".format(BASE_PATH,target.build_name,target.build_name)
+    SEQFILE_PATH = "{}/{}/{}_seq_files".format(BUILDS_PATH,target.build_name,target.build_name)
 
     # Create a dictionary to link the gene name to the corresponding id number
     data = pd.read_csv(DICTIONARY_PATH)
@@ -152,6 +152,9 @@ def verify_seq():
         else:
             rev_score = target_length - reverse_align[2]
 
+        print(for_raw,forward_align[2],rev_raw,reverse_align[2],target_length)
+        print(for_score,rev_score)
+
         if for_raw < 100 and rev_raw < 100:
             outcome = "bad_reads"
         elif for_score == 0:
@@ -182,7 +185,9 @@ def verify_seq():
         Runs alignments against both the target sequence and the backbone and
         returns the result.
         '''
+        print('Gene alignment:')
         g_res = align_reads(forward,reverse,gene_seq)
+        print('backbone alignment:')
         b_res = align_reads(forward,reverse,backbone_seq)
 
         if g_res == "perfect":
@@ -293,7 +298,7 @@ def verify_seq():
         else:
             return 'cloning_failure'
     counter = 0
-    targets = ['build007']
+    targets = ['build011']
     for target in session.query(Build).filter(Build.status == 'sequencing').filter(Build.build_name.in_(targets)).order_by(Build.id):
     # for target in session.query(Build).order_by(Build.id):
 
@@ -311,8 +316,11 @@ def verify_seq():
             #     continue
             id_num = well.parts.part_id
             print(id_num)
-            # with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
-            #     fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
+            if id_num == 'BBF10K_002717':
+                print('found missing')
+                continue
+            with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
+                fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
             if glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer)):
                 forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer))[0]
                 revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,reverse_primer))[0]
@@ -341,11 +349,13 @@ def verify_seq():
 
             # Check that the reads have sufficient length and if not decrease the threshold and reload
             if math.isnan(forward_qual) or math.isnan(reverse_qual):
+                print("Dropping threshold because nan")
                 forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
                 reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile, threshold=0.8)
                 nan.append(id_num)
                 print("Quality", forward_qual, reverse_qual)
             if len(forward_untrim) < 50 or len(reverse_untrim) < 50:
+                print("Dropping threshold because length")
                 forward_untrim, _, _, _, forward_qual = loadsequencing(forfile, threshold=0.8)
                 reverse_untrim, revseq, _, _, reverse_qual = loadsequencing(revfile, threshold=0.8)
                 small.append(id_num)

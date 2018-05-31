@@ -15,14 +15,13 @@ import os
 import re
 import getch
 import math
-import sys
 from itertools import chain
 from datetime import datetime
 
 from opentrons import robot, containers, instruments
 from opentrons.helpers import helpers
 
-from cam_calibrate import *
+import cam_calibrate
 from db_config import *
 session,engine = connect_db()
 from config import *
@@ -155,6 +154,12 @@ def find_corners(image):
 	return image, corners
 
 def find_minima(sums,number,threshold=40):
+	'''
+	Takes list of numbers and searches for minima until it finds a set of minima
+	whose length matches that of the desired number. In an undesirable number of
+	minima are found, then the threshold used to determine a low point is adjusted
+	until the target number is reached
+	'''
 	# Sets a threshold to define regions considered 'empty' and stores their indexes
 	bottoms = []
 	for i,sum in enumerate(sums):
@@ -719,7 +724,7 @@ def find_colony_coordinates(file,check):
 	img = cv2.imread(file)
 	show_image(img)
 	cali_file = './webcam_calibrations.npz'
-	dst = undistort_img(img,cali_file)
+	dst = cam_calibrate.undistort_img(img,cali_file)
 	show_image(dst)
 	height,width = img.shape[:2]
 	rotated = imutils.rotate_bound(dst, 90)
@@ -801,7 +806,7 @@ def pick_colonies():
 	p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
 
 	assemblies = []
-	print("Choose which plate you would like to transform/plate:")
+	print("Choose which build you would like to pick from:")
 	for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
 		print("{}. {}".format(index,assembly.builds.build_name))
 		assemblies.append(assembly)
@@ -812,11 +817,8 @@ def pick_colonies():
 
 
 	for file in sorted(glob.glob('{}/*.jpg'.format(path)),reverse=True):
-		print(file)
-		plate_name = file.split("/")[-1].split(".")[0]
-		print(plate_name)
-
-		skip = input('Skip? y/n: ')
+		print("Current image: ",file)
+		skip = input('Skip? (y/n): ')
 		if skip == 'y':
 			continue
 		print("Inoculate: ",args.inoculate)
