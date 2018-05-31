@@ -19,16 +19,9 @@ from datetime import datetime
 from config import *
 import ot_functions as ot
 from db_config import *
-session,engine = connect_db()
 
-# ## Generate the SQL Database
-# session = build_db()
-def resuspension(target):
-    print("\n============ Beginning resuspension ============\n")
-
-    ## Set up initial paths
-    PIPELINE_PATH = BASE_PATH + "/pipeline"
-    DATA_PATH = BASE_PATH + "/data"
+def resuspension(session,engine,target):
+    ot.print_center("============ Beginning resuspension ============")
 
     # Initial Setup
     fmoles = 40
@@ -40,12 +33,7 @@ def resuspension(target):
 
     # Verify that the correct robot is being used
     if args.run:
-        robot_name = str(os.environ["ROBOT_DEV"][-5:])
-        robot_number = str(input("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name)))
-        if robot_number == "1":
-            print("Proceeding with run")
-        else:
-            sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
+        ot.check_robot()
 
     ## =============================================
     ## SETUP THE OT-1 DECK
@@ -62,7 +50,7 @@ def resuspension(target):
             }
     ot.print_layout(locations)
 
-    print('Calculating the volumes to resuspend with')
+    ot.print_center('Calculating the volumes to resuspend with')
 
     def calc_vol(amount,length,fmoles=40):
         return math.ceil(((((amount * 1000)/(660*length))*1000) / fmoles) * 2),fmoles
@@ -193,12 +181,13 @@ def resuspension(target):
     target.resuspend()
     session.add(target)
 
-    commit = int(input("Commit changes (1-yes, 2-no): "))
+    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
     return
 
 if __name__ == "__main__":
+    session,engine = connect_db()
     # Present all available plates to resuspend
     print("Which plate would you like to resuspend:")
     plate_names = []
@@ -207,9 +196,9 @@ if __name__ == "__main__":
         plate_names.append(plate.plate_name)
 
     # Asks the user for a number corresponding to the plate they want to resuspend
-    number = int(input("Which plate: "))
+    number = int(ot.request_info("Which plate: ",type='int'))
     target = session.query(Plate).filter(Plate.plate_name == plate_names[number]).first()
     print("Will resuspend plate ",target.plate_name)
-    resuspension(target)
+    resuspension(session,engine,target)
 
 #

@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from config import *
 from db_config import *
-session,engine = connect_db()
+import ot_functions as ot
 
 def frag_assign():
     ## Build a list of the previously entered synthesis plates
@@ -114,12 +114,13 @@ def frag_assign():
 
     input('Click enter when done')
 
-    commit = int(input("Commit changes (1-yes, 2-no): "))
+    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
     return
 
 if __name__ == "__main__":
+    session,engine = connect_db()
     frag_assign()
 
 

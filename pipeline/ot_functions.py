@@ -4,6 +4,7 @@ import pandas as pd
 import getch
 import shutil
 import os
+import sys
 
 def initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash):
     # Declare all of the pipettes
@@ -143,13 +144,20 @@ def print_center(statement):
     columns = shutil.get_terminal_size().columns
     print('\n',statement.center(columns))
 
-def request_info(statement):
-    ans = input(statement)
-    if ans == '':
-        print("Not a valid answer\n")
-        return request_info(statement)
+def request_info(statement,type='string'):
+    answer = input(statement)
+    if answer == '':
+        print("Please enter a value\n")
+        return request_info(statement,type=type)
+    elif type == 'int':
+        try:
+            int(answer)
+            return answer
+        except:
+            print("Not a valid type\n")
+            return request_info(statement,type=type)
     else:
-        return ans
+        return answer
 
 def make_directory(path):
     dir_name = path.split("/")[-1]
@@ -158,9 +166,45 @@ def make_directory(path):
     else:
         # Generates a new directory with the ID# as its name
         os.makedirs(path)
-        print("Making directory for ".format(dir_name))
+        print("Making directory for {}".format(dir_name))
 
+def check_robot():
+    try:
+        robot_name = str(os.environ["ROBOT_DEV"][-5:])
+    except:
+        sys.exit("Not connected to a robot, run roboswitch <robot_name> to change the robot")
+    robot_number = request_info("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name),type='int')
+    if robot_number == 1:
+        print("Proceeding with run")
+    else:
+        sys.exit("Run roboswitch <robot_name> to change the robot")
 
+def list_to_string(ls):
+    string = ''
+    for l in ls:
+        string += "'{}',".format(l)
+    return string[:-1]
+
+def query_for_parts(status,enzyme,engine):
+    query_parts = "SELECT parts.part_id,parts.status,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id FROM parts\
+            INNER JOIN part_frag ON parts.id = part_frag.part_id\
+            INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
+            INNER JOIN wells ON fragments.id = wells.fragment_id\
+            INNER JOIN plates on wells.plate_id = plates.id\
+            WHERE parts.status IN ({})\
+                AND parts.cloning_enzyme = '{}'".format(list_to_string(status),enzyme)
+
+    return pd.read_sql_query(query_parts, con=engine)
+
+def query_for_plates(parts,engine):
+    query_parts = "SELECT parts.part_id,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id,plates.plate_name FROM parts\
+            INNER JOIN part_frag ON parts.id = part_frag.part_id\
+            INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
+            INNER JOIN wells ON fragments.id = wells.fragment_id\
+            INNER JOIN plates on wells.plate_id = plates.id\
+            WHERE parts.part_id IN ({})".format(list_to_string(parts))
+
+    return pd.read_sql_query(query_parts, con=engine)
 
 
 

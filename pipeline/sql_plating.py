@@ -18,20 +18,10 @@ from datetime import datetime
 from config import *
 import ot_functions as ot
 from db_config import *
-session,engine = connect_db()
 
-def plate():
+def plate(session,engine):
+
     print("\n============ Beginning to plate ============\n")
-
-    ## Take in required information
-    ## ============================================
-
-    PIPELINE_PATH = BASE_PATH + "/pipeline"
-    BUILDS_PATH = BASE_PATH + "/builds"
-    DATA_PATH = BASE_PATH + "/data"
-
-    BACKBONE_PATH = BASE_PATH + "/sequencing_files/popen_v1-1_backbone.fasta"
-    DICTIONARY_PATH = PIPELINE_PATH + "/testing/data_testing/10K_CDS.csv"
 
     # Take in command line arguments
     parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
@@ -41,12 +31,7 @@ def plate():
 
     # Verify that the correct robot is being used
     if args.run:
-        robot_name = str(os.environ["ROBOT_DEV"][-5:])
-        robot_number = str(input("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name)))
-        if robot_number == "1":
-            print("Proceeding with run")
-        else:
-            sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
+        ot.check_robot()
 
     assemblies = []
     print("Choose which plate you would like to transform/plate:")
@@ -54,12 +39,12 @@ def plate():
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
-    plate_num = int(input("Enter plate here: "))
+    plate_num = ot.request_info("Enter plate here: ",type='int')
     target_plate = assemblies[plate_num]
     build_map = target_plate.wells
     if len(target_plate.wells) > 48:
         print("Too many samples to plate at once")
-        portion = int(input("Choose which half to plate, 1 or 2: "))
+        portion = int(ot.request_info("Choose which half to plate, 1 or 2: ",type='int'))
         if portion == 1:
             build_map = target_plate.wells[:48]
         else:
@@ -216,13 +201,14 @@ def plate():
     print("Rehoming")
     robot.home()
 
-    commit = int(input("Commit changes (1-yes, 2-no): "))
+    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
     return
 
 if __name__ == "__main__":
-    plate()
+    session,engine = connect_db()
+    plate(session,engine)
 
 
 

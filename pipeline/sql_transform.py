@@ -20,9 +20,8 @@ import getch
 from config import *
 import ot_functions as ot
 from db_config import *
-session,engine = connect_db()
 
-def transform():
+def transform(session,engine):
     # Take in command line arguments
     parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
     parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
@@ -35,7 +34,7 @@ def transform():
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
-    plate_num = int(input("Enter plate here: "))
+    plate_num = int(ot.request_info("Enter plate here: ",type='int'))
     target_plate = assemblies[plate_num]
 
     num_reactions = len(target_plate.wells)
@@ -43,12 +42,7 @@ def transform():
 
     # Verify that the correct robot is being used
     if args.run:
-        robot_name = str(os.environ["ROBOT_DEV"][-5:])
-        robot_number = str(input("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name)))
-        if robot_number == "1":
-            print("Proceeding with run")
-        else:
-            sys.exit("Run . robot.sh while in the /opentrons/robots directory to change the robot")
+        ot.check_robot()
 
     # Specify the locations of each object on the deck
     locations = {
@@ -124,7 +118,8 @@ def transform():
 
 
 if __name__ == '__main__':
-    transform()
+    session,engine = connect_db()
+    transform(session,engine)
 
 
 

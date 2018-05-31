@@ -10,7 +10,6 @@ from config import *
 import ot_functions as ot
 import bionet
 
-
 Base = declarative_base()
 
 ## Builds a many to many relationship between parts and fragments
@@ -283,6 +282,9 @@ class Build(Base):
                     vector=vector,trans_outcome=trans_outcome))
 
 def connect_db():
+
+    ot.print_center('...Connecting to the database...')
+
     ## Connect to the AWS server running the openfoundry database
     conn_str = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
     engine = sqlalchemy.create_engine(conn_str, echo=False)
