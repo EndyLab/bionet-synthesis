@@ -26,36 +26,6 @@ from db_config import *
 
 def run_build(session,engine):
 
-    ## ============================================
-    ## ESTABLISH INITIAL FUNCTIONS
-    ## ============================================
-
-    def change_plates(locations,current_plates):
-        '''Allows the user to swap plates in the middle of a protocol'''
-        source_plates = {}
-        temp = locations
-        plate_locations = list(zip(pd.unique(current_plates),SOURCE_SLOTS[:len(current_plates)]))
-        temp.update(plate_locations)
-        ot.print_layout(temp)
-        for plate, slot in plate_locations:
-            source_plates[plate] = containers.load('96-flat', slot)
-        return source_plates
-
-    def make_gg_rxns(num_rxns,rxn_vol):
-        '''Calculates the amount of each reagent to add to reach the desired master mix'''
-        cutsmart = 1 * num_rxns
-        atp = 1 * num_rxns
-        vector = 0.25 * num_rxns
-        ligase = 0.5 * num_rxns
-        enzyme = 0.25 * num_rxns
-        water = (rxn_vol - ((cutsmart + atp + vector + ligase + enzyme)/num_rxns)) * num_rxns
-        master_mix = pd.DataFrame(
-            {'Component':['H2O','Cutsmart','ATP','Vector','T4 Ligase','Restriction Enzyme','Total'],
-            'Amount':[water,cutsmart,atp,vector,ligase,enzyme,rxn_vol*num_rxns]},
-            columns=["Component","Amount"]
-        )
-        return master_mix
-
     ot.print_center("============ Beginning build ============")
 
     # Take in the 'run' argument from the command line
@@ -156,6 +126,8 @@ def run_build(session,engine):
     ## =============================================
     ## SETUP THE OT-1 DECK
     ## =============================================
+    SOURCE_SLOTS = ['D2','D3','B2']
+
     # Specify the locations of each object on the deck
     locations = {
                 "tiprack-200" : "A3",
@@ -171,7 +143,7 @@ def run_build(session,engine):
     used_plates = []
     plate_counter = 0
     current_group = group_plates[plate_counter]
-    source_plates = change_plates(locations,current_group)
+    source_plates = ot.change_plates(locations,current_group,SOURCE_SLOTS)
 
     ## =============================================
     ## SETUP THE MASTER MIX
@@ -202,7 +174,7 @@ def run_build(session,engine):
     print("Extra needed: {}, Total rxns: {}".format(total_extra,master_reactions))
 
     # Generate the dataframe to present the master mix composition
-    master_mix = make_gg_rxns(master_reactions,master_volume)
+    master_mix = ot.make_gg_rxns(master_reactions,master_volume)
     print("Use the table below to create the master mix")
     print()
     print(master_mix)
@@ -309,7 +281,7 @@ def run_build(session,engine):
         if plate not in current_group:
             plate_counter += 1
             current_group = group_plates[plate_counter]
-            source_plates = change_plates(locations,current_group)
+            source_plates = ot.change_plates(locations,current_group,SOURCE_SLOTS)
 
         p10s.pick_up_tip()
 
@@ -323,8 +295,8 @@ def run_build(session,engine):
 
         # Checks the calibration to make sure that it can aspirate correctly
         p10s.aspirate(frag_vol,source_plates[plate].wells(start_well).bottom())
-        if plate not in used_plates:
-            ot.change_height(p10s,source_plates[plate],source_plates[plate].wells(start_well))
+        # if plate not in used_plates:
+        #     ot.change_height(p10s,source_plates[plate],source_plates[plate].wells(start_well))
         p10s.dispense(frag_vol,dest_plate.wells(dest_well).bottom())
         used_plates.append(plate)
 

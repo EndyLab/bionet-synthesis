@@ -173,7 +173,7 @@ def check_robot():
         robot_name = str(os.environ["ROBOT_DEV"][-5:])
     except:
         sys.exit("Not connected to a robot, run roboswitch <robot_name> to change the robot")
-    robot_number = request_info("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name),type='int')
+    robot_number = int(request_info("Run on this robot: {} ? 1-Yes, 2-No ".format(robot_name),type='int'))
     if robot_number == 1:
         print("Proceeding with run")
     else:
@@ -206,9 +206,31 @@ def query_for_plates(parts,engine):
 
     return pd.read_sql_query(query_parts, con=engine)
 
+def change_plates(locations,current_plates,source_slots):
+    '''Allows the user to swap plates in the middle of a protocol'''
+    source_plates = {}
+    temp = locations
+    plate_locations = list(zip(pd.unique(current_plates),source_slots[:len(current_plates)]))
+    temp.update(plate_locations)
+    print_layout(temp)
+    for plate, slot in plate_locations:
+        source_plates[plate] = containers.load('96-flat', slot)
+    return source_plates
 
-
-
+def make_gg_rxns(num_rxns,rxn_vol):
+    '''Calculates the amount of each reagent to add to reach the desired master mix'''
+    cutsmart = 1 * num_rxns
+    atp = 1 * num_rxns
+    vector = 0.25 * num_rxns
+    ligase = 0.5 * num_rxns
+    enzyme = 0.25 * num_rxns
+    water = (rxn_vol - ((cutsmart + atp + vector + ligase + enzyme)/num_rxns)) * num_rxns
+    master_mix = pd.DataFrame(
+        {'Component':['H2O','Cutsmart','ATP','Vector','T4 Ligase','Restriction Enzyme','Total'],
+        'Amount':[water,cutsmart,atp,vector,ligase,enzyme,rxn_vol*num_rxns]},
+        columns=["Component","Amount"]
+    )
+    return master_mix
 
 
 

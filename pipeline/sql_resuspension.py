@@ -50,7 +50,7 @@ def resuspension(session,engine,target):
             }
     ot.print_layout(locations)
 
-    ot.print_center('Calculating the volumes to resuspend with')
+    ot.print_center('...Calculating the volumes to resuspend with...')
 
     def calc_vol(amount,length,fmoles=40):
         return math.ceil(((((amount * 1000)/(660*length))*1000) / fmoles) * 2),fmoles
