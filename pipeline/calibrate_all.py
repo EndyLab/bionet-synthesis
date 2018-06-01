@@ -88,10 +88,10 @@ def move_ot(pipette):
             print('invalid input')
 
 def check_calibration(robot,pipette,container,sub_location):
-    pipette.move_to(sub_location.from_center(x=0,y=0,z=20,reference=container))
+    pipette.move_to((container,sub_location.from_center(x=0,y=0,z=20,reference=container)))
     ans = ot.request_info('Does it line up? (y/n): ',type='string')
     if ans == 'y':
-        pipette.move_to(sub_location.from_center(x=0,y=0,z=20,reference=container))
+        pipette.move_to((container,sub_location.from_center(x=0,y=0,z=5,reference=container)))
         ans = ot.request_info('Still good? (y/n): ',type='string')
         if ans == 'y':
             pipette.move_to(sub_location.bottom())
@@ -107,7 +107,7 @@ def check_calibration(robot,pipette,container,sub_location):
                 offset = ans.split(' ')
             offset = [int(num) for num in offset]
             print("Will use the following offset: ", offset)
-            pipette.move_to((pipette.move_to(sub_location.from_center(x=offset[0],y=offset[1],z=offset[2],reference=container))))
+            pipette.move_to((container,sub_location.from_center(x=offset[0],y=offset[1],z=offset[2],reference=container)))
     print("Check calibration")
     move_ot(pipette)
 
