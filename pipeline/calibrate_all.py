@@ -44,6 +44,8 @@ dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
 
 p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
 
+pipette_dict = {'p10':p10,'p10s':p10s,'p200':p200}
+
 if args.run:
     port = os.environ["ROBOT_DEV"]
     print("Connecting robot to port {}".format(port))
@@ -88,30 +90,44 @@ def move_ot(pipette):
             print('invalid input')
 
 def check_calibration(robot,pipette,container,sub_location):
-    pipette.move_to((container,sub_location.from_center(x=0,y=0,z=20,reference=container)))
+    pipette.move_to(sub_location.top(z=20))
     ans = ot.request_info('Does it line up? (y/n): ',type='string')
-    if ans == 'y':
-        pipette.move_to((container,sub_location.from_center(x=0,y=0,z=5,reference=container)))
+    if ans != 'n':
+        pipette.move_to(sub_location.top(z=5))
         ans = ot.request_info('Still good? (y/n): ',type='string')
-        if ans == 'y':
+        if ans != 'n':
             pipette.move_to(sub_location.bottom())
     else:
         ans = ot.request_info('Need to rehome? (y/n): ',type='string')
-        if ans == 'y':
+        if ans != 'n':
             robot.home()
-            print('Previous offset was 0 0 20')
-            ans = ot.request_info('Enter new offset? (y x z): ',type='string')
-            offset = ans.split(' ')
-            if len(offset) != 3:
-                ans = ot.request_info('Invalid: Enter a different offset? (y x z): ',type='string')
-                offset = ans.split(' ')
-            offset = [int(num) for num in offset]
-            print("Will use the following offset: ", offset)
-            pipette.move_to((container,sub_location.from_center(x=offset[0],y=offset[1],z=offset[2],reference=container)))
-    print("Check calibration")
-    move_ot(pipette)
+            ans = ot.request_info('Try a little higher? (y/n): ',type='string')
+            if ans != 'n':
+                pipette.move_to(sub_location.top(z=40))
 
-check_calibration(robot,p10,dest_plate,dest_plate.rows(1))
+    print("Adjust calibration")
+    move_ot(pipette)
+    pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
+
+
+layout = pd.read_csv('./all_deck_layout.csv')
+
+for i,row in layout.iterrows():
+    pipette = pipette_dict[row['pipette']]
+    container_type = row['container_type']
+    slot = row['slot']
+    current_container = containers.load('{}'.format(container_type),slot)
+    input('Make sure {} is in slot {}'.format(container_type,slot))
+    if container_type == 'point':
+        check_calibration(robot,pipette,current_container,current_container)
+    elif pipette == 'p10':
+        check_calibration(robot,pipette,current_container,current_container.rows(0))
+    else:
+        check_calibration(robot,pipette,current_container,current_container.wells(0))
+
+
+
+# check_calibration(robot,p10,dest_plate,dest_plate.rows(1))
 
 
 
