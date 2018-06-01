@@ -1,4 +1,6 @@
 from opentrons import robot, containers, instruments
+import argparse
+
 import numpy as np
 import pandas as pd
 import getch
@@ -7,6 +9,11 @@ import os
 import sys
 import cv2
 import ot_functions as ot
+
+# Take in the 'run' argument from the command line
+parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+args = parser.parse_args()
 
 locations = {
             "tiprack-200" : "A3",
@@ -34,6 +41,14 @@ p10s_tipracks = [
 trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
 
 p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
+
+if args.run:
+    port = os.environ["ROBOT_DEV"]
+    print("Connecting robot to port {}".format(port))
+    robot.connect(port)
+else:
+    print("Simulating protcol run")
+    robot.connect()
 
 a = 1
 acceptable_directions = ['w','s','a','d','W','S']
