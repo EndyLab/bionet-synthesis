@@ -39,6 +39,8 @@ p10s_tipracks = [
 ]
 
 trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
+dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
+
 
 p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
 
@@ -50,35 +52,66 @@ else:
     print("Simulating protcol run")
     robot.connect()
 
-a = 1
-acceptable_directions = ['w','s','a','d','W','S']
-print('started')
-print("Current step size is: {}".format(a))
-while True:
-    directions = {
-        'w' : [a,0,0],
-        's' : [-a,0,0],
-        'a' : [0,a,0],
-        'd' : [0,-a,0],
-        'W' : [0,0,a],
-        'S' : [0,0,-a],
-    }
-    c = getch.getch()
-    if c == 'r':
-        a = a * 2
-        print("Current step size is: {}".format(a))
-    elif c == 'f':
-        a = a / 2
-        print("Current step size is: {}".format(a))
-    elif c in acceptable_directions:
-        print(c,directions[c])
-        coords = directions[c]
-        p10.robot._driver.move(x=coords[0],y=coords[1],z=coords[2],mode="relative")
-    elif c == 'x':
-        print('Exit')
-        break
+
+def move_ot(pipette):
+    '''Allows for easy manual driving of the OT-One'''
+    step = 1
+    print("Initiating manual control of OT")
+    print("'w'-'s' = back - forward\n'a'-'d' = left - right\n'W'-'S' = up - down")
+    print("Use 'r' and 'f' to increase/decrease step size")
+    print("Use 'x' to exit")
+    print("Current step size is: {}".format(step))
+    while True:
+        directions = {
+            'w' : [0,step,0],
+            's' : [0,-step,0],
+            'a' : [step,0,0],
+            'd' : [-step,0,0],
+            'W' : [0,0,step],
+            'S' : [0,0,-step],
+        }
+        c = getch.getch()
+        if c == 'r':
+            step = step * 2
+            print("Current step size is: {}".format(step))
+        elif c == 'f':
+            step = step / 2
+            print("Current step size is: {}".format(step))
+        elif c in directions.keys():
+            print(c,directions[c])
+            coords = directions[c]
+            p10.robot._driver.move(x=coords[0],y=coords[1],z=coords[2],mode="relative")
+        elif c == 'x':
+            print('Exit')
+            return
+        else:
+            print('invalid input')
+
+def check_calibration(robot,pipette,container,sub_location):
+    pipette.move_to((sub_location,[0,0,20]))
+    ans = ot.request_info('Does it line up? (y/n): ',type='string')
+    if ans == 'y':
+        pipette.move_to((sub_location,[0,0,5]))
+        ans = ot.request_info('Still good? (y/n): ',type='string')
+        if ans == 'y':
+            pipette.move_to(sub_location)
     else:
-        print('invalid input')
+        ans = ot.request_info('Need to rehome? (y/n): ',type='string')
+        if ans == 'y':
+            robot.home()
+            print('Previous offset was 0 0 20')
+            ans = ot.request_info('Enter new offset? (y x z): ',type='string')
+            offset = ans.split(' ')
+            if len(offset) != 3:
+                ans = ot.request_info('Invalid: Enter a different offset? (y x z): ',type='string')
+                offset = ans.split(' ')
+            offset = [int(num) for num in offset]
+            print("Will use the following offset: ", offset)
+            pipette.move_to((sub_location,offset))
+    print("Check calibration")
+    move_ot(pipette)
+
+check_calibration(robot,p10,dest_plate,dest_plate.rows(0))
 
 
 

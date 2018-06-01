@@ -152,7 +152,7 @@ def request_info(statement,type='string'):
     elif type == 'int':
         try:
             int(answer)
-            return answer
+            return int(answer)
         except:
             print("Not a valid type\n")
             return request_info(statement,type=type)
