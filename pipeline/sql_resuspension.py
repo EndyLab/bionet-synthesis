@@ -46,7 +46,7 @@ def resuspension(session,engine,target):
                 "tiprack-10s2" : "E1",
                 "trash" : "D1",
                 "PLATE HERE" : "B2",
-                "Tube_rack" : "B1"
+                "Trough" : "B1"
             }
     ot.print_layout(locations)
 
@@ -103,7 +103,7 @@ def resuspension(session,engine,target):
     ]
 
     trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
-    centrifuge_tube = containers.load('tube-rack-2ml',locations["Tube_rack"])
+    centrifuge_tube = containers.load('trough-12row',locations["Trough"])
 
     resuspend_plate = containers.load('96-flat', locations["PLATE HERE"])
 
@@ -145,7 +145,8 @@ def resuspension(session,engine,target):
                 current_vol = 1200
             current_vol -= vol
             print("Adding {}ul to well {} with the p10".format(vol, well))
-            p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+            #p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+            p10s.transfer(vol, centrifuge_tube['A1'], resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
             print("Currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
             last_pipette = "p10s"
         else:
@@ -162,7 +163,8 @@ def resuspension(session,engine,target):
                 current_vol = 1200
             current_vol -= vol
             print("Adding {}ul to well {} with the p200".format(vol, well))
-            p200.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+            #p200.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
+            p200.transfer(vol, centrifuge_tube['A1'], resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
             print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
             last_pipette = "p200"
 
