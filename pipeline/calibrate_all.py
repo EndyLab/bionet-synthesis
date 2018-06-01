@@ -107,27 +107,30 @@ def check_calibration(robot,pipette,container,sub_location):
 
     print("Adjust calibration")
     move_ot(pipette)
-    pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
+    #pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
 
 
 layout = pd.read_csv('./all_deck_layout.csv')
+
+check_calibration(robot,pipette_dict['p10'],dest_plate,dest_plate.rows(0))
 
 for i,row in layout.iterrows():
     pipette = pipette_dict[row['pipette']]
     container_type = row['container_type']
     slot = row['slot']
-    current_container = containers.load('{}'.format(container_type),slot)
-    input('Make sure {} is in slot {}'.format(container_type,slot))
+    current_container = containers.load(container_type,slot)
+    input('Make sure {} is in slot {} {}'.format(container_type,slot,row['pipette']))
+    check_calibration(robot,pipette,current_container,current_container.rows(0))
     if container_type == 'point':
         check_calibration(robot,pipette,current_container,current_container)
-    elif pipette == 'p10':
+    elif row['pipette'] == 'p10':
         check_calibration(robot,pipette,current_container,current_container.rows(0))
     else:
         check_calibration(robot,pipette,current_container,current_container.wells(0))
 
 
 
-# check_calibration(robot,p10,dest_plate,dest_plate.rows(1))
+#check_calibration(robot,p10,dest_plate,dest_plate.rows(1))
 
 
 
