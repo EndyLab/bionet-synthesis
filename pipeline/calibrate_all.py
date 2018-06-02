@@ -39,7 +39,7 @@ p10s_tipracks = [
 ]
 
 trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
-dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
+#dest_plate = containers.load('96-PCR-tall', locations["DEST_PLATE"])
 
 
 p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
@@ -112,18 +112,27 @@ def check_calibration(robot,pipette,container,sub_location):
 
 layout = pd.read_csv('./all_deck_layout.csv')
 
-check_calibration(robot,pipette_dict['p10'],dest_plate,dest_plate.rows(0))
+#check_calibration(robot,pipette_dict['p10'],dest_plate,dest_plate.rows(0))
 
 for i,row in layout.iterrows():
-    pipette = pipette_dict[row['pipette']]
     container_type = row['container_type']
     slot = row['slot']
     current_container = containers.load(container_type,slot)
+    p10,p10s,p200 = ot.initialize_pipettes(p10_tipracks,p10s_tipracks,p200_tipracks,trash)
+    pipette_dict = {'p10':p10,'p10s':p10s,'p200':p200}
+    pipette = pipette_dict[row['pipette']]
+
+    print(row['pipette'])
+    print(container_type)
+    print(slot)
+    print(current_container)
     input('Make sure {} is in slot {} {}'.format(container_type,slot,row['pipette']))
-    check_calibration(robot,pipette,current_container,current_container.rows(0))
+    #import ipdb; ipdb.set_trace()
+    #check_calibration(robot,pipette,current_container,current_container.rows(0))
     if container_type == 'point':
         check_calibration(robot,pipette,current_container,current_container)
     elif row['pipette'] == 'p10':
+        print('p10 elif')
         check_calibration(robot,pipette,current_container,current_container.rows(0))
     else:
         check_calibration(robot,pipette,current_container,current_container.wells(0))
