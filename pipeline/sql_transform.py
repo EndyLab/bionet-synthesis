@@ -30,7 +30,7 @@ def transform(session,engine):
 
     assemblies = []
     print("Choose which plate you would like to transform/plate:")
-    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Build.status == 'building').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
