@@ -1,0 +1,9 @@
+Gene Name,Gene ID,Current Status,Attempt 1,Attempt 2
+CYP71CU1,BBF10K_000601,sequence_confirmed,sequence_confirmed,N/A
+OMT3,BBF10K_000602,cloning_mutation,mutation_2.0-0.0,mutation_0.0-2.0
+OMT1,BBF10K_000603,sequence_confirmed,sequence_confirmed,N/A
+2-ODD,BBF10K_000604,sequence_confirmed,sequence_confirmed,N/A
+CYP71BE54,BBF10K_000605,cloning_mutation,mutation_0.0-2.0,N/A
+CYP719A23_DIR,BBF10K_000606,sequence_confirmed,sequence_confirmed,N/A
+CYP82D61,BBF10K_000607,cloning_mutation,bad_reverse,mutation_1.0-1.0
+ATR2,BBF10K_000608,sequence_confirmed,sequence_confirmed,N/A

@@ -1,0 +1,9 @@
+,part_name,part_id,status,Attempt_1_Outcome_G,Attempt_2_Outcome_G,Author
+74,crtB-b_rice,BBF10K_000465,sequence_confirmed,sequence_confirmed,N/A,Zavier Henderson
+76,crtB-b_yeast,BBF10K_000466,sequence_confirmed,sequence_confirmed,N/A,Zavier Henderson
+649,ctrB_yeast,BBF10K_000460,cloning_mutation,cloning_mutation,N/A,Zavier Henderson
+651,crtI_rice,BBF10K_000461,sequence_confirmed,sequence_confirmed,N/A,Zavier Henderson
+652,crtI_yeast,BBF10K_000462,sequence_confirmed,sequence_confirmed,N/A,Zavier Henderson
+653,crtO_rice,BBF10K_000463,sequence_failure,sequence_failure,N/A,Zavier Henderson
+654,crtO_yeast,BBF10K_000464,sequence_confirmed,sequence_confirmed,N/A,Zavier Henderson
+772,Mcherry-Zebrafish,BBF10K_000467,cloning_mutation,cloning_mutation,N/A,Zavier Henderson

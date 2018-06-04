@@ -9,89 +9,96 @@ import pandas as pd
 import glob
 from datetime import datetime
 
+import ot_functions as ot
 from config import *
-import db_config
-session,engine = db_config.connect_db()
+from db_config import *
+session,engine = connect_db()
 
-confirmed = [part.part_id for part in session.query(Part).filter(Part.status == 'sequence_confirmed').order_by(Part.id)]
-# print(confirmed)
-author_info = []
-ignore = ['Stanford BIOE80 class 2017','Stanley Qi','Keoni Gandall','Scott Pownall']
-for part in confirmed:
-    for file in glob.glob('../data/{}/{}.json'.format(part,part)):
-#         print(file)
-        with open(file,"r") as json_file:
-            data = json.load(json_file)
-        if data['author']['name'] in ignore:
-            continue
-        if data['version'] == '2.0.0':
-            author_info.append([data['author']['name'],data['author']['email'],data['author']['affiliation'],data['gene_id'],data['info']['documentation']['gene_name'],data['info']['documentation']['what']])
-        elif data['version'] == '3.0.0':
-            author_info.append([data['author']['name'],data['author']['email'],data['author']['affiliation'],data['gene_id'],data['info']['documentation']['gene_name'],data['info']['documentation']['description']])
+print(datetime.now(),'Began run')
 
-author_info = np.array(author_info)
-authors = pd.DataFrame({
-    'Name' : author_info[:,0],
-    'Email' : author_info[:,1],
-    'Affiliation' : author_info[:,2],
-    'Gene ID' : author_info[:,3],
-    'Gene Name' : author_info[:,4],
-    'Description' : author_info[:,5]
-})
+query_outcomes = "SELECT parts.part_id,parts.status,wells.seq_outcome,wells.plate_type,builds.build_name,wells.misplaced FROM parts \
+        INNER JOIN wells ON parts.id = wells.part_id\
+        INNER JOIN plates ON wells.plate_id = plates.id\
+        INNER JOIN builds ON plates.build_id = builds.id"
 
-authors = authors[['Name','Email','Affiliation','Gene ID','Gene Name','Description']]
-authors.to_csv('./author_info.csv')
+query_parts = "SELECT * FROM parts"
 
-name_email = authors[['Name','Email']].drop_duplicates()
-names = pd.Series(authors['Name'])
-unique_names = names.unique()
-print("Current authors:\n",names.value_counts())
-current = str(datetime.now()).split(" ")[0]
-
-genes = []
+author_dict = []
 for file in sorted(glob.glob('../data/*/*.json')):
     with open(file,"r") as json_file:
         data = json.load(json_file)
-    if data['author']['name'] not in unique_names:
-        continue
-    genes.append([data['author']['name'],data['gene_id']])
+    author_dict.append([data['gene_id'],data['author']['name']])
+author_dict = dict(author_dict)
 
-genes = np.array(genes)
-df_genes = pd.DataFrame({
-    'Author' : genes[:,0],
-    'Gene ID' : genes[:,1]
-})
+def multiple(x):
+    if len(x) == 1:
+        x.append('N/A')
+    return x
 
-for name in unique_names:
-    temp = df_genes[df_genes['Author'] == name]
-    new_rows = []
-    for i,row in temp.iterrows():
-        gene = row['Gene ID']
-        print("Gene",gene)
-        part = session.query(Part).filter(Part.part_id == gene).one()
-        attempts = [well.seq_outcome for well in part.wells if well.plates.plate_type == 'seq_plate']
-        if len(attempts) == 0:
-            attempts += ['N/A','N/A']
-        elif len(attempts) == 1:
-            attempts += ['N/A']
-        print(part.part_name,part.part_id,part.status,attempts[0],attempts[1])
-        new_rows.append([part.part_name,part.part_id,part.status,attempts[0],attempts[1]])
-    new_rows = np.array(new_rows)
-    new_df = pd.DataFrame({
-        "Gene Name" : new_rows[:,0],
-        "Gene ID" : new_rows[:,1],
-        "Current Status" : new_rows[:,2],
-        "Attempt 1" : new_rows[:,3],
-        "Attempt 2" : new_rows[:,4],
-    })
-    new_df = new_df[['Gene Name','Gene ID','Current Status','Attempt 1','Attempt 2']]
-    file_name = "{}_status_{}.csv".format(name,current)
-    path = '{}/authors/{}'.format(BASE_PATH,name)
-    if os.path.exists(path):
-        print("Directory for {} already exists".format(name))
+def find_outcome(x):
+    if x in df_out_dict.keys():
+        return df_out_dict[x]
     else:
-        # Generates a new directory with the ID# as its name
-        os.makedirs(path)
-        print("Making directory for {}".format(name))
-    file_path = path + "/" + file_name
-    new_df.to_csv(file_path,index=False)
+        return ['N/A','N/A']
+
+def find_build(x):
+    if x in df_build_dict.keys():
+        return df_build_dict[x]
+    else:
+        return ['N/A','N/A']
+
+def simplify_outcome(x):
+    if "mutation" in x:
+        return 'cloning_mutation'
+    elif "bad" in x:
+        return 'sequence_failure'
+#     elif x == 'cloning_error':
+#         return 'cloning_failure'
+    else:
+        return x
+
+def find_author(x):
+    return author_dict[x]
+
+df_res = pd.read_sql_query(query_outcomes, con=engine)
+df_res = df_res[df_res.plate_type == 'seq_plate']
+
+df_out = df_res.groupby('part_id')['seq_outcome'].apply(list)
+df_out.name = 'Outcomes'
+df_out = pd.DataFrame(df_out).reset_index()
+df_out.Outcomes = df_out.Outcomes.apply(multiple)
+df_out_dict = dict(zip(df_out.part_id.tolist(),df_out.Outcomes.tolist()))
+
+df_build = df_res.groupby('part_id')['build_name'].apply(list)
+df_build.name = 'Builds'
+df_build = pd.DataFrame(df_build).reset_index()
+df_build.Builds = df_build.Builds.apply(multiple)
+df_build_dict = dict(zip(df_build.part_id.tolist(),df_build.Builds.tolist()))
+print(datetime.now(),'Finished outcomes')
+
+df_parts = pd.read_sql_query(query_parts, con=engine)
+print('finished part query')
+
+df_parts = df_parts[df_parts.part_id != 'BBF10K_000745']
+
+df_parts['Outcomes'] = df_parts.part_id.apply(find_outcome)
+df_parts['Builds'] = df_parts.part_id.apply(find_build)
+print('finished outcome and builds')
+df_parts['Attempt_1_Outcome'] = df_parts.Outcomes.apply(lambda x: x[0])
+df_parts['Attempt_1_Outcome_G'] = df_parts.Attempt_1_Outcome.apply(simplify_outcome)
+df_parts['Attempt_1_Build'] = df_parts.Builds.apply(lambda x: x[0])
+df_parts['Attempt_2_Outcome'] = df_parts.Outcomes.apply(lambda x: x[1])
+df_parts['Attempt_2_Outcome_G'] = df_parts.Attempt_2_Outcome.apply(simplify_outcome)
+df_parts['Attempt_2_Build'] = df_parts.Builds.apply(lambda x: x[1])
+df_parts['Author'] = df_parts.part_id.apply(find_author)
+print(datetime.now(),'Finished building dataframe')
+
+df_authors = df_parts[['part_name','part_id','status','Attempt_1_Outcome_G','Attempt_2_Outcome_G','Author']]
+
+author_groups = df_authors.groupby('Author')
+for author,parts in author_groups:
+    print(author)
+    print(parts)
+    path = '{}/authors/{}'.format(BASE_PATH,author)
+    ot.make_directory(path)
+    parts.to_csv('{}/{}_status_{}'.format(path,author,str(datetime.now()).split(" ")[0]))

@@ -1,0 +1,24 @@
+Gene Name,Gene ID,Current Status,Attempt 1,Attempt 2
+Bba_K1989000,BBF10K_000561,sequence_confirmed,sequence_confirmed,N/A
+Dendra2,BBF10K_000583,sequence_confirmed,cloning_error,sequence_confirmed
+Fluc_LmiTS2,BBF10K_000584,sequence_confirmed,sequence_confirmed,N/A
+NanoOrga-luc,BBF10K_000585,sequence_confirmed,sequence_confirmed,N/A
+BMST1,BBF10K_000586,sequence_confirmed,sequence_confirmed,N/A
+chrB,BBF10K_000587,sequence_confirmed,sequence_confirmed,N/A
+blcR,BBF10K_000588,sequence_confirmed,sequence_confirmed,N/A
+pchA,BBF10K_000589,sequence_confirmed,sequence_confirmed,N/A
+pchB,BBF10K_000590,sequence_confirmed,sequence_confirmed,N/A
+BBa_K1616023,BBF10K_000591,sequence_confirmed,sequence_confirmed,N/A
+4S-limonene_synthase,BBF10K_000592,cloning_mutation,mutation_2.0-6.0,N/A
+acetyl-CoA_C-acyltransferase,BBF10K_000593,cloning_mutation,mutation_0.0-3.0,N/A
+hydroxymethylglutaryl-CoA_synthase,BBF10K_000594,sequence_confirmed,sequence_confirmed,N/A
+hydroxymethylglutaryl-CoA_reductase,BBF10K_000595,cloning_mutation,mutation_0.0-3.0,mutation_1.0-0.0
+mevalonate_kinase,BBF10K_000596,cloning_mutation,bad_forward,mutation_0.0-2.0
+phosphomevalonate_kinase,BBF10K_000597,sequence_confirmed,sequence_confirmed,N/A
+diphosphomevalonate_decarboxylase_MVD1,BBF10K_000598,sequence_confirmed,sequence_confirmed,N/A
+isopentenyl-diphosphate_Delta-isomerase,BBF10K_000599,sequence_confirmed,sequence_confirmed,N/A
+geranyl_diphosphate_synthase,BBF10K_000600,sequence_confirmed,sequence_confirmed,N/A
+Tardigrade CAHS 107838,BBF10K_000629,sequence_confirmed,sequence_confirmed,sequence_confirmed
+Tardigrade CAHS 106094,BBF10K_000630,sequence_confirmed,sequence_confirmed,N/A
+Tardigrade CAHS 94063,BBF10K_000631,sequence_confirmed,sequence_confirmed,N/A
+Tardigrade CAHS 89226,BBF10K_000632,sequence_confirmed,sequence_confirmed,N/A

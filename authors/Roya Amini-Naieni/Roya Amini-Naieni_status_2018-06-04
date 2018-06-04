@@ -1,0 +1,9 @@
+,part_name,part_id,status,Attempt_1_Outcome_G,Attempt_2_Outcome_G,Author
+267,OMT1,BBF10K_000603,sequence_confirmed,sequence_confirmed,N/A,Roya Amini-Naieni
+269,CYP82D61,BBF10K_000607,cloning_mutation,sequence_failure,cloning_mutation,Roya Amini-Naieni
+789,2-ODD,BBF10K_000604,sequence_confirmed,sequence_confirmed,N/A,Roya Amini-Naieni
+790,CYP719A23_DIR,BBF10K_000606,sequence_confirmed,sequence_confirmed,N/A,Roya Amini-Naieni
+831,CYP71CU1,BBF10K_000601,sequence_confirmed,sequence_confirmed,N/A,Roya Amini-Naieni
+832,OMT3,BBF10K_000602,cloning_mutation,cloning_mutation,cloning_mutation,Roya Amini-Naieni
+833,CYP71BE54,BBF10K_000605,cloning_mutation,cloning_mutation,N/A,Roya Amini-Naieni
+834,ATR2,BBF10K_000608,sequence_confirmed,sequence_confirmed,N/A,Roya Amini-Naieni
