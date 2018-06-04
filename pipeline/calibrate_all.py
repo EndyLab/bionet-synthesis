@@ -83,10 +83,13 @@ def check_calibration(robot,pipette,container,height=20):
         sub_location = container
     else:
         sub_location = container.rows(0)
-    pipette.move_to(sub_location.top(z=height))
+    pipette.move_to(sub_location.top(z=height),strategy='arc')
     ans = ot.request_info('Does it line up? (y/n): ',type='string')
     if ans != 'n':
-        pipette.move_to(sub_location.top())
+        if 'tiprack' in str(container.get_type()):
+            pipette.move_to(sub_location)
+        else:
+            pipette.move_to(sub_location.top())
         ans = ot.request_info('Still aligned? (y/n): ',type='string')
         if ans != 'n':
             pipette.move_to(sub_location.bottom())
@@ -104,7 +107,7 @@ def check_calibration(robot,pipette,container,height=20):
     if 'tiprack' in str(container.get_type()):
         print("Adjust tiprack calibration")
         check_tips(pipette,sub_location)
-    #pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
+    pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
     return sub_location
 
 layout = pd.read_csv('./all_deck_layout.csv')
