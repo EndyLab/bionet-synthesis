@@ -29,6 +29,7 @@ else:
     ot.print_center("...Simulating protcol run...")
     robot.connect()
 
+robot.home()
 
 def move_ot(pipette):
     '''Allows for easy manual driving of the OT-One'''
@@ -71,6 +72,7 @@ def check_tips(pipette,sub_location):
     ans = ot.request_info('Are tips sufficiently attached? (y/n): ',type='string')
     if ans == 'n':
         pipette.drop_tip(location=sub_location,home_after=False)
+        pipette.move_to(sub_location.bottom())
         move_ot(pipette)
         return check_tips(pipette,sub_location)
     else:
@@ -107,7 +109,7 @@ def check_calibration(robot,pipette,container,height=20):
     if 'tiprack' in str(container.get_type()):
         print("Adjust tiprack calibration")
         check_tips(pipette,sub_location)
-    pipette.calibrate_position((container,sub_location.from_center(x=0, y=0, z=-1,reference=container)))
+    pipette.calibrate_position((container,sub_location.bottom().from_center(x=0, y=0, z=-1,reference=container)))
     return sub_location
 
 layout = pd.read_csv('./all_deck_layout.csv')
