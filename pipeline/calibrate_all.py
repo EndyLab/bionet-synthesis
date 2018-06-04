@@ -111,7 +111,8 @@ def check_calibration(robot,pipette,container,height=20):
     if 'tiprack' in str(container.get_type()):
         print("Adjust tiprack calibration")
         check_tips(pipette,sub_location)
-    pipette.calibrate_position((container,container[0].from_center(x=0, y=0, z=-1,reference=container)))
+    else:
+        pipette.calibrate_position((container,container[0].from_center(x=0, y=0, z=-1,reference=container)))
 
     return sub_location
 
