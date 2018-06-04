@@ -35,7 +35,7 @@ def plate(session,engine):
 
     assemblies = []
     print("Choose which plate you would like to transform/plate:")
-    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Plate.plated == 'not_plated').order_by(Build.build_name)):
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Build.status == 'building').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
@@ -180,7 +180,7 @@ def plate(session,engine):
                 plate = agar_plate_names[1]
                 print("changing to :", plate)
                 plating_row = 0
-                redo = True
+                calibrate = True
             print("trans_row",trans_row, "dilution",dilution,"plate",plate,"plate row",plating_row)
             p10.pick_up_tip()
             print("Diluting cells in row {} with {}ul".format(trans_row, dilution_vol))
