@@ -4,10 +4,7 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Stanley Qi"
-    },
-    {
-      "name": "Zavier Henderson"
+      "name": "Order_004"
     },
     {
       "name": "Abandoned"
@@ -38,51 +35,46 @@
     {
       "source": 1,
       "target": 0,
-      "value": 93
-    },
-    {
-      "source": 2,
-      "target": 0,
-      "value": 8
+      "value": 101
     },
     {
       "source": 0,
-      "target": 3,
+      "target": 2,
       "value": 3
     },
     {
       "source": 0,
+      "target": 3,
+      "value": 98
+    },
+    {
+      "source": 3,
       "target": 4,
       "value": 98
     },
     {
       "source": 4,
       "target": 5,
-      "value": 98
-    },
-    {
-      "source": 5,
-      "target": 6,
       "value": 64
     },
     {
-      "source": 5,
-      "target": 7,
+      "source": 4,
+      "target": 6,
       "value": 13
     },
     {
-      "source": 5,
-      "target": 8,
+      "source": 4,
+      "target": 7,
       "value": 10
     },
     {
-      "source": 5,
-      "target": 9,
+      "source": 4,
+      "target": 8,
       "value": 8
     },
     {
-      "source": 5,
-      "target": 10,
+      "source": 4,
+      "target": 9,
       "value": 3
     }
   ]

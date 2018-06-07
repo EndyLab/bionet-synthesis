@@ -4,7 +4,7 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Order_010"
+      "name": "Order_012"
     },
     {
       "name": "Synthesizing"
@@ -26,27 +26,27 @@
     {
       "source": 1,
       "target": 0,
-      "value": 1740
+      "value": 65
     },
     {
       "source": 0,
       "target": 2,
-      "value": 23
+      "value": 4
     },
     {
       "source": 0,
       "target": 3,
-      "value": 1717
+      "value": 61
     },
     {
       "source": 3,
       "target": 4,
-      "value": 1717
+      "value": 61
     },
     {
       "source": 5,
       "target": 6,
-      "value": 1717
+      "value": 61
     }
   ]
 }

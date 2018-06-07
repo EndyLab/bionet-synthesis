@@ -4,19 +4,7 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Nils Averesch"
-    },
-    {
-      "name": "Corey Howe"
-    },
-    {
-      "name": "Alvin Huang"
-    },
-    {
-      "name": "Drew Endy"
-    },
-    {
-      "name": "Joshua Yang"
+      "name": "Order_008"
     },
     {
       "name": "Abandoned"
@@ -38,51 +26,31 @@
     {
       "source": 1,
       "target": 0,
-      "value": 5
+      "value": 13
     },
     {
-      "source": 2,
-      "target": 0,
-      "value": 4
+      "source": 0,
+      "target": 2,
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "value": 12
     },
     {
       "source": 3,
-      "target": 0,
-      "value": 2
+      "target": 4,
+      "value": 12
     },
     {
       "source": 4,
-      "target": 0,
-      "value": 1
-    },
-    {
-      "source": 5,
-      "target": 0,
-      "value": 1
-    },
-    {
-      "source": 0,
-      "target": 6,
-      "value": 1
-    },
-    {
-      "source": 0,
-      "target": 7,
-      "value": 12
-    },
-    {
-      "source": 7,
-      "target": 8,
-      "value": 12
-    },
-    {
-      "source": 8,
-      "target": 9,
+      "target": 5,
       "value": 11
     },
     {
-      "source": 8,
-      "target": 10,
+      "source": 4,
+      "target": 6,
       "value": 1
     }
   ]

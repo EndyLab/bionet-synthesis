@@ -4,10 +4,22 @@
       "name": "Total_ordered"
     },
     {
-      "name": "FreeGenes Team"
+      "name": "Order_009"
     },
     {
       "name": "Synthesizing"
+    },
+    {
+      "name": "Received"
+    },
+    {
+      "name": "Not_attempted"
+    },
+    {
+      "name": "Attempted"
+    },
+    {
+      "name": "received"
     }
   ],
   "links": [
@@ -19,7 +31,22 @@
     {
       "source": 0,
       "target": 2,
-      "value": 452
+      "value": 8
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "value": 444
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "value": 444
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "value": 444
     }
   ]
 }

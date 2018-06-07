@@ -4,13 +4,7 @@
       "name": "Total_ordered"
     },
     {
-      "name": "Ekam Dhaliwal, Scott Pownall"
-    },
-    {
-      "name": "Wajid Waheed"
-    },
-    {
-      "name": "Connor Tansley"
+      "name": "Order_006"
     },
     {
       "name": "Received"
@@ -22,10 +16,10 @@
       "name": "cloning_mutation"
     },
     {
-      "name": "cloning_failure"
+      "name": "sequence_confirmed"
     },
     {
-      "name": "sequence_confirmed"
+      "name": "cloning_failure"
     },
     {
       "name": "sequence_failure"
@@ -35,46 +29,36 @@
     {
       "source": 1,
       "target": 0,
-      "value": 4
+      "value": 7
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "value": 7
     },
     {
       "source": 2,
-      "target": 0,
+      "target": 3,
+      "value": 7
+    },
+    {
+      "source": 3,
+      "target": 4,
       "value": 2
     },
     {
       "source": 3,
-      "target": 0,
-      "value": 1
-    },
-    {
-      "source": 0,
-      "target": 4,
-      "value": 7
-    },
-    {
-      "source": 4,
       "target": 5,
-      "value": 7
+      "value": 2
     },
     {
-      "source": 5,
+      "source": 3,
       "target": 6,
       "value": 2
     },
     {
-      "source": 5,
+      "source": 3,
       "target": 7,
-      "value": 2
-    },
-    {
-      "source": 5,
-      "target": 8,
-      "value": 2
-    },
-    {
-      "source": 5,
-      "target": 9,
       "value": 1
     }
   ]
