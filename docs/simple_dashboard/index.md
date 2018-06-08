@@ -19,5 +19,5 @@ Date | Author | Gene Name | Description | Links
 
 Date | Author | Project Description 
 | --- | --- | --- |
-11-May-2018 9:58:22 | Keoni Gandall | Bug shooting pew pew | 
+29-May-2018 14:22:22 | Chris Hackley | Attempting to produce the first ever CRISPR engineering yeast for use in brewing beer | 
 
