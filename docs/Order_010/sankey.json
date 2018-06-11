@@ -19,9 +19,6 @@
       "name": "Attempted"
     },
     {
-      "name": "received"
-    },
-    {
       "name": "sequence_confirmed"
     },
     {
@@ -29,6 +26,9 @@
     },
     {
       "name": "cloning_failure"
+    },
+    {
+      "name": "sequencing"
     }
   ],
   "links": [
@@ -50,32 +50,32 @@
     {
       "source": 3,
       "target": 4,
-      "value": 1536
+      "value": 1512
     },
     {
       "source": 3,
       "target": 5,
-      "value": 181
+      "value": 205
     },
     {
       "source": 5,
       "target": 6,
-      "value": 1536
+      "value": 148
     },
     {
       "source": 5,
       "target": 7,
-      "value": 139
+      "value": 28
     },
     {
       "source": 5,
       "target": 8,
-      "value": 26
+      "value": 18
     },
     {
       "source": 5,
       "target": 9,
-      "value": 16
+      "value": 11
     }
   ]
 }

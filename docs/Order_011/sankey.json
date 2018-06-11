@@ -14,12 +14,6 @@
     },
     {
       "name": "Not_attempted"
-    },
-    {
-      "name": "Attempted"
-    },
-    {
-      "name": "received"
     }
   ],
   "links": [
@@ -41,11 +35,6 @@
     {
       "source": 3,
       "target": 4,
-      "value": 109
-    },
-    {
-      "source": 5,
-      "target": 6,
       "value": 109
     }
   ]

@@ -19,9 +19,6 @@
       "name": "Attempted"
     },
     {
-      "name": "received"
-    },
-    {
       "name": "sequence_confirmed"
     },
     {
@@ -60,21 +57,16 @@
     {
       "source": 5,
       "target": 6,
-      "value": 350
-    },
-    {
-      "source": 5,
-      "target": 7,
       "value": 76
     },
     {
       "source": 5,
-      "target": 8,
+      "target": 7,
       "value": 17
     },
     {
       "source": 5,
-      "target": 9,
+      "target": 8,
       "value": 1
     }
   ]
