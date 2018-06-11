@@ -20,6 +20,15 @@
     },
     {
       "name": "received"
+    },
+    {
+      "name": "sequence_confirmed"
+    },
+    {
+      "name": "cloning_mutation"
+    },
+    {
+      "name": "cloning_failure"
     }
   ],
   "links": [
@@ -41,12 +50,32 @@
     {
       "source": 3,
       "target": 4,
-      "value": 1717
+      "value": 1536
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "value": 181
     },
     {
       "source": 5,
       "target": 6,
-      "value": 1717
+      "value": 1536
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "value": 139
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "value": 26
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "value": 16
     }
   ]
 }
