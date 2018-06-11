@@ -73,8 +73,6 @@ def transform(session,engine):
     start = datetime.now()
     print("Starting run at: ",start)
 
-    ot.change_speed(robot)
-
     # Start up and declare components on the deck
     robot.home()
 

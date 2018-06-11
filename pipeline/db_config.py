@@ -34,6 +34,7 @@ class Part(Base):
     cloning_enzyme = Column(String) # Enzyme used in initial cloning
     organism = Column(String) # For codon optimization
     bionet_id = Column(String) # Unique ID for the bionet vitual
+    # original_seq = Column(String) # Stores the initial sequence
     seq = Column(String)
     status = Column(String) # Gives the most updated status of this part
     ip_order = Column(String) # Stores the submission number sent to sagacious i.e. 'ip_order002'
@@ -67,10 +68,12 @@ class Part(Base):
                 simple_status.append('cloning_mutation')
             elif "bad" in s:
                 simple_status.append('sequence_failure')
+            elif s == '':
+                simple_status.append('sequencing')
             else:
                 simple_status.append(s)
 
-        possible = ['cloning_failure','cloning_error','sequence_failure','cloning_mutation','sequence_confirmed']
+        possible = ['building','sequencing','cloning_failure','cloning_error','sequence_failure','cloning_mutation','sequence_confirmed']
         rank = dict(zip(possible,range(len(possible))))
         try:
             new_status = possible[max([rank[r] for r in simple_status])]
@@ -215,8 +218,10 @@ class Plate(Base):
         if self.plate_type == 'syn_plate':
             self.resuspended = 'not_resuspended'
             self.plate_id = plate_id
-        if self.plate_type == 'assembly_plate':
+        elif self.plate_type == 'assembly_plate':
             self.plated = 'not_plated'
+        elif self.plate_type == 'seq_plate':
+            self.seq_outcome = 'sequencing'
         # Generate a well for every part provided
         for item in items:
             self.add_item(item)
@@ -285,13 +290,8 @@ def connect_db():
 
     ot.print_center('...Connecting to the database...')
 
-    ## Connect to the AWS server running the openfoundry database
-    conn_str = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
-    engine = sqlalchemy.create_engine(conn_str, echo=False)
-
-    ## Begin using sqlite as a local database
-    # engine = create_engine('sqlite:///:memory:', echo=False)
-    # engine = create_engine('sqlite:///free_genes.db')
+    ## Connect to the database specified in the config file
+    engine = sqlalchemy.create_engine(CONNECTION_STRING, echo=False)
 
     ## Create and commit all of the tables
     Base.metadata.create_all(engine)

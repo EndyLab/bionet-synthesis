@@ -8,7 +8,7 @@ from db_config import *
 session,engine = connect_db()
 
 
-for part in session.query(Part).order_by(Part.id):
+for part in session.query(Part).order_by(Part.part_id):
     print(part.part_id)
     part.eval_status()
 

@@ -78,6 +78,7 @@ df_build_dict = dict(zip(df_build.part_id.tolist(),df_build.Builds.tolist()))
 print(datetime.now(),'Finished outcomes')
 
 df_parts = pd.read_sql_query(query_parts, con=engine)
+df_parts = df_parts[df_parts.part_id != 'BBF10K_000745']
 print('finished part query')
 df_parts['Fragments'] = df_parts.part_id.apply(lambda x: frags_dict[x])
 df_parts['Submission'] = df_parts.part_id.apply(lambda x: subs_dict[x])
@@ -137,6 +138,7 @@ data_att.groupby(data_att.status).Fragments.describe()
 
 data_fail = data_att[data_att.status != 'sequence_confirmed']
 data_fail = data_fail[data_fail.status != 'abandoned']
+data_fail = data_fail[data_fail.status != 'received']
 
 
 fig3, ax3 = plt.subplots()
@@ -250,6 +252,7 @@ build_norm = (df_int.groupby('build_name')['Outcome'].value_counts() / df_int.gr
 build_norm.name = 'Percent'
 build_norm = pd.DataFrame(build_norm).reset_index()
 build_norm.Percent = build_norm.Percent * 100
+build_norm['build_name'] = build_norm['build_name'].apply(lambda x: int(x[-3:]))
 
 # Plot normalized data
 dims = (16, 6)
@@ -265,6 +268,7 @@ fig1.savefig('../docs/Overall/norm_build.png')
 build_raw = (df_int.groupby('build_name')['status'].value_counts())
 build_raw.name = 'Count'
 build_raw = pd.DataFrame(build_raw).reset_index()
+build_raw['build_name'] = build_raw['build_name'].apply(lambda x: int(x[-3:]))
 
 # Plot the raw counts
 fig2, ax = plt.subplots(figsize=dims)
@@ -349,6 +353,7 @@ for name,df in zip(df_names,desired_dfs):
     # Outcomes
     data_att = df[df.status != 'ordered']
     data_att = data_att[data_att.status != 'abandoned']
+    data_att = data_att[data_att.status != 'received']
     outcomes = pd.DataFrame(data_att.status.value_counts())
     out = outcomes.index.tolist()
     count = outcomes.status.tolist()

@@ -26,7 +26,7 @@ def assess_plate():
     # Determine which build/plate to assess
     assemblies = []
     print("Choose which build you would like to assess:")
-    for index,assembly in enumerate(session.query(Build).filter(Build.status == 'building')):
+    for index,assembly in enumerate(session.query(Build).filter(Build.status == 'building').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.build_name))
         assemblies.append(assembly)
     build_num = int(input("Enter build here: "))
@@ -41,6 +41,8 @@ def assess_plate():
     print("Enter well addresses that didn't work. e.g. A1 H6")
     failed = [x for x in input("List: ").split(" ")]
     print("Will exclude the following:",failed)
+
+    ot.print_center('...Generating sequencing plate...')
 
     # Generate an empty sequencing plate and update the build status
     seq_plate = Plate([],'seq_plate','{}-seq'.format(target_build.build_name))
