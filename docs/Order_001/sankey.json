@@ -19,10 +19,10 @@
       "name": "sequence_confirmed"
     },
     {
-      "name": "cloning_failure"
+      "name": "cloning_mutation"
     },
     {
-      "name": "cloning_mutation"
+      "name": "cloning_failure"
     },
     {
       "name": "sequence_failure"
