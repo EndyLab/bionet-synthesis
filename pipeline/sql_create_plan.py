@@ -19,7 +19,7 @@ import ot_functions as ot
 
 from db_config import *
 
-def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_frag=0):
+def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns=96):
 
     ot.print_center("============ Creating Plan ============")
     num_builds = math.ceil(num_parts / 96)
@@ -71,7 +71,7 @@ def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_fr
 
         return pd.read_sql_query(query_parts, con=engine)
 
-    for build in new_builds:
+    for build,frag_num in zip(new_builds,frag_nums):
         ## Pulls in parts that have the desirable status and then sorts them by the plates their fragments are in,
         ## sorts them by their plate numbers and returns the earliest set of parts
         ot.print_center("...Finding genes for {}...".format(build))
@@ -87,8 +87,8 @@ def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_fr
         to_build.id = to_build.plate_id.apply(find_used)
         grouped = to_build.groupby('part_id').filter(lambda x: len(x) == x['id'].sum())
 
-        if max_frag != 0:
-            grouped = grouped.groupby('part_id').filter(lambda x: len(x) <= max_frag)
+        if frag_num != 0:
+            grouped = grouped.groupby('part_id').filter(lambda x: len(x) == frag_num)
 
 
         sort_group = grouped.sort_values('plate_id')
@@ -108,6 +108,7 @@ def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_fr
 
         to_build = sort_group[sort_group.part_id.isin(sub)]
         print(len(to_build))
+        num_reactions = len(to_build)
 
         print("{} includes {} parts".format(build,len(to_build.part_id.unique().tolist())))
 
@@ -117,11 +118,15 @@ def create_build_plans(session,engine,num_parts,enzyme='BbsI',max_rxns=96,max_fr
         used_plates += to_build.plate_id.unique().tolist()
         print(to_build.plate_id.unique().tolist())
 
+        master_mix = ot.make_gg_rxns(num_reactions,10)
+        print("Below is the required master mix for {}".format(build))
+
         build_parts = to_build.part_id.unique().tolist()
         build_plan = pd.DataFrame({'Gene': build_parts})
         build_path = '{}/builds/{}'.format(BASE_PATH,build)
         ot.make_directory(build_path)
         build_plan.to_csv('{}/{}_plan.csv'.format(build_path,build),index=False)
+    print("These builds will require the following plates:")
     print(pd.Series(used_plates).sort_values())
 
 
@@ -129,6 +134,8 @@ if __name__ == "__main__":
     session,engine = connect_db()
     print('1 build = 96 parts\n2 builds = 192 parts\n3 builds = 288 parts')
     num_parts = int(ot.request_info("Enter the desired number of parts to build: ",type='int'))
+    num_builds = math.ceil(num_parts / 96)
+    frag_nums = ot.request_info("Enter the number of fragments desired for the {} builds \n(i.e. '1 2 0' where 0 represents any number): ".format(num_builds), type='list',length=num_builds)
 
     enzyme_num = ot.request_info("Which enzyme (1 - BbsI or 2 - BtgZI): ",type='int')
     if int(enzyme_num) == 1:
@@ -136,6 +143,6 @@ if __name__ == "__main__":
     else:
         enzyme = 'BtgZI'
     print("Using enzyme: ",enzyme)
-    frag_num = int(ot.request_info("Maximum number of fragments ('0' for no limit): ",type='int'))
+    # frag_num = int(ot.request_info("Maximum number of fragments ('0' for no limit): ",type='int'))
 
-    create_build_plans(session,engine,num_parts,enzyme=enzyme,max_frag=frag_num)
+    create_build_plans(session,engine,num_parts,frag_nums,enzyme=enzyme)

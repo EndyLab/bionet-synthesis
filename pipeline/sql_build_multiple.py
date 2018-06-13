@@ -47,7 +47,16 @@ def run_build(session,engine):
     build_parts = build_plan.Gene.tolist()
 
     to_build = [part for part in session.query(Part).filter(Part.part_id.in_(build_parts))]
-    # print(to_build[0].part_id)
+
+    parts_df = ot.query_for_fragments(build_parts,engine)
+    frags = parts_df.groupby('part_id').agg(len)
+    if len(frags) == len([frag for frag in frags.fragment_name.tolist() if frag == 2]):
+        print('Build only contains 2 fragment assemblies')
+        num_frags = 2
+        rxn_vol = 0.6
+    else:
+        rxn_vol = 0.8
+        num_frags = 1
 
     build_name = target_file.split('/')[-1].split('_')[0]
     # print(build_name)
@@ -152,7 +161,7 @@ def run_build(session,engine):
     vol = int(ot.request_info('Enter desired reaction volume (i.e. 5,10,20): ',type='int'))
 
     # Set the proportion of master mix to fragment to 4:1
-    master_volume = 0.8 * vol
+    master_volume = rxn_vol * vol
     frag_vol = 0.2 * vol
 
     ot.print_center('...Calculating master mix volumes...')
@@ -162,8 +171,10 @@ def run_build(session,engine):
 
     need_extra = []
     for plate in target_build.plates:
-        need_extra.append([{'plate':well.plates.plate_name,'well':well.address,'frags':len(well.parts.fragments)}\
-                          for well in plate.wells if len(well.parts.fragments) > 1])
+        need_extra.append([{'plate':well.plates.plate_name,'well':well.address,\
+        'frags':len(well.parts.fragments)} for well in plate.wells\
+        if len(well.parts.fragments) > num_frags])
+
     total_extra = 0
     for plates in need_extra:
         for transfer in plates:
@@ -235,9 +246,6 @@ def run_build(session,engine):
         p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
     p200.drop_tip()
 
-    # REVIEW:
-    input("Run other build")
-
     # Aliquot the master mix into all of the desired wells
     p10.pick_up_tip()
     for row in range(num_rows):
@@ -256,13 +264,16 @@ def run_build(session,engine):
         p10s.drop_tip()
 
     # Aliquot extra master mix into wells with multiple fragments
-    p10s.pick_up_tip()
-    for transfer in need_extra[0]:
-        extra_volume = (int(transfer['frags']) - 1) * master_volume
-        current_well = transfer['well']
-        print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-        p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-    p10s.drop_tip()
+    if len(need_extra[0]) != 0:
+        p10s.pick_up_tip()
+        for transfer in need_extra[0]:
+            extra_volume = (int(transfer['frags']) - 1) * master_volume
+            current_well = transfer['well']
+            print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+            p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+        p10s.drop_tip()
+    else:
+        print('No extra MM must be aliquoted')
 
     ## Add the fragments from the source plates to the destination plate
     ## ============================================

@@ -144,7 +144,7 @@ def print_center(statement):
     columns = shutil.get_terminal_size().columns
     print('\n',statement.center(columns))
 
-def request_info(statement,type='string'):
+def request_info(statement,type='string',length=0):
     answer = input(statement)
     if answer == '':
         print("Please enter a value\n")
@@ -154,8 +154,18 @@ def request_info(statement,type='string'):
             int(answer)
             return int(answer)
         except:
-            print("Not a valid type\n")
+            print("Invalid type\n")
             return request_info(statement,type=type)
+    elif type == 'list':
+        try:
+            nums = [int(num) for num in answer.split(' ')]
+            if len(nums) != length:
+                print('Requires {} inputs'.format(length))
+                return request_info(statement,type=type,length=length)
+            return [int(num) for num in answer.split(' ')]
+        except:
+            print("Invalid type\n")
+            return request_info(statement,type=type,length=length)
     else:
         return answer
 
@@ -177,7 +187,7 @@ def check_robot():
     if robot_number == 1:
         print("Proceeding with run")
     else:
-        sys.exit("Run roboswitch <robot_name> to change the robot")
+        sys.exit("Run `roboswitch <robot_name>` to change the robot")
 
 def list_to_string(ls):
     string = ''
@@ -186,7 +196,7 @@ def list_to_string(ls):
     return string[:-1]
 
 def query_for_parts(status,enzyme,engine):
-    query_parts = "SELECT parts.part_id,parts.status,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id FROM parts\
+    query = "SELECT parts.part_id,parts.status,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id FROM parts\
             INNER JOIN part_frag ON parts.id = part_frag.part_id\
             INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
             INNER JOIN wells ON fragments.id = wells.fragment_id\
@@ -194,17 +204,25 @@ def query_for_parts(status,enzyme,engine):
             WHERE parts.status IN ({})\
                 AND parts.cloning_enzyme = '{}'".format(list_to_string(status),enzyme)
 
-    return pd.read_sql_query(query_parts, con=engine)
+    return pd.read_sql_query(query, con=engine)
 
 def query_for_plates(parts,engine):
-    query_parts = "SELECT parts.part_id,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id,plates.plate_name FROM parts\
+    query = "SELECT parts.part_id,fragments.fragment_name,plates.plate_id,wells.address,wells.volume,plates.id,plates.plate_name FROM parts\
             INNER JOIN part_frag ON parts.id = part_frag.part_id\
             INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
             INNER JOIN wells ON fragments.id = wells.fragment_id\
             INNER JOIN plates on wells.plate_id = plates.id\
             WHERE parts.part_id IN ({})".format(list_to_string(parts))
 
-    return pd.read_sql_query(query_parts, con=engine)
+    return pd.read_sql_query(query, con=engine)
+
+def query_for_fragments(parts,engine):
+    query = "SELECT parts.part_id,fragments.fragment_name FROM parts\
+            INNER JOIN part_frag ON parts.id = part_frag.part_id\
+            INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
+            WHERE parts.part_id IN ({})".format(list_to_string(parts))
+
+    return pd.read_sql_query(query, con=engine)
 
 def change_plates(locations,current_plates,source_slots):
     '''Allows the user to swap plates in the middle of a protocol'''
