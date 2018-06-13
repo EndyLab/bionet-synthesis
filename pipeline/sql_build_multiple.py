@@ -237,7 +237,7 @@ def run_build(session,engine):
     robot.home()
 
     # Aliquot the master mix into the PCR tube strip
-    vol_per_tube = math.ceil(num_rows * master_volume * extra_master)
+    vol_per_tube = round((num_rows * master_volume * extra_master),2)
     print("Aliquoting MM into PCR tubes")
     print("{}ul into each tube".format(vol_per_tube))
     p200.pick_up_tip()
