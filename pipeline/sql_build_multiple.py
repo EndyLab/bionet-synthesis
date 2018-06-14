@@ -315,6 +315,8 @@ def run_build(session,engine):
 
     commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
+        for part in to_build:
+            part.status = 'building'
         session.commit()
     return
 
