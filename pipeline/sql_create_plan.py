@@ -34,19 +34,8 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
         past_builds = pd.read_sql_query("SELECT builds.build_name FROM builds", con=engine).build_name.tolist()
         last_build = max([int(build[-3:]) for build in past_builds])
     else:
-        print("previous builds")
-        past_parts = []
-        for file in sorted(glob.glob('{}/builds/*/*_plan.csv'.format(BASE_PATH))):
-            print(file)
-            data = pd.read_csv(file)
-            past_parts += data.Gene.tolist()
-        parts_df = ot.query_for_plates(past_parts,engine)
-        used_plates += parts_df.plate_id.unique().tolist()
-        print('Used plates: ',used_plates)
-
-        last_build_file = sorted(glob.glob('{}/builds/*/*_plan.csv'.format(BASE_PATH)))[-1]
-        last_build = int(last_build_file.split('/')[-2][-3:])
-        print(last_build)
+        print("Delete previous plans before creating a new one")
+        sys.exit()
 
     new_builds = ["build"+str(last_build+num).zfill(3) for num in range(1,num_builds+1)]
     print(new_builds)
