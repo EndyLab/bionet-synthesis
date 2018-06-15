@@ -114,8 +114,8 @@ def plate(session,engine):
 
     p10_tipracks = [
         containers.load('tiprack-10ul', locations['tiprack-10_2']),
-        containers.load('tiprack-10ul', locations['tiprack-10_1']),
-        containers.load('tiprack-10ul', locations['tiprack-10_3'])
+        containers.load('tiprack-10ul', locations['tiprack-10_3']),
+        containers.load('tiprack-10ul', locations['tiprack-10_1'])
     ]
     p10s_tipracks = [
     ]

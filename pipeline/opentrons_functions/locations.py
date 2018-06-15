@@ -1,5 +1,11 @@
 import pandas as pd
 from opentrons import robot, containers, instruments
+import os
+
+
+port = os.environ["ROBOT_DEV"]
+robot.connect(port)
+robot.home()
 
 # Examples
 locations = {

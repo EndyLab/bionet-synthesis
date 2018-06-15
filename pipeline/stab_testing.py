@@ -38,10 +38,10 @@ start = datetime.now()
 print("Starting run at: ",start)
 
 # Start up and declare components on the deck
-robot.home()
+#robot.home()
 
 p200_tipracks = [
-    containers.load('tiprack-200ul', locations['tiprack-200']),
+    containers.load('tiprack-200ul', 'A3'),
 ]
 
 p10_tipracks = [
@@ -51,7 +51,12 @@ p10_tipracks = [
 transformation_plate = containers.load('96-PCR-tall', 'C2')
 trash = containers.load('point', 'D1', 'holywastedplasticbatman')
 master = containers.load('PCR-strip-tall', 'C3')
-agar_plate = containers.load('96-deep-well', 'D2')
+#agar_plate = containers.load('96-deep-well', 'D2')
+
+agar_plates = {}
+layout = [['plate','D2']]
+for plate,slot in layout:
+    agar_plates[plate] = containers.load('96-deep-well',slot)
 
 p10 = instruments.Pipette(
     axis='a',
@@ -64,16 +69,20 @@ p10 = instruments.Pipette(
     aspirate_speed=400,
     dispense_speed=800
 )
+row = 0
+#p10.move_to(agar_plate.rows(row))
+#input('top')
+p10.aspirate(2.5,agar_plates['plate'].rows(row).top())
+input('bot')
+p10.dispense(2.5,agar_plates['plate'].rows(row).bottom())
 
-p10.move_to((agar_plate.rows(0),[0,0,1]),strategy='arc')
-p10.move_to((agar_plate.rows(0),[0,0,0]),strategy='arc')
 
-pipette.dispense(volume)
-if calibrate:
-    calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
-pipette.move_to((row,[0,0,z]),strategy='direct')
-input("Successful plating?")
-return calibrate,z
+#pipette.dispense(volume)
+#if calibrate:
+#    calibrate,z = change_height(agar_plates[plate],agar_plates[plate].rows(plating_row)[0])
+#pipette.move_to((row,[0,0,z]),strategy='direct')
+#input("Successful plating?")
+#return calibrate,z
 
 
 

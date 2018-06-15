@@ -21,7 +21,7 @@ from config import *
 from db_config import *
 session,engine = connect_db()
 
-from opentrons_functions import locations as ot_locations , recalibration as recal, freegenes_funcs as ff
+from opentrons_functions import locations as ot_locations , recalibration as recal, freegenes_funcs as ff, robot_choice as robot_choice
 
 PIPELINE_PATH = BASE_PATH + "/pipeline"
 BUILDS_PATH = BASE_PATH + "/builds"
@@ -162,6 +162,7 @@ def OT1_plate(num_reactions, simulate=True, num_dilutions=4, plate_vol=7.5, dilu
         elif choice == "Plate second half":
             return plate_cells()
         elif choice == "End simulation":
+            robot_choice.robo_choice()
             recal.simulation(simulate=False)
             return plating_manager()
         elif choice == "Exit":
@@ -170,7 +171,7 @@ def OT1_plate(num_reactions, simulate=True, num_dilutions=4, plate_vol=7.5, dilu
 
 
 
-OT1_plate(int(input("How many reactions do you wish to run? :" )))
+OT1_plate(int(input("How many reactions do you wish to run? : " )))
 
 
 #
