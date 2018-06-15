@@ -13,6 +13,7 @@ from datetime import datetime
 import getch
 import shutil
 import sys
+import argparse
 
 from config import *
 import ot_functions as ot
@@ -20,6 +21,11 @@ import ot_functions as ot
 from db_config import *
 
 def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns=96):
+
+    # Take in the 'run' argument from the command line
+    parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
+    parser.add_argument('-r', '--run', required=False, action="store_true", help="Send commands to the robot and print command output.")
+    args = parser.parse_args()
 
     ot.print_center("============ Creating Plan ============")
     num_builds = math.ceil(num_parts / 96)
@@ -113,8 +119,11 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
         build_parts = to_build.part_id.unique().tolist()
         build_plan = pd.DataFrame({'Gene': build_parts})
         build_path = '{}/builds/{}'.format(BASE_PATH,build)
-        ot.make_directory(build_path)
-        build_plan.to_csv('{}/{}_plan.csv'.format(build_path,build),index=False)
+        if args.run:
+            ot.make_directory(build_path)
+            build_plan.to_csv('{}/{}_plan.csv'.format(build_path,build),index=False)
+        else:
+            print('Did not write plan. Add -r to the end of the function to write them')
     print("These builds will require the following plates:")
     print(pd.Series(used_plates).sort_values())
 
