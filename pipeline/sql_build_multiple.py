@@ -140,9 +140,9 @@ def run_build(session,engine):
     # Specify the locations of each object on the deck
     locations = {
                 "tiprack-200" : "A3",
-                "tiprack-10" : "E2",
+                "tiprack-10" : "E1",
                 "tiprack-10s1" : "E3",
-                "tiprack-10s2" : "E1",
+                "tiprack-10s2" : "E2",
                 "trash" : "D1",
                 "PCR-strip-tall" : "C3",
                 "DEST_PLATE" : "C2",
@@ -236,47 +236,47 @@ def run_build(session,engine):
     # Home the robot to start
     robot.home()
 
-    # Aliquot the master mix into the PCR tube strip
-    vol_per_tube = round((num_rows * master_volume * extra_master),2)
-    print("Aliquoting MM into PCR tubes")
-    print("{}ul into each tube".format(vol_per_tube))
-    p200.pick_up_tip()
-    for well in range(8):
-        print("Transferring {}ul to well {}".format(vol_per_tube,well))
-        p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
-    p200.drop_tip()
-
-    # Aliquot the master mix into all of the desired wells
-    p10.pick_up_tip()
-    for row in range(num_rows):
-        print("Transferring {}ul of master mix to row {}".format(master_volume,int(row)+1))
-        p10.transfer(master_volume, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
-    p10.drop_tip()
-
-    # Aliquot master mix into the last row if not a complete row
-    if num_reactions % 8 > 0:
-        p10s.pick_up_tip()
-        print("need single channel for {}".format(num_reactions % 8))
-        for missing in range(num_reactions % 8):
-            current_well = (8 * num_rows) + (missing)
-            print("Transferring {}ul of extra MM to {}".format(master_volume,current_well))
-            p10s.transfer(master_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-        p10s.drop_tip()
-
-    # Aliquot extra master mix into wells with multiple fragments
-    if len(need_extra[0]) != 0:
-        p10s.pick_up_tip()
-        for transfer in need_extra[0]:
-            extra_volume = (int(transfer['frags']) - 1) * master_volume
-            current_well = transfer['well']
-            print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
-            p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
-        p10s.drop_tip()
-    else:
-        print('No extra MM must be aliquoted')
-
-    ## Add the fragments from the source plates to the destination plate
-    ## ============================================
+#    # Aliquot the master mix into the PCR tube strip
+#    vol_per_tube = round((num_rows * master_volume * extra_master),2)
+#    print("Aliquoting MM into PCR tubes")
+#    print("{}ul into each tube".format(vol_per_tube))
+#    p200.pick_up_tip()
+#    for well in range(8):
+#        print("Transferring {}ul to well {}".format(vol_per_tube,well))
+#        p200.transfer(vol_per_tube, centrifuge_tube['A1'].bottom(),master.wells(well).bottom(), mix_before=(3,50),new_tip='never')
+#    p200.drop_tip()
+#
+#    # Aliquot the master mix into all of the desired wells
+#    p10.pick_up_tip()
+#    for row in range(num_rows):
+#        print("Transferring {}ul of master mix to row {}".format(master_volume,int(row)+1))
+#        p10.transfer(master_volume, master['A1'].bottom(), dest_plate.rows(row).bottom(), mix_before=(1,8), blow_out=True, new_tip='never')
+#    p10.drop_tip()
+#
+#    # Aliquot master mix into the last row if not a complete row
+#    if num_reactions % 8 > 0:
+#        p10s.pick_up_tip()
+#        print("need single channel for {}".format(num_reactions % 8))
+#        for missing in range(num_reactions % 8):
+#            current_well = (8 * num_rows) + (missing)
+#            print("Transferring {}ul of extra MM to {}".format(master_volume,current_well))
+#            p10s.transfer(master_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+#        p10s.drop_tip()
+#
+#    # Aliquot extra master mix into wells with multiple fragments
+#    if len(need_extra[0]) != 0:
+#        p10s.pick_up_tip()
+#        for transfer in need_extra[0]:
+#            extra_volume = (int(transfer['frags']) - 1) * master_volume
+#            current_well = transfer['well']
+#            print("Transferring {}ul of extra MM to {}".format(extra_volume,current_well))
+#            p10s.transfer(extra_volume, centrifuge_tube['A1'].bottom(),dest_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
+#        p10s.drop_tip()
+#    else:
+#        print('No extra MM must be aliquoted')
+#
+#    ## Add the fragments from the source plates to the destination plate
+#    ## ============================================
 
     # Sets the volume of water to dilute with, if needed
     dil_vol = 5
