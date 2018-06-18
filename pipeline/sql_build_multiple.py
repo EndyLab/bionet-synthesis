@@ -34,8 +34,8 @@ def run_build(session,engine):
     args = parser.parse_args()
 
     # Verify that the correct robot is being used
-    if args.run:
-        ot.check_robot()
+    # if args.run:
+    #     ot.check_robot()
 
     build_options = []
     for num,file in enumerate(sorted(glob.glob('{}/builds/*/*_plan.csv'.format(BASE_PATH)))):
@@ -80,7 +80,9 @@ def run_build(session,engine):
     if args.run:
         ot.make_directory(build_path)
         export_map.to_csv('{}/{}_trans_map.csv'.format(build_path,build_name),index=False)
-        os.remove(glob.glob('{}/{}_plan.csv'.format(build_path,build_name))[0])
+        os.rename('{}/{}_plan.csv'.format(build_path,build_name),'{}/{}_plan-used.csv'.format(build_path,build_name))
+
+    input('Check file')
 
     ## =============================================
     ## CREATE PLATE GROUPS
@@ -312,6 +314,8 @@ def run_build(session,engine):
         used_plates.append(plate)
 
         p10s.drop_tip()
+
+    robot.home()
 
     commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
