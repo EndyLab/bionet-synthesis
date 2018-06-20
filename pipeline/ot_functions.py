@@ -144,7 +144,7 @@ def print_center(statement):
     columns = shutil.get_terminal_size().columns
     print('\n',statement.center(columns))
 
-def request_info(statement,type='string',length=0):
+def request_info(statement,type='string',length=0,select_from=[]):
     answer = input(statement)
     if answer == '':
         print("Please enter a value\n")
@@ -166,8 +166,14 @@ def request_info(statement,type='string',length=0):
         except:
             print("Invalid type\n")
             return request_info(statement,type=type,length=length)
-    else:
-        return answer
+    if select_from != []:
+        if answer not in select_from:
+            print('Not in list')
+            print(select_from)
+            return request_info(statement,type=type,select_from=select_from)
+        else:
+            return answer
+    return answer
 
 def make_directory(path):
     dir_name = path.split("/")[-1]
