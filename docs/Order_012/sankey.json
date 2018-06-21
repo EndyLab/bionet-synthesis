@@ -7,13 +7,16 @@
       "name": "Order_012"
     },
     {
-      "name": "Synthesizing"
-    },
-    {
       "name": "Received"
     },
     {
       "name": "Not_attempted"
+    },
+    {
+      "name": "Attempted"
+    },
+    {
+      "name": "synthesis_abandoned"
     }
   ],
   "links": [
@@ -25,17 +28,22 @@
     {
       "source": 0,
       "target": 2,
-      "value": 4
+      "value": 65
     },
     {
-      "source": 0,
+      "source": 2,
       "target": 3,
       "value": 61
     },
     {
-      "source": 3,
+      "source": 2,
       "target": 4,
-      "value": 61
+      "value": 4
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "value": 4
     }
   ]
 }

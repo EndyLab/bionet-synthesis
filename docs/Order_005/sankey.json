@@ -7,22 +7,22 @@
       "name": "Order_005"
     },
     {
-      "name": "Abandoned"
-    },
-    {
       "name": "Received"
     },
     {
       "name": "Attempted"
     },
     {
+      "name": "synthesis_abandoned"
+    },
+    {
       "name": "cloning_mutation"
     },
     {
-      "name": "sequence_confirmed"
+      "name": "sequence_failure"
     },
     {
-      "name": "sequence_failure"
+      "name": "sequence_confirmed"
     }
   ],
   "links": [
@@ -34,30 +34,30 @@
     {
       "source": 0,
       "target": 2,
-      "value": 6
+      "value": 10
     },
     {
-      "source": 0,
+      "source": 2,
       "target": 3,
-      "value": 4
+      "value": 10
     },
     {
       "source": 3,
       "target": 4,
-      "value": 4
+      "value": 6
     },
     {
-      "source": 4,
+      "source": 3,
       "target": 5,
       "value": 2
     },
     {
-      "source": 4,
+      "source": 3,
       "target": 6,
       "value": 1
     },
     {
-      "source": 4,
+      "source": 3,
       "target": 7,
       "value": 1
     }

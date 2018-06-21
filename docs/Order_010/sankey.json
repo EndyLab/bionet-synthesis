@@ -7,9 +7,6 @@
       "name": "Order_010"
     },
     {
-      "name": "Synthesizing"
-    },
-    {
       "name": "Received"
     },
     {
@@ -19,10 +16,16 @@
       "name": "Attempted"
     },
     {
+      "name": "building"
+    },
+    {
       "name": "sequence_confirmed"
     },
     {
       "name": "cloning_mutation"
+    },
+    {
+      "name": "synthesis_abandoned"
     },
     {
       "name": "cloning_failure"
@@ -40,41 +43,46 @@
     {
       "source": 0,
       "target": 2,
-      "value": 23
+      "value": 1740
     },
     {
-      "source": 0,
+      "source": 2,
       "target": 3,
-      "value": 1717
+      "value": 550
     },
     {
-      "source": 3,
+      "source": 2,
       "target": 4,
-      "value": 1512
+      "value": 1190
     },
     {
-      "source": 3,
+      "source": 4,
       "target": 5,
-      "value": 205
+      "value": 962
     },
     {
-      "source": 5,
+      "source": 4,
       "target": 6,
       "value": 148
     },
     {
-      "source": 5,
+      "source": 4,
       "target": 7,
       "value": 28
     },
     {
-      "source": 5,
+      "source": 4,
       "target": 8,
+      "value": 23
+    },
+    {
+      "source": 4,
+      "target": 9,
       "value": 18
     },
     {
-      "source": 5,
-      "target": 9,
+      "source": 4,
+      "target": 10,
       "value": 11
     }
   ]
