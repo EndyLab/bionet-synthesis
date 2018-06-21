@@ -23,7 +23,7 @@
   - The intent is for the robot to keep track of where objects should be and have it tell the user what materials it needs and where to put them.
     - This liberates the user from having to track which plates and wells are important and eliminates the need to translate that information to the robot.
   - When any of the OpenTrons scripts are run alone they will simulate the run by generating a virtual robot to send commands too.
-    - It is recommended to quickly simulate the run prior to full execution to make sure that the robot will to the indended task.
+    - It is recommended to quickly simulate the run prior to full execution to make sure that the robot will do the intended task.
   - Once the simulated run is complete pass the `-r` argument after the name of the script to tell it to run the protocol.
   - All of the scripts will print out a deck layout that instructs the user where all of the needed materials need to be placed.
 
