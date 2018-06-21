@@ -7,6 +7,9 @@
       "name": "Order_001"
     },
     {
+      "name": "Abandoned"
+    },
+    {
       "name": "Received"
     },
     {
@@ -16,13 +19,10 @@
       "name": "sequence_confirmed"
     },
     {
-      "name": "cloning_failure"
-    },
-    {
       "name": "cloning_mutation"
     },
     {
-      "name": "synthesis_abandoned"
+      "name": "cloning_failure"
     },
     {
       "name": "sequence_failure"
@@ -40,40 +40,40 @@
     {
       "source": 0,
       "target": 2,
-      "value": 420
+      "value": 28
     },
     {
-      "source": 2,
+      "source": 0,
       "target": 3,
-      "value": 420
+      "value": 392
     },
     {
       "source": 3,
       "target": 4,
+      "value": 392
+    },
+    {
+      "source": 4,
+      "target": 5,
       "value": 295
     },
     {
-      "source": 3,
-      "target": 5,
-      "value": 35
-    },
-    {
-      "source": 3,
+      "source": 4,
       "target": 6,
       "value": 35
     },
     {
-      "source": 3,
+      "source": 4,
       "target": 7,
-      "value": 28
+      "value": 35
     },
     {
-      "source": 3,
+      "source": 4,
       "target": 8,
       "value": 19
     },
     {
-      "source": 3,
+      "source": 4,
       "target": 9,
       "value": 8
     }

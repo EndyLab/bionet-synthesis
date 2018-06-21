@@ -10,7 +10,7 @@
 
 | Amount Ordered | Amount Received  | Amount Built | Cloning Success Rate |
 | :-------------: | :-------------: | :-------------: | :-------------: |
-| 3672434bp / 3306genes | 3672434bp / 3306genes | 783054bp / 719genes | 43% |
+| 3672434bp / 3306genes | 3512423bp / 3219genes | 783054bp / 719genes | 43% |
 
 ## Detailed Results
 

@@ -40,6 +40,9 @@
       "name": "Order_006"
     },
     {
+      "name": "Abandoned"
+    },
+    {
       "name": "Received"
     },
     {
@@ -59,9 +62,6 @@
     },
     {
       "name": "cloning_failure"
-    },
-    {
-      "name": "synthesis_abandoned"
     },
     {
       "name": "sequence_failure"
@@ -137,55 +137,55 @@
     {
       "source": 0,
       "target": 13,
-      "value": 3095
-    },
-    {
-      "source": 13,
-      "target": 14,
-      "value": 880
-    },
-    {
-      "source": 13,
-      "target": 15,
-      "value": 2215
-    },
-    {
-      "source": 15,
-      "target": 16,
-      "value": 1152
-    },
-    {
-      "source": 15,
-      "target": 17,
-      "value": 718
-    },
-    {
-      "source": 15,
-      "target": 18,
-      "value": 121
-    },
-    {
-      "source": 15,
-      "target": 19,
-      "value": 85
-    },
-    {
-      "source": 15,
-      "target": 20,
       "value": 81
     },
     {
-      "source": 15,
+      "source": 0,
+      "target": 14,
+      "value": 3014
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "value": 880
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "value": 2134
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "value": 1152
+    },
+    {
+      "source": 16,
+      "target": 18,
+      "value": 718
+    },
+    {
+      "source": 16,
+      "target": 19,
+      "value": 121
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "value": 85
+    },
+    {
+      "source": 16,
       "target": 21,
       "value": 30
     },
     {
-      "source": 15,
+      "source": 16,
       "target": 22,
       "value": 17
     },
     {
-      "source": 15,
+      "source": 16,
       "target": 23,
       "value": 11
     }

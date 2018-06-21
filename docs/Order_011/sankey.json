@@ -7,16 +7,13 @@
       "name": "Order_011"
     },
     {
+      "name": "Abandoned"
+    },
+    {
       "name": "Received"
     },
     {
       "name": "Not_attempted"
-    },
-    {
-      "name": "Attempted"
-    },
-    {
-      "name": "synthesis_abandoned"
     }
   ],
   "links": [
@@ -28,22 +25,17 @@
     {
       "source": 0,
       "target": 2,
-      "value": 110
+      "value": 1
     },
     {
-      "source": 2,
+      "source": 0,
       "target": 3,
       "value": 109
     },
     {
-      "source": 2,
+      "source": 3,
       "target": 4,
-      "value": 1
-    },
-    {
-      "source": 4,
-      "target": 5,
-      "value": 1
+      "value": 109
     }
   ]
 }

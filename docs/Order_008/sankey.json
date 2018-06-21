@@ -7,6 +7,9 @@
       "name": "Order_008"
     },
     {
+      "name": "Abandoned"
+    },
+    {
       "name": "Received"
     },
     {
@@ -14,9 +17,6 @@
     },
     {
       "name": "cloning_failure"
-    },
-    {
-      "name": "synthesis_abandoned"
     },
     {
       "name": "sequence_failure"
@@ -31,25 +31,25 @@
     {
       "source": 0,
       "target": 2,
-      "value": 13
+      "value": 1
     },
     {
-      "source": 2,
+      "source": 0,
       "target": 3,
-      "value": 13
+      "value": 12
     },
     {
       "source": 3,
       "target": 4,
+      "value": 12
+    },
+    {
+      "source": 4,
+      "target": 5,
       "value": 11
     },
     {
-      "source": 3,
-      "target": 5,
-      "value": 1
-    },
-    {
-      "source": 3,
+      "source": 4,
       "target": 6,
       "value": 1
     }

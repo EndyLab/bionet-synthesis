@@ -7,6 +7,9 @@
       "name": "Order_003"
     },
     {
+      "name": "Abandoned"
+    },
+    {
       "name": "Received"
     },
     {
@@ -20,9 +23,6 @@
     },
     {
       "name": "sequence_failure"
-    },
-    {
-      "name": "synthesis_abandoned"
     }
   ],
   "links": [
@@ -34,32 +34,32 @@
     {
       "source": 0,
       "target": 2,
-      "value": 68
+      "value": 1
     },
     {
-      "source": 2,
+      "source": 0,
       "target": 3,
-      "value": 68
+      "value": 67
     },
     {
       "source": 3,
       "target": 4,
+      "value": 67
+    },
+    {
+      "source": 4,
+      "target": 5,
       "value": 50
     },
     {
-      "source": 3,
-      "target": 5,
+      "source": 4,
+      "target": 6,
       "value": 15
     },
     {
-      "source": 3,
-      "target": 6,
-      "value": 2
-    },
-    {
-      "source": 3,
+      "source": 4,
       "target": 7,
-      "value": 1
+      "value": 2
     }
   ]
 }
