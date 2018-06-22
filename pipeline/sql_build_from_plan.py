@@ -1,15 +1,3 @@
-
-# def exit_handler():
-#     print('My application is ending!')
-#     input('enter final note')
-#
-# atexit.register(exit_handler)
-#
-#
-#
-# input("quit")
-# print('end')
-
 from opentrons import robot, containers, instruments
 import argparse
 import sys
@@ -224,7 +212,7 @@ def run_build(session,engine):
             target_build.status = 'abandoned'
             ot.print_center('...Unstaging all parts in build plan...')
             for part in session.query(Part).filter(Part.part_id.in_(build_plan.part_id.unique().tolist())):
-                part.status = 'received'
+                part.change_status('received')
         session.commit()
 
 
@@ -328,7 +316,7 @@ def run_build(session,engine):
     # if commit == 1:
     input("About to commit")
     for part in to_build:
-        part.status = 'building'
+        part.change_status('building')
     session.commit()
     return
 

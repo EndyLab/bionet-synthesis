@@ -129,7 +129,7 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
 
             for part in build_objs:
                 print(part.part_id,part.status)
-                part.status = 'planning'
+                part.change_status('planning')
 
             session.commit()
         else:
@@ -142,6 +142,13 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
 
 if __name__ == "__main__":
     session,engine = connect_db()
+
+    df = ot.query_everything(engine)
+    df_rec = df[df.status == 'received']
+    print('Below is the breakdown of remaining constructs by fragment number:')
+    print(df_rec.Fragments.value_counts())
+
+
     print('1 build = 96 parts\n2 builds = 192 parts\n3 builds = 288 parts')
     num_parts = int(ot.request_info("Enter the desired number of parts to build: ",type='int'))
     num_builds = math.ceil(num_parts / 96)

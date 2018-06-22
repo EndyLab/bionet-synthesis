@@ -34,7 +34,7 @@ class Part(Base):
     cloning_enzyme = Column(String) # Enzyme used in initial cloning
     organism = Column(String) # For codon optimization
     bionet_id = Column(String) # Unique ID for the bionet vitual
-    # original_seq = Column(String) # Stores the initial sequence
+    original_seq = Column(String) # Stores the initial sequence
     seq = Column(String)
     status = Column(String) # Gives the most updated status of this part
     ip_order = Column(String) # Stores the submission number sent to sagacious i.e. 'ip_order002'
@@ -45,20 +45,21 @@ class Part(Base):
                             back_populates='parts')
 
     # Allows the wells within different plates to link to the part inside
-    wells = relationship("Well",back_populates='parts')
+    wells = relationship("Well",back_populates='parts',lazy='joined')
 
     def change_status(self,status):
         possible = ['submitted','optimized','ordered','synthesis_abandoned','received','trans_failure',
-                   'cloning_failure','cloning_error','sequence_failure','cloning_mutation','building',
+                   'cloning_failure','cloning_error','sequence_failure','cloning_mutation','planning','building',
                    'sequencing','cloning_abandoned','sequence_confirmed']
-        rank = dict(zip(possible,range(len(possible))))
+        # rank = dict(zip(possible,range(len(possible))))
         if status not in possible:
             print("Not a possible status")
-        elif rank[status] > rank[self.status]:
-            # print(status,rank[status],'is greater than',self.status,rank[self.status])
-            self.status = status
-        # else:
-            # print("no change")
+        # elif rank[status] > rank[self.status]:
+
+        ### PUT BIONET HOOK HERE ###
+
+        self.status = status
+
     def eval_status(self):
         status = [well.seq_outcome for well in self.wells if well.plates.plate_type == 'seq_plate']
         print(self.part_id,status)
@@ -164,7 +165,7 @@ class Well(Base):
 
     # One well can only have a single part inside of it if assembly/seq_plate
     part_id = Column(Integer,ForeignKey('parts.id'))
-    parts = relationship("Part",back_populates='wells')
+    parts = relationship("Part",back_populates='wells',lazy='joined')
 
     # One well can only have a single fragment inside of it if syn_plate
     fragment_id = Column(Integer,ForeignKey('fragments.id'))
@@ -260,7 +261,7 @@ class Build(Base):
 
     id = Column(Integer, primary_key=True)
     build_name = Column(String)
-    status = Column(String) # Possible states: 'building','sequencing','complete'
+    status = Column(String) # Possible states: 'planning','building','sequencing','complete'
     date = Column(String) # Date that the build was conducted
     master_mix = Column(String) # The master mix that was used
 
