@@ -44,13 +44,24 @@ def verify_seq():
     forward_primer = "M13-Forward---20-"
     reverse_primer = "M13-Reverse"
 
+    forward_primer_seq = 'GTAAAACGACGGCCAGT'
+    reverse_primer_seq = 'CAGGAAACAGCTATGACCATG'
+
+    forward_cut = 'GAAGAC'
+    reverse_cut = 'GTCTTC'
+
+    up_end = 'AGTCAAAAGCCTCCGACCGGAGGCTTTTGACTTGGTCAGGTGGAGTGGGAG'
+    down_end = 'GAGGTGTCAATCGTCGGAGCCGCTGAGCAATAACTAGCATAACCCCTTGGGGCCTCTAAACGGGTCTTGAGGGGTTTTTTG'
+
+
+
     ## ============================================
     ## TAKE IN BUILD INFORMATION
     ## ============================================
     # Present all available plates to resuspend
     print("Which build would you like to analyze?")
     build_names = []
-    for index,build in enumerate(session.query(Build).filter(Build.status == 'sequencing')):
+    for index,build in enumerate(session.query(Build).filter(Build.status == 'sequencing').order_by(Build.build_name)):
         print("{}. {}".format(index,build.build_name))
         build_names.append(build.build_name)
 
@@ -105,7 +116,11 @@ def verify_seq():
     no_seq = []
     no_hit = []
     strange = []
+
+    ids = []
     outcomes = []
+    data = []
+    misplaced = []
 
     ## ============================================
     ## DEFINE INITIAL FUNCTIONS
@@ -132,12 +147,15 @@ def verify_seq():
 
         return seq.seq[start:end], seq, start, end, np.mean(seq.letter_annotations['phred_quality'][start:end])
 
-    def align_reads(forward, reverse, target_seq):
+    def reverse_complement(seq):
+        return seq.translate(str.maketrans("ATGC","TACG"))[::-1]
+
+    def align_reads(forward, reverse, target_seq,gene=True):
         '''Generates a forward and reverse alignments and then determines the result'''
-        forward_align = pairwise2.align.globalms(target_seq, forward,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
-        reverse_align = pairwise2.align.globalms(target_seq, reverse,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)
-        forward_align = forward_align[0]
-        reverse_align = reverse_align[0]
+        forward_align = pairwise2.align.globalms(target_seq, forward,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)[0]
+        reverse_align = pairwise2.align.globalms(target_seq, reverse,1,0,-1,-1, one_alignment_only=True, penalize_end_gaps=False)[0]
+        # forward_align = forward_align[0]
+        # reverse_align = reverse_align[0]
 
         for_raw = len(forward)
         rev_raw = len(reverse)
@@ -151,6 +169,9 @@ def verify_seq():
             rev_score = rev_raw - reverse_align[2]
         else:
             rev_score = target_length - reverse_align[2]
+
+        if gene:
+            data.append([for_raw,forward_align[2],for_score,rev_raw,reverse_align[2],rev_score,target_length])
 
         print(for_raw,forward_align[2],rev_raw,reverse_align[2],target_length)
         print(for_score,rev_score)
@@ -185,10 +206,12 @@ def verify_seq():
         Runs alignments against both the target sequence and the backbone and
         returns the result.
         '''
+        ids.append(id_num)
+        misplaced.append(False)
         print('Gene alignment:')
-        g_res = align_reads(forward,reverse,gene_seq)
+        g_res = align_reads(forward,reverse,gene_seq,gene=True)
         print('backbone alignment:')
-        b_res = align_reads(forward,reverse,backbone_seq)
+        b_res = align_reads(forward,reverse,backbone_seq,gene=False)
 
         if g_res == "perfect":
             if b_res == "bad_clone":
@@ -294,11 +317,14 @@ def verify_seq():
             else:
                 final = "{} - UNKNOWN".format(g_res)
             print('finished try')
+            ids.append(for_hit)
+            outcomes.append(final)
+            misplaced.append(True)
             return 'cloning_error'
         else:
             return 'cloning_failure'
     counter = 0
-    targets = ['build011']
+    # targets = ['build011']
     for target in session.query(Build).filter(Build.status == 'sequencing').filter(Build.build_name.in_(targets)).order_by(Build.id):
     # for target in session.query(Build).order_by(Build.id):
 
@@ -319,8 +345,8 @@ def verify_seq():
             if id_num == 'BBF10K_002717':
                 print('found missing')
                 continue
-            with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
-                fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
+            # with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
+            #     fasta.write('>{}\n{}'.format(id_num,well.parts.seq))
             if glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer)):
                 forfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,forward_primer))[0]
                 revfile = glob.glob("{}/*{}*{}*.ab1".format(SEQFILE_PATH,id_num,reverse_primer))[0]
@@ -363,11 +389,22 @@ def verify_seq():
             # REVIEW: Not all sequences are CDS's and so we need to grab bases from the beginning and
             # of the target sequence or something to trim it.
 
-            # Trim the reads to start at the start or stop codons
-            forward = forward_untrim[forward_untrim.find('ATG'):] # Start at start codon
-            reverse = reverse_untrim[reverse_untrim.find('TCA'):].reverse_complement() # Stop at stop
+            full_seq = up_end
+            for frag in well.parts.fragments:
+                full_seq += frag.seq[frag.seq.find(forward_cut)+8:frag.seq.find(reverse_cut)-2]
+            full_seq += down_end
 
-            gene_seq = Seq.Seq(well.parts.seq)
+            if well.parts.seq in full_seq:
+                print('Fragments come together')
+            with open('{}/{}.fasta'.format(fasta_path,id_num),'w') as fasta:
+                fasta.write('>{}\n{}'.format(id_num,full_seq))
+
+
+            # Trim the reads to start and end at the sequencing primer sites
+            forward = forward_untrim[:forward_untrim.find(reverse_complement(reverse_primer_seq))] # Start at start codon
+            reverse = reverse_untrim[:reverse_untrim.find(reverse_complement(forward_primer_seq))].reverse_complement() # Stop at stop
+
+            gene_seq = Seq.Seq(full_seq)
 
             outcome, strange = verify_sequence(id_num,forward,reverse,gene_seq,backbone_seq,strange)
 
@@ -383,11 +420,33 @@ def verify_seq():
 
             print("Status: ",well.parts.status)
             counter += 1
+
         seq_plate.wells += new_wells
         target.status = 'complete'
 
-    for part in session.query(Part).order_by(Part.part_id):
-        part.eval_status()
+    # for part in session.query(Part).order_by(Part.part_id):
+    #     part.eval_status()
+
+    data = np.array(data)
+
+    seq_report = pd.DataFrame({
+        'Gene_id':ids,
+        'Outcome':outcomes,
+        'For_raw':data[:,0],
+        'For_align':data[:,1],
+        'For_score':data[:,2],
+        'Rev_raw':data[:,3],
+        'Rev_align':data[:,4],
+        'Rev_score':data[:,5],
+        'Total_length':data[:,6],
+        'Misplaced':misplaced
+
+    })
+    print(seq_report)
+    input()
+    REPORT_PATH = "{}/{}/".format(BUILDS_PATH,target.build_name)
+    seq_report = seq_report[['Gene_id','For_raw','For_align','For_score','Rev_raw','Rev_align','Rev_score','Total_length','Outcome']]
+    seq_report.to_csv('{}/{}_seq_report.csv'.format(REPORT_PATH,target.build_name))
 
     print("nan:")
     print(nan)
