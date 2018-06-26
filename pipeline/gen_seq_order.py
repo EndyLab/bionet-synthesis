@@ -55,12 +55,16 @@ def gen_seq_order():
         data['Template Conc (ng/ul)'] = 50
         data['Template Size (bp)'] = data.seq.apply(len)
         data = data.rename(columns={'part_id':'Template Name','address':'Well'})
+        well_index = ot.well_addresses()
+        well_index = enumerate(well_index)
+        well_index = dict([(y,x) for x,y in well_index])
+        data['rank'] = data.Well.apply(lambda x: well_index[x])
+        data = data.sort_values('rank')
         data = data[['Well','Template Name','Template Type','Template Conc (ng/ul)','Template Size (bp)']]
-
+        
         path = '{}/builds/{}'.format(BASE_PATH,build.build_name)
         ot.make_directory(path)
         data.to_csv('{}/{}_seq_order.csv'.format(path,build.build_name),index=False)
-        input("Build complete")
 
 
 
