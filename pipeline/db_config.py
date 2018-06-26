@@ -45,7 +45,7 @@ class Part(Base):
                             back_populates='parts')
 
     # Allows the wells within different plates to link to the part inside
-    wells = relationship("Well",back_populates='parts',lazy='joined')
+    wells = relationship("Well",back_populates='parts')
 
     def change_status(self,status):
         possible = ['submitted','optimized','ordered','synthesis_abandoned','received','trans_failure',
@@ -261,7 +261,7 @@ class Build(Base):
 
     id = Column(Integer, primary_key=True)
     build_name = Column(String)
-    status = Column(String) # Possible states: 'planning','building','sequencing','complete'
+    status = Column(String) # Possible states: 'planning','building','sequencing','manual_check_pending','complete'
     date = Column(String) # Date that the build was conducted
     master_mix = Column(String) # The master mix that was used
 
