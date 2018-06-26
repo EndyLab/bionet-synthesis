@@ -1,9 +1,0 @@
-Gene Name,Gene ID,Current Status,Attempt 1,Attempt 2
-ctrB_yeast,BBF10K_000460,cloning_mutation,cloning_mutation,N/A
-crtI_rice,BBF10K_000461,sequence_confirmed,sequence_confirmed,N/A
-crtI_yeast,BBF10K_000462,sequence_confirmed,sequence_confirmed,N/A
-crtO_rice,BBF10K_000463,sequence_failure,sequence_failure,N/A
-crtO_yeast,BBF10K_000464,sequence_confirmed,sequence_confirmed,N/A
-crtB-b_rice,BBF10K_000465,sequence_confirmed,sequence_confirmed,N/A
-crtB-b_yeast,BBF10K_000466,sequence_confirmed,sequence_confirmed,N/A
-Mcherry-Zebrafish,BBF10K_000467,cloning_mutation,cloning_mutation,N/A
