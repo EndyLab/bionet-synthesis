@@ -1,5 +1,0 @@
-Optimize?
-Read FIRST how our codon optimization works. https://openwetware.org/wiki/Free_Genes/Codon_Optimization . If you understand how it works, continue.
-
-"No, don't optimize my gene."
-"Yes, I am informed of how Free Genes optimization works, and wish for my gene to be optimized."

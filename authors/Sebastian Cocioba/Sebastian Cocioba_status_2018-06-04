@@ -1,5 +1,0 @@
-,part_name,part_id,status,Attempt_1_Outcome_G,Attempt_2_Outcome_G,Author
-273,Arabidopsis_ascpf1,BBF10K_000625,cloning_mutation,cloning_mutation,N/A,Sebastian Cocioba
-274,Maize_ascpf1,BBF10K_000626,cloning_mutation,cloning_error,cloning_mutation,Sebastian Cocioba
-794,Potato_ascpf1,BBF10K_000628,sequence_confirmed,sequence_confirmed,N/A,Sebastian Cocioba
-846,Tobacco_ascpf1,BBF10K_000627,sequence_confirmed,cloning_failure,sequence_confirmed,Sebastian Cocioba
