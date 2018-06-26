@@ -137,7 +137,7 @@ data_att.groupby(data_att.status).Fragments.describe()
 ## CLONING FAILURE VERSUS LENGTH
 
 data_fail = data_att[data_att.status != 'sequence_confirmed']
-data_fail = data_fail[data_fail.status != 'abandoned']
+data_fail = data_fail[data_fail.status != 'synthesis_abandoned']
 data_fail = data_fail[data_fail.status != 'received']
 
 
@@ -154,7 +154,7 @@ fig3.savefig('../docs/Overall/raw_length.png')
 
 ## SYNTHESIS FAILURES PLOTTED AGAINST SEQUENCE LENGTH
 
-data_order = data_b[data_b.status == 'abandoned']
+data_order = data_b[data_b.status == 'synthesis_abandoned']
 fig4, ax4 = plt.subplots()
 
 ax4.set_xticks([1000,2000,3000,4000,5000])
@@ -337,7 +337,7 @@ for name,df in zip(df_names,desired_dfs):
 
 
     # Abandoned
-    abandoned = len(df[df.status == 'abandoned'])
+    abandoned = len(df[df.status == 'synthesis_abandoned'])
     nodes,links = add_branch('Total_ordered','Abandoned',abandoned,nodes,links)
 
     # Received
@@ -352,7 +352,7 @@ for name,df in zip(df_names,desired_dfs):
 
     # Outcomes
     data_att = df[df.status != 'ordered']
-    data_att = data_att[data_att.status != 'abandoned']
+    data_att = data_att[data_att.status != 'synthesis_abandoned']
     data_att = data_att[data_att.status != 'received']
     outcomes = pd.DataFrame(data_att.status.value_counts())
     out = outcomes.index.tolist()
@@ -409,7 +409,7 @@ for i,row in fail2_limit.iterrows():
 total_ordered_bp = df_parts.Length.sum()
 total_ordered_g = len(df_parts)
 
-rec = ['ordered','abandoned']
+rec = ['ordered','synthesis_abandoned']
 total_received = df_parts[df_parts.apply(lambda row: row.status not in rec, axis=1)]
 total_received_bp = total_received.Length.sum()
 total_received_g = len(total_received)
