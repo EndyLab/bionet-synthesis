@@ -160,10 +160,11 @@ def request_info(statement,type='string',length=0,select_from=[]):
     elif type == 'list':
         try:
             nums = [int(num) for num in answer.split(' ')]
-            if len(nums) != length:
+            if length == 0:
+                return [int(num) for num in answer.split(' ')]
+            elif len(nums) != length:
                 print('Requires {} inputs'.format(length))
                 return request_info(statement,type=type,length=length)
-            return [int(num) for num in answer.split(' ')]
         except:
             print("Invalid type\n")
             return request_info(statement,type=type,length=length)

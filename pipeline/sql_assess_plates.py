@@ -1,4 +1,3 @@
-from opentrons import robot, containers, instruments
 import argparse
 import sys
 
@@ -62,43 +61,45 @@ def assess_plate():
     used_wells = [well for well in seq_plate.wells]
     remaining = 96 - len(used_wells)
     print("Remaining: ",remaining)
-    ans = input("backfill empty wells? (y/n): ")
-    if ans == 'n':
-        remaining = 0
-    # Pull parts that need to the retried
-    acceptable_status = ['sequence_failure','cloning_mutation'] # List with all of the status that you want to pull from
-    replacement_parts = [part for part in session.query(Part).join(Well,Part.wells)\
-                .join(Plate,Well.plates).join(Build,Plate.builds).filter(Part.status\
-                .in_(acceptable_status)).order_by(Build.id.desc(),Well.id)]
+    if remaining > 0:
+        ans = input("backfill empty wells? (y/n): ")
+        if ans == 'n':
+            remaining = 0
+        # Pull parts that need to the retried
+        acceptable_status = ['sequence_failure','cloning_mutation'] # List with all of the status that you want to pull from
+        replacement_parts = [part for part in session.query(Part).join(Well,Part.wells)\
+                    .join(Plate,Well.plates).join(Build,Plate.builds).filter(Part.status\
+                    .in_(acceptable_status)).order_by(Build.id.desc(),Well.id)]
 
-    # Find the wells that house the parts with the desired status
-    rep_wells = []
-    for part in replacement_parts:
-        skip = False
-        for well in part.wells:
-            if skip:
-                continue
-            if well.seq_outcome == part.status:
-                rep_wells.append(well)
-                skip = True
-                continue
+        # Find the wells that house the parts with the desired status
+        rep_wells = []
+        for part in replacement_parts:
+            skip = False
+            for well in part.wells:
+                if skip:
+                    continue
+                if well.seq_outcome == part.status:
+                    rep_wells.append(well)
+                    skip = True
+                    continue
 
-    # Limit the number of wells to the number required and add it to the seq plate
-    rep_wells = rep_wells[:remaining]
-    part_to_well = dict(zip(replacement_parts[:remaining],rep_wells))
-    for well in rep_wells:
-        seq_plate.add_item(well.parts)
-        print(well.parts.part_id,well.plates.builds.build_name,well.address)
+        # Limit the number of wells to the number required and add it to the seq plate
+        rep_wells = rep_wells[:remaining]
+        part_to_well = dict(zip(replacement_parts[:remaining],rep_wells))
+        for well in rep_wells:
+            seq_plate.add_item(well.parts)
+            print(well.parts.part_id,well.plates.builds.build_name,well.address)
+
+        # Generate a dictionary to link the parts to the well with the desired status
+        part_to_well = dict(zip(replacement_parts[:remaining],rep_wells))
+    else:
+        part_to_well = {}
 
     # Generate a dictionary to sort on well addresses A1-H1 instead of A1-A12
     well_index = ot.well_addresses()
     well_index = enumerate(well_index)
     well_index = [(y,x) for x,y in well_index]
     well_index = dict(well_index)
-
-
-    # Generate a dictionary to link the parts to the well with the desired status
-    part_to_well = dict(zip(replacement_parts[:remaining],rep_wells))
 
     # Iterate through the plate and add the necessary information for the map
     parts = []
