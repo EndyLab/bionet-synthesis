@@ -205,10 +205,17 @@ def run_build(session,engine):
 
     # Update database status
     def exit_handler():
-        ans = ot.request_info('Restore the plan before quitting? (y/n): ',type='string')
-        if ans != 'n':
+        print('Choose one of the following options:')
+        print('1-Save successful assembly\n2-Restore plan\n3-Abandon plan')
+        ans = ot.request_info('Select what to do: ',type='int',select_from=[1,2,3])
+        if ans == 1:
+            ot.print_center('...Assembly is complete...')
+        elif ans == 2:
             target_build.status = 'planning'
-        else:
+            ot.print_center('...Restoring the build plan...')
+            for part in session.query(Part).filter(Part.part_id.in_(build_plan.part_id.unique().tolist())):
+                part.change_status('planning')
+        elif ans == 3:
             target_build.status = 'abandoned'
             ot.print_center('...Unstaging all parts in build plan...')
             for part in session.query(Part).filter(Part.part_id.in_(build_plan.part_id.unique().tolist())):
@@ -312,9 +319,7 @@ def run_build(session,engine):
 
     robot.home()
 
-    # commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
-    # if commit == 1:
-    input("About to commit")
+    to_build = [well.parts for well in target_build.plates[0].wells]
     for part in to_build:
         part.change_status('building')
     session.commit()
