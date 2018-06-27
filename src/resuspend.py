@@ -65,11 +65,10 @@ def resuspension(session,engine,target):
         total += volume
         session.add(well)
 
-    print("total volume of water needed: {}uL".format(total))
-    num_tubes = math.ceil(total / 1000)
-    print("Prep {} tubes with 1.2mL".format(num_tubes))
-
-    input("Press Enter when you have added them to the tube rack")
+    # print("total volume of water needed: {}uL".format(total))
+    # num_tubes = math.ceil(total / 1000)
+    # print("Prep {} tubes with 1.2mL".format(num_tubes))
+    # input("Press Enter when you have added them to the tube rack")
 
     ## Initialize the OT-1
 
@@ -104,6 +103,7 @@ def resuspension(session,engine,target):
 
     trash = containers.load('point', locations["trash"], 'holywastedplasticbatman')
     centrifuge_tube = containers.load('trough-12row',locations["Trough"])
+    # centrifuge_tube = containers.load('tube-rack-2ml',locations["Tube_rack"])
 
     resuspend_plate = containers.load('96-flat', locations["PLATE HERE"])
 
@@ -140,14 +140,14 @@ def resuspension(session,engine,target):
                 p10s.pick_up_tip()
 
             # Changes tubes of water when one gets low
-            if current_vol - vol < 200:
-                tube_count += 1
-                current_vol = 1200
-            current_vol -= vol
+            # if current_vol - vol < 200:
+            #     tube_count += 1
+            #     current_vol = 1200
+            # current_vol -= vol
             print("Adding {}ul to well {} with the p10".format(vol, well))
             #p10s.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
             p10s.transfer(vol, centrifuge_tube['A1'], resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
-            print("Currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
+            # print("Currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
             last_pipette = "p10s"
         else:
             if last_pipette == "p10s":
@@ -158,14 +158,14 @@ def resuspension(session,engine,target):
                 p200.pick_up_tip()
 
             # Changes tubes of water when one gets low
-            if current_vol - vol < 100:
-                tube_count += 1
-                current_vol = 1200
-            current_vol -= vol
+            # if current_vol - vol < 100:
+            #     tube_count += 1
+            #     current_vol = 1200
+            # current_vol -= vol
             print("Adding {}ul to well {} with the p200".format(vol, well))
             #p200.transfer(vol, centrifuge_tube[tubes[tube_count]].bottom(), resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
             p200.transfer(vol, centrifuge_tube['A1'], resuspend_plate.wells(well),touch_tip=True, blow_out=True, new_tip='never')
-            print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
+            # print("currently {}ul in tube {}".format(current_vol,tubes[tube_count]))
             last_pipette = "p200"
 
     # Last drop tip
@@ -186,6 +186,9 @@ def resuspension(session,engine,target):
     commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
     if commit == 1:
         session.commit()
+
+    ot.print_center('...Completed resuspension...')
+
     return
 
 if __name__ == "__main__":

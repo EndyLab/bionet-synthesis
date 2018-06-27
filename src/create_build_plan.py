@@ -28,6 +28,7 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
 
     ot.print_center("============ Creating Plan ============")
     num_builds = math.ceil(num_parts / 96)
+    print(num_builds)
     used_plates = []
 
     if num_parts < max_rxns:
@@ -44,8 +45,11 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
     print('Will continue to exclude parts in previous plans')
 
     past_builds = pd.read_sql_query("SELECT builds.build_name FROM builds", con=engine).build_name.tolist()
-    last_build = max([int(build[-3:]) for build in past_builds])
-
+    if len(past_builds) == 0:
+        last_build = 0
+    else:
+        last_build = [int(build[-3:]) for build in past_builds][0]
+    print('last_build',last_build)
     new_builds = ["build"+str(last_build+num).zfill(3) for num in range(1,num_builds+1)]
     print(new_builds)
 
@@ -101,7 +105,7 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
 
         to_build = sort_group[sort_group.part_id.isin(sub)]
         print(len(to_build))
-        print('To Build:\n',to_build)
+        # print('To Build:\n',to_build)
         num_reactions = len(to_build)
 
         print("{} includes {} parts".format(build,len(to_build.part_id.unique().tolist())))
@@ -128,7 +132,6 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
             session.add(target_build)
 
             for part in build_objs:
-                print(part.part_id,part.status)
                 part.change_status('planning')
 
             session.commit()

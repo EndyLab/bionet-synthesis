@@ -21,7 +21,7 @@ import atexit
 from config import *
 import ot_functions as ot
 
-import sql_resuspension
+import resuspend
 
 from db_config import *
 
@@ -102,7 +102,21 @@ def run_build(session,engine):
         for i,plate in resuspended.iterrows():
             ans = ot.request_info('Plate {} is not resuspended, would you like to resuspend it? y/n: '.format(plate['plate_id']),type='string')
             if ans == 'y':
-                sql_resuspension.resuspension(session,engine,session.query(Plate).filter(Plate.plate_id == plate['plate_id']).one())
+                resuspend.resuspension(session,engine,session.query(Plate).filter(Plate.plate_id == plate['plate_id']).one())
+
+    query = "SELECT parts.part_id,builds.build_name,part_wells.address as destination,fragments.fragment_name,frag_plates.plate_name,frag_plates.plate_id,frag_wells.address as source,frag_wells.volume FROM parts \
+            INNER JOIN wells AS part_wells ON parts.id = part_wells.part_id\
+            INNER JOIN plates AS part_plates ON part_wells.plate_id = part_plates.id\
+            INNER JOIN builds ON part_plates.build_id = builds.id\
+            INNER JOIN part_frag ON parts.id = part_frag.part_id\
+            INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
+            INNER JOIN wells AS frag_wells ON fragments.id = frag_wells.fragment_id\
+            INNER JOIN plates AS frag_plates ON frag_wells.plate_id = frag_plates.id\
+            WHERE builds.build_name = '{}'".format(target_build.build_name)
+
+    build_plan = pd.read_sql_query(query,con=engine)
+    build_plan['plate_rank'] = build_plan.plate_id.apply(lambda x: plate_dict[x])
+    build_plan = build_plan.sort_values('plate_rank')
 
     input("Press enter to continue")
 
@@ -169,7 +183,7 @@ def run_build(session,engine):
     print(master_mix)
     print()
     print("Place the master mix in the 'A1' position of the tube rack")
-    print("Also place a tube of water in the 'B1' position ")
+    print("Also place a tube of with 1.2 mL of water in the 'B1' position ")
     input("Press enter to continue")
 
     ## =============================================
@@ -205,10 +219,17 @@ def run_build(session,engine):
 
     # Update database status
     def exit_handler():
-        ans = ot.request_info('Restore the plan before quitting? (y/n): ',type='string')
-        if ans != 'n':
+        print('Choose one of the following options:')
+        print('1-Save successful assembly\n2-Restore plan\n3-Abandon plan')
+        ans = ot.request_info('Select what to do: ',type='int',select_from=[1,2,3])
+        if ans == 1:
+            ot.print_center('...Assembly is complete...')
+        elif ans == 2:
             target_build.status = 'planning'
-        else:
+            ot.print_center('...Restoring the build plan...')
+            for part in session.query(Part).filter(Part.part_id.in_(build_plan.part_id.unique().tolist())):
+                part.change_status('planning')
+        elif ans == 3:
             target_build.status = 'abandoned'
             ot.print_center('...Unstaging all parts in build plan...')
             for part in session.query(Part).filter(Part.part_id.in_(build_plan.part_id.unique().tolist())):
@@ -312,12 +333,13 @@ def run_build(session,engine):
 
     robot.home()
 
-    # commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
-    # if commit == 1:
-    input("About to commit")
+    ot.print_center('...Updating part status...')
+
+    to_build = [well.parts for well in target_build.plates[0].wells]
     for part in to_build:
         part.change_status('building')
     session.commit()
+
     return
 
 if __name__ == "__main__":

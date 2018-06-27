@@ -30,7 +30,8 @@ for part,df in data.groupby('part_id'):
         print(row.fragment_name)
         new_frag = Fragment(
             fragment_name=row.fragment_name,
-            seq=row['seq.1'].upper())
+            seq=row['seq.1'].upper(),
+            has_part='True')
         session.add(new_frag)
         new_part.fragments.append(new_frag)
 
