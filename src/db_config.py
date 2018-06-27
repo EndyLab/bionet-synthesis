@@ -12,6 +12,11 @@ import bionet
 
 Base = declarative_base()
 
+CONNECTION_STRING = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
+
+SQL_USERNAME = "openfoundry"
+SQL_PASSWORD = "freegenestomakegenesfree"
+
 ## Builds a many to many relationship between parts and fragments
 part_frag = Table('part_frag', Base.metadata,
     Column('part_id', ForeignKey('parts.id'), primary_key=True),
