@@ -7,8 +7,8 @@ BASE_PATH = "/Users/conarymeyer/bionet-synthesis"
 SQL_USERNAME = "openfoundry"
 SQL_PASSWORD = "freegenestomakegenesfree"
 
-CONNECTION_STRING = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
-# CONNECTION_STRING = 'sqlite:///template.db'
+# CONNECTION_STRING = 'postgresql+psycopg2://{}:{}@freegenes-openfoundry.cwtlxuukykrr.us-east-1.rds.amazonaws.com:5432/openfoundry'.format(SQL_USERNAME,SQL_PASSWORD)
+CONNECTION_STRING = 'sqlite:///template.db'
 # CONNECTION_STRING = 'sqlite:///:memory:'
 
 BIONET_RPC_URL = "http://localhost:8000/rpc"

@@ -240,11 +240,9 @@ def query_everything(engine):
             INNER JOIN plates ON wells.plate_id = plates.id\
             INNER JOIN builds ON plates.build_id = builds.id"
 
-    query_frag = "SELECT parts.part_id,fragments.fragment_name,twist_orders.sub_name FROM parts\
+    query_frag = "SELECT parts.part_id,fragments.fragment_name FROM parts\
             INNER JOIN part_frag ON parts.id = part_frag.part_id\
-            INNER JOIN fragments ON part_frag.fragment_id = fragments.id\
-            INNER JOIN frag_order ON fragments.id = frag_order.frag_id\
-            INNER JOIN twist_orders ON twist_orders.id = frag_order.twist_order_id"
+            INNER JOIN fragments ON part_frag.fragment_id = fragments.id"
 
     query_parts = "SELECT * FROM parts"
 
@@ -253,7 +251,7 @@ def query_everything(engine):
     frags.name = 'Count'
     frags = pd.DataFrame(frags).reset_index()
     frags_dict = dict(zip(frags.part_id.tolist(),frags.Count.tolist()))
-    subs_dict = dict(zip(df_frag.part_id.tolist(),df_frag.sub_name.tolist()))
+    # subs_dict = dict(zip(df_frag.part_id.tolist(),df_frag.sub_name.tolist()))
 
     print(datetime.now(),'Finished analyzing fragments')
 
@@ -304,8 +302,8 @@ def query_everything(engine):
     df_parts = df_parts[df_parts.part_id != 'BBF10K_000745']
 
     df_parts['Fragments'] = df_parts.part_id.apply(lambda x: frags_dict[x])
-    df_parts['Submission'] = df_parts.part_id.apply(lambda x: subs_dict[x])
-    df_parts['Order_number'] = df_parts.Submission.apply(lambda name: int(name[-3:]))
+    # df_parts['Submission'] = df_parts.part_id.apply(lambda x: subs_dict[x])
+    # df_parts['Order_number'] = df_parts.Submission.apply(lambda name: int(name[-3:]))
     df_parts['Outcomes'] = df_parts.part_id.apply(find_outcome)
     df_parts['Builds'] = df_parts.part_id.apply(find_build)
     print('Finished outcome and build analysis')
