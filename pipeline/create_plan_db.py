@@ -79,14 +79,11 @@ def create_build_plans(session,engine,num_parts,frag_nums,enzyme='BbsI',max_rxns
         to_build.id = to_build.plate_id.apply(lambda x: 0 if x in used_plates else 1)
 
         grouped = to_build.groupby('part_id').filter(lambda x: len(x) == x['id'].sum())
-        # print(grouped)
-        if frag_num != 0:
-            grouped = grouped.groupby('part_id').filter(lambda x: len(x) == frag_num)
-
+        if int(frag_num) != 0:
+            grouped = grouped.groupby('part_id').filter(lambda x: len(x) == int(frag_num))
         sort_group = grouped.sort_values('plate_id')
         # print(sort_group)
         sub = sort_group.part_id.unique().tolist()
-
         if len(sub) < max_rxns:
             print('Not enough remaining parts to fill a build')
             rework_ans = ot.request_info("Include previously failed genes? (y/n): ",type='string')
