@@ -19,11 +19,10 @@ import shutil
 import atexit
 
 from config import *
+from db_config import *
 import ot_functions as ot
 
 import resuspend
-
-from db_config import *
 
 def run_build(session,engine):
 
@@ -40,6 +39,10 @@ def run_build(session,engine):
 
     # Choose which build plan to build
     build_options = []
+    builds = [build for build in session.query(Build).filter(Build.status == 'planning')]
+    if len(builds) == 0:
+        sys.exit('No plans available, run `create_build_plan.py` to generate them')
+
     for num,build in enumerate([build for build in session.query(Build).filter(Build.status == 'planning')]):
         print('{} - {}'.format(num,build.build_name))
         build_options.append(build)

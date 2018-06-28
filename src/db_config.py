@@ -202,7 +202,8 @@ class Plate(Base):
     plate_type = Column(String) # Takes in syn_plate, assembly_plate, or seq_plate
     plate_name = Column(String)
     plate_id = Column(String) # Sequential ID given to synthesis plates
-    resuspended = Column(String) # 'resuspended' or 'not resuspended'
+    resuspended = Column(String) # 'resuspended' or 'not_resuspended'
+    transformed = Column(String) # 'transformed' or 'not_transformed'
     plated = Column(String) # 'plated' or 'not_plated'
     assessed = Column(String) # 'assessed' or 'not_assessed'
 
@@ -221,7 +222,9 @@ class Plate(Base):
             self.resuspended = 'not_resuspended'
             self.plate_id = plate_id
         elif self.plate_type == 'assembly_plate':
+            self.transfromed = 'not_transformed'
             self.plated = 'not_plated'
+            self.assessed = 'not_assessed'
         elif self.plate_type == 'seq_plate':
             self.seq_outcome = 'sequencing'
         # Generate a well for every part provided
@@ -279,7 +282,7 @@ class Build(Base):
         self.build_name = build_name
         self.status = 'building'
         for num,group in enumerate(group_parts):
-            plate_name = 'Assembly_' + str(num)
+            plate_name = '{}-assembly'.format(build_name)
             self.plates.append(Plate(group,'assembly_plate',plate_name))
 
     def add_item(self,item,address,vector='',trans_outcome=''):

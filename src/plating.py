@@ -21,7 +21,7 @@ from db_config import *
 
 def plate(session,engine):
 
-    print("\n============ Beginning to plate ============\n")
+    ot.print_center("============ Beginning to plate ============")
 
     # Take in command line arguments
     parser = argparse.ArgumentParser(description="Resuspend a plate of DNA on an Opentrons OT-1 robot.")
@@ -34,8 +34,10 @@ def plate(session,engine):
         ot.check_robot()
 
     assemblies = []
-    print("Choose which plate you would like to transform/plate:")
-    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Build.status == 'building').order_by(Build.build_name)):
+    print("Choose which plate you would like to plate:")
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds)\
+                .filter(Build.status == 'building').filter(Plate.transformed == 'transformed')\
+                .filter(Plate.plated != 'plated').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
@@ -201,8 +203,14 @@ def plate(session,engine):
     print("Rehoming")
     robot.home()
 
-    commit = int(ot.request_info("Commit changes (1-yes, 2-no): ",type='int'))
-    if commit == 1:
+    commit = ot.request_info("Commit changes? (y/n): ",type='string',select_from=['y','n'])
+    if commit == 'y':
+        if len(target_plate.wells) <= 48:
+            target_plate.plated = 'plated'
+        else:
+            ans = ot.request_info('Plated both halves of the build? (y/n): ',type='string',select_from=['y','n'])
+            if ans == 'y':
+                target_plate.plated = 'plated'
         session.commit()
     return
 

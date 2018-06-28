@@ -29,8 +29,8 @@ def transform(session,engine):
     args = parser.parse_args()
 
     assemblies = []
-    print("Choose which plate you would like to transform/plate:")
-    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Build.status == 'building').order_by(Build.build_name)):
+    print("Choose which plate you would like to transform:")
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds).filter(Build.status == 'building').filter(Plate.transformed == 'not_transformed').order_by(Build.build_name)):
         print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
 
@@ -112,6 +112,12 @@ def transform(session,engine):
             print("Transferring {}ul of DNA to {}".format(dna_vol,current_well))
             p10s.transfer(dna_vol, build_plate.wells(current_well).bottom(), transformation_plate.wells(current_well).bottom(),blow_out=True, mix_before=(1,8), new_tip='never')
             p10s.drop_tip()
+    commit = ot.request_info("Commit changes? (y/n): ",type='string',select_from=['y','n'])
+    if commit == 'y':
+        target_plate.transformed = 'transformed'
+        session.commit()
+    else:
+        print('Not committed')
 
 
 

@@ -26,12 +26,17 @@ def assess_plate():
     # Determine which build/plate to assess
     assemblies = []
     print("Choose which build you would like to assess:")
-    for index,assembly in enumerate(session.query(Build).filter(Build.status == 'building').order_by(Build.build_name)):
-        print("{}. {}".format(index,assembly.build_name))
+    for index,assembly in enumerate(session.query(Plate).join(Build,Plate.builds)\
+                .filter(Build.status == 'building').filter(Plate.plated == 'plated')\
+                .filter(Plate.assessed == 'not_assessed').order_by(Build.build_name)):
+        print("{}. {}".format(index,assembly.builds.build_name))
         assemblies.append(assembly)
-    build_num = int(input("Enter build here: "))
-    target_build = assemblies[build_num]
-    print("Will assess: ",target_build.build_name)
+    plate_num = ot.request_info("Enter plate here: ",type='int')
+    target_plate = assemblies[plate_num]
+
+    # build_num = int(input("Enter build here: "))
+    # target_build = assemblies[build_num]
+    print("Will assess: ",target_plate.builds.build_name)
 
     ## =============================================
     ## QUERY DATABASE FOR REPLACEMENTS
@@ -45,13 +50,13 @@ def assess_plate():
     ot.print_center('...Generating sequencing plate...')
 
     # Generate an empty sequencing plate and update the build status
-    seq_plate = Plate([],'seq_plate','{}-seq'.format(target_build.build_name))
-    target_build.plates.append(seq_plate)
-    target_build.status = 'sequencing'
+    seq_plate = Plate([],'seq_plate','{}-seq'.format(target_plate.builds.build_name))
+    target_plate.builds.plates.append(seq_plate)
+    target_plate.builds.status = 'sequencing'
     session.add(seq_plate)
 
     # Change the status of the wells and add successful ones to seq_plate
-    for well in target_build.plates[0].wells:
+    for well in target_plate.builds.plates[0].wells:
         if well.address in failed:
             well.trans_outcome = 'trans_failure'
         else:
@@ -62,9 +67,10 @@ def assess_plate():
     used_wells = [well for well in seq_plate.wells]
     remaining = 96 - len(used_wells)
     print("Remaining: ",remaining)
-    ans = input("backfill empty wells? (y/n): ")
-    if ans == 'n':
-        remaining = 0
+    if remaining != 0:
+        ans = ot.request_info("Backfill empty wells? (y/n): ",type='string',select_from=['y','n'])
+        if ans == 'n':
+            remaining = 0
     # Pull parts that need to the retried
     acceptable_status = ['sequence_failure','cloning_mutation'] # List with all of the status that you want to pull from
     replacement_parts = [part for part in session.query(Part).join(Well,Part.wells)\
@@ -138,13 +144,18 @@ def assess_plate():
     print(unique_builds)
 
     # Generate a sequence plate map
-    path = '{}/builds/{}/{}_seq_plate.csv'.format(BASE_PATH,target_build.build_name,target_build.build_name)
-    seq_plate_map.to_csv(path,index=False)
+    path = '{}/src/data/builds/{}/'.format(BASE_PATH,target_plate.builds.build_name)
+    ot.make_directory(path)
+    file_path = '{}/{}_seq_plate.csv'.format(path,target_plate.builds.build_name)
+    seq_plate_map.to_csv(file_path,index=False)
 
-    commit = int(input("Commit changes (1-yes, 2-no): "))
-    if commit == 1:
+    commit = ot.request_info("Commit changes? (y/n): ",type='string',select_from=['y','n'])
+    if commit == 'y':
+        target_plate.assessed = 'assessed'
+        target_plate.builds.status = 'sequencing'
         session.commit()
-    return
+    else:
+        print('Not committed')
 
 if __name__ == "__main__":
     assess_plate()

@@ -83,7 +83,7 @@ def frag_assign():
     ot.print_center('...Updating part status...')
     for part in session.query(Part).join(Fragment,Part.fragments).join(Well,Fragment.wells)\
             .join(Plate,Well.plates).filter(Plate.plate_name.notin_(plates_made)):
-        print(part.part_id)
+        # print(part.part_id)
         no_build = False
         for frag in part.fragments:
             if not frag.wells:
