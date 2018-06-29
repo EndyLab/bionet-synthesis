@@ -1,73 +1,46 @@
-# Pipeline tools for Twist synthesis
+# OpenFoundry
 
-## Dependencies
+The OpenFoundry is a collection of automation and inventory management tools that enable high-throughput cloning of synthesized DNA. The system utilizes OpenTrons robotics which are inexpensive and open source liquid handling robots. The pipeline automates every step in the cloning process and tracks the progress of each sample. In our hands, we have been able to maintain a rate of cloning 500 genes per robot per week.
 
-```
-pip3 install --user numpy sqlalchemy pandas biopython matplotlib seaborn jsonrpc_requests
-```
+## Getting Started
+Clone the OpenFoundry repository
+`git clone https://github.com/EndyLab/bionet-synthesis.git`
 
-## Config
+Install all of the requirements
+`cd bionet-synthesis`
+`pip install -r requirements.txt`
 
-```
-cp config.py.default config.py
-```
+## Workflow Overview
+1. Use the template.csv file as a guide to generate a csv in the `./src/` directory with the sequences that you would like to synthesize and clone.
+2. Optimize all of the sequences present using `optimize.py`.
+3. When ready to order, run `fragment.py` to fragment the genes and append the desired overhangs and send out for synthesis.
+4. When the plates come in, run `frag_location_assignment.py` to parse the newly added plate maps and add locations to all of the fragments. This will also determine which genes are now able to be built.
+5. Run `resuspend.py` on each synthesis plate that you would like to resuspend.
+6. When the necessary fragments arrive, use the `create_assembly_plan.py` script to generate an assembly protocol that coordinates the cloning across all available robots.
+7. Once the plan is created, run `assemble.py` on each of the robots, selecting the desired builds for each.
+8. After the assembly process is complete, place them in the thermocycler and run the designated program.
+9. Once the thermocycle is complete, run `transform.py`.
+10. After the transformation run the `plating.py` script.
+11. Place plates in the 37C incubator overnight.
+12. Retrieve the plates and photograph them within the image box using `image_plates.py`.
+13. Fill up a 96 deep well plate with desired media and execute. `colony_picking.py` to inoculate the well plate with the desired colonies.
+14. Place the deep well block in a plate shaker at 37C overnight.
+15. Either run a 96 well miniprep or send the whole block out for sample preparation and sequencing.
+16. If using Sanger sequencing, add the sequencing results to the corresponding build and use `seq_alignment.py` to generate sequence alignments of all the corresponding target sequences and determine the outcomes of the cloning reactions.
 
-Edit `config.py` to set SQL_USERNAME and SQL_PASSWORD.
+Refer to `documentation.md` for extensive protocols and explanation of code.
+See the `openfoundry_material_list.csv` for information on the materials used throughout these protocols
 
-If you want bionet integration, also set:
-
-* BIONET_RPC_URL
-* BIONET_USERNAME
-* BIONET_PASSWORD
-
-## Check if it's working
-
-```
-python3 sql_analyze.py
-```
-
-## Quickstart
-
-1. Get yo' gene coding sequences into a CSV with the format Gene,Sequence
-2. Optimize: `cat genes.csv | python optimize-genes.py > optimized.csv`
-   This removes invalid restriction sites, converts stops to TGA for MoClo, and sets the penultimate codon to our fixed list
-3. Fragment: `cat optimized.csv | python fragment-genes.py > fragments.csv`
-   This breaks DNA into <1.8kb fragments for synthesis, adds assembly cut sequences, and pairs small genes together. Output is in Twist's order format.
+## License
+MIT License, refer to `LICENSE.md` for more information
 
 
-## Optimize
-Optimize does the following:
-* Runs basic tests for proper coding sequences:
-  * Sequence isn't empty
-  * Sequence is a triplet
-  * Sequence begins with start codon
-  * Sequence ends with stop codon
-  * Sequence doesn't contain internal stops
-* Forces stop codons to TGA
-  * We need this for the TGAA MoClo site
-* Optimizes the sequence to meet several requirements:
-  * Remove RE sites for BfuAI, AarI, BtgZI, BbsI, BsmBI, SapI, BsaI
-  * Remove homopolymer runs of >= 6 base pairs
-  * Checks (but does not attempt to fix) out of spec GC
-* Forces the final (non-stop) codon to our fixed list for SapI cloning compatibility
-  * We then check if this change introduced a new RE site: we don't attempt to fix if this is so, but throw an error
 
-## Fragment
-* Add an 'A' nucleotide before and after each sequence, to match CDSes for MoClo (aATG / TGAa)
-* Break big genes into fragments
-  * We break genes into approximately equal pieces based on their size
-  * We add BbsI recognition sequences to the beginning and end of each sequence
-    Note that this assumes that a gene broken into three fragments won't have identical overhangs on, for example, the end of fragments 1 and 2 (so they could be swapped on assembly)
-* Pair small (<300 bp) genes so they go above Twist's minimum synthesis limit
-  * We pair the biggest small gene with the smallest (eg, 299 with 50, then 250 with 70, if fragments of those sizes existed).
-  * The genes are connected with a linker for BbsI / BtgZI gene selection on assembly
-* We output the fragments in the format Twist wants for their order spreadsheet
-  * Genes are named [Gene Name]_[Fragment Number]
-  * Small genes are named [Gene 1 Name]_link_[Gene 2 Name]_1
 
-## Validation
-The validation script, `validate-fragments.py`, takes Twist-format input from
-`fragment-genes.py` and does a virtual digestion and assembly. It outputs
-expected gene sequences for cross-checking with the input. It's pretty rough and
-ready, but should give a good indication of whether the fragmentation worked
-properly.
+
+
+
+
+
+
+#

@@ -1,6 +1,6 @@
 .DS_Store
 .ipynb_checkpoints
-pipeline/config.py
+src/config.py
 raw_files/BLAST_db
 bionet-synthesis/settings.js
 bionet-synthesis/node_modules/**

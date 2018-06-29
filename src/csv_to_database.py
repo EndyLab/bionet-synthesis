@@ -17,12 +17,25 @@ query_parts = 'SELECT * FROM parts'
 
 data = pd.read_sql_query(query_parts,con=engine)
 
-print(len(data))
+print('Currently there are {} parts in the database'.format(len(data)))
 
-prefix = 'FG_'
+if len(data) == 0:
+    prefix = ot.request_info('Enter the desired prefix for the unique id numbers (i.e. "initials"_)')
+else:
+    prefix = data.part_id.tolist()[0].split('_')[0] + '_'
+
 start_id = len(data) + 1
 
-data = pd.read_csv('{}/pipeline/sample_data.csv'.format(BASE_PATH))
+files = []
+for i,file in enumerate(glob.glob('{}/src/*.csv'.format(BASE_PATH))):
+    print('{}: {}'.format(i,file))
+    files.append(file)
+
+ans = ot.request_info('Which file would you like to upload: ',type='int',select_from=[num for num in range(len(files))])
+target_file = files[ans]
+data = pd.read_csv(target_file)
+
+ot.print_center('...Adding samples to the database...')
 
 for i,part in data.iterrows():
     current_id = prefix + str(start_id + i).zfill(3)

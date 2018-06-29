@@ -1,22 +1,22 @@
 # Tutorial for using the OpenFoundry
 
-## Overall Workflow
-0. Generate a list of all of the sequences to be synthesized
-- [ ] Provide a template csv for adding new sequences
-1. Optimize all of the sequences present using the optimization script
-2. When ready to order, fragment genes and send for sequencing
-- [ ] Provide information about why we are fragmenting and what the options are
-3. When the plates come in run the location assignment script to parse the newly added plate maps and add locations to all of the fragments. This will also determine which genes are now able to be built.
-4. When the necessary fragments arrive, run the build script
-5. Once the golden gate assemblies are made, place in the thermocycler and run the designated program
-6. Run the transformation protocol
-7. Run the plating protocol
-8. Place plates in the 37C incubator overnight
-9. Retrieve the plates and photograph them within the image box
-10. Fill up a 96 deep well plate with desired media and run the colony picking script
-11. Place the deep well block in a plate shaker at 37C overnight
-12. Either run a 96 well miniprep or send the whole block out for sample preparation and sequencing
-13. If using Sanger sequencing, use the reads to run sequence alignments against all of the corresponding target sequences and determine the outcomes of the cloning reactions
+## Workflow Overview
+1. Use the template.csv file as a guide to generate a csv in the `./src/` directory with the sequences that you would like to synthesize and clone.
+2. Optimize all of the sequences present using `optimize.py`.
+3. When ready to order, run `fragment.py` to fragment the genes and append the desired overhangs and send out for synthesis.
+4. When the plates come in, run `frag_location_assignment.py` to parse the newly added plate maps and add locations to all of the fragments. This will also determine which genes are now able to be built.
+5. Run `resuspend.py` on each synthesis plate that you would like to resuspend.
+6. When the necessary fragments arrive, use the `create_assembly_plan.py` script to generate an assembly protocol that coordinates the cloning across all available robots.
+7. Once the plan is created, run `assemble.py` on each of the robots, selecting the desired builds for each.
+8. After the assembly process is complete, place them in the thermocycler and run the designated program.
+9. Once the thermocycle is complete, run `transform.py`.
+10. After the transformation run the `plating.py` script.
+11. Place plates in the 37C incubator overnight.
+12. Retrieve the plates and photograph them within the image box using `image_plates.py`.
+13. Fill up a 96 deep well plate with desired media and execute. `colony_picking.py` to inoculate the well plate with the desired colonies.
+14. Place the deep well block in a plate shaker at 37C overnight.
+15. Either run a 96 well miniprep or send the whole block out for sample preparation and sequencing.
+16. If using Sanger sequencing, add the sequencing results to the corresponding build and use `seq_alignment.py` to generate sequence alignments of all the corresponding target sequences and determine the outcomes of the cloning reactions.
 
 ## General information for OpenTrons code
 - All scripts interacting with the OpenTrons share a similar process and ideology
@@ -31,18 +31,24 @@
 ## Optimization
 
 ### Purpose
-
-### Specifics
+Utilizes codon frequency tables from a desired organism to codon optimize protein coding sequences. Once the sequences are comprised of codons representative of the host organism, they are scanned for restriction sites that are required in the downstream cloning steps as well as for sequence motifs that complicate synthesis, such as high GC content and homopolymers. Codons at these sites are swapped until all issues have been fixed.
 
 ### Code Breakdown
-
-
+- Queries the database for parts that do not have a sequence listed in the `.seq` attribute.
+- If these parts are protein coding sequences, they will be codon optimized based on a codon frequency table specified by the user
+- The sequences are then screened for sequences that cause issues in downstream processes, specifically high or low GC content, homopolymer runs, repeat sequences or required restriction sites.
+- When an issue is found, the script will continue to make silent mutations in the sequence until the issue is fixed.
+- This process continues until all problems are solved
 
 ## Fragmentation
 
 ### Purpose
+Sequences must be flanked by specific sequences to enable their downstream processing and use with the MoClo standard. This includes restriction sites required for the initial cloning of the synthesized fragments into the cloning vector as well as the part type specific restriction sites for modular assembly downstream. The fragmentation process also expands the range of sequence length that can be generated through multiple fragment assembly. Sequences that exceed the maximum length set by the synthesis company can be split into smaller sequences with specific restriction sites allowing all of the fragments to assemble together into the vector in a single pot reaction.
 
 ### Specifics
+- Adheres to the MoClo cloning standard which utilizes several Type IIS restriction enzymes including BsaI, BbsI, and BtgZI.
+- Part specification allows for simple combinatorial assembly of different parts in a single pot but require specific overhangs to ensure that different part types are compatible with one another.
+
 
 ### Code Breakdown
 
@@ -349,40 +355,20 @@ Inoculating cultures from colonies to propagate the clones in order to sequence 
 
 
 ## Sequence Alignment
-- [ ] Clean up and generalize this code a lot. It still uses the 10K_CDS csv to account for the very early sequences
-- [ ] convert the backbone sequence to a fasta file in a different directory
 
 ### Purpose
-Assign an outcome to each part that was attempted in a build based on the sequencing results.
+Generate sequence alignments for every part that is sequenced and assign an outcome to each part based on the results.
 
 ### Requirements
+- Genbank file of the vector with the sequencing primers annotated as the  primer_bind annotation type. (A sample genbank file can be found in `src/data/vectors/popen_v3-0.gb`)
 - Sanger sequencing reads
-- Backbone sequence (Truncated to the region that should be replaced by the insert)
 
 ### User Intervention
-1. Transfer the sequencing files to a directory labelled '[build number]\_seq\_files' within the corresponding build directory
-2. Check to make sure that the beckbone sequence, and names of the sequencing primers are correct
-3. Specify which build you would like to analyze
-4. Allow the alignments to run
-  - Can take a few minutes if aligning hundreds of sequences
-
-### Code Breakdown
-- [ ] Add the code breakdown
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* space
+1. Transfer the sequencing files to a directory labelled `[build number]\_seq\_files` within the corresponding build directory
+2. Specify which build you would like to analyze
+3. Allow the alignments to run
+4. Once the initial alignments are complete it will present the different outcome counts
+5. If any sequences present strange results it will be flagged and then the alignment for the forward and reverse read will be presented for manual inspection.
+6. If any of the sequences that are checked manually, the script will export a csv file to the target build directory along with the fully digested and assembled sequence in a fasta file for easy manual sequence alignment generation on a standard plasmid editor.
+7. As you go through the manual alignments note the observed outcome in the `manual` column in the csv file
+8. Run the `manual_alignment_check.py` to upload the user specified outcomes to the database.
