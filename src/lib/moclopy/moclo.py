@@ -547,3 +547,6 @@ def sequence_input(gene_id,seq,part_type):
     frags = fragment_sequence(gene_id,seq,part_type)
     print("{} successfully checked and ready to submit".format(gene_id))
     return frags
+
+
+
