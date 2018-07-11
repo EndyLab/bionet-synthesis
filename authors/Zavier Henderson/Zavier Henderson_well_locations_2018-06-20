@@ -1,0 +1,9 @@
+part_id,status,build_name,address,seq_outcome,fragment_name,plate_name,address,author
+BBF10K_000463,sequence_failure,build008,E1,bad_reads,BBF10K_000463_1,pSHPs1212B325156MU,A4,Zavier Henderson
+BBF10K_000464,sequence_confirmed,build008,F1,sequence_confirmed,BBF10K_000464_1,pSHPs1212B325156MU,B4,Zavier Henderson
+BBF10K_000465,sequence_confirmed,build008,G1,sequence_confirmed,BBF10K_000465_1,pSHPs1212B325156MU,C4,Zavier Henderson
+BBF10K_000467,cloning_mutation,build008,A2,mutation_1.0-0.0,BBF10K_000467_1,pSHPs1212B325156MU,E4,Zavier Henderson
+BBF10K_000466,sequence_confirmed,build008,H1,sequence_confirmed,BBF10K_000466_1,pSHPs1212B325156MU,D4,Zavier Henderson
+BBF10K_000462,sequence_confirmed,build008,D1,sequence_confirmed,BBF10K_000462_1,pSHPs1212B325156MU,H3,Zavier Henderson
+BBF10K_000460,cloning_mutation,build008,B1,mutation_2.0-0.0,BBF10K_000460_1,pSHPs1212B325156MU,F3,Zavier Henderson
+BBF10K_000461,sequence_confirmed,build008,C1,sequence_confirmed,BBF10K_000461_1,pSHPs1212B325156MU,G3,Zavier Henderson

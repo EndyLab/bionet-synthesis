@@ -1,0 +1,13 @@
+,part_name,part_id,status,Attempt_1_Outcome_G,Attempt_2_Outcome_G,Author
+136,Neutral Protease,BBF10K_000456,synthesis_abandoned,N/A,N/A,Scott Pownall
+139,Collagenase,BBF10K_000640,synthesis_abandoned,N/A,N/A,Scott Pownall
+140,Collagenase,BBF10K_000455,cloning_mutation,cloning_mutation,N/A,Scott Pownall
+141,Neutral Protease,BBF10K_000641,synthesis_abandoned,N/A,N/A,Scott Pownall
+142,Cre Recombinase,BBF10K_000642,synthesis_abandoned,N/A,N/A,Scott Pownall
+143,Flp recombinase,BBF10K_000643,synthesis_abandoned,N/A,N/A,Scott Pownall
+144,A0A085WQF1.1,BBF10K_000644,synthesis_abandoned,N/A,N/A,Scott Pownall
+151,Cre Recombinase,BBF10K_000457,sequence_failure,sequence_failure,N/A,Scott Pownall
+166,A0A085WQF1.1,BBF10K_000459,cloning_mutation,cloning_mutation,N/A,Scott Pownall
+1407,Flp recombinase,BBF10K_000458,sequence_confirmed,sequence_confirmed,N/A,Scott Pownall
+3299,Tn5 hyperactive Transposase,BBF10K_003302,received,N/A,N/A,Scott Pownall
+3300,Cp3 mariner transposase,BBF10K_003303,received,N/A,N/A,Scott Pownall

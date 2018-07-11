@@ -1,0 +1,3 @@
+part_id,status,build_name,address,seq_outcome,fragment_name,plate_name,address,author
+BBF10K_000651,sequence_confirmed,build010,E3,sequence_confirmed,Ob Gernaiol synthase_1,pSHPs0220B292296MU,B4,Wajid Waheed
+BBF10K_000652,cloning_failure,build010,B3,cloning_failure,Pk geraniol 10-hydroxylase_1,pSHPs0220B292296MU,C4,Wajid Waheed

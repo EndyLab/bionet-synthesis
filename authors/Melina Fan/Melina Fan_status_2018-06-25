@@ -1,0 +1,22 @@
+,part_name,part_id,status,Attempt_1_Outcome_G,Attempt_2_Outcome_G,Author
+326,C5,BBF10K_000579,sequence_failure,sequence_failure,N/A,Melina Fan
+582,aphA5a,BBF10K_000562,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+851,ADGRB1,BBF10K_000563,cloning_mutation,cloning_mutation,cloning_error,Melina Fan
+912,CCNB3,BBF10K_000564,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+913,CCNG2,BBF10K_000565,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+915,IGFBP3,BBF10K_000566,synthesis_abandoned,N/A,N/A,Melina Fan
+916,DDB2,BBF10K_000567,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+917,FAS,BBF10K_000569,cloning_mutation,cloning_mutation,cloning_error,Melina Fan
+918,TP53AIP1,BBF10K_000570,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+919,EI24,BBF10K_000571,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+921,ZMAT3,BBF10K_000572,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+922,SHISA5,BBF10K_000573,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+924,C1r,BBF10K_000574,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+927,C1s,BBF10K_000575,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+931,C2,BBF10K_000576,sequence_failure,sequence_failure,N/A,Melina Fan
+1416,RPRM,BBF10K_000568,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+1417,C3,BBF10K_000577,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+1418,C4_precursor_C4a-C4b,BBF10K_000578,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+1419,C6,BBF10K_000580,cloning_mutation,cloning_mutation,N/A,Melina Fan
+1455,C7,BBF10K_000581,sequence_confirmed,sequence_confirmed,N/A,Melina Fan
+1456,C9,BBF10K_000582,cloning_mutation,cloning_mutation,N/A,Melina Fan
