@@ -22,7 +22,7 @@ mpmath==1.0.0
 msgpack-python==0.5.1
 numpy==1.14.0
 numpydoc==0.7.0
-opencv-python==3.4.0.12
+opencv-python==4.2.0.32
 openpyxl==2.4.10
 opentrons==2.5.2
 pandas==0.22.0
