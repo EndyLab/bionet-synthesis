@@ -20,7 +20,7 @@ Markdown==2.6.11
 matplotlib==2.1.2
 mpmath==1.0.0
 msgpack-python==0.5.1
-numpy==1.14.0
+numpy==1.22.0
 numpydoc==0.7.0
 opencv-python==3.4.0.12
 openpyxl==2.4.10
